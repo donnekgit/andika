@@ -97,14 +97,14 @@ textarea.swahili:-moz-placeholder
 #ngramwords table
 {
     table-layout: fixed;
-    width: 350px;
+    width: 500px;
 }
 
 #ngramwords th,
 #ngramwords td
 {
     overflow: hidden;
-    width: 70px;
+    width: 100px;
 }
 
 .textword,
