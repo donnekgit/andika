@@ -1,0 +1,22 @@
+TODO list
+=========
+
+How to change the keyboard layout.
+
+Keyboard extension for gb so that diacritics in the close transcription can be easily used.
+
+Digital dictionary lookup to provide info re the words in the poem (meaning, root, etc).
+
+Offline converters to allow collections fo files to be converted fromthe command-line.
+
+Paging mechanism to step through a poem.
+
+A web interface to annotating the poem, so that a db interface doesn't have to be used.
+
+Detailed notes on how to used the poem handling scripts, and on setting up the offline converters (including how to set up phpPgAdmin, SQLWorkbench/J, LaTeX, Apache, Fontforge, etc.).
+
+Notes on using FontForge to adjust an existing font.
+
+
+
+

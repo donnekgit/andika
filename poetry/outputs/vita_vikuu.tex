@@ -1,0 +1,136 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage{polyglossia}
+\usepackage{longtable}
+\usepackage{xcolor}  % can't use color with polyglossia
+\usepackage{arydshln}
+
+\interfootnotelinepenalty=10000 % prevents the footnote from breaking across pages
+% http://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
+
+% Thanks to Manas Tungare (http://manas.tungare.name/software/latex) for these settings.
+\setlength{\paperwidth}{210mm}
+\setlength{\paperheight}{297mm}
+
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{247mm}
+
+\setlength{\evensidemargin}{1in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{-0.5in}
+
+\setmainfont[Mapping=tex-text]{Liberation Serif}  % Set the default font for the document (footnotes will also use this font, but see also: http://tex.stackexchange.com/questions/4779/how-to-change-font-family-in-footnote)
+
+\setmainlanguage{english}
+\setotherlanguage{arabic}
+\setotherlanguage{farsi}  % used to allow typesetting the tile in a different font
+
+\newfontfamily\arabicfont[Script=Arabic, Scale=2]{Scheherazade} % Arabic transcription layer
+\newfontfamily\farsifont[Script=Arabic, Scale=4]{GranadaKD} % Arabic transcription layer for titles - uses a version of Granada which has been extended to include glyphs for Swahili.
+\newcommand{\AS}[1]{\fontspec[Script=Arabic, Scale=1.5]{Scheherazade} #1\normalfont} % Arabic when used in footnotes - using \newfontfamily resets following English text as well.  IMPORTANT: this can ONLY be used for single words - multiple words will be written LTR, and not RTL as required.
+\newfontfamily{\T}[Scale=1.1, Color=00BB33]{Linux Biolinum O} %  transliteration layer - Biolinum handles diacritics well
+\newfontfamily{\I}[Scale=1.1, Color=blue]{Linux Biolinum O} % interpolated letters in the transliteration layer
+\newfontfamily{\E}[Color=666666]{Liberation Serif Italic} % English translation layer
+
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote merkers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696):
+
+\begin{document}
+
+% \chapter{Introduction}
+
+\begin{longtable}{rl}
+
+
+\textfarsi{أُتٖيْنْزِ ۏَ ڤِيْٹَ ڤِكُوْ} & \textfarsi{ }\\
+\nopagebreak \T{uṯēnzi w̱a vı̄ţa vikuu} & \\
+\nopagebreak \E{The Ballad of the Great Battle} & \\ [12mm]
+
+% \textfarsi{أُتٖنْزِ وَ جَعْفَر} & \textfarsi{ }\\
+% \nopagebreak \T{uṯenzi wa ja'far} &\\
+% \nopagebreak \E{The Ballad of Ja'far} & \\
+% 
+% \nopagebreak  & \\
+% \nopagebreak \cdashline{1-1}[1pt/3pt] & \\  % requires arydshln package
+% 
+% \textarabic{بِسْمِ اللّٰهِ الرحْمَنِ الرَّحِيْمِ} & \textarabic{ }\\
+% \nopagebreak \T{bismi llähi arr}\I{a}\T{ḥmani arraḥı̄mi} &\\
+% \nopagebreak \E{In the name of God, the Compassionate, the Merciful} & \\
+% 
+% \nopagebreak  & \\
+% \nopagebreak \cdashline{1-1}[1pt/3pt] & \\[6mm]  % requires arydshln package
+
+\textarabic{أَكَتٗؤَ تَمَارِ * نَخُبُوزِ يَشَعِيْرِ} & \textarabic{١٣٨} \\ 
+\nopagebreak \T{akaṯoa ṯamāri * na ẖubūzi ya sha'ı̄ri} & \T{138a/b} \\ 
+\nopagebreak \E{He took out dates and barley bread} & \\ 
+\textarabic{نَمِلْحِ أَصْفَرِ * كَكهٖيْتِ كَٹٗئٖلٖئَ} & \\ 
+\nopagebreak \T{na mil}\I{i}\T{ḥi aṣ}\I{u}\T{fari\footnote{The salt is yellow because it is unpurified rock-salt, containing iodine.} * kakʿēṯi kaţoelea} & \T{138c/d} \\ 
+\nopagebreak \E{And yellow salt - he sat down and took [them] out.} & \\ [8mm] 
+
+\textarabic{كِشَكُوْلَ كَحِمِيْدِ * ۏَاكٖ إِلَاهِ وَدُوْدِ} & \textarabic{١٣٩} \\ 
+\nopagebreak \T{kishakūla kaḥimı̄ḏi * w̱āke ilāhi waḏūḏi} & \T{139a/b} \\ 
+\nopagebreak \E{When he finished eating he gave thanks to his beloved God,} & \\ 
+\textarabic{مُؤُوْنْبَ زٗوْتهٖ جَسَادِ * مَعَدُوِ نَمَوَلِيْ} & \\ 
+\nopagebreak \T{muūm̱ba zōṯʿe jasāḏi * ma'aḏuwi na mawalii\footnote{The implication is that these are friends and enemies of Islam.}} & \T{139c/d} \\ 
+\nopagebreak \E{The Creator of all individuals - both enemies and friends.} & \\ [8mm] 
+
+\textarabic{هَاتَ كُكِپَنْبَؤُوْكَ * عَمُوْرِ أَكَتٗوْكَ} & \textarabic{١٤٠} \\ 
+\nopagebreak \T{hāṯa kukipam̱baūka * 'amūri akaṯōka} & \T{140a/b} \\ 
+\nopagebreak \E{Until, when dawn came, Amuri came out} & \\ 
+\textarabic{كْوَ عَلِىْ أَكَفِيْكَ * سَوْتِ أَكَئِتٗؤَ} & \\ 
+\nopagebreak \T{kwa 'alii akafı̄ka * sawṯi akaiṯoa} & \T{140c/d} \\ 
+\nopagebreak \E{He arrived beside Ali and [Ali] spoke.} & \\ [8mm] 
+
+\textarabic{عَلِىْ كَتَكَلَامَ * أَهْلاً يَا مُكَرَّمَ} & \textarabic{١٤١} \\ 
+\nopagebreak \T{'alii kaṯakalāma * ah}\I{a}\T{lāⁿ yā mukarrama} & \T{141a/b} \\ 
+\nopagebreak \E{Ali said Greetings, Honoured One} & \\ 
+\textarabic{ٹُتَوَصِيْل سَلَامَ * نْدِئَ إِنْڠَاۏَ طَوِلِيَ} & \\ 
+\nopagebreak \T{ţuṯawaṣı̄l}\I{i}\T{ salāma * nḏia ingāw̱a ṭawiliya} & \T{141c/d} \\ 
+\nopagebreak \E{We shall arrive safely even if the road is long.} & \\ [8mm] 
+
+\textarabic{عَمُوْرِ كَرُوْدِ نْڈَانِ * كَئِلَبِيْسِ يُوَانِ} & \textarabic{١٤٢} \\ 
+\nopagebreak \T{'amūri karūḏi nḑāni * kailabı̄si yuwāni} & \T{142a/b} \\ 
+\nopagebreak \E{Amuri went back inside; know that he dressed himself} & \\ 
+\textarabic{دِرِيْعِ زَ أُۏَنْدَانِ * أَكَئِفُوْنْڠَ زِكَمْكَاءَ} & \\ 
+\nopagebreak \T{ḏirī'i za uw̱anḏāni\footnote{\AS{أُۏَنْدَ} (uwanda) is an {\E{open space}}, and by extension a {\E{battlefield}}.} * akaifūnga zikamkāa\footnote{Lit. {\E{and bound himself so that [the armour] stayed on him}}.}} & \T{142c/d} \\ 
+\nopagebreak \E{In battle-armour, and fastened it firmly upon himself.} & \\ [8mm] 
+
+\textarabic{نَسٖيْفُ نْجٖيْمَ أَسِيْسِ * نَرُمْحِ نَتُرُوْسِ} & \textarabic{١٤٣} \\ 
+\nopagebreak \T{na sēfu njēma ası̄si * na rum}\I{u}\T{ḥi na ṯurūsi} & \T{143a/b} \\ 
+\nopagebreak \E{And [took up] a good, stout sword, and a spear, and a shield.} & \\ 
+\textarabic{أَكَمْپَانْڈَ فَرَاسِ * جُوْ أَكَمْكَلِئَ} & \\ 
+\nopagebreak \T{akampānḑa farāsi * juu akamkalia} & \T{143c/d} \\ 
+\nopagebreak \E{Then he mounted his steed, and seated himself upon it.} & \\ [8mm] 
+
+\textarabic{ۏَكٖيْنْڈَ تهَخُبِيْرِ * بِاللَّيْلِ وَالنَّهَارِ} & \textarabic{١٤٤} \\ 
+\nopagebreak \T{w̱akēnḑa ṯʿaẖubı̄ri * bi-llayli wa-nnahāri} & \T{144a/b} \\ 
+\nopagebreak \E{They went, I'll tell you, by night and day,} & \\ 
+\textarabic{ۏَكَپَنْبَانَ نَبَحَارِ * نَمِيْٹِ نَمَطَرِيَ} & \\ 
+\nopagebreak \T{w̱akapam̱bāna na baḥāri * na mı̄ţi na maṭariya\footnote{Ar \AS{مطر} {\E{rain}}.  Seemingly used by extension here to mean a place with water.}} & \T{144c/d} \\ 
+\nopagebreak \E{And they encountered oceans, and forests, and oases.} & \\ [8mm] 
+
+\textarabic{ۏَكٖنٖينْڈَ يُۏَانِ * عَلِىْ نَمَلِعُوْنِ} & \textarabic{١٤٥} \\ 
+\nopagebreak \T{w̱akenēnḑa yuw̱āni * 'alii namali'ūni} & \T{145a/b} \\ 
+\nopagebreak \E{Know that they went on, Ali and the Accursed One;} & \\ 
+\textarabic{نْدِئَ زِيْلِ زَمَدِيْنِ * عَمُوْرِ كَزِٹَنْبُؤَ} & \\ 
+\nopagebreak \T{nḏia zı̄li za maḏı̄ni * 'amūri kaziţam̱bua} & \T{145c/d} \\ 
+\nopagebreak \E{These roads [led to] Medina - Amuri recognised them.} & \\ [8mm] 
+
+\textarabic{عَمُوْرِ كَذُكُوْرِ * كَمْوَنبِئَ حَيْدَرِ} & \textarabic{١٤٦} \\ 
+\nopagebreak \T{'amūri kadhukūri * kamwam̱bia ḥayḏari\footnote{A frequently-used metonym for Ali.}} & \T{146a/b} \\ 
+\nopagebreak \E{Amuri spoke and said to the Lion:} & \\ 
+\textarabic{دُرُوْبُ نْدَ أَنْصَارِ * نْبٗوْنَ ٹْوَئِفُوَٹِئَ} & \\ 
+\nopagebreak \T{ḏurūbu nḏa anṣāri\footnote{The Ansari were the Muslims of Medina who gave refuge to the Prophet after the Hegira.  Possibly this word is in error for \AS{أَمْصَارِ}, {\E{city}}, used in the next stanza.} * m̱bōna ţwaifuwaţia} & \T{146c/d} \\ 
+\nopagebreak \E{This is the Companions' road why are we following it?} & \\ [8mm] 
+
+\textarabic{نَاسِ ٹُمٖفَانْيَ مَشَؤُوْرِ * يَكْوٖنٖينْڈَ سَفَارِ} & \textarabic{١٤٧} \\ 
+\nopagebreak \T{nāsi ţumefānya mashaūri * ya kwenēnḑa safāri} & \T{147a/b} \\ 
+\nopagebreak \E{For we have taken counsel about going on the journey,} & \\ 
+\textarabic{كْوَنْڠَلِئَ أَمْصَارِ * جُنُوْدِ كُئِكُسَنْيِئَ} & \\ 
+\nopagebreak \T{kwangalia amṣāri * junūḏi kuikusanyia} & \T{147c/d} \\ 
+\nopagebreak \E{to reconnoitre the city while the army assembles.} & \\ [8mm] 
+
+
+\end{longtable}
+
+\end{document}
+

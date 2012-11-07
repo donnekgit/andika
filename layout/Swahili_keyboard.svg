@@ -1,0 +1,3339 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<!-- Reorganised with TEXT EDITOR (gedit under Ubuntu).
+     This file is the general file for the belgian french alphanumerical keyboard :
+     - it uses style sheet (css) [see details at section "style"]
+     - it displays the standard pad
+     - and optionnaly
+        * for some keys : the draw and/or the text (↹ and/or TAB …)
+        * the Linux additional glyphs
+     - keys and inscriptions are geographically referenced : "kb" + line(number) + range(letter) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg2"
+   version="1.0"
+   sodipodi:version="0.32"
+   inkscape:version="0.48.3.1 r9886"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   xml:space="preserve"
+   sodipodi:docname="Swahili_keyboard.svg"
+   width="800"
+   height="247"
+   viewBox="0 0 801 248"
+   style="display:inline"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+
+  <metadata
+   id="metadata316">
+    <rdf:RDF>
+      <cc:Work
+   rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+   rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+   id="base"
+   inkscape:window-width="1280"
+   inkscape:window-height="974"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0.0"
+   borderopacity="1.0"
+   bordercolor="#666666"
+   pagecolor="#ffffff"
+   showguides="true"
+   inkscape:guide-bbox="true"
+   inkscape:zoom="1.2"
+   inkscape:cx="413.92178"
+   inkscape:cy="50.026841"
+   inkscape:current-layer="layer3"
+   inkscape:window-x="-2"
+   inkscape:window-y="-3"
+   showgrid="true"
+   inkscape:window-maximized="1"
+   inkscape:snap-bbox="true"
+   inkscape:bbox-nodes="true"
+   inkscape:snap-nodes="true"
+   inkscape:snap-grids="true"
+   inkscape:bbox-paths="false"
+   fit-margin-top="0"
+   fit-margin-left="0"
+   fit-margin-right="0"
+   fit-margin-bottom="0"
+   units="px"
+   inkscape:snap-bbox-edge-midpoints="false"
+   inkscape:snap-bbox-midpoints="false"
+   inkscape:snap-global="false"
+   inkscape:snap-page="true"
+   inkscape:snap-smooth-nodes="true"
+   gridtolerance="10"
+   guidetolerance="10000">
+  </sodipodi:namedview>
+
+<defs
+   id="defs4">
+   <marker
+   id="TriangleOutM"
+   inkscape:stockid="TriangleOutM"
+   style="overflow:visible"
+   orient="auto"
+   refX="0"
+   refY="0">
+    <path
+   id="path4356"
+   style="fill-rule:evenodd;stroke:black;stroke-width:1pt;marker-start:none"
+   d="M 5.77,0 -2.88,5 -2.88,-5 5.77,0 z"
+   transform="scale(0.4,0.4)"
+   inkscape:connector-curvature="0" />
+  </marker>
+  <style
+   id="style6"
+   type="text/css">
+
+<!--  General     : «#» style for «id» ; «.» class style (for particular style in group)
+      DRAW styles : K_ : particular key style
+      TEXT styles : «text» : common style for all text | T_ : text style | _L : large ; _s : very small -->
+    
+    
+
+      text            { writing-mode:lr-tb;font-weight:bold;font-family:Nimbus Sans L, Arial, sans-serif;}
+      #T_others       { font-size:16px; text-align:start ;text-anchor:start ;}
+      #T_alterninsc   { font-size:14px; fill:dimgray    ;fill-opacity:1 ;stroke:none; text-align:start ;text-anchor:start ;}
+      #T_stdletters   { font-size:21px; fill:black      ;fill-opacity:1 ;stroke:none; text-align:center;text-anchor:middle;}
+      #T_stdspecial   { font-size:18px; fill:black      ;fill-opacity:1 ;stroke:none; text-align:center;text-anchor:middle;}
+      #T_intodisuse   { font-size:18px; fill:dimgray    ;fill-opacity:1 ;stroke:none; text-align:center;text-anchor:middle;}
+      #T_AltGr        { font-size:18px; fill:blue       ;fill-opacity:1 ;stroke:none; text-align:center;text-anchor:middle;}
+      #T_AltGrSh      { font-size:18px; fill:dodgerblue ;fill-opacity:1 ;stroke:none; text-align:center;text-anchor:middle;}
+      .T_UpAltGr      { font-size:18px; fill:skyblue    ;}
+      .T_DeadKey      { font-size:21px; fill:red        ;}
+
+      #T_Lx_AltGr     { font-size:18px; fill:purple     ;fill-opacity:1 ;stroke:none; text-align:center;text-anchor:middle;}
+      #T_Lx_AltGrSh   { font-size:18px; fill:blueviolet ;fill-opacity:1 ;stroke:none; text-align:center;text-anchor:middle;}
+      .T_Lx_UpAltGr   { font-size:18px; fill:violet     ;font-family:Sans;}
+      .T_Lx_DeadKey   { font-size:21px; fill:darkorange ;fill-opacity:1 ;stroke:darkorange;stroke-width:0.6;}
+
+      .T_size_s       { font-size:12px; fill:black      ;fill-opacity:1 ;stroke:none; text-align:start ;text-anchor:start ;}
+      .T_size_L       { font-size:21px; }
+
+      #GlyphKey       { fill:white      ;stroke:grey   ;stroke-width:1;}
+      #ModifKey       { fill:gainsboro  ;stroke:grey   ;stroke-width:1;}
+      #OtherKey       { fill:silver     ;stroke:grey   ;stroke-width:1;}
+      .K_AltGr        { fill:#D5EEF8    ;stroke:grey   ;stroke-width:1;}
+
+     
+       
+    </style>        
+</defs>
+<!-- ========  Keyboard background ======== -->
+<g
+   inkscape:groupmode="layer"
+   id="layer1"
+   inkscape:label="Background"
+   style="display:inline">
+      <rect
+   id="Bckgrd"
+   x="0"
+   y="0"
+   width="800"
+   height="247"
+   style="fill:#f5deb3;stroke:none"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90" />
+</g>
+
+<!-- ========     Keys      ======== -->
+<g
+   inkscape:groupmode="layer"
+   id="layer2"
+   inkscape:label="Keys"
+   style="display:inline">
+  <g
+   id="GlyphKey"
+   style="fill:#ffffff;stroke:#808080;stroke-width:1"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+<!-- Num keys -->
+<!-- Standard letters keys -->
+<!-- Specials glyphs keys -->
+<!-- Ponctuation keys -->
+    <rect
+   id="K_kb2a"
+   x="2"
+   y="2"
+   width="48"
+   height="44"
+   rx="6"
+   ry="6" />
+    <use
+   id="K_kb2b"
+   xlink:href="#K_kb2a"
+   transform="translate(54,0)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb2c"
+   xlink:href="#K_kb2a"
+   transform="translate(108,0)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb2d"
+   xlink:href="#K_kb2a"
+   transform="translate(162,0)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb2e"
+   xlink:href="#K_kb2a"
+   transform="translate(216,0)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb2f"
+   xlink:href="#K_kb2a"
+   transform="translate(270,0)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb2g"
+   xlink:href="#K_kb2a"
+   transform="translate(324,0)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb2h"
+   xlink:href="#K_kb2a"
+   transform="translate(378,0)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb2i"
+   xlink:href="#K_kb2a"
+   transform="translate(432,0)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb2j"
+   xlink:href="#K_kb2a"
+   transform="translate(486,0)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb2k"
+   xlink:href="#K_kb2a"
+   transform="translate(540,0)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb2l"
+   xlink:href="#K_kb2a"
+   transform="translate(594,0)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb2m"
+   xlink:href="#K_kb2a"
+   transform="translate(648,0)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+
+    <use
+   id="K_kb3b"
+   xlink:href="#K_kb2a"
+   transform="translate(80,50)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb3c"
+   xlink:href="#K_kb2a"
+   transform="translate(134,50)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb3d"
+   xlink:href="#K_kb2a"
+   transform="translate(188,50)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb3e"
+   xlink:href="#K_kb2a"
+   transform="translate(242,50)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb3f"
+   xlink:href="#K_kb2a"
+   transform="translate(296,50)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb3g"
+   xlink:href="#K_kb2a"
+   transform="translate(350,50)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb3h"
+   xlink:href="#K_kb2a"
+   transform="translate(404,50)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb3i"
+   xlink:href="#K_kb2a"
+   transform="translate(458,50)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb3j"
+   xlink:href="#K_kb2a"
+   transform="translate(512,50)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb3k"
+   xlink:href="#K_kb2a"
+   transform="translate(566,50)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb3l"
+   xlink:href="#K_kb2a"
+   transform="translate(620,50)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb3m"
+   xlink:href="#K_kb2a"
+   transform="translate(674,50)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+
+    <use
+   id="K_kb4b"
+   xlink:href="#K_kb2a"
+   transform="translate(96,100)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb4c"
+   xlink:href="#K_kb2a"
+   transform="translate(150,100)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb4d"
+   xlink:href="#K_kb2a"
+   transform="translate(204,100)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb4e"
+   xlink:href="#K_kb2a"
+   transform="translate(258,100)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb4f"
+   xlink:href="#K_kb2a"
+   transform="translate(312,100)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb4g"
+   xlink:href="#K_kb2a"
+   transform="translate(366,100)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb4h"
+   xlink:href="#K_kb2a"
+   transform="translate(420,100)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb4i"
+   xlink:href="#K_kb2a"
+   transform="translate(474,100)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb4j"
+   xlink:href="#K_kb2a"
+   transform="translate(528,100)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb4k"
+   xlink:href="#K_kb2a"
+   transform="translate(582,100)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb4l"
+   xlink:href="#K_kb2a"
+   transform="translate(636,100)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb4m"
+   xlink:href="#K_kb2a"
+   transform="translate(690,100)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+
+    <use
+   id="K_kb5b"
+   xlink:href="#K_kb2a"
+   transform="translate(62,150)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb5c"
+   xlink:href="#K_kb2a"
+   transform="translate(116,150)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb5d"
+   xlink:href="#K_kb2a"
+   transform="translate(170,150)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb5e"
+   xlink:href="#K_kb2a"
+   transform="translate(224,150)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb5f"
+   xlink:href="#K_kb2a"
+   transform="translate(278,150)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb5g"
+   xlink:href="#K_kb2a"
+   transform="translate(332,150)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb5h"
+   xlink:href="#K_kb2a"
+   transform="translate(386,150)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb5i"
+   xlink:href="#K_kb2a"
+   transform="translate(440,150)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb5j"
+   xlink:href="#K_kb2a"
+   transform="translate(494,150)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb5k"
+   xlink:href="#K_kb2a"
+   transform="translate(548,150)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+    <use
+   id="K_kb5l"
+   xlink:href="#K_kb2a"
+   transform="translate(602,150)"
+   x="0"
+   y="0"
+   width="801"
+   height="248" />
+
+    <rect
+   id="K_kb6d"
+   x="188"
+   y="202"
+   width="364"
+   height="44"
+   rx="6"
+   ry="6" />
+  </g>
+
+<!-- Modification keys -->
+  <g
+   id="ModifKey"
+   style="fill:#dcdcdc;stroke:#808080;stroke-width:1"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+    <rect
+   id="K_kb4a"
+   x="2"
+   y="102"
+   width="90"
+   height="44"
+   rx="6"
+   ry="6" />
+    <rect
+   id="K_kb5a"
+   x="2"
+   y="152"
+   width="56"
+   height="44"
+   rx="6"
+   ry="6" />
+    <rect
+   id="K_kb5m"
+   x="658"
+   y="152"
+   width="142"
+   height="44"
+   rx="6"
+   ry="6" />
+    <rect
+   id="K_kb6k"
+   x="558"
+   y="202"
+   width="56"
+   height="44"
+   rx="6"
+   ry="6"
+   class="K_AltGr"
+   style="fill:#d5eef8;stroke:#808080;stroke-width:1" />
+  </g>
+  
+<!-- Others keys  -->
+  <g
+   id="OtherKey"
+   style="fill:#c0c0c0;stroke:#808080;stroke-width:1"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+<!-- Backspace  --> <rect
+   id="K_kb2n"
+   x="704"
+   y="2"
+   width="96"
+   height="44"
+   rx="6"
+   ry="6" />
+
+<!-- Tabulation --> <rect
+   id="K_kb3a"
+   x="2"
+   y="52"
+   width="74"
+   height="44"
+   rx="6"
+   ry="6" />
+<!-- Enter key --> 
+    <path
+   id="K_kb3n"
+   sodipodi:nodetypes="ssssssssccss"
+   d="m 736.16,51.79 c -3.44,0 -5.93,2.56 -5.94,5.24 l -0.06,32.6 c -0.01,3.31 2.69,6.37 6,6.37 l 3.99,0 c 3.081,0 5.7,3.04 5.7,5.59 0,2.55 0.24,24.57 0.24,37.85 0,1.99 2.02,5.97 6,5.97 13.94,0 27.88,0 41.82,0 3.98,0 5.97,-3.98 5.97,-5.97 0,-27.22 0,-54.44 0,-81.66 0,-1.99 -1.99,-6 -5.97,-6 z"
+   inkscape:connector-curvature="0" />
+
+<!-- Ctrl 1 --> <rect
+   id="K_kb6a"
+   x="2"
+   y="202"
+   width="56"
+   height="44"
+   rx="6"
+   ry="6" />
+<!-- Win  1 --> <rect
+   id="K_kb6b"
+   x="64"
+   y="202"
+   width="56"
+   height="44"
+   rx="6"
+   ry="6" />
+<!-- Alt    --> <rect
+   id="K_kb6c"
+   x="126"
+   y="202"
+   width="56"
+   height="44"
+   rx="6"
+   ry="6" />
+<!-- Win  2 --> <rect
+   id="K_kb6l"
+   x="620"
+   y="202"
+   width="56"
+   height="44"
+   rx="6"
+   ry="6" />
+<!-- Menu   --> <rect
+   id="K_kb6m"
+   x="682"
+   y="202"
+   width="56"
+   height="44"
+   rx="6"
+   ry="6" />
+<!-- Ctrl 2 --> <rect
+   id="K_kb6n"
+   x="744"
+   y="202"
+   width="56"
+   height="44"
+   rx="6"
+   ry="6" />
+  </g>
+  
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="546.19855"
+   y="84.777069"
+   id="text4608-3"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4610-1"
+     x="546.19855"
+     y="84.777069">ؤ</tspan></text>
+
+</g>
+<!-- ========     Key signs    ======== -->
+
+<!-- ========     Inscriptions layer    ======== -->
+<g
+   inkscape:groupmode="layer"
+   id="layer3"
+   inkscape:label="Swahili"
+   style="display:inline"><text
+   xml:space="preserve"
+   style="font-size:28.11335945px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="570.60187"
+   y="85.525688"
+   id="text4418"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4420"
+     x="570.60187"
+     y="85.525688">پ</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11335945px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="86.907097"
+   y="88.483887"
+   id="text4422"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4424"
+     x="86.907097"
+     y="88.483887">ق</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11335945px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="143.39781"
+   y="84.287537"
+   id="text4426"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4428"
+     x="143.39781"
+     y="84.287537">و</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11335945px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="250.73381"
+   y="83.750763"
+   id="text4434"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4436"
+     x="250.73381"
+     y="83.750763">ر</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11335945px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="300.53424"
+   y="89.47364"
+   id="text4438"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4440"
+     x="300.53424"
+     y="89.47364">ت</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11335945px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="356.99219"
+   y="86.708969"
+   id="text4442"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4444"
+     x="356.99219"
+     y="86.708969">ي</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11335945px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="415.48047"
+   y="95.830528"
+   id="text4446"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4448"
+     x="415.48047"
+     y="95.830528">ُ</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11335945px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="468.74759"
+   y="80.4282"
+   id="text4450"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4452"
+     x="468.74759"
+     y="80.4282">ِ</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11335945px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="521.91095"
+   y="94.696144"
+   id="text4454"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4456"
+     x="521.91095"
+     y="94.696144">ٗ</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="197.79733"
+   y="82.232559"
+   id="text4464"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4466"
+     x="197.79733"
+     y="82.232559">ٖ</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="107.3841"
+   y="142.68785"
+   id="text4468"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4470"
+     x="107.3841"
+     y="142.68785">َ</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="154.48224"
+   y="136.17979"
+   id="text4472"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4474"
+     x="154.48224"
+     y="136.17979">س</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="211.27979"
+   y="136.77144"
+   id="text4476"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4478"
+     x="211.27979"
+     y="136.77144">د</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="260.38602"
+   y="137.95473"
+   id="text4480"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4482"
+     x="260.38602"
+     y="137.95473">ف</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="318.36688"
+   y="137.95471"
+   id="text4484"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4486"
+     x="318.36688"
+     y="137.95471">ڠ</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="375.98926"
+   y="137.95473"
+   id="text4488"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4490"
+     x="375.98926"
+     y="137.95473">ه</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="424.8623"
+   y="134.40488"
+   id="text4492"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4494"
+     x="424.8623"
+     y="134.40488">ج</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="479.65411"
+   y="141.52324"
+   id="text4496"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4498"
+     x="479.65411"
+     y="141.52324">ك</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="534.90759"
+   y="140.91292"
+   id="text4500"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4502"
+     x="534.90759"
+     y="140.91292">ل</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="589.93024"
+   y="138.54637"
+   id="text4504"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4506"
+     x="589.93024"
+     y="138.54637">؛</tspan></text>
+
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="71.652451"
+   y="170.3625"
+   id="text4512"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4514"
+     x="71.652451"
+     y="170.3625">آ</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="124.90016"
+   y="185.87767"
+   id="text4516"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4518"
+     x="124.90016"
+     y="185.87767">ز</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="175.18968"
+   y="184.10274"
+   id="text4520"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4522"
+     x="175.18968"
+     y="184.10274">خ</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="229.02904"
+   y="184.69438"
+   id="text4524"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4526"
+     x="229.02904"
+     y="184.69438">چ</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="282.27676"
+   y="189.78598"
+   id="text4528"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4530"
+     x="282.27676"
+     y="189.78598">ڤ</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="338.48267"
+   y="188.60269"
+   id="text4532"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4534"
+     x="338.48267"
+     y="188.60269">ب</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="394.09695"
+   y="190.61079"
+   id="text4536"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4538"
+     x="394.09695"
+     y="190.61079">ن</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="446.75305"
+   y="187.4194"
+   id="text4540"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4542"
+     x="446.75305"
+     y="187.4194">م</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="501.18405"
+   y="186.82777"
+   id="text4544"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4546"
+     x="501.18405"
+     y="186.82777">،</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="555.61505"
+   y="185.64449"
+   id="text4548"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4550"
+     x="555.61505"
+     y="185.64449">۔</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="608.27112"
+   y="188.24423"
+   id="text4552"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4554"
+     x="608.27112"
+     y="188.24423">؟</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="108.42304"
+   y="74.348091"
+   id="text4556"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4558"
+     x="108.42304"
+     y="74.348091" /></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="111.95857"
+   y="82.008415"
+   id="text4564"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4566"
+     x="111.95857"
+     y="82.008415" /></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="97.22718"
+   y="66.687775"
+   id="text4568"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4570"
+     x="97.22718"
+     y="66.687775" /></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="194.12219"
+   y="64.591194"
+   id="text4572"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4574"
+     x="194.12219"
+     y="64.591194">ي</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="250.43365"
+   y="64.920006"
+   id="text4576"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4578"
+     x="250.43365"
+     y="64.920006" /></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="300.61761"
+   y="67.5494"
+   id="text4580"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4582"
+     x="300.61761"
+     y="67.5494">ث</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="355.64026"
+   y="64.591194"
+   id="text4584"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4586"
+     x="355.64026"
+     y="64.591194">ى</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="413.62112"
+   y="62.224636"
+   id="text4588"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4590"
+     x="413.62112"
+     y="62.224636">و</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="464.50226"
+   y="64.591202"
+   id="text4592"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4594"
+     x="464.50226"
+     y="64.591202">ي</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="520.70819"
+   y="61.632996"
+   id="text4596"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4598"
+     x="520.70819"
+     y="61.632996">و</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="576.29205"
+   y="66.687775"
+   id="text4600"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4602"
+     x="576.29205"
+     y="66.687775" /></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="116.08336"
+   y="63.152237"
+   id="text4604"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4606"
+     x="116.08336"
+     y="63.152237" /></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="169.27327"
+   y="84.707001"
+   id="text4608"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4610"
+     x="169.27327"
+     y="84.707001">ؤ</tspan></text>
+
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="278.12866"
+   y="86.722466"
+   id="text4616"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4618"
+     x="278.12866"
+     y="86.722466" /></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="326.0582"
+   y="90.031776"
+   id="text4620"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4622"
+     x="326.0582"
+     y="90.031776">ط</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="379.66443"
+   y="87.07357"
+   id="text4624"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4626"
+     x="379.66443"
+     y="87.07357">ئ</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="439.65335"
+   y="74.68396"
+   id="text4628"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4630"
+     x="439.65335"
+     y="74.68396">ٌ</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="494.67596"
+   y="57.293175"
+   id="text4632"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4634"
+     x="494.67596"
+     y="57.293175">ٍ</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="559.14758"
+   y="175.08887"
+   id="text4636"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4638"
+     x="559.14758"
+     y="175.08887">ْ</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="601.63"
+   y="87.311722"
+   id="text4640"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4642"
+     x="601.63"
+     y="87.311722" /></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="652.41101"
+   y="90.031776"
+   id="text4644"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4646"
+     x="652.41101"
+     y="90.031776">[</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="709.44177"
+   y="90.856583"
+   id="text4648"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4650"
+     x="709.44177"
+     y="90.856583">]</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="132.12515"
+   y="142.09621"
+   id="text4652"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4654"
+     x="132.12515"
+     y="142.09621">أ</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="173.79062"
+   y="137.59625"
+   id="text4656"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4658"
+     x="173.79062"
+     y="137.59625">ص</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="227.50468"
+   y="137.36307"
+   id="text4660"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4662"
+     x="227.50468"
+     y="137.36307">ض</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="295.21707"
+   y="136.80919"
+   id="text4664"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4666"
+     x="295.21707"
+     y="136.80919" /></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="337.44217"
+   y="137.36307"
+   id="text4668"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4670"
+     x="337.44217"
+     y="137.36307">گ</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="401.19666"
+   y="137.96661"
+   id="text4672"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4674"
+     x="401.19666"
+     y="137.96661">ة</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="454.90536"
+   y="137.39845"
+   id="text4676"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4678"
+     x="454.90536"
+     y="137.39845" /></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="503.22433"
+   y="136.21994"
+   id="text4680"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4682"
+     x="503.22433"
+     y="136.21994" /></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="565.09619"
+   y="139.75546"
+   id="text4684"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4686"
+     x="565.09619"
+     y="139.75546" /></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="614.59363"
+   y="138.57697"
+   id="text4688"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4690"
+     x="614.59363"
+     y="138.57697">;</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="670.98505"
+   y="140.78764"
+   id="text4692"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4694"
+     x="670.98505"
+     y="140.78764">'</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="724.23279"
+   y="140.91293"
+   id="text4696"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4698"
+     x="724.23279"
+     y="140.91293">#</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="133.8304"
+   y="124.11024"
+   id="text4700"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4702"
+     x="133.8304"
+     y="124.11024">ً</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="145.37444"
+   y="188.24423"
+   id="text4704"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4706"
+     x="145.37444"
+     y="188.24423">ظ</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="205.06097"
+   y="186.30667"
+   id="text4708"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4710"
+     x="205.06097"
+     y="186.30667" /></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="256.91547"
+   y="185.71741"
+   id="text4712"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4714"
+     x="256.91547"
+     y="185.71741">ڮ</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="315.25177"
+   y="185.12816"
+   id="text4716"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4718"
+     x="315.25177"
+     y="185.12816" /></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="368.28479"
+   y="189.25294"
+   id="text4720"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4722"
+     x="368.28479"
+     y="189.25294" /></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="423.6748"
+   y="186.30667"
+   id="text4724"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4726"
+     x="423.6748"
+     y="186.30667" /></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="469.63675"
+   y="186.89592"
+   id="text4728"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4730"
+     x="469.63675"
+     y="186.89592" /></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="635.48657"
+   y="189.06905"
+   id="text4732"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4734"
+     x="635.48657"
+     y="189.06905">/</tspan></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="579.23828"
+   y="185.71741"
+   id="text4325"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4327"
+     x="579.23828"
+     y="185.71741">.</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="526.98309"
+   y="186.23615"
+   id="text4329"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4331"
+     x="526.98309"
+     y="186.23615">,</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="116.08336"
+   y="71.991074"
+   id="text4774"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4776"
+     x="116.08336"
+     y="71.991074" /></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="170.88414"
+   y="63.152241"
+   id="text4778"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4780"
+     x="170.88414"
+     y="63.152241">ۏ</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="277.5394"
+   y="69.0448"
+   id="text4782"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4784"
+     x="277.5394"
+     y="69.0448" /></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="119.6189"
+   y="83.186928"
+   id="text4786"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4788"
+     x="119.6189"
+     y="83.186928" /></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="271.64685"
+   y="82.597679"
+   id="text4790"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4792"
+     x="271.64685"
+     y="82.597679" /></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="323.69162"
+   y="69.324333"
+   id="text4794"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4796"
+     x="323.69162"
+     y="69.324333">ٹ</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="575.11353"
+   y="66.098518"
+   id="text4798"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4800"
+     x="575.11353"
+     y="66.098518" /></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="649.09436"
+   y="67.782578"
+   id="text4802"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4804"
+     x="649.09436"
+     y="67.782578">{</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="710.2666"
+   y="68.965858"
+   id="text4806"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4808"
+     x="710.2666"
+     y="68.965858">}</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="120.20815"
+   y="116.18525"
+   id="text4810"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4812"
+     x="120.20815"
+     y="116.18525" /></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="107.74256"
+   y="117.83892"
+   id="text4814"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4816"
+     x="107.74256"
+     y="117.83892">ا</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="70.531616"
+   y="186.2459"
+   id="text4818"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4820"
+     x="70.531616"
+     y="186.2459">إ</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="155.07387"
+   y="116.65564"
+   id="text4822"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4824"
+     x="155.07387"
+     y="116.65564">ش</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="211.2798"
+   y="119.61385"
+   id="text4826"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4828"
+     x="211.2798"
+     y="119.61385">ذ</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="237.31201"
+   y="119.61385"
+   id="text4830"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4832"
+     x="237.31201"
+     y="119.61385">ڈ</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="275.77164"
+   y="116.7745"
+   id="text4834"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4836"
+     x="275.77164"
+     y="116.7745" /></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="318.36688"
+   y="110.27289"
+   id="text4838"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4840"
+     x="318.36688"
+     y="110.27289">غ</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="399.42175"
+   y="114.28907"
+   id="text4842"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4844"
+     x="399.42175"
+     y="114.28907">ء</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="372.20624"
+   y="110.73922"
+   id="text4846"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4848"
+     x="372.20624"
+     y="110.73922">ح</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="436.04919"
+   y="116.18525"
+   id="text4850"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4852"
+     x="436.04919"
+     y="116.18525" /></text>
+
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="476.92673"
+   y="118.43055"
+   id="text4858"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4860"
+     x="476.92673"
+     y="118.43055">ڪ</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="508.52762"
+   y="127.97036"
+   id="text4862"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4864"
+     x="508.52762"
+     y="127.97036" /></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="562.73914"
+   y="132.6844"
+   id="text4866"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4868"
+     x="562.73914"
+     y="132.6844" /></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="615.24554"
+   y="116.42246"
+   id="text4870"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4872"
+     x="615.24554"
+     y="116.42246">:</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="661.5188"
+   y="118.8969"
+   id="text4874"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4876"
+     x="661.5188"
+     y="118.8969">@</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="503.55997"
+   y="175.94855"
+   id="text4878"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4880"
+     x="503.55997"
+     y="175.94855">ٔ</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="646.91028"
+   y="123.89541"
+   id="text4882"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4884"
+     x="646.91028"
+     y="123.89541">ّ</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="724.19818"
+   y="117.38999"
+   id="text4886"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4888"
+     x="724.19818"
+     y="117.38999">~</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="98.283539"
+   y="172.35414"
+   id="text4890"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4892"
+     x="98.283539"
+     y="172.35414">ٱ</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="95.425972"
+   y="190.55862"
+   id="text4894"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4896"
+     x="95.425972"
+     y="190.55862">ٰ</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="126.08344"
+   y="165.76187"
+   id="text4898"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4900"
+     x="126.08344"
+     y="165.76187">ژ</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="201.52544"
+   y="168.629"
+   id="text4902"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4904"
+     x="201.52544"
+     y="168.629" /></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="309.94846"
+   y="165.09348"
+   id="text4906"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4908"
+     x="309.94846"
+     y="165.09348" /></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="365.3385"
+   y="172.16454"
+   id="text4910"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4912"
+     x="365.3385"
+     y="172.16454" /></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="394.6886"
+   y="165.76186"
+   id="text4914"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4916"
+     x="394.6886"
+     y="165.76186">ݝ</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="422.49631"
+   y="189.25294"
+   id="text4918"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4920"
+     x="422.49631"
+     y="189.25294" /></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="466.1012"
+   y="172.75378"
+   id="text4922"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan4924"
+     x="466.1012"
+     y="172.75378" /></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="518.93329"
+   y="168.12843"
+   id="text4926"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4928"
+     x="518.93329"
+     y="168.12843">&lt;</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="575.73083"
+   y="167.53679"
+   id="text4930"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4932"
+     x="575.73083"
+     y="167.53679">&gt;</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="634.6618"
+   y="168.72008"
+   id="text4934"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4936"
+     x="634.6618"
+     y="168.72008">?</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="59.819618"
+   y="37.375702"
+   id="text4938"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4940"
+     x="59.819618"
+     y="37.375702">١</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="115.43391"
+   y="37.967342"
+   id="text4942"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4944"
+     x="115.43391"
+     y="37.967342">٢</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="169.27325"
+   y="37.375702"
+   id="text4946"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4948"
+     x="169.27325"
+     y="37.375702">٣</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="223.11263"
+   y="38.558983"
+   id="text4950"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4952"
+     x="223.11263"
+     y="38.558983">٤</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="276.36035"
+   y="39.975441"
+   id="text4954"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4956"
+     x="276.36035"
+     y="39.975441">٥</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="330.79135"
+   y="37.375702"
+   id="text4958"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4960"
+     x="330.79135"
+     y="37.375702">٦</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="384.63071"
+   y="37.967342"
+   id="text4962"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4964"
+     x="384.63071"
+     y="37.967342">٧</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="439.65332"
+   y="37.375698"
+   id="text4966"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4968"
+     x="439.65332"
+     y="37.375698">٨</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="492.90106"
+   y="37.375702"
+   id="text4970"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4972"
+     x="492.90106"
+     y="37.375702">٩</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="547.00824"
+   y="39.742264"
+   id="text4974"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4976"
+     x="547.00824"
+     y="39.742264">٠</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="600.93823"
+   y="39.742264"
+   id="text4978"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4980"
+     x="600.93823"
+     y="39.742264">؍</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="331.38297"
+   y="20.218102"
+   id="text4982"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4984"
+     x="331.38297"
+     y="20.218102">۩</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="383.44739"
+   y="21.401386"
+   id="text4986"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4988"
+     x="383.44739"
+     y="21.401386">۝</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="437.28677"
+   y="20.809744"
+   id="text4990"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4992"
+     x="437.28677"
+     y="20.809744">۞</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="492.30939"
+   y="16.668255"
+   id="text4994"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4996"
+     x="492.30939"
+     y="16.668255">﴾</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="547.92371"
+   y="16.668255"
+   id="text4998"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5000"
+     x="547.92371"
+     y="16.668255">﴿</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="603.39777"
+   y="14.833277"
+   id="text5002"
+   sodipodi:linespacing="125%"
+   transform="matrix(1.0040486,0,0,1.0040486,-1.1194332,0)"><tspan
+     sodipodi:role="line"
+     id="tspan5004"
+     x="603.39777"
+     y="14.833277" /></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="88.810043"
+   y="39.150623"
+   id="text5006"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5008"
+     x="88.810043"
+     y="39.150623">1</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="140.28284"
+   y="38.558983"
+   id="text5010"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5012"
+     x="140.28284"
+     y="38.558983">2</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="195.30548"
+   y="37.967342"
+   id="text5014"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5016"
+     x="195.30548"
+     y="37.967342">3</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="249.73648"
+   y="39.150623"
+   id="text5018"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5020"
+     x="249.73648"
+     y="39.150623">4</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="302.98419"
+   y="39.150623"
+   id="text5022"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5024"
+     x="302.98419"
+     y="39.150623">5</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="357.41519"
+   y="39.742268"
+   id="text5026"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5028"
+     x="357.41519"
+     y="39.742268">6</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="412.43784"
+   y="39.150623"
+   id="text5030"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5032"
+     x="412.43784"
+     y="39.150623">7</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="465.0939"
+   y="39.150623"
+   id="text5034"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5036"
+     x="465.0939"
+     y="39.150623">8</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="519.52496"
+   y="39.150623"
+   id="text5038"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5040"
+     x="519.52496"
+     y="39.150623">9</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="572.77264"
+   y="40.333908"
+   id="text5042"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5044"
+     x="572.77264"
+     y="40.333908">0</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="628.3869"
+   y="39.150623"
+   id="text5046"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5048"
+     x="628.3869"
+     y="39.150623">-</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="679.26807"
+   y="41.517189"
+   id="text5050"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5052"
+     x="679.26807"
+     y="41.517189">=</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="90.584969"
+   y="17.851538"
+   id="text5054"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5056"
+     x="90.584969"
+     y="17.851538">!</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="140.87448"
+   y="19.626461"
+   id="text5058"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5060"
+     x="140.87448"
+     y="19.626461">&quot;</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="195.30547"
+   y="19.034821"
+   id="text5062"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5064"
+     x="195.30547"
+     y="19.034821">£</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="250.91977"
+   y="19.034821"
+   id="text5066"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5068"
+     x="250.91977"
+     y="19.034821">$</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="299.43433"
+   y="18.443178"
+   id="text5070"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5072"
+     x="299.43433"
+     y="18.443178">%</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="352.09042"
+   y="17.851538"
+   id="text5074"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5076"
+     x="352.09042"
+     y="17.851538">^</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="409.47964"
+   y="19.034821"
+   id="text5078"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5080"
+     x="409.47964"
+     y="19.034821">&amp;</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="466.86887"
+   y="14.893331"
+   id="text5082"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5084"
+     x="466.86887"
+     y="14.893331">*</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="626.612"
+   y="15.484972"
+   id="text5086"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5088"
+     x="626.612"
+     y="15.484972">_</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="679.26807"
+   y="17.851538"
+   id="text5090"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5092"
+     x="679.26807"
+     y="17.851538">+</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="520.11652"
+   y="16.076612"
+   id="text5094"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5096"
+     x="520.11652"
+     y="16.076612">(</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="575.13922"
+   y="16.076614"
+   id="text5098"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5100"
+     x="575.13922"
+     y="16.076614">)</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:22.08906937px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="11.305034"
+   y="177.23622"
+   id="text5102"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5104"
+     x="11.305034"
+     y="177.23622">Shift</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:22.08906937px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="714.07056"
+   y="177.67764"
+   id="text5102-8"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5104-6"
+     x="714.07056"
+     y="177.67764">Shift</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:22.08906937px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="565.45703"
+   y="228.35054"
+   id="text5127"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan5129"
+     x="565.45703"
+     y="228.35054">AltGr</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="216.55156"
+   y="86.577957"
+   id="text4624-0"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4626-2"
+     x="216.55156"
+     y="86.577957">ئ</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="487.47733"
+   y="87.916687"
+   id="text4624-5"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4626-7"
+     x="487.47733"
+     y="87.916687">ئ</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="642.30969"
+   y="133.37103"
+   id="text6288"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan6290"
+     x="642.30969"
+     y="133.37103">ع</tspan></text>
+
+<text
+   xml:space="preserve"
+   style="font-size:28.11336136px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   x="438.09595"
+   y="85.613777"
+   id="text4608-2"
+   sodipodi:linespacing="125%"
+   inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><tspan
+     sodipodi:role="line"
+     id="tspan4610-8"
+     x="438.09595"
+     y="85.613777">ؤ</tspan></text>
+
+</g><g
+   inkscape:groupmode="layer"
+   id="layer4"
+   inkscape:label="Key"
+   sodipodi:insensitive="true"><g
+     id="g6233"
+     inkscape:export-filename="/home/kevin/andika/layout/key.png"
+     inkscape:export-xdpi="90"
+     inkscape:export-ydpi="90"><rect
+   style="fill:#ffccaa"
+   y="345.89474"
+   x="280.85086"
+   height="48.529015"
+   width="313.7652"
+   id="rect5396" /><rect
+   y="345.89474"
+   x="29.838734"
+   height="49.365719"
+   width="250.17543"
+   id="rect6181"
+   style="fill:#afc6e9;fill-opacity:0.44571431" /><use
+   id="K_kb4d-1"
+   xlink:href="#K_kb2a"
+   transform="matrix(1.8181136,0,0,1.8181136,236.88955,350.789)"
+   x="0"
+   y="0"
+   width="801"
+   height="248"
+   style="fill:#ffffff;fill-opacity:0.44571431;stroke:#808080;stroke-width:1;display:inline" /><text
+   sodipodi:linespacing="125%"
+   id="text4476-0"
+   y="417.48019"
+   x="250.76659"
+   style="font-size:51.11328506px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   xml:space="preserve"><tspan
+     y="417.48019"
+     x="250.76659"
+     id="tspan4478-2"
+     sodipodi:role="line">د</tspan></text>
+
+<rect
+   y="396.9339"
+   x="280.01416"
+   height="49.365707"
+   width="254.35896"
+   id="rect6183"
+   style="fill:#ccaaff;fill-opacity:0.44571431" /><text
+   sodipodi:linespacing="125%"
+   id="text4660-8"
+   y="418.55588"
+   x="280.26529"
+   style="font-size:51.11328506px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   xml:space="preserve"><tspan
+     y="418.55588"
+     x="280.26529"
+     id="tspan4662-5"
+     sodipodi:role="line">ض</tspan></text>
+
+<text
+   sodipodi:linespacing="125%"
+   id="text4826-1"
+   y="386.2858"
+   x="250.76662"
+   style="font-size:51.11328506px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   xml:space="preserve"><tspan
+     y="386.2858"
+     x="250.76662"
+     id="tspan4828-3"
+     sodipodi:role="line">ذ</tspan></text>
+
+<text
+   sodipodi:linespacing="125%"
+   id="text4830-6"
+   y="386.2858"
+   x="298.0961"
+   style="font-size:51.11328506px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   xml:space="preserve"><tspan
+     y="386.2858"
+     x="298.0961"
+     id="tspan4832-1"
+     sodipodi:role="line">ڈ</tspan></text>
+
+<text
+   sodipodi:linespacing="125%"
+   id="text5374"
+   y="418.68829"
+   x="33.185562"
+   style="font-size:22.08906937px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   xml:space="preserve"><tspan
+     y="418.68829"
+     x="33.185562"
+     id="tspan5376"
+     sodipodi:role="line">Accessed by pressing the key</tspan></text>
+
+<text
+   sodipodi:linespacing="100%"
+   id="text5378"
+   y="365.13901"
+   x="34.524281"
+   style="font-size:22.08906937px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   xml:space="preserve"><tspan
+     y="365.13901"
+     x="34.524281"
+     id="tspan5380"
+     sodipodi:role="line">Accessed by pressing Shift</tspan><tspan
+     id="tspan5382"
+     y="387.22809"
+     x="34.524281"
+     sodipodi:role="line">together with the key</tspan></text>
+
+<text
+   sodipodi:linespacing="100%"
+   id="text5384"
+   y="363.46561"
+   x="336.07355"
+   style="font-size:22.08906937px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   xml:space="preserve"><tspan
+     y="363.46561"
+     x="336.07355"
+     id="tspan5386"
+     sodipodi:role="line">Accessed by pressing AltGr together</tspan><tspan
+     id="tspan5388"
+     y="385.55469"
+     x="336.07355"
+     sodipodi:role="line">with Shift together with the key</tspan></text>
+
+<text
+   sodipodi:linespacing="100%"
+   id="text5390"
+   y="415.34143"
+   x="336.24094"
+   style="font-size:22.08906937px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Scheherazade;-inkscape-font-specification:Scheherazade"
+   xml:space="preserve"><tspan
+     y="415.34143"
+     x="336.24094"
+     id="tspan5392"
+     sodipodi:role="line">Accessed by pressing AltGr</tspan><tspan
+     id="tspan5394"
+     y="437.43051"
+     x="336.24094"
+     sodipodi:role="line">together with the key</tspan></text>
+
+</g></g>
+</svg>

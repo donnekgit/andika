@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html lang="sw" dir="ltr" class="client-nojs">
+<head>
+<title>
+</title>
+<meta charset="UTF-8" />
+<meta name="generator" content="MediaWiki 1.21wmf1" />
+<link rel="apple-touch-icon" href="http://sw.wikipedia.org/apple-touch-icon.png" />
+<link rel="shortcut icon" href="http://sw.wikipedia.org/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://sw.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (sw)" />
+<link rel="EditURI" type="application/rsd+xml" href="http://sw.wikipedia.org/w/api.php?action=rsd" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Tawanyiko la Atom la Wikipedia" href="http://sw.wikipedia.org/w/index.php?title=Maalum:MabadalikoyaKaribuni&amp;feed=atom" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/sw.wikipedia.org/load.php?debug=false&amp;lang=sw&amp;modules=ext.wikihiero%7Cmediawiki.legacy.commonPrint%2Cshared%7Cskins.vector&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="http://bits.wikimedia.org/sw.wikipedia.org/load.php?debug=false&amp;lang=sw&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>
+a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}/* cache key: swwiki:resourceloader:filter:minify-css:7:e8883754d3188e23594df58906762dc8 */
+</style>
+<script src="http://bits.wikimedia.org/sw.wikipedia.org/load.php?debug=false&amp;lang=sw&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*">
+</script>
+<script>
+if(window.mw){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Mwanzo","wgTitle":"Mwanzo","wgCurRevisionId":512251,"wgArticleId":882,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"sw","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","Januari","Februari","Machi","Aprili","Mei","Juni","Julai","Agosti","Septemba","Oktoba","Novemba","Desemba"],"wgMonthNamesShort":["","Jan","Feb","Machi","Apr","Mei","Juni","Julai","Ago","Sep","Okt","Nov","Des"],"wgRelevantPageName":"Mwanzo","wgRestrictionEdit":["sysop"],"wgRestrictionMove":["sysop"],"wgIsMainPage":true,"wgVectorEnabledModules":{"collapsiblenav":true,"collapsibletabs":true,"editwarning":true,"expandablesearch":false,"footercleanup":false,"sectioneditlinks":false,"simplesearch":true,"experiments":true},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"templateEditor":false,"templates":false,"preview":false,"previewDialog":false,"publish":false,"toc":false},"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","Geo":{"city":"","country":""},"wgNoticeProject":"wikipedia"});}
+</script>
+<script>
+if(window.mw){mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":0,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":false,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":4,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"vector-simplesearch":1,"useeditwarning":1,"vector-collapsiblenav":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"variant":"sw","language":"sw","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":false,"searchNs101":false});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","watchToken":false});;},{},{});/* cache key: swwiki:resourceloader:filter:minify-js:7:72ea13c61b28b66fcc8d51cc4fe6ecef */}
+</script>
+<script>
+if(window.mw){mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","ext.centralNotice.bannerController"]);}
+</script>
+<script src="http://bits.wikimedia.org/geoiplookup">
+</script>
+<!--[if lt IE 7]>
+<style type="text/css">
+body{behavior:url("/w/skins-1.21wmf1/vector/csshover.min.htc")}
+</style>
+<![endif]-->
+</head>
+<body style="text-align: right;" class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Mwanzo skin-vector action-view vector-animateLayout">
+<div id="mw-page-base" class="noprint">
+</div>
+<div id="mw-head-base" class="noprint">
+</div>
+<!-- content -->
+<div id="content" class="mw-body">
+<a id="top">
+</a>
+<div id="mw-js-message" style="display:none;">
+</div>
+<!-- sitenotice -->
+<div id="siteNotice">
+<!-- CentralNotice -->
+<script>
+mw.centralNotice.initialize();
+</script>
+</div>
+<!-- /sitenotice -->
+<!-- firstHeading -->
+<h1 id="firstHeading" class="firstHeading">
+<span dir="auto">
+Mwanzo
+</span>
+</h1>
+<!-- /firstHeading -->
+<!-- bodyContent -->
+<div id="bodyContent">
+<!-- tagline -->
+<div id="siteSub">
+Kutoka Wikipedia, kamusi elezo huru
+</div>
+<!-- /tagline -->
+<!-- subtitle -->
+<div id="contentSub">
+</div>
+<!-- /subtitle -->
+<!-- jumpto -->
+<div id="jump-to-nav" class="mw-jump">
+Rukia:
+<a style="text-decoration: none;" href="Mwanzo#mw-head">
+urambazaji
+</a>
+, 
+<a style="text-decoration: none;" href="Mwanzo#p-search">
+tafuta
+</a>
+</div>
+<!-- /jumpto -->
+<!-- bodycontent -->
+<div id="mw-content-text" lang="sw" dir="ltr" class="mw-content-ltr">
+<table id="mp-topbanner" style="width:100%; background:#fcfcfc; margin-top:1.2em; border:1px solid #ccc;">
+<tr>
+<td style="width:56%; color:#000;">
+<table style="width:280px; border:none; background:none;">
+<tr>
+<td style="width:280px; text-align:center; white-space:nowrap; color:#000;">
+<div style="font-size:162%; border:none; margin:0; padding:.1em; color:#000;">
+Karibu kwenye 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Wikipedia" title="Wikipedia">
+Wikipedia
+</a>
+,
+</div>
+<div style="top:+0.2em; font-size:95%;">
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Kamusi_elezo" title="Kamusi elezo">
+kamusi elezo huru
+</a>
+, kila 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Wikipedia:Ukufunzi" title="Wikipedia:Ukufunzi" class="mw-redirect">
+mtu anaweza kuihariri
+</a>
+!
+</div>
+<div id="articlecount" style="width:100%; text-align:center; font-size:85%;">
+Hadi leo tuna makala takriban 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Maalum:Takwimu" title="Maalum:Takwimu">
+24,397
+</a>
+ kwa 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Kiswahili" title="Kiswahili">
+Kiswahili
+</a>
+</div>
+</td>
+</tr>
+</table>
+</td>
+<td style="width:11%; font-size:95%;">
+<ul>
+<li>
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Lango:Sanaa" title="Lango:Sanaa">
+Sanaa
+</a>
+</li>
+<li>
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Lango:Ujenzi" title="Lango:Ujenzi">
+Ujenzi
+</a>
+</li>
+<li>
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Lango:Lugha" title="Lango:Lugha">
+Lugha
+</a>
+</li>
+</ul>
+</td>
+<td style="width:11%; font-size:95%;">
+<ul>
+<li>
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Lango:Historia" title="Lango:Historia">
+Historia
+</a>
+</li>
+<li>
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Lango:Jiografia" title="Lango:Jiografia">
+Jiografia
+</a>
+</li>
+<li>
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Lango:Sayansi" title="Lango:Sayansi">
+Sayansi
+</a>
+</li>
+</ul>
+</td>
+<td style="width:11%; font-size:95%;">
+<ul>
+<li>
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Lango:Jumuia" title="Lango:Jumuia" class="mw-redirect">
+Jumuia
+</a>
+</li>
+<li>
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Lango:Teknolojia" title="Lango:Teknolojia">
+Teknolojia
+</a>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+<table id="mp-strapline" style="width:100%; background:none; margin:-.8em 0 -.7em 0;">
+<tr>
+<td style="font-size:95%; padding:10px 0; margin:0; text-align:left; white-space:nowrap; color:#000;">
+&#160; &#160; &#160;
+</td>
+<td style="font-size:95%; padding:10px 0; margin:0; text-align:right; white-space:nowrap; color:#000;">
+<p>
+&#160; &#160; &#160;
+</p>
+</td>
+</tr>
+</table>
+<table id="mp-upper" style="margin:0; background:none;">
+<tr>
+<td class="MainPageBG" style="width:55%; border:1px solid #cef2e0; background:#f5fffa; vertical-align:top; color:#000;">
+<table id="mp-left" cellpadding="2" cellspacing="5" style="width:100%; vertical-align:top; background:#f5fffa;">
+<tr>
+<th>
+<h2 id="mp-tfa-h2" style="margin:0; background:#cef2e0; font-size:120%; font-weight:bold; border:1px solid #a3bfb1; text-align:left; color:#000; padding:0.2em 0.4em;">
+<span class="mw-headline" id="Kamusi_Elezo_ya_Kiswahili">
+Kamusi Elezo ya Kiswahili
+</span>
+</h2>
+</th>
+</tr>
+<tr>
+<td style="color:#000;">
+<div id="mp-tfa">
+<b>
+Karibu kwenye Wikipedia ya Kiswahili!
+</b>
+<p>
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Wikipedia" title="Wikipedia">
+Wikipedia
+</a>
+ ni mradi wa kuandika 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Kamusi_elezo" title="Kamusi elezo">
+kamusi elezo
+</a>
+ kamili na sahihi ya maandishi huru.
+</p>
+<p>
+Kila mtu anaweza kuhariri makala yoyote, kutoa makosa ya lugha, kutohoa maneno na kuendeleza na kukuza makala, kwa kuandika kwa ufupi au kwa urefu. Angalia 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Msaada_wa_kuanzisha_makala" title="Msaada wa kuanzisha makala" class="mw-redirect">
+Msaada wa kuanzisha makala
+</a>
+ ili ujifunze unavyoweza kuhariri au kusanifisha ukurasa. Usisite kushiriki; kwa sababu huu ni mradi wa ushirikiano, na hautaisha kamwe. Kamusi elezo itaimarika vizuri zaidi kila wakati. Angalia 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Wikipedia:Ukurasa_wa_jumuia" title="Wikipedia:Ukurasa wa jumuia" class="mw-redirect">
+ukurasa wa jumuia
+</a>
+, 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Wikipedia:Jamii" title="Wikipedia:Jamii">
+ukurasa wa jamii
+</a>
+, na ule wa 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Makala_za_msingi_za_kamusi_elezo" title="Makala za msingi za kamusi elezo" class="mw-redirect">
+makala za msingi za kamusi elezo
+</a>
+ ili kung'amua unaweza kufanya kazi zipi ili kuboresha Wikipedia.
+</p>
+<p>
+<br />
+</p>
+</div>
+</td>
+</tr>
+<tr>
+<th>
+<h2 id="mp-dyk-h2" style="margin:0; background:#cef2e0; font-size:120%; font-weight:bold; border:1px solid #a3bfb1; text-align:left; color:#000; padding:0.2em 0.4em;">
+<span class="mw-headline" id="Je.2C_wajua...">
+Je, wajua...
+</span>
+</h2>
+</th>
+</tr>
+<tr>
+<td style="color:#000;">
+<div id="mp-dyk">
+<p>
+<i>
+Kutoka kwenye mkusanyiko wa makala za Wikipedia:
+</i>
+</p>
+<div style="float:right;margin-left:0.5em;">
+<p>
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Picha:Ngorongoro-Crater-animals.jpg" class="image" title="Ngorongoro">
+<img alt="Ngorongoro" src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Ngorongoro-Crater-animals.jpg/70px-Ngorongoro-Crater-animals.jpg" width="70" height="52" />
+</a>
+</p>
+</div>
+<ul>
+<li style="-moz-float-edge: content-box">
+... kwamba 
+<b>
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Ngorongoro" title="Ngorongoro">
+Ngorongoro
+</a>
+</b>
+ imepokelewa katika orodha ya urithi wa dunia ya 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/UNESCO" title="UNESCO">
+UNESCO
+</a>
+?
+</li>
+<li style="-moz-float-edge: content-box">
+... kwamba 
+<b>
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Asha-Rose_Mtengeti_Migiro" title="Asha-Rose Mtengeti Migiro">
+Asha-Rose Mtengeti Migiro
+</a>
+</b>
+ ni mwanasiasa wa kwanza kutoka nchini 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Tanzania" title="Tanzania">
+Tanzania
+</a>
+ kuwa Naibu Katibu Mkuu wa 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Umoja_wa_Mataifa" title="Umoja wa Mataifa">
+Umoja wa Mataifa
+</a>
+?
+</li>
+<li style="-moz-float-edge: content-box">
+... kwamba 
+<b>
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/McDonald_Mariga" title="McDonald Mariga">
+McDonald Mariga
+</a>
+</b>
+ ni mchezaji wa mpira kutoka 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Timu_ya_Taifa_ya_Kandanda_ya_Kenya" title="Timu ya Taifa ya Kandanda ya Kenya">
+Kenya
+</a>
+ ambaye anaichezea kilabu cha Parma.
+</li>
+</ul>
+</div>
+<p>
+<br style="clear: both;" />
+<br />
+</p>
+<div style="text-align: right;" class="noprint">
+<b>
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Kigezo:Je_wajua/Hifadhi" title="Kigezo:Je wajua/Hifadhi">
+Hifadhi
+</a>
+</b>
+ – 
+<b>
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Wikipedia:Mwongozo" title="Wikipedia:Mwongozo">
+Jifunze kuanzisha makala
+</a>
+</b>
+ – 
+<b>
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Majadiliano_ya_kigezo:Je_wajua" title="Majadiliano ya kigezo:Je wajua">
+Teua makala
+</a>
+</b>
+</div>
+</td>
+</tr>
+</table>
+</td>
+<td style="border:1px solid transparent;">
+</td>
+<td class="MainPageBG" style="width:45%; border:1px solid #cedff2; background:#f5faff; vertical-align:top;">
+<table id="mp-right" cellpadding="2" cellspacing="5" style="width:100%; vertical-align:top; background:#f5faff;">
+<tr>
+<th>
+<h2 id="mp-itn-h2" style="margin:0; background:#cedff2; font-size:120%; font-weight:bold; border:1px solid #a3b0bf; text-align:left; color:#000; padding:0.2em 0.4em;">
+<span class="mw-headline" id="Makala_ya_wiki">
+Makala ya wiki
+</span>
+</h2>
+</th>
+</tr>
+<tr>
+<td style="color:#000;">
+<div id="mp-itn">
+<div style="float:left;margin-right:0.9em">
+<p>
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Picha:Charles_Darwin_by_G._Richmond.jpg" class="image" title="Charles Darwin">
+<img alt="Charles Darwin" src="http://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Charles_Darwin_by_G._Richmond.jpg/100px-Charles_Darwin_by_G._Richmond.jpg" width="100" height="134" />
+</a>
+</p>
+</div>
+<p>
+<b>
+Charles Robert Darwin
+</b>
+ (
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/12_Februari" title="12 Februari">
+12 Februari
+</a>
+ 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/1809" title="1809">
+1809
+</a>
+ - 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/19_Aprili" title="19 Aprili">
+19 Aprili
+</a>
+ 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/1882" title="1882">
+1882
+</a>
+) alikuwa mwanasayansi 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Uingereza" title="Uingereza">
+Mwingereza
+</a>
+ katika 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Karne_ya_19" title="Karne ya 19">
+karne ya 19
+</a>
+. Amekuwa mashuhuri kutokana na nadharia yake ya maendeleo ya uhai 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Mageuko_ya_spishi" title="Mageuko ya spishi">
+mageuko ya spishi
+</a>
+. Nadharia hii yasema kuwa 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Spishi" title="Spishi">
+spishi
+</a>
+ zote za viumbehai vimetokana na spishi asilia zilizogeuka baada ya muda. Mageuko haya hufuata 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/w/index.php?title=Uteuzi_asilia&amp;action=edit&amp;redlink=1" class="new" title="Uteuzi asilia (bado haujaandikwa)">
+uteuzi asilia
+</a>
+ yaani viumbehai wanaolingana vizuri zaidi na mazingira wanaishi na kuzaa kushinda viumbehai wasiolingana nayo. Kwa njia hiyo tabia za viumbehai wanaofaa vizuri zaidi zinazidi kuendelezwa kwa sababu watoto wao hurithi tabia hizi. Lakini tabia za viumbehai wasiofaa sana zinaweza kutoweka kwa sababu wanakufa mapema na hawana watoto wengi wanaoendeleza tabia zao.
+</p>
+<p>
+Alizaliwa mjini 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Shrewsbury" title="Shrewsbury">
+Shrewsbury
+</a>
+ (Uingereza) kama mtoto wa tano wa daktari Robert Darwin na Susannah Darwin (née Wedgwood). Baada ya kumaliza shule alijiunga na chuo kikuu cha 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Edinburgh" title="Edinburgh">
+Edinburgh
+</a>
+ (
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Uskoti" title="Uskoti">
+Uskoti
+</a>
+) 1825 akajiandikisha katika idara ya 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Tiba" title="Tiba">
+tiba
+</a>
+ lakini hakupenda 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/w/index.php?title=Upasuaji&amp;action=edit&amp;redlink=1" class="new" title="Upasuaji (bado haujaandikwa)">
+upasuaji
+</a>
+. Alitumia muda mwngi kufuata kozi za 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Biolojia" title="Biolojia">
+biolojia
+</a>
+, 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Jiografia" title="Jiografia">
+jiografia
+</a>
+ na 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Jiolojia" title="Jiolojia">
+jiolojia
+</a>
+ nje ya masomo ya tiba. Alifuatana mara nyingi na wataalamu walipofanya uchunguzi wa wanyama, mimea au mawe. 
+<b>
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Charles_Darwin" title="Charles Darwin">
+►Soma zaidi
+</a>
+</b>
+</p>
+<p>
+<br style="clear: both;" />
+</p>
+</div>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table id="mp-tfp" style="margin:4px 0 0 0; width:100%; background:none;">
+<tr>
+<td class="MainPageBG" style="width:100%; border:1px solid #ddcef2; background:#faf5ff; vertical-align:top; color:#000;">
+<table cellpadding="2" cellspacing="5" style="vertical-align:top; background:#faf5ff; color:#000; width:100%">
+<tr>
+<th>
+<h2 id="mp-tfp-h2" style="margin:0; background:#ddcef2; font-size:120%; font-weight:bold; border:1px solid #afa3bf; text-align:left; color:#000; padding:0.2em 0.4em">
+<span class="mw-headline" id="Picha_nzuri_ya_wiki">
+Picha nzuri ya wiki
+</span>
+</h2>
+</th>
+</tr>
+<tr>
+<td style="color:#000;">
+<div style="float:left;margin-right:0.9em">
+<p>
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Picha:Cow_horned_portrait.jpg" class="image" title="Ng'ombe">
+<img alt="Ng'ombe" src="http://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Cow_horned_portrait.jpg/200px-Cow_horned_portrait.jpg" width="200" height="200" />
+</a>
+</p>
+</div>
+<p>
+<b>
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Ng%27ombe" title="Ng'ombe">
+Ng'ombe
+</a>
+</b>
+ ni wanyama wakubwa wa jenasi 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Bos" title="Bos" class="mw-redirect">
+Bos
+</a>
+. Spishi ya ng'ombe ina nususpishi au aina nyingi lakini ni spishi moja tu.
+</p>
+<p>
+Ng'ombe hula manyasi na kutembea kwa vidole viwili. Asili yake ni aina za ng'ombe wa pori waliofugwa kwa sababu ya nyama na maziwa. Katika nchi nyingi anatumiwa pia kama mnyama wa mizigo anayevuta plau au magari.
+</p>
+<p>
+Wataalamu huamini ya kwamba aina zote za ng'ombe zina asili katika mashariki ya kati mnamo milenia ya 9 KK ambako watu waliwahi kuwafuga nas kutoka hapa ufugaji ng'ombe ulisambaa kote duniani.
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<div id="mp-other" style="padding-top:4px; padding-bottom:2px;">
+</div>
+<div id="mp-sister">
+<h2>
+<span class="mw-headline" id="Jumuia_za_Wikimedia">
+Jumuia za Wikimedia
+</span>
+</h2>
+<div style="text-align:left;font-size:80%" class="plainlinks">
+Kamusi elezo ya Wiki ni kamusi elezo huru iliyo chini ya 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Shirika_Lisilo_la_Kiserikali" title="Shirika Lisilo la Kiserikali">
+Shirika Lisilo la Kiserikali
+</a>
+ la 
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Wikimedia_Foundation" title="Wikimedia Foundation">
+Wikimedia Foundation
+</a>
+, ambalo linasimamia miradi mingine mbalimbali ambayo imeorodheshwa hapo chini. Mpaka sasa miradi inayopatikana Kiswahili ni Wikipedia na Wikamusi. Wikitabu imewekwa Kiswahili lakini bado ni tupu. Mengine inapatikana Kiingereza pamoja na lugha tofauti.
+</div>
+<div style="font-size:80%">
+<table cellpadding="2" style="margin-left: auto; margin-right: auto; width: 100%; text-align:left">
+<tr>
+<td>
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/w/index.php?title=Picha:Commons-logo.svg&amp;page=1" class="image">
+<img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Commons-logo.svg/35px-Commons-logo.svg.png" width="35" height="47" />
+</a>
+</td>
+<td>
+<a style="text-decoration: none;" href="http://commons.wikimedia.org/wiki/Mwanzo" class="extiw" title="commons:Mwanzo">
+<b>
+Commons
+</b>
+</a>
+<br />
+Ghala ya Nyaraka za Picha na Sauti
+</td>
+<td>
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/w/index.php?title=Picha:Wikimedia-logo.svg&amp;page=1" class="image">
+<img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Wikimedia-logo.svg/35px-Wikimedia-logo.svg.png" width="35" height="35" />
+</a>
+</td>
+<td>
+<a style="text-decoration: none;" href="http://meta.wikimedia.org/wiki/Main_Page" class="extiw" title="m:Main Page">
+<b>
+Meta-Wiki
+</b>
+</a>
+<br />
+Uratibu wa Miradi yote ya Wikimedia
+</td>
+<td>
+<div class="noresize">
+<a style="text-decoration: none;" href="http://wiktionary.org/" class="plainlinks" rel="nofollow" title="Wiktionary">
+<img alt="Wiktionary-logo-en.png" src="http://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Wiktionary-logo-en.png/35px-Wiktionary-logo-en.png" width="35" height="38" />
+</a>
+</div>
+</td>
+<td>
+<a style="text-decoration: none;" href="http://sw.wiktionary.org/wiki/sw:Mwanzo" class="extiw" title="wikt:sw:Mwanzo">
+<b>
+Wikamusi
+</b>
+</a>
+<br />
+Kamusi na Tesauri
+</td>
+</tr>
+<tr>
+<td>
+<div class="noresize">
+<a style="text-decoration: none;" href="http://wikibooks.org/" class="plainlinks" rel="nofollow" title="Wikibooks">
+<img alt="Wikibooks-logo.png" src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Wikibooks-logo.png/35px-Wikibooks-logo.png" width="35" height="35" />
+</a>
+</div>
+</td>
+<td>
+<a style="text-decoration: none;" href="http://sw.wikibooks.org/wiki/sw:Mwanzo" class="extiw" title="b:sw:Mwanzo">
+<b>
+Wikitabu
+</b>
+</a>
+<br />
+Vitabu vya bure na Miongozo ya Kufundishia
+</td>
+<td>
+<div class="noresize">
+<a style="text-decoration: none;" href="http://wikiquote.org/" class="plainlinks" rel="nofollow" title="Wikiquote">
+<img alt="Wikiquote-logo-51px.png" src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Wikiquote-logo-51px.png/35px-Wikiquote-logo-51px.png" width="35" height="28" />
+</a>
+</div>
+</td>
+<td>
+<a style="text-decoration: none;" href="http://en.wikiquote.org/wiki/en:Main_Page" class="extiw" title="wikiquote:en:Main Page">
+<b>
+Wikidondoo
+</b>
+</a>
+<br />
+Mkusanyiko wa Nukuu Huria
+</td>
+<td>
+<div class="noresize">
+<a style="text-decoration: none;" href="http://wikisource.org/" class="plainlinks" rel="nofollow" title="Wikisource">
+<img alt="Wikisource-logo.png" src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Wikisource-logo.png/35px-Wikisource-logo.png" width="35" height="37" />
+</a>
+</div>
+</td>
+<td>
+<a style="text-decoration: none;" href="http://en.wikisource.org/wiki/Main_Page:English" class="extiw" title="wikisource:Main Page:English">
+<b>
+Wikisource
+</b>
+</a>
+<br />
+Nyaraka Huru na za Bure
+</td>
+</tr>
+<tr>
+<td>
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/w/index.php?title=Picha:Wikispecies-logo.svg&amp;page=1" class="image">
+<img alt="" src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Wikispecies-logo.svg/35px-Wikispecies-logo.svg.png" width="35" height="41" />
+</a>
+</td>
+<td>
+<a style="text-decoration: none;" href="http://species.wikimedia.org/wiki/" class="extiw" title="wikispecies:">
+<b>
+Wikispishi
+</b>
+</a>
+<br />
+Kamusi ya Spishi
+</td>
+<td>
+<div class="noresize">
+<a style="text-decoration: none;" href="http://beta.wikiversity.org/wiki/Mwanzo" title="Wikiversity">
+<img alt="Wikiversity-logo.png" src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Wikiversity-logo.png/35px-Wikiversity-logo.png" width="35" height="35" />
+</a>
+</div>
+</td>
+<td>
+<a style="text-decoration: none;" href="http://beta.wikiversity.org/wiki/Mwanzo" class="extiw" title="betawikiversity:Mwanzo">
+<b>
+Wikichuo
+</b>
+</a>
+<br />
+Jumuia ya elimu
+</td>
+<td>
+<div class="noresize">
+<a style="text-decoration: none;" href="http://wikinews.org/" class="plainlinks" rel="nofollow" title="Wikinews">
+<img alt="Wikinews-logo.png" src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Wikinews-logo.png/35px-Wikinews-logo.png" width="35" height="18" />
+</a>
+</div>
+</td>
+<td>
+<a style="text-decoration: none;" href="http://en.wikinews.org/wiki/en:Main_Page" class="extiw" title="wikinews:en:Main Page">
+<b>
+Wikihabari
+</b>
+</a>
+<br />
+Habari Huru na Bure
+</td>
+</tr>
+</table>
+</div>
+<p>
+<br />
+</p>
+</div>
+<div id="mp-lang">
+<h2>
+<span class="mw-headline" id="Wikipedia_kwa_lugha_nyingine">
+Wikipedia kwa lugha nyingine
+</span>
+</h2>
+<table cellspacing="0" cellpadding="6" style="width: 100%; font-size:80%">
+<tr>
+<td style="text-align: center; background: #006699; color: #ffffff;">
+<b>
+Wikipedia kwa lugha nyingine
+</b>
+</td>
+</tr>
+<tr>
+<td bgcolor="#FFFFFF" style="text-align: left;">
+<div class="plainlinks">
+<p>
+Wikipedia ipo katika lugha zaidi ya 250. 
+<a style="text-decoration: none;" href="http://meta.wikimedia.org/wiki/List_of_Wikipedias" class="extiw" title="m:List of Wikipedias">
+Bofya hapa
+</a>
+ kuona orodha ya lugha zote za Wikipedia.
+</p>
+<dl>
+<dt style="font-size:100%">
+Lugha zenye makala zaidi ya 1,000,000:
+</dt>
+<dd style="font-size:100%;margin:auto 0">
+<a style="text-decoration: none;" href="http://de.wikipedia.org/wiki/Hauptseite" class="extiw" title="de:Hauptseite">
+<span lang="de" xml:lang="de">
+Deutsch
+</span>
+ (Kijerumani)
+</a>
+ - 
+<a style="text-decoration: none;" href="http://en.wikipedia.org/wiki/Main_Page" class="extiw" title="en:Main Page">
+<span lang="en" xml:lang="en">
+English
+</span>
+ (Kiingereza)
+</a>
+ - 
+<a style="text-decoration: none;" href="http://fr.wikipedia.org/wiki/Accueil" class="extiw" title="fr:Accueil">
+<span lang="fr" xml:lang="fr">
+Français
+</span>
+ (Kifaransa)
+</a>
+</dd>
+<dt style="font-size:100%">
+Lugha zenye makala zaidi ya 500,000:
+</dt>
+<dd style="font-size:100%;margin:auto 0">
+<a style="text-decoration: none;" href="http://es.wikipedia.org/wiki/wikipedia:Portada" class="extiw" title="es:wikipedia:Portada">
+<span lang="es" xml:lang="es">
+Español
+</span>
+ (Kihispania)
+</a>
+ - 
+<a style="text-decoration: none;" href="http://it.wikipedia.org/wiki/Pagina_principale" class="extiw" title="it:Pagina principale">
+<span lang="it" xml:lang="it">
+Italiano
+</span>
+ (Kiitalia)
+</a>
+ - 
+<a style="text-decoration: none;" href="http://nl.wikipedia.org/wiki/Hoofdpagina" class="extiw" title="nl:Hoofdpagina">
+<span lang="nl" xml:lang="nl">
+Nederlands
+</span>
+ (Kiholanzi)
+</a>
+ - 
+<a style="text-decoration: none;" href="http://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%B8" class="extiw" title="ja:メインページ">
+<span lang="ja" xml:lang="ja">
+日本語
+</span>
+ (Kijapani)
+</a>
+ - 
+<a style="text-decoration: none;" href="http://pl.wikipedia.org/wiki/Strona_g%C5%82%C3%B3wna" class="extiw" title="pl:Strona główna">
+<span lang="pl" xml:lang="pl">
+Polski
+</span>
+ (Kipolishi)
+</a>
+ - 
+<a style="text-decoration: none;" href="http://pt.wikipedia.org/wiki/P%C3%A1gina_principal" class="extiw" title="pt:Página principal">
+<span lang="pt" xml:lang="pt">
+Português
+</span>
+ (Kireno)
+</a>
+ - 
+<a style="text-decoration: none;" href="http://ru.wikipedia.org/wiki/" class="extiw" title="ru:">
+Русский (Kirusi)
+</a>
+</dd>
+<dt style="font-size:100%">
+Lugha zenye makala zaidi ya 250,000:
+</dt>
+<dd style="font-size:100%;margin:auto 0">
+<a style="text-decoration: none;" href="http://sv.wikipedia.org/wiki/Huvudsida" class="extiw" title="sv:Huvudsida">
+<span lang="sv" xml:lang="sv">
+Svenska
+</span>
+ (Kiswidi)
+</a>
+- 
+<a style="text-decoration: none;" href="http://zh.wikipedia.org/wiki/" class="extiw" title="zh:">
+中文 (Kichina)
+</a>
+</dd>
+<dt style="font-size:100%">
+Lugha zenye makala zaidi ya 100,000:
+</dt>
+<dd style="font-size:100%;margin:auto 0">
+<a style="text-decoration: none;" href="http://ca.wikipedia.org/wiki/" class="extiw" title="ca:">
+Català (Kicatalan)
+</a>
+ - 
+<a style="text-decoration: none;" href="http://cs.wikipedia.org/wiki/" class="extiw" title="cs:">
+Česky (Kicheki)
+</a>
+ - 
+<a style="text-decoration: none;" href="http://da.wikipedia.org/wiki/" class="extiw" title="da:">
+Dansk (Kidenmark)
+</a>
+ - 
+<a style="text-decoration: none;" href="http://eo.wikipedia.org/wiki/" class="extiw" title="eo:">
+Esperanto (Kiesperanto)
+</a>
+ - 
+<a style="text-decoration: none;" href="http://id.wikipedia.org/wiki/" class="extiw" title="id:">
+Bahasa Indonesia (Kiindonesia)
+</a>
+ - 
+<a style="text-decoration: none;" href="http://hu.wikipedia.org/wiki/" class="extiw" title="hu:">
+Magyar (Kihungaria)
+</a>
+ - 
+<a style="text-decoration: none;" href="http://no.wikipedia.org/wiki/" class="extiw" title="no:">
+Norsk bokmål (Kinorway)
+</a>
+ - 
+<a style="text-decoration: none;" href="http://ro.wikipedia.org/wiki/" class="extiw" title="ro:">
+Română (Kiromania)
+</a>
+ - 
+<a style="text-decoration: none;" href="http://sk.wikipedia.org/wiki/" class="extiw" title="sk:">
+Slovenčina (Kislovakia)
+</a>
+ - 
+<a style="text-decoration: none;" href="http://fi.wikipedia.org/wiki/" class="extiw" title="fi:">
+Suomi (Kifinland)
+</a>
+ - 
+<a style="text-decoration: none;" href="http://vo.wikipedia.org/wiki/" class="extiw" title="vo:">
+Volapük
+</a>
+ - 
+<a style="text-decoration: none;" href="http://tr.wikipedia.org/wiki/" class="extiw" title="tr:">
+Türkçe (Kituruki)
+</a>
+ - 
+<a style="text-decoration: none;" href="http://uk.wikipedia.org/wiki/" class="extiw" title="uk:">
+Українська (Kikrain)
+</a>
+</dd>
+<dt style="font-size:100%">
+Lugha za Kiafrika:
+</dt>
+<dd style="font-size:100%;margin:auto 0">
+<a style="text-decoration: none;" href="http://af.wikipedia.org/wiki/" class="extiw" title="af:">
+Afrikaans
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://am.wikipedia.org/wiki/" class="extiw" title="am:">
+አማርኛ
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://bm.wikipedia.org/wiki/" class="extiw" title="bm:">
+Bamanankan
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://ny.wikipedia.org/wiki/" class="extiw" title="ny:">
+Chi-Chewa
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://sn.wikipedia.org/wiki/" class="extiw" title="sn:">
+chiShona
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://tum.wikipedia.org/wiki/" class="extiw" title="tum:">
+chiTumbuka
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://ee.wikipedia.org/wiki/" class="extiw" title="ee:">
+Ɛʋɛ
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://ff.wikipedia.org/wiki/" class="extiw" title="ff:">
+Fulfude
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://ki.wikipedia.org/wiki/" class="extiw" title="ki:">
+Gĩkũyũ
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://ha.wikipedia.org/wiki/" class="extiw" title="ha:">
+هَوُسَ
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://ig.wikipedia.org/wiki/" class="extiw" title="ig:">
+Ìgbo
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://xh.wikipedia.org/wiki/" class="extiw" title="xh:">
+isiXhosa
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://zu.wikipedia.org/wiki/" class="extiw" title="zu:">
+isiZulu
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://kab.wikipedia.org/wiki/" class="extiw" title="kab:">
+Taqbaylit
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://arz.wikipedia.org/wiki/" class="extiw" title="arz:">
+Kiarabu ya Masri
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://kg.wikipedia.org/wiki/" class="extiw" title="kg:">
+Kikongo
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://rw.wikipedia.org/wiki/" class="extiw" title="rw:">
+Kinyarwanda
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://rn.wikipedia.org/wiki/" class="extiw" title="rn:">
+Kirundi
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://ln.wikipedia.org/wiki/" class="extiw" title="ln:">
+Lingala
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://lg.wikipedia.org/wiki/" class="extiw" title="lg:">
+Luganda
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://mg.wikipedia.org/wiki/" class="extiw" title="mg:">
+Malagasy
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://mt.wikipedia.org/wiki/" class="extiw" title="mt:">
+Malti
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://om.wikipedia.org/wiki/" class="extiw" title="om:">
+Oromoo
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://ng.wikipedia.org/wiki/" class="extiw" title="ng:">
+Oshiwambo
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://sg.wikipedia.org/wiki/" class="extiw" title="sg:">
+Sängö
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://st.wikipedia.org/wiki/" class="extiw" title="st:">
+seSotho
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://tn.wikipedia.org/wiki/" class="extiw" title="tn:">
+Setswana
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://ss.wikipedia.org/wiki/" class="extiw" title="ss:">
+SiSwati
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://so.wikipedia.org/wiki/" class="extiw" title="so:">
+Soomaaliga
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://ti.wikipedia.org/wiki/" class="extiw" title="ti:">
+ትግርኛ
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://ve.wikipedia.org/wiki/" class="extiw" title="ve:">
+Tshivenda
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://tw.wikipedia.org/wiki/" class="extiw" title="tw:">
+Twi
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://wo.wikipedia.org/wiki/" class="extiw" title="wo:">
+Wolof
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://ts.wikipedia.org/wiki/" class="extiw" title="ts:">
+Xitsonga
+</a>
+&#160;· 
+<a style="text-decoration: none;" href="http://yo.wikipedia.org/wiki/" class="extiw" title="yo:">
+Yorùbá
+</a>
+&#160;·
+</dd>
+<dd>
+<a style="text-decoration: none;" href="http://meta.wikimedia.org/wiki/How_to_start_a_new_wikipedia" class="extiw" title="meta:How to start a new wikipedia">
+Jinsi ya kuanzisha Wikipedia kwa lugha mpya
+</a>
+</dd>
+</dl>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<!-- NewPP limit reportPreprocessor visited node count: 183/1000000Preprocessor generated node count: 583/1500000Post-expand include size: 11940/2048000 bytesTemplate argument size: 1276/2048000 bytesHighest expansion depth: 5/40Expensive parser function count: 0/500-->
+<!-- Saved in parser cache with key swwiki:pcache:idhash:882-0!*!0!!*!4!* and timestamp 20121016173318 -->
+</div>
+<!-- /bodycontent -->
+<!-- printfooter -->
+<div class="printfooter">
+Rudishwa kutoka "
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/w/index.php?title=Mwanzo&amp;oldid=512251">
+http://sw.wikipedia.org/w/index.php?title=Mwanzo&amp;oldid=512251
+</a>
+"
+</div>
+<!-- /printfooter -->
+<!-- catlinks -->
+<div id='catlinks' class='catlinks catlinks-allhidden'>
+</div>
+<!-- /catlinks -->
+<div class="visualClear">
+</div>
+<!-- debughtml -->
+<!-- /debughtml -->
+</div>
+<!-- /bodyContent -->
+</div>
+<!-- /content -->
+<!-- header -->
+<div id="mw-head" class="noprint">
+<!-- 0 -->
+<div id="p-personal" class="">
+<h5>
+Vifaa binafsi
+</h5>
+<ul>
+<li id="pt-createaccount">
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/w/index.php?title=Maalum:IngiaMtumiaji&amp;returnto=Mwanzo&amp;type=signup">
+Sajili akaunti
+</a>
+</li>
+<li id="pt-login">
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/w/index.php?title=Maalum:IngiaMtumiaji&amp;returnto=Mwanzo" title="Tunakushajiisha kuingia, lakini siyo lazima. [o]" accesskey="o">
+Ingia
+</a>
+</li>
+</ul>
+</div>
+<!-- /0 -->
+<div id="left-navigation">
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+<h5>
+Maeneo ya wiki
+</h5>
+<ul>
+<li  id="ca-nstab-main" class="selected">
+<span>
+<a style="text-decoration: none;" href="Mwanzo"  title="Onyesha kurasa zilizopo [c]" accesskey="c">
+Makala
+</a>
+</span>
+</li>
+<li  id="ca-talk">
+<span>
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Majadiliano:Mwanzo"  title="Mazungumzo kuhusu makala [t]" accesskey="t">
+Majadiliano
+</a>
+</span>
+</li>
+</ul>
+</div>
+<!-- /0 -->
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+<h4>
+</h4>
+<h5>
+<span>
+Vibadala
+</span>
+<a style="text-decoration: none;" href="Mwanzo#">
+</a>
+</h5>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<!-- /1 -->
+</div>
+<div id="right-navigation">
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+<h5>
+Mitazamo
+</h5>
+<ul>
+<li id="ca-view" class="selected">
+<span>
+<a style="text-decoration: none;" href="Mwanzo" >
+Soma
+</a>
+</span>
+</li>
+<li id="ca-viewsource">
+<span>
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/w/index.php?title=Mwanzo&amp;action=edit"  title="Ukurasa huu umelindwa.  Unaweza kutazama chanzo chake. [e]" accesskey="e">
+Onyesha kodi za ukurasa
+</a>
+</span>
+</li>
+<li id="ca-history" class="collapsible">
+<span>
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/w/index.php?title=Mwanzo&amp;action=history"  title="Mapitio ya awali ya ukurasa huu [h]" accesskey="h">
+Fungua historia
+</a>
+</span>
+</li>
+</ul>
+</div>
+<!-- /0 -->
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+<h5>
+<span>
+Vitendo
+</span>
+<a style="text-decoration: none;" href="Mwanzo#">
+</a>
+</h5>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<!-- /1 -->
+<!-- 2 -->
+<div id="p-search">
+<h5>
+<label for="searchInput">
+Tafuta
+</label>
+</h5>
+<form action="http://sw.wikipedia.org/w/index.php" id="searchform">
+<div id="simpleSearch">
+<input name="search" title="Tafuta Wikipedia [f]" accesskey="f" id="searchInput" />
+<button name="button" title="Tafuta kurasa kwa maandishi haya" id="searchButton">
+<img src="http://bits.wikimedia.org/static-1.21wmf1/skins/vector/images/search-ltr.png?303-4" alt="Tafuta" width="12" height="13" />
+</button>
+<input type='hidden' name="title" value="Maalum:Tafuta"/>
+</div>
+</form>
+</div>
+<!-- /2 -->
+</div>
+</div>
+<!-- /header -->
+<!-- panel -->
+<div id="mw-panel" class="noprint">
+<!-- logo -->
+<div id="p-logo">
+<a style="background-image: url(http://upload.wikimedia.org/wikipedia/sw/b/bc/Wiki.png);" href="Mwanzo"  title="Tembelea Mwanzo">
+</a>
+</div>
+<!-- /logo -->
+<!-- navigation -->
+<div class="portal" id='p-navigation'>
+<h5>
+Urambazaji
+</h5>
+<div class="body">
+<ul>
+<li id="n-mainpage-description">
+<a style="text-decoration: none;" href="Mwanzo" title="Tembelea Mwanzo [z]" accesskey="z">
+Mwanzo
+</a>
+</li>
+<li id="n-portal">
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Wikipedia:Jumuia" title="Kuhusu mradi, mambo unaweza kufanya, na mahali pa kugundua vitu">
+Jumuia
+</a>
+</li>
+<li id="n-currentevents">
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Wikipedia:Matukio_ya_hivi_karibuni" title="Maarifa kuhusu habari za siku hizi">
+Matukio ya hivi karibuni
+</a>
+</li>
+<li id="n-recentchanges">
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Maalum:MabadalikoyaKaribuni" title="Orodha ya mabadiliko ya hivi karibuni katika Wiki. [r]" accesskey="r">
+Mabadiliko ya karibuni
+</a>
+</li>
+<li id="n-randompage">
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Maalum:UkurasawaBahati" title="Onyesha ukurasa wa bahati [x]" accesskey="x">
+Ukurasa wa bahati
+</a>
+</li>
+<li id="n-help">
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Msaada:Yaliyomo" title="Mahali pa kueleweshwa.">
+Msaada
+</a>
+</li>
+<li id="n-sitesupport">
+<a style="text-decoration: none;" href="http://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C12_sw.wikipedia.org&amp;uselang=sw" title="Tuunge mkono">
+Michango
+</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- /navigation -->
+<!-- SEARCH -->
+<!-- /SEARCH -->
+<!-- TOOLBOX -->
+<div class="portal" id='p-tb'>
+<h5>
+Vifaa
+</h5>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere">
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Maalum:VingoViungavyoUkurasahuu/Mwanzo" title="Orodha ya kurasa zote za Wiki zilizounganishwa na ukurasa huu [j]" accesskey="j">
+Viungo viungavyo ukurasa huu
+</a>
+</li>
+<li id="t-recentchangeslinked">
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Maalum:RecentChangesLinked/Mwanzo" title="Mabadiliko ya karibuni ya katika kurasa zilizounganishwa na ukurasa huu [k]" accesskey="k">
+Mabadiliko husika
+</a>
+</li>
+<li id="t-specialpages">
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Maalum:KurasaMaalum" title="Orodha ya kurasa maalum zote [q]" accesskey="q">
+Kurasa maalum
+</a>
+</li>
+<li id="t-print">
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/w/index.php?title=Mwanzo&amp;printable=yes" rel="alternate" title="Toleo linalochapika la ukurasa huu [p]" accesskey="p">
+Ukurasa wa kuchapika
+</a>
+</li>
+<li id="t-permalink">
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/w/index.php?title=Mwanzo&amp;oldid=512251" title="Kiungo cha daima cha kufikisha pitio hili la ukurasa">
+Kiungo cha daima
+</a>
+</li>
+<li id="t-cite">
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/w/index.php?title=Maalum:Taja&amp;page=Mwanzo&amp;id=512251" title="Taarifa juu ya njia ya kutaja ukurasa huu">
+Taja ukurasa huu
+</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- /TOOLBOX -->
+<!-- LANGUAGES -->
+<div class="portal" id='p-lang'>
+<h5>
+Lugha zingine
+</h5>
+<div class="body">
+<ul>
+<li class="interwiki-af">
+<a style="text-decoration: none;" href="http://af.wikipedia.org/wiki/" title="" lang="af" hreflang="af">
+Afrikaans
+</a>
+</li>
+<li class="interwiki-ar">
+<a style="text-decoration: none;" href="http://ar.wikipedia.org/wiki/" title="" lang="ar" hreflang="ar">
+العربية
+</a>
+</li>
+<li class="interwiki-id">
+<a style="text-decoration: none;" href="http://id.wikipedia.org/wiki/" title="" lang="id" hreflang="id">
+Bahasa Indonesia
+</a>
+</li>
+<li class="interwiki-ms">
+<a style="text-decoration: none;" href="http://ms.wikipedia.org/wiki/" title="" lang="ms" hreflang="ms">
+Bahasa Melayu
+</a>
+</li>
+<li class="interwiki-bpy">
+<a style="text-decoration: none;" href="http://bpy.wikipedia.org/wiki/" title="" lang="bpy" hreflang="bpy">
+বিষ্ণুপ্রিয়া মণিপুরী
+</a>
+</li>
+<li class="interwiki-br">
+<a style="text-decoration: none;" href="http://br.wikipedia.org/wiki/" title="" lang="br" hreflang="br">
+Brezhoneg
+</a>
+</li>
+<li class="interwiki-bs">
+<a style="text-decoration: none;" href="http://bs.wikipedia.org/wiki/" title="" lang="bs" hreflang="bs">
+Bosanski
+</a>
+</li>
+<li class="interwiki-bg">
+<a style="text-decoration: none;" href="http://bg.wikipedia.org/wiki/" title="" lang="bg" hreflang="bg">
+Български
+</a>
+</li>
+<li class="interwiki-ca">
+<a style="text-decoration: none;" href="http://ca.wikipedia.org/wiki/" title="" lang="ca" hreflang="ca">
+Català
+</a>
+</li>
+<li class="interwiki-cs">
+<a style="text-decoration: none;" href="http://cs.wikipedia.org/wiki/" title="" lang="cs" hreflang="cs">
+Česky
+</a>
+</li>
+<li class="interwiki-cy">
+<a style="text-decoration: none;" href="http://cy.wikipedia.org/wiki/" title="" lang="cy" hreflang="cy">
+Cymraeg
+</a>
+</li>
+<li class="interwiki-da">
+<a style="text-decoration: none;" href="http://da.wikipedia.org/wiki/" title="" lang="da" hreflang="da">
+Dansk
+</a>
+</li>
+<li class="interwiki-de">
+<a style="text-decoration: none;" href="http://de.wikipedia.org/wiki/" title="" lang="de" hreflang="de">
+Deutsch
+</a>
+</li>
+<li class="interwiki-el">
+<a style="text-decoration: none;" href="http://el.wikipedia.org/wiki/" title="" lang="el" hreflang="el">
+Ελληνικά
+</a>
+</li>
+<li class="interwiki-en">
+<a style="text-decoration: none;" href="http://en.wikipedia.org/wiki/" title="" lang="en" hreflang="en">
+English
+</a>
+</li>
+<li class="interwiki-eo">
+<a style="text-decoration: none;" href="http://eo.wikipedia.org/wiki/" title="" lang="eo" hreflang="eo">
+Esperanto
+</a>
+</li>
+<li class="interwiki-es">
+<a style="text-decoration: none;" href="http://es.wikipedia.org/wiki/" title="" lang="es" hreflang="es">
+Español
+</a>
+</li>
+<li class="interwiki-et">
+<a style="text-decoration: none;" href="http://et.wikipedia.org/wiki/" title="" lang="et" hreflang="et">
+Eesti
+</a>
+</li>
+<li class="interwiki-eu">
+<a style="text-decoration: none;" href="http://eu.wikipedia.org/wiki/" title="" lang="eu" hreflang="eu">
+Euskara
+</a>
+</li>
+<li class="interwiki-fa">
+<a style="text-decoration: none;" href="http://fa.wikipedia.org/wiki/" title="" lang="fa" hreflang="fa">
+فارسی
+</a>
+</li>
+<li class="interwiki-fr">
+<a style="text-decoration: none;" href="http://fr.wikipedia.org/wiki/" title="" lang="fr" hreflang="fr">
+Français
+</a>
+</li>
+<li class="interwiki-fy">
+<a style="text-decoration: none;" href="http://fy.wikipedia.org/wiki/" title="" lang="fy" hreflang="fy">
+Frysk
+</a>
+</li>
+<li class="interwiki-gl">
+<a style="text-decoration: none;" href="http://gl.wikipedia.org/wiki/" title="" lang="gl" hreflang="gl">
+Galego
+</a>
+</li>
+<li class="interwiki-hi">
+<a style="text-decoration: none;" href="http://hi.wikipedia.org/wiki/" title="" lang="hi" hreflang="hi">
+हिन्दी
+</a>
+</li>
+<li class="interwiki-hif">
+<a style="text-decoration: none;" href="http://hif.wikipedia.org/wiki/" title="" lang="hif" hreflang="hif">
+Fiji Hindi
+</a>
+</li>
+<li class="interwiki-hr">
+<a style="text-decoration: none;" href="http://hr.wikipedia.org/wiki/" title="" lang="hr" hreflang="hr">
+Hrvatski
+</a>
+</li>
+<li class="interwiki-is">
+<a style="text-decoration: none;" href="http://is.wikipedia.org/wiki/" title="" lang="is" hreflang="is">
+Íslenska
+</a>
+</li>
+<li class="interwiki-it">
+<a style="text-decoration: none;" href="http://it.wikipedia.org/wiki/" title="" lang="it" hreflang="it">
+Italiano
+</a>
+</li>
+<li class="interwiki-he">
+<a style="text-decoration: none;" href="http://he.wikipedia.org/wiki/" title="" lang="he" hreflang="he">
+עברית
+</a>
+</li>
+<li class="interwiki-ka">
+<a style="text-decoration: none;" href="http://ka.wikipedia.org/wiki/" title="" lang="ka" hreflang="ka">
+ქართული
+</a>
+</li>
+<li class="interwiki-ko">
+<a style="text-decoration: none;" href="http://ko.wikipedia.org/wiki/" title="" lang="ko" hreflang="ko">
+한국어
+</a>
+</li>
+<li class="interwiki-la">
+<a style="text-decoration: none;" href="http://la.wikipedia.org/wiki/" title="" lang="la" hreflang="la">
+Latina
+</a>
+</li>
+<li class="interwiki-lb">
+<a style="text-decoration: none;" href="http://lb.wikipedia.org/wiki/" title="" lang="lb" hreflang="lb">
+Lëtzebuergesch
+</a>
+</li>
+<li class="interwiki-lt">
+<a style="text-decoration: none;" href="http://lt.wikipedia.org/wiki/" title="" lang="lt" hreflang="lt">
+Lietuvių
+</a>
+</li>
+<li class="interwiki-hu">
+<a style="text-decoration: none;" href="http://hu.wikipedia.org/wiki/" title="" lang="hu" hreflang="hu">
+Magyar
+</a>
+</li>
+<li class="interwiki-mk">
+<a style="text-decoration: none;" href="http://mk.wikipedia.org/wiki/" title="" lang="mk" hreflang="mk">
+Македонски
+</a>
+</li>
+<li class="interwiki-mr">
+<a style="text-decoration: none;" href="http://mr.wikipedia.org/wiki/" title="" lang="mr" hreflang="mr">
+मराठी
+</a>
+</li>
+<li class="interwiki-nl">
+<a style="text-decoration: none;" href="http://nl.wikipedia.org/wiki/" title="" lang="nl" hreflang="nl">
+Nederlands
+</a>
+</li>
+<li class="interwiki-ja">
+<a style="text-decoration: none;" href="http://ja.wikipedia.org/wiki/" title="" lang="ja" hreflang="ja">
+日本語
+</a>
+</li>
+<li class="interwiki-no">
+<a style="text-decoration: none;" href="http://no.wikipedia.org/wiki/" title="" lang="no" hreflang="no">
+Norsk (bokmål)‎
+</a>
+</li>
+<li class="interwiki-nn">
+<a style="text-decoration: none;" href="http://nn.wikipedia.org/wiki/" title="" lang="nn" hreflang="nn">
+Norsk (nynorsk)‎
+</a>
+</li>
+<li class="interwiki-pl">
+<a style="text-decoration: none;" href="http://pl.wikipedia.org/wiki/" title="" lang="pl" hreflang="pl">
+Polski
+</a>
+</li>
+<li class="interwiki-pt">
+<a style="text-decoration: none;" href="http://pt.wikipedia.org/wiki/" title="" lang="pt" hreflang="pt">
+Português
+</a>
+</li>
+<li class="interwiki-ro">
+<a style="text-decoration: none;" href="http://ro.wikipedia.org/wiki/" title="" lang="ro" hreflang="ro">
+Română
+</a>
+</li>
+<li class="interwiki-ru">
+<a style="text-decoration: none;" href="http://ru.wikipedia.org/wiki/" title="" lang="ru" hreflang="ru">
+Русский
+</a>
+</li>
+<li class="interwiki-simple">
+<a style="text-decoration: none;" href="http://simple.wikipedia.org/wiki/" title="" lang="simple" hreflang="simple">
+Simple English
+</a>
+</li>
+<li class="interwiki-sq">
+<a style="text-decoration: none;" href="http://sq.wikipedia.org/wiki/" title="" lang="sq" hreflang="sq">
+Shqip
+</a>
+</li>
+<li class="interwiki-sk">
+<a style="text-decoration: none;" href="http://sk.wikipedia.org/wiki/" title="" lang="sk" hreflang="sk">
+Slovenčina
+</a>
+</li>
+<li class="interwiki-sl">
+<a style="text-decoration: none;" href="http://sl.wikipedia.org/wiki/" title="" lang="sl" hreflang="sl">
+Slovenščina
+</a>
+</li>
+<li class="interwiki-sr">
+<a style="text-decoration: none;" href="http://sr.wikipedia.org/wiki/" title="" lang="sr" hreflang="sr">
+Српски / srpski
+</a>
+</li>
+<li class="interwiki-fi">
+<a style="text-decoration: none;" href="http://fi.wikipedia.org/wiki/" title="" lang="fi" hreflang="fi">
+Suomi
+</a>
+</li>
+<li class="interwiki-sv">
+<a style="text-decoration: none;" href="http://sv.wikipedia.org/wiki/" title="" lang="sv" hreflang="sv">
+Svenska
+</a>
+</li>
+<li class="interwiki-tl">
+<a style="text-decoration: none;" href="http://tl.wikipedia.org/wiki/" title="" lang="tl" hreflang="tl">
+Tagalog
+</a>
+</li>
+<li class="interwiki-th">
+<a style="text-decoration: none;" href="http://th.wikipedia.org/wiki/" title="" lang="th" hreflang="th">
+ไทย
+</a>
+</li>
+<li class="interwiki-vi">
+<a style="text-decoration: none;" href="http://vi.wikipedia.org/wiki/" title="" lang="vi" hreflang="vi">
+Tiếng Việt
+</a>
+</li>
+<li class="interwiki-tr">
+<a style="text-decoration: none;" href="http://tr.wikipedia.org/wiki/" title="" lang="tr" hreflang="tr">
+Türkçe
+</a>
+</li>
+<li class="interwiki-uk">
+<a style="text-decoration: none;" href="http://uk.wikipedia.org/wiki/" title="" lang="uk" hreflang="uk">
+Українська
+</a>
+</li>
+<li class="interwiki-zh">
+<a style="text-decoration: none;" href="http://zh.wikipedia.org/wiki/" title="" lang="zh" hreflang="zh">
+中文
+</a>
+</li>
+</ul>
+</div>
+</div>
+<!-- /LANGUAGES -->
+</div>
+<!-- /panel -->
+<!-- footer -->
+<div id="footer">
+<ul id="footer-info">
+<li id="footer-info-lastmod">
+ Ukurasa huu umebadilishwa kwa mara ya mwisho tarehe 7 Septemba 2010, saa 09:31.
+</li>
+<li id="footer-info-copyright">
+Maandishi yanapatikana chini ya leseni ya 
+<a style="text-decoration: none;" href="http://creativecommons.org/licenses/by-sa/3.0/">
+Creative Commons Attribution/Share-Alike License
+</a>
+; matakwa mengine yanaweza kutakiwa.Tazama maelezo zaidi ya 
+<a style="text-decoration: none;" href="http://wikimediafoundation.org/wiki/Terms_of_Use">
+Matakwa ya Utumiaji
+</a>
+.
+</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy">
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Wikipedia:Sera_ya_faragha" title="Wikipedia:Sera ya faragha">
+Sera ya faragha
+</a>
+</li>
+<li id="footer-places-about">
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Wikipedia:Kuhusu" title="Wikipedia:Kuhusu">
+Kuhusu Wikipedia
+</a>
+</li>
+<li id="footer-places-disclaimer">
+<a style="text-decoration: none;" href="http://sw.wikipedia.org/wiki/Wikipedia:Kanusho_kwa_jumla" title="Wikipedia:Kanusho kwa jumla">
+Kanusho
+</a>
+</li>
+<li id="footer-places-mobileview">
+<a style="text-decoration: none;" href="http://sw.m.wikipedia.org/w/index.php?title=Mwanzo&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">
+Mtazamo wa rununu
+</a>
+</li>
+</ul>
+<ul id="footer-icons" class="noprint">
+<li id="footer-copyrightico">
+<a style="text-decoration: none;" href="http://wikimediafoundation.org/">
+<img src="http://bits.wikimedia.org/images/wikimedia-button.png" width="88" height="31" alt="Wikimedia Foundation"/>
+</a>
+</li>
+<li id="footer-poweredbyico">
+<a style="text-decoration: none;" href="http://www.mediawiki.org/">
+<img src="http://bits.wikimedia.org/static-1.21wmf1/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" />
+</a>
+</li>
+</ul>
+<div style="clear:both">
+</div>
+</div>
+<!-- /footer -->
+<script>
+if(window.mw){mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});}
+</script>
+<script src="http://bits.wikimedia.org/sw.wikipedia.org/load.php?debug=false&amp;lang=sw&amp;modules=skins.vector&amp;only=scripts&amp;skin=vector&amp;*">
+</script>
+<script>
+if(window.mw){mw.loader.load(["mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mobile.desktop","ext.vector.collapsibleNav","ext.vector.collapsibleTabs","ext.vector.editWarning","ext.vector.simpleSearch"], null, true);}
+</script>
+<script src="http://bits.wikimedia.org/sw.wikipedia.org/load.php?debug=false&amp;lang=sw&amp;modules=site&amp;only=scripts&amp;skin=vector&amp;*">
+</script>
+<!-- Served by srv228 in 0.164 secs. -->
+</body>
+</html>

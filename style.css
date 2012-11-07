@@ -1,0 +1,323 @@
+/*
+99Lime.com HTML KickStart by Joshua Gatcke
+style.css
+*/
+
+/*---------------------------------
+	IMPORTS
+-----------------------------------*/
+@import url(http://fonts.googleapis.com/css?family=Arimo:400,700);
+
+/*---------------------------------
+	OVERRIDES
+-----------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+	font-family: "Trebuchet Ms", arial, verdana, sans-serif;
+}
+
+.amiri
+{
+	font-family: "Amiri";
+	font-weight: bold;
+	font-size: 16px;
+	text-align: right;
+	color: #000;
+}
+
+.swahili
+{
+	font-family: "Scheherazade";
+	font-size: 30px;
+	text-align: right;
+	line-height: 1.5; 
+	color: #000;
+}
+
+.sm_swahili
+{
+	font-family: "Scheherazade";
+	font-size: 25px;
+	text-align: right;
+	line-height: 1.2; 
+	color: #000;
+}
+
+/* This only seems to work with Mozilla - including the equivalent items for webkit and ms seems to stop it working. */
+textarea.swahili:-moz-placeholder
+{
+	color:#bbb;
+	font:normal 0.9em/150% 'Arimo', "Trebuchet MS", arial, verdana, sans-serif;
+}
+
+.title
+{
+	font-family: "GranadaKD";
+	font-size: 75px;
+	color: #fff;
+}
+
+.close
+{
+	font-family: "Linux Biolinum O";
+	font-size: 15px;
+	color: #0b3;
+	text-align: right;
+}
+
+.translation
+{
+	font-family: "Liberation Serif";
+	font-style: italic;
+	font-size: 15px;
+	color: #666;
+	text-align: right;
+}
+
+.note
+{
+	font-family: "Liberation Serif";
+	font-size: 14px;
+}
+
+#textwords,
+#rootwords,
+#arabicwords,
+#ngramwords
+{
+	color: #666;
+	text-align: right;
+}
+
+#ngramwords table
+{
+    table-layout: fixed;
+    width: 350px;
+}
+
+#ngramwords th,
+#ngramwords td
+{
+    overflow: hidden;
+    width: 70px;
+}
+
+.textword,
+.rootword,
+.ngramword
+{
+	color: #4d99e0;
+}
+
+.arabicword
+{
+	font-family: "Scheherazade";
+	font-size: 25px;
+	line-height: 1.2; 
+	color: #4d99e0;
+}
+
+textarea
+{
+	resize: none;
+}
+
+#converted_text
+{
+	color: #000;
+	font-family: "Linux Biolinum O";
+	font-size: 15px;
+}
+
+#converted_text p.info,
+p.info
+{
+	color: #bbb;
+}
+
+pre,
+code
+{
+	font-family: "Linux Biolinum O";
+	font-size: 15px;
+	line-height: 1.2; 
+}
+
+table
+{
+	color: #666;
+}
+
+thead th,
+tbody th
+{
+	font-family: "Trebuchet Ms", arial, verdana, sans-serif;
+}
+
+.poem
+{
+	width: 50%;
+	margin: 0 0 0 200px;
+	border-collapse: collapse;
+}
+
+.compare
+{
+	width: 70%;
+	margin: 0 0 0 110px;
+}
+
+.compare th,
+.compare  td
+{
+	text-align: center;
+}
+
+th.leftcompare,
+td.leftcompare
+{
+	text-align: left;
+}
+
+
+/*.poem td
+{
+	border-bottom: none;
+}
+
+tr.stanza_divider
+{
+	border-bottom:1px solid #ddd;
+}*/
+
+a
+{
+	text-decoration: none;
+}
+
+button,
+a.btn,
+input[type="submit"],
+input[type="reset"],
+input[type="button"]
+{
+	font-family: "Trebuchet Ms", arial, verdana, sans-serif;
+}
+
+strong,
+b
+{
+	color:#000;
+/* 	background:#efefef; */
+	position:relative;
+	top:0;
+	left:0;
+/*	padding:2px 5px;*/
+}
+
+.menu
+{
+	font-family: "Trebuchet Ms", arial, verdana, sans-serif;
+}
+
+blockquote
+{
+	font-family: "Trebuchet Ms", arial, verdana, sans-serif;
+}
+
+
+ul, 
+ul.checks,
+ul.alt
+{
+	color:#666;
+}
+
+/*---------------------------------
+	LAYOUT
+-----------------------------------*/
+body
+{
+	margin:0;
+	padding:0;
+	color:#000;
+/*	background:#efefef url(css/img/grid.png) repeat center top;*/
+	background:#4D99E0;
+	font:normal 0.9em/150% 'Arimo', "Trebuchet MS", arial, verdana, sans-serif;
+	text-shadow: 0px 0px 1px transparent; /* google font pixelation fix */
+}
+
+p.footnote
+{
+	font-size:10px;
+}
+
+/*p span.tooltip,
+ul li span.tooltip
+{
+	background-color: #e1edf8;
+}*/
+
+#wrap
+{
+	width:960px;/*960*/
+	background:#fff;
+	margin:30px auto 30px auto;
+	padding:0;
+	border:1px solid #ccc;
+}
+
+.menu
+{
+	margin:-1px -1px 0 -1px;
+}
+
+#header
+{
+	/*padding:10px 0 20px 0;*/
+	margin:0 auto;
+	width:960px;
+	text-shadow:0px 1px 1px #fff;
+	position: relative;
+	top:0;
+	left:0;
+	text-align:center;
+}
+
+#footer
+{
+	text-align:center;
+	padding:20px;
+	margin:0;
+	background:#efefef;
+	border-top:1px solid #ccc;
+	color:#999;
+	font-size:0.8em;
+	text-shadow:0px 1px 1px #fff;
+	position: relative;
+	top:0;
+	left:0;
+}
+
+#link-top
+{
+	position: absolute;
+	top:10px;
+	right:10px;
+	*right:25px;/*IE 7 ONLY*/
+	left:auto;
+	color:#666;
+	text-decoration:none;
+	display: inline-block;
+	padding:5px 10px;
+	background:#e5e5e5;
+	line-height:100%;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+}

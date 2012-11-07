@@ -1,0 +1,129 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage{polyglossia}
+\usepackage{longtable}
+\usepackage{xcolor}  % can't use color with polyglossia
+\usepackage{arydshln}
+
+\interfootnotelinepenalty=10000 % prevents the footnote from breaking across pages
+% http://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
+
+% Thanks to Manas Tungare (http://manas.tungare.name/software/latex) for these settings.
+\setlength{\paperwidth}{210mm}
+\setlength{\paperheight}{297mm}
+
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{247mm}
+
+\setlength{\evensidemargin}{1in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{-0.5in}
+
+\setmainfont[Mapping=tex-text]{Liberation Serif}  % Set the default font for the document (footnotes will also use this font, but see also: http://tex.stackexchange.com/questions/4779/how-to-change-font-family-in-footnote)
+
+\setmainlanguage{english}
+\setotherlanguage{arabic}
+\setotherlanguage{farsi}  % used to allow typesetting the tile in a different font
+
+\newfontfamily\arabicfont[Script=Arabic, Scale=2]{Scheherazade} % Arabic transcription layer
+\newfontfamily\farsifont[Script=Arabic, Scale=4]{GranadaKD} % Arabic transcription layer for titles - uses a version of Granada which has been extended to include glyphs for Swahili.
+\newcommand{\AS}[1]{\fontspec[Script=Arabic, Scale=1.5]{Scheherazade} #1\normalfont} % Arabic when used in footnotes - using \newfontfamily resets following English text as well.  IMPORTANT: this can ONLY be used for single words - multiple words will be written LTR, and not RTL as required.
+\newfontfamily{\T}[Scale=1.1, Color=00BB33]{Linux Biolinum O} %  transliteration layer - Biolinum handles diacritics well
+\newfontfamily{\I}[Scale=1.1, Color=blue]{Linux Biolinum O} % interpolated letters in the transliteration layer
+\newfontfamily{\E}[Color=666666]{Liberation Serif Italic} % English translation layer
+
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote merkers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696):
+
+\begin{document}
+
+% \chapter{Introduction}
+
+\begin{longtable}{rl}
+
+
+% \textfarsi{أُتٖيْنْزِ ۏَ ڤِيْٹَ ڤِكُوْ} & \textfarsi{ }\\
+% \nopagebreak \T{uṯēnzi w̱a vı̄ţa vikuu} & \\
+% \nopagebreak \E{The Ballad of the Great Battle} & \\ [12mm]
+
+\textfarsi{أُتٖنْزِ وَ جَعْفَر} & \textfarsi{ }\\
+\nopagebreak \T{uṯenzi wa ja'far} &\\
+\nopagebreak \E{The Ballad of Ja'far} & \\
+
+\nopagebreak  & \\
+\nopagebreak \cdashline{1-1}[1pt/3pt] & \\  % requires arydshln package
+
+\textarabic{بِسْمِ اللّٰهِ الرحْمَنِ الرَّحِيْمِ} & \textarabic{ }\\
+\nopagebreak \T{bismi llähi arr}\I{a}\T{ḥmani arraḥı̄mi} &\\
+\nopagebreak \E{In the name of God, the Compassionate, the Merciful} & \\
+
+\nopagebreak  & \\
+\nopagebreak \cdashline{1-1}[1pt/3pt] & \\[6mm]  % requires arydshln package
+
+\textarabic{بِسْمِ اللّٰهِ إِخْوَانِ * پَمْوٖ نَ رَحْمٰنِ} & \textarabic{١} \\ 
+\nopagebreak \T{bismi llähi iẖwāni * pamwe na raḥmäni} & \T{1a/b} \\ 
+\nopagebreak \E{ } & \\ 
+\textarabic{نَ الرَّحِيْمُ يُوَنِ * نْدِيٗ يَلٗأَنْدَمِيَ} & \\ 
+\nopagebreak \T{na rraḥı̄mu yuwani * nḏiyo yaloanḏamiya} & \T{1c/d} \\ 
+\nopagebreak \E{ } & \\ [8mm] 
+
+\textarabic{پُلِكَنِ نْدُزَنْڠُ * كهٖنْدَ مَتٖمْبٖزِ يَنْڠُ} & \textarabic{٢} \\ 
+\nopagebreak \T{pulikani nḏuzangu * kʿenḏa maṯembezi yangu} & \T{2a/b} \\ 
+\nopagebreak \E{ } & \\ 
+\textarabic{نِوَپٖ خَبَرِ زَنْڠُ * قِصَ چَلٗنِجِرِيَ} & \\ 
+\nopagebreak \T{niwape ẖabari zangu * qiṣa chalonijiriya} & \T{2c/d} \\ 
+\nopagebreak \E{ } & \\ [8mm] 
+
+\textarabic{نِلِ نٖنْدَءٗ نْدِيَنِ * كْوَلِ نَ مْٹُ چُمْبَنِ} & \textarabic{٣} \\ 
+\nopagebreak \T{nili nenḏao nḏiyani * kwali na mţu chumbani} & \T{3a/b} \\ 
+\nopagebreak \E{ } & \\ 
+\textarabic{مٗيٗ أُكَمْتَمَنِ * كْوَ حَلَالِ كُرِضِيَ} & \\ 
+\nopagebreak \T{moyo ukamṯamani * kwa ḥalāli kuriḍiya} & \T{3c/d} \\ 
+\nopagebreak \E{ } & \\ [8mm] 
+
+\textarabic{نَمَهَرِيٖ يُوَنِ * نَلٗمْپَ زَيْدَنِ} & \textarabic{٤} \\ 
+\nopagebreak \T{namahariye yuwani * nalompa zayḏani} & \T{4a/b} \\ 
+\nopagebreak \E{ } & \\ 
+\textarabic{نَلِنَ پٖٹٖ چَنْدَنِ * هَوَهِ كُمْڤَلِيَ} & \\ 
+\nopagebreak \T{nalina peţe chanḏani * hawahi kumvaliya} & \T{4c/d} \\ 
+\nopagebreak \E{ } & \\ [8mm] 
+
+\textarabic{عَلى كُتٗكَ كْوَكٖ * أُنَ رُبَ مٗيٗ وَكٖ} & \textarabic{٥} \\ 
+\nopagebreak \T{'alı̄ kuṯoka kwake * una ruba moyo wake} & \T{5a/b} \\ 
+\nopagebreak \E{ } & \\ 
+\textarabic{أَكٖنْدَ كْوَ مْكٖ وَكٖ * مْكٗنٗ هُمْفُمْبِيَ} & \\ 
+\nopagebreak \T{akenḏa kwa mke wake * mkono humfumbiya} & \T{5c/d} \\ 
+\nopagebreak \E{ } & \\ [8mm] 
+
+\textarabic{مْوَنَ بِنْتِ رَسُوْلِ * يَلِ هَيَتَأَمَلِ} & \textarabic{٦} \\ 
+\nopagebreak \T{mwana binṯi rasūli * yali hayaṯaamali} & \T{6a/b} \\ 
+\nopagebreak \E{ } & \\ 
+\textarabic{كَنٖنْدَ مْوٖنْيٖ عقِلِ * خَبَرِ أكَمْوَمْبِيَ} & \\ 
+\nopagebreak \T{kanenḏa mwenye 'qili * ẖabari kamwambiya} & \T{6c/d} \\ 
+\nopagebreak \E{ } & \\ [8mm] 
+
+\textarabic{أَكٖنٖنْدَءٖ كِزٖيْ * فَاطِمَه أكَمْوَمْبِيٖ} & \textarabic{٧} \\ 
+\nopagebreak \T{akenenḏae kizee * fāṭimah kamwambiye} & \T{7a/b} \\ 
+\nopagebreak \E{ } & \\ 
+\textarabic{شٖيْحٖ عَليْ أُوٗزٖيْ * خَبَرِ هُكِسِكِيَ} & \\ 
+\nopagebreak \T{shēḥe 'alı̄ uwozee * ẖabari hukisikiya} & \T{7c/d} \\ 
+\nopagebreak \E{ } & \\ [8mm] 
+
+\textarabic{أَكَفَنْيَ مْشَوَشَ * فَاطِمَه كَمْكَنُشَ} & \textarabic{٨} \\ 
+\nopagebreak \T{akafanya mshawasha * fāṭimah kamkanusha} & \T{8a/b} \\ 
+\nopagebreak \E{ } & \\ 
+\textarabic{عَلَامَ كَمُؤٗنٖشَ * أُتُنْڠُ أَكَمْٹِيَ} & \\ 
+\nopagebreak \T{'alāma kamuonesha * uṯungu akamţiya} & \T{8c/d} \\ 
+\nopagebreak \E{ } & \\ [8mm] 
+
+\textarabic{9 * } & \textarabic{٩} \\ 
+\nopagebreak \T{9 * } & \T{9a/b} \\ 
+\nopagebreak \E{ } & \\ 
+\textarabic{ * } & \\ 
+\nopagebreak \T{ * } & \T{9c/d} \\ 
+\nopagebreak \E{ } & \\ [8mm] 
+
+
+\end{longtable}
+
+\end{document}
+
