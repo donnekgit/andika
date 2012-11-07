@@ -25,11 +25,11 @@ You can also go to the <a href="./ar_rom.php">Arabic to Roman</a> section to con
 </p>
 
 <p>
-Conventions
+The <a href="./spelling.php">Spelling conventions</a> section gives suggestions for using Arabic script with current-day Swahili, with many examples of how the Arabic script maps to the Roman script.
 </p>
 
 <p>
-Typesetting poetry
+The section on <a href="./spelling.php">Typesetting poetry</a> shows how Swahili poetry manuscripts in Arabic script can be transcribed digitally to produce attractive output in various formats, with the added benefit that the contents of the manuscripts are then available for computer analysis of language, vocabulary, word-frequency, etc.
 </p>
 
 </div>
