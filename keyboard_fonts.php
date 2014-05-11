@@ -19,7 +19,7 @@ However, Amiri places all the vowels at the same height from the main letter, eg
 </p>
 
 <p>
-To allow some variation in the fonts used for Swahili, I have adapted one of the Arabeyes fonts (a Kufic one, <em>Granada</em>) to add the characters necessary for it to be used for Swahili - I am grateful to Khaled Hosny for his advice here, but it should be noted that the responsibility for any infelicities caused to this very attractive font is mine alone!  The hacked version of the font is available as <a href="./fonts/GranadaKD.ttf">GranadaKD</a>.  It is used as the title font in the <a href="./poetry/outputs/vita_vikuu.pdf">sample of poetry</a> in the <a href="./typesetting.php">Typesetting poetry</a> section.
+To allow some variation in the fonts used for Swahili, I have adapted one of the Arabeyes fonts (a Kufic one, <em>Granada</em>) to add the characters necessary for it to be used for Swahili - I am grateful to Khaled Hosny for his advice here, but it should be noted that the responsibility for any infelicities caused to this very attractive font is mine alone!  The hacked version of the font is available as <a href="./fonts/GranadaKD.ttf">GranadaKD</a>.  It is used as the title font in the <a href="./poetry/outputs/vita_vikuu.pdf">sample of poetry</a> in the <a href="./typesetting.php">Typesetting poetry</a> section, and you will need to install this font if you want the titles to display properly.
 </p>
 
 <p>

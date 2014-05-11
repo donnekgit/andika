@@ -104,7 +104,7 @@ On this site, the Arabic font has purposely been made quite large, so that the d
 </p>
 
 <p>
-Some of the vowel signs (eg an <strong>e</strong> under a word-final <span class="sm_swahili">ي</span>) can get hidden below the visible window of the line, so it is often useful to set the line-spacing of the LibreOffice document to 1.5: <strong>Ctrl+a</strong>, then click on <em>Format → Paragraph</em>, select <strong>1.5 linee</strong> under <em>Line spacing</em>, and then click <strong>OK</strong>.
+Some of the vowel signs (eg an <strong>e</strong> under a word-final <span class="sm_swahili">ي</span>) can get hidden below the visible window of the line, so it is often useful to set the line-spacing of the LibreOffice document to 1.5: <strong>Ctrl+a</strong>, then click on <em>Format → Paragraph</em>, select <strong>1.5 lines</strong> under <em>Line spacing</em>, and then click <strong>OK</strong>.
 </p>
 
 <p>
