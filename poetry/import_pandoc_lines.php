@@ -28,7 +28,7 @@ include("./andika/config.php");
 require_once 'poetry/QueryPath-2.1.2-minimal/QueryPath.php';
 
 // Specify the file and the table name.
-$file='zip://poetry/outputs/maisha-mume_swahili.odt#content.xml';
+$file='zip://poetry/outputs/pantest.odt#content.xml';
 $poem="maisha_mume";
 // $file='zip://poetry/unzipped/vita_vikuu.odt#content.xml';
 // $poem="vita_vikuu";
@@ -44,43 +44,37 @@ $stanza=1;  // start stanza counter for poemlines
 $doc=qp($file);
 foreach ($doc->find('text|p') as $line) 
 {
-	$poemline=$line->text();
-	if ($poemline!="") // when there's text on the line ...
+	$poemlines=explode('*', $line->text());
+// 	print_r($poemlines);
+	foreach ($poemlines as $key=>$poemline)
 	{
-		// compare the stanza number of the line just finished ($seq) with the stanza number of the next line ($stanza)
-		// if they are identical, we're still in that stanza, so use cd
-		// otherwise, we're not in that stanza, so start a new stanza and use ab
-		$pos=($seq==$stanza) ? "cd" : "ab";   
-		//echo "\n".$stanza.": ".$pos.": ".$poemline."\n";
-		$poemline=pg_escape_string(trim($poemline));
-		
-		$arabic_bits=explode('*', $poemline);  // Replace * with whatever your vipande divider is.
-		foreach ($arabic_bits as $key=>$arabic_value)
+		switch ($key)
 		{
-			if ($pos=="ab")
-			{
-				$posk= ($key==0) ? "a" : "b";
-			}
-			elseif ($pos=="cd")
-			{
-				$posk= ($key==0) ? "c" : "d";
-			}
-			echo $stanza." ".$posk.":";
-			echo $arabic_value."\n";
-			
-			$translit=ar2rom(trim($arabic_value)); // transliterate
-			$standard=lcfirst(pg_escape_string(trim(standardise($translit))));  // apply standard spelling
-			echo $standard."\n\n";
-			$close=pg_escape_string(trim(close_trans($translit)));  // apply close phonetic transcription
-
-			$sql=query("insert into $poem (stanza, pos, arabic, standard, close) values ($stanza, '$posk', '$arabic_value', '$standard', '$close')");
+			case 0:
+				$posk="a";
+				break;
+			case 1:
+				$posk="b";
+				break;
+			case 2:
+				$posk="c";
+				break;
+			case 3:
+				$posk="d";
+				break;
 		}
-		$seq=$stanza; // pass the number of the current stanza into the loop for the next line
+		
+		echo "(".$stanza.$posk.") ". $poemline."\n";
+		
+		$translit=ar2rom(trim($poemline)); // transliterate
+		$standard=lcfirst(pg_escape_string(trim(standardise($translit))));  // apply standard spelling
+		$close=pg_escape_string(trim(close_trans($translit)));  // apply close phonetic transcription
+		echo $standard."\n\n";
+
+		$sql=query("insert into $poem (stanza, pos, arabic, standard, close) values ($stanza,  '$posk',  '$poemline',  '$standard',  '$close')");
 	}
-	else // it's a blank line or line with hash preceding a new stanza, so increment the stanza number
-	{
-		$stanza=$stanza+1;
-	}
+
+	$stanza++;
 }
 
 ?>

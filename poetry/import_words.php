@@ -26,7 +26,8 @@ If not, see <http://www.gnu.org/licenses/>.
 include("./includes/fns.php");
 include("./andika/config.php");
 
-$poem="vita_vikuu";
+$poem="maisha_mume";
+//$poem="vita_vikuu";
 // $poem="jaafari";
 $words="{$poem}_words";
 $notes="{$poem}_notes";
@@ -82,7 +83,7 @@ while ($row=pg_fetch_object($sql))
 // - the poem is reimported and rewordified (perhaps because of corrections to the transcription);
 // - because of an oversight, existing notes are not added back to the new wordification;
 // - the new wordification deletes the notes table (top of this script);
-// - it then creates a new notes table, but this will be empty because there were the notes fields in the new wordification are empty;
+// - it then creates a new notes table, but this will be empty because the notes fields in the new wordification are empty;
 // - the existing notes are therefore lost. :-(
 include("poetry/integrate_notes.php");
 

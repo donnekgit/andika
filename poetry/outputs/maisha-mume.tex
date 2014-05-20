@@ -1,0 +1,1556 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage{polyglossia}
+\usepackage{longtable}
+\usepackage{xcolor}  % can't use color with polyglossia
+\usepackage{arydshln}
+
+\interfootnotelinepenalty=10000 % prevents the footnote from breaking across pages
+% http://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
+
+% Thanks to Manas Tungare (http://manas.tungare.name/software/latex) for these settings.
+\setlength{\paperwidth}{210mm}
+\setlength{\paperheight}{297mm}
+
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{247mm}
+
+\setlength{\evensidemargin}{1in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{-0.5in}
+
+\setmainfont[Mapping=tex-text]{Liberation Serif}  % Set the default font for the document (footnotes will also use this font, but see also: http://tex.stackexchange.com/questions/4779/how-to-change-font-family-in-footnote)
+
+\setmainlanguage{english}
+\setotherlanguage{arabic}
+\setotherlanguage{farsi}  % used to allow typesetting the tile in a different font
+
+\newfontfamily\arabicfont[Script=Arabic, Scale=2]{Scheherazade} % Arabic transcription layer
+\newfontfamily\farsifont[Script=Arabic, Scale=2]{GranadaKD} % Arabic transcription layer for titles - uses a version of Granada which has been extended to include glyphs for Swahili.
+\newcommand{\AS}[1]{\fontspec[Script=Arabic, Scale=1.5]{Scheherazade} #1\normalfont} % Arabic when used in footnotes - using \newfontfamily resets following English text as well.  IMPORTANT: this can ONLY be used for single words - multiple words will be written LTR, and not RTL as required.
+\newfontfamily{\T}[Scale=1.1, Color=00BB33]{Linux Biolinum O} %  transliteration layer - Biolinum handles diacritics well
+\newfontfamily{\I}[Scale=1.1, Color=blue]{Linux Biolinum O} % interpolated letters in the transliteration layer
+\newfontfamily{\E}[Color=666666]{Liberation Serif Italic} % English translation layer
+
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote merkers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696):
+
+\begin{document}
+
+% \chapter{Introduction}
+
+\begin{longtable}{rl}
+
+\textfarsi{أُتٖنْزِ وَ رَمَانِ يَ مَئِيشَ يَ نْدٗؤَ - مُومٖ} & \textfarsi{ }\\
+\nopagebreak \T{Utenzi wa Ramani ya Maisha ya Ndoa - Mume} & \\
+[4mm]
+
+\E{Mtungaji: Ustadh Mau (Mahmoud Ahmad Abdulkadir), 2006} & \\
+[12mm] 
+
+\textarabic{كْوَ إِينَ لَ رَهَمَانِ  *  نَأَنْدَ نُذُومَ هِينِ} & \textarabic{١} \\ 
+\nopagebreak \T{kwa ina la rahamani  *  naanda nudhuma hini} & \T{1a/b} \\ 
+\textarabic{إِينَ يَ پِيلِ رَمَانِ  *  نَمْوَنْدِكِيَ يَهَايَ} & \\ 
+\nopagebreak \T{ina ya pili ramani  *  namwandikiya yahaya} & \T{1c/d} \\ 
+[8mm] 
+
+\textarabic{كْوٖينْيٖ رَمَانِ يَ كْوَانْدَ  *  بَنَاتِ نَلِوَفُونْدَ} & \textarabic{٢} \\ 
+\nopagebreak \T{kwenye ramani ya kwanda  *  banati naliwafunda} & \T{2a/b} \\ 
+\textarabic{نَ هِينِ نِمٖئُِونْدَ  *  وَڤُلَانَ كُوَمْبِيَ} & \\ 
+\nopagebreak \T{na hini nimeiunda  *  wavulana kuwambiya} & \T{2c/d} \\ 
+[8mm] 
+
+\textarabic{نَ أَسِيلِ يَ كْوَنْدِيكَ  *  نَهِيسِ وَانَ وَتَاكَ} & \textarabic{٣} \\ 
+\nopagebreak \T{na asili ya kwandika  *  nahisi wana wataka} & \T{3a/b} \\ 
+\textarabic{بَابَ پِيَ كَذَلِيكَ  *  مِيمِ أَلِنَنْدِكِيَ} & \\ 
+\nopagebreak \T{baba piya kadhalika  *  mimi alinandikiya} & \T{3c/d} \\ 
+[8mm] 
+
+\textarabic{بَابَ بوَانَ أَهمَادِ  *  أَتَمْجَازِ وَدُودِ} & \textarabic{٤} \\ 
+\nopagebreak \T{baba bwana ahmadi  *  atamjazi wadudi} & \T{4a/b} \\ 
+\textarabic{كْوَانِ أَلِجِتَهِيدِ  *  كُنَنْدِكِيَ وَسِيَ} & \\ 
+\nopagebreak \T{kwani alijitahidi  *  kunandikiya wasiya} & \T{4c/d} \\ 
+[8mm] 
+
+\textarabic{هَاپٗ زَمَانِ زَ يَانَ  *  نْدِيٗ لَ وَسِيَ يِينَ} & \textarabic{٥} \\ 
+\nopagebreak \T{hapo zamani za yana  *  ndiyo la wasiya yina} & \T{5a/b} \\ 
+\textarabic{أَلٗنَنْدِكِئَ بوَانَ  *  بَبَانْڠُ كَنِوَتِيَ} & \\ 
+\nopagebreak \T{alonandikia bwana  *  babangu kaniwatiya} & \T{5c/d} \\ 
+[8mm] 
+
+\textarabic{نَامِ كَتِيكَ رَمَانِ  *  تَيِپِينْدَ كُبَئِينِ} & \textarabic{٦} \\ 
+\nopagebreak \T{nami katika ramani  *  tayipinda kubaini} & \T{6a/b} \\ 
+\textarabic{يَالٖ نِنَيٗؤَمِينِ  *  يَوٖيزَ كُسَئِدِيَ} & \\ 
+\nopagebreak \T{yale ninayoamini  *  yaweza kusaidiya} & \T{6c/d} \\ 
+[8mm] 
+
+\textarabic{تَنٖينَ نَلٗيَتُومَ  *  نَ يَالٖ نِلٗيَسٗومَ} & \textarabic{٧} \\ 
+\nopagebreak \T{tanena naloyatuma  *  na yale niloyasoma} & \T{7a/b} \\ 
+\textarabic{تَزِتَايَ نَ هٖكِيمَ  *  كْوَ وَاتُ نِلٗپٗكٖيَ} & \\ 
+\nopagebreak \T{tazitaya na hekima  *  kwa watu nilopokeya} & \T{7c/d} \\ 
+[8mm] 
+
+\textarabic{يَالٖ نِتَيَكُسَانْيَ  *  مْبَالِ مْبَالِ كُتَنْڠَانْيَ} & \textarabic{٨} \\ 
+\nopagebreak \T{yale nitayakusanya  *  mbali mbali kutanganya} & \T{8a/b} \\ 
+\textarabic{لٖينْڠٗ لَانْڠُ نِ كُفَانْيَ  *  كَامَ لَ مَئِيشَ بٗويَ} & \\ 
+\nopagebreak \T{lengo langu ni kufanya  *  kama la maisha boya} & \T{8c/d} \\ 
+[8mm] 
+
+\textarabic{بٗويَ هِيلِ لَ مَئِيشَ  *  كَاتُ هَلِتٗزَمِيشَ} & \textarabic{٩} \\ 
+\nopagebreak \T{boya hili la maisha  *  katu halitozamisha} & \T{9a/b} \\ 
+\textarabic{أَشِكَاءٗ تَمْڤُوشَ  *  بَنْدَارِ تَسِكِلِيَ} & \\ 
+\nopagebreak \T{ashikao tamvusha  *  bandari tasikiliya} & \T{9c/d} \\ 
+[8mm] 
+
+\textarabic{مْوَنَانْڠُ أُكِئَزِيمُ  *  كُؤٗوَ كْوَانْدَ فَهَامُ} & \textarabic{١٠} \\ 
+\nopagebreak \T{mwanangu ukiazimu  *  kuowa kwanda fahamu} & \T{10a/b} \\ 
+\textarabic{كُتٖؤُوَ نِ مُهِيمُ  *  نِ أَامرِ يَ شَرِيَ} & \\ 
+\nopagebreak \T{kuteuwa ni muhimu  *  ni amri ya shariya} & \T{10c/d} \\ 
+[8mm] 
+
+\textarabic{مْتُومِ أَلِبَئِينِ  *  أَكَتوَمْبِيَ أٗوَانِ} & \textarabic{١١} \\ 
+\nopagebreak \T{mtumi alibaini  *  akatwambiya owani} & \T{11a/b} \\ 
+\textarabic{مْوَنَامْكٖ مْوٖينْيٖ دِينِ  *  مُونْڠُ تَوَبَرِكِيَ} & \\ 
+\nopagebreak \T{mwanamke mwenye dini  *  mungu tawabarikiya} & \T{11c/d} \\ 
+[8mm] 
+
+\textarabic{مْوَنَانْڠُ سِتَاكٖ مْكٖ  *  كْوَ وٖيمَ وَ أُومْبٗ لَاكٖ} & \textarabic{١٢} \\ 
+\nopagebreak \T{mwanangu sitake mke  *  kwa wema wa umbo lake} & \T{12a/b} \\ 
+\textarabic{نَسَابَ نَ پَاتٗ لَاكٖ  *  مَيُتٗونِ أُتَنْڠِيَ} & \\ 
+\nopagebreak \T{nasaba na pato lake  *  mayutoni utangiya} & \T{12c/d} \\ 
+[8mm] 
+
+\textarabic{وَالَ دِينِ هَئِنٖينِ  *  أٗوَ شُڠُؤُ لَ أُونِ} & \textarabic{١٣} \\ 
+\nopagebreak \T{wala dini haineni  *  owa shuguu la uni} & \T{13a/b} \\ 
+\textarabic{كِشُونَ كِيلٗ نَ دِينِ  *  كُكِؤٗوَ سِ هَتِيَ} & \\ 
+\nopagebreak \T{kishuna kilo na dini  *  kukiowa si hatiya} & \T{13c/d} \\ 
+[8mm] 
+
+\textarabic{مْوٖينْيٖ نَسَابَ تُكُوفُ  *  نَ كْوَ مٗولَ مْتِئِيفُ} & \textarabic{١٤} \\ 
+\nopagebreak \T{mwenye nasaba tukufu  *  na kwa mola mtiifu} & \T{14a/b} \\ 
+\textarabic{هَاوِ مْتُ مٖخَلِيفُ  *  كَامَ هُويٗ كُزٖنْڠٖيَ} & \\ 
+\nopagebreak \T{hawi mtu mekhalifu  *  kama huyo kuzengeya} & \T{14c/d} \\ 
+[8mm] 
+
+\textarabic{نَ مْكٖ أَالٗ نَ چَاكٖ  *  سِكْوَمْبِئِ سِمْتَاكٖ} & \textarabic{١٥} \\ 
+\nopagebreak \T{na mke alo na chake  *  sikwambii simtake} & \T{15a/b} \\ 
+\textarabic{بٗورَ أَاوٖ دِينِ يَاكٖ  *  مٖشِيكَ هَكُمْبِرِيَ} & \\ 
+\nopagebreak \T{bora awe dini yake  *  meshika hakumbiriya} & \T{15c/d} \\ 
+[8mm] 
+
+\textarabic{دِينِ نِ كَامَ بُرٖيكِ  *  هُمزِوِيَ هَتٗوكِ} & \textarabic{١٦} \\ 
+\nopagebreak \T{dini ni kama bureki  *  humziwiya hatoki} & \T{16a/b} \\ 
+\textarabic{مِپَكَانِ نَ هَرُوكِ  *  أَكِيوَ تَئِتُمِيَ} & \\ 
+\nopagebreak \T{mipakani na haruki  *  akiwa taitumiya} & \T{16c/d} \\ 
+[8mm] 
+
+\textarabic{نَ دِينِ هُمزِوِيزَ  *  كُتٖينْدَ يَسٗپٖنْدٖيزَ} & \textarabic{١٧} \\ 
+\nopagebreak \T{na dini humziwiza  *  kutenda yasopendeza} & \T{17a/b} \\ 
+\textarabic{نَ نْدِيپٗ كَكُهِمِيزَ  *  مْوٖينْيٖ دِينِ كْوَنْڠَلِيَ} & \\ 
+\nopagebreak \T{na ndipo kakuhimiza  *  mwenye dini kwangaliya} & \T{17c/d} \\ 
+[8mm] 
+
+\textarabic{دِينِ نِنَيٗئِنٖينَ  *  سِكُوَ نَايٗ نِ إِينَ} & \textarabic{١٨} \\ 
+\nopagebreak \T{dini ninayoinena  *  sikuwa nayo ni ina} & \T{18a/b} \\ 
+\textarabic{دِينِ نِ كْوَنْدَامَ سَانَ  *  أَامرِ زَاكٖ جَلِيَ} & \\ 
+\nopagebreak \T{dini ni kwandama sana  *  amri zake jaliya} & \T{18c/d} \\ 
+[8mm] 
+
+\textarabic{نِ دِينِ كْوٖينْيٖ مَئِيشَ  *  مْتُ إِيوٖ هُمْوٖنْدٖيشَ} & \textarabic{١٩} \\ 
+\nopagebreak \T{ni dini kwenye maisha  *  mtu iwe humwendesha} & \T{19a/b} \\ 
+\textarabic{سِ دِينِ يَ كُؤٗنٖيشَ  *  وَاتُ كُوَهَدَلِيَ} & \\ 
+\nopagebreak \T{si dini ya kuonesha  *  watu kuwahadaliya} & \T{19c/d} \\ 
+[8mm] 
+
+\textarabic{نِ دِينِ إِلِيٗ نْدَانِ  *  إِلِيٗكِيتَ مٗيٗونِ} & \textarabic{٢٠} \\ 
+\nopagebreak \T{ni dini iliyo ndani  *  iliyokita moyoni} & \T{20a/b} \\ 
+\textarabic{نْدِيٗ هُوَ نِ سُكَانِ  *  يَ كُمُؤٗنْڠٗوزَ نْدِيَ} & \\ 
+\nopagebreak \T{ndiyo huwa ni sukani  *  ya kumuongoza ndiya} & \T{20c/d} \\ 
+[8mm] 
+
+\textarabic{نِ أُكِيسَ كُؤَمُوَ  *  نِ فُلَانِ تَمُؤٗوَ} & \textarabic{٢١} \\ 
+\nopagebreak \T{ni ukisa kuamuwa  *  ni fulani tamuowa} & \T{21a/b} \\ 
+\textarabic{فَانْيَ مَامْبٗ سَوَسَاوَ  *  سَنْدَامٖ يَ جٗونْڠٗ نْدِيَ} & \\ 
+\nopagebreak \T{fanya mambo sawasawa  *  sandame ya jongo ndiya} & \T{21c/d} \\ 
+[8mm] 
+
+\textarabic{أُسِفَانْيٖ يَ شٖشٖيڠِ  *  كَامَ وَاتُ وٖينْيٖ ڠٗوڠِ} & \textarabic{٢٢} \\ 
+\nopagebreak \T{usifanye ya sheshegi  *  kama watu wenye gogi} & \T{22a/b} \\ 
+\textarabic{سِئِپٖيكٖ زِڠِزَاڠِ  *  هَرُوسِ نِمٖكْوَمْبِيَ} & \\ 
+\nopagebreak \T{siipeke zigizagi  *  harusi nimekwambiya} & \T{22c/d} \\ 
+[8mm] 
+
+\textarabic{كُولَ إِكِيوَ نِ پٖيسِ  *  هُوَ نِ بٗورَ هَرُوسِ} & \textarabic{٢٣} \\ 
+\nopagebreak \T{kula ikiwa ni pesi  *  huwa ni bora harusi} & \T{23a/b} \\ 
+\textarabic{فَانْيَ مَامْبٗ يَ كِئَاسِ  *  كْوَ غَرَامَ نْڠٗومَ پِيَ} & \\ 
+\nopagebreak \T{fanya mambo ya kiasi  *  kwa gharama ngoma piya} & \T{23c/d} \\ 
+[8mm] 
+
+\textarabic{مَكُوبوَ أُسِيَتَاكٖ  *  نَ مِپَاكَ أُسِرُوكٖ} & \textarabic{٢٤} \\ 
+\nopagebreak \T{makubwa usiyatake  *  na mipaka usiruke} & \T{24a/b} \\ 
+\textarabic{پِيَ أُپَانْدٖ وَ مْكٖ  *  وَئِلٖيزٖ كَامَ هَايَ} & \\ 
+\nopagebreak \T{piya upande wa mke  *  waeleze kama haya} & \T{24c/d} \\ 
+[8mm] 
+
+\textarabic{زِكِيوَ نْيِينْڠِ غَرَامَ  *  نَ مَيُوتٗ نِ لَزِيمَ} & \textarabic{٢٥} \\ 
+\nopagebreak \T{zikiwa nyingi gharama  *  na mayuto ni lazima} & \T{25a/b} \\ 
+\textarabic{نْڠٗومَ زِكِيسَ كُكٗومَ  *  نِ لَوَامَ هُسَلِيَ} & \\ 
+\nopagebreak \T{ngoma zikisa kukoma  *  ni lawama husaliya} & \T{25c/d} \\ 
+[8mm] 
+
+\textarabic{فَانْيَ مَامْبٗ يَ كَدِيرِ  *  سِتَاكٖ مْنٗ فَخَارِ} & \textarabic{٢٦} \\ 
+\nopagebreak \T{fanya mambo ya kadiri  *  sitake mno fakhari} & \T{26a/b} \\ 
+\textarabic{نَكُؤُسِيَ سِكِيرِ  *  هَفُولَ زَ مَأَسِيَ} & \\ 
+\nopagebreak \T{nakuusiya sikiri  *  hafula za maasiya} & \T{26c/d} \\ 
+[8mm] 
+
+\textarabic{هَفُولَ زَ إِسِرَافُ  *  نَ زَ مَڠٗومَ مَچَافُ} & \textarabic{٢٧} \\ 
+\nopagebreak \T{hafula za isirafu  *  na za magoma machafu} & \T{27a/b} \\ 
+\textarabic{نَ كُوَ تُوتُ كْوَ أُوفُ  * دِينِ هَايٗ هُزُوِيَ} & \\ 
+\nopagebreak \T{na kuwa tutu kwa ufu  * dini hayo huzuwiya} & \T{27c/d} \\ 
+[8mm] 
+
+\textarabic{مِيلَ يٖيتُ أُسِوَاتٖ  *  مْفَانٗ كُڤِيشَ پٖيتٖ} & \textarabic{٢٨} \\ 
+\nopagebreak \T{mila yetu usiwate  *  mfano kuvisha pete} & \T{28a/b} \\ 
+\textarabic{سِ يٖيتُ أُسِفُؤَاتٖ  *  وٖينْڠِ وَنْڠَكَزَنِيَ} & \\ 
+\nopagebreak \T{si yetu usifuate  *  wengi wangakazaniya} & \T{28c/d} \\ 
+[8mm] 
+
+\textarabic{نِ مِيلَ يَ كِنَسَارَ  *  كُئِوَاتَ نْدِؤٗ بٗورَ} & \textarabic{٢٩} \\ 
+\nopagebreak \T{ni mila ya kinasara  *  kuiwata ndio bora} & \T{29a/b} \\ 
+\textarabic{وَنْڠَاوَ وَتَكُكٖيرَ  *  وَاجَ كْوَ كُتٗئٖلٖيَ} & \\ 
+\nopagebreak \T{wangawa watakukera  *  waja kwa kutoeleya} & \T{29c/d} \\ 
+[8mm] 
+
+\textarabic{نَ كْوٖينْدَ كُوپَ مْكٗونٗ  *  أُسِكِيرِ تَنْڠَمَانٗ} & \textarabic{٣٠} \\ 
+\nopagebreak \T{na kwenda kupa mkono  *  usikiri tangamano} & \T{30a/b} \\ 
+\textarabic{هَاتَ أَالٗ نْدُويٗ مْنٗ  *  سِمُؤَاتٖ نَاوٖ كُويَ} & \\ 
+\nopagebreak \T{hata alo nduyo mno  *  simuate nawe kuya} & \T{30c/d} \\ 
+[8mm] 
+
+\textarabic{نْيُومْبَ يَاكٗ سِئَسِيسِ  *  كْوَ مْسِينْڠِ وَ مَأَسِ} & \textarabic{٣١} \\ 
+\nopagebreak \T{nyumba yako siasisi  *  kwa msingi wa maasi} & \T{31a/b} \\ 
+\textarabic{تَئِڤُتِيَ نُهُوسِ  *  نَ أُكٗرٗوفِ كُنْڠِيَ} & \\ 
+\nopagebreak \T{taivutiya nuhusi  *  na ukorofi kungiya} & \T{31c/d} \\ 
+[8mm] 
+
+\textarabic{نَ مَأَسِ نِنٖنَايٗ  *  نِ كُولَ مَامْبٗ أَمْبَايٗ} & \textarabic{٣٢} \\ 
+\nopagebreak \T{na maasi ninenayo  *  ni kula mambo ambayo} & \T{32a/b} \\ 
+\textarabic{مٗولَ أَيَتُكِئَايٗ  *  نَ كُولَ أَلٗزِوِيَ} & \\ 
+\nopagebreak \T{mola ayatukiayo  *  na kula aloziwiya} & \T{32c/d} \\ 
+[8mm] 
+
+\textarabic{مٗويَ مٗويَ سِتٗوٖيزَ  *  كُتٗنْدٗوَ كُكْوٖلٖيزَ} & \textarabic{٣٣} \\ 
+\nopagebreak \T{moya moya sitoweza  *  kutondowa kukweleza} & \T{33a/b} \\ 
+\textarabic{نِمٖكُوپَ مُؤَنْڠَازَ  *  وَ نْدِيَ كُفُؤَتِيَ} & \\ 
+\nopagebreak \T{nimekupa muangaza  *  wa ndiya kufuatiya} & \T{33c/d} \\ 
+[8mm] 
+
+\textarabic{نِمٖكُوپَ نِ كِيَاسِ  *  كِتُميِئٖ نَاوٖ بَاسِ} & \textarabic{٣٤} \\ 
+\nopagebreak \T{nimekupa ni kiyasi  *  kitumyie nawe basi} & \T{34a/b} \\ 
+\textarabic{كْوَ مَنْڠِنٖيٗ كُكِيسِ  *  كْوَ مِزَانِ كُتُمِيَ} & \\ 
+\nopagebreak \T{kwa mangineyo kukisi  *  kwa mizani kutumiya} & \T{34c/d} \\ 
+[8mm] 
+
+\textarabic{نْيُومْبَ نْجٖيمَ نِ مْسِنْجِ  *  تَامُ يَ چَاءِ سِ رَنْجِ} & \textarabic{٣٥} \\ 
+\nopagebreak \T{nyumba njema ni msinji  *  tamu ya chai si ranji} & \T{35a/b} \\ 
+\textarabic{وٖينْڠِ مٖتِلِيوَ تَنْجِ  *  كْوَ فَخَارِ كُزٖنْڠٖيَ} & \\ 
+\nopagebreak \T{wengi metiliwa tanji  *  kwa fakhari kuzengeya} & \T{35c/d} \\ 
+[8mm] 
+
+\textarabic{كِيوَ نِ لَزِيمَ سَانَ  *  هِيلٗ لَ كُؤَنْدَمَانَ} & \textarabic{٣٦} \\ 
+\nopagebreak \T{kiwa ni lazima sana  *  hilo la kuandamana} & \T{36a/b} \\ 
+\textarabic{شٖمٖڠِيٗ مْڤُلَانَ  *  أَنْدَمَنَانِ پَمٗويَ} & \\ 
+\nopagebreak \T{shemegiyo mvulana  *  andamanani pamoya} & \T{36c/d} \\ 
+[8mm] 
+
+\textarabic{أَوْ مْوٖنْڠِينٖ يٗيٗوتٖ  *  مَهَرِيمُ نَ فُؤَاتٖ} & \textarabic{٣٧} \\ 
+\nopagebreak \T{au mwengine yoyote  *  maharimu na fuate} & \T{37a/b} \\ 
+\textarabic{أَجِنَابُ سِمُؤَاتٖ  *  مْكٖؤٗ كُمْوَنْڠَلِيَ} & \\ 
+\nopagebreak \T{ajinabu simuate  *  mkeo kumwangaliya} & \T{37c/d} \\ 
+[8mm] 
+
+\textarabic{رَفِيكِ سِمُؤَامْنِ  *  أُكَمْتِيَ نْيُمْبَانِ} & \textarabic{٣٨} \\ 
+\nopagebreak \T{rafiki simuamni  *  ukamtiya nyumbani} & \T{38a/b} \\ 
+\textarabic{إِيلَ ذَرُورَ فُلَانِ  *  سِكُويٖ إِكِتٗكٖيَ} & \\ 
+\nopagebreak \T{ila dharura fulani  *  sikuye ikitokeya} & \T{38c/d} \\ 
+[8mm] 
+
+\textarabic{رَفِيكِ أُسِملِيچٖ  *  نِ زَئِيدِ هُويٗ مْچٖ} & \textarabic{٣٩} \\ 
+\nopagebreak \T{rafiki usimliche  *  ni zaidi huyo mche} & \T{39a/b} \\ 
+\textarabic{كْوَ وَاءٗ مَامْبٗ يَ چٖيچٖ  *  هُوَ أُسٗلِذَنِيَ} & \\ 
+\nopagebreak \T{kwa wao mambo ya cheche  *  huwa usolidhaniya} & \T{39c/d} \\ 
+[8mm] 
+
+\textarabic{زِزِينِ كُتِيَ سِيمْبَ  *  نِ كَامَ مٗوتٗ نَ پَامْبَ} & \textarabic{٤٠} \\ 
+\nopagebreak \T{zizini kutiya simba  *  ni kama moto na pamba} & \T{40a/b} \\ 
+\textarabic{مَارَ مٗويَ هُزِسُومْبَ  *  نَ يِيڤُ لِكَسَلِيَ} & \\ 
+\nopagebreak \T{mara moya huzisumba  *  na yivu likasaliya} & \T{40c/d} \\ 
+[8mm] 
+
+\textarabic{رَفِيكِ كِنْڠِيَ نْدَانِ  *  سِكُويٖ أُكَتَمَانِ} & \textarabic{٤١} \\ 
+\nopagebreak \T{rafiki kingiya ndani  *  sikuye ukatamani} & \T{41a/b} \\ 
+\textarabic{سَامْبٖ أٗونَ نِ نْيُمْبَانِ  *  هٖئٖ أُتَيِتٗنْڠٖيَ} & \\ 
+\nopagebreak \T{sambe ona ni nyumbani  *  hee utayitongeya} & \T{41c/d} \\ 
+[8mm] 
+
+\textarabic{هِيٗ كْوٖيتُ سِيٗ مِيلَ  *  كُنْڠِيَ كُولَ مَهَالَ} & \textarabic{٤٢} \\ 
+\nopagebreak \T{hiyo kwetu siyo mila  *  kungiya kula mahala} & \T{42a/b} \\ 
+\textarabic{پَاسِ هٗودِ نَ سُمِيلَ  *  سِيٗ يٖيتُ مَزٗوٖيَ} & \\ 
+\nopagebreak \T{pasi hodi na sumila  *  siyo yetu mazoweya} & \T{42c/d} \\ 
+[8mm] 
+
+\textarabic{يَلِنَكَازِ مَدَاكَ  *  نِ وَڠٖينِ كُوَدَاكَ} & \textarabic{٤٣} \\ 
+\nopagebreak \T{yalinakazi madaka  *  ni wageni kuwadaka} & \T{43a/b} \\ 
+\textarabic{مَدَاكَ نِ كُوَوٖيكَ  *  نَ نْدَانِ كُتٗتُنْڠِيَ} & \\ 
+\nopagebreak \T{madaka ni kuwaweka  *  na ndani kutotungiya} & \T{43c/d} \\ 
+[8mm] 
+
+\textarabic{إِيلَ أَاوٖ نِ مْڠٖينِ  *  وَ كُشُكِيَ نْيُمْبَانِ} & \textarabic{٤٤} \\ 
+\nopagebreak \T{ila awe ni mgeni  *  wa kushukiya nyumbani} & \T{44a/b} \\ 
+\textarabic{هُنْڠِيَ نَ هَمُؤٗونِ  *  أَلِيٗ نْدَانِ ممٗويَ} & \\ 
+\nopagebreak \T{hungiya na hamuoni  *  aliyo ndani mmoya} & \T{44c/d} \\ 
+[8mm] 
+
+\textarabic{نَ أُچٖينْدَ سَفَرِينِ  *  كَشُكِيٖ هٗتٖلِينِ} & \textarabic{٤٥} \\ 
+\nopagebreak \T{na uchenda safarini  *  kashukiye hotelini} & \T{45a/b} \\ 
+\textarabic{سِپٖينْدٖ سَانَ نْيُمْبَانِ  *  إِيلَ نِ كُپِيتَ نْدِيَ} & \\ 
+\nopagebreak \T{sipende sana nyumbani  *  ila ni kupita ndiya} & \T{45c/d} \\ 
+[8mm] 
+
+\textarabic{أُكِمْوٖنْدٖيَ نْيُمْبَانِ  *  مْوٖينْيٖ تٗوتٗ مَسِكَانِ} & \textarabic{٤٦} \\ 
+\nopagebreak \T{ukimwendeya nyumbani  *  mwenye toto masikani} & \T{46a/b} \\ 
+\textarabic{أَوْ أَالٗ مَسِكِينِ  *  تَأَبُونِ هُمْتِيَ} & \\ 
+\nopagebreak \T{au alo masikini  *  taabuni humtiya} & \T{46c/d} \\ 
+[8mm] 
+
+\textarabic{نَ إِوَاپٗ هُونَ بُودِ  *  هُكُفَانْيَ كْوَ كَسِيدِ} & \textarabic{٤٧} \\ 
+\nopagebreak \T{na iwapo huna budi  *  hukufanya kwa kasidi} & \T{47a/b} \\ 
+\textarabic{سِيكُ تَاتُ أُسِزِيدِ  *  سِؤٗنْڠٖيزٖ هَاتَ مٗويَ} & \\ 
+\nopagebreak \T{siku tatu usizidi  *  siongeze hata moya} & \T{47c/d} \\ 
+[8mm] 
+
+\textarabic{نَ هِيلٗ وٖيوٖ سِتٖينْدٖ  *  إِيلَ مَامْبٗ يَكُشِينْدٖ} & \textarabic{٤٨} \\ 
+\nopagebreak \T{na hilo wewe sitende  *  ila mambo yakushinde} & \T{48a/b} \\ 
+\textarabic{مْتٖرٖيمْكٗ سِپٖينْدٖ  *  نْيٗونْڠٗ هُكُتُمْبُكِيَ} & \\ 
+\nopagebreak \T{mteremko sipende  *  nyongo hukutumbukiya} & \T{48c/d} \\ 
+[8mm] 
+
+\textarabic{لٗجِينْڠِ كِيوَ هَپَانَ  *  أَوْ مْفُكٗونِ هُونَ} & \textarabic{٤٩} \\ 
+\nopagebreak \T{lojingi kiwa hapana  *  au mfukoni huna} & \T{49a/b} \\ 
+\textarabic{نٖينْدَ كْوَ هَذَارِ سَانَ  *  كَامَ كُپٗتٖيَ نْدِيَ} & \\ 
+\nopagebreak \T{nenda kwa hadhari sana  *  kama kupoteya ndiya} & \T{49c/d} \\ 
+[8mm] 
+
+\textarabic{كِيوَ مْتُ مٖكْوَلِيكَ  *  نِ وَجِيبُ كُئِتِيكَ} & \textarabic{٥٠} \\ 
+\nopagebreak \T{kiwa mtu mekwalika  *  ni wajibu kuitika} & \T{50a/b} \\ 
+\textarabic{شُغُولِ كِمَلِزِيكَ  *  مُسِوٖيكٖ مَزٗوٖيَ} & \\ 
+\nopagebreak \T{shughuli kimalizika  *  musiweke mazoweya} & \T{50c/d} \\ 
+[8mm] 
+
+\textarabic{نَ وٖيوٖ كْوَاكٗ نْيُمْبَانِ  *  سِئِفَانْيٖ مْنٗ دُونِ} & \textarabic{٥١} \\ 
+\nopagebreak \T{na wewe kwako nyumbani  *  siifanye mno duni} & \T{51a/b} \\ 
+\textarabic{كُوَ مْتُ وَسِتَانِ  *  كْوَ مَپَامْبٗ كُيِتِيَ} & \\ 
+\nopagebreak \T{kuwa mtu wasitani  *  kwa mapambo kuyitiya} & \T{51c/d} \\ 
+[8mm] 
+
+\textarabic{مْتِلِيٖ مْكٖ وَاكٗ  *  زِيتُ كْوَ كَدِيرِ يَاكٗ} & \textarabic{٥٢} \\ 
+\nopagebreak \T{mtiliye mke wako  *  zitu kwa kadiri yako} & \T{52a/b} \\ 
+\textarabic{إِكِيوَ نَفَاسِ إِيكٗ  *  سِبَانٖ أُكَزِوِيَ} & \\ 
+\nopagebreak \T{ikiwa nafasi iko  *  sibane ukaziwiya} & \T{52c/d} \\ 
+[8mm] 
+
+\textarabic{إِيوٖ مَرِدَادِ نْيُومْبَ  *  نَ كْوَ زِيتُ كُئِپَامْبَ} & \textarabic{٥٣} \\ 
+\nopagebreak \T{iwe maridadi nyumba  *  na kwa zitu kuipamba} & \T{53a/b} \\ 
+\textarabic{فٖشٖينِ أَمْبَازٗ كْوَامْبَ  *  كَامَ يٖيٖ هُتُمِيَ} & \\ 
+\nopagebreak \T{fesheni ambazo kwamba  *  kama yeye hutumiya} & \T{53c/d} \\ 
+[8mm] 
+
+\textarabic{مْتِلِيٖ كُولَ كِيتُ  *  أَاوٖ كَامَ وٖينْدٖ وَاتُ} & \textarabic{٥٤} \\ 
+\nopagebreak \T{mtiliye kula kitu  *  awe kama wende watu} & \T{54a/b} \\ 
+\textarabic{سِمْوَمْبِيٖ مِيمِ كْوٖيتُ  *  هَايَ سِكُيَزٗوٖيَ} & \\ 
+\nopagebreak \T{simwambiye mimi kwetu  *  haya sikuyazoweya} & \T{54c/d} \\ 
+[8mm] 
+
+\textarabic{أَكِيوَ مْبوَ مِنَزِينِ  *  أُكِمُئٖيتَ مُيِينِ} & \textarabic{٥٥} \\ 
+\nopagebreak \T{akiwa mbwa minazini  *  ukimueta muyini} & \T{55a/b} \\ 
+\textarabic{سِمُوَاتٖ كُتَمَانِ  *  زَ وٖينْدٖ كِشُهُدِيَ} & \\ 
+\nopagebreak \T{simuwate kutamani  *  za wende kishuhudiya} & \T{55c/d} \\ 
+[8mm] 
+
+\textarabic{أُكِيوَ أُمٖئَمُوَ  *  مُيِينِ كُمْتُكُوَ} & \textarabic{٥٦} \\ 
+\nopagebreak \T{ukiwa umeamuwa  *  muyini kumtukuwa} & \T{56a/b} \\ 
+\textarabic{مْفَنْيِئٖ سَوَسَاوَ  *  سَامْبٖ سِ يَ كْوٖينُ هَايَ} & \\ 
+\nopagebreak \T{mfanyie sawasawa  *  sambe si ya kwenu haya} & \T{56c/d} \\ 
+[8mm] 
+
+\textarabic{سِمْوَمْبِيٖ زِيتُ هِيزِ  *  كْوٖينُ كُپَاتَ هُوٖيزِ} & \textarabic{٥٧} \\ 
+\nopagebreak \T{simwambiye zitu hizi  *  kwenu kupata huwezi} & \T{57a/b} \\ 
+\textarabic{كْوٖينُ نِ كَامَ كِزِيزِ  *  هُكُؤٗونَ مَزُلِيَ} & \\ 
+\nopagebreak \T{kwenu ni kama kizizi  *  hukuona mazuliya} & \T{57c/d} \\ 
+[8mm] 
+
+\textarabic{نَ چَكُولَ كَذَلِيكَ  *  مْپٖ أَنَچٗكِتَاكَ} & \textarabic{٥٨} \\ 
+\nopagebreak \T{na chakula kadhalika  *  mpe anachokitaka} & \T{58a/b} \\ 
+\textarabic{أَمْبَاچٗ تَفُرَهِيكَ  *  مْوٖنْيٖيوٖ مٖكِزٗوٖيَ} & \\ 
+\nopagebreak \T{ambacho tafurahika  *  mwenyewe mekizoweya} & \T{58c/d} \\ 
+[8mm] 
+
+\textarabic{أَكِپٖينْدَ بِرِيَانِ  *  مْپٖ مْوَانَ سِمْخِينِ} & \textarabic{٥٩} \\ 
+\nopagebreak \T{akipenda biriyani  *  mpe mwana simkhini} & \T{59a/b} \\ 
+\textarabic{مَأَدَامُ مْفُكٗونِ  *  أَكِيبَ إِمٖسَلِيَ} & \\ 
+\nopagebreak \T{maadamu mfukoni  *  akiba imesaliya} & \T{59c/d} \\ 
+[8mm] 
+
+\textarabic{سِيكُ أَكِتَاكَ سِيمَ  *  سِمْوَمْبِيٖ إٖيوٖ مَامَ} & \textarabic{٦٠} \\ 
+\nopagebreak \T{siku akitaka sima  *  simwambiye ewe mama} & \T{60a/b} \\ 
+\textarabic{كُولَ مْتٖئٖ لَزِيمَ  *  مِيمِ سِتَاكِ أُذِيَ} & \\ 
+\nopagebreak \T{kula mtee lazima  *  mimi sitaki udhiya} & \T{60c/d} \\ 
+[8mm] 
+
+\textarabic{مُؤَتِيَ نَ خِيَارِ  *  أَپٖنْدَاچٗ أَخِتَارِ} & \textarabic{٦١} \\ 
+\nopagebreak \T{muatiya na khiyari  *  apendacho akhitari} & \T{61a/b} \\ 
+\textarabic{سِمْكَازٖ سِ أُزُورِ  *  مَشَرُوتِ كُمْوٖكٖيَ} & \\ 
+\nopagebreak \T{simkaze si uzuri  *  masharuti kumwekeya} & \T{61c/d} \\ 
+[8mm] 
+
+\textarabic{إِيلَ كِلِيچٗ هَرَامُ  *  هِيلٗ سِكِيرِ فَهَامُ} & \textarabic{٦٢} \\ 
+\nopagebreak \T{ila kilicho haramu  *  hilo sikiri fahamu} & \T{62a/b} \\ 
+\textarabic{هَرَامُ نَ كُولَ سُومُ  *  شَرِيَ إِمٖزِوِيَ} & \\ 
+\nopagebreak \T{haramu na kula sumu  *  shariya imeziwiya} & \T{62c/d} \\ 
+[8mm] 
+
+\textarabic{أَامَ كُهُوسُ مَڤَازِ  *  يَ كَايٖ نَ سِيكُ هِيزِ} & \textarabic{٦٣} \\ 
+\nopagebreak \T{ama kuhusu mavazi  *  ya kaye na siku hizi} & \T{63a/b} \\ 
+\textarabic{سِكِيرِ يَ كْوٖينْدَ وَازِ  *  مِشٗونٗ يَاسٗ نَ هَايَ} & \\ 
+\nopagebreak \T{sikiri ya kwenda wazi  *  mishono yaso na haya} & \T{63c/d} \\ 
+[8mm] 
+
+\textarabic{كْوٖيتُ سِيسِ إِسِلَامُ  *  مَڤَازِ كِيتُ مُهِيمُ} & \textarabic{٦٤} \\ 
+\nopagebreak \T{kwetu sisi isilamu  *  mavazi kitu muhimu} & \T{64a/b} \\ 
+\textarabic{نَ سِيسِ يَتُلَزِيمُ  *  يَ زِپِيمٗ كْوَنْڠَلِيَ} & \\ 
+\nopagebreak \T{na sisi yatulazimu  *  ya zipimo kwangaliya} & \T{64c/d} \\ 
+[8mm] 
+
+\textarabic{مْپٖ مْوٖنْيٖيوٖ نَفَاسِ  *  يَ كُتٖؤُوَ لِبَاسِ} & \textarabic{٦٥} \\ 
+\nopagebreak \T{mpe mwenyewe nafasi  *  ya kuteuwa libasi} & \T{65a/b} \\ 
+\textarabic{لَاكٗ وٖيوٖ نِ فُلُوسِ  *  تٗوَ زَ كُنُنُلِيَ} & \\ 
+\nopagebreak \T{lako wewe ni fulusi  *  towa za kununuliya} & \T{65c/d} \\ 
+[8mm] 
+
+\textarabic{مْپٖ يَاكٗ مَشَرُوتِ  *  زَ مْشٗونٗ كُذِبِيتِ} & \textarabic{٦٦} \\ 
+\nopagebreak \T{mpe yako masharuti  *  za mshono kudhibiti} & \T{66a/b} \\ 
+\textarabic{أَكِخَلِيفُ مٖهِيتِ  *  نِ هَاكِ كُمزِوِيَ} & \\ 
+\nopagebreak \T{akikhalifu mehiti  *  ni haki kumziwiya} & \T{66c/d} \\ 
+[8mm] 
+
+\textarabic{أَامَ كِتَمْبَاءَ ڠَانِ  *  كِكُؤُلِيزَ مْوٖنْدَانِ} & \textarabic{٦٧} \\ 
+\nopagebreak \T{ama kitambaa gani  *  kikuuliza mwendani} & \T{67a/b} \\ 
+\textarabic{أَوْ نِ إِيپِ لَؤُونِ  *  وٖيوٖ وَئِفُرَهِيَ} & \\ 
+\nopagebreak \T{au ni ipi launi  *  wewe waifurahiya} & \T{67c/d} \\ 
+[8mm] 
+
+\textarabic{هَاپٗ مَكٗوسَ هَپَانَ  *  كِكُؤُلِيزَ كُنٖينَ} & \textarabic{٦٨} \\ 
+\nopagebreak \T{hapo makosa hapana  *  kikuuliza kunena} & \T{68a/b} \\ 
+\textarabic{رَانْڠِ هِينِ نَئِٗونَ  *  مَتٗونِ إِمٖنِنْڠِيَ} & \\ 
+\nopagebreak \T{rangi hini naiona  *  matoni imeningiya} & \T{68c/d} \\ 
+[8mm] 
+
+\textarabic{أَامَ كِيوَ نِ تَمَاشَ  *  وَتَاكَ مْفُرَهِيشَ} & \textarabic{٦٩} \\ 
+\nopagebreak \T{ama kiwa ni tamasha  *  wataka mfurahisha} & \T{69a/b} \\ 
+\textarabic{سِ هَاجَ كُمُؤٗنٖيشَ  *  مَؤٗنِيٖ كْوَنْڠَلِيَ} & \\ 
+\nopagebreak \T{si haja kumuonesha  *  maoniye kwangaliya} & \T{69c/d} \\ 
+[8mm] 
+
+\textarabic{كَاتَ أُتَكَچٗپٖينْدَ  *  أُمْتُنُكِيٖ نْيٗونْدَ} & \textarabic{٧٠} \\ 
+\nopagebreak \T{kata utakachopenda  *  umtunukiye nyonda} & \T{70a/b} \\ 
+\textarabic{نَاوٖ هِيلِ أُكِتٖينْدَ  *  چٗچٗوتٖ تَكٗنْڠٗوٖيَ} & \\ 
+\nopagebreak \T{nawe hili ukitenda  *  chochote takongoweya} & \T{70c/d} \\ 
+[8mm] 
+
+\textarabic{مْكٖ وَاكٗ سِمْذِيكِ  *  سِمْوَمْبِيٖ سِينَ هِيكِ} & \textarabic{٧١} \\ 
+\nopagebreak \T{mke wako simdhiki  *  simwambiye sina hiki} & \T{71a/b} \\ 
+\textarabic{نَ نْيِينْڠِ مْنٗ سِتَاكِ  *  سِزٗوٖيٖ كُتُمِيَ} & \\ 
+\nopagebreak \T{na nyingi mno sitaki  *  sizoweye kutumiya} & \T{71c/d} \\ 
+[8mm] 
+
+\textarabic{مْپٖ كْوَ يَاكٗ كَدِيرِ  *  أُسِفَانْيٖ تَقتِيرِ} & \textarabic{٧٢} \\ 
+\nopagebreak \T{mpe kwa yako kadiri  *  usifanye taqtiri} & \T{72a/b} \\ 
+\textarabic{نِ توَبِيَ سِ نْزُورِ  *  أُبَخِيلِ كْوٖينْيٖ هَايَ} & \\ 
+\nopagebreak \T{ni twabiya si nzuri  *  ubakhili kwenye haya} & \T{72c/d} \\ 
+[8mm] 
+
+\textarabic{نَ وٖيوٖ أُپَانْدٖ وَاكٗ  *  إِپَامْبٖ كِيَاسِ چَاكٗ} & \textarabic{٧٣} \\ 
+\nopagebreak \T{na wewe upande wako  *  ipambe kiyasi chako} & \T{73a/b} \\ 
+\textarabic{بٗورَ أُسِڤُونْدٖ مِيكٗ  *  خَتِيَانِ أُكَنْڠِيَ} & \\ 
+\nopagebreak \T{bora usivunde miko  *  khatiyani ukangiya} & \T{73c/d} \\ 
+[8mm] 
+
+\textarabic{كُوَ مْتُ مَرِدَادِ  *  أُتُونْڠٖ يَاكٗ جَسَادِ} & \textarabic{٧٤} \\ 
+\nopagebreak \T{kuwa mtu maridadi  *  utunge yako jasadi} & \T{74a/b} \\ 
+\textarabic{هَاتَ كُفُكِيزَ أُودِ  *  أُكِوٖيزَ سِ خَتِيَ} & \\ 
+\nopagebreak \T{hata kufukiza udi  *  ukiweza si khatiya} & \T{74c/d} \\ 
+[8mm] 
+
+\textarabic{إِوٖيكٖ أُوٖ نَذِيفُ  *  سِؤٗنٖكَانٖ مْچَافُ} & \textarabic{٧٥} \\ 
+\nopagebreak \T{iweke uwe nadhifu  *  sionekane mchafu} & \T{75a/b} \\ 
+\textarabic{هِينِ نِ سُوننَ تُكُوفُ  *  يَ تُومْوَ وٖيتُ نَبِيَ} & \\ 
+\nopagebreak \T{hini ni sunna tukufu  *  ya tumwa wetu nabiya} & \T{75c/d} \\ 
+[8mm] 
+
+\textarabic{كِيوَ نْيٖئٖ أُمٖوٖيكَ  *  زَنْڠَلِيٖ كَذَلِيكَ} & \textarabic{٧٦} \\ 
+\nopagebreak \T{kiwa nyee umeweka  *  zangaliye kadhalika} & \T{76a/b} \\ 
+\textarabic{سِوَاتٖ كُسٗكٗتٖيكَ  *  شُنْڠُرُورُ كُسَلِيَ} & \\ 
+\nopagebreak \T{siwate kusokoteka  *  shungururu kusaliya} & \T{76c/d} \\ 
+[8mm] 
+
+\textarabic{إِكِيوَ وَفُرَهِيكَ  *  مْكٖؤٗ أَكِپَمْبِيكَ} & \textarabic{٧٧} \\ 
+\nopagebreak \T{ikiwa wafurahika  *  mkeo akipambika} & \T{77a/b} \\ 
+\textarabic{يُوَ نَيٖيٖ هُتَاكَ  *  نَاوٖ أُوٖ هُڤُتِيَ} & \\ 
+\nopagebreak \T{yuwa nayeye hutaka  *  nawe uwe huvutiya} & \T{77c/d} \\ 
+[8mm] 
+
+\textarabic{هِيٗ نَايٖ نْدَاكٖ هَاكِ  *  تَكُوَ هَفُرَهِيكِ} & \textarabic{٧٨} \\ 
+\nopagebreak \T{hiyo naye ndake haki  *  takuwa hafurahiki} & \T{78a/b} \\ 
+\textarabic{إِوَاپٗ هُشُغُلِيكِ  *  مُئِلِؤٗ كْوَنْڠَلِيَ} & \\ 
+\nopagebreak \T{iwapo hushughuliki  *  muilio kwangaliya} & \T{78c/d} \\ 
+[8mm] 
+
+\textarabic{نَايٖ پِيَ هُتَمَانِ  *  أَكِكُؤٗونَ نْدِئَانِ} & \textarabic{٧٩} \\ 
+\nopagebreak \T{naye piya hutamani  *  akikuona ndiani} & \T{79a/b} \\ 
+\textarabic{أُوٖ نَاوٖ هِسَبُونِ  *  پٖينْيٖ وَاتُ أُتَنْڠِيَ} & \\ 
+\nopagebreak \T{uwe nawe hisabuni  *  penye watu utangiya} & \T{79c/d} \\ 
+[8mm] 
+
+\textarabic{أَوْ كِيوَ يَاكٗ كَازِ  *  كُتٖينْدَ هَايَ هُوٖيزِ} & \textarabic{٨٠} \\ 
+\nopagebreak \T{au kiwa yako kazi  *  kutenda haya huwezi} & \T{80a/b} \\ 
+\textarabic{وِسَاپٗ ڤُوَ مَڠٗوزِ  *  سِڤَاءٖ كُتٖمْبٖلٖيَ} & \\ 
+\nopagebreak \T{wisapo vuwa magozi  *  sivae kutembeleya} & \T{80c/d} \\ 
+[8mm] 
+
+\textarabic{سِتٖمْبٖئٖ نَ مَڠوَانْدَ  *  وَالَ هَرُوفُ زَ ن’ڠٗونْدَ} & \textarabic{٨١} \\ 
+\nopagebreak \T{sitembee na magwanda  *  wala harufu za n’gonda} & \T{81a/b} \\ 
+\textarabic{فَهَامُ وَاتُ هُتُونْدَ  *  نَ أَكِلِينِ هُتِيَ} & \\ 
+\nopagebreak \T{fahamu watu hutunda  *  na akilini hutiya} & \T{81c/d} \\ 
+[8mm] 
+
+\textarabic{نَ كَذَلِيكَ أُلِيمِ  *  إِپِينْدٖ أُوٖ هُسٖيمِ} & \textarabic{٨٢} \\ 
+\nopagebreak \T{na kadhalika ulimi  *  ipinde uwe husemi} & \T{82a/b} \\ 
+\textarabic{يَالٗ مَاوِ هُؤَتَامِ  *  مْكٖ وَاكٗ كُمْوَمْبِيَ} & \\ 
+\nopagebreak \T{yalo mawi huatami  *  mke wako kumwambiya} & \T{82c/d} \\ 
+[8mm] 
+
+\textarabic{مْنٗ سَانَ جِتَهِيدِ  *  كْوَ مَنٖينٗ مَرِدَادِ} & \textarabic{٨٣} \\ 
+\nopagebreak \T{mno sana jitahidi  *  kwa maneno maridadi} & \T{83a/b} \\ 
+\textarabic{وَاكٖ هُتَاكَ زَئِيدِ  *  يَالٗ تَامُ كُسِكِيَ} & \\ 
+\nopagebreak \T{wake hutaka zaidi  *  yalo tamu kusikiya} & \T{83c/d} \\ 
+[8mm] 
+
+\textarabic{نٖينَ نَايٖ كْوَ ذِهَاكَ  *  أَفُرَاهِ أَكِچٖيكَ} & \textarabic{٨٤} \\ 
+\nopagebreak \T{nena naye kwa dhihaka  *  afurahi akicheka} & \T{84a/b} \\ 
+\textarabic{مْوَنَامْكٖ هُؤُذِيكَ  *  مْنٗ كُمْنْيَمَلِيَ} & \\ 
+\nopagebreak \T{mwanamke huudhika  *  mno kumnyamaliya} & \T{84c/d} \\ 
+[8mm] 
+
+\textarabic{مْفَنْيِئٖ نَ أُبِيشِ  *  كْوَ مَنٖينٗ يَاسٗ غَاشِ} & \textarabic{٨٥} \\ 
+\nopagebreak \T{mfanyie na ubishi  *  kwa maneno yaso ghashi} & \T{85a/b} \\ 
+\textarabic{نَ كْوَاكٖ كُوَ مْتٖيشِ  *  بِيلَ يَ كُپِنْدُكِيَ} & \\ 
+\nopagebreak \T{na kwake kuwa mteshi  *  bila ya kupindukiya} & \T{85c/d} \\ 
+[8mm] 
+
+\textarabic{مْوَنَامْكٖ أَهِتَاجِ  *  كُڤِيشْوَ لَاسِ فَتَاجِ} & \textarabic{٨٦} \\ 
+\nopagebreak \T{mwanamke ahitaji  *  kuvishwa lasi fataji} & \T{86a/b} \\ 
+\textarabic{كْوَ هِيلٗ كُوَ مْپَاجِ  *  أُسِچٗوكٖ كُمْوَمْبِيَ} & \\ 
+\nopagebreak \T{kwa hilo kuwa mpaji  *  usichoke kumwambiya} & \T{86c/d} \\ 
+[8mm] 
+
+\textarabic{مْوَمْبِيٖ كُولَ نَامْنَ  *  سِيفَ زَاكٖ تٖينَ سَانَ} & \textarabic{٨٧} \\ 
+\nopagebreak \T{mwambiye kula namna  *  sifa zake tena sana} & \T{87a/b} \\ 
+\textarabic{مْفَانٗ أُكِمُؤٗونَ  *  نْيٖئٖ مٖفُونْڠَ أُپِيَ} & \\ 
+\nopagebreak \T{mfano ukimuona  *  nyee mefunga upiya} & \T{87c/d} \\ 
+[8mm] 
+
+\textarabic{كِيوَ مٖسُوكَ مِكِيلِ  *  أَوْ كُرُونِ مَوِيلِ} & \textarabic{٨٨} \\ 
+\nopagebreak \T{kiwa mesuka mikili  *  au kuruni mawili} & \T{88a/b} \\ 
+\textarabic{سِلِوَاتٖ يَامْبٗ هِيلِ  *  بِيلَ يَ كُلِتُمِيَ} & \\ 
+\nopagebreak \T{siliwate yambo hili  *  bila ya kulitumiya} & \T{88c/d} \\ 
+[8mm] 
+
+\textarabic{مْوَمْبِيٖ أُمٖپٖنْدٖيزَ  *  كْوَ نْيٖئٖ كُزِتٖنْڠٖيزَ} & \textarabic{٨٩} \\ 
+\nopagebreak \T{mwambiye umependeza  *  kwa nyee kuzitengeza} & \T{89a/b} \\ 
+\textarabic{سِينَ بُودِ تَكُتُنْزَ  *  أُمْشُومُ مَارَ مٗويَ} & \\ 
+\nopagebreak \T{sina budi takutunza  *  umshumu mara moya} & \T{89c/d} \\ 
+[8mm] 
+
+\textarabic{كِيوَ أَمٖتِيَ وَانْدَ  *  مْوَمْبِيٖ مْنٗ نَپٖينْدَ} & \textarabic{٩٠} \\ 
+\nopagebreak \T{kiwa ametiya wanda  *  mwambiye mno napenda} & \T{90a/b} \\ 
+\textarabic{سِئِفَانْيٖ هُكُتُونْدَ  *  أَوْ هُكُمْوَنْڠَلِيَ} & \\ 
+\nopagebreak \T{siifanye hukutunda  *  au hukumwangaliya} & \T{90c/d} \\ 
+[8mm] 
+
+\textarabic{كِجِفُونْڠَ أَسُمِينِ  *  أَوْ كِكُوبَ كِتوَانِ} & \textarabic{٩١} \\ 
+\nopagebreak \T{kijifunga asumini  *  au kikuba kitwani} & \T{91a/b} \\ 
+\textarabic{سِچٖلٖيوٖ كُبَئِينِ  *  نٖينٗ لٖيمَ كُمْوَمْبِيَ} & \\ 
+\nopagebreak \T{sichelewe kubaini  *  neno lema kumwambiya} & \T{91c/d} \\ 
+[8mm] 
+
+\textarabic{يَأَنِ كُولَ وَكَاتِ  *  مْوَمْبِيٖ كِيتُ كَتِيتِ} & \textarabic{٩٢} \\ 
+\nopagebreak \T{yaani kula wakati  *  mwambiye kitu katiti} & \T{92a/b} \\ 
+\textarabic{نَ كَامَ بُوبوِ سِكٖيتِ  *  أَوْ دُوكٗ تٗونْڠٗ پِيَ} & \\ 
+\nopagebreak \T{na kama bubwi siketi  *  au duko tongo piya} & \T{92c/d} \\ 
+[8mm] 
+
+\textarabic{پِيَ مْپٖ شُكُرَانِ  *  كْوَ شُغُولِ زَ نْيُمْبَانِ} & \textarabic{٩٣} \\ 
+\nopagebreak \T{piya mpe shukurani  *  kwa shughuli za nyumbani} & \T{93a/b} \\ 
+\textarabic{مْفَانٗ پِلَاءُ هِينِ  *  مْنٗ أُمٖئِپَتِيَ} & \\ 
+\nopagebreak \T{mfano pilau hini  *  mno umeipatiya} & \T{93c/d} \\ 
+[8mm] 
+
+\textarabic{أُسِچٗوكٖ كُمْسِيفُ  *  كْوَ نْيُومْبَ كُوَ نَذِيفُ} & \textarabic{٩٤} \\ 
+\nopagebreak \T{usichoke kumsifu  *  kwa nyumba kuwa nadhifu} & \T{94a/b} \\ 
+\textarabic{نَ أُكِؤٗونَ أُچَافُ  *  أُسِيوٖ تَمُؤُكِيَ} & \\ 
+\nopagebreak \T{na ukiona uchafu  *  usiwe tamuukiya} & \T{94c/d} \\ 
+[8mm] 
+
+\textarabic{نَ فَرَاغَ أُكِپَاتَ  *  مْبٖئٖ يَاكٗ كِكُپِيتَ} & \textarabic{٩٥} \\ 
+\nopagebreak \T{na faragha ukipata  *  mbee yako kikupita} & \T{95a/b} \\ 
+\textarabic{أُسِيوٖ أُتَمُؤَاتَ  *  مْكٗونٗ كُمْپٖكٖيَ} & \\ 
+\nopagebreak \T{usiwe utamuata  *  mkono kumpekeya} & \T{95c/d} \\ 
+[8mm] 
+
+\textarabic{مْشِيكٖ وَاكٖ مْكٗونٗ  *  وَالَ سِمْكَازٖ مْنٗ} & \textarabic{٩٦} \\ 
+\nopagebreak \T{mshike wake mkono  *  wala simkaze mno} & \T{96a/b} \\ 
+\textarabic{هُتٗوشَ نُكُوتَ تَانٗ  *  أُجُومْبٖ كُمْپٖكٖيَ} & \\ 
+\nopagebreak \T{hutosha nukuta tano  *  ujumbe kumpekeya} & \T{96c/d} \\ 
+[8mm] 
+
+\textarabic{كِيوَ أَمٖكُكَبِيلِ  *  سِئِتِيٖ مَشُغُولِ} & \textarabic{٩٧} \\ 
+\nopagebreak \T{kiwa amekukabili  *  siitiye mashughuli} & \T{97a/b} \\ 
+\textarabic{إِنُوَ يَاكٗ مَوِيلِ  *  نَ يَاكٖ كُمْوٖلٖكٖيَ} & \\ 
+\nopagebreak \T{inuwa yako mawili  *  na yake kumwelekeya} & \T{97c/d} \\ 
+[8mm] 
+
+\textarabic{وَاتَ مَاتٗ يَفُمَانٖ  *  كَتِيتِ يَنْڠَلِيَانٖ} & \textarabic{٩٨} \\ 
+\nopagebreak \T{wata mato yafumane  *  katiti yangaliyane} & \T{98a/b} \\ 
+\textarabic{كْوَ أُلِيمِ أُسِنٖينٖ  *  لُوغَ يَ مَاتٗ تُمِيَ} & \\ 
+\nopagebreak \T{kwa ulimi usinene  *  lugha ya mato tumiya} & \T{98c/d} \\ 
+[8mm] 
+
+\textarabic{مَاتٗ يَانَ لُوغَ تَامُ  *  هُنٖينَ مُكَفَهَامُ} & \textarabic{٩٩} \\ 
+\nopagebreak \T{mato yana lugha tamu  *  hunena mukafahamu} & \T{99a/b} \\ 
+\textarabic{مَاتٗ كِؤُونْڠٗ مُهِيمُ  *  چَ هُوبَ كُپَلِلِيَ} & \\ 
+\nopagebreak \T{mato kiungo muhimu  *  cha huba kupaliliya} & \T{99c/d} \\ 
+[8mm] 
+
+\textarabic{مَاتٗ يَانَ كُؤُ سِيرِ  *  نَ مَارَ هُكُؤَذِيرِ} & \textarabic{١٠٠} \\ 
+\nopagebreak \T{mato yana kuu siri  *  na mara hukuadhiri} & \T{100a/b} \\ 
+\textarabic{كَكُتٗلٖيَ خَبَارِ  *  مٗيٗونِ أُلٗزِوِيَ} & \\ 
+\nopagebreak \T{kakutoleya khabari  *  moyoni uloziwiya} & \T{100c/d} \\ 
+[8mm] 
+
+\textarabic{هِيلِ نِمٖنٖينَ سَانَ  *  نِ مُهِيمُ نَلِؤٗونَ} & \textarabic{١٠١} \\ 
+\nopagebreak \T{hili nimenena sana  *  ni muhimu naliona} & \T{101a/b} \\ 
+\textarabic{وَالَ غَرَامَ هَلِينَ  *  نَ سِ كَازِ كُتُمِيَ} & \\ 
+\nopagebreak \T{wala gharama halina  *  na si kazi kutumiya} & \T{101c/d} \\ 
+[8mm] 
+
+\textarabic{وَلَكِينِ سِ سَهَالِ  *  كْوَ كُلَّ أَالٗ مْڤُولِ} & \textarabic{١٠٢} \\ 
+\nopagebreak \T{walakini si sahali  *  kwa kila alo mvuli} & \T{102a/b} \\ 
+\textarabic{كْوَ وَنْڠِينٖ نِ ثَكِيلِ  *  كَاتُ هَوَكُزٗوٖيَ} & \\ 
+\nopagebreak \T{kwa wangine ni thakili  *  katu hawakuzoweya} & \T{102c/d} \\ 
+[8mm] 
+
+\textarabic{مْبِينُ هِيزِ إِزٗئٖيزٖ  *  زِتُمِيٖ سِزِپُوزٖ} & \textarabic{١٠٣} \\ 
+\nopagebreak \T{mbinu hizi izoeze  *  zitumiye sizipuze} & \T{103a/b} \\ 
+\textarabic{أُتَؤٗونَ فَئِدَازٖ  *  مْوٖنْيٖيوٖ تَشُهُدِيَ} & \\ 
+\nopagebreak \T{utaona faidaze  *  mwenyewe tashuhudiya} & \T{103c/d} \\ 
+[8mm] 
+
+\textarabic{مَامْبٗ هَيَانَ غَرَامَ  *  كْوَنْڠَلِيَ نَ كُسٖيمَ} & \textarabic{١٠٤} \\ 
+\nopagebreak \T{mambo hayana gharama  *  kwangaliya na kusema} & \T{104a/b} \\ 
+\textarabic{نَ مْتُ مْكٖ دَئِيمَ  *  كَامَ هَايَ هُزٖنْڠٖيَ} & \\ 
+\nopagebreak \T{na mtu mke daima  *  kama haya huzengeya} & \T{104c/d} \\ 
+[8mm] 
+
+\textarabic{مْكٖ هُوَ أُونَ مْوَاكٗ  *  كُيُوَ مَؤٗونِ يَاكٗ} & \textarabic{١٠٥} \\ 
+\nopagebreak \T{mke huwa una mwako  *  kuyuwa maoni yako} & \T{105a/b} \\ 
+\textarabic{كُسِكِيَ نٖينٗ لَاكٗ  *  نِ هَاجَ أَهِتَجِيَ} & \\ 
+\nopagebreak \T{kusikiya neno lako  *  ni haja ahitajiya} & \T{105c/d} \\ 
+[8mm] 
+
+\textarabic{يُوَ هَتٗشٖيكِ مْكٖ  *  كُڤَاءَ نَ كُولَ كْوَاكٖ} & \textarabic{١٠٦} \\ 
+\nopagebreak \T{yuwa hatosheki mke  *  kuvaa na kula kwake} & \T{106a/b} \\ 
+\textarabic{أَتَاكَ نَ أُوتُ وَاكٖ  *  نَ هِشِيمَ كُمْوٖكٖيَ} & \\ 
+\nopagebreak \T{ataka na utu wake  *  na hishima kumwekeya} & \T{106c/d} \\ 
+[8mm] 
+
+\textarabic{كُولَ أَالٗ مْتُ مْكٖ  *  هِيلِ نْدِيلٗ أُومْبٗ لَاكٖ} & \textarabic{١٠٧} \\ 
+\nopagebreak \T{kula alo mtu mke  *  hili ndilo umbo lake} & \T{107a/b} \\ 
+\textarabic{لَ مَپَامْبٗ هِيلٗ كْوَاكٖ  *  نِ يَامْبٗ مٖيَزٗوٖيَ} & \\ 
+\nopagebreak \T{la mapambo hilo kwake  *  ni yambo meyazoweya} & \T{107c/d} \\ 
+[8mm] 
+
+\textarabic{هُتٗكٖيَ كْوَ نَدِيرَ  *  كْوَ هِيلِ وَسٗئِكٖيرَ} & \textarabic{١٠٨} \\ 
+\nopagebreak \T{hutokeya kwa nadira  *  kwa hili wasoikera} & \T{108a/b} \\ 
+\textarabic{هِينَ هَپٖينْدِ كُچٗورَ  *  نَ وَالَ وَانْدَ كُتِيَ} & \\ 
+\nopagebreak \T{hina hapendi kuchora  *  na wala wanda kutiya} & \T{108c/d} \\ 
+[8mm] 
+
+\textarabic{هَانَ هَايٗ مَشُغُولِ  *  نِ كَامَ مْتُ مْڤُولِ} & \textarabic{١٠٩} \\ 
+\nopagebreak \T{hana hayo mashughuli  *  ni kama mtu mvuli} & \T{109a/b} \\ 
+\textarabic{يَ أُرٖيمْبٗ هَيَجَالِ  *  وَالَ هَكُيَزٗوٖيَ} & \\ 
+\nopagebreak \T{ya urembo hayajali  *  wala hakuyazoweya} & \T{109c/d} \\ 
+[8mm] 
+
+\textarabic{كِيوَ نَاوٖ وَاكٗ مْكٖ  *  هِيلٗ سِ شُغُولِ يَاكٖ} & \textarabic{١١٠} \\ 
+\nopagebreak \T{kiwa nawe wako mke  *  hilo si shughuli yake} & \T{110a/b} \\ 
+\textarabic{بَاسِ نَاوٖ سِسُمْبُوكٖ  *  مَشُغُولِ كُيِتِيَ} & \\ 
+\nopagebreak \T{basi nawe sisumbuke  *  mashughuli kuyitiya} & \T{110c/d} \\ 
+[8mm] 
+
+\textarabic{نَ لٖنْڠِينٖ لَ ذَرُورَ  *  إِفُونْدٖ مْنٗ سُبِيرَ} & \textarabic{١١١} \\ 
+\nopagebreak \T{na lengine la dharura  *  ifunde mno subira} & \T{111a/b} \\ 
+\textarabic{كُونَ مَامْبٗ يَ كُكٖيرَ  *  مَئِشَانِ يَتٗكٖيَ} & \\ 
+\nopagebreak \T{kuna mambo ya kukera  *  maishani yatokeya} & \T{111c/d} \\ 
+[8mm] 
+
+\textarabic{هَكُونَ مَئِيشَ تَامُ  *  يٖينْيٖ رَاهَ يَ كُدُومُ} & \textarabic{١١٢} \\ 
+\nopagebreak \T{hakuna maisha tamu  *  yenye raha ya kudumu} & \T{112a/b} \\ 
+\textarabic{مَامْبٗ تَكُوَ مَڠُومُ  *  كِيوَ هُتٗڤُمِلِيَ} & \\ 
+\nopagebreak \T{mambo takuwa magumu  *  kiwa hutovumiliya} & \T{112c/d} \\ 
+[8mm] 
+
+\textarabic{كُونَ تَامُ نَ أُتُونْڠُ  *  كْوٖينْيٖ هُؤُ أُلِمْوٖينْڠُ} & \textarabic{١١٣} \\ 
+\nopagebreak \T{kuna tamu na utungu  *  kwenye huu ulimwengu} & \T{113a/b} \\ 
+\textarabic{يَلِئَانْدَ هَايَ تَانْڠُ  *  يَلِپٗؤُمْبوَ دُنِيَ} & \\ 
+\nopagebreak \T{yalianda haya tangu  *  yalipoumbwa duniya} & \T{113c/d} \\ 
+[8mm] 
+
+\textarabic{هِينِ نْدِينٗ كَوَئِيدَ  *  كُونَ رَاهَ كُونَ شِيدَ} & \textarabic{١١٤} \\ 
+\nopagebreak \T{hini ndino kawaida  *  kuna raha kuna shida} & \T{114a/b} \\ 
+\textarabic{نْدِيٗ يَ مَئِيشَ أَادَ  *  نَ وَاتُ هُوَپِتِيَ} & \\ 
+\nopagebreak \T{ndiyo ya maisha ada  *  na watu huwapitiya} & \T{114c/d} \\ 
+[8mm] 
+
+\textarabic{بَاسِ نَ كْوَاكٗ نْيُمْبَانِ  *  سِؤٗوتٖ كُوَ پٖپٗونِ} & \textarabic{١١٥} \\ 
+\nopagebreak \T{basi na kwako nyumbani  *  siote kuwa peponi} & \T{115a/b} \\ 
+\textarabic{مَأَدَامُ هَاپٗ نْدَانِ  *  سِ وٖيوٖ پوٖيكٖ ممٗويَ} & \\ 
+\nopagebreak \T{maadamu hapo ndani  *  si wewe pweke mmoya} & \T{115c/d} \\ 
+[8mm] 
+
+\textarabic{مْكٖ وَاكٗ سِ كِڤُولِ  *  بَالِ نِ مْتُ وَ پِيلِ} & \textarabic{١١٦} \\ 
+\nopagebreak \T{mke wako si kivuli  *  bali ni mtu wa pili} & \T{116a/b} \\ 
+\textarabic{أُونَ نَ يَاكٖ أَكِيلِ  *  أُونَ نَ أَلٗزٗوٖيَ} & \\ 
+\nopagebreak \T{una na yake akili  *  una na alozoweya} & \T{116c/d} \\ 
+[8mm] 
+
+\textarabic{أُسِتَاكٖ كْوَ لَزِيمَ  *  كُولَ يَامْبٗ أُكِسٖيمَ} & \textarabic{١١٧} \\ 
+\nopagebreak \T{usitake kwa lazima  *  kula yambo ukisema} & \T{117a/b} \\ 
+\textarabic{أَلِكُبَالِ دَئِيمَ  *  پَاپٗ هَاپٗ كُرِذِيَ} & \\ 
+\nopagebreak \T{alikubali daima  *  papo hapo kuridhiya} & \T{117c/d} \\ 
+[8mm] 
+
+\textarabic{مُؤَتِيٖ مَكَوَانْدَ  *  أَنٖينٖ أَنٗلِپٖينْدَ} & \textarabic{١١٨} \\ 
+\nopagebreak \T{muatiye makawanda  *  anene anolipenda} & \T{118a/b} \\ 
+\textarabic{نَ كْوَ هُوجَ كِكُشِينْدَ  *  سِيوٖ ڤِيتٗ تَتُمِيَ} & \\ 
+\nopagebreak \T{na kwa huja kikushinda  *  siwe vito tatumiya} & \T{118c/d} \\ 
+[8mm] 
+
+\textarabic{أُكِؤٗونَ سَاوَ نْدَاكٖ  *  إِكُبَالِ أُرِذِيكٖ} & \textarabic{١١٩} \\ 
+\nopagebreak \T{ukiona sawa ndake  *  ikubali uridhike} & \T{119a/b} \\ 
+\textarabic{نَ وَالَ سِكَسِرِيكٖ  *  مْدٗومٗ كُمْفُنْڠِيَ} & \\ 
+\nopagebreak \T{na wala sikasirike  *  mdomo kumfungiya} & \T{119c/d} \\ 
+[8mm] 
+
+\textarabic{كُبَالِ مٖزٗلِنٖينَ  *  أُمُؤُونْڠٖ تٖينَ سَانَ} & \textarabic{١٢٠} \\ 
+\nopagebreak \T{kubali mezolinena  *  umuunge tena sana} & \T{120a/b} \\ 
+\textarabic{نَ فَئِيدَ أُتَؤٗونَ  *  مَامْبٗ تَأَنْدَامَ نْدِيَ} & \\ 
+\nopagebreak \T{na faida utaona  *  mambo taandama ndiya} & \T{120c/d} \\ 
+[8mm] 
+
+\textarabic{نَ يٖيٖ كِكَسِرِيكَ  *  وٖيوٖ أُسِپَانْدٖ شُوكَ} & \textarabic{١٢١} \\ 
+\nopagebreak \T{na yeye kikasirika  *  wewe usipande shuka} & \T{121a/b} \\ 
+\textarabic{نَ أَكِزِيدِ أٗنْدٗوكَ  *  كِشِنْدوَ كُڤُمِيليَ} & \\ 
+\nopagebreak \T{na akizidi ondoka  *  kishindwa kuvumilya} & \T{121c/d} \\ 
+[8mm] 
+
+\textarabic{مْوَنَانْڠُ مٗوتٗ تِزَامَ  *  هَؤُزِنْيِيكِ دَئِيمَ} & \textarabic{١٢٢} \\ 
+\nopagebreak \T{mwanangu moto tizama  *  hauzinyiki daima} & \T{122a/b} \\ 
+\textarabic{بَالِ هُزِيدِ رٗرٗومَ  *  كُونِ أُكِؤُتِلِيَ} & \\ 
+\nopagebreak \T{bali huzidi roroma  *  kuni ukiutiliya} & \T{122c/d} \\ 
+[8mm] 
+
+\textarabic{مٗوتٗ كِتٗتِيوَ كُونِ  *  أُتَزِنْيِيكَ مْوٖنْدَانِ} & \textarabic{١٢٣} \\ 
+\nopagebreak \T{moto kitotiwa kuni  *  utazinyika mwendani} & \T{123a/b} \\ 
+\textarabic{نَ أُتٖيسِ وَ نْيُمْبَانِ  *  كُنِيزٖ نِ نٖينٗ بَايَ} & \\ 
+\nopagebreak \T{na utesi wa nyumbani  *  kunize ni neno baya} & \T{123c/d} \\ 
+[8mm] 
+
+\textarabic{زِوِيَ وَاكٗ أُلِيمِ  *  سِيوٖ نَ مْوِينْڠِ أُسٖيمِ} & \textarabic{١٢٤} \\ 
+\nopagebreak \T{ziwiya wako ulimi  *  siwe na mwingi usemi} & \T{124a/b} \\ 
+\textarabic{أُكِنٖينَ هَيَكٗومِ  *  مَنٖينٗ هُئٖنْدٖلٖيَ} & \\ 
+\nopagebreak \T{ukinena hayakomi  *  maneno huendeleya} & \T{124c/d} \\ 
+[8mm] 
+
+\textarabic{زِيدِ نَ كُئِكُكُوسَ  *  أُلِيمِ كُتٗتَپَاسَ} & \textarabic{١٢٥} \\ 
+\nopagebreak \T{zidi na kuikukusa  *  ulimi kutotapasa} & \T{125a/b} \\ 
+\textarabic{زِيتَ زٖينُ زِتَكْوِيسَ  *  مٗوتٗ مَايِ هُتَتِيَ} & \\ 
+\nopagebreak \T{zita zenu zitakwisa  *  moto mayi hutatiya} & \T{125c/d} \\ 
+[8mm] 
+
+\textarabic{نَ أَالٗ مُومٖ هٗدَارِ  *  كِشِنْدوَ يٖيٖ هُكِيرِ} & \textarabic{١٢٦} \\ 
+\nopagebreak \T{na alo mume hodari  *  kishindwa yeye hukiri} & \T{126a/b} \\ 
+\textarabic{إِيلِ كْوٖپُوكَ دٗثَارِ  *  يَ أُوفَ سِينِ كُتِيَ} & \\ 
+\nopagebreak \T{ili kwepuka dothari  *  ya ufa sini kutiya} & \T{126c/d} \\ 
+[8mm] 
+
+\textarabic{سِينِ إِكِنْڠِيَ أُوفَ  *  هُپُنْڠُوَ زَاكٖ سِيفَ} & \textarabic{١٢٧} \\ 
+\nopagebreak \T{sini ikingiya ufa  *  hupunguwa zake sifa} & \T{127a/b} \\ 
+\textarabic{نَ مَهَابَ نَايٗ هُوفَ  *  أُكِيوَ مْوِينْڠِ أُذِيَ} & \\ 
+\nopagebreak \T{na mahaba nayo hufa  *  ukiwa mwingi udhiya} & \T{127c/d} \\ 
+[8mm] 
+
+\textarabic{هَكُونَ كَاتُ هَكُونَ  *  كِؤُومْبٖ كَمِيلِ سَانَ} & \textarabic{١٢٨} \\ 
+\nopagebreak \T{hakuna katu hakuna  *  kiumbe kamili sana} & \T{128a/b} \\ 
+\textarabic{نَ وَاتُ هُتُكُوَانَ  *  نْدِيپٗ وَئِيشِ پَمٗويَ} & \\ 
+\nopagebreak \T{na watu hutukuwana  *  ndipo waishi pamoya} & \T{128c/d} \\ 
+[8mm] 
+
+\textarabic{كِيوَ لَزِيمَ وَتَاكَ  *  مْكٖ أَلٗكَمِلِيكَ} & \textarabic{١٢٩} \\ 
+\nopagebreak \T{kiwa lazima wataka  *  mke alokamilika} & \T{129a/b} \\ 
+\textarabic{جُوَ نَ وٖيوٖ هَكِيكَ  *  تَكُبِيدِ كُتِمِيَ} & \\ 
+\nopagebreak \T{juwa na wewe hakika  *  takubidi kutimiya} & \T{129c/d} \\ 
+[8mm] 
+
+\textarabic{أَاسٗ تَاءَ نِ تٗمٗومٗ  *  هُونُ نِ كْوٖيلِ مْسٖيمٗ} & \textarabic{١٣٠} \\ 
+\nopagebreak \T{aso taa ni tomomo  *  hunu ni kweli msemo} & \T{130a/b} \\ 
+\textarabic{وَاتُ هُپِتَانَ زِيمٗ  *  هُزِدِيَانَ توَبِيَ} & \\ 
+\nopagebreak \T{watu hupitana zimo  *  huzidiyana twabiya} & \T{130c/d} \\ 
+[8mm] 
+
+\textarabic{مْكٖ كِكُكَسِرِيشَ  *  جَرِيبُ كُيِكُمْبُوشَ} & \textarabic{١٣١} \\ 
+\nopagebreak \T{mke kikukasirisha  *  jaribu kuyikumbusha} & \T{131a/b} \\ 
+\textarabic{پِيَ هُكُفُرَهِيشَ  *  مٖزَانِ هِينِ تُمِيَ} & \\ 
+\nopagebreak \T{piya hukufurahisha  *  mezani hini tumiya} & \T{131c/d} \\ 
+[8mm] 
+
+\textarabic{أُسِيَؤٗونٖ يَ جٗونْڠٗ  *  كْوَ مٖيمَ أُكَاوَ تٗونْڠٗ} & \textarabic{١٣٢} \\ 
+\nopagebreak \T{usiyaone ya jongo  *  kwa mema ukawa tongo} & \T{132a/b} \\ 
+\textarabic{سَنْڠَلِيٖ پٖينْيٖ پٖينْڠٗ  *  كَوَاتَ پَلٗتِمِيَ} & \\ 
+\nopagebreak \T{sangaliye penye pengo  *  kawata palotimiya} & \T{132c/d} \\ 
+[8mm] 
+
+\textarabic{هُونَ بُودِ كُپُؤُوزَ  *  نَ مَنْڠِينٖ كُيَمِيزَ} & \textarabic{١٣٣} \\ 
+\nopagebreak \T{huna budi kupuuza  *  na mangine kuyamiza} & \T{133a/b} \\ 
+\textarabic{نْدِيپٗ مُوٖيزٖ كُفُوزَ  *  نَ مَئِيشَ كْوٖنْدٖلٖيَ} & \\ 
+\nopagebreak \T{ndipo muweze kufuza  *  na maisha kwendeleya} & \T{133c/d} \\ 
+[8mm] 
+
+\textarabic{مْكٖ كِتٖينْدَ مَكٗوسَ  *  كُمْوَمْبِيَ يَكُپَاسَ} & \textarabic{١٣٤} \\ 
+\nopagebreak \T{mke kitenda makosa  *  kumwambiya yakupasa} & \T{134a/b} \\ 
+\textarabic{كْوَ هِشِيمَ نَ سِيَاسَ  *  نَ هِكِيمَ كُتُمِيَ} & \\ 
+\nopagebreak \T{kwa hishima na siyasa  *  na hikima kutumiya} & \T{134c/d} \\ 
+[8mm] 
+
+\textarabic{كٗوسَ كُلِسَهِهِيشَ  *  پٖينْيٖ وَاتُ هُجٖرٖيشَ} & \textarabic{١٣٥} \\ 
+\nopagebreak \T{kosa kulisahihisha  *  penye watu hujeresha} & \T{135a/b} \\ 
+\textarabic{إِپِينْدٖ كُپُرُكُوشَ  *  فَرَاغَ كُئِزٖنْڠٖيَ} & \\ 
+\nopagebreak \T{ipinde kupurukusha  *  faragha kuizengeya} & \T{135c/d} \\ 
+[8mm] 
+
+\textarabic{سِمْوَمْبِيٖ پٖينْيٖ وَاتُ  *  هَؤُكِيرِ وَاكٖ أُوتُ} & \textarabic{١٣٦} \\ 
+\nopagebreak \T{simwambiye penye watu  *  haukiri wake utu} & \T{136a/b} \\ 
+\textarabic{وَالَ هُتٖنْڠٖيزِ كِيتُ  *  بَالِ نِ كِنْيُومٖ هُويَ} & \\ 
+\nopagebreak \T{wala hutengezi kitu  *  bali ni kinyume huya} & \T{136c/d} \\ 
+[8mm] 
+
+\textarabic{كُمْسِيفُ نِ أُزُورِ  *  پٖينْيٖ وَاتُ نَ ذَهِيرِ} & \textarabic{١٣٧} \\ 
+\nopagebreak \T{kumsifu ni uzuri  *  penye watu na dhahiri} & \T{137a/b} \\ 
+\textarabic{كُلَؤُومُ نِ كْوَ سِيرِ  *  نْدِيپٗ أَتَكُسِكِيَ} & \\ 
+\nopagebreak \T{kulaumu ni kwa siri  *  ndipo atakusikiya} & \T{137c/d} \\ 
+[8mm] 
+
+\textarabic{مْوَنَأَدَامُ كُكٗوسَ  *  نِ يَامْبٗ لِمٖتُپَاسَ} & \textarabic{١٣٨} \\ 
+\nopagebreak \T{mwanaadamu kukosa  *  ni yambo limetupasa} & \T{138a/b} \\ 
+\textarabic{نِ سَاوَ كُيِكُكُوسَ  *  مَنْڠِينٖ كُڤُمِلِيَ} & \\ 
+\nopagebreak \T{ni sawa kuyikukusa  *  mangine kuvumiliya} & \T{138c/d} \\ 
+[8mm] 
+
+\textarabic{لِسَمٖيهٖ كٗوسَ دٗوڠٗ  *  كٗوسَ لِكِيوَ مزِيڠٗ} & \textarabic{١٣٩} \\ 
+\nopagebreak \T{lisamehe kosa dogo  *  kosa likiwa mzigo} & \T{139a/b} \\ 
+\textarabic{هَلِپٖلٖيكِ كِشٗوڠٗ  *  زٖنْڠٖيَ نْيٖنْڠِينٖ نْدِيَ} & \\ 
+\nopagebreak \T{halipeleki kishogo  *  zengeya nyengine ndiya} & \T{139c/d} \\ 
+[8mm] 
+
+\textarabic{تَفَؤُوتِ زَ نْيُمْبَانِ  *  زِيوٖ نِ سِيرِ زَ نْدَانِ} & \textarabic{١٤٠} \\ 
+\nopagebreak \T{tafauti za nyumbani  *  ziwe ni siri za ndani} & \T{140a/b} \\ 
+\textarabic{سِزِتٗوٖ هَذِرَانِ  *  وَاتُ وَكَزِسِكِيَ} & \\ 
+\nopagebreak \T{sizitowe hadhirani  *  watu wakazisikiya} & \T{140c/d} \\ 
+[8mm] 
+
+\textarabic{سِيرِ زَ نْدَانِ زِبَانٖ  *  أُسِمْوَمْبِيٖ مْنْڠِينٖ} & \textarabic{١٤١} \\ 
+\nopagebreak \T{siri za ndani zibane  *  usimwambiye mngine} & \T{141a/b} \\ 
+\textarabic{وٖيوٖ نَ يٖيٖ مُنٖينٖ  *  سُلُهِيشٗ كُزٖنْڠٖيَ} & \\ 
+\nopagebreak \T{wewe na yeye munene  *  suluhisho kuzengeya} & \T{141c/d} \\ 
+[8mm] 
+
+\textarabic{إِيلَ مُكِكٗوسَ بُودِ  *  كُنٖينَ إِكَوَبِيدِ} & \textarabic{١٤٢} \\ 
+\nopagebreak \T{ila mukikosa budi  *  kunena ikawabidi} & \T{142a/b} \\ 
+\textarabic{وَزٖئٖ وَوَسَئِيدِ  *  هَاپٗ هَئِيوِ هَتِيَ} & \\ 
+\nopagebreak \T{wazee wawasaidi  *  hapo haiwi hatiya} & \T{142c/d} \\ 
+[8mm] 
+
+\textarabic{تَفَؤُوتِ إِكِزُوكَ  *  نِ مِكٗونٗ كُيَنْدِيكَ} & \textarabic{١٤٣} \\ 
+\nopagebreak \T{tafauti ikizuka  *  ni mikono kuyandika} & \T{143a/b} \\ 
+\textarabic{يُؤَ نْدٖ إِكِتٗوكَ  *  هُزُوَ نْيِينْڠِ بَلَايَ} & \\ 
+\nopagebreak \T{yua nde ikitoka  *  huzuwa nyingi balaya} & \T{143c/d} \\ 
+[8mm] 
+
+\textarabic{خُسُوسوَ سِيرِ زَ سِيرِ  *  كُنٖينَ نِ كُؤَذِيرِ} & \textarabic{١٤٤} \\ 
+\nopagebreak \T{khususwa siri za siri  *  kunena ni kuadhiri} & \T{144a/b} \\ 
+\textarabic{إِيلَ إِيوٖ دَكِتَارِ  *  سُؤَالِ مٖوَتَئِيَ} & \\ 
+\nopagebreak \T{ila iwe dakitari  *  suali mewataiya} & \T{144c/d} \\ 
+[8mm] 
+
+\textarabic{مَامْبٗ يَ تِينِ كْوَ تِينِ  *  يَاوٖ نِ نْدَانِ كْوَ نْدَانِ} & \textarabic{١٤٥} \\ 
+\nopagebreak \T{mambo ya tini kwa tini  *  yawe ni ndani kwa ndani} & \T{145a/b} \\ 
+\textarabic{هَايٗ مُوٖ هَمُنٖينِ  *  إِيلَ يَكِوَئِمٖيَ} & \\ 
+\nopagebreak \T{hayo muwe hamuneni  *  ila yakiwaemeya} & \T{145c/d} \\ 
+[8mm] 
+
+\textarabic{كِيوَ مْنٗ مٖوَڠَانْيَ  *  مُكَشِنْدوَ لَ كُفَانْيَ} & \textarabic{١٤٦} \\ 
+\nopagebreak \T{kiwa mno mewaganya  *  mukashindwa la kufanya} & \T{146a/b} \\ 
+\textarabic{كْوَ هَاپٗ سِتٗوَكَانْيَ  *  أُشَؤُورِ كُزٖنْڠٖيَ} & \\ 
+\nopagebreak \T{kwa hapo sitowakanya  *  ushauri kuzengeya} & \T{146c/d} \\ 
+[8mm] 
+
+\textarabic{نِ بٗورَ أُوٖ هٗدَارِ  *  نَ كُشِنْدوَ أُسِكِيرِ} & \textarabic{١٤٧} \\ 
+\nopagebreak \T{ni bora uwe hodari  *  na kushindwa usikiri} & \T{147a/b} \\ 
+\textarabic{وَالَ أُسِتَهَيَارِ  *  كْوَ هَلَالِ كُتُمِيَ} & \\ 
+\nopagebreak \T{wala usitahayari  *  kwa halali kutumiya} & \T{147c/d} \\ 
+[8mm] 
+
+\textarabic{نِ هِيكٗ هِيكٗ كِتٖينْدٗ  *  كِيوَ وَ هَلَالِ مْوٖينْدٗ} & \textarabic{١٤٨} \\ 
+\nopagebreak \T{ni hiko hiko kitendo  *  kiwa wa halali mwendo} & \T{148a/b} \\ 
+\textarabic{هَرَامُ إِوٖيكٖ كَانْدٗ  *  كَاتُ كُتٗكَرِبِيَ} & \\ 
+\nopagebreak \T{haramu iweke kando  *  katu kutokaribiya} & \T{148c/d} \\ 
+[8mm] 
+
+\textarabic{وَ هَرَامُ سِمْڠُوسٖ  *  كِمُؤٗونَ إِڠٖڠٖيسٖ} & \textarabic{١٤٩} \\ 
+\nopagebreak \T{wa haramu simguse  *  kimuona igegese} & \T{149a/b} \\ 
+\textarabic{هَاتَ نْيَنْڠوَانِ مْپِيسٖ  *  سَنْدَمَانٖ نَايٖ نْدِيَ} & \\ 
+\nopagebreak \T{hata nyangwani mpise  *  sandamane naye ndiya} & \T{149c/d} \\ 
+[8mm] 
+
+\textarabic{أُسٖينْدٖ هَاتَ كَرِيبُ  *  إٖپُوكَ هِيزٗ إِقَابُ} & \textarabic{١٥٠} \\ 
+\nopagebreak \T{usende hata karibu  *  epuka hizo iqabu} & \T{150a/b} \\ 
+\textarabic{أُتَپَاتَ نَ ثَوَابُ  *  مْكٖؤٗ كُمْنْڠِلِيَ} & \\ 
+\nopagebreak \T{utapata na thawabu  *  mkeo kumngiliya} & \T{150c/d} \\ 
+[8mm] 
+
+\textarabic{إٖلٖيوَ سَانَ إٖلٖيوَ  *  نِ جُكُومُ أُمٖپٗوَ} & \textarabic{١٥١} \\ 
+\nopagebreak \T{elewa sana elewa  *  ni jukumu umepowa} & \T{151a/b} \\ 
+\textarabic{مْكٖؤٗ كُمْوِيسَ نْڠٗوَ  *  كْوَ هَايَ نِمٖزٗتَايَ} & \\ 
+\nopagebreak \T{mkeo kumwisa ngowa  *  kwa haya nimezotaya} & \T{151c/d} \\ 
+[8mm] 
+
+\textarabic{مْكٖؤٗ مْتٗشٖلٖيزٖ  *  هَاجَ يَاكٖ أَمَلِيزٖ} & \textarabic{١٥٢} \\ 
+\nopagebreak \T{mkeo mtosheleze  *  haja yake amalize} & \T{152a/b} \\ 
+\textarabic{نَ شَؤُوكُ أَسِسَازٖ  *  مْپَارٗ أُكَمْوَتِيَ} & \\ 
+\nopagebreak \T{na shauku asisaze  *  mparo ukamwatiya} & \T{152c/d} \\ 
+[8mm] 
+
+\textarabic{أٗنْڠٖيزَ وَاكٗ أُيُوزِ  *  وَ كُفَانْيَ هِيٗ كَازِ} & \textarabic{١٥٣} \\ 
+\nopagebreak \T{ongeza wako uyuzi  *  wa kufanya hiyo kazi} & \T{153a/b} \\ 
+\textarabic{مْوٖينْدٗ كِيوَ هَمَلِيزِ  *  فَهَامُ وَمْكٗسٖيَ} & \\ 
+\nopagebreak \T{mwendo kiwa hamalizi  *  fahamu wamkoseya} & \T{153c/d} \\ 
+[8mm] 
+
+\textarabic{هُوَ نِ كُؤُ ذُلُومَ  *  وٖيوٖ أُكِسَكُكٗومَ} & \textarabic{١٥٤} \\ 
+\nopagebreak \T{huwa ni kuu dhuluma  *  wewe ukisakukoma} & \T{154a/b} \\ 
+\textarabic{هُتَاكِ ڠٖؤُوكَ نْيُومَ  *  نَ يٖيٖ كُمْنْڠٗجٖيَ} & \\ 
+\nopagebreak \T{hutaki geuka nyuma  *  na yeye kumngojeya} & \T{154c/d} \\ 
+[8mm] 
+
+\textarabic{سِمَلِيزٖ يَاكٗ هَاجَ  *  مْنْڠٗوجٖ مْوِيسٖ پَمٗوجَ} & \textarabic{١٥٥} \\ 
+\nopagebreak \T{simalize yako haja  *  mngoje mwise pamoja} & \T{155a/b} \\ 
+\textarabic{هِيلِ هَتَاكِ ممٗوجَ  *  نِ نْيٗوتٖ هُلِزٖنْڠٖيَ} & \\ 
+\nopagebreak \T{hili hataki mmoja  *  ni nyote hulizengeya} & \T{155c/d} \\ 
+[8mm] 
+
+\textarabic{أَنْڠَلِيَ أُفِكِيرِ  *  كِيوَ مْوٖينْدٗ تَغَئِيرِ} & \textarabic{١٥٦} \\ 
+\nopagebreak \T{angaliya ufikiri  *  kiwa mwendo taghairi} & \T{156a/b} \\ 
+\textarabic{نَ وٖيوٖ پٖينْيٖ بَنْدَارِ  *  بَادٗ نَانْڠَ هُجَتِيَ} & \\ 
+\nopagebreak \T{na wewe penye bandari  *  bado nanga hujatiya} & \T{156c/d} \\ 
+[8mm] 
+
+\textarabic{أُتَكُوَ هَالِ ڠَانِ  *  أُسِنْڠِيزِ هُُؤٗونِ} & \textarabic{١٥٧} \\ 
+\nopagebreak \T{utakuwa hali gani  *  usingizi huuoni} & \T{157a/b} \\ 
+\textarabic{هَالِ هِيٗ أُبَئِينِ  *  نَ مْوٖينْدٗ هُمُئِلِيَ} & \\ 
+\nopagebreak \T{hali hiyo ubaini  *  na mwendo humuiliya} & \T{157c/d} \\ 
+[8mm] 
+
+\textarabic{أَتَكُوَ نَ مْتَارٗ  *  نَ ذِيكِ مْنٗ نَ كٖيرٗ} & \textarabic{١٥٨} \\ 
+\nopagebreak \T{atakuwa na mtaro  *  na dhiki mno na kero} & \T{158a/b} \\ 
+\textarabic{نَ هَسِيرَ نَ مْفُورٗ  *  كِيوَ هُتٗمرِذِيَ} & \\ 
+\nopagebreak \T{na hasira na mfuro  *  kiwa hutomridhiya} & \T{158c/d} \\ 
+[8mm] 
+
+\textarabic{نْيُومْبَ نْيِينْڠِ هُڤُنْدِيكَ  *  زِكِكٗوسَ مُؤَفَاكَ} & \textarabic{١٥٩} \\ 
+\nopagebreak \T{nyumba nyingi huvundika  *  zikikosa muafaka} & \T{159a/b} \\ 
+\textarabic{كْوَ نْڠٗونٗ كُتٗتٗشٖيكَ  *  مْكٖ نَ مُومٖ پَمٗويَ} & \\ 
+\nopagebreak \T{kwa ngono kutotosheka  *  mke na mume pamoya} & \T{159c/d} \\ 
+[8mm] 
+
+\textarabic{كْوَ هِيلِ مُكِتٗشَانَ  *  مٖينْڠِ هُڤُمِلِيَانَ} & \textarabic{١٦٠} \\ 
+\nopagebreak \T{kwa hili mukitoshana  *  mengi huvumiliyana} & \T{160a/b} \\ 
+\textarabic{مْنٗ هُكٗرٗفِشَانَ  *  هِيلِ لِسِپٗتِمِيَ} & \\ 
+\nopagebreak \T{mno hukorofishana  *  hili lisipotimiya} & \T{160c/d} \\ 
+[8mm] 
+
+\textarabic{نَ لِنْڠِينٖ كَذَلِيكَ  *  أَمْبَالٗ كْوَاكٗ نَتَاكَ} & \textarabic{١٦١} \\ 
+\nopagebreak \T{na lingine kadhalika  *  ambalo kwako nataka} & \T{161a/b} \\ 
+\textarabic{نِ مْكٖؤٗ كِؤُذِيكَ  *  أُسِيوٖ تَمْفُرِيَ} & \\ 
+\nopagebreak \T{ni mkeo kiudhika  *  usiwe tamfuriya} & \T{161c/d} \\ 
+[8mm] 
+
+\textarabic{پَنْڠِينٖ أُتَمُؤٗونَ  *  هُفُورَ سَبَابُ هَانَ} & \textarabic{١٦٢} \\ 
+\nopagebreak \T{pangine utamuona  *  hufura sababu hana} & \T{162a/b} \\ 
+\textarabic{مُئٖلٖيوٖ تٖينَ سَانَ  *  نَ مْنٗ كُمُيُلِيَ} & \\ 
+\nopagebreak \T{muelewe tena sana  *  na mno kumuyuliya} & \T{162c/d} \\ 
+[8mm] 
+
+\textarabic{إِفَهَامُ تَفَؤُوتِ  *  وَلِيٗ نَايٗ بَنَاتِ} & \textarabic{١٦٣} \\ 
+\nopagebreak \T{ifahamu tafauti  *  waliyo nayo banati} & \T{163a/b} \\ 
+\textarabic{هَوٖيزِ كُئِذِبِيتِ  *  هَالِ إِنَپٗوَدِيَ} & \\ 
+\nopagebreak \T{hawezi kuidhibiti  *  hali inapowadiya} & \T{163c/d} \\ 
+[8mm] 
+
+\textarabic{مْكٖ سِ كِؤُومْبٖ دُوفُ  *  وَلَكِينِ نِ ذَئِيفُ} & \textarabic{١٦٥} \\ 
+\nopagebreak \T{mke si kiumbe dufu  *  walakini ni dhaifu} & \T{165a/b} \\ 
+\textarabic{مٗويٗ وَاكٖ نِ خَفِيفُ  *  هُشِنْدوَ كُڤُمِلِيَ} & \\ 
+\nopagebreak \T{moyo wake ni khafifu  *  hushindwa kuvumiliya} & \T{165c/d} \\ 
+[8mm] 
+
+\textarabic{وَنَوَاكٖ وَانَ أُومْبٗ  *  هُؤَثِرِيكَ كْوَ مَامْبٗ} & \textarabic{١٦٦} \\ 
+\nopagebreak \T{wanawake wana umbo  *  huathirika kwa mambo} & \T{166a/b} \\ 
+\textarabic{كَتِيتِ يَكٖينْدَ كٗومْبٗ  *  وَاسِ وَاسِ هُمْتِيَ} & \\ 
+\nopagebreak \T{katiti yakenda kombo  *  wasi wasi humtiya} & \T{166c/d} \\ 
+[8mm] 
+
+\textarabic{كَتِيكَ سِيكُ زَ أَادَ  *  يَ مْوٖيزِ هُپَاتَ شِيدَ} & \textarabic{١٦٧} \\ 
+\nopagebreak \T{katika siku za ada  *  ya mwezi hupata shida} & \T{167a/b} \\ 
+\textarabic{نْدِيپٗ هَاتَ نَ إِبَادَ  *  مُونْڠُ كَوَپُنْڠُزِيَ} & \\ 
+\nopagebreak \T{ndipo hata na ibada  *  mungu kawapunguziya} & \T{167c/d} \\ 
+[8mm] 
+
+\textarabic{مْنٗ هُوَ يَ ثَقِيلِ  *  نَ هُبَدِلِيكَ هَالِ} & \textarabic{١٦٨} \\ 
+\nopagebreak \T{mno huwa ya thaqili  *  na hubadilika hali} & \T{168a/b} \\ 
+\textarabic{نَ چٗوتٖ كِوِلِوِيلِ  *  هُوَ كَتِيكَ أُذِيَ} & \\ 
+\nopagebreak \T{na chote kiwiliwili  *  huwa katika udhiya} & \T{168c/d} \\ 
+[8mm] 
+
+\textarabic{هُوَ سَانَ نِ وَيَاڤُ  *  هُكٗوسَ أُڤِمِلِيڤُ} & \textarabic{١٦٩} \\ 
+\nopagebreak \T{huwa sana ni wayavu  *  hukosa uvimilivu} & \T{169a/b} \\ 
+\textarabic{هُوَ كَامَ إِيڤُ إِيڤُ  *  كُتُمْبُوكَ هُزٖنْڠٖيَ} & \\ 
+\nopagebreak \T{huwa kama ivu ivu  *  kutumbuka huzengeya} & \T{169c/d} \\ 
+[8mm] 
+
+\textarabic{هُوَ مْنٗ نِ وَكَالِ  *  نَذَانِ هَاتَ أَكِيلِ} & \textarabic{١٧٠} \\ 
+\nopagebreak \T{huwa mno ni wakali  *  nadhani hata akili} & \T{170a/b} \\ 
+\textarabic{هَئِيوِ سَاوَ كَمِيلِ  *  نَ پُنْڠُوَانِ هُنْڠِيَ} & \\ 
+\nopagebreak \T{haiwi sawa kamili  *  na punguwani hungiya} & \T{170c/d} \\ 
+[8mm] 
+
+\textarabic{كُولَ مَارَ تَمُؤٗونَ  *  هُوَرُكِيَ زِجَانَ} & \textarabic{١٧١} \\ 
+\nopagebreak \T{kula mara tamuona  *  huwarukiya zijana} & \T{171a/b} \\ 
+\textarabic{نَ كْوَ أُكَالِ هُنٖينَ  *  كِنْيُومٖ چَ مَزٗوٖيَ} & \\ 
+\nopagebreak \T{na kwa ukali hunena  *  kinyume cha mazoweya} & \T{171c/d} \\ 
+[8mm] 
+
+\textarabic{نِ مُهِيمُ كُولَ مُومٖ  *  مْكٖ وَاكٖ أَمْسٗومٖ} & \textarabic{١٧٢} \\ 
+\nopagebreak \T{ni muhimu kula mume  *  mke wake amsome} & \T{172a/b} \\ 
+\textarabic{كْوَ زِپِيمٗ أَمْپِيمٖ  *  سِيكُ زِكِكَرِبِيَ} & \\ 
+\nopagebreak \T{kwa zipimo ampime  *  siku zikikaribiya} & \T{172c/d} \\ 
+[8mm] 
+
+\textarabic{أُكِيسَ كُمْفَهَامُ  *  أُوَاتٖ كُملَؤُومُ} & \textarabic{١٧٣} \\ 
+\nopagebreak \T{ukisa kumfahamu  *  uwate kumlaumu} & \T{173a/b} \\ 
+\textarabic{هِيلِ مْنٗ نِ مُهِيمُ  *  يَتَاكَ كُلِزٗوٖيَ} & \\ 
+\nopagebreak \T{hili mno ni muhimu  *  yataka kulizoweya} & \T{173c/d} \\ 
+[8mm] 
+
+\textarabic{كُونَ نَ مُودَ وَ مِيمْبَ  *  مَارَ كْوَ مَارَ هُڤِيمْبَ} & \textarabic{١٧٤} \\ 
+\nopagebreak \T{kuna na muda wa mimba  *  mara kwa mara huvimba} & \T{174a/b} \\ 
+\textarabic{أُكَؤٗونَ كَانَ كْوَامْبَ  *  مٖكُوَ هُكُزٖنْڠٖيَ} & \\ 
+\nopagebreak \T{ukaona kana kwamba  *  mekuwa hukuzengeya} & \T{174c/d} \\ 
+[8mm] 
+
+\textarabic{كُكٗوسَ يَامْبٗ كَتِيتِ  *  هُوَ وٖيوٖ أُمٖهِيتِ} & \textarabic{١٧٥} \\ 
+\nopagebreak \T{kukosa yambo katiti  *  huwa wewe umehiti} & \T{175a/b} \\ 
+\textarabic{أَنْڠَلِيَ كِبِرِيتِ  *  كِدَرِيكَ تٖيتٖ هُويَ} & \\ 
+\nopagebreak \T{angaliya kibiriti  *  kidarika tete huya} & \T{175c/d} \\ 
+[8mm] 
+
+\textarabic{مَارَ نْيَامَ هَئِتَاكِ  *  أَتَاكَ نْسِ وَ سِيكِ} & \textarabic{١٧٦} \\ 
+\nopagebreak \T{mara nyama haitaki  *  ataka nsi wa siki} & \T{176a/b} \\ 
+\textarabic{أَلَاچٗ هَكِمْشِيكِ  *  أَكِتِيَاچٗ هُمْوَايَ} & \\ 
+\nopagebreak \T{alacho hakimshiki  *  akitiyacho humwaya} & \T{176c/d} \\ 
+[8mm] 
+
+\textarabic{زِئٖلٖيوٖ سِيكُ هِيزِ  *  مِيمْبَ نَ سِيكُ زَ مْوٖيزِ} & \textarabic{١٧٧} \\ 
+\nopagebreak \T{zielewe siku hizi  *  mimba na siku za mwezi} & \T{177a/b} \\ 
+\textarabic{كِيوَ هُمْبٖمْبٖلٖيزِ  *  تَؤٗونَ وَمُؤٗنٖيَ} & \\ 
+\nopagebreak \T{kiwa humbembelezi  *  taona wamuoneya} & \T{177c/d} \\ 
+[8mm] 
+
+\textarabic{مْپٖيمْبٖ كَامَ كِجَانَ  *  تٖينَ أَلِيٗ مْنُونَ} & \textarabic{١٧٨} \\ 
+\nopagebreak \T{mpembe kama kijana  *  tena aliyo mnuna} & \T{178a/b} \\ 
+\textarabic{نْدِيپٗ مُتَسِكِزَانَ  *  نَ يَدُومُ مَزٗوٖيَ} & \\ 
+\nopagebreak \T{ndipo mutasikizana  *  na yadumu mazoweya} & \T{178c/d} \\ 
+[8mm] 
+
+\textarabic{شَرُوتِ أُوٖ مْوٖرٖيڤُ  *  نَ مْنٗ مْڤُمِلِيڤُ} & \textarabic{١٧٩} \\ 
+\nopagebreak \T{sharuti uwe mwerevu  *  na mno mvumilivu} & \T{179a/b} \\ 
+\textarabic{أُسِفُرِيشٖ مَشَاڤُ  *  كِيوَ نَايٖ مٖتٖتٖيَ} & \\ 
+\nopagebreak \T{usifurishe mashavu  *  kiwa naye meteteya} & \T{179c/d} \\ 
+[8mm] 
+
+\textarabic{كُونَ مَامْبٗ يَ أُمِيتٗ  *  نِ مَكُؤُ سِ مَتٗوتٗ} & \textarabic{١٨٠} \\ 
+\nopagebreak \T{kuna mambo ya umito  *  ni makuu si matoto} & \T{180a/b} \\ 
+\textarabic{وٖنْڠِينٖ هُولَ تٗتٗوتٗ  *  نَ مْتَانْڠَ هُبُڠِيَ} & \\ 
+\nopagebreak \T{wengine hula tototo  *  na mtanga hubugiya} & \T{180c/d} \\ 
+[8mm] 
+
+\textarabic{نِ مَامْبٗ يَ مِؤُجِيزَ  *  زَاءٗ هَالِ هُڠٖؤُوزَ} & \textarabic{١٨١} \\ 
+\nopagebreak \T{ni mambo ya miujiza  *  zao hali hugeuza} & \T{181a/b} \\ 
+\textarabic{كِيوَ هُتٗبٖمْبٖلٖيزَ  *  مَارَ تَؤٗونَ هُلِيَ} & \\ 
+\nopagebreak \T{kiwa hutobembeleza  *  mara taona huliya} & \T{181c/d} \\ 
+[8mm] 
+
+\textarabic{مْوَنَامْكٖ كْوَ تَأَبُ  *  مَارَ هُفَانْيَ غَذَابُ} & \textarabic{١٨٢} \\ 
+\nopagebreak \T{mwanamke kwa taabu  *  mara hufanya ghadhabu} & \T{182a/b} \\ 
+\textarabic{هَاتَ أَالٗ تَرَتِيبُ  *  هُبَدِلِيكَ توَبِيَ} & \\ 
+\nopagebreak \T{hata alo taratibu  *  hubadilika twabiya} & \T{182c/d} \\ 
+[8mm] 
+
+\textarabic{نٖينٗ لٗلٗوتٖ أَوٖيزَ  *  هَجَالِ كُڤُرِمِيزَ} & \textarabic{١٨٣} \\ 
+\nopagebreak \T{neno lolote aweza  *  hajali kuvurimiza} & \T{183a/b} \\ 
+\textarabic{نِ شَرُوتِ كُئِكَازَ  *  مِزَانِ كُتٗپٗتٖيَ} & \\ 
+\nopagebreak \T{ni sharuti kuikaza  *  mizani kutopoteya} & \T{183c/d} \\ 
+[8mm] 
+
+\textarabic{مَارَ أَوٖيزَ تَلَاكَ  *  أَكَكْوَمْبِيَ نَتَاكَ} & \textarabic{١٨٤} \\ 
+\nopagebreak \T{mara aweza talaka  *  akakwambiya nataka} & \T{184a/b} \\ 
+\textarabic{نَاوٖ أُكِكَسِرِيكَ  *  مَيُوتٗ يَتَسَلِيَ} & \\ 
+\nopagebreak \T{nawe ukikasirika  *  mayuto yatasaliya} & \T{184c/d} \\ 
+[8mm] 
+
+\textarabic{أَكِكْوَمْبِيَ نِوَاتَ  *  سِيوٖ نَايٖ مُتَتٖيتَ} & \textarabic{١٨٥} \\ 
+\nopagebreak \T{akikwambiya niwata  *  siwe naye mutateta} & \T{185a/b} \\ 
+\textarabic{نِ كِوِينْڠُ كِتَپِيتَ  *  هَكِوٖيزِ كُسَلِيَ} & \\ 
+\nopagebreak \T{ni kiwingu kitapita  *  hakiwezi kusaliya} & \T{185c/d} \\ 
+[8mm] 
+
+\textarabic{توَلَاكَ سِئِتٖلٖيزٖ  *  أَئِتَكَاپٗ مْپُوزٖ} & \textarabic{١٨٦} \\ 
+\nopagebreak \T{twalaka siiteleze  *  aitakapo mpuze} & \T{186a/b} \\ 
+\textarabic{وَالَ سِئِتٖنْدٖكٖيزٖ  *  لَاكٖ كُمْتِمِزِيَ} & \\ 
+\nopagebreak \T{wala siitendekeze  *  lake kumtimiziya} & \T{186c/d} \\ 
+[8mm] 
+
+\textarabic{توَلَاكَ مُونْڠُ مٖوٖيكَ  *  كْوَ ذَرُورَ كُتُمِيكَ} & \textarabic{١٨٧} \\ 
+\nopagebreak \T{twalaka mungu meweka  *  kwa dharura kutumika} & \T{187a/b} \\ 
+\textarabic{إِوَاپٗ مُمٖذِكِيكَ  *  مُمٖكٗوسَ زٗوتٖ نْدِيَ} & \\ 
+\nopagebreak \T{iwapo mumedhikika  *  mumekosa zote ndiya} & \T{187c/d} \\ 
+[8mm] 
+
+\textarabic{كُشَلِيكِ مُشِنْدوَاپٗ  *  توَلَاكَ هُوَ نِ هَاپٗ} & \textarabic{١٨٨} \\ 
+\nopagebreak \T{kushaliki mushindwapo  *  twalaka huwa ni hapo} & \T{188a/b} \\ 
+\textarabic{نَ مُودَ أُئِتٗوَاپٗ  *  أُسِئِزِدِيشٖ مٗويَ} & \\ 
+\nopagebreak \T{na muda uitowapo  *  usiizidishe moya} & \T{188c/d} \\ 
+[8mm] 
+
+\textarabic{تِمِيزَ نَ مَشَرُوتِ  *  يَ هَالِ پِيَ وَكَاتِ} & \textarabic{١٨٩} \\ 
+\nopagebreak \T{timiza na masharuti  *  ya hali piya wakati} & \T{189a/b} \\ 
+\textarabic{نَ هُكُومُ زِتَفِيتِ  *  كَبُولَ يَ كُتُمِيَ} & \\ 
+\nopagebreak \T{na hukumu zitafiti  *  kabula ya kutumiya} & \T{189c/d} \\ 
+[8mm] 
+
+\textarabic{كُونَ وَاتُ هُوَتَانَ  *  كِيسَ مَارَ هُوَؤٗونَ} & \textarabic{١٩٠} \\ 
+\nopagebreak \T{kuna watu huwatana  *  kisa mara huwaona} & \T{190a/b} \\ 
+\textarabic{كْوَ هَرَامُ وَتَكَانَ  *  زِپٖنْڠٖئٖ هُزٖنْڠٖيَ} & \\ 
+\nopagebreak \T{kwa haramu watakana  *  zipengee huzengeya} & \T{190c/d} \\ 
+[8mm] 
+
+\textarabic{هُزٖنْڠٖيَ مُهَلِيلِ  *  فِكِرِيَ يَامْبٗ هِيلِ} & \textarabic{١٩١} \\ 
+\nopagebreak \T{huzengeya muhalili  *  fikiriya yambo hili} & \T{191a/b} \\ 
+\textarabic{لَ كُؤَزِيمَ فَهَالِ  *  مْكٖ كْوٖينْدَ مْپٖكٖيَ} & \\ 
+\nopagebreak \T{la kuazima fahali  *  mke kwenda mpekeya} & \T{191c/d} \\ 
+[8mm] 
+
+\textarabic{نَ لَنْڠِينٖ كَذَلِيكَ  *  نِ كْوَ ممٗويَ تٗشٖيكَ} & \textarabic{١٩٢} \\ 
+\nopagebreak \T{na langine kadhalika  *  ni kwa mmoya tosheka} & \T{192a/b} \\ 
+\textarabic{إِيلَ كِيوَ مٖذِكِيكَ  *  هَئِكُپِينْڠَ شَرِيَ} & \\ 
+\nopagebreak \T{ila kiwa medhikika  *  haikupinga shariya} & \T{192c/d} \\ 
+[8mm] 
+
+\textarabic{مْكٖ سِؤٗوٖ وَ پِيلِ  *  نِ أُذِيَ كْوٖيلِ كْوٖيلِ} & \textarabic{١٩٣} \\ 
+\nopagebreak \T{mke siowe wa pili  *  ni udhiya kweli kweli} & \T{193a/b} \\ 
+\textarabic{نَ إِنْڠَاوَ نِ هَلَالِ  *  نِ أُزِيتٗ كُتُمِيَ} & \\ 
+\nopagebreak \T{na ingawa ni halali  *  ni uzito kutumiya} & \T{193c/d} \\ 
+[8mm] 
+
+\textarabic{نَ وَنَوَاكٖ سِ سَاوَ  *  كْوَ وٖنْڠِنٖؤٗ نِ دَاوَ} & \textarabic{١٩٤} \\ 
+\nopagebreak \T{na wanawake si sawa  *  kwa wengineo ni dawa} & \T{194a/b} \\ 
+\textarabic{أُتَئِيُوتَ كُزَاوَ  *  نِمٖكْوَمْبِيَ يَهَايَ} & \\ 
+\nopagebreak \T{utaiyuta kuzawa  *  nimekwambiya yahaya} & \T{194c/d} \\ 
+[8mm] 
+
+\textarabic{كُونَ وَنَاءٗ رِذِيكَ  *  وَنْڠَاوَ وَنُن’ڠُنِيكَ} & \textarabic{١٩٥} \\ 
+\nopagebreak \T{kuna wanao ridhika  *  wangawa wanun’gunika} & \T{195a/b} \\ 
+\textarabic{كُونَ وَنْڠِينٖ هُوَاكَ  *  فُنُونُ وَكِسِكِيَ} & \\ 
+\nopagebreak \T{kuna wangine huwaka  *  fununu wakisikiya} & \T{195c/d} \\ 
+[8mm] 
+
+\textarabic{كُؤٗنْڠٖيزَ سِ هَرَامُ  *  وَلَكِينِ أُفَهَامُ} & \textarabic{١٩٦} \\ 
+\nopagebreak \T{kuongeza si haramu  *  walakini ufahamu} & \T{196a/b} \\ 
+\textarabic{نِ كُؤُ مْنٗ جُكُومُ  *  مْبَالِ نَ وَاكٖ أُذِيَ} & \\ 
+\nopagebreak \T{ni kuu mno jukumu  *  mbali na wake udhiya} & \T{196c/d} \\ 
+[8mm] 
+
+\textarabic{إِكِيوَ سَبَابُ إِيكٗ  *  كْوَ مْفَانٗ مْكٖ وَاكٗ} & \textarabic{١٩٧} \\ 
+\nopagebreak \T{ikiwa sababu iko  *  kwa mfano mke wako} & \T{197a/b} \\ 
+\textarabic{مٖپٗوَ مِكَالِ مِيكٗ  *  كْوَ ذَرُورَ زَ أَفِيَ} & \\ 
+\nopagebreak \T{mepowa mikali miko  *  kwa dharura za afiya} & \T{197c/d} \\ 
+[8mm] 
+
+\textarabic{لَبُودَ هَانَ كِزَازِ  *  لَ كُزَاءَ هَلِوٖيزِ} & \textarabic{١٩٨} \\ 
+\nopagebreak \T{labuda hana kizazi  *  la kuzaa haliwezi} & \T{198a/b} \\ 
+\textarabic{نَاوٖ وَتَاكَ پُمْبَازِ  *  يَاپٗ نِ مْوَانَ ممٗويَ} & \\ 
+\nopagebreak \T{nawe wataka pumbazi  *  yapo ni mwana mmoya} & \T{198c/d} \\ 
+[8mm] 
+
+\textarabic{أَوْ يَالٖ مَشُغُولِ  *  يٖيٖ هُمْپَ ثَقِيلِ} & \textarabic{١٩٩} \\ 
+\nopagebreak \T{au yale mashughuli  *  yeye humpa thaqili} & \T{199a/b} \\ 
+\textarabic{نَاوٖ كُسِتَهَمِيلِ  *  هُلِوٖيزِ هِيلٗ پِيَ} & \\ 
+\nopagebreak \T{nawe kusitahamili  *  huliwezi hilo piya} & \T{199c/d} \\ 
+[8mm] 
+
+\textarabic{كْوَ ذَرُورَ زِيسٗ بُودِ  *  أُسِتٖينْدٖ كْوَ كَسِيدِ} & \textarabic{٢٠٠} \\ 
+\nopagebreak \T{kwa dharura ziso budi  *  usitende kwa kasidi} & \T{200a/b} \\ 
+\textarabic{كُئٖنْڠٖيزَ وَ زَئِيدِ  *  كِتٗشٖلٖيزَ ممٗويَ} & \\ 
+\nopagebreak \T{kuengeza wa zaidi  *  kitosheleza mmoya} & \T{200c/d} \\ 
+[8mm] 
+
+\textarabic{كْوَ ممٗويَ كُتٗشٖيكَ  *  نْدِيٗ بٗورَ بِيلَ شَاكَ} & \textarabic{٢٠١} \\ 
+\nopagebreak \T{kwa mmoya kutosheka  *  ndiyo bora bila shaka} & \T{201a/b} \\ 
+\textarabic{كُئٖنْڠٖيزَ أُكِتَاكَ  *  نِ كَامَ نِلٗكْوَمْبِيَ} & \\ 
+\nopagebreak \T{kuengeza ukitaka  *  ni kama nilokwambiya} & \T{201c/d} \\ 
+[8mm] 
+
+\textarabic{أُسِيوٖ كِرُوكَ مْتٗ  *  خَاسَ كِيوَ نَ وَتٗوتٗ} & \textarabic{٢٠٢} \\ 
+\nopagebreak \T{usiwe kiruka mto  *  khasa kiwa na watoto} & \T{202a/b} \\ 
+\textarabic{كُونَ هِسَابُ مزِيتٗ  *  أَخٖيرَ تَكُنْڠٗجٖيَ} & \\ 
+\nopagebreak \T{kuna hisabu mzito  *  akhera takungojeya} & \T{202c/d} \\ 
+[8mm] 
+
+\textarabic{أُسِئِفَانْيَ چَ نْيُوكِ  *  هُتُوِ نَ هُدِرِيكِ} & \textarabic{٢٠٣} \\ 
+\nopagebreak \T{usiifanya cha nyuki  *  hutuwi na hudiriki} & \T{203a/b} \\ 
+\textarabic{أُكِشِيكْوَ هُشِكِيكِ  *  مَارَ هُوَ أُمٖتٖيَ} & \\ 
+\nopagebreak \T{ukishikwa hushikiki  *  mara huwa umeteya} & \T{203c/d} \\ 
+[8mm] 
+
+\textarabic{كِيوَ أُمٖپٖينْدَ تُونْدَ  *  هُونَ بُودِ نَ كُپٖينْدَ} & \textarabic{٢٠٤} \\ 
+\nopagebreak \T{kiwa umependa tunda  *  huna budi na kupenda} & \T{204a/b} \\ 
+\textarabic{مْتِ وَاكٖ تَانْڠُ كْوَانْدَ  *  وَزٖئٖ وَلِتوَمْبِيَ} & \\ 
+\nopagebreak \T{mti wake tangu kwanda  *  wazee walitwambiya} & \T{204c/d} \\ 
+[8mm] 
+
+\textarabic{نَاوٖ كِمْپٖينْدَ مْكٖ  *  وَپٖينْدٖ وَزٖئٖ وَاكٖ} & \textarabic{٢٠٥} \\ 
+\nopagebreak \T{nawe kimpenda mke  *  wapende wazee wake} & \T{205a/b} \\ 
+\textarabic{وَاكْوٖ مْبوَاكٗ سِئٖپُوكٖ  *  نَ هِشِيمَ كُوٖكٖيَ} & \\ 
+\nopagebreak \T{wakwe mbwako siepuke  *  na hishima kuwekeya} & \T{205c/d} \\ 
+[8mm] 
+
+\textarabic{مُهِشِيمُ وَاكٖ مَامَ  *  پِيَ بَبَاكٖ دَئِيمَ} & \textarabic{٢٠٦} \\ 
+\nopagebreak \T{muhishimu wake mama  *  piya babake daima} & \T{206a/b} \\ 
+\textarabic{كُوَذَرَاءُ سِ وٖيمَ  *  تٗونٗ نَاوٖ تَمْتِيَ} & \\ 
+\nopagebreak \T{kuwadharau si wema  *  tono nawe tamtiya} & \T{206c/d} \\ 
+[8mm] 
+
+\textarabic{كْوَ أُؤٗوڤُ سِوَنٖينٖ  *  إِتُونْڠٖ سِوَتُكَانٖ} & \textarabic{٢٠٧} \\ 
+\nopagebreak \T{kwa uovu siwanene  *  itunge siwatukane} & \T{207a/b} \\ 
+\textarabic{هَاتَ كَامَ هُويٗ مْوَانٖ  *  هِشِيمَ مٖوَڤُنْدِيَ} & \\ 
+\nopagebreak \T{hata kama huyo mwane  *  hishima mewavundiya} & \T{207c/d} \\ 
+[8mm] 
+
+\textarabic{وٖيوٖ كَاتُ سِسُبُوتُ  *  كُذَرَاءُ هَاءٗ وَاتُ} & \textarabic{٢٠٨} \\ 
+\nopagebreak \T{wewe katu sisubutu  *  kudharau hao watu} & \T{208a/b} \\ 
+\textarabic{هَاتَ كَامَ أُتُكُوتُ  *  كْوَاءٗ أُمٖشُهُدِيَ} & \\ 
+\nopagebreak \T{hata kama utukutu  *  kwao umeshuhudiya} & \T{208c/d} \\ 
+[8mm] 
+
+\textarabic{كِيوَ نِ وَاتُ مَتَاتَ  *  سِؤٗ نَاءٗ أُتَتٖيتَ} & \textarabic{٢٠٩} \\ 
+\nopagebreak \T{kiwa ni watu matata  *  sio nao utateta} & \T{209a/b} \\ 
+\textarabic{خٖيرِ مْبَالِ كُئِڤُوتَ  *  نَ مَامْبٗ كُؤَنْڠَلِيَ} & \\ 
+\nopagebreak \T{kheri mbali kuivuta  *  na mambo kuangaliya} & \T{209c/d} \\ 
+[8mm] 
+
+\textarabic{أُكِيوَ أُونَ نَفَاسِ  *  لَ كُوَاپَ سِكُوَاسِ} & \textarabic{٢١٠} \\ 
+\nopagebreak \T{ukiwa una nafasi  *  la kuwapa sikuwasi} & \T{210a/b} \\ 
+\textarabic{إِيلَ فَانْيَ كْوَ كِئَاسِ  *  سِيٖ دٖيوٖ كَكُتِيَ} & \\ 
+\nopagebreak \T{ila fanya kwa kiasi  *  siye dewe kakutiya} & \T{210c/d} \\ 
+[8mm] 
+
+\textarabic{كُونَ وَاكْوٖ وَ وَنْڠِينٖ  *  كْوَ كُپَاتَ وَدٖنْڠٖينٖ} & \textarabic{٢١١} \\ 
+\nopagebreak \T{kuna wakwe wa wangine  *  kwa kupata wadengene} & \T{211a/b} \\ 
+\textarabic{كِيوَ نَاءٗ أُپٖمْبٖينٖ  *  هَذَارِ نَكُؤُسِيَ} & \\ 
+\nopagebreak \T{kiwa nao upembene  *  hadhari nakuusiya} & \T{211c/d} \\ 
+[8mm] 
+
+\textarabic{وَنْڠِينٖ نِ وَاتُ سَانَ  *  كَاتُ هَوَكُدَنْڠَانَ} & \textarabic{٢١٢} \\ 
+\nopagebreak \T{wangine ni watu sana  *  katu hawakudangana} & \T{212a/b} \\ 
+\textarabic{هَاتَ كِيوَ هَاجَ أُونَ  *  هَأَنْدَامِ كُكْوَمْبِيَ} & \\ 
+\nopagebreak \T{hata kiwa haja una  *  haandami kukwambiya} & \T{212c/d} \\ 
+[8mm] 
+
+\textarabic{هَنَانْدِ هَاتَ نْيُمْبَانِ  *  كْوَ مْوَنَاوٖ كَتَمَانِ} & \textarabic{٢١٣} \\ 
+\nopagebreak \T{hanandi hata nyumbani  *  kwa mwanawe katamani} & \T{213a/b} \\ 
+\textarabic{كُوچَ وَاتُ وَسِذَانِ  *  أَمٖكْوٖينْدَ كُتَوِيَ} & \\ 
+\nopagebreak \T{kucha watu wasidhani  *  amekwenda kutawiya} & \T{213c/d} \\ 
+[8mm] 
+
+\textarabic{نْدِيَانِ مُكِكُتَانَ  *  هُوَ نَ هَرَاكَ سَانَ} & \textarabic{٢١٤} \\ 
+\nopagebreak \T{ndiyani mukikutana  *  huwa na haraka sana} & \T{214a/b} \\ 
+\textarabic{هَمَكِنِيكِ كُنٖينَ  *  كْوَ لِيلٗ كُلِكِمْبِيَ} & \\ 
+\nopagebreak \T{hamakiniki kunena  *  kwa lilo kulikimbiya} & \T{214c/d} \\ 
+[8mm] 
+
+\textarabic{وَكِيوَ وَاكْوٖ وَ وَاكٗ  *  كْوَاءٗ هِيزِ سِيفَ زِيكٗ} & \textarabic{٢١٥} \\ 
+\nopagebreak \T{wakiwa wakwe wa wako  *  kwao hizi sifa ziko} & \T{215a/b} \\ 
+\textarabic{بَاسِ نِ بَهَاتِ يَاكٗ  *  نِ هَاپٗ پَ كُزِوِيَ} & \\ 
+\nopagebreak \T{basi ni bahati yako  *  ni hapo pa kuziwiya} & \T{215c/d} \\ 
+[8mm] 
+
+\textarabic{أَامَ وَكْوٖؤٗ وَكِيوَ  *  نِ وَ كُپٖينْدَ كُپٗوَ} & \textarabic{٢١٦} \\ 
+\nopagebreak \T{ama wakweo wakiwa  *  ni wa kupenda kupowa} & \T{216a/b} \\ 
+\textarabic{كُوَاپَ هُكُزُوِيوَ  *  مْكٗونٗ كُوَنْيٗشٖيَ} & \\ 
+\nopagebreak \T{kuwapa hukuzuwiwa  *  mkono kuwanyosheya} & \T{216c/d} \\ 
+[8mm] 
+
+\textarabic{أُسِوٖيكٖ كَامَ أَادَ  *  كِيسَ تَكْوٖتٖيَ شِيدَ} & \textarabic{٢١٧} \\ 
+\nopagebreak \T{usiweke kama ada  *  kisa takweteya shida} & \T{217a/b} \\ 
+\textarabic{إِيلَ وَاوٖ سِ لَبُودَ  *  نِ وَاتُ وَهِتَجِيَ} & \\ 
+\nopagebreak \T{ila wawe si labuda  *  ni watu wahitajiya} & \T{217c/d} \\ 
+[8mm] 
+
+\textarabic{وَكِيوَ نِ وَهِتَاجِ  *  سِوَنْڠٗوجٖ كُتَرَاجِ} & \textarabic{٢١٨} \\ 
+\nopagebreak \T{wakiwa ni wahitaji  *  siwangoje kutaraji} & \T{218a/b} \\ 
+\textarabic{وَكِيوَ كْوَاكٗ هَوَاجِ  *  نِ سَاوَ كُوَپٖكٖيَ} & \\ 
+\nopagebreak \T{wakiwa kwako hawaji  *  ni sawa kuwapekeya} & \T{218c/d} \\ 
+[8mm] 
+
+\textarabic{أُكِيوَ أُمٖوَؤٗونَ  *  سِ وَاتُ وٖينْيٖ مَأَنَ} & \textarabic{٢١٩} \\ 
+\nopagebreak \T{ukiwa umewaona  *  si watu wenye maana} & \T{219a/b} \\ 
+\textarabic{نِ وَالٖ وَ كُدَنْڠَانَ  *  وَ كُپٖينْدَ كُپَپِيَ} & \\ 
+\nopagebreak \T{ni wale wa kudangana  *  wa kupenda kupapiya} & \T{219c/d} \\ 
+[8mm] 
+
+\textarabic{زِوِيَ سِتٗوٖ چَاكٗ  *  نَ مْوَمْبِيَ مْكٖ وَاكٗ} & \textarabic{٢٢٠} \\ 
+\nopagebreak \T{ziwiya sitowe chako  *  na mwambiya mke wako} & \T{220a/b} \\ 
+\textarabic{إِيلَ هُتٗوفُ سُمْبُوكٗ  *  بِرِيكَ مْبٗوڤُ كُتِيَ} & \\ 
+\nopagebreak \T{ila hutofu sumbuko  *  birika mbovu kutiya} & \T{220c/d} \\ 
+[8mm] 
+
+\textarabic{أَامَ وَسِؤٗ وَزَازِ  *  وَجٗومْبَ نَ مَشَنْڠَازِ} & \textarabic{٢٢١} \\ 
+\nopagebreak \T{ama wasio wazazi  *  wajomba na mashangazi} & \T{221a/b} \\ 
+\textarabic{هَاپٗ كُونَ نْڠُومُ كَازِ  *  كْوَ يٖيتُ هِينِ دُنِيَ} & \\ 
+\nopagebreak \T{hapo kuna ngumu kazi  *  kwa yetu hini duniya} & \T{221c/d} \\ 
+[8mm] 
+
+\textarabic{كْوَانْدَ أُسِوَتَپِيٖ  *  كٖيتِ مْبَالِ وَنْڠَلِيٖ} & \textarabic{٢٢٢} \\ 
+\nopagebreak \T{kwanda usiwatapiye  *  keti mbali wangaliye} & \T{222a/b} \\ 
+\textarabic{أُكِيَؤٗونَ مَمْبٗويٖ  *  نْدِيَ هَيَكْوٖكٖلٖيَ} & \\ 
+\nopagebreak \T{ukiyaona mamboye  *  ndiya hayakwekeleya} & \T{222c/d} \\ 
+[8mm] 
+
+\textarabic{أُسٖينْدٖ سَانَ كَرِيبُ  *  تَئِڤُتِيَ تَأَبُ} & \textarabic{٢٢٣} \\ 
+\nopagebreak \T{usende sana karibu  *  taivutiya taabu} & \T{223a/b} \\ 
+\textarabic{نِ وٖينْڠِ وَ كُهَرِيبُ  *  كَتِيكَ نِمٖزٗتَايَ} & \\ 
+\nopagebreak \T{ni wengi wa kuharibu  *  katika nimezotaya} & \T{223c/d} \\ 
+[8mm] 
+
+\textarabic{أَامَ مَشٖمٖيڠِ زَاكٗ  *  دَادَ زَاكٖ مْكٖ وَاكٗ} & \textarabic{٢٢٤} \\ 
+\nopagebreak \T{ama mashemegi zako  *  dada zake mke wako} & \T{224a/b} \\ 
+\textarabic{مْوَنَانْڠُ سِڤُونْدٖ مِيكٗ  *  إِلٗوٖيكْوَ نَ شَرِيَ} & \\ 
+\nopagebreak \T{mwanangu sivunde miko  *  ilowekwa na shariya} & \T{224c/d} \\ 
+[8mm] 
+
+\textarabic{أُسِؤٗنْدٗوٖ مِپَاكَ  *  كْوَ مزَاهَ نَ ذِهَاكَ} & \textarabic{٢٢٥} \\ 
+\nopagebreak \T{usiondowe mipaka  *  kwa mzaha na dhihaka} & \T{225a/b} \\ 
+\textarabic{مَارَ مَامْبٗ هُڠٖؤُوكَ  *  كِزَأَزَاءَ كِكَايَ} & \\ 
+\nopagebreak \T{mara mambo hugeuka  *  kizaazaa kikaya} & \T{225c/d} \\ 
+[8mm] 
+
+\textarabic{خٖيرِ وَمْبِيوٖ مُؤٗوڤُ  *  كُلِيكٗ كُپَاتَ كٗوڤُ} & \textarabic{٢٢٦} \\ 
+\nopagebreak \T{kheri wambiwe muovu  *  kuliko kupata kovu} & \T{226a/b} \\ 
+\textarabic{خٖيرِ وَامْبٖ أُونَ وِيڤُ  *  كُلِيكٗ كُكُڤُنْدِيَ} & \\ 
+\nopagebreak \T{kheri wambe una wivu  *  kuliko kukuvundiya} & \T{226c/d} \\ 
+[8mm] 
+
+\textarabic{وِيڤُ نِ كَامَ كِؤُونْڠٗ  *  أُكِزِيدِ نِ تٖوٖينْڠٗ} & \textarabic{٢٢٧} \\ 
+\nopagebreak \T{wivu ni kama kiungo  *  ukizidi ni tewengo} & \T{227a/b} \\ 
+\textarabic{پِيَ كُيِفَانْيَ تٗونْڠٗ  *  أُدُيُثِينِ هُنْڠِيَ} & \\ 
+\nopagebreak \T{piya kuyifanya tongo  *  uduyuthini hungiya} & \T{227c/d} \\ 
+[8mm] 
+
+\textarabic{نَ كُؤُكٗوسَ كَبِيسَ  *  إِنْڠَاوَ نْدِيٗ كِسَاسَ} & \textarabic{٢٢٨} \\ 
+\nopagebreak \T{na kuukosa kabisa  *  ingawa ndiyo kisasa} & \T{228a/b} \\ 
+\textarabic{هِيٗ سِ نْجٖيمَ سِيَاسَ  *  يَ نْيُمْبَانِ كُتُمِيَ} & \\ 
+\nopagebreak \T{hiyo si njema siyasa  *  ya nyumbani kutumiya} & \T{228c/d} \\ 
+[8mm] 
+
+\textarabic{نِ لَزِيمَ كُوَ نَاءٗ  *  كْوَ أَلِيٗ نِ مْكٖؤٗ} & \textarabic{٢٢٩} \\ 
+\nopagebreak \T{ni lazima kuwa nao  *  kwa aliyo ni mkeo} & \T{229a/b} \\ 
+\textarabic{كِكُزُمْبُوَ هُنَاءٗ  *  مَتٗونِ هُتٗمْنْڠِيَ} & \\ 
+\nopagebreak \T{kikuzumbuwa hunao  *  matoni hutomngiya} & \T{229c/d} \\ 
+[8mm] 
+
+\textarabic{كُوَ نَاءٗ وَ كَدِيرِ  *  هِيٗ نْدِيٗ دَسِتُورِ} & \textarabic{٢٣٠} \\ 
+\nopagebreak \T{kuwa nao wa kadiri  *  hiyo ndiyo dasituri} & \T{230a/b} \\ 
+\textarabic{نَ كْوَ مْكٖ نِ فَخَارِ  *  كْوَ وٖينْدٖ تَيِڤُنِيَ} & \\ 
+\nopagebreak \T{na kwa mke ni fakhari  *  kwa wende tayivuniya} & \T{230c/d} \\ 
+[8mm] 
+
+\textarabic{نَ فُفنُونُ أُكِپَاتَ  *  كُوَ مْكٖ نِ مْتَاتَ} & \textarabic{٢٣١} \\ 
+\nopagebreak \T{na fufnunu ukipata  *  kuwa mke ni mtata} & \T{231a/b} \\ 
+\textarabic{سِئِنُوكٖ نَ كُتٖيتَ  *  كْوَانْدَ زِيدِ كْوَنْڠَلِيَ} & \\ 
+\nopagebreak \T{siinuke na kuteta  *  kwanda zidi kwangaliya} & \T{231c/d} \\ 
+[8mm] 
+
+\textarabic{سِمْتُكُلِيٖ ذَانَ  *  كْوَ كُوَ وَاجَ هُنٖينَ} & \textarabic{٢٣٢} \\ 
+\nopagebreak \T{simtukuliye dhana  *  kwa kuwa waja hunena} & \T{232a/b} \\ 
+\textarabic{هِيلٗ نِ خَتَارِ سَانَ  *  مَيُتٗونِ تَكُتِيَ} & \\ 
+\nopagebreak \T{hilo ni khatari sana  *  mayutoni takutiya} & \T{232c/d} \\ 
+[8mm] 
+
+\textarabic{إِزِوِيٖ أُسُبِيرِ  *  أُهَكِكِيشٖ خَبَارِ} & \textarabic{٢٣٣} \\ 
+\nopagebreak \T{iziwiye usubiri  *  uhakikishe khabari} & \T{233a/b} \\ 
+\textarabic{تٖينَ أُفَانْيٖ كْوَ سِيرِ  *  پَاسِ نَ كُپِيجَ مْبِيَ} & \\ 
+\nopagebreak \T{tena ufanye kwa siri  *  pasi na kupija mbiya} & \T{233c/d} \\ 
+[8mm] 
+
+\textarabic{إِكِيوَ أُمٖتٗشٖيكَ  *  هِيلٗ نِ يَامْبٗ هَكِيكَ} & \textarabic{٢٣٤} \\ 
+\nopagebreak \T{ikiwa umetosheka  *  hilo ni yambo hakika} & \T{234a/b} \\ 
+\textarabic{كْوَ تَرَتِيبُ إٖپُوكَ  *  بِيلَ سَبَابُ كُتَايَ} & \\ 
+\nopagebreak \T{kwa taratibu epuka  *  bila sababu kutaya} & \T{234c/d} \\ 
+[8mm] 
+
+\textarabic{سِتَايٖ يَاكٗ سَبَابُ  *  أُتَزِيدِ كُهَرِيبُ} & \textarabic{٢٣٥} \\ 
+\nopagebreak \T{sitaye yako sababu  *  utazidi kuharibu} & \T{235a/b} \\ 
+\textarabic{زِتَتَنْڠَاءَ أَئِيبُ  *  نَ سِ وٖيمَ كُئٖنٖيَ} & \\ 
+\nopagebreak \T{zitatangaa aibu  *  na si wema kueneya} & \T{235c/d} \\ 
+[8mm] 
+
+\textarabic{نَ هِيلٗ كِيسَ كُتٖينْدَ  *  هُونَ بُودِ كُئِپِينْدَ} & \textarabic{٢٣٦} \\ 
+\nopagebreak \T{na hilo kisa kutenda  *  huna budi kuipinda} & \T{236a/b} \\ 
+\textarabic{هَاتَ كَامَ أُونَ نْيٗونْدَ  *  سِيوٖ نْيُومَ تَرٖجٖيَ} & \\ 
+\nopagebreak \T{hata kama una nyonda  *  siwe nyuma tarejeya} & \T{236c/d} \\ 
+[8mm] 
+
+\textarabic{إِپِينْدٖ إِپِينْدٖ مْنٗ  *  سِبَدِيلِ لَاكٗ نٖينٗ} & \textarabic{٢٣٧} \\ 
+\nopagebreak \T{ipinde ipinde mno  *  sibadili lako neno} & \T{237a/b} \\ 
+\textarabic{مْوِيسٗ تَپَاتَ أُسٗونٗ  *  يَتَتٗوكَ مَزٗوٖيَ} & \\ 
+\nopagebreak \T{mwiso tapata usono  *  yatatoka mazoweya} & \T{237c/d} \\ 
+[8mm] 
+
+\textarabic{أُتَسُكِكَسُكِيكَ  *  كِيوَ مٗويٗ وَمْتَاكَ} & \textarabic{٢٣٨} \\ 
+\nopagebreak \T{utasukikasukika  *  kiwa moyo wamtaka} & \T{238a/b} \\ 
+\textarabic{فَهَامُ تَفٖذٖهٖيكَ  *  كِيوَ هُتٗئِزِوِيَ} & \\ 
+\nopagebreak \T{fahamu tafedheheka  *  kiwa hutoiziwiya} & \T{238c/d} \\ 
+[8mm] 
+
+\textarabic{إِزِوِيٖ إِكُكُوسٖ  *  مْپَاكَ مَهَابَ يٖيسٖ} & \textarabic{٢٣٩} \\ 
+\nopagebreak \T{iziwiye ikukuse  *  mpaka mahaba yese} & \T{239a/b} \\ 
+\textarabic{پٖنْيٖينْيٖ أُسِيَپِيسٖ  *  مٗيٗونِ كَكُرُدِيَ} & \\ 
+\nopagebreak \T{penyenye usiyapise  *  moyoni kakurudiya} & \T{239c/d} \\ 
+[8mm] 
+
+\textarabic{مْوِسٗوٖ يَتَؤٗنْدٗوكَ  *  نَ وٖيوٖ أُتَأَفِيكَ} & \textarabic{٢٤٠} \\ 
+\nopagebreak \T{mwisowe yataondoka  *  na wewe utaafika} & \T{240a/b} \\ 
+\textarabic{كُلِيكٗ كُفٖذٖهٖيكَ  *  نَ إِزَرَانِ كُنْڠِيَ} & \\ 
+\nopagebreak \T{kuliko kufedheheka  *  na izarani kungiya} & \T{240c/d} \\ 
+[8mm] 
+
+\textarabic{لَكِينِ نَكُكُمْبُوشَ  *  كِيسوَ چَ نَانَ أَئِيشَ} & \textarabic{٢٤١} \\ 
+\nopagebreak \T{lakini nakukumbusha  *  kiswa cha nana aisha} & \T{241a/b} \\ 
+\textarabic{ڤُرُمَاءِ وَلِزُوشَ  *  مَاوِ وَكَمزُلِيَ} & \\ 
+\nopagebreak \T{vurumai walizusha  *  mawi wakamzuliya} & \T{241c/d} \\ 
+[8mm] 
+
+\textarabic{وَلِؤٗنٖينَ نِ وٖينْڠِ  *  وَكَفَانْيَ نَ مَڠٖينْڠِ} & \textarabic{٢٤٢} \\ 
+\nopagebreak \T{walionena ni wengi  *  wakafanya na magengi} & \T{242a/b} \\ 
+\textarabic{نَ زِكَاءٗ زَ مِتِينْڠِ  *  مَدِينَ زِكَئِنٖيَ} & \\ 
+\nopagebreak \T{na zikao za mitingi  *  madina zikaeneya} & \T{242c/d} \\ 
+[8mm] 
+
+\textarabic{كْوَ يَامْبٗ لِيسٗ أَسِيلِ  *  كْوَ مْكٖ وَاكٖ رَسُولِ} & \textarabic{٢٤٣} \\ 
+\nopagebreak \T{kwa yambo liso asili  *  kwa mke wake rasuli} & \T{243a/b} \\ 
+\textarabic{كَاتُ هَلِكُوَ كْوٖيلِ  *  نِ أُڤُومِ وَلِتِيَ} & \\ 
+\nopagebreak \T{katu halikuwa kweli  *  ni uvumi walitiya} & \T{243c/d} \\ 
+[8mm] 
+
+\textarabic{مْوَنْڠَلِيٖ نَ مْتُومِ  *  أَلِكُوَ هَأَتَامِ} & \textarabic{٢٤٤} \\ 
+\nopagebreak \T{mwangaliye na mtumi  *  alikuwa haatami} & \T{244a/b} \\ 
+\textarabic{أَلِزِوِيَ أُلِيمِ  *  مْپَاكَ وَهَايِ كُويَ} & \\ 
+\nopagebreak \T{aliziwiya ulimi  *  mpaka wahayi kuya} & \T{244c/d} \\ 
+[8mm] 
+
+\textarabic{يَتَاكَ مْنٗ هَذَارِ  *  كَتِيكَ هِيزٗ خَبَارِ} & \textarabic{٢٤٥} \\ 
+\nopagebreak \T{yataka mno hadhari  *  katika hizo khabari} & \T{245a/b} \\ 
+\textarabic{سِيوٖ مْپٖيسِ كُكِيرِ  *  يَامْبٗ أُكِلِسِكِيَ} & \\ 
+\nopagebreak \T{siwe mpesi kukiri  *  yambo ukilisikiya} & \T{245c/d} \\ 
+[8mm] 
+
+\textarabic{تَفِيتِ تَفِيتِ سَانَ  *  هَاتَ شَاكَ أُوٖ هُونَ} & \textarabic{٢٤٦} \\ 
+\nopagebreak \T{tafiti tafiti sana  *  hata shaka uwe huna} & \T{246a/b} \\ 
+\textarabic{نْدِيپٗ هَاپٗ لَاكٗ نٖينَ  *  بِيلَ سَبَابُ كُتَايَ} & \\ 
+\nopagebreak \T{ndipo hapo lako nena  *  bila sababu kutaya} & \T{246c/d} \\ 
+[8mm] 
+
+\textarabic{هَاپَ سَاسَ نِتَكٗومَ  *  وَالَ يٗوتٖ سِكُسٖيمَ} & \textarabic{٢٤٧} \\ 
+\nopagebreak \T{hapa sasa nitakoma  *  wala yote sikusema} & \T{247a/b} \\ 
+\textarabic{لَكِينِ أُكِئَنْدَامَ  *  هَايَ تَكُسَئِدِيَ} & \\ 
+\nopagebreak \T{lakini ukiandama  *  haya takusaidiya} & \T{247c/d} \\ 
+[8mm] 
+
+\textarabic{نِيَ نَ يَانْڠُ ذَمِيرِ  *  كْوَنْدِيكَ كْوَ مَشَئِيرِ} & \textarabic{٢٤٨} \\ 
+\nopagebreak \T{niya na yangu dhamiri  *  kwandika kwa mashairi} & \T{248a/b} \\ 
+\textarabic{نِ كُئٖنٖيزَ خَبَارِ  *  كْوَ وٖينْيٖ كُيَسِكِيَ} & \\ 
+\nopagebreak \T{ni kueneza khabari  *  kwa wenye kuyasikiya} & \T{248c/d} \\ 
+[8mm] 
+
+\textarabic{نِ سَهَالِ كُسِكِيزَ  *  كَسٖيتِ مٗويَ هُوٖيزَ} & \textarabic{٢٤٩} \\ 
+\nopagebreak \T{ni sahali kusikiza  *  kaseti moya huweza} & \T{249a/b} \\ 
+\textarabic{وٖينْڠِ وَكَپُلِكِيزَ  *  وَكَسِكِيزَ پَمٗويَ} & \\ 
+\nopagebreak \T{wengi wakapulikiza  *  wakasikiza pamoya} & \T{249c/d} \\ 
+[8mm] 
+
+\textarabic{لَاءُ كَامَ نِ كِتَابُ  *  وَسٗمَاجِ نِ هُبُوبُ} & \textarabic{٢٥٠} \\ 
+\nopagebreak \T{lau kama ni kitabu  *  wasomaji ni hububu} & \T{250a/b} \\ 
+\textarabic{وٖينْڠِ هُؤٗونَ تَأَبُ  *  كُسِكِيزَ مٖزٗوٖيَ} & \\ 
+\nopagebreak \T{wengi huona taabu  *  kusikiza mezoweya} & \T{250c/d} \\ 
+[8mm] 
+
+\textarabic{كَؤُولِ يَانْڠُ تَمَاتِ  *  نِ زٖينُ هِيزِ بَئِيتِ} & \textarabic{٢٥١} \\ 
+\nopagebreak \T{kauli yangu tamati  *  ni zenu hizi baiti} & \T{251a/b} \\ 
+\textarabic{وَڤُلَانَ مَبَنَاتِ  *  نْيٗوتٖ نَوَكُسُدِيَ} & \\ 
+\nopagebreak \T{wavulana mabanati  *  nyote nawakusudiya} & \T{251c/d} \\ 
+[8mm] 
+
+\textarabic{مْوِيشٗ وَ أُتٖنْزِ} & \\ 
+
+
+\end{longtable}
+
+\end{document}
+

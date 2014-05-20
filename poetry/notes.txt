@@ -1,0 +1,18 @@
+Place input file in the unzipped folder - vita_vikuu.odt.
+Two vipande side-by-side, separated by asterisk.
+Blank line between stanzas.
+
+Import the input file by running import_lines.php.
+This uses QueryPath to lift the content out of the odt file.
+Each kipande is then inserted into a db table.
+
+To split each kipande into individual words, run import_words.php.
+This also runs integrate_notes.php to copy over any existing notes into a new wordification.
+It also runs segment_words.php to segment words and put them into a new field (eg words where na 'and' is prefixed instead of standalone).
+
+To output a rewritten file from the db, use one of the output_ files (html as intermediate output for odt, pdf using tex as intermediate output, and website for html webpage).
+
+Roman to Arabic
+prep_rom() to prepare the Roman text by (eg) removing capitals, lengthening penultimate vowels
+
+

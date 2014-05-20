@@ -1,0 +1,950 @@
+This is XeTeX, Version 3.1415926-2.4-0.9998 (TeX Live 2012/Debian) (format=xelatex 2012.8.6)  12 MAY 2014 12:12
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**maisha-mume.tex
+(./maisha-mume.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, fa
+rsi, arabic, loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\c@figure=\count87
+\c@table=\count88
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/polyglossia/polyglossia.sty
+Package: polyglossia 2012/04/29 v1.2.1 Babel replacement for XeLaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2011/01/03 v2.1 e-TeX tools for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/etex-pkg/etex.sty
+Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
+\et@xins=\count89
+)
+\etb@tempcnta=\count90
+)
+(/usr/share/texlive/texmf-dist/tex/latex/makecmds/makecmds.sty
+Package: makecmds 2009/09/03 v1.0a extra command making commands
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+\XKV@toks=\toks14
+\XKV@tempa@toks=\toks15
+\XKV@depth=\count91
+File: xkeyval.tex 2008/08/13 v2.6a key=value parser (HA)
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/keyval.tex)))
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
+Package: fontspec 2012/05/06 v2.2b Advanced font selection for XeLaTeX/LuaLaTeX
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3names.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3bootstrap.sty
+Package: l3bootstrap 2011/12/29 v3110 L3 Experimental bootstrap code
+)
+Package: l3names 2012/03/04 v3494 L3 Experimental namespace for primitives
+)
+Package: expl3 2012/04/23 v3570 L3 Experimental code bundle wrapper
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: xetex.def on input line 130.
+
+(/usr/share/texlive/texmf-dist/tex/xelatex/xetex-def/xetex.def
+File: xetex.def 2009/11/22 v0.94 LaTeX color/graphics driver for XeTeX (RRM/JK)
+
+))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: xetex.def on input line 91.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3basics.sty
+Package: l3basics 2012/03/04 v3491 L3 Experimental basic definitions
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3expan.sty
+Package: l3expan 2012/02/26 v3460 L3 Experimental argument expansion
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3tl.sty
+Package: l3tl 2012/03/04 v3490 L3 Experimental token lists
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3seq.sty
+Package: l3seq 2012/03/04 v3490 L3 Experimental sequences and stacks
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3int.sty
+Package: l3int 2012/03/04 v3490 L3 Experimental integers
+\c_max_int=\count92
+\l_tmpa_int=\count93
+\l_tmpb_int=\count94
+\l_tmpc_int=\count95
+\g_tmpa_int=\count96
+\g_tmpb_int=\count97
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3quark.sty
+Package: l3quark 2012/02/12 v3384 L3 Experimental quarks
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3prg.sty
+Package: l3prg 2012/03/04 v3490 L3 Experimental control structures
+\g_prg_map_int=\count98
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3clist.sty
+Package: l3clist 2012/03/04 v3490 L3 Experimental comma separated lists
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3token.sty
+Package: l3token 2012/03/04 v3491 L3 Experimental token manipulation
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3prop.sty
+Package: l3prop 2012/03/04 v3490 L3 Experimental property lists
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3msg.sty
+Package: l3msg 2012/04/23 v3568 L3 Experimental messages
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3file.sty
+Package: l3file 2012/03/09 v3520 L3 Experimental file and I/O operations
+\l_iow_stream_int=\count99
+\l_iow_line_length_int=\count100
+\l_iow_target_length_int=\count101
+\l_iow_current_line_int=\count102
+\l_iow_current_word_int=\count103
+\l_iow_current_indentation_int=\count104
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3skip.sty
+Package: l3skip 2012/03/05 v3499 L3 Experimental dimensions and skips
+\l_tmpa_dim=\dimen103
+\l_tmpb_dim=\dimen104
+\l_tmpc_dim=\dimen105
+\g_tmpa_dim=\dimen106
+\g_tmpb_dim=\dimen107
+\l_tmpa_skip=\skip43
+\l_tmpb_skip=\skip44
+\l_tmpc_skip=\skip45
+\g_tmpa_skip=\skip46
+\g_tmpb_skip=\skip47
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3keys.sty
+Package: l3keys 2012/03/03 v3487 L3 Experimental key-value interfaces
+\g_keyval_level_int=\count105
+\l_keys_choice_int=\count106
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3fp.sty
+Package: l3fp 2012/03/04 v3490 L3 Experimental floating-point operations
+\c_one_hundred_million=\count107
+\c_five_hundred_million=\count108
+\c_one_thousand_million=\count109
+\c_fp_pi_by_four_decimal_int=\count110
+\c_fp_pi_by_four_extended_int=\count111
+\c_fp_pi_decimal_int=\count112
+\c_fp_pi_extended_int=\count113
+\c_fp_two_pi_decimal_int=\count114
+\c_fp_two_pi_extended_int=\count115
+\l_fp_count_int=\count116
+\l_fp_div_offset_int=\count117
+\l_fp_exp_integer_int=\count118
+\l_fp_exp_decimal_int=\count119
+\l_fp_exp_extended_int=\count120
+\l_fp_exp_exponent_int=\count121
+\l_fp_input_a_sign_int=\count122
+\l_fp_input_a_integer_int=\count123
+\l_fp_input_a_decimal_int=\count124
+\l_fp_input_a_exponent_int=\count125
+\l_fp_input_b_sign_int=\count126
+\l_fp_input_b_integer_int=\count127
+\l_fp_input_b_decimal_int=\count128
+\l_fp_input_b_exponent_int=\count129
+\l_fp_input_a_extended_int=\count130
+\l_fp_input_b_extended_int=\count131
+\l_fp_mul_a_i_int=\count132
+\l_fp_mul_a_ii_int=\count133
+\l_fp_mul_a_iii_int=\count134
+\l_fp_mul_a_iv_int=\count135
+\l_fp_mul_a_v_int=\count136
+\l_fp_mul_a_vi_int=\count137
+\l_fp_mul_b_i_int=\count138
+\l_fp_mul_b_ii_int=\count139
+\l_fp_mul_b_iii_int=\count140
+\l_fp_mul_b_iv_int=\count141
+\l_fp_mul_b_v_int=\count142
+\l_fp_mul_b_vi_int=\count143
+\l_fp_mul_output_int=\count144
+\l_fp_output_sign_int=\count145
+\l_fp_output_integer_int=\count146
+\l_fp_output_decimal_int=\count147
+\l_fp_output_exponent_int=\count148
+\l_fp_output_extended_int=\count149
+\l_fp_round_position_int=\count150
+\l_fp_round_target_int=\count151
+\l_fp_split_sign_int=\count152
+\l_fp_internal_int=\count153
+\l_fp_trig_octant_int=\count154
+\l_fp_trig_sign_int=\count155
+\l_fp_trig_decimal_int=\count156
+\l_fp_trig_extended_int=\count157
+\l_fp_internal_dim=\dimen108
+\l_fp_internal_skip=\skip48
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3box.sty
+Package: l3box 2012/03/04 v3490 L3 Experimental boxes
+\l_tmpb_box=\box26
+\l_box_top_dim=\dimen109
+\l_box_bottom_dim=\dimen110
+\l_box_left_dim=\dimen111
+\l_box_right_dim=\dimen112
+\l_box_top_new_dim=\dimen113
+\l_box_bottom_new_dim=\dimen114
+\l_box_left_new_dim=\dimen115
+\l_box_right_new_dim=\dimen116
+\l_box_internal_box=\box27
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3coffins.sty
+Package: l3coffins 2012/03/03 v3482 L3 Experimental coffin code layer
+\l_coffin_internal_box=\box28
+\l_coffin_internal_dim=\dimen117
+\l_coffin_offset_x_dim=\dimen118
+\l_coffin_offset_y_dim=\dimen119
+\l_coffin_x_dim=\dimen120
+\l_coffin_y_dim=\dimen121
+\l_coffin_x_prime_dim=\dimen122
+\l_coffin_y_prime_dim=\dimen123
+\l_coffin_Depth_dim=\dimen124
+\l_coffin_Height_dim=\dimen125
+\l_coffin_TotalHeight_dim=\dimen126
+\l_coffin_Width_dim=\dimen127
+\c_empty_coffin=\box29
+\l_coffin_aligned_coffin=\box30
+\l_coffin_aligned_internal_coffin=\box31
+\l_coffin_bounding_shift_dim=\dimen128
+\l_coffin_left_corner_dim=\dimen129
+\l_coffin_right_corner_dim=\dimen130
+\l_coffin_bottom_corner_dim=\dimen131
+\l_coffin_top_corner_dim=\dimen132
+\l_coffin_scaled_total_height_dim=\dimen133
+\l_coffin_scaled_width_dim=\dimen134
+\l_coffin_display_coffin=\box32
+\l_coffin_display_coord_coffin=\box33
+\l_coffin_display_pole_coffin=\box34
+\l_coffin_display_offset_dim=\dimen135
+\l_coffin_display_x_dim=\dimen136
+\l_coffin_display_y_dim=\dimen137
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3color.sty
+Package: l3color 2011/09/07 v2776 L3 Experimental colour support
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3luatex.sty
+Package: l3luatex 2012/02/09 v3355 L3 Experimental LuaTeX-specific functions
+\g_cctab_allocate_int=\count158
+\g_cctab_stack_int=\count159
+))
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2012/04/23 v3570 L3 Experimental document command parser
+\l_xparse_current_arg_int=\count160
+\l_xparse_m_args_int=\count161
+\l_xparse_mandatory_args_int=\count162
+\l_xparse_processor_int=\count163
+\l_xparse_v_nesting_int=\count164
+)
+\l_fontspec_script_int=\count165
+\l_fontspec_language_int=\count166
+\l_fontspec_strnum_int=\count167
+\l_fontspec_tmpa_dim=\dimen138
+\l_fontspec_tmpb_dim=\dimen139
+\l_fontspec_tmpc_dim=\dimen140
+Variant \tl_gset:cV already defined; not changing it on line 66
+
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-patches.sty
+Package: fontspec-patches 2012/05/06 v2.2b Advanced font selection for XeLaTeX/
+LuaLaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/fixltx2e.sty
+Package: fixltx2e 2006/09/13 v1.1m fixes to LaTeX
+LaTeX Info: Redefining \em on input line 420.
+)
+LaTeX Info: Redefining \em on input line 22.
+LaTeX Info: Redefining \emph on input line 29.
+LaTeX Info: Redefining \- on input line 32.
+
+*************************************************
+* LaTeX warning: "xparse/redefine-command"
+* 
+* Redefining document command \oldstylenums with arg. spec. 'm' on line 107.
+*************************************************
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \liningnums with arg. spec. 'm' on line 111.
+.................................................
+) (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2012/05/06 v2.2b Advanced font selection for XeLaTeX/Lu
+aLaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texlive/texmf-dist/tex/latex/euenc/eu1enc.def
+File: eu1enc.def 2010/05/27 v0.1h Experimental Unicode font encodings
+)
+LaTeX Font Info:    Try loading font information for EU1+lmr on input line 100.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/euenc/eu1lmr.fd
+File: eu1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
+(/usr/share/texlive/texmf-dist/tex/xelatex/xunicode/xunicode.sty
+File: xunicode.sty 2011/09/09 v0.981 provides access to latin accents and many 
+other characters in Unicode lower plane
+
+(/usr/share/texmf/tex/latex/tipa/t3enc.def
+File: t3enc.def 2001/12/31 T3 encoding
+LaTeX Font Info:    Try loading font information for EU1+lmss on input line 357
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/euenc/eu1lmss.fd
+File: eu1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
+\tipaTiiicode=\count168
+\tipasavetokens=\toks16
+\tipachecktokens=\toks17
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+\Gin@req@height=\dimen141
+\Gin@req@width=\dimen142
+))
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \fontspec with arg. spec. 'O{}m' on line 39.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \setmainfont with arg. spec. 'O{}m' on line 43.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \setsansfont with arg. spec. 'O{}m' on line 47.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \setmonofont with arg. spec. 'O{}m' on line 51.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \setmathrm with arg. spec. 'O{}m' on line 59.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \setboldmathrm with arg. spec. 'O{}m' on line 62.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \setmathsf with arg. spec. 'O{}m' on line 65.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \setmathtt with arg. spec. 'O{}m' on line 68.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \newfontfamily with arg. spec. 'mO{}m' on line 84.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \newfontface with arg. spec. 'mO{}m' on line 87.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \defaultfontfeatures with arg. spec. 'm' on line
+. 91.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \addfontfeatures with arg. spec. 'm' on line 107.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \newfontfeature with arg. spec. 'mm' on line 118.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \newAATfeature with arg. spec. 'mmmm' on line 125.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \newICUfeature with arg. spec. 'mmm' on line 132.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \aliasfontfeature with arg. spec. 'mm' on line
+. 159.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \aliasfontfeatureoption with arg. spec. 'mmm' on
+. line 164.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \newfontscript with arg. spec. 'mm' on line 169.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \newfontlanguage with arg. spec. 'mm' on line 192.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining document command \DeclareFontsExtensions with arg. spec. 'm' on
+. line 211.
+.................................................
+Variant \prop_gput:cnV already defined; not changing it on line 485
+Variant \prop_gput:cnx already defined; not changing it on line 486
+\l_fontspec_tmp_int=\count169
+LaTeX Info: Redefining \itshape on input line 1893.
+LaTeX Info: Redefining \slshape on input line 1897.
+LaTeX Info: Redefining \scshape on input line 1901.
+LaTeX Info: Redefining \upshape on input line 1905.
+
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+\xpg@normalclass=\XeTeXintercharclass4
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip49
+\LTright=\skip50
+\LTpre=\skip51
+\LTpost=\skip52
+\LTchunksize=\count170
+\LTcapwidth=\dimen143
+\LT@head=\box35
+\LT@firsthead=\box36
+\LT@foot=\box37
+\LT@lastfoot=\box38
+\LT@cols=\count171
+\LT@rows=\count172
+\c@LT@tables=\count173
+\c@LT@chunks=\count174
+\LT@p@ftn=\toks18
+)
+(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: xetex.def on input line 225.
+LaTeX Info: Redefining \color on input line 702.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/arydshln/arydshln.sty
+Package: arydshln 2004/08/31 v1.71 
+\dashlinedash=\dimen144
+\dashlinegap=\dimen145
+\adl@box=\box39
+\adl@height=\dimen146
+\adl@heightsave=\dimen147
+\adl@depth=\dimen148
+\adl@depthsave=\dimen149
+\adl@finaldepth=\dimen150
+\adl@columns=\count175
+\adl@ncol=\count176
+\adl@currentcolumn=\count177
+\adl@currentcolumnsave=\count178
+\adl@totalheight=\count179
+\adl@totalheightsave=\count180
+\adl@dash=\count181
+\adl@gap=\count182
+\adl@cla=\count183
+\adl@clb=\count184
+\adl@everyvbox=\toks19
+\adl@LTpagetotal=\dimen151
+)
+\g_fontspec_family_Liberation Serif_int=\count185
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'LiberationSerif(0)' created for font 'Liberation Serif' with
+. options [Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+. 
+. * 'normal' with NFSS spec.:
+. <->"Liberation Serif/ICU:script=latn;language=DFLT;mapping=tex-text;"
+. 
+. * 'bold' with NFSS spec.:
+. <->"Liberation Serif/B/ICU:script=latn;language=DFLT;mapping=tex-text;"
+. 
+. * 'italic' with NFSS spec.:
+. <->"Liberation Serif/I/ICU:script=latn;language=DFLT;mapping=tex-text;"
+. 
+. * 'bold italic' with NFSS spec.:
+. <->"Liberation Serif/BI/ICU:script=latn;language=DFLT;mapping=tex-text;"
+.................................................
+
+(/usr/share/texlive/texmf-dist/tex/xelatex/polyglossia/gloss-english.ldf
+File: gloss-english.ldf polyglossia: module for english
+)
+Package polyglossia Info: Default language is english.
+
+(/usr/share/texlive/texmf-dist/tex/xelatex/polyglossia/gloss-arabic.ldf
+File: gloss-arabic.ldf polyglossia: module for arabic
+
+(/usr/share/texlive/texmf-dist/tex/latex/bidi/bidi.sty
+Package: bidi 2012/06/05 v11.157 Bidirectional typesetting in plain TeX and LaT
+eX
+
+bidi package (Support for bidirectional typesetting in plain TeX and LaTeX)
+ Description: A convenient interface for typesetting bidirectional
+ texts in plain TeX and LaTeX. The package includes adaptations for use
+ with many other commonly-used packages.
+ Copyright © 2009–2012 Vafa Khalighi
+ v11.157, 2012/06/05
+ License: LaTeX Project Public License, version 1.3c or higher (your choice)
+ Location on CTAN: /macros/latex/contrib/bidi
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2010/07/25 v0.2 Provides if(tex) conditional for PDFTeX, XeTeX, 
+and LuaTeX
+)
+(/usr/share/texlive/texmf-dist/tex/latex/bidi/biditools.sty
+Package: biditools 2012/05/01 v0.1 Programming tools for bidi package
+)
+(/usr/share/texlive/texmf-dist/tex/latex/bidi/xetex-bidi.def
+File: xetex-bidi.def 2012/05/01 v1.0.3 bidi adaptations for XeTeX engine
+\bidi@n@everypar=\toks20
+
+(/usr/share/texlive/texmf-dist/tex/latex/bidi/footnote-xetex-bidi.def
+File: footnote-xetex-bidi.def 2010/07/25 v0.5 bidi footnote macros for XeTeX en
+gine
+)
+(/usr/share/texlive/texmf-dist/tex/latex/bidi/report-xetex-bidi.def
+File: report-xetex-bidi.def 2011/08/26 v0.6 bidi adaptations for standard repor
+t class for XeTeX engine
+)
+(/usr/share/texlive/texmf-dist/tex/latex/bidi/color-xetex-bidi.def
+File: color-xetex-bidi.def 2010/07/25 v0.1 bidi adaptations for color package f
+or XeTeX engine
+LaTeX Info: Redefining \color on input line 24.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/bidi/xcolor-xetex-bidi.def
+File: xcolor-xetex-bidi.def 2010/07/25 v0.1 bidi adaptations for xcolor package
+ for XeTeX engine
+LaTeX Info: Redefining \color on input line 23.
+LaTeX Info: Redefining \bidicolor on input line 66.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/bidi/graphicx-xetex-bidi.def
+File: graphicx-xetex-bidi.def 2012/01/01 v0.4 bidi adaptations for graphicx pac
+kage for XeTeX engine
+)
+(/usr/share/texlive/texmf-dist/tex/latex/bidi/longtable-xetex-bidi.def
+File: longtable-xetex-bidi.def 2010/07/25 v0.1 bidi adaptations for longtable p
+ackage for XeTeX engine
+)
+(/usr/share/texlive/texmf-dist/tex/latex/bidi/arydshln-xetex-bidi.def
+File: arydshln-xetex-bidi.def 2010/08/01 v0.2 bidi adaptations for arydshln pac
+kage for XeTeX engine
+))
+(/usr/share/texlive/texmf-dist/tex/latex/bidi/loadingorder-bidi.def
+File: loadingorder-bidi.def 2012/01/01 v0.8a making sure that bidi is the last 
+package loaded
+))
+(/usr/share/texlive/texmf-dist/tex/xelatex/polyglossia/arabicnumbers.sty
+Package: arabicnumbers 2010/03/18 v0.2 Formatting of Arabic and Farsi digits an
+d of Arabic abjad numerals
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/polyglossia/hijrical.sty
+Package: hijrical 2010/07/12 v0.2 Islamic calendar
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count186
+\calc@Bcount=\count187
+\calc@Adimen=\dimen152
+\calc@Bdimen=\dimen153
+\calc@Askip=\skip53
+\calc@Bskip=\skip54
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count188
+\calc@Cskip=\skip55
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/polyglossia/cal-util.def
+\c@tmpA=\count189
+\c@tmpB=\count190
+\c@tmpC=\count191
+\c@tmpD=\count192
+\c@tmpE=\count193
+\c@tmpF=\count194
+)
+\c@Hijriday=\count195
+\c@Hijrimonth=\count196
+\c@Hijriyear=\count197
+))
+(/usr/share/texlive/texmf-dist/tex/xelatex/polyglossia/gloss-farsi.ldf
+File: gloss-farsi.ldf polyglossia: module for farsi
+
+(/usr/share/texlive/texmf-dist/tex/xelatex/polyglossia/farsical.sty
+Package: farsical 2008/07/02 v0.1 Farsi (jalali) calendar
+\JALALI@i=\count198
+\JALALI@y=\count199
+\JALALI@m=\count200
+\JALALI@d=\count201
+Normal \count register pool exhausted, switching to extended pool.
+\JALALI@latini=\count277
+\JALALI@farsii=\count278
+\JALALI@latinii=\count279
+\JALALI@farsiii=\count280
+\JALALI@latiniii=\count281
+\JALALI@farsiiii=\count282
+\JALALI@latiniv=\count283
+\JALALI@farsiiv=\count284
+\JALALI@latinv=\count285
+\JALALI@farsiv=\count286
+\JALALI@latinvi=\count287
+\JALALI@farsivi=\count288
+\JALALI@latinvii=\count289
+\JALALI@farsivii=\count290
+\JALALI@latinviii=\count291
+\JALALI@farsiviii=\count292
+\JALALI@latinix=\count293
+\JALALI@farsiix=\count294
+\JALALI@latinx=\count295
+\JALALI@farsix=\count296
+\JALALI@latinxi=\count297
+\JALALI@farsixi=\count298
+\JALALI@latinxii=\count299
+\JALALI@farsixii=\count300
+\JALALI@farsixiii=\count301
+\JALALI@temp=\count302
+\JALALI@temptwo=\count303
+\JALALI@tempthree=\count304
+\JALALI@yModHundred=\count305
+\JALALI@thirtytwo=\count306
+\JALALI@dn=\count307
+\JALALI@sn=\count308
+\JALALI@mminusone=\count309
+))
+\g_fontspec_family_Scheherazade_int=\count310
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font Scheherazade/B (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font Scheherazade/I (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font Scheherazade/BI (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Scheherazade(0)' created for font 'Scheherazade' with options
+. [Script=Arabic, Scale=2].
+. 
+. This font family consists of the following shapes:
+. 
+. * 'normal' with NFSS spec.:
+. <->s*[2]"Scheherazade/ICU:script=arab;language=DFLT;"
+.................................................
+\g_fontspec_family_GranadaKD_int=\count311
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font GranadaKD/B (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font GranadaKD/I (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font GranadaKD/BI (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'GranadaKD(0)' created for font 'GranadaKD' with options
+. [Script=Arabic, Scale=2].
+. 
+. This font family consists of the following shapes:
+. 
+. * 'normal' with NFSS spec.:
+. <->s*[2]"GranadaKD/ICU:script=arab;language=DFLT;"
+.................................................
+\g_fontspec_family_Linux Biolinum O_int=\count312
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'LinuxBiolinumO(0)' created for font 'Linux Biolinum O' with
+. options [Scale=1.1, Color=00BB33].
+. 
+. This font family consists of the following shapes:
+. 
+. * 'normal' with NFSS spec.:
+. <->s*[1.1]"Linux Biolinum O/ICU:script=latn;language=DFLT;color=00BB33FF ;"
+. 
+. * 'small caps' with NFSS spec.:
+. <->s*[1.1]"Linux Biolinum
+. O/ICU:script=latn;language=DFLT;+smcp;color=00BB33FF ;"
+. 
+. * 'bold' with NFSS spec.:
+. <->s*[1.1]"Linux Biolinum O/B/ICU:script=latn;language=DFLT;color=00BB33FF
+. ;"
+. 
+. * 'bold small caps' with NFSS spec.:
+. <->s*[1.1]"Linux Biolinum
+. O/B/ICU:script=latn;language=DFLT;+smcp;color=00BB33FF ;"
+. 
+. * 'italic' with NFSS spec.:
+. <->s*[1.1]"Linux Biolinum O/I/ICU:script=latn;language=DFLT;color=00BB33FF
+. ;"
+. 
+. * 'italic small caps' with NFSS spec.:
+. <->s*[1.1]"Linux Biolinum
+. O/I/ICU:script=latn;language=DFLT;+smcp;color=00BB33FF ;"
+. 
+. * 'bold italic' with NFSS spec.:
+. <->s*[1.1]"Linux Biolinum O/BI/ICU:script=latn;language=DFLT;color=00BB33FF
+. ;"
+. 
+. * 'bold italic small caps' with NFSS spec.:
+. <->s*[1.1]"Linux Biolinum
+. O/BI/ICU:script=latn;language=DFLT;+smcp;color=00BB33FF ;"
+.................................................
+LaTeX Info: Redefining \T on input line 31.
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'LinuxBiolinumO(1)' created for font 'Linux Biolinum O' with
+. options [Scale=1.1, Color=blue].
+. 
+. This font family consists of the following shapes:
+. 
+. * 'normal' with NFSS spec.:
+. <->s*[1.1]"Linux Biolinum O/ICU:script=latn;language=DFLT;color=0000FFFF ;"
+. 
+. * 'small caps' with NFSS spec.:
+. <->s*[1.1]"Linux Biolinum
+. O/ICU:script=latn;language=DFLT;+smcp;color=0000FFFF ;"
+. 
+. * 'bold' with NFSS spec.:
+. <->s*[1.1]"Linux Biolinum O/B/ICU:script=latn;language=DFLT;color=0000FFFF
+. ;"
+. 
+. * 'bold small caps' with NFSS spec.:
+. <->s*[1.1]"Linux Biolinum
+. O/B/ICU:script=latn;language=DFLT;+smcp;color=0000FFFF ;"
+. 
+. * 'italic' with NFSS spec.:
+. <->s*[1.1]"Linux Biolinum O/I/ICU:script=latn;language=DFLT;color=0000FFFF
+. ;"
+. 
+. * 'italic small caps' with NFSS spec.:
+. <->s*[1.1]"Linux Biolinum
+. O/I/ICU:script=latn;language=DFLT;+smcp;color=0000FFFF ;"
+. 
+. * 'bold italic' with NFSS spec.:
+. <->s*[1.1]"Linux Biolinum O/BI/ICU:script=latn;language=DFLT;color=0000FFFF
+. ;"
+. 
+. * 'bold italic small caps' with NFSS spec.:
+. <->s*[1.1]"Linux Biolinum
+. O/BI/ICU:script=latn;language=DFLT;+smcp;color=0000FFFF ;"
+.................................................
+\g_fontspec_family_Liberation Serif Italic_int=\count313
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'LiberationSerifItalic(0)' created for font 'Liberation Serif
+. Italic' with options [Color=666666].
+. 
+. This font family consists of the following shapes:
+. 
+. * 'normal' with NFSS spec.:
+. <->"Liberation Serif Italic/ICU:script=latn;language=DFLT;color=666666FF ;"
+. 
+. * 'bold' with NFSS spec.:
+. <->"Liberation Serif Italic/B/ICU:script=latn;language=DFLT;color=666666FF
+. ;"
+. 
+. * 'italic' with NFSS spec.:
+. <->"Liberation Serif Italic/I/ICU:script=latn;language=DFLT;color=666666FF
+. ;"
+. 
+. * 'bold italic' with NFSS spec.:
+. <->"Liberation Serif Italic/BI/ICU:script=latn;language=DFLT;color=666666FF
+. ;"
+.................................................
+
+(./maisha-mume.aux)
+\openout1 = `maisha-mume.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 37.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 37.
+ (/usr/share/texmf/tex/latex/tipa/t3cmr.fd
+File: t3cmr.fd 2001/12/31 TIPA font definitions
+)
+LaTeX Font Info:    ... okay on input line 37.
+.................................................
+. fontspec info: "setup-math"
+. 
+. Adjusting the maths setup (use [no-math] to avoid this).
+.................................................
+\symlegacymaths=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 37.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 37.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 37.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 37.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 37.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 37.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 37.
+LaTeX Font Info:    Redeclaring math accent \check on input line 37.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 37.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 37.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \colon on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 37.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 37.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 37.
+LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
+(Font)              `operators' in the math version `normal' on input line 37.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> EU1/LiberationSerif(0)/m/n on input lin
+e 37.
+LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
+(Font)              `operators' in the math version `bold' on input line 37.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> EU1/LiberationSerif(0)/m/n on input li
+ne 37.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  EU1/LiberationSerif(0)/m/n --> EU1/LiberationSerif(0)/m
+/n on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  EU1/LiberationSerif(0)/m/n --> EU1/LiberationSerif(0)/m
+/n on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> EU1/LiberationSerif(0)/m/it on input l
+ine 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> EU1/LiberationSerif(0)/bx/n on input l
+ine 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> EU1/lmss/m/n on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> EU1/lmtt/m/n on input line 37.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  EU1/LiberationSerif(0)/m/n --> EU1/LiberationSerif(0)/b
+x/n on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
+(Font)                  EU1/LiberationSerif(0)/m/n --> EU1/LiberationSerif(0)/b
+x/n on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> EU1/LiberationSerif(0)/bx/it on input
+ line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> EU1/lmss/bx/n on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> EU1/lmtt/bx/n on input line 37.
+LaTeX Font Info:    Font shape `EU1/GranadaKD(0)/m/n' will be
+(Font)              scaled to size 24.0pt on input line 43.
+LaTeX Font Info:    Font shape `EU1/LinuxBiolinumO(0)/m/n' will be
+(Font)              scaled to size 13.20007pt on input line 44.
+LaTeX Font Info:    Font shape `EU1/Scheherazade(0)/m/n' will be
+(Font)              scaled to size 24.0pt on input line 50.
+ [1
+
+] [2] [3]
+[4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19]
+[20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34]
+[35] [36] [37] [38] [39] [40] [41] [42] (./maisha-mume.aux) ) 
+Here is how much of TeX's memory you used:
+ 15983 strings out of 495707
+ 337133 string characters out of 3188604
+ 367307 words of memory out of 3000000
+ 18915 multiletter control sequences out of 15000+200000
+ 4122 words of font info for 38 fonts, out of 3000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 45i,5n,40p,934b,275s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on maisha-mume.pdf (42 pages).
