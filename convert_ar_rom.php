@@ -50,6 +50,7 @@ $close=close_trans($translit);
 echo "<p class=\"\">";
 // echo $close."<br /><br />";
 echo $standard."<br />";
+//echo $close."<br />";
 echo "</p>";
 
 ?>

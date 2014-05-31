@@ -23,6 +23,6 @@ If not, see <http://www.gnu.org/licenses/>.
 *********************************************************************
 */ 
 
-$db_handle=pg_connect('host=localhost dbname=swahili user=kevin password=kevindbs');
+$db_handle=pg_connect('host=localhost dbname=andika user=kevin password=kevindbs');
 
 ?>

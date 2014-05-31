@@ -15,7 +15,7 @@ All short vowels are marked.  Although short vowels are usually omitted in Arabi
 The penultimate syllable of a word has its stress/length marked by writing it with a long vowel.  <span class="sm_swahili">ا</span> is used for <strong>a</strong>, <span class="sm_swahili">ي</span> for <strong>e</strong> and <strong>i</strong>, and <span class="sm_swahili">و</span> for <strong>o</strong> and <strong>u</strong>.  (The short vowels <strong>a, i, u</strong> may be omitted when they occur before a long vowel, eg <span class="sm_swahili">ساسَ</span> instead of <span class="sm_swahili">سَاسَ</span> (<strong>sasa</strong>, <em>now</em>), but this is not recommended.)  This also helps to delimit individual words in the Arabic script.</li>
 
 <li>
-Initial vowels use the vowel-carriers <span class="sm_swahili">أ</span> (<strong>a, o, u</strong>) or <span class="sm_swahili">إ</span> (<strong>e, i</strong>), eg <span class="sm_swahili">أَنَسٖيمَ</span> ﴾<strong>anasema</strong>, <em>he is speaking</em>﴿, <span class="sm_swahili">أُڠَالِ</span> (<strong>ugali</strong>, <em>porridge</em>), <span class="sm_swahili">إِذِينِ</span> (<strong>idhini</strong>, <em>permission</em>).
+Initial vowels use the vowel-carriers <span class="sm_swahili">أ</span> (<strong>a, o, u</strong>) or <span class="sm_swahili">إ</span> (<strong>e, i</strong>), eg <span class="sm_swahili">أَنَسٖيمَ</span> (<strong>anasema</strong>, <em>he is speaking</em>), <span class="sm_swahili">أُڠَالِ</span> (<strong>ugali</strong>, <em>porridge</em>), <span class="sm_swahili">إِذِينِ</span> (<strong>idhini</strong>, <em>permission</em>).
 </li>
 
 <li>

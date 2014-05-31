@@ -8,6 +8,12 @@ style.css
 -----------------------------------*/
 @import url(http://fonts.googleapis.com/css?family=Arimo:400,700);
 
+/* Need to add a specific URL call for this font, because Chrome will not display the installed font.  But this stops FireFox displaying the installed font, so we also need to add a local call to handle that!  WTF! */
+@font-face {
+  font-family: 'GranadaKD';
+  src: url('fonts/GranadaKD.ttf') format('truetype'), local('GranadaKD');
+}
+
 /*---------------------------------
 	OVERRIDES
 -----------------------------------*/
@@ -57,7 +63,7 @@ textarea.swahili:-moz-placeholder
 
 .title
 {
-	font-family: "GranadaKD";
+	font-family: 'GranadaKD';
 	font-size: 75px;
 	color: #fff;
 }

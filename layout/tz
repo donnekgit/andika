@@ -12,7 +12,7 @@ xkb_symbols "swa"
 
 	key <AB01> { [    Arabic_zain,     Arabic_jeh,     Arabic_zah                 ] }; // ز ژ ظ 
 	key <AB02> { [    Arabic_khah                                                 ] }; // خ 
-	key <AB03> { [   Arabic_tcheh,       U06B1,          U06AE                 ] }; // چ  ڮ 
+	key <AB03> { [   Arabic_tcheh,       U063B,          U06AE                 ] }; // چ   ڮ 
 	key <AB04> { [     Arabic_veh                                                 ] }; // ڤ 
 	key <AB05> { [     Arabic_beh                                                 ] }; // ب 
 	key <AB06> { [    Arabic_noon,          U075D                                 ] }; // ن ݝ 

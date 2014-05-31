@@ -68,6 +68,7 @@ function ar2rom($text)
 	$text=preg_replace("/\x{062D}/u", "U+062D", $text);  // hah
 	$text=preg_replace("/\x{062E}/u", "U+062E", $text);  // khah
 	$text=preg_replace("/\x{0686}/u", "ch", $text);  // tcheh
+	$text=preg_replace("/\x{063B}/u", "U+063B", $text);  // keheh with two dots
 
 	$text=preg_replace("/\x{062F}/u", "d", $text);  // dal
 	$text=preg_replace("/\x{0688}/u", "U+0688", $text);  // ddal - alveolar d
@@ -125,6 +126,8 @@ function ar2rom($text)
 
 function standardise($text)
 {
+    $text=preg_replace("/L([aeiou])/", "$1$2", $text);  // Ustadh Mau initial vowels use alif as carrier, without hamza
+
 	$text=preg_replace("/(Ll)?([bcdfghjklmnpqrstvwyz])U\+0651/", "$2$2", $text);  // shadda > CC
 
 // Arabic prepositions
@@ -170,6 +173,8 @@ function standardise($text)
 
 	$text=preg_replace("/U\+207F/", "", $text);  // {fatha|damma|kasra}tan > h
 
+    $text=preg_replace("/U\+063B/", "ch", $text);  // keheh with two dots > ch
+
 	// Capitalise sentence-initials (very basic!).
 	// trim() is necessary because click to select seems to insert spaces before the Arabic text.
 	$text=ucfirst(trim($text));
@@ -181,7 +186,9 @@ function standardise($text)
 
 function close_trans($text)
 {
-	$text=preg_replace("/(Ll)?([bcdfghjklmnpqrstvwyz])U\+0651/", "$2$2", $text);  // shadda > CC
+    $text=preg_replace("/L([aeiou])/", "$1$2", $text);  // Ustadh Mau initial vowels use alif as carrier, without hamza
+    
+    $text=preg_replace("/(Ll)?([bcdfghjklmnpqrstvwyz])U\+0651/", "$2$2", $text);  // shadda > CC
 
 	// Arabic prepositions
 	$text=preg_replace("/biLl([bcdfghjklmnpqrstvwyz])[bcdfghjklmnpqrstvwyz]?/", "bi-$1$1", $text);  // repetition to deal with shadda
@@ -200,7 +207,8 @@ function close_trans($text)
 	$text=preg_replace("/ow([bcdfghjklmnpqrstvwyz'U])/", "ō$1", $text);
 	$text=preg_replace("/uw([bcdfghjklmnpqrstvwyz'U])/", "ū$1", $text);
 	$text=preg_replace("/a?L/", "ā", $text);
-	$text=preg_replace("/La/", "ā", $text);  // (Mkunumbi)
+	//$text=preg_replace("/La/", "ā", $text);  // (Mkunumbi)
+
 
 	//$text=preg_replace("/ch/", "U+0074U+02B2", $text);  // t+palatal (Bajuni)
 	//$text=preg_replace("/dh/", "U+007AU+0331", $text);  // z+underline (Bajuni)
@@ -225,7 +233,10 @@ function close_trans($text)
 	$text=preg_replace("/U\+0308/", "ä", $text);  // superscript alef
 
 	$text=preg_replace("/U\+062D/", "hU+0323", $text);  // pharyngeal h > h+dot
-	$text=preg_replace("/U\+062E/", "hU+0331", $text);  // velar fricative > h+underline
+// 	$text=preg_replace("/U\+062E/", "hU+0331", $text);  // velar fricative > h+underline
+    $text=preg_replace("/U\+062E/", "kh", $text);  // velar fricative > h+underline
+
+    $text=preg_replace("/U\+063B/", "kU+02B2", $text);  // keheh with two dots > k+palatal
 
 	$text=preg_replace("/U\+0635/", "sU+0323", $text);  // sad > s+dot
 	$text=preg_replace("/U\+0636/", "dU+0323", $text);  // dad > d+dot
@@ -265,7 +276,8 @@ function prep_rom($text)
 	return $text;
 }
 
-function rom2ar($text, $no_sukun)
+function rom2ar($text, $no_sukun=NULL)
+// NULL allows for this argument to be empty, as may be the case in the offline converters.
 // Note: The order of these regexes is significant.
 {
 	// One-off words
