@@ -1,0 +1,142 @@
+Keyboard
+------------
+
+sudo nano /usr/share/X11/xkb/symbols/tz
+When changing the layout, you need to delete the server- "copy" files in /var/lib/xkb:
+sudo rm /var/lib/xkb/server-*
+They will be recreated.  Then remove the tz keyboard layout and re-add it.  Unticking the Configure Layout box, then clicking Apply, then reticking it, then Apply also seems to work.
+
+Note that any texts written using the old character will need to be corrected to use the new character.
+
+
+Set up LibreOffice (4.2.3.3)
+--------------------------------
+
+Tools --> Options --> Language Settings --> Languages tab
+Tick Enabled for complex text layout (CTL), and select Arabic (Oman) from the CTL dropdown.
+Tools --> Options --> Complex Text Layout
+Tick Visual under Cursor control
+if the buttons don't show up in the Formatting toolbar, rightclick on the toolbar, and under Visible buttons select LTR and RTL.
+Shortcuts are Ctrl+Shift+A for LTR and Ctrl+Shift+D for RTL.
+
+The libreofficefolder contains a template where styles for Swahili in Arabic script, Swahili in Roman script (standard spelling or close transcription) and translation are already set up.  Copy the file into one of the templates dirs as listed in Tools --> Options --> LibreOffice --> Paths --> Templates.  The usual one would be /home/<USER>/.config/libreoffice/4/user/template, but you can put it in another dir provided you add that to the path list - highlight the Templates entry, then click Edit... and Add...  To use the template, select File --> New --> Templates, and select andika.  To set this as your default template (nothing has been changed from the stock default apart from the addition of the three extra styles), select File --> Templates --> Manage, click on andika, and then click Set as default. To use the styles, press F11 to open the Styles and Formatting list (the new styles are at the bottom of the list.  Place the cursor in the line you wish to format, and select the relevant style by double-clicking on its name.  Obviously, the appropriate writing system (Arabic or Roman) also has to be selected on the keyboard before typing.
+
+Arabic style is RTL, Scheherazade 24pt
+Roman style is LTR, right-justified, Liberation Serif 12pt
+Translation is LTR, right-justified, Liberation Serif 12pt, italic
+
+Droid Arabic Naskh another possibility, but not so well-formed.
+
+
+PPA
+-----
+
+Some Arabic lines may not appear in the browsw page, but if you press Edit you can see the text is there - it just isn't displayed for some reason.  Likewise, a select shows it.
+
+
+pdf
+-----
+
+If lines appear ill-aligned, try repeating the invocation.  This happens especially when changing layouts, and is due to LaTeX needing to run the pdf compile again to fix the column layout.
+
+
+Examples of using convert.php
+--------------------------------------
+php poetry/convert.php -i=maisha.odt --vipande=4 -o=pdf -s=roman -l=kip-line
+a Roman text in odt, so we need to specify script, and set out in one kipande per line
+php poetry/convert.php -i=maisha.odt --vipande=4 -o=pdf -s=roman -l=vip-star
+ditto, but in two kipande to a line, with a star between them
+php poetry/convert.php -i=maisha.odt --vipande=4 -o=pdf -s=roman
+ditto, but using the default two kipande to a line in columns for pdf (therefore no need to specify layout)
+php poetry/convert.php -i=kiswahili.odt --vipande=8 -o=pdf
+an Arabic text in odt (the default), so no need to specify script, using the default vip-space layout
+php poetry/convert.php -i=kiswahili.odt --vipande=8 -o=pdf -l=kip-line
+ditto, but using kip-line as the layout
+php poetry/convert.php -i=maisha_ar.txt --vipande=4 -o=db -s=arabic
+an Arabic text in txt, so we need to specify the script, and it will be imported into the database
+php poetry/convert.php -i=maisha.txt --vipande=4 -o=db
+a Roman text in txt (the default), so no need to specify script, and getting imported into the database
+php poetry/convert.php -i=maisha.txt --vipande=4 -o=txt
+ditto, but imported into a txt file - result is to give an Arabic only text (ie the transcription of the Roman), which can then be cut-and-pasted into an odt file for editing; the layout is vip-star
+php poetry/convert.php -i=maisha.txt --vipande=4 -o=pdf -l=vip-star
+ditto, but in pdf output using vip-star
+php poetry/convert.php -i=kiswahili.odt -v=8 -o=db
+import an Arabic text in odt (the default) into the database
+php poetry/convert.php -i=kiswahili.odt -v=8 -o=txt
+ditto, but import it into txt format (not sure why you'd want to do this on an Arabic text! - it's easier to edit in odt - but conceivably you might want it in a form that fits more easily into an automated workstream)
+
+
+Database
+-----------
+
+For a word where an epenthetic vowel should be added for scansion purposes, but is not written, add it between # in the lemma column, eg namil#i#hi instead of namilhi.  (Note that the incorrectly-joined particle is also written - it will be dealt with in the next rule).
+
+For a word where a particle is written joined, but should be written separately, put the particle in the segment column, eg nahubuzi instead of na hubuzi.
+
+Where word variants are written in different manuscripts, add the variant in the variant column.
+
+Where a note pertains to a word, add it in the note column.  # is used in this column to delineate quoted words, which in the pdf will be printed in a different typeface.
+
+Put the root of the word in the root column, to allow for building concordances, frequency lists, etc.  Use the Bantu word minus endings such as verbal -a or class prefixes, and give the 3-consonant root of Arabic words.
+
+Put the English translation for the whole kipande into the english column agains the first word of the kipande.
+
+Unclear as yet (!):
+word is a copy of close (auto-generated close transcription), but including epenthetic vowels and removing particles.
+clword is a copy of close (auto-generated close transcription)
+arword is a copy of arabic
+
+
+Sacleux dictionary
+----------------------
+
+Schadeberg and Sansom's pdfs are on the SwaFo website.
+Use the large version - the small one has too much noise.
+Converting to text is ok, but leaves a lot of gibberish, and the layout is sometimes mixed up.
+Use OCRFeeder for one-off pages - cut them out with pdftk, import the pdf, then OCD it with Tesseract.
+pdftk A=Sacleux1939_large_size_760_MB.pdf cat A250 output Sacleux250.pdf
+Setting Tesseract to French (install the additional package) gives better results than using English.
+Editing still needs to be done, particulary because the serif italic font used for examples is very prone to misreading.
+Split the large dictionary into individual pages:
+pdftk Sacleux1939_large_size_760_MB.pdf burst output sacleux_%04d.pdf
+Use the ocrpdftotext.sh from http://fransdejonge.com/2012/04/ocr-text-in-pdf-with-tesseract:
+for f in *.pdf; do ./ocrpdftotext.sh $f; done
+
+original bold surrounded by #
+original italic surrounded by /
+separate ! : « » etc by space on either side
+use >< for the x glyph
+char 0x0323 to give dot beneath
+nasalised vowel: AltGr+] - ãẽĩõũ
+sh and zh: AltGr+Shift+@ - šž (cf AltGr+@ - ŝẑ)
+use ' for aspiration
+guillemots: AltGr+z|x - «»
+mark footnotes with square brackets, and move them to below the paragraph that contains the reference
+use ++ for the double dagger
+± as a real plus: AltGr+Shift+9
+surround superscript with ^
+put comma directly after all Swahili citations, even if they aren't there in the original, eg (/nipe/ donne-moi, /mpe/ donne-lui)
+long dash as ---, all others as -
+related words on new line
+examples/citations on new line, but indented (examples frequently have opening capitals)
+
+
+GB keyboard with transcription diacritics
+----------------------------------------------------
+dot below 0323
+dental bar 032A
+cedilla 0327
+macron 0304
+aspiration 02BF
+glottal 02C0
+dagger 2020
+double dagger 2021
+
+To enter a Unicode character directly in Kate, press F7 and then type char 0x0323 or whatever.
+
+
+
+
+
+
+
