@@ -31,12 +31,12 @@ generated transcription.  For more information, see includes/optionhandling.php,
 // Initialise required stuff.
 include("./andika/config.php");
 include("./includes/fns.php");
-include("./includes/optionhandling.php");
+//include("./includes/optionhandling.php");
 require_once 'poetry/QueryPath-2.1.2-minimal/QueryPath.php';
 
 // Debug: check options and variables.
 //print_r($options)."\n";
-echo $input."\n";
+//echo $input."\n";
 echo $poem."\n";
 echo $type."\n";
 echo $vipande_no."\n";
@@ -108,13 +108,13 @@ foreach ($poemlines as $poemline)
         echo "\n".$stanza_no."\n";
 
         $this_stanza=array_filter(array_map('trim', explode("*", $stanza_contents)));  // Split the stanza at * and import the pieces into an array.
-//         print_r($this_stanza);
+        //print_r($this_stanza);
         $this_stanza=array_combine($vipande, $this_stanza);  // Set the values of $vipande as the keys of $this_stanza.
         
         foreach ($this_stanza as $key=>$stanza_line)
         // Read each line of the stanza, and feed them to different layout options.
-        // All three layout choices are only available for pdf output (-o=pdf).
-        // If -o=txt output is specified, optionshandling.php constrains txt layout to vip-star, and db layout to kip-line if -o=db is specified.
+        // All three layout choices are available only for pdf output (-o=pdf).
+        // If -o=txt output is specified, includes/optionhandling.php constrains txt layout to vip-star, and db layout to kip-line if -o=db is specified.
         {
             if ($layout=="vip-space")
             {

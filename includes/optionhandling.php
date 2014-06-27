@@ -74,7 +74,7 @@ exit;
 // Input file 
 // -----------
 
-if (!isset($options["i"]) and !isset($options["input"]))
+if (empty($options["i"]) and empty($options["input"]))
 {
 echo "
 Use -i or --input to specify the input file (which must be located in the poetry/inputs folder).
@@ -98,7 +98,7 @@ $type=$input[1];
 // Number of vipande in the stanza
 // -----------------------------------------
 
-if (!isset($options["v"]) and !isset($options["vipande"]))
+if (empty($options["v"]) and empty($options["vipande"]))
 {
 echo "
 Use -v or --vipande to specify the number of vipande in the stanza.
@@ -120,7 +120,7 @@ elseif (isset($options["vipande"]))
 // Output options
 // -------------------
 
-// if (!isset($options["o"]) and !isset($options["output"]))
+// if (empty($options["o"]) and empty($options["output"]))
 // {
 // echo "
 // Use -o or --output to specify the type of output you want.
@@ -129,10 +129,10 @@ elseif (isset($options["vipande"]))
 // exit;
 // }
         
-if ($options["o"]=="pdf" or $options["output"]=="pdf" or $options["o"]=="" or $options["output"]=="")
+if ($options["o"]=="pdf" or $options["output"]=="pdf")
 {
     $output="pdf";
-    if (!isset($options["l"]) or !isset($options["layout"]))
+    if (empty($options["l"]) or empty($options["layout"]))
     {
         $layout="vip-space";
         $columns="rrl";
@@ -148,6 +148,15 @@ elseif ($options["o"]=="db" or $options["output"]=="db")
 {
     $output="db";
     $layout="kip-line";
+}
+elseif (empty($options["o"]) or empty($options["output"]))
+{
+    $output="pdf";
+    if (empty($options["l"]) or empty($options["layout"]))
+    {
+        $layout="vip-space";
+        $columns="rrl";
+    }
 }
 
 
@@ -178,11 +187,11 @@ if ($options["o"]=="pdf" or $options["output"]=="pdf")
 // -----------------
 
 //default
-if ($type=="odt" and !isset($options["s"]) and !isset($options["script"]))
+if ($type=="odt" and empty($options["s"]) and empty($options["script"]))
 {
     $script="arabic";
 }
-elseif  ($type=="txt" and !isset($options["s"]) and !isset($options["script"]))
+elseif  ($type=="txt" and empty($options["s"]) and empty($options["script"]))
 {
     $script="roman";
 }
