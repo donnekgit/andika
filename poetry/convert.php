@@ -31,7 +31,7 @@ generated transcription.  For more information, see includes/optionhandling.php,
 // Initialise required stuff.
 include("./andika/config.php");
 include("./includes/fns.php");
-//include("./includes/optionhandling.php");
+include("./includes/optionhandling.php");
 require_once 'poetry/QueryPath-2.1.2-minimal/QueryPath.php';
 
 // Debug: check options and variables.
