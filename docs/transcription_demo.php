@@ -1,7 +1,7 @@
 <?php
 
 // Allow access to the transcription functions
-include("./includes/fns.php");
+include("../includes/fns.php");
 
 // Select some test text in Arabic
 $text="أَكَتٗؤَ تَمَارِ * نَخُبُوزِ يَشَعِيْرِ";

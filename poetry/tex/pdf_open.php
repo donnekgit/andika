@@ -24,4 +24,7 @@ fwrite($fp, "\n");
 
 fwrite($fp, "\begin{longtable}{{$columns}} \n\n");
 
+fwrite($fp, "\makebox[8cm][r]{} & & \makebox[8cm][r]{} \\\\ \n\n");  // Dummy row to force shrinkage of the space between the two vipande columns by reserving space for the first column.  The spacer for the thied column has only minimal effect, but moves the numbers column over a bit to the left.  This is required only because of the multicolumn (columns 1 and 2) span of the English translation, but it doesn't seem to cause problems for convert.php, so let's keep it as default until proven otherwise.
+
+
 ?>

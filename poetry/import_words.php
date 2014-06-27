@@ -26,9 +26,10 @@ If not, see <http://www.gnu.org/licenses/>.
 include("./includes/fns.php");
 include("./andika/config.php");
 
-$poem="maisha_mume";
+$poem="kiswahili";
+//$poem="maisha_mume";
 //$poem="vita_vikuu";
-// $poem="jaafari";
+//$poem="jaafari";
 $words="{$poem}_words";
 $notes="{$poem}_notes";
 $backup="{$poem}_backup";
