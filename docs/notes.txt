@@ -31,7 +31,7 @@ Droid Arabic Naskh another possibility, but not so well-formed.
 PPA
 -----
 
-Some Arabic lines may not appear in the browsw page, but if you press Edit you can see the text is there - it just isn't displayed for some reason.  Likewise, a select shows it.
+Some Arabic lines may not appear in the Browse page, but if you press Edit you can see the text is there - it just isn't displayed for some reason.  Likewise, a select shows it.
 
 
 pdf
