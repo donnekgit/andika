@@ -81,25 +81,6 @@ elseif ($type=="txt")
 // Set up a dir for each poem's output.
 exec("mkdir -p poetry/outputs/".$poem);
 
-/*
-// For database import, set up a table for each poem.
-if ($output=="db")
-{
-    include("poetry/create_poemlines.php");
-}
-*/
-
-/*
-// Set up stanza furniture.
-$stanza_no=1;  // start stanza counter
-$stanza_contents="";  // set up a holder for the contents of the whole stanza
-$vipande=array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p');  // letters to signify location of the kipande in the stanza
-// Truncate the array of vipande letters to the total number of vipande in the stanza.  (NOTE: if you put $vipande= at the front of the line, $vipande will contain the cut pieces, not the ones you want to keep!)
-array_splice($vipande, $vipande_no);
-// print_r($vipande);
-$first_half=array('a', 'c', 'e', 'g', 'i', 'k', 'm', 'o');  // vipande we want to have at the beginning of a line
-*/
-
 // Read the lines in the file into an array, based on extension.
 if ($type=="odt")
 {
