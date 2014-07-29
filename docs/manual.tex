@@ -1,0 +1,953 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{polyglossia}
+\usepackage{tabularx}  % needs to be above longtable
+\usepackage{longtable}
+\usepackage{xcolor}  % can't use color with polyglossia
+\usepackage{arydshln}
+
+\usepackage[obeyspaces]{url}  % Use urls in text and captions with sensible linewrap.
+\urlstyle{rm}  % Set urls in roman.
+%\usepackage[utf8x]{inputenc}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{appendix}
+\usepackage{array}
+\usepackage[labelfont=bf,textfont=it]{caption}
+
+\interfootnotelinepenalty=10000 % prevents the footnote from breaking across pages
+% http://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
+
+% Thanks to Manas Tungare (http://manas.tungare.name/software/latex) for these settings.
+\setlength{\paperwidth}{210mm}
+\setlength{\paperheight}{297mm}
+
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{247mm}
+
+\setlength{\evensidemargin}{1in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{-0.5in}
+
+\setmainfont[Mapping=tex-text]{Charis SIL}  % Set the default font for the document (footnotes will also use this font, but see also: http://tex.stackexchange.com/questions/4779/how-to-change-font-family-in-footnote)
+
+\setmainlanguage{english}
+\setotherlanguage{arabic}
+\setotherlanguage{farsi}  % used to allow typesetting the tile in a different font
+
+\newfontfamily\arabicfont[Script=Arabic, Scale=2]{Scheherazade} % Arabic transcription layer
+\newfontfamily\farsifont[Script=Arabic, Scale=2]{GranadaKD} % Arabic transcription layer for titles - uses a version of Granada which has been extended to include glyphs for Swahili.
+\newcommand{\AS}[1]{\fontspec[Script=Arabic, Scale=1.5]{Scheherazade} #1\normalfont} % Arabic when used in footnotes - using \newfontfamily resets following English text as well.  IMPORTANT: this can ONLY be used for single words - multiple words will be written LTR, and not RTL as required.
+\newfontfamily{\T}[Scale=1]{Linux Biolinum O} %  transliteration layer - Biolinum handles diacritics well
+\newfontfamily{\I}[Scale=0.9, Color=blue]{Linux Biolinum O} % interpolated letters in the transliteration layer
+\newfontfamily{\S}[Color=00BB33]{Linux Biolinum O} % standard spelling layer
+\newfontfamily{\E}[Scale=0.9, Color=666666]{Liberation Serif Italic} % English translation layer
+\newfontfamily{\FN}[Color=00BB33]{Liberation Serif Italic} % Alternate type in footnotes.
+
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
+
+%Redefine the underscore command
+\let\underscore\_
+\newcommand{\myunderscore}{\renewcommand{\_}{\underscore\hspace{0pt}}}
+%Issue the changed underscore command to the whole document.
+\myunderscore
+
+\setlength{\parindent}{0in}  % no paragraph indents
+\setlength{\parskip}{2ex}  % put a linespace between paragraphs
+
+\title{\textbf{Writing and transliterating\\Swahili in Arabic script\\with \textit{Andika!}}}
+\author{Kevin Donnelly\thanks{kevin@dotmon.com}}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+THIS MANUAL IS CURRENTLY BEING WRITTEN!!!  THE MOST IMPORTANT PART AT THE MOMENT IS APPENDIX 1, GIVING INSTALLATION INSTRUCTIONS. 
+\end{abstract}
+
+\frenchspacing
+
+\section{Introduction}
+\label{s:intro}
+
+For centuries, Swahili was written in Arabic script, and hundreds of manuscripts in collections around the world testify to its long tradition of written literature. Over the last century, however, Swahili in Roman script has become the norm.
+
+\textbf{Andika!} (meaning \textbf{Write!} in Swahili) is a set of tools to make Swahili in Arabic script as easy to use as Swahili in Roman script - it is equally easy to read and write the the language in either script. The tools, based on the work of Marehemu Mu'allim Sheikh Yahya Ali Omar,\footnote{Omar, YA in collaboration with Frankl PJL (1997): An historical review of the Arabic rendering of Swahili, together with proposals for the development of a Swahili writing system in Arabic script. \textit{Journal of the Royal Asiatic Society}, Series 3, 7, 1: 55-71. } provide a consistent, standardised transliteration of Swahili in Arabic script, and a one-to-one mapping of this to Swahili in Roman script.
+
+All the tools are available under version 3 of the Free Software Foundation's General Public License,\footnote{http://www.gnu.org/licenses/gpl.html} which means they can be adapted and extended as required by the user, subject to the same license being used for any new version thus created.
+
+
+\section{Benefits}
+\label{s:benefits}
+
+\begin{itemize}
+ \item Swahili manuscripts in Arabic script can be directly transcribed and made available in digital format. At present, most Swahili literature from earlier periods has only been published in Roman transliteration. The third image in the slideshow above shows part of a manuscript rendering of Bajuni fishing songs, transcribed letter-for-letter from the manuscript.
+
+ \item A direct transcription can be augmented with a fully-vocalised Arabic transcription, a close phonetic transliteration, a transliteration in the standard Roman orthography, and so on, according to taste. The tools allow much of these to be generated automatically, reducing the effort this would otherwise involve.
+
+ \item Apart from allowing easier typesetting and dissemination, having manuscripts in digital form will make it possible for the first time to use computers to look at word frequency, stylistic variation, etc, within the texts, to build corpora for classical Swahili, and so on.
+
+ \item New writing in Swahili can be composed in Arabic script and published easily via word-processors, webpages, or pdfs created by typesetting systems such as LaTeX.
+
+ \item The ability to convert Arabic script at any time into Roman script means that there is very little overhead involved in choosing to write Swahili in Arabic script. Material can be produced simultaneously in both scripts with the minimum of effort (although the converted text will need minor editing to cover such things as capital letters, which do not exist in Arabic script).
+
+ \item Existing Swahili content in Roman script can be converted to Arabic script, making it possible to reuse content already published in Roman script. This means that large amounts of material in Arabic script can be be made available very quickly - it is not necessary to create them specially.
+
+ \item The conversion tools include cut-and-paste boxes for small amounts of text, a Roman-to-Arabic converter for entire webpages, and offline converters for bulk conversion of text.
+
+ \item The Arabic-to-Roman conversion can be extended to provide a variety of different transliterations (eg kh or x for \AS{خ} instead of the standard h).
+
+ \item The Roman-to-Arabic conversion can be adjusted to convert numerals, to add or remove markers such as \textit{sakani} (\textit{sukun}), and so on.
+\end{itemize}
+
+
+\section{Getting started}
+
+Detailed instructions for installing \textbf{Andika!} and the other software it requires are in Appendix 1.
+
+It's very easy to get started. The most important thing is to install a font that will show all the Arabic characters used in Swahili - once that is done, you can use all the resources on this website.
+
+The best font option at the minute is Scheherazade - to get the most recent version, download ScheherazadeRegOT-1.005.zip from this page, and unzip it. Then double-click the file ScheherazadeRegOT.ttf to install the font on your computer.
+
+You can type Swahili in Arabic script directly into a Linux computer using a standard UK keyboard. Input speed is comparable to typing in Roman script. The Swahili keyboard section includes simple step-by-step instructions for enabling a Swahili keyboard layout on Ubuntu running KDE, and for making changes to it if you have a non-UK keyboard.
+
+Alternatively, if you don't want to do that just yet, go to the Roman to Arabic section. There, you can type into a box in Roman script and have the input converted into Arabic script, or you can input a web address and have that whole page converted into Arabic script. The offline converters allow multiple files to be converted easily.
+
+You can cut and paste the converted Arabic text into a word-processor. See the LibreOffice tab in the Swahili keyboard section.
+
+You can also go to the Arabic to Roman section to convert Arabic script into Roman script (standard Swahili orthography by default, but options are available to add various diacritics to the transliteration). The offline converters allow a transcription of an existing Swahili manuscript in Arabic script to be automatically transliterated into Roman script.
+
+The Spelling conventions section gives suggestions for using Arabic script with current-day Swahili, with many examples of how the Arabic script maps to the Roman script.
+
+The section on Typesetting poetry shows how Swahili poetry manuscripts in Arabic script can be transcribed digitally to produce attractive output in various formats, with the added benefit that the contents of the manuscripts are then available for computer analysis of language, vocabulary, word-frequency, etc.
+
+
+\section{Slideshow images}
+
+The images in the slideshow give examples of various pieces of Swahili written in Arabic script. The intention is to show that the Andika! tools can cope with a variety of different requirements - all the copies are transcribed letter-for-letter from the originals.
+
+Image 1
+The word andika! (write!) is shown in various Arabic fonts, giving some idea of the variety and expressiveness of the script. Virtually all of these fonts, however, have been designed for Arabic only, and need characters added to them before they are useable with Swahili. See the Fonts tab in the Keyboard section.
+
+Image 2
+A copy of the specimen text (Appendix C) from the Omar/Frankl paper, which they included to show how their system would look in practice. The text is a section from: Omar, YA (1998): Three Prose Texts in the Swahili of Mombasa. Mit einer Einleitung von PJL Frankl. \textit{Sprache und Oralität in Afrika}, Frankfurter Studien zur Afrikanistik, Band 21. Berlin: Dietrich Reimer.
+
+Image 3
+A section of the Swahili Wikipedia page on \AS{أُتَمَدُونِ} (\textit{utamaduni}, culture), converted using \textbf{Andika!} conventions - see the section Spelling conventions.
+
+Image 4
+A copy of the first few verses from a manuscript written by Sheikh Yahya himself, giving a transcription of Bajuni fishing songs. (See: Donnelly, K and Omar, YA (1982): Structure and association in Bajuni fishing songs. In: \textit{Genres, Forms, Meanings: Essays in African Oral Literature}, edited by Veronika Görög-Karady, JASO Occasional Papers 1, Oxford.) The Arabic script in this manuscript differs in a number of minor respects from the one in the Omar/Frankl paper. The Roman conversion in this case uses various diacritics to reconcile the manuscript's representation of the Bajuni dialect with standard orthography. This close transcription (like the default standard transcription) is generated automatically, and can be made the default. Further converters can be set up to reflect other transcription conventions.
+
+Image 5
+A copy of verses 3-5 of: Harries, L (1967): \textit{Utenzi wa Mkunumbi. A Swahili Potlatch – The Poem about Mkunumbi}. Nairobi: East African Literature Bureau. This is one of the few books of Swahili classical poetry to include the text in Arabic script alongside the Roman transcription, in this case a photocopy of a copy of the original manuscript made by Sheikh Yahya. The Arabic script in this manuscript is less well-adapted to Swahili - for instance, \textit{o} is not used consistently. The Roman transcription is Harries' own - a generated close transcription might be:
+
+% http://texblog.org/2013/02/27/on-paragraphs-in-texlatex/
+\hangindent=3cm  % controls the amount of indentation from left (positive value) or right (negative value).
+\hangafter=0  % controls the number of full-width lines before/after changing the indent (\hangindent) - a positive number produces full-width lines at the beginning, whereas a negative number produces them at the end. 0 means we want them all indented, including the first line.
+\T{
+dōla mbili ziliwāna * shikuwe nā simba mbawāna\\
+kamaṯezo kushindāna * mṯāna nalayliyā\\
+zikiṯimu siku ṯāṯu * shikuwe kaṯaka wāṯu\\
+kuṯukuwa chāke kiṯu * nḡūbe kay nunuliyā\\
+kaṯiya ngūbe ndiyāni * mema āsiyu lahāni\\
+simba shı̄ kabaı̄ni * mpāni ngūbe mmuyā
+}\normalfont
+
+
+\section{Typing Swahili in Arabic script}
+
+
+
+The main aim of Andika! is to enable Swahili manuscripts in Arabic script to be transcribed digitally in Arabic script - see the section Typesetting poetry. (A second aim, enabling Arabic script to be used easily for current-day writing of Swahili, is covered in the section Spelling conventions. Round-trip conversion between Arabic and Roman scripts is a useful by-product of these two aims, and is covered in the Arabic to Roman and Roman to Arabic sections.)
+
+The keyboard layout proposed here should enable most historical manuscripts to be transliterated letter-for-letter, and since it uses a standard keyboard, and links the Arabic letters to their Roman equivalents, it is easy to start using immediately.
+Initial requirements
+
+It is assumed that you have a computer running Ubuntu, and are broadly familiar with how to use it. Ubuntu is a GNU/Linux distribution launched by a South African, Mark Shuttleworth, and the name is cognate with Swahili\AS{أُوتُ} (\textit{utu}, humanity).
+
+If you are not currently using Ubuntu, an easy way to get started is to run it from inside Microsoft Windows, using Wubi (Windows-based Ubuntu Installer). Detailed information is available in the Wubi Guide.
+
+It is assumed that you are using the KDE desktop environment, and the instructions here apply to that. Similar options, however, are available if you are using other desktops such as GNOME or Unity. If you wish to use KDE as your own desktop environment, just install the kubuntu-desktop package in Ubuntu.
+
+It is assumed that you are familiar with the basic conventions of the Arabic alphabet (eg the different letter-shapes).
+Install a font
+
+In order to see the Arabic script properly, your computer must be able to access a font that includes Arabic letterforms (glyphs). Many fonts nowadays will include some Arabic glyphs, but their attractiveness and coverage varies widely - for instance, many fonts do not include \AS{پ} (p) or \AS{ڠ} (g). If you are seeing squares or boxes in the Arabic script, the reason is that the font you are using is missing glyphs.
+
+The best font option currently is Scheherazade, created by Bob Hallissy and Jonathan Kew. To get the most recent version, download ScheherazadeRegOT-1.005.zip from this page, and unzip it. Then double-click the file ScheherazadeRegOT.ttf to install the font on your computer. In Ubuntu, it will be installed into /usr/local/share/fonts/.
+
+
+\section{Accessing the keyboard}
+
+The Swahili keyboard layout is already available in Ubuntu, but it needs to be updated (because the existing one is based on initial work I did some time ago), and then activated.
+Update the keyboard layout
+
+Download this revised Swahili keyboard layout.
+
+Navigate to where you saved it, and then open a terminal and type:
+sudo cp tz /usr/share/X11/xkb/symbols/
+Activate the keyboard layout
+
+Click on K → Settings → System Settings:
+
+In the settings dialogues, click on Input Devices → Keyboard:
+
+On the Layouts tab, tick Configure layouts, and then click Add:
+
+Fill in the pop-up dialogue as shown, and then click OK:
+It should also be possible in the future to access the layout from Swahili (Kenya) too.
+
+Once the new layout is showing in the dialogue, click Apply to exit:
+
+You should now see an additional marker in the system tray at the bottom right of your screen:
+This shows that the UK English keyboard is the one currently in operation. Click on this, and it will change to:
+showing that the Swahili keyboard is now operational. You can also switch between the two keyboards by pressing Ctrl+Alt+k.
+
+
+\section{Using the keyboard}
+
+You can now use the Swahili layout to type Swahili in Arabic script.
+Layout conventions
+
+The complete Swahili layout is shown below (with thanks to Wikimedia for the layout image):
+
+(Note that this layout can be easily changed if it does not suit your needs - a section on how to do this will be added later.)
+
+To access the contents of each key, the Shift and AltGr keys are used in combination where appropriate, as shown below:
+
+The basic idea behind the keyboard layout is that the relevant Arabic letter will usually be produced by pressing the same key that produces the Roman letter. Additional points:
+
+    Digraphs such as dh gh th are placed on the same key as d g t, and accessed using the Shift key.
+    The digraph ch is accessed using the c key.
+    The digraph sh is accessed using the Shift+s keys.
+    The occasionally-used digraph kh is accessed using the x key.
+    Arabic letter variants are placed on the same key where possible, eg ي and ى.
+    Similar sets of Arabic letters are placed consistently - for instance, the pharyngeal consonants ص ض ط ظ are all accessed using the AltGr key, as are ؤ ئ, and the alveolar consonants ٹ ڈ used in Mombasa Swahili are accessed using the Shift+AltGr keys.
+    Long and short vowels are located on the same key, with the long vowel accessed by Shift, and the vowel-carrier accessed by AltGr, so for instance the u key produces ُ and Shift+u produces و, with AltGr+u producing ؤ.
+    The letters و ي are also available on y w for use when they represent semi-vowels.
+    Non-alphabetic characters from the UK keyboard are available via AltGr and AltGr+Shift.
+
+Configure LibreOffice
+
+In order to test the keyboard, we will configure LibreOffice to display text in Arabic script. Launch LibreOffice, and click on Tools → Options → Language Settings → Languages:
+Set CTL to Arabic (Oman) and tick Enabled for complex text layout (CTL). This will create two new buttons on the icon bar, one for left-to-right typing, and one for right-to-left typing:
+Click the RTL button to move the cursor over to the right-hand side of the line.
+
+There appears to be a bug in LibreOffice whereby the first letters you type in RTL mode do not use the font you have selected, but the system font (in my case, Deja Vu Sans), so the easiest thing to do is to type something first and then change the font. Switch to the Swahili keyboard (Ctrl+Alt+k), type m, i, Shift+i, m, i, and press Return. Then press Ctrl+a, choose Scheherazade as the font, and set the font size to something large, like 26. You should now have something like this:
+showing the Swahili word mimi (I, me) in Arabic script.
+
+Continue typing the following words, ignoring commas, and pressing Return after each one:
+s, a, Shift+a, s, a - sasa (now)
+k, Shift+. (period), w, e, Shift+e, l, i - kweli (truly)
+l, u, Shift+u, Shift+g, a - lugha (language)
+n, Shift+n, o, Shift+o, m, b, e - ng'ombe (cattle)
+AltGr+a, u, m, e, f, i, Shift+i, k, a - umefika (you have arrived)
+
+You should now have something like this:
+Other LibreOffice settings
+
+On this site, the Arabic font has purposely been made quite large, so that the details of the text can be seen. You may wish to make the font size smaller. In Arabic, where vowel signs are only rarely used, reading the text is possible at quite small font sizes. In Swahili, however, the vowel signs are essential, so the same reductions in font size are not possible (I find 15pt to be the level at which legibility begins to be impaired, but your eyes might be better than mine!). In typesetting poetry, of course, the lines are short, and accuracy is improved by having a large font.
+
+Some of the vowel signs (eg an e under a word-final ي) can get hidden below the visible window of the line, so it is often useful to set the line-spacing of the LibreOffice document to 1.5: Ctrl+a, then click on Format → Paragraph, select 1.5 linee under Line spacing, and then click OK.
+
+Number-handling when using the Swahili keyboard will depend on the settings under Tools → Options → Language Settings → Complex Text Layout . If you wish to use both Arabic-Indic numerals (on the numeral keys) and Western-Arabic numerals (AltGr+numeral), ensure Arabic or System is chosen here. The other two settings will convert Western-Arabic numerals to their Arabic-Indic equivalents.
+
+
+\section{Fonts}
+
+
+
+There are a couple of dozen Arabic fonts available in the packages fonts-kacst and fonts-arabeyes, but virtually all of these fonts have been designed for Arabic only, and need characters added to them before they are useable with Swahili.
+
+The only fonts that will work properly with Swahili at the time of writing are Scheherazade (Bob Hallissy and Jonathan Kew), Amiri (Khaled Hosny), and the fonts from the PakType project (of which perhaps Tehreer is the most attractive). All of these are in the Naskh style.
+
+The main stylistic differences between Scheherazade and Amiri are that Amiri contains all the Arabic presentation forms (character combinations), making for more attractive text. For instance, Amiri \AS{وَلِتُمئَِ} (\textit{walitumia}, they used), compared to Scheherazade \AS{وَلِتُمئَِ}, has the letters \textit{ltm} combined in one ligature.
+
+However, Amiri places all the vowels at the same height from the main letter, eg \AS{كُبٗرٖيشَ} (\textit{kuboresha}, to boost) compared to Scheherazade \AS{كُبٗرٖيشَ}, and \AS{وَنَسَيَانْسِ} (\textit{wanasayansi}, scientists) compared to Scheherazade \AS{وَنَسيَانْسِ}. This can lead to the upper vowels from the current line of text colliding with the lower vowels from the previous line, so Amiri may be more appropriate for use with text that is not fully vocalised.
+
+To allow some variation in the fonts used for Swahili, I have adapted one of the Arabeyes fonts (a Kufic one, Granada) to add the characters necessary for it to be used for Swahili - I am grateful to Khaled Hosny for his advice here, but it should be noted that the responsibility for any infelicities caused to this very attractive font is mine alone! The hacked version of the font is available as GranadaKD. It is used as the title font in the sample of poetry in the Typesetting poetry section, and you will need to install this font if you want the titles to display properly.
+
+Regarding the font to be used for close transliteration, note that the readability of diacritics (or even whther they are displayed at all) depends crucially on the font - not all will be capable of showing all diacritics, or placing them in the right location, so if something is not looking right, try using a different font. The font used here for close transliteration is Linux Biolinum O, which is in the fonts-linuxlibertine package.
+
+
+\section{Spelling conventions}
+
+The spelling conventions suggested here for current-day Swahili reflect those developed by Marehemu Mu'allim Sheikh Yahya Ali Omar, and used in various manuscripts he wrote, along with the principles set out in the academic article he wrote in collaboration with PJL Frankl. This section sets out the main elements of my interpretation of these source, giving various examples. I would be happy to hear from anyone who has any comments on the conventions. 
+
+Word segmentation is as for current-day Swahili in Roman script. This means that items such as لَ زَ يَ نَ na, ya, za, la are written separately from the following word, even though in manuscripts they may be written attached to that word.
+
+All short vowels are marked. Although short vowels are usually omitted in Arabic, this is inadvisable in Swahili because of the different structure of the language, and also because Swahili has 5 vowels instead of 3.
+
+The penultimate syllable of a word has its stress/length marked by writing it with a long vowel. ا is used for a, ي for e and i, and و for o and u. (The short vowels a, i, u may be omitted when they occur before a long vowel, eg ساسَ instead of سَاسَ (sasa, now), but this is not recommended.) This also helps to delimit individual words in the Arabic script.
+
+Initial vowels use the vowel-carriers أ (a, o, u) or إ (e, i), eg أَنَسٖيمَ ﴾anasema, he is speaking﴿, أُڠَالِ (ugali, porridge), إِذِينِ (idhini, permission).
+
+The order of typing is: vowel carrier, then short vowel, then long vowel (if applicable).
+
+Word-final vowel sequences [1] are written using vowel-carriers. ئ is used when the first vowel of the word-final sequence is e or i: كُپٗكٖئَ (kupokea, to receive), كُتِئَ (kutia, to place). ؤ is used when the first vowel of the word-final sequence is o or u: كُپٗؤَ (kupoa, to cool), كُسُڠُؤَ (kusugua, to rub). Note that in these instances, there is no need to add a long vowel for the penultimate syllable - thus كُپٖئَ (kupea, to sweep), and not كُپٖيئَ, and كُتٗؤَ (kutoa, to produce), and not كُتٗوؤَ. When the first vowel of the word-final sequence is a, ء (hamza) preceded by ا is used to carry the vowel: مَفَاءَ (mafaa, usefulness), تَاءِ (tai, vulture), بَاءٗ (bao, plank)
+
+Word-internal vowel sequences\footnote{The marking of vowel sequences using hamza is handled in just one page of the Omar/Frankl paper (Appendix B: The Hamza in Swahili Arabic script). I have expanded on the principles set out there in an attempt to remove any ambiguities.} use ئ as the vowel-carrier when the second vowel of the word-internal sequence is e or i: شَئِيرِ (shairi, poetry), كِئِينِ (kiini, pith), كُئِيتَ (kuita, to call). When the second vowel of the word-internal sequence is o or u, ؤ is the vowel-carrier: شَؤُورِ (shauri, advice), مٖؤُوپٖ (meupe, white [class 6]), كُؤٗونَ (kuona, to see). Where a is the second vowel of the word-internal sequence, the vowel-carrier is ئ if the first vowel is e, i, eg ڤِئَازِ (viazi, potatoes), and ؤ if the first vowel is o, u, eg كُؤَنْدِيكَ (kuandika, to write). In the sequence aa, the vowel-carrier أ is used: مَأَنْدِيشِ (maandishi, manuscripts). Note that in these instances, in contrast to word-final vowel sequences, a long vowel is written for the penultimate syllable where appropriate.
+
+Arabic letters in loanwords should ideally use the original Arabic letter, but where that is not appropriate they can be written as an Arabic transliteration of the Roman letter, eg ذ instead of ض or ظ. Note that the Roman to Arabic converter will always do this, since the standard Swahili Roman orthography does not preserve these distinctions.
+
+
+\section{Vowels}
+
+
+\section{Consonants}
+
+
+\section{Comparison}
+
+
+
+This section sets out a comparison between the systems in Sheikh Yahya's manuscripts, the Omar/Frankl paper, and Andika!. The comparison is summarised in the table below.
+Feature 	Manuscripts 	Paper 	Andika!
+Sakani is marked on long vowels 	c 	x 	x
+All short vowels are marked 	c 	x 	c
+Sakani on consonants denotes syllabicity only 	x 	c 	x
+Distinction between syllabicity and prenasalisation 	c 	c 	x
+Sakani on long vowels
+
+In Sheikh Yahya's manuscripts, ي و carry a sakani when used to mark length/stress in the penultimate syllable, eg مَزِيْوَ (maziwa, milk). However, in the Omar/Frankl article, sakani is not used here ﴾eg مَزيوَ). The suggested spelling in Andika! reflects this (though there is nothing to stop users marking sakani if they wish, and it is possible to choose this as an option in the Roman to Arabic converter).
+Marking short vowels
+
+In Sheikh Yahya's manuscripts, all short vowels are marked, but the Omar/Frankl paper proposed that marking these is unnecessary in certain situations:
+
+    If the short (unstressed, non-penultimate) vowel they represent is identical to a preceding short vowel. For example, in ثَمنين (thamanini, eighty) the second a is omitted because it is preceded by an a (fataha).
+    If the short vowel they represent is identical to a preceding or following long/stressed (penultimate) vowel represented by ي و ا. For example, in ثَمنين (thamanini, eighty) the last i is omitted because it is preceded by ي, and in ذهابُ (dhahabu, gold) the first a is omitted because it is followed by ا.
+    Where all the vowels in a word are identical, except for length/stress. For example: تپكاز (tapakaza, scatter), فكير (fikiri, think), شكور (shukuru, give thanks).
+
+However, the suggested spelling convention in Andika!, as in Sheikh Yahya's own manuscripts, is that all short vowels are marked, thus: شُكُورُ - فِكِيرِ - تَپَكَازَ - ذَهَابُ - ثَمَنِينِ. There are a few practical reasons for this:
+
+Short e, o need to be marked in nearly all cases anyway, since the Arabic script has no way otherwise of distinguishing ي meaning i from ي meaning e, or و meaning o from و meaning u.
+
+Omitting short vowel marks may conceivably save time when writing, once the rules above are mastered, but this is unlikely to apply when typing - it is probably faster simply to type more or less what would be typed when using the Roman script, including short vowels.
+
+The omission of short vowels means that transliteration into Roman script would require post-editing to add vowels. Even if automating the application of the above rules to avoid this were possible, it is likely that the resulting system would be cumbersome.
+
+Sakani on consonants
+
+Arabic sukun marks the absence of a vowel after a consonant. In Sheikh Yahya's manuscripts, sakani is used consistently for this purpose (alongside its use on long vowels). Thus: أُنَڤْيٗوٖيزَ (unavyoweza, how you can), كْوَ (kwa, to, by, for). Its most common occurrence is on a nasal before another consonant: أِنْڠَوَ (ingawa, although), نْجٖيمَ (njema, good).
+
+Its use on nasals means that sakani can also denote syllabicity, and in the Omar/Frankl paper, its function appears to be limited solely to that. The aim again was most likely to limit the number of diacritics in the text. The suggested convention in Andika!, however, is to follow the manuscript practice, and use sakani on the first consonant of multi-consonant clusters. In case some users feel that this leads to clutter, an option is added in the Roman to Arabic converter to turn it off.
+Distinction between syllabicity and prenasalisation
+
+Although the Roman orthography does not distinguish these two sounds, both Sheikh Yahya's manuscripts and the Omar/Frankl paper make a distinction between a syllabic nasal followed by a voiced plosive (eg m̩b) and a prenasalised voiced plosive (eg nɓ). The former is written with a preceding ْم, and the latter with a preceding ن, as in مْبَيَ (mbaya, bad [Class1]) compared to نبَايَ (mbaya, bad [Class 9]).
+
+Andika! will of course allow this distinction to be made in the Arabic script should a writer wish to do so. However, the Roman to Arabic converter cannot do this (since the distinction is not reflected in the standard orthography), and will always convert mb to مْب, so automatically-converted text will need post-editing to reflect this distinction.
+
+
+\section{Convert Arabic to Roman script}
+
+This section provides tools to convert Swahili text in Arabic script into Roman script.
+
+Please note that it is a good idea to check any output given here before re-using it in other contexts. Andika! is a work in progress, and improvements can still be made.
+
+This tool is intended for chunks of text, which can be typed or pasted into the input box.
+
+Short samples of Swahili in Arabic script (two from Wikipedia, one from a manuscript poem) are given on the Samples for testing tab to enable instant testing of the conversion by pasting them into the box.
+
+Input is truncated to 900 characters, but if your text is longer than this all you need to do is convert it in chunks. If you have large amounts of text to convert, you may find it easier to use the offline converter (currently being tested).
+
+Since Arabic does not have capital letters, capitals (other than most sentence-intial capitals) need to be added by hand to the output.
+When converting from Arabic to Roman script, Firefox's spellchecker will underline every word in the Arabic script entry area. To avoid this, turn off as-you-type spellchecking: select Edit → Preferences → Advanced, and on the General tab under Browsing, untick Check my spelling as I type.
+
+
+\section{Convert Roman to Arabic script}
+
+
+
+This section provides tools to convert Swahili text in Roman script into Arabic script.
+
+Please note that it is a good idea to check any output given here before re-using it in other contexts. Andika! is a work in progress, and improvements can still be made.
+General notes
+
+The default is to show sakani (sukun) on a consonant where it does not have an accompanying vowel (eg kwa, kuboreshwa, sayansi). This can be changed by ticking Do not show sakani (sukun) on consonants - then no sakani will be shown.
+
+The default is to show numerals in Western-Arabic form (1234567890). This can be changed by ticking Convert numerals to Arabic-Indic forms - then numerals will be shown as ١٢٣٤٥٦٧٨٩٠.
+
+Some writers use sakani on و and ي when used as long vowels in the penultimate syllable. The default is not to show this, but this can be changed by ticking Show sakani (sukun) on و and ي as long vowels
+
+Andika! is not a translator - non-Swahili words are simply transliterated letter-for-letter from Roman script into Arabic script. English c is transliterated as ڮ, and x as كْس. Examples: Shrewsbury شْرٖوسبُري, Creative Commons License ڮرٖئَتِيڤٖ ڮٗممٗنْس لِڮٖنْسٖ. A sakani (sukun) is used where it would occur in Swahili (depending on the settings above), but is not applied elsewhere.
+
+Andika! is not a spelling or punctuation corrector - any errors in the text entered will be carried over into the transliteration.
+The conversion may contain lines with out-of-sequence words if the source contains a mixture of Swahili and another language with letters that do not occur in the standard Swahili Roman orthography (the Swahili will be converted to RTL Arabic script, but the non-Swahili letters will be passed through as LTR Roman script). The transliteration equivalents chosen here mean that line continuity is not a problem where the "other language" is English. However, be aware that problems may occur if the "other language" is French, German, or something else.
+
+This tool is intended for chunks of text, which can be typed or pasted into the input box. The output can then be cut and pasted into documents (see the LibreOffice tab in the Swahili keyboard section).
+
+Two short samples of Swahili in Roman script from Wikipedia are given on the Samples for testing tab to enable instant testing of the conversion by pasting them into the box.
+
+Input is truncated to 900 characters, but if your text is longer than this all you need to do is convert it in chunks. If you have large amounts of text to convert, you may find it easier to use the offline converter (currently being tested).
+
+Note that the converter will always use the "commonest" Arabic letter. For instance, it will convert dh to ذ instead of to ض or ظ, which might be the original Arabic letter in the word. There is no way around this, since the standard Swahili Roman orthography does not preserve these distinctions, and the only option in such cases is to edit the output afterwards.
+
+\subsection{Convert a webpage}
+
+Although this tool should work on most webpages, most testing has been done with Wikipedia pages.
+
+While there should be no problems with the main text of the webpage, some peripheral "page furniture" (eg menus, lists of links, etc) may or may not be converted properly.
+
+Only a subset of characters are allowed in the web address: alphanumeric characters (a-z, 0-9), full-stops (.), hyphens (-), underscores (\_), single quotes ('), colons (:) and slashes (/).
+
+Non-existent web-addresses will produce a blank conversion page.
+
+The initial http:// can be omitted from the web address if desired.
+
+Links on the converted page will go to unconverted (Roman script) pages. If you wish to convert a large number of pages, you may find it easier to use the offline converter (currently being tested).
+
+
+\section{Typesetting poetry}
+
+The prime aim of Andika! is to facilitate the production of digital versions of classical Swahili manuscripts, and this section highlights one approach to handling traditional poetry. My main interest is تٖينْزِ (tenzi, ballads), so the tools currently focus on that format, but they could be further developed to meet different requirements. Samples of input and output are shown here, and the process is summarised, but these are not (currently) online tools - to use them you need to download Andika! and install a variety of other software on your own PC.
+
+The first step is to transcribe the manuscript using the Swahili keyboard - see the Input tab. This input is then imported into a database, where various annotations can be added to individual words. A transcription is supplied automatically, and an English translation can be added. The imported text can then be output in a number of formats allowing for both print and online publication - see the Output tab.
+
+A sample layout of part of أُتٖينْزِ وَ ڤِيتَ ڤِكُؤُ (Utenzi wa Vita Vikuu, The Ballad of the Great Battle) is given below. (Click to see a full-sized copy.) The manuscript is in the SOAS collection, and this extract containing stanzas 138-147 is taken letter-for-letter from a copy of the manuscript.
+
+The storage of the poem contents in a database allows a number of extra tools to be used in analysing the poem - see the Analysis tab. These include: various word frequency lists (from which a variety of glossaries can be produced), concordances, n-grams, etc.
+
+
+\subsection{Input}
+Format of the input file
+
+تٖينْزِ (tenzi, ballads) consist of quatrains of 8-syllable lines rhyming aaab, where the b rhyme is Va, and is maintained throughout the ballad. Because the lines are short, they are often written two to a manuscript line, with a space dividing them, so each quatrain takes up two manuscript lines. تٖينْزِ (tenzi) which have been printed in Roman script usually print the four lines one after the other, so that the quatrain format is more obvious.
+
+The input file is a LibreOffice document (odt format) where the text of the ballad is transcribed letter-for-letter in a layout reflecting the manuscript procedure - every two lines of the quatrain are written to one line of the file, but they are separated by an asterisk (AltGr+Shift+8 on the Swahili keyboard) instead of space. Each quatrain is separated by a blank line. The input file for the extract from أُتٖينْزِ وَ ڤِيتَ ڤِكُؤُ (Utenzi wa Vita Vikuu) is shown below, and is available in odt format, and also in pdf format.
+
+This input layout may not suit all requirements - for instance, you may prefer to have each line of the quatrain on its own line, or for the quatrains to be numbered, or for the input file to be in text format. Changes in the input routines to handle these would be easy to implement
+
+Items such as لَ زَ يَ نَ na, ya, za, la are written according to the manuscript rendering. In most instances they are attached to the word, or (in the case of non-connecting letters like زَ) written very close to it. But where there is a larger space in the manuscript between the item and the following word, the item has been written separately from that word in the transcription/transliteration. This leads to some inconsistency in the transcription/transliteration, but seeks to reflect the manuscript more faithfully.
+Import and annotation of the input file
+
+Once the manuscript is transcribed into the input file, a PHP script is run to import it into a PostgreSQL database table. During this import, the Arabic text is transliterated into standard Swahili Roman orthography, and also into a close transliteration which more closely reflects the Arabic letters.
+
+Another script is then run to segment each line of the ballad into words, which allows each word to have various annotations added to it in the database. Various annotations could be accommodated as necessary, but the ones currently handled are:
+
+Adjustments to the transliterated lemma - for instance, to reflect its scansion, eg miliḥi (salt) instead of مِلْحِ (milḥi, salt).
+
+Segmentation of the transliteration to reflect standard Swahili word boundaries, eg na ẖubuzi (and bread) instead of نَخُبُوزِ (naẖubuzi, and bread).
+
+A note on the meaning or reference of the lemma.
+
+The root of the word, eg fik for akafika (he arrived), or klm for katakalama (he spoke) - this is useful when constructing frequency lists. Many of the roots could be filled in automatically by looking up the word against a digital Swahili dictionary.
+
+An English translation of the line, anchored to the first word of each line.
+
+Variant readings of the word in different manuscript versions.
+
+The first few words of the extract as they appear in this database format are shown below:
+
+Currently, the database table is edited using an interface like phpPgAdmin or SQLWorkbench/J , but it would also be possible to create a web-based interface for this purpose.
+
+Once the annotations have been added to the database import of the input file, it can be output in a variety of formats by running other PHP scripts - see the Output tab.
+
+\subsection{Output}
+
+Output to pdf
+
+Output to pdf (which would be the most likely format for print publication) uses XeTeX, a development of the typesetting system TeX, to produce an intermediate tex file, which is then used to generate a pdf file. The creation of the tex file is handled by a PHP script, so in practice the only reason for opening it would be to make one-off edits.
+
+Notes to the text are printed at the bottom of each page, with the footnote number marked in red in the text. Interpolated letters or other textual emendations are marked in blue.
+
+It would be relatively simple to adjust the layout and contents of the pdf output to meet other requirements.
+
+Output to html
+
+Output to html (the most likely format for web publication) is shown in this html file. In this version, the transcription colour has been changed to blue to fit in with the site livery, and lemma adjustments are in purple. Notes are displayed in a pop-up when the mouse hovers over the note number (to dismiss the note, click on it and move the mouse away). An example of how variant readings might be handled is given in stanza 142 - hovering over the word with a grey background pops up the variant. (Note that this variant reading is an invention for the purposes of this example.)
+
+A paging mechanism could be added to allow easy navigation through a long text.
+
+Again, it would be relatively simple to adjust the layout and contents of the html output to meet other requirements, and indeed, a variant is shown below.
+
+Output to odt
+
+Output to odt (LibreOffice format) is only indirectly supported - it is handled by generating a standalone html file. In this, notes to the text are printed at the end of the entire text, with the endnote number marked in red in the text. The endnote number in the text is a link to the endnote, and the number beside the endnote itself is a link back to the relevant word in the text. To create an odt document from this, open the file in the default KDE web-browser Rekonq (see below), and copy the text using Ctrl+A and Crtl+C. Then open a new LibreOffice document and use Ctrl+V to paste the text into that. When saving the file in LibreOffice, select odt as the save format.
+
+Note that, of the browsers available on Linux, Rekonq provides the best results. It retains all the formatting (fonts, colours, etc), and converts the endnote links in the resulting odt file so that they can be accessed by pressing Ctrl while clicking. Chromium retains the formatting, but does not convert the links, so that they still point to the original html file, and clicking them opens that file in a browser. Chromium also converts some spaces to non-breaking spaces, which are marked with a grey background - to get rid of this, select Tools → Options → LibreOffice Writer → Formatting Aids, untick Non-breaking spaces, and press OK. Firefox is worst of all, losing all the formatting, and leaving the links unconverted. Note that even with Rekonq and Chromium, though, you will need to select all the endnotes in LibreOffice and press the LTR button in order to align them to the left.
+
+You can also open the html file in LibreOffice itself, but in this case you will not be able to save it as an odt file. 
+
+
+
+
+\newpage
+
+\appendix
+\renewcommand{\appendixpagename}{Appendix 1: Installing \textit{Andika!}}
+
+\appendixpage
+
+(I am grateful to Natalie Kontny at the Centre for the Study of Manuscript Cultures, University of Hamburg, for road-testing these instructions and helping to write them up.)
+
+These instructions are based on Ubuntu 14.04, both as the main operating system and as a virtual guest on Apple OS X. In either case, your desktop, real or virtual, needs to be working properly and to have network access so that you can download the additional software required.
+
+You may ask why there is so much to install.  The answer is that \textbf{Andika!} does not reinvent the wheel -- rather, it tries to combine already-existing best-of-breed software to do new things.  In the future, I may produce a virtual machine image with all this software already installed, but at this early stage of development it is more reliable to do things manually.  It is worth pointing out that by going through this process (a) you will learn quite a bit about managing your desktop, and (b) you will have installed some very powerful software that will be very useful to you for work other than that with \textbf{Andika!}
+
+\section{Preliminaries}
+
+Most of the install is carried out by typing commands into a terminal: in KDE, go to \textbf{K \textrightarrow\ System \textrightarrow\ Konsole}; in Unity, press \textbf{Ctrl + Alt + T}.  This is because this method is much faster and more succinct than explaining how to point-and-click through various dialogue boxes.
+
+Unless otherwise indicated, lines in\\
+\texttt{monospaced font}\\
+are commands that should be typed into the terminal.  
+
+Unless otherwise indicated, all commands should be activated by pressing \textbf{Return} at the end of the command.
+
+The symbol $\hookrightarrow$ at the beginning of a line says that it is a continuation of the previous command, and therefore \textbf{Return} should only be pressed after this line.
+
+Keys separated by + should be pressed simultaneously.  Thus \textbf{Ctrl+W} means ``press the Ctrl key at the same time as the W key''.
+
+When a command starts with \textit{sudo}, you will be asked to type in your superuser (administrative) password, which you should have been asked to set up when you first installed Ubuntu, before the command is allowed to proceed.  Note that you will get no feedback from the password entry (the line will stay blank) until you press \textbf{Return}.
+
+If at any point the system suggests adding other packages (called \textit{dependencies}) based on the ones you are installing, accept those suggestions by pressing \textbf{Y} or typing \textbf{yes}.
+
+Unless otherwise indicated, it is assumed that all commands are run from the suggested base directory of the \textbf{Andika!} software, \textit{/var/www/andika} -- see Section \ref{s:download}.
+
+
+\section{Download \textit{Andika!}}
+\label{s:download}
+
+\subsection{Option 1: snapshot}
+
+The \textbf{Andika!} software is available from the ThinkOpen website.  One option is to download an archive by going to \textit{http://thinkopen.co.uk/git/andika}, and clicking on the \textbf{ZIP} or \textbf{TAR} buttons.  Save the archive to your home directory (\textit{/home/USER} -- USER here stands for the username you set up when you installed Ubuntu; replace it with your actual username) and uncompress it to create an \textit{andika} folder there:
+
+\verb|cd ~|\\
+(The tilde is a shortcut for \textit{/home/USER}.)
+
+For a zip file:\\
+\verb|unzip -q andika-xxxxx.zip|\\
+The xxxxx segment needs to be replaced with whatever is in the name of the file you download.
+
+For a tar file:\\
+\verb|tar -xf andika-xxxxx.tar|\\
+The xxxxx segment needs to be replaced with whatever is in the name of the file you download.
+
+\subsection{Option 2: easy update}
+
+The above option will give you a snapshot of \textbf{Andika!} at the time you downloaded it, but since \textbf{Andika!} is a work-in-progress, it is likely to change.  A better option, if you want to keep up with any changes, is to use Git, which keeps track of changes made to files.  Many free and open-source software projects use Git to ensure that software developers and users can always access the most up-to-date version of the software.
+
+Git is installed by default in Ubuntu.  You can run:\\
+\verb|sudo apt-get install git|\\
+if you want to check that it is installed.  If so, you should get a message saying:\\
+\verb|git is already the newest version|\\
+If not, it will be installed.
+
+Move to your home directory (\textit{/home/USER} -- USER here stands for the username you set up when you installed Ubuntu; replace it with your actual username) and download \textbf{Andika!}:
+
+\verb|cd ~|\\
+(The tilde is a shortcut for \textit{/home/USER})
+
+\verb|git clone http://thinkopen.co.uk/git/enabled/andika|
+
+After a minute or two, \textbf{Andika!} will be downloaded into an \textit{andika} folder in \textit{/home/USER}.
+
+In the future, if you want to update \textbf{Andika!}, you can open a terminal in the \textit{andika} folder and type:\\
+\verb|git pull|\\
+Git will automatically update those parts of \textbf{Andika!} which have been changed.
+
+\subsection{Move the \textit{andika} directory}
+
+We are going to move the working directory for \textbf{Andika!} to a location which will allow you to access a local copy of the website pages (\textit{kevindonnelly.org.uk/swahili}) should you wish (see Section \ref{s:localaccess} below).
+
+\verb|sudo mv andika /var/www/|\\
+(note the final slash)
+
+Change permissions so that you can access the new location (by default, ordinary users are not allowed to access the \textit{/var/www} tree):
+
+\verb|sudo chown -R USER.USER /var/www/andika|\\
+Remember, USER here stands for your username, which you set up when you installed Ubuntu.  For instance, here I would type:\\
+\verb|sudo chown -R kevin.kevin /var/www/andika|
+
+Set up a link from your \textit{/home/USER} directory to the \textit{/var/www/andika} directory:
+
+\verb|ln -s /var/www/andika andika|
+
+If you go to your home directory in a file manager (in KDE \textbf{K \textrightarrow\ System \textrightarrow\ Dolphin}; in Unity, the second icon on the left-hand side, the one with a file on it), you will see an entry for \textit{andika}.  If you click this, it will actually take you to \textit{/var/www/andika}.  This makes access to the directory quicker and easier.
+
+Move into the andika directory for the rest of the installation:
+
+\verb|cd andika|
+
+You can check the layout of the directories and files by listing them:
+
+\verb|ls|
+
+
+\section{Install fonts}
+\label{s:fonts}
+
+\verb|sudo apt-get install fonts-sil-scheherazade|
+
+Scheherazade is a Naskh-style font with a particularly wide range of glyphs.  Note that the package version is less recent than the version on the SIL website,\footnote{\url{http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=Scheherazade}} which includes some glyphs that are not in the package version.
+
+Use your desktop's font installation utility to install the GranadaKD font in \textit{andika/fonts} -- this is a Kufic-style font that has been adapted by me to add the characters necessary for it to be used for Swahili.
+
+
+\section{Set up a new language and keyboard}
+\label{s:keyboard}
+
+\verb|sudo cp tz /usr/share/X11/xkb/symbols/|
+
+Use your desktop's keyboard utility to set up an alternative language choice -- Swahili (Tanzania) -- to use the \textit{tz} file.
+
+
+\section{LibreOffice}
+\label{s:libreoffice}
+
+LibreOffice, installed by default in Ubuntu, is a suite of office software (word processor, spreadsheet, presentation program, etc).  The version used here is 4.2.4.2.
+
+\subsection{Configure the word-processor}
+
+Open LibreOffice Writer.
+
+Click on \textbf{Tools \textrightarrow\ Options \textrightarrow\ Language Settings \textrightarrow\ Languages}.
+
+Tick \textit{Enabled for complex text layout (CTL)}.
+
+Set \textit{CTL} to \textbf{Arabic (Oman)}.
+
+Click on \textbf{Tools \textrightarrow\ Options \textrightarrow\ Language Settings \textrightarrow\ Complex Text Layout}.
+
+Tick \textbf{Visual} under \textit{Cursor control}.
+
+Two new buttons should appear in the Formatting toolbar, one for left-to-right typing, and one for right-to-left typing.  If the buttons do not appear, right-click on the toolbar, and under \textit{Visible buttons} select \textbf{LTR} and \textbf{RTL}.
+
+Shortcuts are \textbf{Ctrl+Shift+A} for LTR and \textbf{Ctrl+Shift+D} for RTL.
+
+\subsection{Install a template}
+
+Andika! includes in \textit{andika/libreoffice} a template (\textit{andika.ott}) where styles for Swahili in Arabic script, Swahili in Roman script (standard spelling or close transcription) and translation are already set up.  Installing it is optional.
+
+Copy the file into one of the templates directories as listed in \textbf{Tools \textrightarrow\ Options \textrightarrow\ LibreOffice \textrightarrow\ Paths \textrightarrow\ Templates}.  The usual one would be \textit{/home/USER/.config/libreoffice/4/user/template}, but you can put it in another directory provided you add that to the path list -- highlight the \textit{Templates} entry, then click \textit{Edit} and \textit{Add}.
+
+To use the template, select \textbf{File \textrightarrow\ New \textrightarrow\ Templates \textrightarrow\ andika}.  To set this as your default template (nothing has been changed from the stock default apart from the addition of the three extra styles), select \textbf{File \textrightarrow\ Templates \textrightarrow\ Manage}, click on \textbf{andika}, and then click \textbf{Set as default}.
+
+To use the styles, place the cursor in the line you wish to format, press \textbf{F11} to open the \textit{Styles and Formatting} list, and select the relevant style by double-clicking on its name -- the new styles are at the bottom of the list.   \textit{Arabic} style is RTL, Scheherazade 24pt.  \textit{Roman} style is LTR, right-justified, Liberation Serif 12pt.  \textit{Translation} style is LTR, right-justified, Liberation Serif 12pt, italic.  Obviously, the appropriate writing system (Arabic or Roman) also has to be selected on the keyboard before typing.
+
+
+\section{PHP}
+
+PHP is a computer language which is used to convert text from one script to the other, and also for the import and export of text to and from the database.
+
+\subsection{Install PHP}
+
+\verb|sudo apt-get install php5, php5-cli|
+
+To test the install:\\
+\verb|php --version|\\
+(note: two dashes)\\
+You should get a message giving details about the version of PHP you've just installed.
+
+\subsection{Configure PHP}
+
+\verb|sudo nano /etc/php5/cli/php.ini|
+
+This command will open the system file \textit{php.ini} in a basic editor called \textit{nano}, where you have to change some settings. Press \textbf{Ctrl+W}, then type\\
+\verb|max_execution_time|\\
+into the searchline and press \textbf{Return}. Change the line to read:
+
+\verb|max_execution_time = 300|
+
+Again press \textbf{Ctrl+W}, type\\
+\verb|error_reporting| \\
+and press \textbf{Return}. Change that line to: 
+
+\verb|error_reporting = E_ALL & ~E_NOTICE & ~E_DEPRECATED|
+
+A bit lower down from that (you can scroll down using the mouse), there is a \textit{display\_errors} line. Change it to read: 
+
+\verb|display_errors = On|
+
+Below that there is a \textit{log\_errors} line. Change it to read: 
+
+\verb|log_errors = Off|
+
+To save the file, press \textbf{Ctrl+X}, then press \textbf{Y} to confirm you want to save the modifications, and press \textbf{Return} to close the file.
+
+
+\section{PostgreSQL}
+
+PostgreSQL is a database which is used to store the words of the text for editing and enhancement.
+
+\subsection{Install PostgreSQL}
+
+\verb|sudo apt-get install postgresql, postgresql-client, postgresql-common, postgresql-contrib,|
+$\hookrightarrow$ \verb|php5-pgsql|
+
+To test the install:\\
+\verb|psql|
+
+You should get a message saying a database named after your username does not exist.
+
+\subsection{Set up a database user}
+\label{ss:dbuser}
+
+\verb|sudo -i|
+
+\verb|su - postgres|\\
+(note the space on either side of the dash)
+
+\verb|createuser -P -s -e dbmaster|
+
+This will create a database user called \textit{dbmaster}.  (if you don't like that username, choose something else.) You will be asked to enter a password - note that you will get no feedback (the line will stay blank).  Press \textbf{Return} and you will be asked to enter the password again.  Press \textbf{Return} and you should get a messages saying that the ROLE (user) \textit{dbmaster} has been created.
+
+\verb|exit|\\
+to cease being the postgres user.
+
+\verb|exit|\\
+to cease being the superuser.
+
+\subsection{Set Andika! to use your database user}
+
+\verb|nano andika/config.php|
+
+Change:\\
+\verb|user=kevin password=kevindbs|\\
+to read:\\
+\verb|user=dbmaster password=yourpassword|\\
+and save the file (\textbf{Ctrl+X, Y, Return}).
+
+\subsection{Create the andika database}
+
+\textbf{Andika!} comes with a test database in \textit{andika/db/andika.sql}.
+
+\verb|psql -U dbmaster -d andika < db/andika.sql|
+
+\subsection{Connect to the \textit{andika} database}
+\label{ss:connect}
+
+\verb|psql -U dbmaster -d andika|
+
+The prompt should change to \textit{andika=\#}. 
+
+\verb|\dt|\\
+(= display tables)
+
+This should show a list with 18 rows, each representing a database table holding poem information in the \textit{andika} database.  To look at the table for the poem \textit{kiswahili}:
+
+\verb|select * from kiswahili;|\\
+(note: the semicolon at the end is an integral part of the command)
+
+This will show everything in the \textit{kiswahili} table. To see something more detailed:
+
+\verb|select * from kiswahili where stanza=1 order by stanza, pos;|\\
+(again, remember the semicolon at the end)
+
+You should get a listing of the \textit{vipande} in the first stanza of the poem \textit{Kiswahili} from the Abdulkadir and Frankl paper, in order of \textit{kipande}.
+
+\verb|\q|\\
+to exit \textit{psql}.
+
+
+\section{Database interfaces}
+
+To make it easier to read and edit the contents of the PostgreSQL database, it is best to install an interface.  Two of these will be installed, each differing in their capabilities.  The first is a web-based interface called phpPgAdmin, which in turn requires a webserver (Apache) to be installed.  The second interface is called SQL Workbench, and it requires a computing language called Java to be installed.
+
+\subsection{phpPgAdmin}
+
+\subsubsection{Install Apache}
+\label{ss:apache}
+
+\verb|sudo apt-get install apache2 apache2-utils phppgadmin|
+
+Start the webserver:\\
+\verb|sudo service apache2 start|
+
+Test the install - open a web browser (preferably Firefox) and type:\\
+\verb|http://localhost|\\
+into the address bar. A page should open, telling you that Apache is installed and working.
+
+\subsubsection{Configure phpPgAdmin}
+
+Activate the phpPgAdmin configuration file:
+
+\verb|sudo cp /etc/apache2/conf.d/phppgadmin /etc/apache2/conf-enabled/phppgadmin.conf|
+
+Restart the webserver:\\
+\verb|sudo service apache2 restart|
+
+In the web browser, type\\
+\verb|http://localhost/phppgadmin|\\
+into the address bar.
+
+You should see the phpPgAdmin homepage. On the left side there is a list of servers (in this case, there should only be one listed). Click on \textbf{PostgreSQL} and you should get a login form.
+
+Fill in the username and password for PostgreSQL (which you created in Section \ref{ss:dbuser}) and click \textbf{Login}.
+
+\subsubsection{Test phpPgAdmin}
+\label{ss:testppa}
+
+In the left-hand panel you should get a list of your current databases -- there should only be two: \textit{andika} and the system database \textit{postgres}. (The right-hand panel shows you the same two databases.)
+
+Click the \textbf{+} beside \textit{andika} in the left-hand panel.  It should open to show \textit{Schemas, public, Tables} etc. Click on \textbf{Tables}. The right-hand panel should now show you all the tables inside the \textit{andika} database, similar to what you saw in Section \ref{ss:connect}.
+
+Click on \textbf{kiswahili} and you will see the data fields in that table. To see the contents of the database you can click on the \textbf{Browse} button.
+
+To see the data fields of each item in more detail, click on the \textbf{Edit} button beside each row in the table -- changes to the fields can be made and saved here.
+
+To make a database query, click the \textit{SQL} link at the top right of the phpPgAdmin window.  This will open another smaller window.  In the large textbox, type:\\
+\verb|select * from kiswahili where stanza=1 order by stanza, pos;|\\
+(again, remember the semicolon at the end)
+
+Click Execute, and in the first window you should see a listing of the \textit{vipande} in the first stanza of the poem, in order of \textit{kipande}, as you did in Section \ref{ss:connect}.  In this case, though, the contents are a lot easier to read!
+
+
+\subsection{SQL Workbench}
+
+\subsubsection{Install Java}
+
+Add a new software repository:\\
+\verb|sudo add-apt-repository ppa:webupd8team/java|
+
+Update the software lists to include software from the new repository:\\
+\verb|sudo apt-get update|
+
+Install the Java installer:\\
+\verb|sudo apt-get install oracle-java8-installer|
+
+This installs a script that then downloads and installs Oracle Java 8 -- it may therefore take a few minutes.  To test the install:\\
+\verb|java -version|\\
+This should return some text telling you that the Java version is 1.8.0.
+
+Set the Java environment variables:\\
+\verb|sudo apt-get install oracle-java8-set-default|
+
+\subsubsection{Install JDBC}
+\label{ss:jdbc}
+
+JDBC (Java DataBase Connector) is a driver which will allow SQL Workbench to connect to the PostgreSQL database.
+
+\verb|sudo apt-get install libpostgresql-jdbc-java|
+
+\subsubsection{Install SQL Workbench}
+
+Go to the website \textit{sql-workbench.net}, click on the link for \textit{Build 116} (or whatever the current stable version is), and download the generic package.  Save it in the \textit{andika} directory.
+
+Unzip the download:\\
+\verb|unzip -q Workbench-Build116.zip|
+
+Make the launch script executable:\\
+\verb|chmod +x Workbench-Build116/sqlworkbench.sh|
+
+Launch SQL Workbench:\\
+\verb|Workbench-Build116/sqlworkbench.sh|
+
+If you wish, you can make a desktop shortcut or menu entry to make launching SQL Workbench easier.
+
+\subsubsection{Configure SQL Workbench}
+
+A \textit{Select Connection Profile} box should come up. Click the drop-down arrow on the \textit{Driver} line and select \textit{PostgreSQL}. Click \textbf{Yes}, when you're asked whether you want to edit the driver definition. On the \textit{Manage Drivers} pop-up, click on the folder icon and navigate to \textit{/usr/share/java/postgresql-jdbc4-9.2.jar} (which you installed in Section \ref{ss:jdbc}.  Click \textbf{OK}.
+
+Check that the \textit{URL} line reads \textit{jdbc:postgresql://localhost:5432/andika} -- if not, edit it to make it so. Enter your PostgreSQL username and password (Section \ref{ss:dbuser}), and then click \textbf{OK}.  You should get a connecting message.
+
+\subsubsection{Test SQL Workbench}
+
+The main screen consists of a top pane where you type database queries, and a bottom pane where the results will appear. 
+
+In the top pane, type:\\
+\verb|select * from kiswahili where stanza=1 order by stanza, pos;|\\
+(remember: the semicolon at the end is an integral part of the command)
+
+Move the cursor somewhere in the middle of that query and press \textbf{Ctrl+Return}.  In the bottom pane, you should see a listing of the \textit{vipande} in the first stanza of the poem, in order of \textit{kipande}, as you did in Sections \ref{ss:connect} and \ref{ss:testppa}.
+
+The main benefit of SQL Workbench compared to phpPgAdmin is that a result set can be directly edited -- this makes it easy to add data.  To try this, select one of the cells under the \textit{english} column, type something in, and press \textbf{Return}.  A yellow diamond will appear in the leftmost column, showing that the record has been edited but not saved yet. To save it you need to click the disk icon, or select \textbf{Data \textrightarrow\ Save changes to database} and click \textbf{OK} when asked to confirm.
+
+You can check the change was made by running the same query in phpPgAdmin's SQL box (see Section \ref{ss:testppa}) :\\
+\verb|select * from kiswahili where stanza=1 order by stanza, pos;|
+
+To delete the change, click the cell in SQL Workbench, press \textbf{Backspace}, and then save as before.
+
+
+\section{LaTeX}
+
+LaTeX is a typesetting system that is capable of creating very complex layouts.  It is used in \textbf{Andika!} to provide attractive output.
+
+\verb|sudo apt-get install texlive texlive-xetex texlive-generic-extra texlive-humanities|\\
+$\hookrightarrow$ \verb|texlive-lang-arabic texlive-latex-extra kile|
+
+These packages will take a good few minutes to download and install.
+
+
+\section{Access the \textit{Andika!} website locally}
+\label{s:localaccess}
+
+Although not essential to use \textbf{Andika!}, it may be useful to have access to a local copy of the website (\textit{kevindonnelly.org.uk/swahili}).  
+
+First, tell the webserver installed earlier (Apache -- see Section \ref{ss:apache}) where to find the\textbf{ Andika!} webpages.
+
+Open a configuration file:\\
+\verb|sudo nano /etc/apache2/sites-available/andika|
+
+Type the following lines into the file:\\
+\vspace{-0.5cm}  % get rid of the excess space before the verbatim environment
+\begin{verbatim}
+<VirtualHost *:80>
+ServerName andika
+DocumentRoot /var/www/andika/
+</VirtualHost>
+\end{verbatim}
+
+Save and exit the configuration file:\\
+\textbf{Ctrl+W, Y, Return}
+
+Activate the configuration:\\
+\verb|sudo a2ensite andika|
+
+Then tell your web browser that the new website is on your machine, so it doesn't have to look for it on the web.
+
+Open a configuration file:\\
+\verb|sudo nano /etc/hosts|
+
+After the line:\\
+\verb|127.0.0.1	localhost|\\
+add the following line:\\
+\verb|127.0.0.1	andika|
+
+Save and exit the configuration file:\\
+\textbf{Ctrl+W, Y, Return}
+
+Restart the webserver:\\
+\verb|sudo service apache2 restart|
+
+In a web browser, type:\\
+\verb|http://andika|\\
+into the address bar.  You should get the \textbf{Andika!} website loading from the files on your hard disk (in \textit{/var/www/andika}), instead of from the internet.
+
+
+
+\newpage
+
+
+[NOTE: Not relevant to \textbf{Andika!} Kept here temporarily as a table template.]
+
+\begin{table}[h]
+\newcommand{\mc}[3]{\multicolumn{#1}{#2}{#3}}
+\begin{tabularx}{\textwidth}{>{\hsize=0.5\hsize}X>{\hsize=1.5\hsize}X>{\hsize=0.5\hsize}X>{\hsize=1.5\hsize}X} 
+\mc{2}{l}{\textbf{Tenses, moods, aspects}} & \mc{2}{l}{\textbf{Verbal extensions}} \\
+\hline\noalign{\smallskip}
+\textit{comp} & completive \textbf{-sha-, -isha-, -kwisha-} & \textit{assoc} & associative extension \textbf{\mbox{-an-}} \\ 
+\textit{conc} & concessional \textbf{-nga-} & \textit{caus} & causative extension \textbf{-iz-, -ez-, -ish-, -esh-, -y-} \\ 
+\textit{cond} & conditional \textbf{-nge-} & \textit{cont} & continuative extension \textbf{-t-} \\ 
+\textit{cons} & consecutive \textbf{-ka-} & \textit{conv} & conversive extension \textbf{-u-, -o-} \\ 
+\textit{curr} & current present \textbf{-na-} & \textit{inc} & inceptive extension \textbf{-p-} \\ 
+\textit{fut} & future \textbf{-ta-} & \textit{pass} & passive extension \textbf{-w-} \\ 
+\textit{hab} & habitual \textbf{hu-} & \textit{pos} & positional extension \textbf{-m-} \\ 
+\textit{hypo} & hypothetical \textbf{-japo-} & \textit{prep} & prepositional extension \textbf{\mbox{-i-}, -e-} \\ 
+\textit{imp} & imperative \textbf{-e} & \textit{stat} & stative extension \textbf{-ik-, \mbox{-ek-}} \\ 
+\textit{gen} & general present \textbf{-a-} &  &  \\ 
+\textit{part} & participial \textbf{-ki-} &  &  \\ 
+\textit{past} & past \textbf{-li-} &  &  \\ 
+\textit{perf} & perfective \textbf{-me-} &  &  \\ 
+\textit{subj} & subjunctive \textbf{-e} &  &  \\ 
+\textit{supp} & suppositional \textbf{-ngali-} & &
+\end{tabularx}
+\caption{Tense and extension tags}
+\label{table:verbtags}
+\end{table}
+
+
+
+\end{document}

@@ -12,8 +12,8 @@ For centuries, Swahili was written in Arabic script, and hundreds of manuscripts
 All the tools are available under the Free Software Foundation's <a href="http://www.fsf.org/licenses/gpl.html">General Public License</a> and <a href="http://www.fsf.org/licenses/agpl.html">Affero General Public License</a>, which means they can be adapted and extended as required by the user, subject to the same license being used for any new version thus created.
 </p>
 
-<p>The code for the <strong>Andika! </strong> tools (including these webpages) is available from the <a href="http://thinkopen.co.uk/git/">Git repositories at ThinkOpen</a>.  If you have <a href="http://git-scm.com/">Git</a> installed, you can download the files by running: <strong><em>git clone http://thinkopen.co.uk/git/andika</em></strong><span>.
-If not, you can download the files by going to <a href="http://thinkopen.co.uk/git/">http://thinkopen.co.uk/git/</a>, clicking on <em>andika</em>, then on <em>tree</em>, and finally on <em>snapshot</em>.
+<p>The code for the <strong>Andika! </strong> tools (including these webpages) is available from the <a href="http://thinkopen.co.uk/git/">Git repositories at ThinkOpen</a>.  If you have <a href="http://git-scm.com/">Git</a> installed, you can download the files by running: <strong><em>git clone http://thinkopen.co.uk/git/enabled/andika</em></strong><span>.
+If not, you can download the files by going to <a href="http://thinkopen.co.uk/git/andika">http://thinkopen.co.uk/git/andika</a>, and then clicking on either ZIP or TAR.
 
 <hr />
 
