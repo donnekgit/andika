@@ -21,7 +21,7 @@ xkb_symbols "swa"
 	// 1 zain (z), 2 jeh (zh), 3 zah (zw)
 	key <AB02> { [Arabic_khah] };
 	// 1 khah (kh)
-	key <AB03> { [Arabic_tcheh, Arabic_keheh, U06AE] };
+	key <AB03> { [Arabic_tcheh, U063B, U06AE] };
 	// 1 tcheh (ch), 2 keheh with two dots above (kj), 3 kaf with three dots below (kj)
 	key <AB04> { [Arabic_veh] };
 	// 1 veh (v)
