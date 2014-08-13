@@ -117,7 +117,7 @@ foreach ($poemlines as $poemline)
     {
         fwrite($fp, "\\textarabic{".$poemline."} & ");
         fwrite($fp, "\\textarabic{".convert_numbers($stanza_no)."} \\\\* \n");  // * disallows a pagebreak after this row
-        fwrite($fp, "\T{".$roman."} & \T{".$stanza_no."}\\\\* \n");
+        fwrite($fp, "\Tr{".$roman."} & \Tr{".$stanza_no."}\\\\* \n");
         //fwrite($fp, "\S{".$standard."} & \S{".$stanza_no."} \\\\ \n");
     }
     elseif ($output=="txt")

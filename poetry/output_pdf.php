@@ -60,7 +60,7 @@ while ($row=pg_fetch_object($sql))
             // Edit the close transcription.
             if ($row_w->lemma!='')  // handle lemma fixes (eg epenthetic vowels)- replace the text with the lemma entry
             {
-                $close_word=preg_replace("/#(.*)#/", "}\I{\$1}\T{", $row_w->lemma);
+                $close_word=preg_replace("/#(.*)#/", "}\I{\$1}\Tr{", $row_w->lemma);
             }
             
             if ($particle!='')  // handle segmentation - separate particles from the word they are attached to, and connect them when they are not attached (~)
@@ -124,7 +124,7 @@ while ($row=pg_fetch_object($sql))
             {
                 fwrite($fp, " \\\\* \n");  
             }
-            fwrite($fp, "\T{".$b_close."} & \\T{".$a_close."} & \\\\* \n");
+            fwrite($fp, "\Tr{".$b_close."} & \\Tr{".$a_close."} & \\\\* \n");
             fwrite($fp, "\multicolumn{2}{r}{\S{".$a_standard." * ".$b_standard."}} & \S{".$row->stanza.$this_kip."} \\\\* \n");
             fwrite($fp, "\multicolumn{2}{r}{\E{".$a_english." ".$b_english."}} & \\\\[2mm] \n");
            

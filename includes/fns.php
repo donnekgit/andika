@@ -209,7 +209,6 @@ function close_trans($text)
 	$text=preg_replace("/a?L/", "ā", $text);
 	//$text=preg_replace("/La/", "ā", $text);  // (Mkunumbi)
 
-
 	//$text=preg_replace("/ch/", "U+0074U+02B2", $text);  // t+palatal (Bajuni)
 	//$text=preg_replace("/dh/", "U+007AU+0331", $text);  // z+underline (Bajuni)
 		
@@ -226,7 +225,8 @@ function close_trans($text)
 	
 	$text=preg_replace("/gh/", "ḡ", $text);  // (Mkunumbi)
 	$text=preg_replace("/U\+06CF/", "wU+0331", $text);  // waw+dot > w̱
-	
+    //$text=preg_replace("/U\+06CF/", "w", $text);  // waw+dot > w (Bajuni)
+
 	$text=preg_replace("/U\+0679/", "tU+0327", $text);  // alveolar t > t+cedilla 
 	$text=preg_replace("/U\+0688/", "dU+0327", $text);  // alveolar d > d+cedilla
 	

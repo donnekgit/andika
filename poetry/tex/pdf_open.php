@@ -17,7 +17,7 @@ else  // ... otherwise, just use the name of the poem as the title.
     $prepped=prep_rom(trim($poem));
     $translit=rom2ar($prepped);
     $name=html_entity_decode(preg_replace("/U\+([0-9A-F]{4,5})/", "&#x\\1;", $translit), ENT_NOQUOTES, 'UTF-8');
-    $title="\begin{longtable}{r}\n\\textfarsi{{$name}} \\\\*\n\T{{$poem}} \\\\\n\cdashline{1-1}[1pt/3pt] \\\\\n[6mm]\n\\end{longtable}\n\n";
+    $title="\begin{longtable}{r}\n\\textfarsi{{$name}} \\\\*\n\Tr{{$poem}} \\\\\n\cdashline{1-1}[1pt/3pt] \\\\\n[6mm]\n\\end{longtable}\n\n";
 }
 fwrite($fp, $title);
 fwrite($fp, "\n");

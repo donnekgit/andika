@@ -23,7 +23,7 @@ To allow some variation in the fonts used for Swahili, I have adapted one of the
 </p>
 
 <p>
-Regarding the font to be used for close transliteration, note that the readability of diacritics (or even whther they are displayed at all) depends crucially on the font - not all will be capable of showing all diacritics, or placing them in the right location, so if something is not looking right, try using a different font.  The font used here for close transliteration is Linux Biolinum O, which is in the <em>fonts-linuxlibertine</em> package. 
+Regarding the font to be used for close transliteration, note that the readability of diacritics (or even whether they are displayed at all) depends crucially on the font - not all will be capable of showing all diacritics, or placing them in the right location, so if something is not looking right, try using a different font.  The font used here for close transliteration is Linux Biolinum O, which is in the <em>fonts-linuxlibertine</em> package. 
 </p>
 
 </div><!--- End Introduction tab content --->

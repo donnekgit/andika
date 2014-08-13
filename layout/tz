@@ -43,7 +43,6 @@ xkb_symbols "swa"
     // -------------
 	key <AC01> { [Arabic_fatha, Arabic_alef, Arabic_hamzaonalef, Arabic_fathatan] };
 	// 1 fatha (short a), 2 alef (long a), 3 alef with hamza above (vowelcarrier), 4 fathatan
-	key <AC02> { [Arabic_seen, Arabic_sheen, Arabic_sad] };
     // 1 seen (s), 2 sheen (sh), 3 sad (sw)
 	key <AC03> { [Arabic_dal, Arabic_thal, Arabic_dad, Arabic_ddal] };
 	// 1 dal (d), 2 thal (dh), 3 dad (dw), 4 ddal (alveolar dr)
@@ -66,7 +65,9 @@ xkb_symbols "swa"
     key <BKSL> { [NoSymbol, NoSymbol, numbersign, asciitilde] };
     // 3 UK hash, 4 UK tilde
     
-// QWER row
+    // -------------
+    // QWER row
+    // -------------
 	key <AD01> { [Arabic_qaf] }; 
 	// 1 qaf (q)
 	key <AD02> { [Arabic_waw, NoSymbol, Arabic_hamzaonwaw, U06CF] };
@@ -92,7 +93,9 @@ xkb_symbols "swa"
 	key <AD12> { [NoSymbol, NoSymbol, bracketright, braceright] };
     // 3 UK closing square bracket, 4 UK closing brace
     
+    // -------------
     // numeral row
+    // -------------
 	key <AE01> { [Arabic_1, NoSymbol, KP_1, exclam] };
 	// 1 digit 1, 3 UK digit 1, 4 UK exclamation mark
 	key <AE02> { [Arabic_2, NoSymbol, KP_2, quotedbl] };

@@ -1,0 +1,596 @@
+\chapter{Installing \textbf{Andika!}}
+\renewcommand{\thesection}{A/\arabic{section}}  % redefine the section numbering
+\setcounter{section}{0}  % reset counter
+\label{appA}
+
+\begin{quotation}
+\noindent I am grateful to Natalie Kontny, Student Assistant on Project C07, \textbf{The Place of Swahili Manuscripts in East African Collections},  at the University of Hamburg's Centre for the Study of Manuscript Cultures,\footnote{\url{www.manuscript-cultures.uni-hamburg.de/Projekte_e.html}} for road-testing these instructions and helping to write them up.
+\end{quotation}
+
+These instructions are based on Ubuntu 14.04, both as the main operating system and as a virtual guest on Apple OS X. In either case, your desktop, real or virtual, needs to be working properly and to have network access so that you can download the additional software required.
+
+Users who simply wish to be able to type Swahili in a word-processor need not go through the full installation procedure in this appendix.  They only need to do A/2.1, move into the unzipped download, and then follow A/3-5.
+
+The full installation procedure needs to be carried out by users who wish to transcribe, edit and annotate Swahili documents in Arabic script, providing Roman equivalents as well.  The reason there is so much to install is that \textbf{Andika!} does not reinvent the wheel -- rather, it tries to combine already-existing best-of-breed software to do new things.
+
+
+\section{Preliminaries}
+
+Ubuntu comes by default with a desktop called Unity,\footnote{unity.ubuntu.com} but a variety of different Linux desktops are available, of which perhaps the most popular is KDE.\footnote{kde.org}  (If you want to install KDE, open a terminal as shown below and type: \verb|sudo apt-get install kubuntu-desktop|.  This will take some time to complete.  Log out of Unity, and select KDE at the login screen.)
+
+Most of the install is carried out by typing commands into a terminal: in KDE, go to \textbf{K \textrightarrow\ System \textrightarrow\ Konsole}; in Unity, press \textbf{Ctrl + Alt + T}.  This is because this method is much faster and more succinct than explaining how to point-and-click through various dialogue boxes.
+
+Unless otherwise indicated, lines in\\
+\texttt{monospaced font}\\
+are commands that should be typed into the terminal.  
+
+Unless otherwise indicated, all commands should be activated by pressing \textbf{Return} at the end of the command.
+
+The symbol $\hookrightarrow$ at the beginning of a line means that it is a continuation of the previous command, and therefore \textbf{Return} should only be pressed after this line.
+
+Keys separated by + should be pressed simultaneously.  Thus \textbf{Ctrl+X} means ``press the Ctrl key at the same time as the X key''.
+
+When a command starts with \textit{sudo}, you will be asked to type in your superuser (administrative) password, which you should have been asked to set up when you first installed Ubuntu, before the command is allowed to proceed.  Note that you will get no feedback from the password entry (the line will stay blank) until you press \textbf{Return}.
+
+If at any point the system suggests adding other packages (called \textit{dependencies}) based on the ones you are installing, accept those suggestions by pressing \textbf{Y} or typing \textbf{yes}.
+
+Unless otherwise indicated, it is assumed that all commands are run from the suggested base directory of the \textbf{Andika!} software, \textit{/var/www/andika} -- see Section \ref{s:download}.
+
+
+\section{Download \textit{Andika!}}
+\label{s:download}
+
+\subsection{Option 1: snapshot}
+\label{s:snapshot}
+
+The \textbf{Andika!} software is available from the ThinkOpen website.  The second-best option is to download an archive by going to \textit{http://thinkopen.co.uk/git/andika}, and clicking on the \textbf{ZIP} or \textbf{TAR} buttons.  Save the archive to your home directory (\textit{/home/USER} -- USER here stands for the username you set up when you installed Ubuntu; replace it with your actual username) and uncompress it to create an \textit{andika} folder there:
+
+\verb|cd ~|\\
+(The tilde is a shortcut for \textit{/home/USER}.)
+
+For a zip file:\\
+\verb|unzip -q andika-xxxxxx.zip|\\
+The xxxxxx segment needs to be replaced with whatever is in the name of the file you download.
+
+For a tar file:\\
+\verb|tar -xf andika-xxxxxx.tar|\\
+The xxxxxx segment needs to be replaced with whatever is in the name of the file you download.
+
+\subsection{Option 2: easy update}
+\label{s:gitclone}
+
+The above option will give you a snapshot of \textbf{Andika!} at the time you downloaded it, but since \textbf{Andika!} is a work-in-progress, it is likely to change.  A much better option, if you want to keep up with any changes, is to use Git, which keeps track of changes made to files.  Many free and open-source software projects use Git to ensure that software developers and users can always access the most up-to-date version of the software they are working on or using.
+
+Git is installed by default in Ubuntu.  You can run:\\
+\verb|sudo apt-get install git|\\
+if you want to check that it is installed.  If so, you should get a message saying:\\
+\verb|git is already the newest version|\\
+If not, it will be installed.
+
+Move to your home directory (\textit{/home/USER} -- USER here stands for the username you set up when you installed Ubuntu; replace it with your actual username) and download \textbf{Andika!}:
+
+\verb|cd ~|\\
+(The tilde is a shortcut for \textit{/home/USER})
+
+\verb|git clone http://thinkopen.co.uk/git/enabled/andika|
+
+After a minute or two, \textbf{Andika!} will be downloaded into an \textit{andika} folder in \textit{/home/USER}.
+
+In the future, if you want to update \textbf{Andika!}, you can open a terminal in the \textit{andika} folder and type:\\
+\verb|git pull|\\
+Git will automatically update those parts of \textbf{Andika!} which have been changed.
+
+\subsection{Move the \textit{andika} directory}
+
+We are going to move the working directory for \textbf{Andika!} to a location which will allow you to access a local copy of the website pages (\textit{kevindonnelly.org.uk/swahili}) should you wish (see Section \ref{s:localaccess} below).
+
+\verb|sudo mv andika /var/www/|\\
+(note the final slash)
+
+Change permissions so that you can access the new location (by default, ordinary users are not allowed to access the \textit{/var/www} tree):
+
+\verb|sudo chown -R USER.USER /var/www/andika|\\
+Remember, USER here stands for your username, which you set up when you installed Ubuntu.  For instance, here I would type:\\
+\verb|sudo chown -R kevin.kevin /var/www/andika|
+
+Set up a link from your \textit{/home/USER} directory to the \textit{/var/www/andika} directory:
+
+\verb|ln -s /var/www/andika andika|
+
+If you go to your home directory in a file manager (in KDE \textbf{K \textrightarrow\ System \textrightarrow\ Dolphin}; in Unity, the second icon on the left-hand side, the one with a file on it), you will see an entry for \textit{andika}.  If you click this, it will actually take you to \textit{/var/www/andika}.  This makes access to the directory quicker and easier.
+
+Move into the andika directory for the rest of the installation:
+
+\verb|cd andika|
+
+You can check the layout of the directories and files by listing them:
+
+\verb|ls|
+
+
+\section{Install fonts}
+\label{s:fonts}
+
+A number of default fonts is used in printing the output from \textbf{Andika!}, and these need to be installed.
+
+The most important font, Scheherazade,\footnote{\url{scripts.sil.org/cms/scripts/page.php?item_id=Scheherazade}} created by Bob Hallissy and Jonathan Kew, is a Naskh-style font used for the Arabic text.  The version available by default from Ubuntu is somewhat old, so it is preferable to use SIL's own package collection to get the latest package.  SIL has a page with instructions on how to do this for the Unity desktop,\footnote{\url{packages.sil.org}} but as usual it is quicker to use the terminal.
+
+Fetch the authentication key:
+
+\verb|wget http://packages.sil.org/sil.gpg|
+
+Add the key:
+
+\verb|sudo apt-key add sil.gpg|
+
+Add the SIL repository to the list of repositories used by your Ubuntu install:
+
+\verb|sudo add-apt-repository "deb http://packages.sil.org/ubuntu trusty main"|
+
+If you are not using 14.04 (codenamed Trusty Tahir), change \textit{trusty} accordingly.  To find the codename of your version, use:\\
+\verb|lsb_release -sc|
+
+Update the package list:
+
+\verb|sudo apt-get update|
+
+Remove the authentication key:
+
+\verb|rm sil.gpg|
+
+We can now install all the fonts:
+
+\verb|sudo apt-get install fonts-sil-scheherazade fonts-hosny-amiri fonts-liberation|\\
+$\hookrightarrow$ \verb|fonts-linuxlibertine|
+
+Amiri,\footnote{\url{amirifont.org}} created by Khaled Hosny, is an alternate Naskh-style font -- it is not currently used in Andika!, but could be a possible alternative to Scheherazade -- see \Cref{s:sham}.
+
+Liberation Serif\footnote{\url{fedorahosted.org/liberation-fonts}} in the \textit{fonts-liberation} package is a tidy font used for the English translation in poetry.
+
+Linux Biolinum O\footnote{\url{linuxlibertine.org}} in the \textit{fonts-linuxlibertine} package is especially good at handling diacritics, so it is a good choice for a close transcription into Roman script.
+
+Use your desktop's font installation utility\footnote{In KDE, \textbf{K \textrightarrow\ System \textrightarrow\ System Settings \textrightarrow\ Font Management}.} to install the GranadaKD font in \textit{andika/fonts} -- this is a Kufic-style font from Arabeyes\footnote{\url{openfontlibrary.org/en/font/granada}} that has been adapted by me to add the characters necessary for it to be used for Swahili.  It is used in \textbf{Andika!} for poem titles.
+
+All of the fonts used by \textbf{Andika!} can be changed -- see \Cref{s:changefont}.
+
+\section{Set up a new language and keyboard}
+\label{s:keyboard}
+
+Move the keyboard definition file to the appropriate location.
+
+\verb|sudo cp layout/tz /usr/share/X11/xkb/symbols/|
+
+\subsection{Activate the new keyboard in KDE}
+\label{s:kbactivate}
+
+Click on \textbf{K} \textrightarrow\ \textbf{Settings} \textrightarrow\ \textbf{System Settings}.
+
+In the settings dialogue, click on \textbf{Input Devices} \textrightarrow\ \textbf{Keyboard}.
+
+On the \textit{Layouts} tab, tick \textbf{Configure layouts}, and then click \textbf{Add}.
+
+Fill in the pop-up dialogue as shown:\footnote{Swahili (Kenya) can be chosen instead of Swahili (Tanzania) if preferred.}
+
+\begin{figure}[h]
+\centering
+\includegraphics[keepaspectratio=true]{./images/kdelg.png}
+% kdelg.png: 518x266 pixel, 96dpi, 13.70x7.04 cm, bb=0 0 388 199
+\caption{Setting up the Swahili keyboard for KDE}
+\end{figure}
+
+Click \textbf{OK}, and then click \textbf{Apply} to exit.
+
+You should now see an additional marker in the system tray at the bottom right of your screen, which will be the abbreviation for the default language on your desktop.  For instance, if you have UK English as the default, you will see:
+
+\begin{figure}[h]
+\centering
+\includegraphics[keepaspectratio=true]{./images/gb.png}
+% gb.png: 107x29 pixel, 96dpi, 2.83x0.77 cm, bb=0 0 80 22
+\end{figure}
+
+Click on this, and it will change to:
+
+\begin{figure}[h]
+\centering
+\includegraphics[keepaspectratio=true]{./images/tz.png}
+% gb.png: 107x29 pixel, 96dpi, 2.83x0.77 cm, bb=0 0 80 22
+\end{figure}
+
+showing that the Swahili keyboard is now operational. 
+
+You can also switch between the two keyboards by pressing \textbf{Ctrl+Alt+K}.
+
+Close the \textit{System Settings} box.
+
+NOTE: If you change the keyboard to Swahili and then leave your machine for some time, it may power down the screen.  When you resume work, it will present a login box so that you can unlock the session.  Unfortunately, since you left the keyboard set to Swahili, it will only allow you to type Arabic glyphs, which means that you cannot type in your (Roman glyph) password!
+
+To deal with this situation, press \textbf{Crtl+Alt+F5} to get a terminal login.  Type your username and password to log in.
+
+Open the configuration file for the keyboard:\\
+\verb|nano ~/.kde/share/config/kxkbrc|
+
+Find the line:\\
+\verb|LayoutList=gb,tz|\\
+and change it to:\\
+\verb|LayoutList=gb|\\
+Save the file: \textbf{Ctrl+X, Y, Return}.  (The example here uses the UK English keyboard, \textit{gb} -- replace this with whatever your own default keyboard is).
+
+Press \textbf{Ctrl+Alt+F7} to return to the unlock screen.  Click the login box, and you should be able to login as normal.  However, you will need to re-add the Swahili keyboard as shown above.
+
+
+\section{LibreOffice}
+\label{s:libreoffice}
+
+LibreOffice, installed by default in Ubuntu, is a suite of office software (word processor, spreadsheet, presentation program, etc).  The version used here is 4.2.4.2.
+
+\subsection{Configure the word-processor}
+
+Open LibreOffice Writer.
+
+Click on \textbf{Tools \textrightarrow\ Options \textrightarrow\ Language Settings \textrightarrow\ Languages}.
+
+Under \textit{Default languages for documents}, tick \textbf{Complex text layout (CTL)}, and select \textbf{Arabic (Oman)} in the dropdown.  Click OK.
+
+Click on \textbf{Tools \textrightarrow\ Options \textrightarrow\ Language Settings \textrightarrow\ Complex Text Layout}.
+
+If you wish to use both Arabic-Indic numerals (on the numeral keys) and Western-Arabic numerals (AltGr+numeral), ensure Arabic or System is chosen here. The other two settings will convert Western-Arabic numerals to their Arabic-Indic equivalents.
+
+Tick \textbf{Visual} under \textit{Cursor control}, and then \textbf{OK}.
+
+Right-click on the toolbar, and under \textit{Visible buttons} select \textbf{LTR}.  Do the same to select \textbf{RTL}.  Two new buttons will now appear in the Formatting toolbar, one for left-to-right typing, and one for right-to-left typing.
+
+Shortcuts are \textbf{Ctrl+Shift+A} for LTR and \textbf{Ctrl+Shift+D} for RTL.
+
+\subsection{Install a template}
+
+Andika! includes in \textit{andika/libreoffice} a template (\textit{andika.ott}) where styles for Swahili in Arabic script, Swahili in Roman script (standard spelling or close transcription) and translation are already set up -- all these styles are right-justified.  Installing the template is optional, but it will make typing out Swahili poetry much simpler.
+
+Click on \textbf{File \textrightarrow\ Templates \textrightarrow\ Manage}.
+
+On the \textit{Documents} tab, double-click \textbf{My Templates} and then click \textbf{Import}.
+
+Navigate to \textit{andika/libreoffice/andika.ott} and click on it -- it should now be listed there as a template.
+
+If you want to set it as the default (nothing has been changed from the stock default apart from the addition of the three extra styles), click on it and then click \textbf{Set as default}.
+
+To use the template without setting it as default, select \textbf{File \textrightarrow\ New \textrightarrow\ Templates \textrightarrow\ andika}.
+
+Close the \textit{Templates} box, and then restart LibreOffice Writer.
+
+To use the styles, place the cursor in the line you wish to format, press \textbf{F11} to open the \textit{Styles and Formatting} list, and select the relevant style by double-clicking on its name -- the new styles are at the bottom of the list.
+
+\textit{Arabic} style is RTL, Scheherazade 24pt.  You may wish to make the font size smaller. In unvocalised Arabic, reading the text is possible at quite small font sizes. In Swahili, however, the vowel signs are essential, so the same reductions in font size are not possible.  In typesetting poetry, the lines are usually short, and accuracy is improved by having a large font size.
+
+\textit{Roman} style is LTR, right-justified, Liberation Serif 12pt.
+
+\textit{Translation} style is LTR, right-justified, Liberation Serif 12pt, italic.  
+
+Obviously, the appropriate writing system (Arabic or Roman) also has to be selected on the keyboard before typing (see \Cref{s:keyboard}).
+
+
+\section{PHP}
+
+PHP is a computer language which is used to convert text from one script to the other, and also for the import and export of text to and from the database.
+
+\subsection{Install PHP}
+
+\verb|sudo apt-get install php5, php5-cli|
+
+To test the install:\\
+\verb|php --version|\\
+(note: two dashes)\\
+You should get a message giving details about the version of PHP you've just installed.
+
+\subsection{Configure PHP}
+
+\verb|sudo nano /etc/php5/cli/php.ini|
+
+nano is a lightweight text editor.  Use the arrow keys on the keyboard to move around, and the Home and End keys to move to the beginning or end of a line.
+
+This command will open the system file \textit{php.ini} in a basic editor called \textit{nano}, where you have to change some settings. Press \textbf{Ctrl+W}, then type\\
+\verb|max_execution_time|\\
+into the searchline and press \textbf{Return}. Change the line to read:
+
+\verb|max_execution_time = 300|
+
+Again press \textbf{Ctrl+W}, type\\
+\verb|error_reporting| \\
+and press \textbf{Return}. Change that line to: 
+
+\verb|error_reporting = E_ALL & ~E_NOTICE & ~E_DEPRECATED|
+
+A bit lower down from that (you can scroll down using the mouse), there is a \textit{display\_errors} line. Change it to read: 
+
+\verb|display_errors = On|
+
+Below that there is a \textit{log\_errors} line. Change it to read: 
+
+\verb|log_errors = Off|
+
+To save the file, press \textbf{Ctrl+X}, then press \textbf{Y} to confirm you want to save the modifications, and press \textbf{Return} to close the file.
+
+
+\section{PostgreSQL}
+
+PostgreSQL is a database which is used to store the words of the text for editing and enhancement.
+
+
+\subsection{Install PostgreSQL}
+
+\verb|sudo apt-get install postgresql, postgresql-client, postgresql-common, postgresql-contrib,|
+$\hookrightarrow$ \verb|php5-pgsql|
+
+To test the install:\\
+\verb|psql|
+
+You should get an error message saying that the role named after your username does not exist.
+
+
+\subsection{Set up a database user}
+\label{ss:dbuser}
+
+\verb|sudo -i|
+
+The prompt will change to show that you are now \textit{root} (the superuser, or administrator).
+
+\verb|su - postgres|\\
+(note the space on either side of the dash)
+
+The prompt will change to show that you are now the \textit{postgres} master user.
+
+\verb|createuser -P -s -e dbmaster|
+
+This will create a database user called \textit{dbmaster}.  (if you don't like that username, choose something else.) You will be asked to enter a password - note that you will get no feedback (the line will stay blank).  Press \textbf{Return} and you will be asked to enter the password again.  Press \textbf{Return} and you should get a messages beginning \textit{CREATE ROLE}, meaning that the new user has been created.
+
+\verb|exit|\\
+to cease being the postgres user.
+
+\verb|exit|\\
+to cease being the superuser.
+
+
+\subsection{Set Andika! to use your database user}
+
+\verb|nano andika/config.php|
+
+Change:\\
+\verb|user=kevin password=kevindbs|\\
+to read:\\
+\verb|user=dbmaster password=yourpassword|\\
+and save the file (\textbf{Ctrl+X, Y, Return}).
+
+If you chose a username other than \textit{dbmaster}, use that instead.
+
+
+\subsection{Create the andika database}
+
+\verb|createdb -O dbmaster andika|
+
+This creates the \textit{andika} database, and makes the owner the new user you just created.  If you chose a username other than \textit{dbmaster}, use that instead.
+
+\textbf{Andika!} comes with starter data in \textit{andika/db/andika.sql}, which can be imported into the new database.
+
+\verb|psql -U dbmaster -d andika < db/andika.sql|
+
+If you chose a username other than \textit{dbmaster}, use that instead.
+
+
+\subsection{Connect to the \textit{andika} database}
+\label{ss:connect}
+
+\verb|psql -U dbmaster -d andika|
+
+The prompt should change to \textit{andika=\#}. 
+
+\verb|\dt|\\
+(= display tables)
+
+This should show a list with 18 rows, each representing a database table holding poem information in the \textit{andika} database.  To look at the table for the poem \textit{kiswahili}:
+
+\verb|select * from kiswahili;|\\
+(note: the semicolon at the end is an integral part of the command)
+
+This will show everything in the \textit{kiswahili} table.  Exit the data display and go back to psql:\\
+\verb|q|
+
+To see something more selective:
+
+\verb|select * from kiswahili where stanza=1 order by stanza, pos;|\\
+(again, remember the semicolon at the end)
+
+You should get a listing of the \textit{vipande} in the first stanza of the poem \textit{Kiswahili} from the Abdulkadir and Frankl paper, in order of \textit{kipande}.  Exit the data display and go back to psql:\\
+\verb|q|
+
+\verb|\q|\\
+to exit \textit{psql}.
+
+
+\section{Database interfaces}
+
+To make it easier to read and edit the contents of the PostgreSQL database, it is best to install an interface.  Two of these will be installed, each differing in their capabilities.  The first is a web-based interface called phpPgAdmin, which in turn requires a webserver (Apache) to be installed.  The second interface is called SQL Workbench, and it requires a computing language called Java to be installed.
+
+\subsection{phpPgAdmin}
+
+\subsubsection{Install Apache}
+\label{ss:apache}
+
+\verb|sudo apt-get install apache2 apache2-utils phppgadmin|
+
+Start the webserver:\\
+\verb|sudo service apache2 start|
+
+If you want to get rid of the (harmless) message \textit{Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the `ServerName' directive globally to suppress this message}, issue the following commands:\\
+\verb|echo "ServerName localhost" | sudo tee /etc/apache2/conf-available/servername.conf|\\
+\verb|sudo a2enconf servername|\\
+\verb|sudo service apache2 restart|
+
+Test the install -- open a web browser (preferably Firefox) and type:\\
+\verb|http://localhost|\\
+into the address bar. A page should open, telling you that Apache is installed and working.
+
+\subsubsection{Configure phpPgAdmin}
+
+Activate the phpPgAdmin configuration file:
+
+\verb|sudo cp /etc/apache2/conf.d/phppgadmin /etc/apache2/conf-enabled/phppgadmin.conf|
+
+Restart the webserver:\\
+\verb|sudo service apache2 restart|
+
+In the web browser, type\\
+\verb|http://localhost/phppgadmin|\\
+into the address bar.
+
+You should see the phpPgAdmin homepage. On the left side there is a list of servers (in this case, there should only be one listed). Click on \textbf{PostgreSQL} and you should get a login form.
+
+Fill in the username and password for PostgreSQL (which you created in \Cref{ss:dbuser}) and click \textbf{Login}.
+
+\subsubsection{Test phpPgAdmin}
+\label{ss:testppa}
+
+In the left-hand panel you should get a list of your current databases -- there should only be two: \textit{andika} and the system database \textit{postgres}. (The right-hand panel shows you the same two databases.)
+
+Click the \textbf{+} beside \textit{andika} in the left-hand panel.  It should open to show \textit{Schemas, public, Tables} etc. Click on \textbf{Tables}. The right-hand panel should now show you all the tables inside the \textit{andika} database, similar to what you saw in Section \ref{ss:connect}.
+
+Click on \textbf{kiswahili} and you will see the data fields in that table. To see the contents of the database you can click on the \textbf{Browse} button.
+
+To see the data fields of each item in more detail, click on the \textbf{Edit} button beside each row in the table -- changes to the fields can be made and saved here.
+
+To make a database query, click the \textit{SQL} link at the top right of the phpPgAdmin window.  This will open another smaller window.  In the large textbox, type:\\
+\verb|select * from kiswahili where stanza=1 order by stanza, pos;|\\
+(again, remember the semicolon at the end)
+
+Click Execute, and in the first window you should see a listing of the \textit{vipande} in the first stanza of the poem, in order of \textit{kipande}, as you did in Section \ref{ss:connect}.  In this case, though, the contents are a lot easier to read!
+
+
+\subsection{SQL Workbench}
+
+\subsubsection{Install Java}
+
+Add a new software repository:\\
+\verb|sudo add-apt-repository ppa:webupd8team/java|
+
+Update the software lists to include software from the new repository:\\
+\verb|sudo apt-get update|
+
+Install the Java installer:\\
+\verb|sudo apt-get install oracle-java8-installer|
+
+This installs a script that then downloads and installs Oracle Java 8 -- it may therefore take a few minutes.  To test the install:\\
+\verb|java -version|\\
+This should return some text telling you that the Java version is 1.8.0.
+
+Set the Java environment variables:\\
+\verb|sudo apt-get install oracle-java8-set-default|
+
+\subsubsection{Install JDBC}
+\label{ss:jdbc}
+
+JDBC (Java DataBase Connector) is a driver which will allow SQL Workbench to connect to the PostgreSQL database.
+
+\verb|sudo apt-get install libpostgresql-jdbc-java|
+
+\subsubsection{Install SQL Workbench}
+
+Create a directory to hold the files:\\
+\verb|mkdir sqlworkbench|
+
+Go to the website \textit{sql-workbench.net}, click on the link for \textit{Build 116} (or whatever the current stable version is), and download the generic package.  Save it in the \textit{andika} directory.
+
+Unzip the download into the new directory:\\
+\verb|unzip -q Workbench-Build116.zip -d sqlworkbench|
+
+Make the launch script executable:\\
+\verb|chmod +x sqlworkbench/sqlworkbench.sh|
+
+Launch SQL Workbench:\\
+\verb|sqlworkbench/sqlworkbench.sh|
+
+If you wish, you can make a desktop shortcut or menu entry to make launching SQL Workbench easier.
+
+\subsubsection{Configure SQL Workbench}
+
+A \textit{Select Connection Profile} box should come up. 
+
+Change \textit{New profile} to read \textbf{andika}.
+
+Click the drop-down arrow on the \textit{Driver} line and select \textit{PostgreSQL}. Click \textbf{Yes}, when you're asked whether you want to edit the driver definition.
+
+On the \textit{Manage Drivers} popup, click on the red \textit{postgresql} entry already there and then click X to delete it.  Click on the folder icon and navigate to \textit{/usr/share/java/postgresql-jdbc4-9.2.jar} (which you installed in Section \ref{ss:jdbc}.  Click \textbf{Open}, and then \textbf{OK}.
+
+Check that the \textit{URL} line reads \textit{jdbc:postgresql://localhost:5432/andika} -- if not, edit it to make it so. Enter your PostgreSQL username and password (Section \ref{ss:dbuser}), and then click \textbf{OK}.  You should get a connecting message.
+
+\subsubsection{Test SQL Workbench}
+
+The main screen consists of a top pane where you type database queries, and a bottom pane where the results will appear. 
+
+In the top pane, type:\\
+\verb|select * from kiswahili where stanza=1 order by stanza, pos;|\\
+(remember: the semicolon at the end is an integral part of the command)
+
+Move the cursor somewhere in the middle of that query and press \textbf{Ctrl+Return}.  In the bottom pane, you should see a listing of the \textit{vipande} in the first stanza of the poem, in order of \textit{kipande}, as you did in Sections \ref{ss:connect} and \ref{ss:testppa}.
+
+The main benefit of SQL Workbench compared to phpPgAdmin is that a result set can be directly edited -- this makes it easy to add data.  To try this, select one of the cells under the \textit{english} column, type something in, and press \textbf{Return}.  A yellow diamond will appear in the leftmost column, showing that the record has been edited but not saved yet. To save it you need to click the disk icon, or select \textbf{Data \textrightarrow\ Save changes to database} and click \textbf{OK} when asked to confirm.
+
+You can check the change was made by running the same query in phpPgAdmin's SQL box (see Section \ref{ss:testppa}) :\\
+\verb|select * from kiswahili where stanza=1 order by stanza, pos;|
+
+To delete the change, click the cell in SQL Workbench, press \textbf{Backspace} and then \textbf{Return}, and then save as before.
+
+Close SQL Workbench, clicking Yes to save the new \textit{andika} connection profile you have set up.
+
+
+\section{LaTeX}
+
+LaTeX is a typesetting system that is capable of creating very complex layouts.  It is used in \textbf{Andika!} to provide attractive output.
+
+\verb|sudo apt-get install texlive texlive-xetex texlive-generic-extra texlive-humanities|\\
+$\hookrightarrow$ \verb|texlive-lang-arabic texlive-latex-extra kile|
+
+These packages will take a good few minutes to download and install.
+
+
+\section{Access the \textit{Andika!} website locally}
+\label{s:localaccess}
+
+Although not essential to use \textbf{Andika!}, it may be useful to have access to a local copy of the website (\textit{kevindonnelly.org.uk/swahili}).  
+
+First, tell the webserver installed earlier (Apache -- see Section \ref{ss:apache}) where to find the\textbf{ Andika!} webpages.
+
+Open a configuration file:\\
+\verb|sudo nano /etc/apache2/sites-available/andika.conf|
+
+Type the following lines into the file:\\
+\vspace{-0.5cm}  % get rid of the excess space before the verbatim environment
+\begin{verbatim}
+<VirtualHost *:80>
+ServerName andika
+DocumentRoot /var/www/andika/
+</VirtualHost>
+\end{verbatim}
+
+Save and exit the configuration file:\\
+\textbf{Ctrl+X, Y, Return}
+
+Activate the configuration:\\
+\verb|sudo a2ensite andika|
+
+Restart the webserver:\\
+\verb|sudo service apache2 restart|
+
+Then tell your web browser that the new website is on your machine, so it doesn't have to look for it on the web.
+
+Open a configuration file:\\
+\verb|sudo nano /etc/hosts|
+
+After the line:\\
+\verb|127.0.0.1	localhost|\\
+add the following line:\\
+\verb|127.0.0.1	andika|
+
+Save and exit the configuration file:\\
+\textbf{Ctrl+X, Y, Return}
+
+In a web browser, type:\\
+\verb|http://andika|\\
+into the address bar.  You should get the \textbf{Andika!} website loading from the files on your hard disk (in \textit{/var/www/andika}), instead of from the internet.

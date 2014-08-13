@@ -31,7 +31,7 @@ if($double==1)  // we have two kipande on the line, so print them
     {
         fwrite($fp, " \\\\* \n");  // * disallows a pagebreak after this row
     }
-    fwrite($fp, "\T{".$b_roman."} & \T{".$a_roman."} & \T{".$stanza_no.$this_kip."} \\\\ \n");
+    fwrite($fp, "\Tr{".$b_roman."} & \Tr{".$a_roman."} & \Tr{".$stanza_no.$this_kip."} \\\\ \n");
     
     echo $this_kip.": ".$a_roman." * ".$b_roman."\n";
     unset ($double, $a_arabic, $b_arabic, $a_roman, $b_roman);

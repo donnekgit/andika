@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2014.5.16)  30 MAY 2014 16:33
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2014.5.16)  6 AUG 2014 15:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -798,7 +798,6 @@ Package: farsical 2008/07/02 v0.1 Farsi (jalali) calendar
 . <->s*[0.9]"Linux Biolinum
 . O/BI/ICU:script=latn;language=DFLT;+smcp;color=00BB33FF ;"
 .................................................
-LaTeX Info: Redefining \T on input line 31.
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -838,6 +837,40 @@ LaTeX Info: Redefining \T on input line 31.
 . <->s*[0.9]"Linux Biolinum
 . O/BI/ICU:script=latn;language=DFLT;+smcp;color=0000FFFF ;"
 .................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'LinuxBiolinumO(2)' created for font 'Linux Biolinum O' with
+. options [Color=00BB33].
+. 
+. This font family consists of the following shapes:
+. 
+. * 'normal' with NFSS spec.:
+. <->"Linux Biolinum O/ICU:script=latn;language=DFLT;color=00BB33FF ;"
+. 
+. * 'small caps' with NFSS spec.:
+. <->"Linux Biolinum O/ICU:script=latn;language=DFLT;+smcp;color=00BB33FF ;"
+. 
+. * 'bold' with NFSS spec.:
+. <->"Linux Biolinum O/B/ICU:script=latn;language=DFLT;color=00BB33FF ;"
+. 
+. * 'bold small caps' with NFSS spec.:
+. <->"Linux Biolinum O/B/ICU:script=latn;language=DFLT;+smcp;color=00BB33FF ;"
+. 
+. * 'italic' with NFSS spec.:
+. <->"Linux Biolinum O/I/ICU:script=latn;language=DFLT;color=00BB33FF ;"
+. 
+. * 'italic small caps' with NFSS spec.:
+. <->"Linux Biolinum O/I/ICU:script=latn;language=DFLT;+smcp;color=00BB33FF ;"
+. 
+. * 'bold italic' with NFSS spec.:
+. <->"Linux Biolinum O/BI/ICU:script=latn;language=DFLT;color=00BB33FF ;"
+. 
+. * 'bold italic small caps' with NFSS spec.:
+. <->"Linux Biolinum O/BI/ICU:script=latn;language=DFLT;+smcp;color=00BB33FF
+. ;"
+.................................................
+LaTeX Info: Redefining \S on input line 33.
 \g_fontspec_family_Liberation Serif Italic_int=\count196
 .................................................
 . fontspec info: "defining-font"
@@ -863,30 +896,57 @@ LaTeX Info: Redefining \T on input line 31.
 . <->s*[0.9]"Liberation Serif
 . Italic/BI/ICU:script=latn;language=DFLT;color=666666FF ;"
 .................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'LiberationSerifItalic(1)' created for font 'Liberation Serif
+. Italic' with options [Color=00BB33].
+. 
+. This font family consists of the following shapes:
+. 
+. * 'normal' with NFSS spec.:
+. <->"Liberation Serif Italic/ICU:script=latn;language=DFLT;color=00BB33FF ;"
+. 
+. * 'bold' with NFSS spec.:
+. <->"Liberation Serif Italic/B/ICU:script=latn;language=DFLT;color=00BB33FF
+. ;"
+. 
+. * 'italic' with NFSS spec.:
+. <->"Liberation Serif Italic/I/ICU:script=latn;language=DFLT;color=00BB33FF
+. ;"
+. 
+. * 'bold italic' with NFSS spec.:
+. <->"Liberation Serif Italic/BI/ICU:script=latn;language=DFLT;color=00BB33FF
+. ;"
+.................................................
 
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
 (poetry/outputs/maisha/maisha.aux)
 \openout1 = `maisha.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 37.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 37.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 42.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 42.
  (/usr/share/texmf/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    ... okay on input line 42.
 .................................................
 . fontspec info: "setup-math"
 . 
@@ -894,79 +954,79 @@ LaTeX Font Info:    ... okay on input line 37.
 .................................................
 \symlegacymaths=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 37.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 37.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 37.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 37.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 37.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 37.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 37.
-LaTeX Font Info:    Redeclaring math accent \check on input line 37.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 37.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 37.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 37.
-LaTeX Font Info:    Redeclaring math symbol \colon on input line 37.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 37.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 37.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 37.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 37.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 37.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 37.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 37.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 37.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 37.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 37.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 37.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 37.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 37.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 42.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 42.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 42.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 42.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 42.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 42.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 42.
+LaTeX Font Info:    Redeclaring math accent \check on input line 42.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 42.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 42.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 42.
+LaTeX Font Info:    Redeclaring math symbol \colon on input line 42.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 42.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 42.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 42.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 42.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 42.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 42.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 42.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 42.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 42.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 42.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 42.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 42.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 42.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `normal' on input line 37.
+(Font)              `operators' in the math version `normal' on input line 42.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> EU1/LiberationSerif(0)/m/n on input lin
-e 37.
+e 42.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `bold' on input line 37.
+(Font)              `operators' in the math version `bold' on input line 42.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> EU1/LiberationSerif(0)/m/n on input li
-ne 37.
+ne 42.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  EU1/LiberationSerif(0)/m/n --> EU1/LiberationSerif(0)/m
-/n on input line 37.
+/n on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
 (Font)                  EU1/LiberationSerif(0)/m/n --> EU1/LiberationSerif(0)/m
-/n on input line 37.
+/n on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/cmr/m/it --> EU1/LiberationSerif(0)/m/it on input l
-ine 37.
+ine 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/cmr/bx/n --> EU1/LiberationSerif(0)/bx/n on input l
-ine 37.
+ine 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> EU1/lmss/m/n on input line 37.
+(Font)                  OT1/cmss/m/n --> EU1/lmss/m/n on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> EU1/lmtt/m/n on input line 37.
+(Font)                  OT1/cmtt/m/n --> EU1/lmtt/m/n on input line 42.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  EU1/LiberationSerif(0)/m/n --> EU1/LiberationSerif(0)/b
-x/n on input line 37.
+x/n on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
 (Font)                  EU1/LiberationSerif(0)/m/n --> EU1/LiberationSerif(0)/b
-x/n on input line 37.
+x/n on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> EU1/LiberationSerif(0)/bx/it on input
- line 37.
+ line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> EU1/lmss/bx/n on input line 37.
+(Font)                  OT1/cmss/bx/n --> EU1/lmss/bx/n on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> EU1/lmtt/bx/n on input line 37.
+(Font)                  OT1/cmtt/m/n --> EU1/lmtt/bx/n on input line 42.
 \AtBeginShipoutBox=\box46
-LaTeX Font Info:    Font shape `EU1/GranadaKD(0)/m/n' will be
-(Font)              scaled to size 24.0pt on input line 40.
+LaTeX Font Info:    Font shape `EU1/Scheherazade(0)/m/n' will be
+(Font)              scaled to size 24.0pt on input line 47.
 
 ! Undefined control sequence.
 \adl@@cr ...tempdima \xdef \adl@rowsL {\adl@rowsL 
                                                   (\adl@colsL /\number \adl@...
-l.41 \T
-       {maisha} \\
+l.48 \Tr
+        {kwa ina la rahamani * naanḏa nudhuma hini * ina ya pili ramani * ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -976,8 +1036,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \adl@@cr ...ef \adl@rowsL {\adl@rowsL (\adl@colsL 
                                                   /\number \adl@height );\if...
-l.41 \T
-       {maisha} \\
+l.48 \Tr
+        {kwa ina la rahamani * naanḏa nudhuma hini * ina ya pili ramani * ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -987,8 +1047,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \adl@@cr ...a );\fi }\xdef \adl@rowsR {\adl@rowsR 
                                                   (\adl@colsR /\number \adl@...
-l.41 \T
-       {maisha} \\
+l.48 \Tr
+        {kwa ina la rahamani * naanḏa nudhuma hini * ina ya pili ramani * ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -998,8 +1058,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \adl@@cr ...ef \adl@rowsR {\adl@rowsR (\adl@colsR 
                                                   /\number \adl@height );\if...
-l.41 \T
-       {maisha} \\
+l.48 \Tr
+        {kwa ina la rahamani * naanḏa nudhuma hini * ina ya pili ramani * ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1007,27 +1067,39 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 LaTeX Font Info:    Font shape `EU1/LinuxBiolinumO(0)/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 41.
-LaTeX Font Info:    Font shape `EU1/Scheherazade(0)/m/n' will be
-(Font)              scaled to size 24.0pt on input line 49.
-[1
+(Font)              scaled to size 10.79993pt on input line 48.
 
-]
+Overfull \hbox (284.98248pt too wide) in alignment at lines 44--76
+ [] [] 
+ []
+
+
+Overfull \hbox (298.97467pt too wide) in alignment at lines 76--91
+ [] [] 
+ []
+
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 2 on input line 97.
+(longtable)                in table 1 on input line 91.
+
+
+Overfull \hbox (298.97467pt too wide) has occurred while \output is active
+ [] [] 
+ []
 
 
 Package longtable Warning: Table widths have changed. Rerun LaTeX.
 
-[2] (poetry/outputs/maisha/maisha.aux) ) 
-Here is how much of TeX's memory you used:
- 16115 strings out of 495649
- 324738 string characters out of 6187651
- 396155 words of memory out of 5000000
- 19065 multiletter control sequences out of 15000+600000
- 4114 words of font info for 37 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 53i,5n,43p,10470b,269s stack positions out of 5000i,500n,10000p,200000b,80000s
+[1
 
-Output written on poetry/outputs/maisha/maisha.pdf (2 pages).
+] (poetry/outputs/maisha/maisha.aux) ) 
+Here is how much of TeX's memory you used:
+ 16242 strings out of 495649
+ 327897 string characters out of 6187651
+ 396155 words of memory out of 5000000
+ 19189 multiletter control sequences out of 15000+600000
+ 4106 words of font info for 36 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 53i,5n,43p,10470b,194s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on poetry/outputs/maisha/maisha.pdf (1 page).

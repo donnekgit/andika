@@ -1,0 +1,194 @@
+\chapter{Editing fonts}
+\renewcommand{\thesection}{B/\arabic{section}}  % redefine the section numbering
+\setcounter{section}{0}  % reset counter 
+
+\section{Introduction}
+\label{appb:intro}
+
+Most Arabic fonts are missing some glyphs that are essential to allow them to be used for writing Swahili.  This appendix deals with how to edit these fonts to add the missing glyphs.
+
+
+Install Fontforge
+---------------------
+
+http://www.arafonts.com
+
+sudo apt-get install build-essential automake flex bison checkinstall
+
+sudo checkinstall instead of sudo make install
+ When finished, if you used checkinstall, the program will appear in Synaptic Package Manager. 
+The installed package can then also easily be removed via Synaptic or via the terminal:
+sudo dpkg -r packagename
+sudo make install: application will be installed to /usr/local/bin
+To remove, run sudo make uninstall from the compile directory.
+
+http://fontforge.github.io
+https://github.com/fontforge/fontforge
+http://sourceforge.net/p/fontforge/mailman/fontforge-users/
+
+The package for 14.04 dates from 2012, so it is old.
+
+https://savannah.gnu.org/projects/unifont/
+Install unifont package to get clearer display of the reference glyphs.  Unifont includes glyphs for all Unicode codepoints, and FF will use it if it is installed.
+
+sudo apt-get install packaging-dev pkg-config python-dev libpango1.0-dev libglib2.0-dev libxml2-dev giflib-dbg libjpeg-dev libtiff-dev uthash-dev
+
+Go to the libspiro website:
+https://github.com/fontforge/libspiro
+git clone https://github.com/fontforge/libspiro.git
+
+cd libspiro
+autoreconf -i
+automake --foreign -Wall
+./configure
+make
+sudo make install / sudo checkinstall
+cd ..
+
+Go to the libuninameslist website:
+https://github.com/fontforge/libuninameslist
+git clone https://github.com/fontforge/libuninameslist.git
+
+cd libuninameslist
+autoreconf -i
+automake --foreign
+./configure
+make
+sudo make install / sudo checkinstall
+cd ..
+
+Go to the new website:
+https://github.com/fontforge
+git clone https://github.com/fontforge/fontforge.git
+
+cd fontforge
+./bootstrap
+./configure
+make
+sudo make install / sudo checkinstall
+
+Note that FF is built using Tcl -- it therefore behaves slightly differently from other software you may be used to, eg every action requires at least one click (so the submenus for menus don't appear as you move across the menu bar -- you have to click each one.
+
+cd ~
+fontforge
+open a font -- Graph from openfontlibrary.org  -- this is lacking peh (U+067E), which we will add
+File -> Save as
+Save the file as an sfd file -- this now becomes your working copy.
+
+Rename the font (or your adapted font will not install separately from the original -- you'll need to uninstall the original first).
+Element -> Font Info
+In PS Names, change Fontname, Family Name, and Name For Humans to GraphKD.
+Save, and get a message about generating a new UniqueID (XUID) for the font.
+Click Change.
+In TTF Names for Family and Fullname are taken from the PS Names entries -- you can't edit them directly.
+Change the entries for Preferred Family and Compatible Full to GraphKD (this will allow you to install this file alongside the original one if you so wish).
+If desired, you can also place a "glyphs added by" message after the text already in the entry for Designer.
+
+Roll the glyph panel down until you come to the Arabic glyphs.
+Clicking on a cell in the glyph panel will show its Unicode number and name at the top of the panel.
+We will make peh by copying beh (U+0628), and swapping its single dot for three dots.
+Click on the beh cell, then right-click and select Copy.
+Right-click on the peh cell and select Paste.
+Beh is now copied into the peh cell, so the next thing is to change the dot.
+Find a glyph with three dots -- sheen will do.
+Double-click on the cell -- this will open a glyph design panel.
+Click and drag so that the nodes of the three dots above sheen change colour from pink to beige.
+Press Alt+C to copy.
+Double-click on the peh cell -- this will swap peh for sheen in the glyph design panel.
+Click and drag to highlight the dot below peh, then press Delete.
+Press Alt+V to paste in the three dots.
+Right-click in the middle of the dots, and select Flip the selection.
+Click and drag inside one of the dots, and they will change direction to point downwards.
+Right-click in the middle of the dots, and select Pointer.
+Click and drag one of the highlighted nodes in the dots to pull them down below the body of the glyph.
+Position them in the centre, above the Arabic Below point.
+Close the glyph design panel.
+There should now be a new glyph for peh in the chart.
+
+However, this is only the isolated (base) form of the glyph.  If you save the font and try to use it, you will find that initial medial and final forms are not available.  These have to be created.
+
+"The other forms are built as unencoded glyphs (glyphs whose encoding is -1 in FontForge conventions).  These glyphs have no predefined slots." (Khaled Hosny)
+
+Select Encoding -> Add Encoding Slots and enter the number of the glyphs you want -- in this case one.  FontForge will then add the same number of slots at the end of the font, and you will be moved there in the glyph panel.  The very last cell should have a question mark above it.
+
+Create the final form.
+Roll the glyph panel up a bit until you come to the Arabic glyphs.
+At U+FE90 you will see a behfinal glyph.
+Ctrl+C.
+Move to the last slot in the table and Ctrl+V.
+Right-click and select Glyph Info.
+The convention is to use the name of the base (encoded) glyph + a suffix for its form.
+Change Glyph Name to uni067E.fina, OK.
+Double-click on sheen (U+FEB5, for instance), select the three dots and Ctrl+C.
+Double-click on the new pehfinal, take note of the location of the single dot, then click and drag to highlight it and press Delete.
+Ctrl+V to insert the three dots, flip them, and move them into position below the glyph body.
+
+Encoding -> Add Encoding Slots, and enter 2 this time.
+
+Create the initial form.
+Copy U+FE91 to the penultimate slot.
+Delete the single dot and paste in the three dots.
+Right-click and select Glyph Info.
+Change Glyph Name to uni067E.init, OK.
+
+Do the same for the medial form, calling it uni067E.medi.
+
+If by mistake you start typing when the glyph panel still has focus, you get moved to the European section at the top -- to get back to the bottom, go to the first cell, and select View -> Previous Glyph.
+
+File -> Save to save the sfd file.
+
+Add the lookups, so that the standalone form is linked to its initial, medial and final forms.
+Element -> Font Info -> Lookups
+'init' Initial Forms in Arabic lookup 2
+'medi' Medial Forms in Arabic lookup 2
+'fina' Terminal Forms in Arabic lookup 2
+For each of init, medi and fina do the following.
+Click on the + beside the entry: 'init' Initial Forms in Arabic lookup 2
+This will open a sub-lookup of the same name.
+Click on this sub-lookup.
+The Edit Data button will now become available - click it.
+Ensure that the Unicode button is checked.
+Enter the relevant suffix (in this case, init) in the Default Using Suffix box.
+Click Default Using Suffix.
+Roll down to the bottom of the list, and you should see a new mapping has been added, from uni067E (the standalone form of peh) to uni067E.fina (the final form).
+Click OK, then OK again to close the Lookups panel.
+
+Default Using Suffix only seems to work on glyphs in the 06 block -- glyphs in Arabic Supplement (07), eg ain with two dots, may have to be added manually.
+
+Generate the font.
+File -> Generate Fonts.
+In the dropdown showing PS Type 1 (Binary), select TrueType.
+Navigate to where you want to save the font, and change the filename to GraphKD.ttf.
+Click Generate.
+Click Yes and Generate to the two warning messages that come up.
+
+Glyphs for which there is no standard Unicode.
+Use PUA, starting at E000.
+https://en.wikipedia.org/wiki/Private_Use_Areas
+http://www.unicode.org/faq/private_use.html
+
+You need to add glyphs for peh, tteh, tcheh, ddal, veh, jeh, ain with 3 dots, ain with 2 dots, subscript alef (e), and inverted damma (o).  Possibly also waw with dot.
+
+When changing the layout, you need to delete the server- "copy" files in /var/lib/xkb:
+sudo rm /var/lib/xkb/server-*
+They will be recreated.
+
+Get KDE to see the new layout.
+Untick the Configure Layout box, then click Apply, then retick it, then click Apply again.
+
+Note that any texts written using the old character will need to be corrected to use the new character.
+Note also that if you make changes to a font, you need to restart LibreOffice, or it may see only the previous version of the font, and not the new changes.
+
+Adding a glyph when there is no Unicode point.
+Use the Unicode PUA: E000-F8FF (6,400 codepoints are available here).
+Copy dammatan to E000 and edit to create damma with tail (used for o)
+Generate the font again.
+Uninstall it and reinstall it.
+
+Editing the keyboard layout
+Set damma-tail to be accessible from Shift+AltGr+O
+sudo nano /usr/share/X11/xkb/symbols/tz
+Edit the line:
+key <AD09> { [          U0657,     Arabic_waw, Arabic_hamzaonwaw, UE000                 ] };
+adding the Unicode number for the new character at the end.
+

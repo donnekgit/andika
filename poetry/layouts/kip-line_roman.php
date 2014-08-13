@@ -15,7 +15,7 @@ else
     fwrite($fp, " \\\\* \n");  // * disallows a pagebreak after this row
 }
 
-fwrite($fp, "\T{".$roman."} & \T{".$stanza_no.$key."} \\\\ \n");
+fwrite($fp, "\Tr{".$roman."} & \Tr{".$stanza_no.$key."} \\\\ \n");
 echo $key.": ".$roman."\n";
 
 ?>

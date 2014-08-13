@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2014.5.16)  3 JUN 2014 21:56
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2014.5.16)  10 AUG 2014 18:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**poetry/outputs/kiswahili/kiswahili.tex
-(./poetry/outputs/kiswahili/kiswahili.tex
+**kiswahili.tex
+(./kiswahili.tex
 LaTeX2e <2011/06/27>
 Babel <3.9h> and hyphenation patterns for 4 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
@@ -475,29 +475,6 @@ Package: arydshln 2004/08/31 v1.71
 \adl@everyvbox=\toks19
 \adl@LTpagetotal=\dimen147
 )
-\g__file_internal_ior=\read1
-\g_fontspec_family_Liberation Serif_int=\count141
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'LiberationSerif(0)' created for font 'Liberation Serif' with
-. options [Mapping=tex-text].
-. 
-. This font family consists of the following shapes:
-. 
-. * 'normal' with NFSS spec.:
-. <->"Liberation Serif/ICU:script=latn;language=DFLT;mapping=tex-text;"
-. 
-. * 'bold' with NFSS spec.:
-. <->"Liberation Serif/B/ICU:script=latn;language=DFLT;mapping=tex-text;"
-. 
-. * 'italic' with NFSS spec.:
-. <->"Liberation Serif/I/ICU:script=latn;language=DFLT;mapping=tex-text;"
-. 
-. * 'bold italic' with NFSS spec.:
-. <->"Liberation Serif/BI/ICU:script=latn;language=DFLT;mapping=tex-text;"
-.................................................
-
 (/usr/share/texlive/texmf-dist/tex/latex/polyglossia/gloss-english.ldf
 File: gloss-english.ldf polyglossia: module for english
 )
@@ -584,7 +561,7 @@ Package zref Info: New property: page on input line 761.
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/atbegshi.sty
 Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 )
-\c@abspage=\count142
+\c@abspage=\count141
 Package zref Info: New property: abspage on input line 62.
 )
 (/usr/share/texlive/texmf-dist/tex/xelatex/bidi/latex-xetex-bidi.def
@@ -595,7 +572,7 @@ or XeTeX engine
 (/usr/share/texlive/texmf-dist/tex/xelatex/bidi/footnote-xetex-bidi.def
 File: footnote-xetex-bidi.def 2013/04/26 v0.8 bidi footnote macros for XeTeX en
 gine
-\c@footdir@label=\count143
+\c@footdir@label=\count142
 \footdir@toks=\toks21
 )
 (/usr/share/texlive/texmf-dist/tex/xelatex/bidi/report-xetex-bidi.def
@@ -638,72 +615,94 @@ Package: hijrical 2010/07/12 v0.2 Islamic calendar
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count144
-\calc@Bcount=\count145
+\calc@Acount=\count143
+\calc@Bcount=\count144
 \calc@Adimen=\dimen148
 \calc@Bdimen=\dimen149
 \calc@Askip=\skip53
 \calc@Bskip=\skip54
 LaTeX Info: Redefining \setlength on input line 76.
 LaTeX Info: Redefining \addtolength on input line 77.
-\calc@Ccount=\count146
+\calc@Ccount=\count145
 \calc@Cskip=\skip55
 )
 (/usr/share/texlive/texmf-dist/tex/latex/polyglossia/cal-util.def
-\c@tmpA=\count147
-\c@tmpB=\count148
-\c@tmpC=\count149
-\c@tmpD=\count150
-\c@tmpE=\count151
-\c@tmpF=\count152
+\c@tmpA=\count146
+\c@tmpB=\count147
+\c@tmpC=\count148
+\c@tmpD=\count149
+\c@tmpE=\count150
+\c@tmpF=\count151
 )
-\c@Hijriday=\count153
-\c@Hijrimonth=\count154
-\c@Hijriyear=\count155
+\c@Hijriday=\count152
+\c@Hijrimonth=\count153
+\c@Hijriyear=\count154
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/polyglossia/gloss-farsi.ldf
 File: gloss-farsi.ldf polyglossia: module for farsi
 
 (/usr/share/texlive/texmf-dist/tex/latex/polyglossia/farsical.sty
 Package: farsical 2008/07/02 v0.1 Farsi (jalali) calendar
-\JALALI@i=\count156
-\JALALI@y=\count157
-\JALALI@m=\count158
-\JALALI@d=\count159
-\JALALI@latini=\count160
-\JALALI@farsii=\count161
-\JALALI@latinii=\count162
-\JALALI@farsiii=\count163
-\JALALI@latiniii=\count164
-\JALALI@farsiiii=\count165
-\JALALI@latiniv=\count166
-\JALALI@farsiiv=\count167
-\JALALI@latinv=\count168
-\JALALI@farsiv=\count169
-\JALALI@latinvi=\count170
-\JALALI@farsivi=\count171
-\JALALI@latinvii=\count172
-\JALALI@farsivii=\count173
-\JALALI@latinviii=\count174
-\JALALI@farsiviii=\count175
-\JALALI@latinix=\count176
-\JALALI@farsiix=\count177
-\JALALI@latinx=\count178
-\JALALI@farsix=\count179
-\JALALI@latinxi=\count180
-\JALALI@farsixi=\count181
-\JALALI@latinxii=\count182
-\JALALI@farsixii=\count183
-\JALALI@farsixiii=\count184
-\JALALI@temp=\count185
-\JALALI@temptwo=\count186
-\JALALI@tempthree=\count187
-\JALALI@yModHundred=\count188
-\JALALI@thirtytwo=\count189
-\JALALI@dn=\count190
-\JALALI@sn=\count191
-\JALALI@mminusone=\count192
+\JALALI@i=\count155
+\JALALI@y=\count156
+\JALALI@m=\count157
+\JALALI@d=\count158
+\JALALI@latini=\count159
+\JALALI@farsii=\count160
+\JALALI@latinii=\count161
+\JALALI@farsiii=\count162
+\JALALI@latiniii=\count163
+\JALALI@farsiiii=\count164
+\JALALI@latiniv=\count165
+\JALALI@farsiiv=\count166
+\JALALI@latinv=\count167
+\JALALI@farsiv=\count168
+\JALALI@latinvi=\count169
+\JALALI@farsivi=\count170
+\JALALI@latinvii=\count171
+\JALALI@farsivii=\count172
+\JALALI@latinviii=\count173
+\JALALI@farsiviii=\count174
+\JALALI@latinix=\count175
+\JALALI@farsiix=\count176
+\JALALI@latinx=\count177
+\JALALI@farsix=\count178
+\JALALI@latinxi=\count179
+\JALALI@farsixi=\count180
+\JALALI@latinxii=\count181
+\JALALI@farsixii=\count182
+\JALALI@farsixiii=\count183
+\JALALI@temp=\count184
+\JALALI@temptwo=\count185
+\JALALI@tempthree=\count186
+\JALALI@yModHundred=\count187
+\JALALI@thirtytwo=\count188
+\JALALI@dn=\count189
+\JALALI@sn=\count190
+\JALALI@mminusone=\count191
 ))
+\g__file_internal_ior=\read1
+\g_fontspec_family_Liberation Serif_int=\count192
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'LiberationSerif(0)' created for font 'Liberation Serif' with
+. options [Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+. 
+. * 'normal' with NFSS spec.:
+. <->"Liberation Serif/ICU:script=latn;language=DFLT;mapping=tex-text;"
+. 
+. * 'bold' with NFSS spec.:
+. <->"Liberation Serif/B/ICU:script=latn;language=DFLT;mapping=tex-text;"
+. 
+. * 'italic' with NFSS spec.:
+. <->"Liberation Serif/I/ICU:script=latn;language=DFLT;mapping=tex-text;"
+. 
+. * 'bold italic' with NFSS spec.:
+. <->"Liberation Serif/BI/ICU:script=latn;language=DFLT;mapping=tex-text;"
+.................................................
 \g_fontspec_family_Scheherazade_int=\count193
 .................................................
 . fontspec info: "no-font-shape"
@@ -763,46 +762,6 @@ Package: farsical 2008/07/02 v0.1 Farsi (jalali) calendar
 . fontspec info: "defining-font"
 . 
 . Font family 'LinuxBiolinumO(0)' created for font 'Linux Biolinum O' with
-. options [Scale=0.9, Color=666666].
-. 
-. This font family consists of the following shapes:
-. 
-. * 'normal' with NFSS spec.:
-. <->s*[0.9]"Linux Biolinum O/ICU:script=latn;language=DFLT;color=666666FF ;"
-. 
-. * 'small caps' with NFSS spec.:
-. <->s*[0.9]"Linux Biolinum
-. O/ICU:script=latn;language=DFLT;+smcp;color=666666FF ;"
-. 
-. * 'bold' with NFSS spec.:
-. <->s*[0.9]"Linux Biolinum O/B/ICU:script=latn;language=DFLT;color=666666FF
-. ;"
-. 
-. * 'bold small caps' with NFSS spec.:
-. <->s*[0.9]"Linux Biolinum
-. O/B/ICU:script=latn;language=DFLT;+smcp;color=666666FF ;"
-. 
-. * 'italic' with NFSS spec.:
-. <->s*[0.9]"Linux Biolinum O/I/ICU:script=latn;language=DFLT;color=666666FF
-. ;"
-. 
-. * 'italic small caps' with NFSS spec.:
-. <->s*[0.9]"Linux Biolinum
-. O/I/ICU:script=latn;language=DFLT;+smcp;color=666666FF ;"
-. 
-. * 'bold italic' with NFSS spec.:
-. <->s*[0.9]"Linux Biolinum O/BI/ICU:script=latn;language=DFLT;color=666666FF
-. ;"
-. 
-. * 'bold italic small caps' with NFSS spec.:
-. <->s*[0.9]"Linux Biolinum
-. O/BI/ICU:script=latn;language=DFLT;+smcp;color=666666FF ;"
-.................................................
-LaTeX Info: Redefining \T on input line 31.
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'LinuxBiolinumO(1)' created for font 'Linux Biolinum O' with
 . options [Scale=0.9, Color=blue].
 . 
 . This font family consists of the following shapes:
@@ -838,40 +797,6 @@ LaTeX Info: Redefining \T on input line 31.
 . <->s*[0.9]"Linux Biolinum
 . O/BI/ICU:script=latn;language=DFLT;+smcp;color=0000FFFF ;"
 .................................................
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'LinuxBiolinumO(2)' created for font 'Linux Biolinum O' with
-. options [Color=00BB33].
-. 
-. This font family consists of the following shapes:
-. 
-. * 'normal' with NFSS spec.:
-. <->"Linux Biolinum O/ICU:script=latn;language=DFLT;color=00BB33FF ;"
-. 
-. * 'small caps' with NFSS spec.:
-. <->"Linux Biolinum O/ICU:script=latn;language=DFLT;+smcp;color=00BB33FF ;"
-. 
-. * 'bold' with NFSS spec.:
-. <->"Linux Biolinum O/B/ICU:script=latn;language=DFLT;color=00BB33FF ;"
-. 
-. * 'bold small caps' with NFSS spec.:
-. <->"Linux Biolinum O/B/ICU:script=latn;language=DFLT;+smcp;color=00BB33FF ;"
-. 
-. * 'italic' with NFSS spec.:
-. <->"Linux Biolinum O/I/ICU:script=latn;language=DFLT;color=00BB33FF ;"
-. 
-. * 'italic small caps' with NFSS spec.:
-. <->"Linux Biolinum O/I/ICU:script=latn;language=DFLT;+smcp;color=00BB33FF ;"
-. 
-. * 'bold italic' with NFSS spec.:
-. <->"Linux Biolinum O/BI/ICU:script=latn;language=DFLT;color=00BB33FF ;"
-. 
-. * 'bold italic small caps' with NFSS spec.:
-. <->"Linux Biolinum O/BI/ICU:script=latn;language=DFLT;+smcp;color=00BB33FF
-. ;"
-.................................................
-LaTeX Info: Redefining \S on input line 33.
 \g_fontspec_family_Liberation Serif Italic_int=\count196
 .................................................
 . fontspec info: "defining-font"
@@ -920,35 +845,78 @@ LaTeX Info: Redefining \S on input line 33.
 . <->"Liberation Serif Italic/BI/ICU:script=latn;language=DFLT;color=00BB33FF
 . ;"
 .................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'LinuxBiolinumO(1)' created for font 'Linux Biolinum O' with
+. options [Scale=1, Color=00BB33].
+. 
+. This font family consists of the following shapes:
+. 
+. * 'normal' with NFSS spec.:
+. <->s*[1]"Linux Biolinum O/ICU:script=latn;language=DFLT;color=00BB33FF ;"
+. 
+. * 'small caps' with NFSS spec.:
+. <->s*[1]"Linux Biolinum O/ICU:script=latn;language=DFLT;+smcp;color=00BB33FF
+. ;"
+. 
+. * 'bold' with NFSS spec.:
+. <->s*[1]"Linux Biolinum O/B/ICU:script=latn;language=DFLT;color=00BB33FF ;"
+. 
+. * 'bold small caps' with NFSS spec.:
+. <->s*[1]"Linux Biolinum
+. O/B/ICU:script=latn;language=DFLT;+smcp;color=00BB33FF ;"
+. 
+. * 'italic' with NFSS spec.:
+. <->s*[1]"Linux Biolinum O/I/ICU:script=latn;language=DFLT;color=00BB33FF ;"
+. 
+. * 'italic small caps' with NFSS spec.:
+. <->s*[1]"Linux Biolinum
+. O/I/ICU:script=latn;language=DFLT;+smcp;color=00BB33FF ;"
+. 
+. * 'bold italic' with NFSS spec.:
+. <->s*[1]"Linux Biolinum O/BI/ICU:script=latn;language=DFLT;color=00BB33FF ;"
+. 
+. * 'bold italic small caps' with NFSS spec.:
+. <->s*[1]"Linux Biolinum
+. O/BI/ICU:script=latn;language=DFLT;+smcp;color=00BB33FF ;"
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'GranadaKD(0)' created for font 'GranadaKD' with options
+. [Script=Arabic, Scale=2].
+. 
+. This font family consists of the following shapes:
+.................................................
 
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
-(poetry/outputs/kiswahili/kiswahili.aux)
+) (./kiswahili.aux)
 \openout1 = `kiswahili.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 42.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 42.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 52.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 52.
 
 (/usr/share/texmf/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    ... okay on input line 52.
 .................................................
 . fontspec info: "setup-math"
 . 
@@ -956,78 +924,78 @@ LaTeX Font Info:    ... okay on input line 42.
 .................................................
 \symlegacymaths=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 42.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 42.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 42.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 42.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 42.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 42.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 42.
-LaTeX Font Info:    Redeclaring math accent \check on input line 42.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 42.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 42.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \colon on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 42.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 42.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 52.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 52.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 52.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 52.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 52.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 52.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 52.
+LaTeX Font Info:    Redeclaring math accent \check on input line 52.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 52.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 52.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 52.
+LaTeX Font Info:    Redeclaring math symbol \colon on input line 52.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 52.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 52.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 52.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 52.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 52.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 52.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 52.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 52.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 52.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 52.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 52.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 52.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 52.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `normal' on input line 42.
+(Font)              `operators' in the math version `normal' on input line 52.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> EU1/LiberationSerif(0)/m/n on input lin
-e 42.
+e 52.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `bold' on input line 42.
+(Font)              `operators' in the math version `bold' on input line 52.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> EU1/LiberationSerif(0)/m/n on input li
-ne 42.
+ne 52.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  EU1/LiberationSerif(0)/m/n --> EU1/LiberationSerif(0)/m
-/n on input line 42.
+/n on input line 52.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
 (Font)                  EU1/LiberationSerif(0)/m/n --> EU1/LiberationSerif(0)/m
-/n on input line 42.
+/n on input line 52.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/cmr/m/it --> EU1/LiberationSerif(0)/m/it on input l
-ine 42.
+ine 52.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/cmr/bx/n --> EU1/LiberationSerif(0)/bx/n on input l
-ine 42.
+ine 52.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> EU1/lmss/m/n on input line 42.
+(Font)                  OT1/cmss/m/n --> EU1/lmss/m/n on input line 52.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> EU1/lmtt/m/n on input line 42.
+(Font)                  OT1/cmtt/m/n --> EU1/lmtt/m/n on input line 52.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  EU1/LiberationSerif(0)/m/n --> EU1/LiberationSerif(0)/b
-x/n on input line 42.
+x/n on input line 52.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
 (Font)                  EU1/LiberationSerif(0)/m/n --> EU1/LiberationSerif(0)/b
-x/n on input line 42.
+x/n on input line 52.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> EU1/LiberationSerif(0)/bx/it on input
- line 42.
+ line 52.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> EU1/lmss/bx/n on input line 42.
+(Font)                  OT1/cmss/bx/n --> EU1/lmss/bx/n on input line 52.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> EU1/lmtt/bx/n on input line 42.
+(Font)                  OT1/cmtt/m/n --> EU1/lmtt/bx/n on input line 52.
 \AtBeginShipoutBox=\box46
 LaTeX Font Info:    Font shape `EU1/GranadaKD(0)/m/n' will be
-(Font)              scaled to size 24.0pt on input line 46.
+(Font)              scaled to size 24.0pt on input line 56.
 
 ! Undefined control sequence.
 \adl@@cr ...tempdima \xdef \adl@rowsL {\adl@rowsL 
                                                   (\adl@colsL /\number \adl@...
-l.47 \S
+l.57 \S
        {Kiswahili}\footnote{Adbulkadir, MA and PJL Frankl (2013): `\textit{K...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1038,7 +1006,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \adl@@cr ...ef \adl@rowsL {\adl@rowsL (\adl@colsL 
                                                   /\number \adl@height );\if...
-l.47 \S
+l.57 \S
        {Kiswahili}\footnote{Adbulkadir, MA and PJL Frankl (2013): `\textit{K...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1049,7 +1017,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \adl@@cr ...a );\fi }\xdef \adl@rowsR {\adl@rowsR 
                                                   (\adl@colsR /\number \adl@...
-l.47 \S
+l.57 \S
        {Kiswahili}\footnote{Adbulkadir, MA and PJL Frankl (2013): `\textit{K...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1060,7 +1028,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \adl@@cr ...ef \adl@rowsR {\adl@rowsR (\adl@colsR 
                                                   /\number \adl@height );\if...
-l.47 \S
+l.57 \S
        {Kiswahili}\footnote{Adbulkadir, MA and PJL Frankl (2013): `\textit{K...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1068,36 +1036,413 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 47.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 47.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 47.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 47.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 47.
-LaTeX Font Info:    Font shape `EU1/LiberationSerifItalic(0)/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 49.
-LaTeX Font Info:    Font shape `EU1/Scheherazade(0)/m/n' will be
-(Font)              scaled to size 24.0pt on input line 54.
-LaTeX Font Info:    Font shape `EU1/LinuxBiolinumO(0)/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 55.
-
-Overfull \hbox (194.70436pt too wide) in alignment at lines 61--85
- [] [] [] 
- []
-
-
-Overfull \hbox (194.70436pt too wide) in alignment at lines 85--106
- [] [] [] 
- []
-
 LaTeX Font Info:    Font shape `EU1/LinuxBiolinumO(1)/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 120.
+(Font)              scaled to size 12.0pt on input line 57.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 57.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 57.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 57.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 57.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 57.
+LaTeX Font Info:    Font shape `EU1/LiberationSerifItalic(0)/m/n' will be
+(Font)              scaled to size 10.79993pt on input line 59.
+LaTeX Font Info:    Font shape `EU1/Scheherazade(0)/m/n' will be
+(Font)              scaled to size 24.0pt on input line 64.
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+\g_fontspec_family_Gentium_int=\count197
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font Gentium/B (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+. 
+. * 'normal' with NFSS spec.:
+. <->s*[1]"Gentium/ICU:"
+. 
+. * 'italic' with NFSS spec.:
+. <->s*[1]"Gentium/I/ICU:"
+. 
+. * 'bold italic' with NFSS spec.:
+. <->s*[1]"Gentium/BI/ICU:"
+.................................................
+LaTeX Font Info:    Font shape `EU1/Gentium(0)/m/n' will be
+(Font)              scaled to size 12.0pt on input line 65.
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
 
-Overfull \hbox (194.70436pt too wide) in alignment at lines 106--127
+Overfull \hbox (194.70436pt too wide) in alignment at lines 71--95
+ [] [] [] 
+ []
+
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+
+Overfull \hbox (194.70436pt too wide) in alignment at lines 95--116
+ [] [] [] 
+ []
+
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+LaTeX Font Info:    Font shape `EU1/LinuxBiolinumO(0)/m/n' will be
+(Font)              scaled to size 10.79993pt on input line 130.
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+
+Overfull \hbox (194.70436pt too wide) in alignment at lines 116--136
  [] [] [] 
  []
 
@@ -1109,7 +1454,128 @@ Overfull \hbox (194.70436pt too wide) has occurred while \output is active
 [1
 
 ]
-Overfull \hbox (194.70436pt too wide) in alignment at lines 127--151
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+
+Overfull \hbox (194.70436pt too wide) in alignment at lines 136--160
  [] [] [] 
  []
 
@@ -1119,12 +1585,229 @@ Overfull \hbox (194.70436pt too wide) has occurred while \output is active
  []
 
 [2]
-Overfull \hbox (194.70436pt too wide) in alignment at lines 151--174
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+
+Overfull \hbox (194.70436pt too wide) in alignment at lines 160--183
  [] [] [] 
  []
 
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
 
-Overfull \hbox (194.70436pt too wide) in alignment at lines 174--197
+Overfull \hbox (194.70436pt too wide) in alignment at lines 183--206
  [] [] [] 
  []
 
@@ -1134,7 +1817,128 @@ Overfull \hbox (194.70436pt too wide) has occurred while \output is active
  []
 
 [3]
-Overfull \hbox (194.70436pt too wide) in alignment at lines 197--220
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+
+Overfull \hbox (194.70436pt too wide) in alignment at lines 206--229
  [] [] [] 
  []
 
@@ -1144,7 +1948,128 @@ Overfull \hbox (194.70436pt too wide) has occurred while \output is active
  []
 
 [4]
-Overfull \hbox (194.70436pt too wide) in alignment at lines 220--243
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+
+Overfull \hbox (194.70436pt too wide) in alignment at lines 229--252
  [] [] [] 
  []
 
@@ -1154,12 +2079,229 @@ Overfull \hbox (194.70436pt too wide) has occurred while \output is active
  []
 
 [5]
-Overfull \hbox (194.70436pt too wide) in alignment at lines 243--266
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+
+Overfull \hbox (194.70436pt too wide) in alignment at lines 252--275
  [] [] [] 
  []
 
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
 
-Overfull \hbox (194.70436pt too wide) in alignment at lines 266--288
+Overfull \hbox (194.70436pt too wide) in alignment at lines 275--297
  [] [] [] 
  []
 
@@ -1169,7 +2311,128 @@ Overfull \hbox (194.70436pt too wide) has occurred while \output is active
  []
 
 [6]
-Overfull \hbox (194.70436pt too wide) in alignment at lines 288--310
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+
+Overfull \hbox (194.70436pt too wide) in alignment at lines 297--319
  [] [] [] 
  []
 
@@ -1179,12 +2442,229 @@ Overfull \hbox (194.70436pt too wide) has occurred while \output is active
  []
 
 [7]
-Overfull \hbox (194.70436pt too wide) in alignment at lines 310--332
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+
+Overfull \hbox (194.70436pt too wide) in alignment at lines 319--341
  [] [] [] 
  []
 
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
 
-Overfull \hbox (194.70436pt too wide) in alignment at lines 332--352
+Overfull \hbox (194.70436pt too wide) in alignment at lines 341--361
  [] [] [] 
  []
 
@@ -1194,7 +2674,128 @@ Overfull \hbox (194.70436pt too wide) has occurred while \output is active
  []
 
 [8]
-Overfull \hbox (194.70436pt too wide) in alignment at lines 352--374
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+
+Overfull \hbox (194.70436pt too wide) in alignment at lines 361--383
  [] [] [] 
  []
 
@@ -1204,12 +2805,157 @@ Overfull \hbox (194.70436pt too wide) has occurred while \output is active
  []
 
 [9]
-Overfull \hbox (194.70436pt too wide) in alignment at lines 374--395
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+
+Overfull \hbox (194.70436pt too wide) in alignment at lines 383--404
  [] [] [] 
  []
 
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font Gentium does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Gentium(0)' created for font 'Gentium' with options [Scale=1].
+. 
+. This font family consists of the following shapes:
+.................................................
 
-Overfull \hbox (194.70436pt too wide) in alignment at lines 395--403
+Overfull \hbox (194.70436pt too wide) in alignment at lines 404--412
  [] [] [] 
  []
 
@@ -1223,14 +2969,14 @@ Overfull \hbox (194.70436pt too wide) has occurred while \output is active
  [] [] [] 
  []
 
-[11] (poetry/outputs/kiswahili/kiswahili.aux) ) 
+[11] (./kiswahili.aux) ) 
 Here is how much of TeX's memory you used:
- 16323 strings out of 495649
- 329708 string characters out of 6187651
- 411158 words of memory out of 5000000
- 19251 multiletter control sequences out of 15000+600000
- 6624 words of font info for 54 fonts, out of 8000000 for 9000
+ 16329 strings out of 495649
+ 328776 string characters out of 6187651
+ 409460 words of memory out of 5000000
+ 19248 multiletter control sequences out of 15000+600000
+ 6640 words of font info for 56 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 53i,12n,43p,10476b,392s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,12n,43p,10494b,392s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on poetry/outputs/kiswahili/kiswahili.pdf (11 pages).
+Output written on kiswahili.pdf (11 pages).

@@ -1,31 +1,14 @@
-Keyboard
-------------
+Keyboard: changing layout
+---------------------------------
 
-sudo nano /usr/share/X11/xkb/symbols/tz
-When changing the layout, you need to delete the server- "copy" files in /var/lib/xkb:
+sudo nano layout/tz
+Edit and save
+sudo cp layout/tz /usr/share/X11/xkb/symbols/
+You need to delete the server- "copy" files in /var/lib/xkb:
 sudo rm /var/lib/xkb/server-*
 They will be recreated.  Then remove the tz keyboard layout and re-add it.  Unticking the Configure Layout box, then clicking Apply, then reticking it, then Apply also seems to work.
 
 Note that any texts written using the old character will need to be corrected to use the new character.
-
-
-Set up LibreOffice (4.2.3.3)
---------------------------------
-
-Tools --> Options --> Language Settings --> Languages tab
-Tick Enabled for complex text layout (CTL), and select Arabic (Oman) from the CTL dropdown.
-Tools --> Options --> Complex Text Layout
-Tick Visual under Cursor control
-if the buttons don't show up in the Formatting toolbar, rightclick on the toolbar, and under Visible buttons select LTR and RTL.
-Shortcuts are Ctrl+Shift+A for LTR and Ctrl+Shift+D for RTL.
-
-The libreofficefolder contains a template where styles for Swahili in Arabic script, Swahili in Roman script (standard spelling or close transcription) and translation are already set up.  Copy the file into one of the templates dirs as listed in Tools --> Options --> LibreOffice --> Paths --> Templates.  The usual one would be /home/<USER>/.config/libreoffice/4/user/template, but you can put it in another dir provided you add that to the path list - highlight the Templates entry, then click Edit... and Add...  To use the template, select File --> New --> Templates, and select andika.  To set this as your default template (nothing has been changed from the stock default apart from the addition of the three extra styles), select File --> Templates --> Manage, click on andika, and then click Set as default. To use the styles, press F11 to open the Styles and Formatting list (the new styles are at the bottom of the list.  Place the cursor in the line you wish to format, and select the relevant style by double-clicking on its name.  Obviously, the appropriate writing system (Arabic or Roman) also has to be selected on the keyboard before typing.
-
-Arabic style is RTL, Scheherazade 24pt
-Roman style is LTR, right-justified, Liberation Serif 12pt
-Translation is LTR, right-justified, Liberation Serif 12pt, italic
-
-Droid Arabic Naskh another possibility, but not so well-formed.
 
 
 PPA
@@ -133,6 +116,38 @@ dagger 2020
 double dagger 2021
 
 To enter a Unicode character directly in Kate, press F7 and then type char 0x0323 or whatever.
+
+
+Keyboard Layout Editor
+------------------------------
+sudo apt-get install python-antlr
+wget https://github.com/simos/keyboardlayouteditor/archive/master.zip
+unzip -q master.zip
+mv keyboardlayouteditor-master kle
+cd kle
+sudo apt-get install python-setuptools
+sudo pip install http://www.antlr3.org/download/Python/antlr_python_runtime-3.1.2.tar.gz
+wget http://antlr3.org/download/antlr-3.1.2.jar
+java -classpath "antlr-3.1.2.jar" org.antlr.Tool *.g
+cd ..
+rm master.zip
+kle/KeyboardLayoutEditor
+
+Doesn't seem to work with Antlr4, only Antlr3.
+Good for starting a new layout from scratch, but can't read in an existing layout!
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

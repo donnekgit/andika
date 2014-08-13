@@ -35,7 +35,7 @@ if($double==1)  // we have two kipande on the line, so print them
         {
             fwrite($fp, " \\\\* \n");  // * disallows a pagebreak after this row
         }
-        fwrite($fp, "\T{".$this_roman."} & \T{".$stanza_no.$this_kip."} \\\\ \n");
+        fwrite($fp, "\Tr{".$this_roman."} & \Tr{".$stanza_no.$this_kip."} \\\\ \n");
     }
     elseif ($output=="txt")
     {

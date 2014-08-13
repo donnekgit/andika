@@ -28,78 +28,70 @@
 \newfontfamily\arabicfont[Script=Arabic, Scale=2]{Scheherazade} % Arabic transcription layer
 \newfontfamily\farsifont[Script=Arabic, Scale=2]{GranadaKD} % Arabic transcription layer for titles - uses a version of Granada which has been extended to include glyphs for Swahili.
 \newcommand{\AS}[1]{\fontspec[Script=Arabic, Scale=1.5]{Scheherazade} #1\normalfont} % Arabic when used in footnotes - using \newfontfamily resets following English text as well.  IMPORTANT: this can ONLY be used for single words - multiple words will be written LTR, and not RTL as required.
-\newfontfamily{\T}[Scale=0.9, Color=00BB33]{Linux Biolinum O} %  transliteration layer - Biolinum handles diacritics well
+\newfontfamily{\Tr}[Scale=0.9, Color=00BB33]{Linux Biolinum O} %  transliteration layer - Biolinum handles diacritics well
 \newfontfamily{\I}[Scale=0.9, Color=blue]{Linux Biolinum O} % interpolated letters in the transliteration layer
+\newfontfamily{\S}[Color=00BB33]{Linux Biolinum O} % standard spelling layer
 \newfontfamily{\E}[Scale=0.9, Color=666666]{Liberation Serif Italic} % English translation layer
+\newfontfamily{\FN}[Color=00BB33]{Liberation Serif Italic} % Alternate type in footnotes.
 
-\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696):
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
+
+\usepackage[obeyspaces]{url}  % Use urls in text and captions with sensible linewrap.
+\urlstyle{rm}  % Set urls in roman.
 
 \begin{document}
 
+\begin{longtable}{{rl}} 
+
+\textarabic{kwa ina la rahamani * naanda nudhuma hini * ina ya pili ramani * namwandikiya yahaya
+} & \textarabic{١} \\* 
+\Tr{kwa ina la rahamani * naanḏa nudhuma hini * ina ya pili ramani * namwanḏikiya yahaya} & \Tr{1}\\* 
+\textarabic{
+} & \textarabic{٢} \\* 
+\Tr{} & \Tr{2}\\* 
+\textarabic{kwenye ramani ya kwanda * banati naliwafunda * na hini nimeiunda * wavulana kuwambiya
+} & \textarabic{٣} \\* 
+\Tr{kwenye ramani ya kwanḏa * banaṯi naliwafunḏa * na hini nimeiunḏa * wavulana kuwambiya} & \Tr{3}\\* 
+\textarabic{
+} & \textarabic{٤} \\* 
+\Tr{} & \Tr{4}\\* 
+\textarabic{na asili ya kwandika * nahisi wana wataka * baba piya kadhalika * mimi alinandikiya
+} & \textarabic{٥} \\* 
+\Tr{na asili ya kwanḏika * nahisi wana waṯaka * baba piya kadhalika * mimi alinanḏikiya} & \Tr{5}\\* 
+\textarabic{
+} & \textarabic{٦} \\* 
+\Tr{} & \Tr{6}\\* 
+\textarabic{baba bwana ahmadi * atamjazi wadudi * kwani alijitahidi * kunandikiya wasiya 
+} & \textarabic{٧} \\* 
+\Tr{baba bwana ahmaḏi * aṯamjazi waḏuḏi * kwani alijiṯahiḏi * kunanḏikiya wasiya} & \Tr{7}\\* 
+\textarabic{
+} & \textarabic{٨} \\* 
+\Tr{} & \Tr{8}\\* 
+\textarabic{hapo zamani za yana * ndiyo la wasiya yina * alonandikia bwana * babangu kaniwatiya
+} & \textarabic{٩} \\* 
+\Tr{hapo zamani za yana * nḏiyo la wasiya yina * alonanḏikia bwana * babangu kaniwaṯiya} & \Tr{9}\\* 
+\textarabic{
+} & \textarabic{١٠} \\* 
+\Tr{} & \Tr{10}\\* 
+\textarabic{nami katika ramani * tayipinda kubaini * yale ninayoamini * yaweza kusaidiya
+} & \textarabic{١١} \\* 
+\Tr{nami kaṯika ramani * ṯayipinḏa kubaini * yale ninayoamini * yaweza kusaiḏiya} & \Tr{11}\\* 
+\textarabic{
+} & \textarabic{١٢} \\* 
+\Tr{} & \Tr{12}\\* 
+\textarabic{tanena naloyatuma * na yale niloyasoma * tazitaya na hekima * kwa watu nilopokeya
+} & \textarabic{١٣} \\* 
+\Tr{ṯanena naloyaṯuma * na yale niloyasoma * ṯaziṯaya na hekima * kwa waṯu nilopokeya} & \Tr{13}\\* 
+\textarabic{
+} & \textarabic{١٤} \\* 
+\Tr{} & \Tr{14}\\* 
+\textarabic{yale nitayakusanya * mbali mbali kutanganya * lengo langu ni kufanya * kama la maisha boya
+} & \textarabic{١٥} \\* 
+\Tr{yale niṯayakusanya * mbali mbali kuṯanganya * lengo langu ni kufanya * kama la maisha boya} & \Tr{15}\\* 
+\end{longtable}
+
 \begin{longtable}{r}
-\textfarsi{مَئِيشَ} \\*
-\T{maisha} \\
-\cdashline{1-1}[1pt/3pt] \\
-[6mm]
-\end{longtable}
-
-
-\begin{longtable}{rrl} 
-
-\textarabic{نَأَنْدَ نُذُومَ هِينِ} & \textarabic{كْوَ إِينَ لَ رَهَمَانِ} & \textarabic{١} \\* 
-\T{naanda nudhuma hini} & \T{kwa ina la rahamani} & \T{1a/b} \\ 
-\textarabic{نَمْوَنْدِكِيَ يَهَايَ} & \textarabic{إِينَ يَ پِيلِ رَمَانِ} &  \\* 
-\T{namwandikiya yahaya} & \T{ina ya pili ramani} & \T{1c/d} \\ 
-\\[8mm] 
-
-\textarabic{بَنَاتِ نَلِوَفُونْدَ} & \textarabic{كْوٖينْيٖ رَمَانِ يَ كْوَانْدَ} & \textarabic{٢} \\* 
-\T{banati naliwafunda} & \T{kwenye ramani ya kwanda} & \T{2a/b} \\ 
-\textarabic{وَڤُلَانَ كُوَمْبِيَ} & \textarabic{نَ هِينِ نِمٖئُِونْدَ} &  \\* 
-\T{wavulana kuwambiya} & \T{na hini nimeiunda} & \T{2c/d} \\ 
-\\[8mm] 
-
-\textarabic{نَهِيسِ وَانَ وَتَاكَ} & \textarabic{نَ أَسِيلِ يَ كْوَنْدِيكَ} & \textarabic{٣} \\* 
-\T{nahisi wana wataka} & \T{na asili ya kwandika} & \T{3a/b} \\ 
-\textarabic{مِيمِ أَلِنَنْدِكِيَ} & \textarabic{بَابَ پِيَ كَذَلِيكَ} &  \\* 
-\T{mimi alinandikiya} & \T{baba piya kadhalika} & \T{3c/d} \\ 
-\\[8mm] 
-
-\textarabic{أَتَمْجَازِ وَدُودِ} & \textarabic{بَابَ بوَانَ أَهمَادِ} & \textarabic{٤} \\* 
-\T{atamjazi wadudi} & \T{baba bwana ahmadi} & \T{4a/b} \\ 
-\textarabic{كُنَنْدِكِيَ وَسِيَ} & \textarabic{كْوَانِ أَلِجِتَهِيدِ} &  \\* 
-\T{kunandikiya wasiya} & \T{kwani alijitahidi} & \T{4c/d} \\ 
-\\[8mm] 
-
-\textarabic{نْدِيٗ لَ وَسِيَ يِينَ} & \textarabic{هَاپٗ زَمَانِ زَ يَانَ} & \textarabic{٥} \\* 
-\T{ndiyo la wasiya yina} & \T{hapo zamani za yana} & \T{5a/b} \\ 
-\textarabic{بَبَانْڠُ كَنِوَتِيَ} & \textarabic{أَلٗنَنْدِكِئَ بوَانَ} &  \\* 
-\T{babangu kaniwatiya} & \T{alonandikia bwana} & \T{5c/d} \\ 
-\\[8mm] 
-
-\textarabic{تَيِپِينْدَ كُبَئِينِ} & \textarabic{نَامِ كَتِيكَ رَمَانِ} & \textarabic{٦} \\* 
-\T{tayipinda kubaini} & \T{nami katika ramani} & \T{6a/b} \\ 
-\textarabic{يَوٖيزَ كُسَئِدِيَ} & \textarabic{يَالٖ نِنَيٗؤَمِينِ} &  \\* 
-\T{yaweza kusaidiya} & \T{yale ninayoamini} & \T{6c/d} \\ 
-\\[8mm] 
-
-\textarabic{نَ يَالٖ نِلٗيَسٗومَ} & \textarabic{تَنٖينَ نَلٗيَتُومَ} & \textarabic{٧} \\* 
-\T{na yale niloyasoma} & \T{tanena naloyatuma} & \T{7a/b} \\ 
-\textarabic{كْوَ وَاتُ نِلٗپٗكٖيَ} & \textarabic{تَزِتَايَ نَ هٖكِيمَ} &  \\* 
-\T{kwa watu nilopokeya} & \T{tazitaya na hekima} & \T{7c/d} \\ 
-\\[8mm] 
-
-\textarabic{مْبَالِ مْبَالِ كُتَنْڠَانْيَ} & \textarabic{يَالٖ نِتَيَكُسَانْيَ} & \textarabic{٨} \\* 
-\T{mbali mbali kutanganya} & \T{yale nitayakusanya} & \T{8a/b} \\ 
-\textarabic{كَامَ لَ مَئِيشَ بٗويَ} & \textarabic{لٖينْڠٗ لَانْڠُ نِ كُفَانْيَ} &  \\* 
-\T{kama la maisha boya} & \T{lengo langu ni kufanya} & \T{8c/d} \\ 
-\\[8mm] 
-
-\end{longtable}
-
 % Remember to end each line (except vertical space) with a double backslash
-
-\begin{longtable}{r}
-
  \\  % Any material after the end of the poem
 
 \end{longtable}

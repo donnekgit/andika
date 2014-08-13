@@ -1,0 +1,44 @@
+\chapter{Getting started}
+\label{ch:started}
+
+\section{Website}
+
+The website\footnote{\url{kevindonnelly.org.uk/swahili}} allows you to experiment with \textbf{Andika!} regardless of the operating system (Microsoft Windows, Apple Mac OS, GNU/Linux, Android, etc) on your computer or device.  All you need to do is install the Scheherazade font\footnote{\url{scripts.sil.org/cms/scripts/page.php?item_id=Scheherazade}} so that all the Arabic glyphs (characters) used in Swahili are available.
+
+In the Roman to Arabic section of the website you can type into a box in Roman script and have the input converted into Arabic script, or you can input a web address and have that whole page converted into Arabic script.  You can cut and paste the converted Arabic text into a word-processor.  The Arabic to Roman section of the website lets you convert Arabic script into standard Roman orthography.
+
+\section{Introducing \textit{Ubuntu}}
+
+The website offers only limited functionality -- to use \textbf{Andika!} fully, it is best to install it on your own computer.  \textbf{Andika!} was developed on GNU/Linux,\footnote{\url{en.wikipedia.org/wiki/Linux}} a free, secure, and versatile operating system which is not owned by any one company -- much of the internet runs on GNU/Linux, and large internet companies such as Google, Amazon and Facebook use it extensively.\footnote{Most of \textbf{Andika!} will work on Microsoft Windows or Apple Mac OS, but the crucial part (keyboard layout and activation) will not, since keyboard handling differs between operating systems -- I would be happy to accept appropriate layout files for operating systems other than GNU/Linux.}
+
+The specific ``flavour'' of GNU/Linux used is Ubuntu.\footnote{ubuntu.com}  Ubuntu was started by a South African, Mark Shuttleworth, and the name is cognate with Swahili \AS{أُوتُ} (\textbf{utu}, \textit{humanity}), so it is apt for a project like \textbf{Andika!}  It is highly recommended to download Ubuntu\footnote{\url{ubuntu.com/download/desktop}} and install it\footnote{\url{ubuntu.com/download/desktop/install-ubuntu-desktop}} as your main operating system, but if that is not possible the next best thing is to run it in a virtual machine on top of Microsoft Windows or Apple Mac OS by installing VirtualBox\footnote{\url{virtualbox.org}} and then installing GNU/Linux into that.  Both these areas are outside the scope of this manual, but there is a wealth of information available on the internet about them.
+
+Microsoft Windows or Apple Mac OS, which are owned by single companies, offer only a single desktop (interface to the operating system).  But with GNU/Linux is it possible to choose from a variety of desktops.  By default, Ubuntu comes with the Unity desktop\footnote{\url{unity.ubuntu.com}}, but the instructions here are mostly for the KDE desktop\footnote{\url{kde.org}}, since that is what I use.\footnote{I would be happy to include details for other desktops if anyone sends them to me.}  You can make KDE available by installing the \textit{kubuntu-desktop} package in Ubuntu, and you can then select either  the Unity or KDE desktop when the computer starts.
+
+Detailed instructions for installing \textbf{Andika!} and the other software it requires are in \Cref{appA}.
+
+\section{Typing Swahili in Arabic script}
+
+If you simply want to type Swahili in Arabic script, it's very easy to get started:
+\begin{enumerate}
+\item Download \textbf{Andika!} (\ref{s:snapshot}) in a zip file.
+\item Unzip the file.
+\item Move into the \textit{andika} folder created.
+\item Install the Scheherazade font so that all the Arabic glyphs (characters) used in Swahili are available (\ref{s:fonts}).
+\item Install a keyboard so that the Arabic letters can be typed (\ref{s:keyboard}).
+\item Configure the LibreOffice word-processor to handle Arabic script (\ref{s:libreoffice}).
+\end{enumerate}
+
+\section{Converting and annotating Swahili in Arabic script}
+
+The above will not allow you to convert automatically from one script to the other -- for that you need to do the full installation in \Cref{appA}.  This will also allow you to transliterate, edit and annotate Swahili documents in Arabic script -- see \Cref{ch:poetry}.
+
+\section{Next steps}
+
+\Cref{ch:fonts} reviews some font-related issues.
+
+\Cref{ch:keyboard} explains the keyboard layout used in \textbf{Andika!}, and how to access the various glyphs it caters for.
+
+\Cref{ch:spelling} sets out proposed conventions for standard spelling of Swahili in Arabic script, which are used when converting between the standard Roman script and Arabic script and vice versa.
+
+\Cref{ch:poetry} shows how Swahili poetry manuscripts in Arabic script can be transcribed to produce attractive output in various digital formats, including transliteration, translation, notes, emendations, variant readings, and so on, with the added benefit that the contents of the manuscripts are then available for computer analysis of language, vocabulary, word-frequency, etc.

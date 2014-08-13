@@ -17,7 +17,7 @@ if ($output=="pdf")
 
     $translit=ar2rom(trim($stanza_line)); // transliterate
     $roman=trim(close_trans($translit));  // apply close phonetic transcription
-    fwrite($fp, "\T{".$roman."} & \T{".$stanza_no.$key."} \\\\ \n");
+    fwrite($fp, "\Tr{".$roman."} & \Tr{".$stanza_no.$key."} \\\\ \n");
     echo $key.": ".$roman."\n";
 }
 elseif ($output="db")
