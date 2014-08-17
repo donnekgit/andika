@@ -7,11 +7,13 @@
 \noindent I am grateful to Natalie Kontny, Student Assistant on Project C07, \textbf{The Place of Swahili Manuscripts in East African Collections},  at the University of Hamburg's Centre for the Study of Manuscript Cultures,\footnote{\url{www.manuscript-cultures.uni-hamburg.de/Projekte_e.html}} for road-testing these instructions and helping to write them up.
 \end{quotation}
 
+\section{Introduction}
+
 These instructions are based on Ubuntu 14.04, both as the main operating system and as a virtual guest on Apple OS X. In either case, your desktop, real or virtual, needs to be working properly and to have network access so that you can download the additional software required.
 
 Users who simply wish to be able to type Swahili in a word-processor need not go through the full installation procedure in this appendix.  They only need to do A/2.1, move into the unzipped download, and then follow A/3-5.
 
-The full installation procedure needs to be carried out by users who wish to transcribe, edit and annotate Swahili documents in Arabic script, providing Roman equivalents as well.  The reason there is so much to install is that \textbf{Andika!} does not reinvent the wheel -- rather, it tries to combine already-existing best-of-breed software to do new things.
+The full installation procedure here needs to be carried out by users who wish to transcribe, edit and annotate Swahili documents in Arabic script, providing Roman equivalents as well.  The reason there is so much to install is that \textbf{Andika!} does not reinvent the wheel -- rather, it tries to combine already-existing best-of-breed software to do new things.
 
 
 \section{Preliminaries}
@@ -169,40 +171,23 @@ In the settings dialogue, click on \textbf{Input Devices} \textrightarrow\ \text
 
 On the \textit{Layouts} tab, tick \textbf{Configure layouts}, and then click \textbf{Add}.
 
-Fill in the pop-up dialogue as shown:\footnote{Swahili (Kenya) can be chosen instead of Swahili (Tanzania) if preferred.}
+Fill in the pop-up dialogue as shown in \Cref{fig:kdelg}.\footnote{Swahili (Kenya) can be chosen instead of Swahili (Tanzania) if preferred.}
 
 \begin{figure}[h]
 \centering
 \includegraphics[keepaspectratio=true]{./images/kdelg.png}
 % kdelg.png: 518x266 pixel, 96dpi, 13.70x7.04 cm, bb=0 0 388 199
 \caption{Setting up the Swahili keyboard for KDE}
+\label{fig:kdelg}
 \end{figure}
 
-Click \textbf{OK}, and then click \textbf{Apply} to exit.
+Click \textbf{OK}, and then \textbf{Apply} to exit.
 
-You should now see an additional marker in the system tray at the bottom right of your screen, which will be the abbreviation for the default language on your desktop.  For instance, if you have UK English as the default, you will see:
-
-\begin{figure}[h]
-\centering
-\includegraphics[keepaspectratio=true]{./images/gb.png}
-% gb.png: 107x29 pixel, 96dpi, 2.83x0.77 cm, bb=0 0 80 22
-\end{figure}
-
-Click on this, and it will change to:
-
-\begin{figure}[h]
-\centering
-\includegraphics[keepaspectratio=true]{./images/tz.png}
-% gb.png: 107x29 pixel, 96dpi, 2.83x0.77 cm, bb=0 0 80 22
-\end{figure}
-
-showing that the Swahili keyboard is now operational. 
-
-You can also switch between the two keyboards by pressing \textbf{Ctrl+Alt+K}.
+You should now see an additional marker in the system tray at the bottom right of your screen, which will be the abbreviation for the default language on your desktop.  For instance, if you have UK English as the default, you will see \textbf{gb}.  Click on this, and it will change to \textbf{tz}, showing that the keyboard for Swahili in Arabic script is now operational.  You can quickly switch between the two keyboards by pressing \textbf{Ctrl+Alt+K}.
 
 Close the \textit{System Settings} box.
 
-NOTE: If you change the keyboard to Swahili and then leave your machine for some time, it may power down the screen.  When you resume work, it will present a login box so that you can unlock the session.  Unfortunately, since you left the keyboard set to Swahili, it will only allow you to type Arabic glyphs, which means that you cannot type in your (Roman glyph) password!
+NOTE: If you have the unlock screen activated, this means that when you leave your machine for some time, it will power down the screen and then, when you resume work, present a login box so that you can unlock the desktop.   A problem arises if you changed the  the keyboard to Swahili before leaving your machine -- since the machine was powered down with that keyboard active, the login box will only allow you to type Arabic glyphs, which means that you cannot type in your (Roman glyph) password!
 
 To deal with this situation, press \textbf{Crtl+Alt+F5} to get a terminal login.  Type your username and password to log in.
 
@@ -213,9 +198,12 @@ Find the line:\\
 \verb|LayoutList=gb,tz|\\
 and change it to:\\
 \verb|LayoutList=gb|\\
-Save the file: \textbf{Ctrl+X, Y, Return}.  (The example here uses the UK English keyboard, \textit{gb} -- replace this with whatever your own default keyboard is).
+Save the file: \textbf{Ctrl+X, Y, Return}.\\
+(The example here uses the UK English keyboard, \textit{gb} -- replace this with whatever your own default keyboard is.)
 
 Press \textbf{Ctrl+Alt+F7} to return to the unlock screen.  Click the login box, and you should be able to login as normal.  However, you will need to re-add the Swahili keyboard as shown above.
+
+Alternatively, you can disable the unlock screen by going to \textbf{K} \textrightarrow\ \textbf{Settings} \textrightarrow\ \textbf{System Settings \textrightarrow\ Power Management \textrightarrow\ Advanced Settings}, and unticking \textit{Lock screen on resume}.
 
 
 \section{LibreOffice}

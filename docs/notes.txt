@@ -1,16 +1,3 @@
-Keyboard: changing layout
----------------------------------
-
-sudo nano layout/tz
-Edit and save
-sudo cp layout/tz /usr/share/X11/xkb/symbols/
-You need to delete the server- "copy" files in /var/lib/xkb:
-sudo rm /var/lib/xkb/server-*
-They will be recreated.  Then remove the tz keyboard layout and re-add it.  Unticking the Configure Layout box, then clicking Apply, then reticking it, then Apply also seems to work.
-
-Note that any texts written using the old character will need to be corrected to use the new character.
-
-
 PPA
 -----
 
@@ -137,7 +124,22 @@ Doesn't seem to work with Antlr4, only Antlr3.
 Good for starting a new layout from scratch, but can't read in an existing layout!
 
 
+Adding a glyph when there is no Unicode point
+-----------------------------------------------------------
+\url{https://en.wikipedia.org/wiki/Private_Use_Areas}
+\url{http://www.unicode.org/faq/private_use.html}
 
+Use the Unicode PUA: E000-F8FF (6,400 codepoints are available here).
+Copy dammatan to E000 and edit to create damma with tail (used for o)
+Generate the font again.
+Uninstall it and reinstall it.
+
+Editing the keyboard layout
+Set damma-tail to be accessible from AltGr+Shift+O
+sudo nano /usr/share/X11/xkb/symbols/tz
+Edit the line:
+\verb|key <AD09> { [          U0657,     Arabic_waw, Arabic_hamzaonwaw, UE000                 ] };|
+adding the Unicode number for the new character at the end.
 
 
 

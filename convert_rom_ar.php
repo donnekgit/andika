@@ -43,10 +43,10 @@ $mystring=preg_replace("/\n/", "###", $mystring);
 
 // Mark penultimate syllables in the standard orthography, and a few other things.
 $prepped=prep_rom($mystring);
-// echo $prepped."<br />";
+// echo preg_replace("/###/", "<br />", $prepped)."<br />";
 
 $translit=rom2ar($prepped, $no_sukun);
-//echo $translit."<br />";
+// echo preg_replace("/###/", "<br />", $translit)."<br />";
 
 // Show sukun on long waw and yeh if that option has been ticked.
 if (isset($_POST['longvowel']))

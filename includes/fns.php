@@ -293,12 +293,14 @@ function rom2ar($text, $no_sukun=NULL)
 	$text=preg_replace("/ng'/", "U+0646U+075D", $text);  // ain with two dots - used in ŋ
 
 	$text=preg_replace("/\buia/", "U+0623U+064FU+0626U+0650U+0626U+064E", $text);  // alef with hamza above + damma + yeh with hamza + kasra + yeh with hamza + fatha
+	$text=preg_replace("/\buoe/", "U+0623U+064FU+0624U+0657U+0624U+0656", $text);  // damma + waw with hamza + inverted damma + waw with hamza + subscript alef
 	
 	$text=preg_replace("/aia/", "U+064EU+0626U+0650U+0626U+064E", $text);  // fatha + yeh with hamza + kasra + yeh with hamza + fatha
 	$text=preg_replace("/oea/", "U+0657U+0626U+0656U+0626U+064E", $text);  // inverted damma + yeh with hamza + subscript alef + yeh with hamza + fatha
 	$text=preg_replace("/uia/", "U+064FU+0626U+0650U+0626U+064E", $text);  // damma + yeh with hamza + kasra + yeh with hamza + fatha
 	$text=preg_replace("/uie/", "U+064FU+0626U+0650U+0626U+0656", $text);  // damma + yeh with hamza + kasra + yeh with hamza + subscript alef
 	$text=preg_replace("/uoa/", "U+064FU+0624U+0657U+0624U+064E", $text);  // damma + waw with hamza + inverted damma + waw with hamza + fatha
+	$text=preg_replace("/uoe/", "U+064FU+0624U+0657U+0624U+0656", $text);  // damma + waw with hamza + inverted damma + waw with hamza + subscript alef
 	$text=preg_replace("/uua/", "U+064FU+0624U+064FU+0624U+064E", $text);  // damma + waw with hamza + damma + waw with hamza + fatha
 	$text=preg_replace("/uue/", "U+064FU+0624U+064FU+0624U+0656", $text);  // damma + waw with hamza + damma + waw with hamza + subscript alef
 
@@ -321,7 +323,7 @@ function rom2ar($text, $no_sukun=NULL)
 	$text=preg_replace("/\buw/", "U+0623U+064FU+0648", $text);  // alef with hamza above + damma + waw
 
 	// Other vowel transitions
-	$text=preg_replace("/aaL/", "U+064EU+0623U+064E", $text);  // fatha + alef with hamza above + fatha
+// 	$text=preg_replace("/aaL/", "U+064EU+0623U+064E", $text);  // fatha + alef with hamza above + fatha
 	$text=preg_replace("/aa/", "U+064EU+0623U+064E", $text);  // fatha + alef with hamza above + fatha
 	$text=preg_replace("/ae/", "U+064EU+0626U+0650", $text);  // fatha + yeh with hamza + subscript alef
 	$text=preg_replace("/ai/", "U+064EU+0626U+0650", $text);  // fatha + yeh with hamza + kasra
@@ -333,13 +335,15 @@ function rom2ar($text, $no_sukun=NULL)
 	$text=preg_replace("/ei/", "U+0656U+0626U+0650", $text);  // subscript alef + yeh with hamza + kasra
 	$text=preg_replace("/eo/", "U+0656U+0624U+0657", $text);  // subscript alef + waw with hamza + inverted damma
 	$text=preg_replace("/eu/", "U+0656U+0624U+064F", $text);  // subscript alef + waw with hamza + damma
-	
+    
+    $text=preg_replace("/iiy/", "U+0650U+0624U+064F", $text);  // kasra + waw with hamza + damma
 	$text=preg_replace("/ia/", "U+0650U+0626U+064E", $text);  // kasra + yeh with hamza + fatha
 	$text=preg_replace("/ie/", "U+0650U+0626U+0656", $text);  // kasra + yeh with hamza + subscript alef
 	$text=preg_replace("/ii/", "U+0650U+0626U+0650", $text);  // kasra + yeh with hamza + kasra
 	$text=preg_replace("/io/", "U+0650U+0624U+0657", $text);  // kasra + waw with hamza + inverted damma
 	$text=preg_replace("/iu/", "U+0650U+0624U+064F", $text);  // kasra + waw with hamza + damma
 	
+    $text=preg_replace("/oow/", "U+0657U+0624U+0657", $text);   // inverted damma + waw with hamza + inverted damma
 	$text=preg_replace("/oa/", "U+0657U+0624U+064E", $text);  // inverted damma + waw with hamza + fatha
 	$text=preg_replace("/oe/", "U+0657U+0626U+0656", $text);  // inverted damma + yeh with hamza + subscript alef
 	$text=preg_replace("/oi/", "U+0657U+0626U+0650", $text);  // inverted damma + yeh with hamza + kasra

@@ -12,7 +12,7 @@
 
 \usepackage{footnote}  % Saves footnotes in a table and prints them out at the end, so that they show properly.  Use \begin|\end{savenotes}.
 
-\usepackage{arydshln}  % For dashed lines.
+% \usepackage{arydshln}  % For dashed lines.  !!!NO!!! This creates problems with longtable: Undefined control sequence \hline
 
 \usepackage{pdfpages}
 
@@ -25,7 +25,7 @@
 % \setlength{\cftsecnumwidth}{1cm}  % 
 % \setlength{\cftsubsecnumwidth}{1.5cm}  % 
 
-\usepackage[labelfont=bf,textfont=it]{caption} % Set properties for captions - wider margins, smaller font, bold figure label, etc.
+\usepackage[labelfont=bf,textfont=it]{caption} % Set properties for captions.
 
 \usepackage{natbib}
 
@@ -120,6 +120,7 @@
 \titleformat{\chapter}[display]{\normalfont\large}{\bfseries\chaptertitlename\ \thechapter}{10pt}{\LARGE\itshape}[\vspace{2ex}\titlerule]  % 10pt is the space between chapter and chapter name.  [display] sets the chapter and chapter name on separate lines.  The square brackets at the end draw a line under each chapter name, with 2ex gap from the name.
 \titlespacing{\chapter}{0pt}{0pt}{10pt}  % First is indent from the side, second is length down from the top, third is gap between heading and text.
 \titleformat{\section}[block]{\normalfont\large\itshape}{\itshape\thesection}{1em}{}  % 1em is the space between section number and section name.  [block] sets the section and section name on the same line.
+\titleformat{\subsection}[block]{\normalfont\normalsize\bfseries}{\bfseries\thesubsection}{1em}{}  % 1em is the space between section number and section name.  [block] sets the section and section name on the same line.
 
 \renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
 
@@ -134,208 +135,33 @@
 \setlength{\parindent}{0in}  % no paragraph indents
 \setlength{\parskip}{2ex}  % put a linespace between paragraphs
 
+% Define superscripts in red, subscripts in blue, and the two stacked.
+% http://tex.stackexchange.com/questions/8255/superscript-and-subscript-together
+\def\SP#1{\textsuperscript{\textcolor{blue}{#1}}}
+\def\SB#1{\textsubscript{\textcolor{blue}{#1}}}
+\def\SPSB#1#2{\rlap{\textsuperscript{\textcolor{blue}{#1}}}\SB{#2}}
+
+% Define a highlighter for consonant/vowel.
+\def\CV#1{\textcolor{blue}{#1}}
 
 
 \begin{document}
 \frenchspacing
 
 % \include{frontmatter}
-
+% 
 % \input{chapter1intro}
-
+% 
 % \input{chapter2examples}
-
+% 
 % \input{chapter3started}
-
+% 
 % \input{chapter4fonts}
-
+% 
 % \input{chapter5keyboard}
-
-
-
-
-\chapter{Spelling conventions}
-\label{ch:spelling}
-
-The spelling conventions suggested here for current-day Swahili reflect those developed by Marehemu Mu'allim Sheikh Yahya Ali Omar, and used in various manuscripts he wrote, along with the principles set out in the academic article he wrote in collaboration with PJL Frankl. This section sets out the main elements of my interpretation of these source, giving various examples. I would be happy to hear from anyone who has any comments on the conventions. 
-
-Word segmentation is as for current-day Swahili in Roman script. This means that items such as \AS{لَ زَ يَ نَ} \textbf{na, ya, za, la} are written separately from the following word, even though in manuscripts they may be written attached to that word.
-
-All short vowels are marked. Although short vowels are usually omitted in Arabic, this is inadvisable in Swahili because of the different structure of the language, and also because Swahili has 5 vowels instead of 3.
-
-The penultimate syllable of a word has its stress/length marked by writing it with a long vowel. \AS{ا} is used for \textbf{a}, \AS{ي} for \textbf{e} and \textbf{i}, and \AS{و} for \textbf{o} and \textbf{u}. (The short vowels \textbf{a, i, u} may be omitted when they occur before a long vowel, eg \AS{ساسَ} instead of \AS{سَاسَ} (\textbf{sasa}, \textit{now}), but this is not recommended.) This also helps to delimit individual words in the Arabic script.
-
-Initial vowels use the vowel-carriers \AS{أ} (\textbf{a, o, u}) or \AS{إ} (\textbf{e, i}), eg \AS{أَنَسٖيمَ} (\textbf{anasema}, \textit{he is speaking}), \AS{أُڠَالِ} (\textbf{ugali}, \textit{porridge}), \AS{إِذِينِ} (\textbf{idhini}, \textit{permission}).
-
-The order of typing is: vowel carrier, then short vowel, then long vowel (if applicable).
-
-Word-final vowel sequences\footnote{The marking of word-final and word-internal vowel sequences using hamza is handled in just one page of \citet{Omar1997}: \textit{Appendix B: The Hamza in Swahili Arabic script}. I have expanded on the principles set out there in an attempt to remove any ambiguities.} are written using vowel-carriers. \AS{ئ} is used when the first vowel of the word-final sequence is \textbf{e} or \textbf{i}: \AS{كُپٗكٖئَ} (\textbf{kupokea}, \textit{to receive}), \AS{كُتِئَ} (\textbf{kutia}, \textit{to place}). \AS{ؤ} is used when the first vowel of the word-final sequence is \textbf{o} or \textbf{u}: \AS{كُپٗؤَ} (\textbf{kupoa}, \textit{to cool}), \AS{كُسُڠُؤَ} (\textbf{kusugua}, \textit{to rub}). Note that in these instances, there is no need to add a long vowel for the penultimate syllable - thus \AS{كُپٖئَ} (\textbf{kupea}, \textit{to sweep}), and not \AS{كُپٖيئَ}, and \AS{كُتٗؤَ} (\textbf{kutoa}, \textit{to produce}), and not \AS{كُتٗوؤَ}. When the first vowel of the word-final sequence is \textbf{a}, \AS{ء} (hamza) preceded by \AS{ا} is used to carry the vowel: \AS{مَفَاءَ} (\textbf{mafaa}, \textit{usefulness}), \AS{تَاءِ} (\textbf{tai}, \textit{vulture}), \AS{بَاءٗ} (\textbf{bao}, \textit{plank})
-
-Word-internal vowel sequences use \AS{ئ} as the vowel-carrier when the second vowel of the word-internal sequence is \textbf{e} or \textbf{i}: \AS{شَئِيرِ} (\textbf{shairi}, \textit{poetry}), \AS{كِئِينِ} (\textbf{kiini}, \textit{pith}), \AS{كُئِيتَ} (\textbf{kuita}, \textit{to call}). When the second vowel of the word-internal sequence is \textbf{o} or \textbf{u}, \AS{ؤ} is the vowel-carrier: \AS{شَؤُورِ} (\textbf{shauri}, \textit{advice}), \AS{مٖؤُوپٖ} (\textbf{meupe}, \textit{white} [class 6]), \AS{كُؤٗونَ} (\textbf{kuona}, \textit{to see}). Where \textbf{a} is the second vowel of the word-internal sequence, the vowel-carrier is \AS{ئ} if the first vowel is \textbf{e, i}, eg \AS{ڤِئَازِ} (\textbf{viazi}, \textit{potatoes}), and \AS{ؤ} if the first vowel is \textbf{o, u}, eg \AS{كُؤَنْدِيكَ} (\textbf{kuandika}, \textit{to write}). In the sequence \textbf{aa}, the vowel-carrier \AS{أ} is used: \AS{مَأَنْدِيشِ} (\textbf{maandishi}, \textit{manuscripts}). Note that in these instances, in contrast to word-final vowel sequences, a long vowel \textit{is} written for the penultimate syllable where appropriate.
-
-Arabic letters in loanwords should ideally use the original Arabic letter, but where that is not appropriate they can be written as an Arabic transliteration of the Roman letter, eg \AS{ذ} instead of \AS{ض} or \AS{ظ}.Note that the Roman to Arabic converter will always do this, since the standard Swahili Roman orthography does not preserve these distinctions.
-
-
-\chapter{Vowels}
-
-\begin{longtable}[c]{p{2cm}p{3cm}p{1cm}p{3cm}rp{4cm}}  % [c] means the table will be centered.
-
-\textbf{Swahili name} & \textbf{Keystrokes} & \textbf{Arabic script} & \textbf{Roman script and description} & & \textbf{Example} \\
-\hline \\
-
- & AltGr+a \textit{then} a & \AS{أَ} & a - initial & \AS{أَسٗومَ} & \textbf{a}soma (\textit{he reads}) \\
-fataha & a & \AS{َ} & a - non-initial, non-penultimate & \AS{بَهَرِينِ} & b\textbf{a}h\textbf{a}rini (\textit{in the sea}) \\
- & a \textit{then} Shift+a & \AS{َ  ا} & a - penultimate & \AS{سَاسَ} & s\textbf{a}sa (\textit{now}) \\
-\hline \\
-
- & \textbackslash\ (backslash) \textit{then} e & \AS{إٖ} & e - initial & \AS{إٖندٖلٖئَ} & \textbf{e}ndelea (\textit{go on!}) \\
-kasiri ya\\kusimama & e & \AS{ٖ} & e - non-initial, non-penultimate & \AS{كٖلٖيلٖ} & k\textbf{e}lel\textbf{e} (\textit{shout}) \\
- & e \textit{then} Shift+e & \AS{ٖ ي} & e - penultimate & \AS{نجٖيمَ} & nj\textbf{e}ma (\textit{good}) \\
-\hline \\
-
- & \textbackslash\ (backslash)  \textit{then} i & \AS{إِ} & i - initial & \AS{إِسِپٗكُوَ} & \textbf{i}sipokuwa (\textit{unless}) \\
-kasiri & i & \AS{ِ} & i - non-initial, non-penultimate & \AS{كِتَابُ} & k\textbf{i}tabu (\textit{book}) \\
- & i \textit{then} Shift+i & \AS{ِ  ي} & i - penultimate & \AS{مَشِيزِ} & mash\textbf{i}zi (\textit{soot}) \\
-\hline \\
-
- & AltGr+a \textit{then} o & \AS{أٗ} & o - initial & \AS{أٗكتٗوبَ} & \textbf{O}ktoba (\textit{Oktober}) \\
-dhuma ya\\kupindua & o & \AS{ٗ} & o - non-initial, non-penultimate & \AS{كِلِيمٗ} & kilim\textbf{o} (\textit{cultivation}) \\
- & o \textit{then} Shift+o & \AS{ٗ  و} & o - penultimate & \AS{مْكٗونڠَ} & mk\textbf{o}nga (\textit{elephant's trunk}) \\
-\hline \\
-
- & AltGr+a \textit{then} u & \AS{أُ} & u - initial & \AS{أُلِيمِ} & \textbf{u}limi (\textit{tongue}) \\
-dhuma & u & \AS{ُ} & u - non-initial, non-penultimate & \AS{كُشُكُورُ} & k\textbf{u}sh\textbf{u}kur\textbf{u} (\textit{ to give thanks}) \\
- & u \textit{then} Shift+u & \AS{ُ  و} & u - penultimate & \AS{كُومِ} & k\textbf{u}mi (\textit{ten}) \\
-
-\end{longtable}
-
-
-% \chapter{Consonants}
 % 
-% 
-% \begin{longtable}[c]{p{1.5cm}p{3cm}p{1cm}p{3cm}rp{4cm}}  % [c] means the table will be centered.
-% \textbf{Swahili name} & \textbf{Keystrokes} & \textbf{Arabic script} & \textbf{Roman script and description} & & \textbf{Example} \\
-% \hline\smallskip \\
-% bee & b & \AS{ب} & b & \AS{كِبُورِ} & ki\textbf{b}uri (\textit{arrogance}) \\
-% pee & p & \AS{پ} & p & \AS{كُپَاكَ} & ku\textbf{p}aka (\textit{to paint}) \\
-% tee & t & \AS{ت} & t - dental t & \AS{فِتِينَ} & fi\textbf{t}ina (\textit{intrigue}) \\
-%  & t \textit{then} h & \AS{ته} & t - aspirated dental t (Mombasa) & \AS{تهُوپَ} & \textbf{t'}upa (\textit{bottle}) \\
-%  & AltGr+Shift+t & \AS{ٹ} & t - alveolar t (Mombasa) & \AS{ٹُنڈُ} & \textbf{t}undu (\textit{chicken coop}) \\
-% thee & Shift+t & \AS{ث} & th & \AS{ثَمَنِينِ} & \textbf{th}amanini (\textit{eighty}) \\
-% 
-% jimu & j & \AS{ج} & j & \AS{جَانَ} & \textbf{j}ana (\textit{yesterday}) \\
-% chimu & c & \AS{چ} & ch & \AS{چُونڠوَ} & \textbf{ch}ungwa (\textit{large orange}) \\
-%  & c \textit{then} h & \AS{چه} & ch - aspirated ch (Mombasa) & \AS{چهُونڠوَ} & \textbf{ch'}ungwa (\textit{medium-sized orange}) \\
-% 
-% hhee & Shift+h & \AS{ح} & h & \AS{حَسَن} & \textbf{H}asan (\textit{Hasan} [name]) \\
-% khee & x & \AS{خ} & h / kh & \AS{خَبَارِ} & \textbf{[k]h}abari (\textit{news}) \\
-% 
-% dali & d & \AS{د} & d & \AS{كُدَنڠَانيَ} & ku\textbf{d}anganya (\textit{to deceive}) \\
-%  & AltGr+Shift+d & \AS{ڈ} & d - alveolar d (Mombasa) & \AS{ٹُنڈُ} & tun\textbf{d}u (\textit{chicken coop}) \\
-% dhali & Shift+d & \AS{ذ} & dh & \AS{ذَهَابُ} & \textbf{dh}ahabu (\textit{gold}) \\
-% 
-% ree & r & \AS{ر} & r & \AS{كُرُودِ} & ku\textbf{r}udi (\textit{to come back}) \\
-% zee & z & \AS{ز} & z & \AS{كُزِيمَ} & ku\textbf{z}ima (\textit{to extinguish}) \\
-%  & Shift+z & \AS{ژ} & zh (Northern) & \AS{ژِينَ} & \textbf{zh}ina (\textit{name}) \\
-% 
-% sini & s & \AS{س} & s & \AS{كُسِمَامَ} & ku\textbf{s}imama (\textit{to stand}) \\
-% shini & Shift+s & \AS{ش} & sh & \AS{كُشِيكَ} & ku\textbf{sh}ika (\textit{to hold}) \\
-% 
-% sadi & AltGr+s & \AS{ص} & s & \AS{صَحِيبُ} & \textbf{s}ahibu (\textit{friend}) \\
-% dhadi & AltGr+d & \AS{ض} & dh & \AS{ضِيكِ} & \textbf{dh}iki (\textit{distress}) \\
-% tee & AltGr+t & \AS{ط} & t & \AS{كُطَهِرِيشَ} & ku\textbf{t}ahirisha (\textit{to purify}) \\
-% zee & AltGr+z & \AS{ظ} & dh & \AS{أَظُهُورِ} & a\textbf{dh}uhuri (\textit{noon}) \\
-% 
-% ayni & ` (single-quote) & \AS{ع} & ` & \AS{مَعَانَ} & ma\textbf{'}ana (\textit{meaning}) \\
-% ghayni & Shift+g & \AS{غ} & gh & \AS{غَضَابُ} & \textbf{gh}adhabu (\textit{anger}) \\
-% gayni & g & \AS{ڠ} & g & \AS{ڠُنِئَ} & \textbf{g}unia (\textit{sack}) \\
-% ng'ayni & n \textit{then} Shift+n & \AS{نݝ} & ng' & \AS{نݝٗومبٖ} & \textbf{ng'}ombe (\textit{cattle}) \\
-% 
-% fee & f & \AS{ف} & f & \AS{فِيڠٗ} & \textbf{f}igo (\textit{kidneys}) \\
-% vee & v & \AS{ڤ} & v & \AS{كُڤِيمبَ} & ku\textbf{v}imba (\textit{to swell}) \\
-% 
-% qafu & q & \AS{ق} & q & \AS{وَقْفُ} & wa\textbf{q}fu (\textit{consecrated}) \\
-% kafu & k & \AS{ك} & k & \AS{كُوكُ} & \textbf{k}u\textbf{k}u (\textit{large hen}) \\
-%  & k \textit{then} h & \AS{كه} & k - aspirated k (Mombasa) & \AS{كهُوكُ} & \textbf{k'}uku (\textit{medium-sized hen}) \\
-% 
-% lamu & l & \AS{ل} & l & \AS{كُلِيمَ} & ku\textbf{l}ima (\textit{to dig}) \\
-% 
-% mimu & m & \AS{م} & m - non-syllabic & \AS{مِيمِ} & \textbf{m}imi (\textit{I}) \\
-% % mimu & m \textit{then} Shift+ . (full stop) & \AS{مْ} & m - syllabic (eg Classes 1 and 3) & \AS{مْپٖينزِ} & \textbf{m}penzi (\textit{beloved}) \\
-% 
-% nuni & n & \AS{ن} & n & \AS{نَانِ} & \textbf{n}a\textbf{n}i (\textit{who?}) \\
-% 
-% hee & h & \AS{ه} & h & \AS{هَاكٗ} & \textbf{h}ako (\textit{he is not here}) \\
-% 
-% wau & w & \AS{و} & w & \AS{كُوَ} & ku\textbf{w}a (\textit{to be}) \\
-% wau & AltGr+Shift+w & \AS{ۏ} & w - labio-dental w (Mombasa) & \AS{ۏِينٗ} & \textbf{w}ino (\textit{ink}) \\
-% 
-% yee & y & \AS{ي} & y & \AS{يَاكٗ} & \textbf{y}ako (\textit{your}) \\
-% 
-% hamza & AltGr+Shift+h & \AS{ء} & (vowel-carrier) & \AS{تَاءٗ} & ta\textbf{o} (\textit{arch}) \\
-% 
-% hamza & Shift+ , (comma) & \AS{ٔ} & (marks long vowels used as vowel-carriers) & \AS{كُپِكِئَ} & kupik\textbf{i}a (\textit{to cook for}) \\
-% 
-% sakani & Shift+ . (full stop) & \AS{ْ} & (marks a consonant without a following vowel) & \AS{أَسْلَارِ} & a\textbf{s}kari (\textit{soldier}) \\
-% 
-% shada & Shift+ ` (single-quote) & \AS{ّ} & (marks a doubled consonant in Arabic words) & \AS{وَالنَّهَارِ} & wa-\textbf{nn}ahari(\textit{and day}) \\
-% \end{longtable}
-% 
+% \input{chapter6spelling}
 
-\chapter{Comparison}
-\label{ch:comparison}
-
-This section sets out a comparison between the systems in Sheikh Yahya's manuscripts, \citet{Omar1997}, and \textbf{Andika!}. The comparison is summarised in the table below.
-
-\begin{center}
-\begin{tabular}{lccc}
-\textbf{Feature} & \textbf{Manuscripts} & \textbf{Paper} & \textbf{Andika!} \\
-\cline{1-4}\noalign{\medskip}
-Sakani is marked on long vowels & ✓ & $\times$ & $\times$ \\
-All short vowels are marked & ✓ & $\times$ & ✓ \\
-Sakani on consonants denotes syllabicity only & $\times$ & ✓ & $\times$ \\
-Distinction between syllabicity and prenasalisation & ✓ & ✓ & $\times$ \\
-\end{tabular}
-\end{center}
-
-Sakani on long vowels
-
-In Sheikh Yahya's manuscripts, \AS{ي و} carry a \textit{sakani} when used to mark length/stress in the penultimate syllable, eg \AS{مَزِيْوَ} (maziwa, milk). However, in \citet{Omar1997}, \textit{sakani} is not used here (eg \AS{مَزيوَ}). The suggested spelling in \textbf{Andika!} reflects this (though there is nothing to stop users marking \textit{sakani} if they wish, and it is possible to choose this as an option in the Roman to Arabic converter).
-
-Marking short vowels
-
-In Sheikh Yahya's manuscripts, all short vowels are marked, but \citet{Omar1997} proposed that marking these is unnecessary in certain situations:
-
-\begin{itemize}
-\item If the short (unstressed, non-penultimate) vowel they represent is identical to a preceding short vowel. For example, in \AS{ثَمنين}  (\textbf{thamanini}, \textit{eighty}) the second a is omitted because it is preceded by an \textbf{a} (\textit{fataha}).
-
-\item If the short vowel they represent is identical to a preceding or following long/stressed (penultimate) vowel represented by \AS{ي و ا}. For example, in \AS{ثَمنين} (\textbf{thamanini}, \textit{eighty}) the last \textbf{i} is omitted because it is preceded by \AS{ي}, and in \AS{ذهابُ} (\textbf{dhahabu}, \textit{gold}) the first \textbf{a} is omitted because it is followed by \AS{ا}.
-
-\item Where all the vowels in a word are identical, except for\textbf{length/stress}. For example: \AS{تپكاز} (\textbf{tapakaza}, \textit{scatter}), \AS{فكير} (\textbf{fikiri}, \textit{think}), \AS{شكور} (\textbf{shukuru}, \textit{give thanks}).
-\end{itemize}
-
-However, the suggested spelling convention in \textbf{Andika!}, as in Sheikh Yahya's own manuscripts, is that all short vowels are marked, thus: \AS{شُكُورُ - فِكِيرِ - تَپَكَازَ - ذَهَابُ - ثَمَنِينِ}. There are a few practical reasons for this:
-
-\begin{itemize}
-\item Short \textbf{e, o} need to be marked in nearly all cases anyway, since the Arabic script has no way otherwise of distinguishing \AS{ي}  meaning \textbf{i} from \AS{ي} meaning \textbf{e}, or \AS{و} meaning \textbf{o} from \AS{و} meaning \textbf{u}.
-
-\item Omitting short vowel marks may conceivably save time when writing, once the rules above are mastered, but this is unlikely to apply when typing - it is probably faster simply to type more or less what would be typed when using the Roman script, including short vowels.
-
-\item The omission of short vowels means that transliteration into Roman script would require post-editing to add vowels. Even if automating the application of the above rules to avoid this were possible, it is likely that the resulting system would be cumbersome.
-\end{itemize}
-
-
-\textit{Sakani} on consonants
-
-Arabic \textit{sukun} marks the absence of a vowel after a consonant. In Sheikh Yahya's manuscripts, \textit{sakani} is used consistently for this purpose (alongside its use on long vowels). Thus: \AS{أُنَڤْيٗوٖيزَ} (\textbf{unavyoweza}, \textit{how you can}), \AS{كْوَ} (\textbf{kwa}, \textit{to, by, for}). Its most common occurrence is on a nasal before another consonant: \AS{أِنْڠَوَ} (\textbf{ingawa}, \textit{although}), \AS{نْجٖيمَ} (\textbf{njema}, \textit{good}).
-
-Its use on nasals means that \textit{sakani} can also denote syllabicity, and in \citet{Omar1997} its function appears to be limited solely to that. The aim again was most likely to limit the number of diacritics in the text. The suggested convention in \textbf{Andika!}, however, is to follow the manuscript practice, and use \textit{sakani} on the first consonant of multi-consonant clusters. In case some users feel that this leads to clutter, an option is added in the Roman to Arabic converter to turn it off.
-
-Distinction between syllabicity and prenasalisation
-
-Although the Roman orthography does not distinguish these two sounds, both Sheikh Yahya's manuscripts and \citet{Omar1997} make a distinction between a syllabic nasal followed by a voiced plosive (eg \textbf{m̩b}) and a prenasalised voiced plosive (eg \textbf{nɓ}). The former is written with a preceding \AS{ْم}, and the latter with a preceding \AS{ن}, as in \AS{مْبَيَ} (\textbf{mbaya}, \textit{bad} [Class1]) compared to \AS{نبَايَ} (\textbf{mbaya}, \textit{bad} [Class 9]).
-
-\textbf{Andika!} will of course allow this distinction to be made in the Arabic script should a writer wish to do so. However, the Roman to Arabic converter cannot do this (since the distinction is not reflected in the standard orthography), and will always convert mb to \AS{مْب}, so automatically-converted text will need post-editing to reflect this distinction.
 
 
 \chapter{Convert Arabic to Roman script}
@@ -486,7 +312,7 @@ You can also open the html file in LibreOffice itself, but in this case you will
 %----------------
 % Appendix A: installing Andika!
 %----------------
-% \input{appendixAinstall}
+\input{appendixAinstall}
 % stackoverflow.com/questions/1209065/to-have-no-pagebreak-after-include-in-latex
 
 
@@ -496,7 +322,7 @@ You can also open the html file in LibreOffice itself, but in this case you will
 %----------------
 % Appendix B: adding missing glyphs 
 %----------------
-% \input{appendixB}
+\input{appendixBfontforge}
 
 
 \newpage
@@ -506,7 +332,7 @@ You can also open the html file in LibreOffice itself, but in this case you will
 %----------------
 % Appendix C: editing the keyboard
 %----------------
-% \input{appendixCkeyboard}  % not required now
+% \input{appendixCkeyboard}
 
 
 \newpage
@@ -534,37 +360,6 @@ You can also open the html file in LibreOffice itself, but in this case you will
 
 
 \newpage
-
-
-\chapter{Table template}
-
-[NOTE: Not relevant to \textbf{Andika!} Kept here temporarily as a table template.]
-
-\begin{table}[h!]
-\newcommand{\mc}[3]{\multicolumn{#1}{#2}{#3}}
-\begin{tabularx}{\textwidth}{>{\hsize=0.3\hsize}X>{\hsize=1.5\hsize}X>{\hsize=0.3\hsize}X>{\hsize=1.8\hsize}X} 
-\mc{2}{l}{\textbf{Tenses, moods, aspects}} & \mc{2}{l}{\textbf{Verbal extensions}} \\
-\hline\noalign{\smallskip}
-\textit{comp} & completive \textbf{-sha-, -isha-, -kwisha-} & \textit{assoc} & associative extension \textbf{\mbox{-an-}} \\ 
-\textit{conc} & concessional \textbf{-nga-} & \textit{caus} & causative extension \textbf{-iz-, -ez-, -ish-, -esh-, -y-} \\ 
-\textit{cond} & conditional \textbf{-nge-} & \textit{cont} & continuative extension \textbf{-t-} \\ 
-\textit{cons} & consecutive \textbf{-ka-} & \textit{conv} & conversive extension \textbf{-u-, -o-} \\ 
-\textit{curr} & current present \textbf{-na-} & \textit{inc} & inceptive extension \textbf{-p-} \\ 
-\textit{fut} & future \textbf{-ta-} & \textit{pass} & passive extension \textbf{-w-} \\ 
-\textit{hab} & habitual \textbf{hu-} & \textit{pos} & positional extension \textbf{-m-} \\ 
-\textit{hypo} & hypothetical \textbf{-japo-} & \textit{prep} & prepositional extension \textbf{\mbox{-i-}, -e-} \\ 
-\textit{imp} & imperative \textbf{-e} & \textit{stat} & stative extension \textbf{-ik-, \mbox{-ek-}} \\ 
-\textit{gen} & general present \textbf{-a-} &  &  \\ 
-\textit{part} & participial \textbf{-ki-} &  &  \\ 
-\textit{past} & past \textbf{-li-} &  &  \\ 
-\textit{perf} & perfective \textbf{-me-} &  &  \\ 
-\textit{subj} & subjunctive \textbf{-e} &  &  \\ 
-\textit{supp} & suppositional \textbf{-ngali-} & &
-\end{tabularx}
-\caption{Tense and extension tags}
-\label{table:verbtags}
-\end{table}
-
 
 
 \end{document}

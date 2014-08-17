@@ -35,7 +35,7 @@
    inkscape:export-ydpi="90"><metadata
      id="metadata316"><rdf:RDF><cc:Work
          rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><sodipodi:namedview
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><sodipodi:namedview
      id="base"
      inkscape:window-width="1680"
      inkscape:window-height="995"
@@ -525,7 +525,10 @@
          x="603.39777"
          y="14.833277" /></text>
 <g
-       id="g3480"><rect
+       id="g3480"
+       inkscape:export-filename="/home/kevin/web/andika/layout/Swahili_keyboard.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><rect
          inkscape:export-ydpi="90"
          inkscape:export-xdpi="90"
          inkscape:export-filename="/home/kevin/andika/layout/Swahili_keyboard.png"
