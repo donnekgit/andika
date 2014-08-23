@@ -26,41 +26,31 @@ If not, see <http://www.gnu.org/licenses/>.
 mb_internal_encoding("UTF-8");
 include("./includes/fns.php");
 
-$target="convert/offline/Hamad_hand.txt";
+$target="convert/offline/conversions/Hamad.txt_converted";
 
 // Open the file we'll write the conversion to.
-$fp = fopen("convert/offline/conversions/Hamad_hand_converted", "w");
+$fp = fopen("convert/offline/conversions/Hamad.txt_converted_converted", "w");
 
 // Read the prepped contents in.
 $lines=file("$target");
 foreach ($lines as $line)
 {
-	// Mark penultimate syllables in the standard orthography, and a few other things.
-	$prepped=prep_rom($line);
-	//echo $prepped."\n";
-	
-	$translit=rom2ar($prepped, $no_sukun);
-// 	$translit=rom2ar($prepped, 1);
-	//echo $translit."\n";
-	
-// 	// Show sukun on long waw and yeh if that option has been ticked.
-// 	if (isset($_POST['longvowel']))
-// 	{
-// 		$translit=waw_yeh_sukun($translit);
-// 	}
+    // Give a one-to-one transliteration of the Arabic glyphs into Roman letters.
+    $translit=ar2rom($line);
+    // echo $translit."<br />";
 
-	$arabic=html_entity_decode(preg_replace("/U\+([0-9A-F]{4,5})/", "&#x\\1;", $translit), ENT_NOQUOTES, 'UTF-8');
-	//echo $arabic."\n";
-// 	// Convert numbers separately, and only if that option has been ticked.
-// 	if (isset($_POST['numbers']))
-// 	{
-// 		$arabic=preg_replace("/([0-9]+)/e", "convert_numbers('$1')", $arabic);
-// 	}
+    // Now smooth the transliteration to give a standard transcription.
+    // The most obvious smoother is for the standard Swahili orthography.
+    // But others are possible, eg for close transcription.
+    $standard=standardise($translit);
+    //$close=close_trans($translit);
 
-	//echo $arabic."\n";
-	$line=$arabic;
-	
-	fwrite($fp, $line);
+    //echo "Standard: ".$standard."<br />";
+
+    //$line=$close."\n";
+    $line=lcfirst($standard)."\n";
+
+    fwrite($fp, $line);
 }
 
 fclose($fp);
