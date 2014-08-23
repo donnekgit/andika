@@ -1,0 +1,79 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage{polyglossia}
+\usepackage{longtable}
+\usepackage{xcolor}  % can't use color with polyglossia
+\usepackage{arydshln}
+
+\interfootnotelinepenalty=10000 % prevents the footnote from breaking across pages
+% http://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
+
+% Thanks to Manas Tungare (http://manas.tungare.name/software/latex) for these settings.
+\setlength{\paperwidth}{210mm}
+\setlength{\paperheight}{297mm}
+
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{247mm}
+
+\setlength{\evensidemargin}{1in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{-0.5in}
+
+\setmainfont[Mapping=tex-text]{Liberation Serif}  % Set the default font for the document (footnotes will also use this font, but see also: http://tex.stackexchange.com/questions/4779/how-to-change-font-family-in-footnote)
+
+\setmainlanguage{english}
+\setotherlanguage{arabic}
+\setotherlanguage{farsi}  % used to allow typesetting the tile in a different font
+
+\newfontfamily\arabicfont[Script=Arabic, Scale=2]{Scheherazade} % Arabic transcription layer
+\newfontfamily\farsifont[Script=Arabic, Scale=2]{GranadaKD} % Arabic transcription layer for titles - uses a version of Granada which has been extended to include glyphs for Swahili.
+\newcommand{\AS}[1]{\fontspec[Script=Arabic, Scale=1.5]{Scheherazade} #1\normalfont} % Arabic when used in footnotes - using \newfontfamily resets following English text as well.  IMPORTANT: this can ONLY be used for single words - multiple words will be written LTR, and not RTL as required.
+\newfontfamily{\T}[Scale=0.9, Color=00BB33]{Linux Biolinum O} %  transliteration layer - Biolinum handles diacritics well
+\newfontfamily{\I}[Scale=0.9, Color=blue]{Linux Biolinum O} % interpolated letters in the transliteration layer
+\newfontfamily{\S}[Color=00BB33]{Linux Biolinum O} % standard spelling layer
+\newfontfamily{\E}[Scale=0.9, Color=666666]{Liberation Serif Italic} % English translation layer
+\newfontfamily{\FN}[Color=00BB33]{Liberation Serif Italic} % Alternate type in footnotes.
+
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
+
+\usepackage[obeyspaces]{url}  % Use urls in text and captions with sensible linewrap.
+\urlstyle{rm}  % Set urls in roman.
+
+\begin{document}
+
+\begin{longtable}{{rl}} 
+
+\textarabic{أَنْڠَلِيَ وَڤُڤِ هَوَا} & \textarabic{١} \\* 
+\T{angaliya wavuvi hawā} & \T{1}\\* 
+\textarabic{أُپٖپٗ أُمٖرُفَعِ، نَ مَشُوَ} & \textarabic{٢} \\* 
+\T{upepo umerufa'i, na mashuwa} & \T{2}\\* 
+\textarabic{يَاءٗ إِمٖسَلِيَ پَلٖ پَلٖ بِلَ} & \textarabic{٣} \\* 
+\T{yao imesaliya pale pale bila} & \T{3}\\* 
+\textarabic{يَ كْوٖنْدَ، كْوَنِ هَونَ مَشِنِ} & \textarabic{٤} \\* 
+\T{ya kwenḏa, kwani hawna mashini} & \T{4}\\* 
+\textarabic{نَ لَئِتِ وَنْڠٖلِكُوَ نَايٗ بَسِ} & \textarabic{٥} \\* 
+\T{na laiṯi wangelikuwa nāyo basi} & \T{5}\\* 
+\textarabic{وَسِنْڠٖلِپٗتِزَ وَكَتِ وَاءٗ وٗتٖ} & \textarabic{٦} \\* 
+\T{wasingelipoṯiza wakaṯi wao woṯe} & \T{6}\\* 
+\textarabic{وَاپٗ هَپَ هَپَ. كْوَ هِڤْيٗ} & \textarabic{٧} \\* 
+\T{wāpo hapa hapa. kwa hivyo} & \T{7}\\* 
+\textarabic{مَشِنِ نْدَانِ يَ مَشُوَ ِنَ} & \textarabic{٨} \\* 
+\T{mashini nḏāni ya mashuwa ina} & \T{8}\\* 
+\textarabic{كُئٗنْڠٖزَ پَاتٗ نَ أُچُمِ.} & \textarabic{٩} \\* 
+\T{kuongeza pāṯo na uchumi.} & \T{9}\\* 
+\textarabic{يَپَسَ وَڤُڤِ وٗتٖ وَفُوَتٖ} & \textarabic{١٠} \\* 
+\T{yapasa wavuvi woṯe wafuwaṯe} & \T{10}\\* 
+\textarabic{مَئٖنْدٖلٖيٗ يَ وٖنْزَاءٗ نَ كْوَ} & \textarabic{١١} \\* 
+\T{maenḏeleyo ya wenzao na kwa} & \T{11}\\* 
+\textarabic{كُفَنْيَ هِڤْيٗ هَپَنَ شَكَ وَتَفَئُلُ.} & \textarabic{١٢} \\* 
+\T{kufanya hivyo hapana shaka waṯafaulu.} & \T{12}\\* 
+\end{longtable}
+
+\begin{longtable}{r}
+% Remember to end each line (except vertical space) with a double backslash
+ \\  % Any material after the end of the poem
+
+\end{longtable}
+
+\end{document}
+

@@ -17,7 +17,7 @@
 \usepackage{pdfpages}
 
 \usepackage[obeyspaces]{url}  % Use urls in text and captions with sensible linewrap.
-\urlstyle{rm}  % Set urls in roman.
+% \urlstyle{rm}  % Set urls in roman.
 
 \usepackage{graphicx}  % Allows images to be inserted.
 \usepackage{appendix}  % Provides additional appendixing capabilities.
@@ -120,7 +120,7 @@
 \titleformat{\chapter}[display]{\normalfont\large}{\bfseries\chaptertitlename\ \thechapter}{10pt}{\LARGE\itshape}[\vspace{2ex}\titlerule]  % 10pt is the space between chapter and chapter name.  [display] sets the chapter and chapter name on separate lines.  The square brackets at the end draw a line under each chapter name, with 2ex gap from the name.
 \titlespacing{\chapter}{0pt}{0pt}{10pt}  % First is indent from the side, second is length down from the top, third is gap between heading and text.
 \titleformat{\section}[block]{\normalfont\large\itshape}{\itshape\thesection}{1em}{}  % 1em is the space between section number and section name.  [block] sets the section and section name on the same line.
-\titleformat{\subsection}[block]{\normalfont\normalsize\bfseries}{\bfseries\thesubsection}{1em}{}  % 1em is the space between section number and section name.  [block] sets the section and section name on the same line.
+\titleformat{\subsection}[block]{\normalfont\normalsize\bfseries}{\bfseries\thesubsection}{1em}{}
 
 \renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
 
@@ -164,144 +164,204 @@
 
 
 
-\chapter{Convert Arabic to Roman script}
+\chapter{Convert between scripts}
 
-This section provides tools to convert Swahili text in Arabic script into Roman script.
+\section{Introduction}
 
-Please note that it is a good idea to check any output given here before re-using it in other contexts. Andika! is a work in progress, and improvements can still be made.
+\textbf{Andika!} includes a number of options to convert between Arabic and Roman scripts.  Because \textbf{Andika!} is a work in progress, it is a good idea to check the output before re-using it in other contexts, since it may require some manual editing -- for instance, Arabic script does not have capital letters, so capitals (other than most sentence-intial capitals) need to be added by hand to Roman output.
 
-This tool is intended for chunks of text, which can be typed or pasted into the input box.
+\section{Cut-and-paste converters}
 
-Short samples of Swahili in Arabic script (two from Wikipedia, one from a manuscript poem) are given on the Samples for testing tab to enable instant testing of the conversion by pasting them into the box.
+The simplest option is to use the cut-and-paste converters on the website.\footnote{\url{kevindonnelly.org.uk/swahili/rom_ar.php} and \url{kevindonnelly.org.uk/swahili/ar_rom.php}.}  If you have followed the instructions in \Cref{s:localaccess} these will also be available on your own machine.\footnote{\url{andika/rom_ar.php} and \url{andika/ar_rom.php}.}
 
-Input is truncated to 900 characters, but if your text is longer than this all you need to do is convert it in chunks. If you have large amounts of text to convert, you may find it easier to use the offline converter (currently being tested).
+To use these converters, type or paste text into the input box.  Input is truncated to 900 characters, but if your text is longer than this you can convert it in chunks.  the truncation limit can be changed by editing or commenting out the line: \\
+\verb|$mystring=strip_tags(substr($mystring, 0, 900));| \\
+in \textit{convert\_rom\_ar.php} and: \\
+\verb|$input=strip_tags(substr($input, 0, 900));| \\
+in \textit{convert\_ar\_rom.php}.
 
-Since Arabic does not have capital letters, capitals (other than most sentence-intial capitals) need to be added by hand to the output.
-When converting from Arabic to Roman script, Firefox's spellchecker will underline every word in the Arabic script entry area. To avoid this, turn off as-you-type spellchecking: select Edit → Preferences → Advanced, and on the General tab under Browsing, untick Check my spelling as I type.
+If you have large amounts of text to convert, the command-line converter should be used -- see \Cref{s:cliconvert} below.
 
+\subsection{Arabic to Roman}
 
-\chapter{Convert Roman to Arabic script}
+The Arabic to Roman converter transliterates Arabic script into standard Roman orthography.  The correspondence should be perfect if the input text follows the spelling conventions for Arabic script (\Cref{ch:spelling}).\footnote{If you take the Roman output and paste it into the Roman to Arabic converter, you should get your Arabic input back as the output from that.}  Where this is not the case (eg with text copied from manuscripts), the converter transliterates the Arabic text as best it can.
 
-This section provides tools to convert Swahili text in Roman script into Arabic script.
+If you have installed the webpages locally, you can replace the standard Roman transliteration with a close transliteration containing diacritics by replacing \verb|$standard| with \verb|$close| at the end of \textit{convert\_ar\_rom.php}.
 
-Please note that it is a good idea to check any output given here before re-using it in other contexts. \textbf{Andika!} is a work in progress, and improvements can still be made.
+Note that when converting from Arabic to Roman script, Firefox's spellchecker will underline every word in the Arabic script entry area. To avoid this, turn off as-you-type spellchecking: click on the \textbf{Open Menu} button, select \textbf{Preferences \textrightarrow\ Advanced}, and on the \textit{General} tab, untick \textit{Check my spelling as I type} in the \textit{Browsing} section.
 
-General notes
+\subsection{Roman to Arabic}
 
-The default is to show \textit{sakani} (\textit{sukun}) on a consonant where it does not have an accompanying vowel (eg \textbf{kwa, kuboreshwa, sayansi}). This can be changed by ticking \textit{Do not show sakani (sukun) on consonants} - then no \textit{sakani} will be shown.
+The Roman to Arabic converter transliterates standard Roman orthography into Arabic script. 
+
+The default is to show \textit{sakani} on a consonant where it does not have an accompanying vowel (eg \textbf{kwa, kuboreshwa, sayansi}). This can be changed by ticking \textit{Do not show sakani (sukun) on consonants} - then no \textit{sakani} will be shown.
 
 The default is to show numerals in Western-Arabic form (1234567890). This can be changed by ticking \textit{Convert numerals to Arabic-Indic forms} - then numerals will be shown as \AS{١٢٣٤٥٦٧٨٩٠}.
 
 Some writers use sakani on \AS{و} and \AS{ي} when used as long vowels in the penultimate syllable. The default is not to show this, but this can be changed by ticking \textit{Show sakani (sukun) on \AS{و} and \AS{ي} as long vowels}
 
-\textbf{Andika!} is not a translator - non-Swahili words are simply transliterated letter-for-letter from Roman script into Arabic script. English \textbf{c} is transliterated as \AS{ڮ}, and \textbf{x} as \AS{كْس}. Examples: Shrewsbury \AS{شْرٖوسبُري}, Creative Commons License \AS{ڮرٖئَتِيڤٖ ڮٗممٗنْس لِڮٖنْسٖ}. A \textit{sakani} (\textit{sukun}) is used where it would occur in Swahili (depending on the settings above), but is not applied elsewhere.
+\textbf{Andika!} is not a translator - non-Swahili words are simply transliterated letter-for-letter from Roman script into Arabic script. English \textbf{c} is transliterated as \AS{ڮ}, and \textbf{x} as \AS{كْس}. Examples: \textit{Shrewsbury} \AS{شْرٖوسبُري}, \textit{Creative Commons License} \AS{ڮرٖئَتِيڤٖ ڮٗممٗنْس لِڮٖنْسٖ}. A \textit{sakani} is used where it would occur in Swahili (depending on the settings above), but is not applied elsewhere.
 
 \textbf{Andika!} is not a spelling or punctuation corrector - any errors in the text entered will be carried over into the transliteration.
 The conversion may contain lines with out-of-sequence words if the source contains a mixture of Swahili and another language with letters that do not occur in the standard Swahili Roman orthography (the Swahili will be converted to RTL Arabic script, but the non-Swahili letters will be passed through as LTR Roman script). The transliteration equivalents chosen here mean that line continuity is not a problem where the ``other language'' is English. However, be aware that problems may occur if the ``other language'' is French, German, or something else.
 
-This tool is intended for chunks of text, which can be typed or pasted into the input box. The output can then be cut and pasted into documents (see the LibreOffice tab in the Swahili keyboard section).
+Note that the converter will always use the "commonest" Arabic letter. For instance, it will convert \textit{dh} to \AS{ذ} instead of to \AS{ض} or \AS{ظ}, which might be the original Arabic letter in the word. There is no way around this, since the standard Swahili Roman orthography does not preserve these distinctions, and the only option in such cases is to edit the output afterwards.
 
-Two short samples of Swahili in Roman script from Wikipedia are given on the Samples for testing tab to enable instant testing of the conversion by pasting them into the box.
+\subsection{Convert a webpage}
 
-Input is truncated to 900 characters, but if your text is longer than this all you need to do is convert it in chunks. If you have large amounts of text to convert, you may find it easier to use the offline converter (currently being tested).
+The website also includes a tool to transliterate entire webpages from Roman script to Arabic script.  Although it should work on most webpages, most testing has been done on Wikipedia pages.
 
-Note that the converter will always use the "commonest" Arabic letter. For instance, it will convert dh to \AS{ذ} instead of to \AS{ض} or \AS{ظ}, which might be the original Arabic letter in the word. There is no way around this, since the standard Swahili Roman orthography does not preserve these distinctions, and the only option in such cases is to edit the output afterwards.
+To use the tool, simply enter the webpage address in the box -- the initial \textit{http://} can be omitted if desired.  Only a subset of characters are allowed in the web address: alphanumeric characters (a-z, 0-9), full-stops (.), hyphens (-), underscores (\_), single quotes ('), colons (:) and slashes (/).  Non-existent web-addresses will produce a blank conversion page.
 
-\section{Convert a webpage}
+While there should be no problems transliterating the main text of the webpage, some peripheral "page furniture" (eg menus, lists of links, etc) may not be transliterated properly.  All links on the converted page will go to unconverted (Roman script) pages. 
 
-Although this tool should work on most webpages, most testing has been done with Wikipedia pages.
-
-While there should be no problems with the main text of the webpage, some peripheral "page furniture" (eg menus, lists of links, etc) may or may not be converted properly.
-
-Only a subset of characters are allowed in the web address: alphanumeric characters (a-z, 0-9), full-stops (.), hyphens (-), underscores (\_), single quotes ('), colons (:) and slashes (/).
-
-Non-existent web-addresses will produce a blank conversion page.
-
-The initial http:// can be omitted from the web address if desired.
-
-Links on the converted page will go to unconverted (Roman script) pages. If you wish to convert a large number of pages, you may find it easier to use the offline converter (currently being tested).
+If you wish to convert a number of pages, the offline converter should be used -- see \Cref{s:webconvert} below.
 
 
-\chapter{Typesetting poetry}
-\label{ch:poetry}
+\section{Command-line converters}
 
-The prime aim of Andika! is to facilitate the production of digital versions of classical Swahili manuscripts, and this section highlights one approach to handling traditional poetry. My main interest is \AS{تٖينْزِ} (tenzi, ballads), so the tools currently focus on that format, but they could be further developed to meet different requirements. Samples of input and output are shown here, and the process is summarised, but these are not (currently) online tools - to use them you need to download Andika! and install a variety of other software on your own PC.
+Cutting and pasting does not make sense for long documents, or where there are a number of documents that need to be converted.  \textbf{Andika!} therefore includes a command-line converter which will act directly on the document, provided it is laid out in a particular format.
 
-The first step is to transcribe the manuscript using the Swahili keyboard - see the Input tab. This input is then imported into a database, where various annotations can be added to individual words. A transcription is supplied automatically, and an English translation can be added. The imported text can then be output in a number of formats allowing for both print and online publication - see the Output tab.
+This script converts Swahili poems in Arabic script into Roman script, and vice versa.  Call it as:
+php convert.php <required arguments> <optional arguments>
+Note that each invocation of the script will create an output that overwrites the previous output.
 
-A sample layout of part of \AS{أُتٖينْزِ وَ ڤِيتَ ڤِكُؤُ} (\textbf{Utenzi wa Vita Vikuu}, \textit{The Ballad of the Great Battle}) is given below. (Click to see a full-sized copy.) The manuscript is in the SOAS collection, and this extract containing stanzas 138-147 is taken letter-for-letter from a copy of the manuscript.
+Required arguments:
 
-The storage of the poem contents in a database allows a number of extra tools to be used in analysing the poem - see the Analysis tab. These include: various word frequency lists (from which a variety of glossaries can be produced), concordances, n-grams, etc.
+-i or --input           The input file, which must be located in poetry/inputs.  The input file should have a blank line between stanzas, and a blank line at the end of the file.  If more than one kipande is on a single line, they should be separated by an asterisk (*).
+
+-v or --vipande         The total number of vipande in a stanza (e.g. 4 for utenzi, 6 for wimbo or shairi).  Note that (currently) the number of vipande has to be an even number.
+
+Optional arguments:
+
+-o or --output          The desired type of output: 
+    pdf [default]       import from Arabic or Roman and layout with interlinear transcription for checking
+    txt                 import from Roman, conversion to Arabic, and export for editing/correction
+    db                  import from Arabic to database, for addition of notes and translation, changes to transcription, and typeset layout
+
+-l or --layout          Alternative layouts for the pdf output file:
+    vip-space [default] two vipande on one line, with a space between them; the transcription below them applies to each kipande separately
+    vip-star            two vipande on one line, with an asterisk between them; the transcription below them applies to the whole line of two vipande
+    kip-line            one kipande to a line, with its transcription below it.
+
+-s or --script          The script of the input file: arabic [default for odt input], roman [default for txt input].  Use this switch to change the default.
+
+Other arguments:
+
+-t or --transcription   In txt output, the default is to show the Arabic text only - setting this flag will show the Roman transcription as well.
+
+-h or --help            Show this help information.
+
+Examples:
+
+php convert.php --help
+Get a short summary of the arguments that the script can take.
+
+php convert.php -i=utenzi.odt
+Convert the text in the file utenzi.odt.  With an odt file, it is assumed that the script will be Arabic, and two vipande on one line, with a space between them, is the default layout.
+
+php convert.php -i=utenzi.txt
+Convert the text in the file utenzi.txt.  With a txt file, it is assumed that the script will be Roman, and two vipande on one line, with an asterisk between them, is the default layout.
+
+php convert.php --input=utenzi.odt --layout=vip-star
+Convert the text in the file utenzi.odt, but set the layout to two vipande on one line, with an asterisk between them.
 
 
-\section{Input}
 
-Format of the input file
 
-Swahili \AS{تٖينْزِ} (\textbf{tenzi}, \textit{ballads}) consist of quatrains of 8-syllable lines rhyming aaab, where the b rhyme is Va, and is maintained throughout the ballad. Because the lines are short, they are often written two to a manuscript line, with a space dividing them, so each quatrain takes up two manuscript lines.  \AS{تٖينْزِ} (tenzi) which have been printed in Roman script usually print the four lines one after the other, so that the quatrain format is more obvious.
 
-The input file is a LibreOffice document (odt format) where the text of the ballad is transcribed letter-for-letter in a layout reflecting the manuscript procedure - every two lines of the quatrain are written to one line of the file, but they are separated by an asterisk (AltGr+Shift+8 on the Swahili keyboard) instead of space. Each quatrain is separated by a blank line. The input file for the extract from \AS{أُتٖينْزِ وَ ڤِيتَ ڤِكُؤُ} (\textbf{Utenzi wa Vita Vikuu}) is shown below, and is available in odt format, and also in pdf format.
 
-This input layout may not suit all requirements - for instance, you may prefer to have each line of the quatrain on its own line, or for the quatrains to be numbered, or for the input file to be in text format. Changes in the input routines to handle these would be easy to implement
 
-Items such as  \AS{لَ زَ يَ نَ} \textbf{na, ya, za, la} are written according to the manuscript rendering. In most instances they are attached to the word, or (in the case of non-connecting letters like \AS{زَ}) written very close to it. But where there is a larger space in the manuscript between the item and the following word, the item has been written separately from that word in the transcription/transliteration. This leads to some inconsistency in the transcription/transliteration, but seeks to reflect the manuscript more faithfully.
 
-Import and annotation of the input file
 
-Once the manuscript is transcribed into the input file, a PHP script is run to import it into a PostgreSQL database table. During this import, the Arabic text is transliterated into standard Swahili Roman orthography, and also into a close transliteration which more closely reflects the Arabic letters.
 
-Another script is then run to segment each line of the ballad into words, which allows each word to have various annotations added to it in the database. Various annotations could be accommodated as necessary, but the ones currently handled are:
 
-Adjustments to the transliterated lemma - for instance, to reflect its scansion, eg \textbf{miliḥi} (\textit{salt}) instead of \AS{مِلْحِ} (\textbf{milḥi}, \textit{salt}).
 
-Segmentation of the transliteration to reflect standard Swahili word boundaries, eg \textbf{na ẖubuzi} (\textit{and bread}) instead of \AS{نَخُبُوزِ} (\textbf{naẖubuzi}, \textit{and bread}).
 
-A note on the meaning or reference of the lemma.
 
-The root of the word, eg \textbf{fik} for \textbf{akafika} (\textit{he arrived}), or \textbf{klm} for \textbf{katakalama} (\textit{he spoke}) - this is useful when constructing frequency lists. Many of the roots could be filled in automatically by looking up the word against a digital Swahili dictionary.
 
-An English translation of the line, anchored to the first word of each line.
 
-Variant readings of the word in different manuscript versions.
-
-The first few words of the extract as they appear in this database format are shown below:
-
-Currently, the database table is edited using an interface like phpPgAdmin or SQLWorkbench/J , but it would also be possible to create a web-based interface for this purpose.
-
-Once the annotations have been added to the database import of the input file, it can be output in a variety of formats by running other PHP scripts - see the Output tab.
-
-\section{Output}
-
-Output to pdf
-
-Output to pdf (which would be the most likely format for print publication) uses XeTeX, a development of the typesetting system TeX, to produce an intermediate tex file, which is then used to generate a pdf file. The creation of the tex file is handled by a PHP script, so in practice the only reason for opening it would be to make one-off edits.
-
-Notes to the text are printed at the bottom of each page, with the footnote number marked in red in the text. Interpolated letters or other textual emendations are marked in blue.
-
-It would be relatively simple to adjust the layout and contents of the pdf output to meet other requirements.
-
-Output to html
-
-Output to html (the most likely format for web publication) is shown in this html file. In this version, the transcription colour has been changed to blue to fit in with the site livery, and lemma adjustments are in purple. Notes are displayed in a pop-up when the mouse hovers over the note number (to dismiss the note, click on it and move the mouse away). An example of how variant readings might be handled is given in stanza 142 - hovering over the word with a grey background pops up the variant. (Note that this variant reading is an invention for the purposes of this example.)
-
-A paging mechanism could be added to allow easy navigation through a long text.
-
-Again, it would be relatively simple to adjust the layout and contents of the html output to meet other requirements, and indeed, a variant is shown below.
-
-Output to odt
-
-Output to odt (LibreOffice format) is only indirectly supported - it is handled by generating a standalone html file. In this, notes to the text are printed at the end of the entire text, with the endnote number marked in red in the text. The endnote number in the text is a link to the endnote, and the number beside the endnote itself is a link back to the relevant word in the text. To create an odt document from this, open the file in the default KDE web-browser Rekonq (see below), and copy the text using Ctrl+A and Crtl+C. Then open a new LibreOffice document and use Ctrl+V to paste the text into that. When saving the file in LibreOffice, select odt as the save format.
-
-Note that, of the browsers available on Linux, Rekonq provides the best results. It retains all the formatting (fonts, colours, etc), and converts the endnote links in the resulting odt file so that they can be accessed by pressing Ctrl while clicking. Chromium retains the formatting, but does not convert the links, so that they still point to the original html file, and clicking them opens that file in a browser. Chromium also converts some spaces to non-breaking spaces, which are marked with a grey background - to get rid of this, select Tools → Options → LibreOffice Writer → Formatting Aids, untick Non-breaking spaces, and press OK. Firefox is worst of all, losing all the formatting, and leaving the links unconverted. Note that even with Rekonq and Chromium, though, you will need to select all the endnotes in LibreOffice and press the LTR button in order to align them to the left.
-
-You can also open the html file in LibreOffice itself, but in this case you will not be able to save it as an odt file. 
+% 
+% \chapter{Typesetting poetry}
+% \label{ch:poetry}
+% 
+% The prime aim of Andika! is to facilitate the production of digital versions of classical Swahili manuscripts, and this section highlights one approach to handling traditional poetry. My main interest is \AS{تٖينْزِ} (tenzi, ballads), so the tools currently focus on that format, but they could be further developed to meet different requirements. Samples of input and output are shown here, and the process is summarised, but these are not (currently) online tools - to use them you need to download Andika! and install a variety of other software on your own PC.
+% 
+% The first step is to transcribe the manuscript using the Swahili keyboard - see the Input tab. This input is then imported into a database, where various annotations can be added to individual words. A transcription is supplied automatically, and an English translation can be added. The imported text can then be output in a number of formats allowing for both print and online publication - see the Output tab.
+% 
+% A sample layout of part of \AS{أُتٖينْزِ وَ ڤِيتَ ڤِكُؤُ} (\textbf{Utenzi wa Vita Vikuu}, \textit{The Ballad of the Great Battle}) is given below. (Click to see a full-sized copy.) The manuscript is in the SOAS collection, and this extract containing stanzas 138-147 is taken letter-for-letter from a copy of the manuscript.
+% 
+% The storage of the poem contents in a database allows a number of extra tools to be used in analysing the poem - see the Analysis tab. These include: various word frequency lists (from which a variety of glossaries can be produced), concordances, n-grams, etc.
+% 
+% 
+% \section{Input}
+% 
+% Format of the input file
+% 
+% Swahili \AS{تٖينْزِ} (\textbf{tenzi}, \textit{ballads}) consist of quatrains of 8-syllable lines rhyming aaab, where the b rhyme is Va, and is maintained throughout the ballad. Because the lines are short, they are often written two to a manuscript line, with a space dividing them, so each quatrain takes up two manuscript lines.  \AS{تٖينْزِ} (tenzi) which have been printed in Roman script usually print the four lines one after the other, so that the quatrain format is more obvious.
+% 
+% The input file is a LibreOffice document (odt format) where the text of the ballad is transcribed letter-for-letter in a layout reflecting the manuscript procedure - every two lines of the quatrain are written to one line of the file, but they are separated by an asterisk (AltGr+Shift+8 on the Swahili keyboard) instead of space. Each quatrain is separated by a blank line. The input file for the extract from \AS{أُتٖينْزِ وَ ڤِيتَ ڤِكُؤُ} (\textbf{Utenzi wa Vita Vikuu}) is shown below, and is available in odt format, and also in pdf format.
+% 
+% This input layout may not suit all requirements - for instance, you may prefer to have each line of the quatrain on its own line, or for the quatrains to be numbered, or for the input file to be in text format. Changes in the input routines to handle these would be easy to implement
+% 
+% Items such as  \AS{لَ زَ يَ نَ} \textbf{na, ya, za, la} are written according to the manuscript rendering. In most instances they are attached to the word, or (in the case of non-connecting letters like \AS{زَ}) written very close to it. But where there is a larger space in the manuscript between the item and the following word, the item has been written separately from that word in the transcription/transliteration. This leads to some inconsistency in the transcription/transliteration, but seeks to reflect the manuscript more faithfully.
+% 
+% Import and annotation of the input file
+% 
+% Once the manuscript is transcribed into the input file, a PHP script is run to import it into a PostgreSQL database table. During this import, the Arabic text is transliterated into standard Swahili Roman orthography, and also into a close transliteration which more closely reflects the Arabic letters.
+% 
+% Another script is then run to segment each line of the ballad into words, which allows each word to have various annotations added to it in the database. Various annotations could be accommodated as necessary, but the ones currently handled are:
+% 
+% Adjustments to the transliterated lemma - for instance, to reflect its scansion, eg \textbf{miliḥi} (\textit{salt}) instead of \AS{مِلْحِ} (\textbf{milḥi}, \textit{salt}).
+% 
+% Segmentation of the transliteration to reflect standard Swahili word boundaries, eg \textbf{na ẖubuzi} (\textit{and bread}) instead of \AS{نَخُبُوزِ} (\textbf{naẖubuzi}, \textit{and bread}).
+% 
+% A note on the meaning or reference of the lemma.
+% 
+% The root of the word, eg \textbf{fik} for \textbf{akafika} (\textit{he arrived}), or \textbf{klm} for \textbf{katakalama} (\textit{he spoke}) - this is useful when constructing frequency lists. Many of the roots could be filled in automatically by looking up the word against a digital Swahili dictionary.
+% 
+% An English translation of the line, anchored to the first word of each line.
+% 
+% Variant readings of the word in different manuscript versions.
+% 
+% The first few words of the extract as they appear in this database format are shown below:
+% 
+% Currently, the database table is edited using an interface like phpPgAdmin or SQLWorkbench/J , but it would also be possible to create a web-based interface for this purpose.
+% 
+% Once the annotations have been added to the database import of the input file, it can be output in a variety of formats by running other PHP scripts - see the Output tab.
+% 
+% \section{Output}
+% 
+% Output to pdf
+% 
+% Output to pdf (which would be the most likely format for print publication) uses XeTeX, a development of the typesetting system TeX, to produce an intermediate tex file, which is then used to generate a pdf file. The creation of the tex file is handled by a PHP script, so in practice the only reason for opening it would be to make one-off edits.
+% 
+% Notes to the text are printed at the bottom of each page, with the footnote number marked in red in the text. Interpolated letters or other textual emendations are marked in blue.
+% 
+% It would be relatively simple to adjust the layout and contents of the pdf output to meet other requirements.
+% 
+% Output to html
+% 
+% Output to html (the most likely format for web publication) is shown in this html file. In this version, the transcription colour has been changed to blue to fit in with the site livery, and lemma adjustments are in purple. Notes are displayed in a pop-up when the mouse hovers over the note number (to dismiss the note, click on it and move the mouse away). An example of how variant readings might be handled is given in stanza 142 - hovering over the word with a grey background pops up the variant. (Note that this variant reading is an invention for the purposes of this example.)
+% 
+% A paging mechanism could be added to allow easy navigation through a long text.
+% 
+% Again, it would be relatively simple to adjust the layout and contents of the html output to meet other requirements, and indeed, a variant is shown below.
+% 
+% Output to odt
+% 
+% Output to odt (LibreOffice format) is only indirectly supported - it is handled by generating a standalone html file. In this, notes to the text are printed at the end of the entire text, with the endnote number marked in red in the text. The endnote number in the text is a link to the endnote, and the number beside the endnote itself is a link back to the relevant word in the text. To create an odt document from this, open the file in the default KDE web-browser Rekonq (see below), and copy the text using Ctrl+A and Crtl+C. Then open a new LibreOffice document and use Ctrl+V to paste the text into that. When saving the file in LibreOffice, select odt as the save format.
+% 
+% Note that, of the browsers available on Linux, Rekonq provides the best results. It retains all the formatting (fonts, colours, etc), and converts the endnote links in the resulting odt file so that they can be accessed by pressing Ctrl while clicking. Chromium retains the formatting, but does not convert the links, so that they still point to the original html file, and clicking them opens that file in a browser. Chromium also converts some spaces to non-breaking spaces, which are marked with a grey background - to get rid of this, select Tools → Options → LibreOffice Writer → Formatting Aids, untick Non-breaking spaces, and press OK. Firefox is worst of all, losing all the formatting, and leaving the links unconverted. Note that even with Rekonq and Chromium, though, you will need to select all the endnotes in LibreOffice and press the LTR button in order to align them to the left.
+% 
+% You can also open the html file in LibreOffice itself, but in this case you will not be able to save it as an odt file. 
 
 
 \newpage
 
 \renewcommand{\bibname}{References}
 \bibliographystyle{chicago}
-\bibliography{andika.bib}
+% \bibliography{andika.bib}
 
 
 \newpage
@@ -312,7 +372,7 @@ You can also open the html file in LibreOffice itself, but in this case you will
 %----------------
 % Appendix A: installing Andika!
 %----------------
-\input{appendixAinstall}
+% \input{appendixAinstall}
 % stackoverflow.com/questions/1209065/to-have-no-pagebreak-after-include-in-latex
 
 
@@ -322,7 +382,7 @@ You can also open the html file in LibreOffice itself, but in this case you will
 %----------------
 % Appendix B: adding missing glyphs 
 %----------------
-\input{appendixBfontforge}
+% \input{appendixBfontforge}
 
 
 \newpage

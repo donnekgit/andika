@@ -3,8 +3,8 @@
 // Set up required (:), optional (::) and valueless command-line arguments which can be passed into the script, both short and long forms.
 $shortopts="i:v:o::l::s::th";  // short options are a string
 $longopts=array("input:", "vipande:", "output::", "layout::", "script::", "transcription", "help");  // long options are an array
-$options = getopt($shortopts, $longopts);  
-// var_dump($options);
+if (empty($options)) { $options = getopt($shortopts, $longopts); }  // Handle input coming from CLI.
+//print_r($options);
 
 /*
 $input
@@ -48,7 +48,7 @@ Optional arguments:
 
 Other arguments:
 
--t or --transcription   In txt output, the default is to show the Arabic text only - setting this flag will show the Roman transcription as well.
+-t or --transliteration   In txt output, the default is to show the Arabic text only - setting this flag will show the Roman transcription as well.
 
 -h or --help            Show this help information.
 
@@ -144,10 +144,17 @@ elseif ($options["o"]=="txt" or $options["output"]=="txt")
     $layout="vip-star";
     $columns="rl";
 }
+elseif ($options["o"]=="odt" or $options["output"]=="odt")
+{
+    $output="odt";
+    $layout="vip-star";
+    $columns="--";
+}
 elseif ($options["o"]=="db" or $options["output"]=="db")
 {
     $output="db";
     $layout="kip-line";
+    $columns="--";
 }
 elseif (empty($options["o"]) or empty($options["output"]))
 {
@@ -204,6 +211,7 @@ if ($options["s"]=="arabic" or $options["script"]=="arabic")
 elseif ($options["s"]=="roman" or $options["script"]=="roman")
 {
     $script="roman";
-}    
+}
+
 
 ?>

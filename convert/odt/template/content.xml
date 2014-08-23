@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<office:document-content 
+    xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" 
+    xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" 
+    xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" 
+    xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" 
+    office:version="1.2">
+<office:scripts/>
+
+<office:font-face-decls>
+    <style:font-face style:name="Linux Biolinum O" svg:font-family="Linux Biolinum O" style:font-pitch="variable"/>
+</office:font-face-decls>
+
+<office:automatic-styles>
+    <style:style style:name="Roman" style:family="paragraph" style:parent-style-name="Roman">
+        <style:text-properties style:font-name="Linux Biolinum O"/>
+    </style:style>
+</office:automatic-styles>
+
+<office:body>   
+<office:text>
+
+<text:p text:style-name="Arabic">مَچٗوزِ يَ هُوبَ * يَمٖنِدٗنْدٗوكَ</text:p>
+<text:p text:style-name="Roman">(1a/b) machozi ya huba * yamenidondoka</text:p>
+<text:p text:style-name="Arabic">سِيلِ نِكَشِيبَ * نِكَفُرَهِيكَ</text:p>
+<text:p text:style-name="Roman">(1c/d) sili nikashiba * nikafurahika</text:p>
+<text:p text:style-name="Arabic">وَانْڠُ مَهَبُوبَ * أَمٖشَنِتٗوكَ</text:p>
+<text:p text:style-name="Roman">(1e/f) wangu mahabuba * ameshanitoka</text:p>
+<text:p text:style-name="Arabic"/>
+
+<text:p text:style-name="Arabic">أَمٖشَنِتٗوكَ * مْپٖنْزِ جَمَانِ</text:p>
+<text:p text:style-name="Roman">(2a/b) ameshanitoka * mpenzi jamani</text:p>
+<text:p text:style-name="Arabic">مْسِيتُ وَ نْيِيكَ * چٗوزِ كِفُؤَانِ</text:p>
+<text:p text:style-name="Roman">(2c/d) msitu wa nyika * chozi kifuani</text:p>
+<text:p text:style-name="Arabic">نِنَهَنْڠَئِيكَ * وَالَ سِمُؤٗونِ</text:p>
+<text:p text:style-name="Roman">(2e/f) ninahangaika * wala simuoni</text:p>
+<text:p text:style-name="Arabic"/>
+
+<text:p text:style-name="Arabic">وَالَ سِمُؤٗونِ * سِجُئِ أَلِيكٗ</text:p>
+<text:p text:style-name="Roman">(3a/b) wala simuoni * sijui aliko</text:p>
+<text:p text:style-name="Arabic">أَنِيپَ مَشَاكَ * نَ مَسِكِتِيكٗ</text:p>
+<text:p text:style-name="Roman">(3c/d) anipa mashaka * na masikitiko</text:p>
+<text:p text:style-name="Arabic">سَؤُوتِ نَغَانِ * أَجُئٖ نِلِيكٗ</text:p>
+<text:p text:style-name="Roman">(3e/f) sauti naghani * ajue niliko</text:p>
+<text:p text:style-name="Arabic"/>
+
+</office:text>
+</office:body>
+
+</office:document-content>

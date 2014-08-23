@@ -1164,429 +1164,429 @@ SELECT pg_catalog.setval('kiswahili_poemline_id_seq', 144, true);
 --
 
 COPY kiswahili_words (word_id, stanza, pos, location, arabic, close, standard, lemma, segment, variant, note, root, english, word, arword, clword) FROM stdin;
-84	4	c	1	نَ	na	na						 and of Zahidi too,	na	نَ	na
 87	4	d	1	نَ	na	na						and many of his contemporaries,	na	نَ	na
-91	4	e	1	عالى	'ālı̄	'ali						 Ali Koti and Mataka,	'ālı̄	عالى	'ālı̄
-95	4	f	1	وٗتٖ	woṯe	wote						 all from just one century,	woṯe	وٗتٖ	woṯe
-99	4	g	1	وَلِتُوْكَ	waliṯūka	walituka						they emerged from my womb,	waliṯūka	وَلِتُوْكَ	waliṯūka
-101	4	h	1	وَ	wa	wa						and shone like stars.	wa	وَ	wa
-30	2	b	3	أُسْوَاحِلِنِ	uswāḥilini	uswahilini							uswāḥilini	أُسْوَاحِلِنِ	uswāḥilini
+110	5	c	1	نْدِپُوْ	nḏipuu	ndipo						and then you will understand,	nḏipuu	نْدِپُوْ	nḏipuu
+84	4	c	1	نَ	na	na						and of Zahidi too,	na	نَ	na
+122	5	g	1	وَالُوْزِتُنْڠَ	wālūziṯunga	walozitunga						Who were those who composed them?	wālūziṯunga	وَالُوْزِتُنْڠَ	wālūziṯunga
+95	4	f	1	وٗتٖ	woṯe	wote						all from just one century,	woṯe	وٗتٖ	woṯe
+107	5	b	1	أُكِسٗوْمٖ	ukisōme	ukisome						Read it attentively	ukisōme	أُكِسٗوْمٖ	ukisōme
+116	5	e	1	نِ	ni	ni						what I am telling you.	ni	نِ	ni
+119	5	f	1	نَ	na	na						These verses are of enduring worth and will never die.	na	نَ	na
+125	5	h	1	نِ	ni	ni						They were my children who have passed on. 	ni	نِ	ni
+128	6	a	1	نَ	na	na						And the Bard of Mambasa,	na	نَ	na
+163	7	g	1	مُسَمِيَاتِ	musamiyāṯi	musamiyati						compiling standardized dictionaries.	musamiyāṯi	مُسَمِيَاتِ	musamiyāṯi
+167	8	a	1	هُلِيَ	huliya	huliya						I weep and lament	huliya	هُلِيَ	huliya
+169	8	b	1	ػَنْڠَلِيَ	kʲangaliya	changaliya						when I look at the learned journals,	kʲangaliya	ػَنْڠَلِيَ	kʲangaliya
+171	8	c	1	وٖنْڠِ	wengi	wengi						for many of those who contribute 	wengi	وٖنْڠِ	wengi
+179	8	f	1	وَپٖكَ	wapeka	wapeka						Who are the ones who send in their compositions? 	wapeka	وَپٖكَ	wapeka
+183	8	g	1	وٖنْڠِ	wengi	wengi						Many do not come from the coast,	wengi	وٖنْڠِ	wengi
+186	8	h	1	لِػَ	likʲa	licha						although they may have a Mambasa address.	likʲa	لِػَ	likʲa
+30	2	b	3	أُسْوَاحِلِنِ	uswāḥilini	Uswahilini							uswāḥilini	أُسْوَاحِلِنِ	uswāḥilini
+91	4	e	1	عالى	'ālı̄	Ali						Ali Koti and Mataka,	'ālı̄	عالى	'ālı̄
+99	4	g	1	وَلِتُوْكَ	waliṯūka	walitoka						they emerged from my womb,	waliṯūka	وَلِتُوْكَ	waliṯūka
+101	4	h	1	وَ	wa	wa		~				and shone like stars.	wa	وَ	wa
+147	6	h	1	اِنْڠَا	ingā	ingawa						yet he stays strong.	ingā	اِنْڠَا	ingā
+157	7	d	1	مُمٖئِتٗوَ	mumeiṯowa	mumeitoa						You have left me high and dry,	mumeiṯowa	مُمٖئِتٗوَ	mumeiṯowa
+159	7	e	1	وَنْڠِنٖ	wangine	wangine						now others have come forward	wangine	وَنْڠِنٖ	wangine
+161	7	f	1	كُنِپانْڠِيَ	kunipāngiya	kunipangia						to regulate me,	kunipāngiya	كُنِپانْڠِيَ	kunipāngiya
+174	8	d	1	سِوَنَانْڠُ	siwanāngu	siwanangu		si				are not my children, they are strangers [to me].	siwanāngu	سِوَنَانْڠُ	siwanāngu
+177	8	e	1	اِذَاعَانِ	idhā'āni	idhaani						It is much the same with the media. 	idhā'āni	اِذَاعَانِ	idhā'āni
+193	9	b	1	زِسُوْمٖشْوَاءٗ	zisūmeshwao	zisomeshwao						which are studied at our schools.	zisūmeshwao	زِسُوْمٖشْوَاءٗ	zisūmeshwao
+197	9	c	3	رَجَبُ	rajabu	Rajabu							rajabu	رَجَبُ	rajabu
+199	9	d	2	سُوْدِ	sūḏi	Sudi							sūḏi	سُوْدِ	sūḏi
+202	9	d	5	شَانِ	shāni	Shani							shāni	شَانِ	shāni
+203	9	e	1	ْنْجُوْرٗڠٖ	njūroge	Njoroge				\\textit{njoroge}: a name representing those who have their origins in the East African interior (the \\textit{bara}).\n		The author is Njoroge,	njūroge	ْنْجُوْرٗڠٖ	njūroge
+265	12	c	1	وَسْوَاهِلِ	waswāhili	Waswahili						Swahili students are few	waswāhili	وَسْوَاهِلِ	waswāhili
+275	12	f	2	مَاكُوْسَ	mākūsa	makosa							mākūsa	مَاكُوْسَ	mākūsa
+283	13	a	2	هُنِيْنَ	hunı̄na	hunena							hunı̄na	هُنِيْنَ	hunı̄na
+284	13	b	1	هُنِأٗنْڠُوْنْڠَ	huniongūnga	huniungonga						I feel sick at heart.	huniongūnga	هُنِأٗنْڠُوْنْڠَ	huniongūnga
+285	13	b	2	مُويُوْنِ	mūyūni	moyoni							mūyūni	مُويُوْنِ	mūyūni
+286	13	c	1	صَرْفَ	ṣarfa	sarufi						Inflection is no longer employed,	ṣarfa	صَرْفَ	ṣarfa
+318	14	f	2	يَقِيْنِ	yaqı̄ni	yakini							yaqı̄ni	يَقِيْنِ	yaqı̄ni
+332	15	c	2	لَكُوَكٖرَ	lakuwakera	lakuwakera	la						lakuwakera	لَكُوَكٖرَ	lakuwakera
+342	15	g	2	تٖكٖنْدِيَانَ	ṯekenḏiyāna	tekendiani	teke						ṯekenḏiyāna	تٖكٖنْدِيَانَ	ṯekenḏiyāna
+344	15	h	2	كُلَ	kula	kila							kula	كُلَ	kula
+223	10	d	1	كُوَ	kuwa	kuwa						that I do not see you all there.	kuwa	كُوَ	kuwa
+226	10	e	1	نَ	na	na						I bite my fingers in frustration,	na	نَ	na
+234	10	h	1	مَامٖنُ	māmenu	mamenu						You have abandoned your own mother. 	māmenu	مَامٖنُ	māmenu
+249	11	e	1	نْدِوٗ	nḏiwo	ndiwo						they are the ones who are ahead,	nḏiwo	نْدِوٗ	nḏiwo
 123	5	g	2	نِ	ni	ni							ni	نِ	ni
+278	12	g	1	مِمِ	mimi	mimi						You esteem me not at all,	mimi	مِمِ	mimi
+289	13	d	1	نَحَؤُ	naḥau	nahau						while grammatical [Swahili] is what I desire!	naḥau	نَحَؤُ	naḥau
+292	13	e	1	نَ	na	na						Even [their speech] is wanting in flavour,	na	نَ	na
+296	13	f	1	كَمَ	kama	kama						like a plug of tobacco in one’s mouth.	kama	كَمَ	kama
+301	13	h	1	هُئِمْبَ	huimba	huimba						Are they singing? Are they complaining? 	huimba	هُئِمْبَ	huimba
+310	14	c	1	موَانَانْڠُ	mwānāngu	mwanangu						it would be necessary, my child,	mwānāngu	موَانَانْڠُ	mwānāngu
+312	14	d	1	كْوٖنٖنْدَ	kwenenḏa	kwenenda						for him to go to a court of law,	kwenenḏa	كْوٖنٖنْدَ	kwenenḏa
+322	14	h	1	كْوَا	kwā	kwa						for the offence which you have committed against me. 	kwā	كْوَا	kwā
+339	15	f	1	هُتٖزٖوَ	huṯezewa	hutezewa						in the play-ground,	huṯezewa	هُتٖزٖوَ	huṯezewa
+343	15	h	1	نَ	na	na						by anyone who passes by in the street.	na	نَ	na
+105	5	a	1	اِنْكِشَافِ	inkishāfi	Inkishafi				The {\\FN{Inkishafi}}, according to W.E. Taylor Stigand (1915: 96-105) is ``a great, if not the greatest, religious classic of [the Swahili-speaking peoples]''. The poem, concerned with the decay of Pate (formerly a flourishing town in northern Swahililand), may remind some readers of Thomas Gray's \\textit{Elegy written in an English churchyard} (London 1751).\n		Look at Inkishafi.	inkishāfi	اِنْكِشَافِ	inkishāfi
+164	7	g	2	كُبُوْنِ	kubūni	kubuni				For almost a century the principal publisher of standardized Swahili dictionaries has been the Oxford University Press (OUP). Clearly OUP has to be profitable, and profitable is what, over the years, their dictionaries of standardized Swahili have been. However, if one considers excellence in research and scholarship not one of the\nOUP’s standardized Swahili lexicons can begin to compare with the Oxford English Dictionary (`more than 600,000 words over a thousand years'). Fortunately for Swahili and for Swahili studies there exists the monumental \\textit{Dictionnaire swahili-français} (Paris, 1939), compiled by Charles Sacleux. Sacleux’s chef d’oeuvre (`unprecedented\nin historical depth, dialectological detail and philological knowledge') can now be accessed electronically, courtesy of \\textit{Swahili Forum} (\\url{http://www.uni-leipzig.de/~afrika/swafo/index.php/sacleux}). Heartfelt thanks are due to Thilo Schadeberg and Ridder Samson.\n			kubūni	كُبُوْنِ	kubūni
+252	11	f	1	وَلِيُوكُوْ	waliyūkuu	waliyoko						who are at the top;	waliyūkuu	وَلِيُوكُوْ	waliyūkuu
+254	11	g	1	مُلُوْتُوْكَ	mulūṯūka	mulotoka						and you, students from the coast,	mulūṯūka	مُلُوْتُوْكَ	mulūṯūka
+257	11	h	1	مُكُوْ	mukuu	muko						you lag far behind.	mukuu	مُكُوْ	mukuu
+259	11	h	3	هُكُوْكُوْتَ	hukūkūṯa	hukokota				Over the years young people on Lamu Island (and indeed elsewhere in northern Swahililand) have received a raw deal in their primary and secondary education. They have `lagged far behind' their counterparts\nfrom the interior, and so Mother Swahili grieves for her marginalised children.\n			hukūkūṯa	هُكُوْكُوْتَ	hukūkūṯa
+280	12	h	1	مْڠِنٖ	mgine	mngine						yet you have not replaced me by another.	mgine	مْڠِنٖ	mgine
+319	14	g	1	نْيُوْتٖ	nyūṯe	nyote						and all of you would go to prison	nyūṯe	نْيُوْتٖ	nyūṯe
+349	16	a	3	اُشَعِرِ	usha'iri	ushairi							usha'iri	اُشَعِرِ	usha'iri
+350	16	b	1	وَاسُوْ	wāsuu	waso						those who are not mine have invented	wāsuu	وَاسُوْ	wāsuu
+357	16	d	2	كُوٗلٖزَ	kuwoleza	kuoleza							kuwoleza	كُوٗلٖزَ	kuwoleza
+363	16	f	2	مَاشَعِرِ	māsha'iri	mashairi							māsha'iri	مَاشَعِرِ	māsha'iri
+365	16	g	1	هَاىُوْ	hāyuu	hayo						What is the point of it all?	hāyuu	هَاىُوْ	hāyuu
+366	16	g	2	ىُوْت	yūṯ	yote							yūṯ	ىُوْت	yūṯ
+369	16	g	5	نْن	nn	nini							nn	نْن	nn
+98	4	f	4	قَرِنِ	qarini	karini							qarini	قَرِنِ	qarini
+100	4	g	2	مَاتُوْمبونِ	māṯūmbūni	matumboni							māṯūmbūni	مَاتُوْمبونِ	māṯūmbūni
+104	4	h	4	نْيوتَ	nı̄ūṯa	nyota							nı̄ūṯa	نْيوتَ	nı̄ūṯa
+140	6	e	1	نْنَابَهَانِ	nnābahāni	Nabahani				In an unpublished commendation from 12 June 1974 J.W.T. Allen writes about Ahmad Sheikh Nabhany: ``I am privileged to have a wide circle of friends and acquaintances among Swahili scholars of Swahili. I have some knowledge of their rating of themselves and I can name perhaps half a dozen (still living) who are always referred to as the most learned. To me they are walking dictionaries and mines of information and Ahmed is unquestionably one of them. He comes of a family of scholars whose discipline is as tough as any degree course in the world. They have no time for false scholarship or dilettantism. That this profound learning is almost wholly disregarded by those who have been highly educated in the western tradition affects almost everything written today in or about Swahili. When I want to know some word or something about Swahili, I do not go to professors, but to one of the \\textit{bingwa} known to me. One of these could give a much greater detail of assessment, but of course his opinion would not carry the weight of one who can put some totally irrelevant letters after his name''. For a biography see Said (2012).\n		al-Nabhany reproves,	nnābahāni	نْنَابَهَانِ	nnābahāni
 181	8	f	3	نِ	ni	ni							ni	نِ	ni
+392	17	f	1	اَلُوْنَانْدِكَ	alūnānḏika	alonandika						And who are they who wrote me down?	alūnānḏika	اَلُوْنَانْدِكَ	alūnānḏika
+421	18	g	4	سِنَانِ	sināni	shinani							sināni	سِنَانِ	sināni
 182	8	f	4	نْيَانِ	nyāni	nyani							nyāni	نْيَانِ	nyāni
 345	15	h	3	مْوٖنْيٖ	mwenye	mwenye							mwenye	مْوٖنْيٖ	mwenye
-2	1	a	2	نِ	ni	ni							ni	نِ	ni
-1	1	a	1	كُنْيَمَا	kunyamā	kunyama						I am weary of staying silent.	kunyamā	كُنْيَمَا	kunyamā
+359	16	e	1	ممِ	mmi	mimi						For myself, I cannot accept that.	mmi	ممِ	mmi
+360	16	e	2	هَايُو	hāyuu	hayo							hāyuu	هَايُو	hāyuu
 7	1	c	1	وَنَنْڠُ	wanangu	wanangu						My own children avoid me, 	wanangu	وَنَنْڠُ	wanangu
-12	1	e	1	والُوْبَاكِ	wālūbāki	walubaki						And those who remain to embrace me	wālūbāki	والُوْبَاكِ	wālūbāki
-5	1	b	2	حَتَ	ḥaṯa	hata						For how much longer am I to remain dumb?	ḥaṯa	حَتَ	ḥaṯa
 9	1	d	1	كُوَأٗنَ	kuwaona	kuwaona						though I long to see them.	kuwaona	كُوَأٗنَ	kuwaona
+5	1	b	2	حَتَ	ḥaṯa	hata							ḥaṯa	حَتَ	ḥaṯa
+31	2	c	1	أَصِلِ	aṣili	asili						are uninterested	aṣili	أَصِلِ	aṣili
+389	17	e	1	نْيَانِ	nyāni	nyani						Who gave me my name?	nyāni	نْيَانِ	nyāni
+2	1	a	2	نِ	ni	ni		~					ni	نِ	ni
+3	1	a	3	مٖػوْكَ	mekʲūka	mechoka							mekʲūka	مٖػوْكَ	mekʲūka
+1	1	a	1	كُنْيَمَا	kunyamā	kunyamaa						I am weary of staying silent.	kunyamā	كُنْيَمَا	kunyamā
+4	1	b	1	تَانْيَامَا	ṯānyāmā	t'anyamaa						For how much longer am I to remain dumb?	ṯānyāmā	تَانْيَامَا	ṯānyāmā
+10	1	d	2	نَ	na	na		~					na	نَ	na
+12	1	e	1	والُوْبَاكِ	wālūbāki	walobaki						And those who remain to embrace me	wālūbāki	والُوْبَاكِ	wālūbāki
 408	18	c	3	سِنَ	sina	sina							sina	سِنَ	sina
-389	17	e	1	نْيَانِ	nyāni	nyani							nyāni	نْيَانِ	nyāni
-3	1	a	3	مٖػوْكَ	mekʲūka	mechuka							mekʲūka	مٖػوْكَ	mekʲūka
 49	2	h	2	هُنِپِجَ	hunipija	hunipija							hunipija	هُنِپِجَ	hunipija
-359	16	e	1	ممِ	mmi	mmi							mmi	ممِ	mmi
-360	16	e	2	هَايُو	hāyuu	hayuu							hāyuu	هَايُو	hāyuu
 50	2	h	3	زِتَ	ziṯa	zita							ziṯa	زِتَ	ziṯa
-4	1	b	1	تَانْيَامَا	ṯānyāmā	tanyama							ṯānyāmā	تَانْيَامَا	ṯānyāmā
 6	1	b	3	لِنِ	lini	lini							lini	لِنِ	lini
-31	2	c	1	أَصِلِ	aṣili	asili							aṣili	أَصِلِ	aṣili
 8	1	c	2	هُنِئٖپُوْكَ	huniepūka	huniepuka							huniepūka	هُنِئٖپُوْكَ	huniepūka
 32	2	c	2	هَوَنَ	hawana	hawana							hawana	هَوَنَ	hawana
 33	2	c	3	هَامُ	hāmu	hamu							hāmu	هَامُ	hāmu
-10	1	d	2	نَ	na	na							na	نَ	na
 11	1	d	3	تَمَانِ	ṯamāni	tamani							ṯamāni	تَمَانِ	ṯamāni
 108	5	b	2	نَ	na	na							na	نَ	na
 18	1	g	1	مِمِ	mimi	mimi						What have I done to you?	mimi	مِمِ	mimi
-21	1	h	1	مْبُوْنَ	mbūna	mbuna						Why do you wage war on me? 	mbūna	مْبُوْنَ	mbūna
+24	2	a	1	وَنَانْڠُ	wanāngu	wanangu						My own flesh and blood,	wanāngu	وَنَانْڠُ	wanāngu
+28	2	b	1	وَانَ	wāna	wana						the children of Swahililand,	wāna	وَانَ	wāna
+34	2	d	1	يَا	yā	ya						 in knowing who I am, 	yā	يَا	yā
+38	2	e	1	وَمٖنَتِيَ	wamenaṯiya	wamenatiya						and have left me to other peoples,	wamenaṯiya	وَمٖنَتِيَ	wamenaṯiya
+40	2	f	1	نَ	na	na						and to the children of neighbours.	na	نَ	na
+51	3	a	1	مِمِ	mimi	mimi						I am your mother and am not yet infertile,	mimi	مِمِ	mimi
+54	3	b	1	وَلَ	wala	wala						nor has my ability to reproduce diminished.	wala	وَلَ	wala
+19	1	g	2	نِ	ni	ni		~					ni	نِ	ni
+21	1	h	1	مْبُوْنَ	mbūna	mbona						Why do you wage war on me? 	mbūna	مْبُوْنَ	mbūna
+39	2	e	2	قَؤُمُ	qaumu	kaumu							qaumu	قَؤُمُ	qaumu
+44	2	g	1	كُوْسَ	kūsa	kosa						What kind of fault is my fault?	kūsa	كُوْسَ	kūsa
+46	2	g	3	كُوْسَ	kūsa	kosa							kūsa	كُوْسَ	kūsa
+53	3	a	3	سِتَاسَ	siṯāsa	sit'asa							siṯāsa	سِتَاسَ	siṯāsa
 17	1	f	4	وٖنْدَانِ	wenḏāni	wendani							wenḏāni	وٖنْدَانِ	wenḏāni
 62	3	d	2	كُنْڠِنٖ	kungine	kungine							kungine	كُنْڠِنٖ	kungine
-34	2	d	1	يَا	yā	ya							yā	يَا	yā
 35	2	d	2	كُنِيُوَ	kuniyuwa	kuniyuwa							kuniyuwa	كُنِيُوَ	kuniyuwa
-19	1	g	2	نِ	ni	ni							ni	نِ	ni
 20	1	g	3	مٖوَتٖنْدَانِ	mewaṯenḏāni	mewatendani							mewaṯenḏāni	مٖوَتٖنْدَانِ	mewaṯenḏāni
 36	2	d	3	نِ	ni	ni							ni	نِ	ni
 37	2	d	4	نَانِ	nāni	nani							nāni	نَانِ	nāni
 22	1	h	2	هُنِپِجَ	hunipija	hunipija							hunipija	هُنِپِجَ	hunipija
 23	1	h	3	زِتَ	ziṯa	zita							ziṯa	زِتَ	ziṯa
 63	3	d	3	زِسِوَنِ	zisiwani	zisiwani							zisiwani	زِسِوَنِ	zisiwani
-51	3	a	1	مِمِ	mimi	mimi							mimi	مِمِ	mimi
-38	2	e	1	وَمٖنَتِيَ	wamenaṯiya	wamenatiya							wamenaṯiya	وَمٖنَتِيَ	wamenaṯiya
-24	2	a	1	وَنَانْڠُ	wanāngu	wanangu							wanāngu	وَنَانْڠُ	wanāngu
 25	2	a	2	مِمِ	mimi	mimi							mimi	مِمِ	mimi
 26	2	a	3	وَ	wa	wa							wa	وَ	wa
 27	2	a	4	دَمُ	ḏamu	damu							ḏamu	دَمُ	ḏamu
-39	2	e	2	قَؤُمُ	qaumu	qaumu							qaumu	قَؤُمُ	qaumu
 52	3	a	2	مَامٖنُ	māmenu	mamenu							māmenu	مَامٖنُ	māmenu
-28	2	b	1	وَانَ	wāna	wana							wāna	وَانَ	wāna
 29	2	b	2	وَ	wa	wa							wa	وَ	wa
-53	3	a	3	سِتَاسَ	siṯāsa	sitasa							siṯāsa	سِتَاسَ	siṯāsa
-40	2	f	1	نَ	na	na							na	نَ	na
 41	2	f	2	وَنَ	wana	wana							wana	وَنَ	wana
 42	2	f	3	وَ	wa	wa							wa	وَ	wa
 43	2	f	4	مَجِرَنِ	majirani	majirani							majirani	مَجِرَنِ	majirani
-54	3	b	1	وَلَ	wala	wala							wala	وَلَ	wala
-44	2	g	1	كُوْسَ	kūsa	kusa							kūsa	كُوْسَ	kūsa
 45	2	g	2	لَنْڠُ	langu	langu							langu	لَنْڠُ	langu
-46	2	g	3	كُوْسَ	kūsa	kusa							kūsa	كُوْسَ	kūsa
 47	2	g	4	ڠَانِ	gāni	gani							gāni	ڠَانِ	gāni
+70	3	g	1	مَافُنْدِ	māfunḏi	mafundi						to craftsmen in every field,	māfunḏi	مَافُنْدِ	māfunḏi
 78	4	a	1	نْدِمِ	nḏimi	ndimi						I am the mother of Bwana Muyaka,	nḏimi	نْدِمِ	nḏimi
-81	4	b	1	پِيَ	piya	piya						and of Mwengo Athmani also,	piya	پِيَ	piya
-85	4	c	2	زَهِدِ	zahiḏi	zahidi				Zahidi: see El-Maawy (2008).			zahiḏi	زَهِدِ	zahiḏi
+390	17	e	2	اَلُوْنِپَ	alūnipa	alonipa							alūnipa	اَلُوْنِپَ	alūnipa
+74	3	h	1	نَ	na	na						and to war heroes. 	na	نَ	na
+48	2	h	1	مْبُوْنَ	mbūna	mbona						[O my children] why do you continue waging war on me? 	mbūna	مْبُوْنَ	mbūna
+57	3	c	1	نِ	ni	ni		~				I have given birth to children in Mambasa,	ni	نِ	ni
 86	4	c	3	كَذَلِكَ	kadhalika	kadhalika							kadhalika	كَذَلِكَ	kadhalika
-80	4	a	3	مُيَاكَ	muyāka	muyaka				Bwana Muyaka was the outstanding Swahili poet of 19th century Mombasa.  After his death many of his verses were recalled by Mu'allim Sikujua Abdallah al-Batawi (died 1890) and transcribed with annotations by W.E. Taylor (1856-1927). After Taylor’s death his papers were acquired by the library of the School of Oriental and African Studies (SOAS), London.\n			muyāka	مُيَاكَ	muyāka
-83	4	b	3	عَثْمَانِ	'athmāni	'athmani				Mwengo Athmani: this 18th century poet from Pate composed the {\\FN{Utendi wa Tambuka}} (\\textit{The Epic of Heraklios}).			'athmāni	عَثْمَانِ	'athmāni
 14	1	f	1	سِوَنْڠُ	siwangu	siwangu		si				are not my own, but are the offspring of others.	siwangu	سِوَنْڠُ	siwangu
+61	3	d	1	نَ	na	na						and in the other islands [of the Swahili],	na	نَ	na
+67	3	f	1	نَ	na	na						and to religious leaders,	na	نَ	na
+58	3	c	2	مٖزَا	mezā	mezaa							mezā	مٖزَا	mezā
+60	3	c	4	مَمْبَاسَ	mambāsa	Mambasa							mambāsa	مَمْبَاسَ	mambāsa
+64	3	e	1	نِزٖ	nize	nizee						to politicians	nize	نِزٖ	nize
+65	3	e	2	وَنَ	wana	wana		~					wana	وَنَ	wana
+68	3	f	2	زِيُوْنْڠُوْزِ	ziyūngūzi	ziongozi							ziyūngūzi	زِيُوْنْڠُوْزِ	ziyūngūzi
+69	3	f	3	وَدِنِ	waḏini	wadini		wa					waḏini	وَدِنِ	waḏini
+72	3	g	3	كُلَ	kula	kila							kula	كُلَ	kula
+75	3	h	2	مَاشُجَا	māshujā	mashujaa							māshujā	مَاشُجَا	māshujā
+80	4	a	3	مُيَاكَ	muyāka	Muyaka				Bwana Muyaka was the outstanding Swahili poet of 19th century Mombasa.  After his death many of his verses were recalled by Mu'allim Sikujua Abdallah al-Batawi (died 1890) and transcribed with annotations by W.E. Taylor (1856-1927). After Taylor’s death his papers were acquired by the library of the School of Oriental and African Studies (SOAS), London.\n			muyāka	مُيَاكَ	muyāka
+81	4	b	1	پِيَ	piya	pia						and of Mwengo Athmani also,	piya	پِيَ	piya
+82	4	b	2	مْوٖنْڠٗ	mwengo	Mwengo							mwengo	مْوٖنْڠٗ	mwengo
+83	4	b	3	عَثْمَانِ	'athmāni	Athumani	'ath#u#māni			Mwengo Athmani: this 18th century poet from Pate composed the {\\FN{Utendi wa Tambuka}} (\\textit{The Epic of Heraklios}).			'athmāni	عَثْمَانِ	'athmāni
+85	4	c	2	زَهِدِ	zahiḏi	Zahidi				Zahidi: see El-Maawy (2008).			zahiḏi	زَهِدِ	zahiḏi
 13	1	e	2	كُنِشِكَ	kunishika	kunishika							kunishika	كُنِشِكَ	kunishika
-61	3	d	1	نَ	na	na							na	نَ	na
 15	1	f	2	نِ	ni	ni							ni	نِ	ni
 16	1	f	3	وَ	wa	wa							wa	وَ	wa
 361	16	e	3	سِيَاكِرِ	siyākiri	siyakiri							siyākiri	سِيَاكِرِ	siyākiri
-390	17	e	2	اَلُوْنِپَ	alūnipa	alunipa							alūnipa	اَلُوْنِپَ	alūnipa
 55	3	b	2	سِنَ	sina	sina							sina	سِنَ	sina
-48	2	h	1	مْبُوْنَ	mbūna	mbuna							mbūna	مْبُوْنَ	mbūna
 56	3	b	3	پُنْڠُوَنِ	punguwani	punguwani							punguwani	پُنْڠُوَنِ	punguwani
-74	3	h	1	نَ	na	na							na	نَ	na
-64	3	e	1	نِزٖ	nize	nize							nize	نِزٖ	nize
-65	3	e	2	وَنَ	wana	wana							wana	وَنَ	wana
 66	3	e	3	سِيَاسَ	siyāsa	siyasa							siyāsa	سِيَاسَ	siyāsa
-57	3	c	1	نِ	ni	ni							ni	نِ	ni
-58	3	c	2	مٖزَا	mezā	meza							mezā	مٖزَا	mezā
 59	3	c	3	وَ	wa	wa							wa	وَ	wa
-60	3	c	4	مَمْبَاسَ	mambāsa	mambasa							mambāsa	مَمْبَاسَ	mambāsa
-75	3	h	2	مَاشُجَا	māshujā	mashuja							māshujā	مَاشُجَا	māshujā
-70	3	g	1	مَافُنْدِ	māfunḏi	mafundi							māfunḏi	مَافُنْدِ	māfunḏi
 71	3	g	2	وَ	wa	wa							wa	وَ	wa
-72	3	g	3	كُلَ	kula	kula							kula	كُلَ	kula
 73	3	g	4	فَنِ	fani	fani							fani	فَنِ	fani
-67	3	f	1	نَ	na	na							na	نَ	na
-68	3	f	2	زِيُوْنْڠُوْزِ	ziyūngūzi	ziyunguzi							ziyūngūzi	زِيُوْنْڠُوْزِ	ziyūngūzi
-69	3	f	3	وَدِنِ	waḏini	wadini							waḏini	وَدِنِ	waḏini
 79	4	a	2	مَامَاكٖ	māmāke	mamake							māmāke	مَامَاكٖ	māmāke
 76	3	h	3	وَ	wa	wa							wa	وَ	wa
 77	3	h	4	زِتَ	ziṯa	zita							ziṯa	زِتَ	ziṯa
 88	4	d	2	وٖنْڠِ	wengi	wengi							wengi	وٖنْڠِ	wengi
-82	4	b	2	مْوٖنْڠٗ	mwengo	mwengo							mwengo	مْوٖنْڠٗ	mwengo
+106	5	a	2	نْڠَلِيَ	ngaliya	angaliya							ngaliya	نْڠَلِيَ	ngaliya
 89	4	d	3	وَاكٖ	wāke	wake							wāke	وَاكٖ	wāke
 90	4	d	4	وٖنْدَانِ	wenḏāni	wendani							wenḏāni	وٖنْدَانِ	wenḏāni
+111	5	c	2	تَاكَاپُوْ	ṯākāpuu	takapo							ṯākāpuu	تَاكَاپُوْ	ṯākāpuu
 93	4	e	3	نَ	na	na							na	نَ	na
+153	7	b	1	سِيَاكُوْمَ	siyākūma	siyakoma						I have not yet reached the limit,	siyākūma	سِيَاكُوْمَ	siyākūma
 141	6	e	2	هُتٖتَ	huṯeṯa	huteta							huṯeṯa	هُتٖتَ	huṯeṯa
-122	5	g	1	وَالُوْزِتُنْڠَ	wālūziṯunga	waluzitunga							wālūziṯunga	وَالُوْزِتُنْڠَ	wālūziṯunga
+117	5	e	2	تُوْنْڠٗ	ṯūngo	t'ungo							ṯūngo	تُوْنْڠٗ	ṯūngo
+127	5	h	3	وَالُوْپِتَ	wālūpiṯa	walopita							wālūpiṯa	وَالُوْپِتَ	wālūpiṯa
 96	4	f	2	مْبوَا	mbwā	mbwa							mbwā	مْبوَا	mbwā
-97	4	f	3	مُوْيَ	mūya	muya							mūya	مُوْيَ	mūya
-98	4	f	4	قَرِنِ	qarini	qarini							qarini	قَرِنِ	qarini
+129	6	a	2	مَالٖنْڠَ	mālenga	Malenga				The Bard of Mambasa refers to Ustadh Ahmad Nassir Juma Bhalo, see Chiraghdin (1971).\n			mālenga	مَالٖنْڠَ	mālenga
 124	5	g	3	نْيَانِ	nyāni	nyani							nyāni	نْيَانِ	nyāni
-100	4	g	2	مَاتُوْمبونِ	māṯūmbūni	matumbuni							māṯūmbūni	مَاتُوْمبونِ	māṯūmbūni
-160	7	e	2	مٖئِتُوكٖزَ	meiṯūkeza	meitukeza							meiṯūkeza	مٖئِتُوكٖزَ	meiṯūkeza
-102	4	h	2	كَوَا	kawā	kawa							kawā	كَوَا	kawā
+131	6	a	4	مْڤِتَ	mviṯa	Mvita							mviṯa	مْڤِتَ	mviṯa
+154	7	b	2	اُكِنڠُوْنِ	ukingūni	ukingoni							ukingūni	اُكِنڠُوْنِ	ukingūni
+156	7	c	2	مُمٖنِپُوْزَ	mumenipūza	mumenipuuza							mumenipūza	مُمٖنِپُوْزَ	mumenipūza
 103	4	h	3	كَمَ	kama	kama							kama	كَمَ	kama
-104	4	h	4	نْيوتَ	nı̄ūṯa	niuta							nı̄ūṯa	نْيوتَ	nı̄ūṯa
-125	5	h	1	نِ	ni	ni							ni	نِ	ni
-105	5	a	1	اِنْكِشَافِ	inkishāfi	inkishafi							inkishāfi	اِنْكِشَافِ	inkishāfi
-106	5	a	2	نْڠَلِيَ	ngaliya	ngaliya							ngaliya	نْڠَلِيَ	ngaliya
+136	6	c	1	نْيايُو	nyāyuu	nyayo						they followed in my footsteps,	nyāyuu	نْيايُو	nyāyuu
+137	6	c	2	ولِزِفُوَتَ	ūlizifuwaṯa	ulizifuata							ūlizifuwaṯa	ولِزِفُوَتَ	ūlizifuwaṯa
+133	6	b	2	پِيَ	piya	pia							piya	پِيَ	piya
 126	5	h	2	وَنَانْڠُ	wanāngu	wanangu							wanāngu	وَنَانْڠُ	wanāngu
-127	5	h	3	وَالُوْپِتَ	wālūpiṯa	walupita							wālūpiṯa	وَالُوْپِتَ	wālūpiṯa
-107	5	b	1	أُكِسٗوْمٖ	ukisōme	ukisome							ukisōme	أُكِسٗوْمٖ	ukisōme
+113	5	d	1	نِ	ni	ni		~				my dear friend, 	ni	نِ	ni
 109	5	b	3	كِدَنِ	kiḏani	kidani							kiḏani	كِدَنِ	kiḏani
-110	5	c	1	نْدِپُوْ	nḏipuu	ndipuu							nḏipuu	نْدِپُوْ	nḏipuu
-111	5	c	2	تَاكَاپُوْ	ṯākāpuu	takapuu							ṯākāpuu	تَاكَاپُوْ	ṯākāpuu
+134	6	b	3	ػِرَاڠُ	kʲirāgu	Chiraghu		~					kʲirāgu	ػِرَاڠُ	kʲirāgu
 112	5	c	3	كْوٖلٖيَ	kweleya	kweleya							kweleya	كْوٖلٖيَ	kweleya
-142	6	f	1	لَكِنِ	lakini	lakini							lakini	لَكِنِ	lakini
 143	6	f	2	هُفَلِييانِ	hufalı̄yāni	hufaliyani							hufalı̄yāni	هُفَلِييانِ	hufalı̄yāni
-113	5	d	1	نِ	ni	ni							ni	نِ	ni
 114	5	d	2	كْوَامْبِيَاءٗ	kwāmbiyao	kwambiyao							kwāmbiyao	كْوَامْبِيَاءٗ	kwāmbiyao
 115	5	d	3	مْوٖنْدانِ	mwenḏāni	mwendani							mwenḏāni	مْوٖنْدانِ	mwenḏāni
-128	6	a	1	نَ	na	na							na	نَ	na
-129	6	a	2	مَالٖنْڠَ	mālenga	malenga							mālenga	مَالٖنْڠَ	mālenga
-116	5	e	1	نِ	ni	ni							ni	نِ	ni
-117	5	e	2	تُوْنْڠٗ	ṯūngo	tungo							ṯūngo	تُوْنْڠٗ	ṯūngo
+150	7	a	2	كُزَا	kuzā	kuzaa							kuzā	كُزَا	kuzā
+160	7	e	2	مٖئِتُوكٖزَ	meiṯūkeza	meitokeza							meiṯūkeza	مٖئِتُوكٖزَ	meiṯūkeza
 118	5	e	3	زِمٖسَلِيَ	zimesaliya	zimesaliya							zimesaliya	زِمٖسَلِيَ	zimesaliya
 130	6	a	3	وَ	wa	wa							wa	وَ	wa
-131	6	a	4	مْڤِتَ	mviṯa	mvita							mviṯa	مْڤِتَ	mviṯa
-119	5	f	1	نَ	na	na							na	نَ	na
+208	9	g	1	ػَارٗ	kʲāro	Charo				\\textit{charo}: a name representing those who have their origins in the coastal hinterland (the \\textit{nyika}).\n		Charo and his colleagues	kʲāro	ػَارٗ	kʲāro
 120	5	f	2	هَزِفِ	hazifi	hazifi							hazifi	هَزِفِ	hazifi
 121	5	f	3	اَصِلَانِ	aṣilāni	asilani							aṣilāni	اَصِلَانِ	aṣilāni
-153	7	b	1	سِيَاكُوْمَ	siyākūma	siyakuma							siyākūma	سِيَاكُوْمَ	siyākūma
-154	7	b	2	اُكِنڠُوْنِ	ukingūni	ukinguni							ukingūni	اُكِنڠُوْنِ	ukingūni
-144	6	g	1	نْدِيٖ	nḏiye	ndiye							nḏiye	نْدِيٖ	nḏiye
-132	6	b	1	نَ	na	na							na	نَ	na
-133	6	b	2	پِيَ	piya	piya							piya	پِيَ	piya
-134	6	b	3	ػِرَاڠُ	kʲirāgu	chiragu							kʲirāgu	ػِرَاڠُ	kʲirāgu
-135	6	b	4	دِنِ	ḏini	dini							ḏini	دِنِ	ḏini
 145	6	g	2	پْوٖكٖ	pweke	pweke							pweke	پْوٖكٖ	pweke
 146	6	g	3	اُوَنْدَانِ	uwanḏāni	uwandani							uwanḏāni	اُوَنْدَانِ	uwanḏāni
-136	6	c	1	نْيايُو	nyāyuu	nyayuu							nyāyuu	نْيايُو	nyāyuu
-137	6	c	2	ولِزِفُوَتَ	ūlizifuwaṯa	ulizifuwata							ūlizifuwaṯa	ولِزِفُوَتَ	ūlizifuwaṯa
-208	9	g	1	ػَارٗ	kʲāro	charo							kʲāro	ػَارٗ	kʲāro
-138	6	d	1	هَاوَكُكِرِ	hāwakukiri	hawakukiri							hāwakukiri	هَاوَكُكِرِ	hāwakukiri
 139	6	d	2	اُدُنِ	uḏuni	uduni							uḏuni	اُدُنِ	uḏuni
-140	6	e	1	نْنَابَهَانِ	nnābahāni	nnabahani							nnābahāni	نْنَابَهَانِ	nnābahāni
 170	8	b	2	جَرِدَنِ	jariḏani	jaridani							jariḏani	جَرِدَنِ	jariḏani
-147	6	h	1	اِنْڠَا	ingā	inga							ingā	اِنْڠَا	ingā
 148	6	h	2	اَمٖئِكِتَ	ameikiṯa	ameikita							ameikiṯa	اَمٖئِكِتَ	ameikiṯa
-155	7	c	1	لَكِنِ	lakini	lakini							lakini	لَكِنِ	lakini
-156	7	c	2	مُمٖنِپُوْزَ	mumenipūza	mumenipuza							mumenipūza	مُمٖنِپُوْزَ	mumenipūza
-149	7	a	1	بَادٗ	bāḏo	bado							bāḏo	بَادٗ	bāḏo
-150	7	a	2	كُزَا	kuzā	kuza							kuzā	كُزَا	kuzā
-92	4	e	2	كُوْتِ	kūṯi	kuti				Ali Koti of Pate: see Chiraghdin (1987: 31-7).			kūṯi	كُوْتِ	kūṯi
-94	4	e	4	مَتَاكَ	maṯāka	mataka				Bwana Mataka’s full name is Muhammad bin Shee Mataka al-Famau (1825-1868). He was ruler of Siyu, as was his father. His mother was Mwana Kupona, famous for the poem of advice written to her daughter. Bwana Mataka died in Mombasa’s fort while imprisoned by the Busa‘idi.\n			maṯāka	مَتَاكَ	maṯāka
-151	7	a	3	نَ	na	na							na	نَ	na
+132	6	b	1	نَ	na	na						and Chiraghdin too,	na	نَ	na
+138	6	d	1	هَاوَكُكِرِ	hāwakukiri	hawakukiri						they did not submit to lower standards.	hāwakukiri	هَاوَكُكِرِ	hāwakukiri
+92	4	e	2	كُوْتِ	kūṯi	Koti				Ali Koti of Pate: see Chiraghdin (1987: 31-7).			kūṯi	كُوْتِ	kūṯi
+142	6	f	1	لَكِنِ	lakini	lakini						but to what effect?	lakini	لَكِنِ	lakini
+144	6	g	1	نْدِيٖ	nḏiye	ndiye						He remains alone in the field,	nḏiye	نْدِيٖ	nḏiye
+149	7	a	1	بَادٗ	bāḏo	bado						I am still able to give birth.	bāḏo	بَادٗ	bāḏo
+155	7	c	1	لَكِنِ	lakini	lakini						but you have all despised me.	lakini	لَكِنِ	lakini
+94	4	e	4	مَتَاكَ	maṯāka	Mataka				Bwana Mataka’s full name is Muhammad bin Shee Mataka al-Famau (1825-1868). He was ruler of Siyu, as was his father. His mother was Mwana Kupona, famous for the poem of advice written to her daughter. Bwana Mataka died in Mombasa’s fort while imprisoned by the Busa‘idi.\n			maṯāka	مَتَاكَ	maṯāka
+135	6	b	4	دِنِ	ḏini	dini				Shihabdin Chiraghdin (1934-1976). See the biography by his daughter Latifa Chiraghdin which came out in 2012.			ḏini	دِنِ	ḏini
+97	4	f	3	مُوْيَ	mūya	moya							mūya	مُوْيَ	mūya
+102	4	h	2	كَوَا	kawā	kawaa							kawā	كَوَا	kawā
 152	7	a	4	وٖزَ	weza	weza							weza	وٖزَ	weza
-167	8	a	1	هُلِيَ	huliya	huliya							huliya	هُلِيَ	huliya
-161	7	f	1	كُنِپانْڠِيَ	kunipāngiya	kunipangiya							kunipāngiya	كُنِپانْڠِيَ	kunipāngiya
-157	7	d	1	مُمٖئِتٗوَ	mumeiṯowa	mumeitowa							mumeiṯowa	مُمٖئِتٗوَ	mumeiṯowa
-158	7	d	2	فُوٗنِ	fuwoni	fuwoni							fuwoni	فُوٗنِ	fuwoni
+151	7	a	3	نَ	na	na		~					na	نَ	na
+158	7	d	2	فُوٗنِ	fuwoni	fuoni							fuwoni	فُوٗنِ	fuwoni
+166	7	h	2	مُلِپُوْنِوَتَ	mulipūniwaṯa	muliponiwata							mulipūniwaṯa	مُلِپُوْنِوَتَ	mulipūniwaṯa
 162	7	f	2	كَانُوْنِ	kānūni	kanuni							kānūni	كَانُوْنِ	kānūni
 165	7	h	1	نْيِنْيِ	nyinyi	nyinyi							nyinyi	نْيِنْيِ	nyinyi
-159	7	e	1	وَنْڠِنٖ	wangine	wangine							wangine	وَنْڠِنٖ	wangine
-166	7	h	2	مُلِپُوْنِوَتَ	mulipūniwaṯa	mulipuniwata							mulipūniwaṯa	مُلِپُوْنِوَتَ	mulipūniwaṯa
-163	7	g	1	مُسَمِيَاتِ	musamiyāṯi	musamiyati							musamiyāṯi	مُسَمِيَاتِ	musamiyāṯi
-164	7	g	2	كُبُوْنِ	kubūni	kubuni							kubūni	كُبُوْنِ	kubūni
-172	8	c	2	وَنَاءُ	wanau	wanau							wanau	وَنَاءُ	wanau
+172	8	c	2	وَنَاءُ	wanau	wanao		~					wanau	وَنَاءُ	wanau
+180	8	f	2	تُنْڠٗ	ṯungo	t'ungo							ṯungo	تُنْڠٗ	ṯungo
+184	8	g	2	هَاوَتُوْك	hāwaṯūk	hawatoki							hāwaṯūk	هَاوَتُوْك	hāwaṯūk
 168	8	a	2	كِسِكِتِكَ	kisikiṯika	kisikitika							kisikiṯika	كِسِكِتِكَ	kisikiṯika
-169	8	b	1	ػَنْڠَلِيَ	kʲangaliya	changaliya							kʲangaliya	ػَنْڠَلِيَ	kʲangaliya
+185	8	g	3	پْوان	pwān	pwani							pwān	پْوان	pwān
 173	8	c	3	اَنْدِكَ	anḏika	andika							anḏika	اَنْدِكَ	anḏika
 175	8	d	2	نِ	ni	ni							ni	نِ	ni
-171	8	c	1	وٖنْڠِ	wengi	wengi							wengi	وٖنْڠِ	wengi
+189	8	h	4	مْڤِتَ	mviṯa	Mvita							mviṯa	مْڤِتَ	mviṯa
 176	8	d	3	وَڠٖنِ	wageni	wageni							wageni	وَڠٖنِ	wageni
 178	8	e	2	كَذَلِكَ	kadhalika	kadhalika							kadhalika	كَذَلِكَ	kadhalika
-174	8	d	1	سِوَنَانْڠُ	siwanāngu	siwanangu							siwanāngu	سِوَنَانْڠُ	siwanāngu
-180	8	f	2	تُنْڠٗ	ṯungo	tungo							ṯungo	تُنْڠٗ	ṯungo
-177	8	e	1	اِذَاعَانِ	idhā'āni	idha'ani							idhā'āni	اِذَاعَانِ	idhā'āni
-179	8	f	1	وَپٖكَ	wapeka	wapeka							wapeka	وَپٖكَ	wapeka
+190	9	a	1	اَنڠَلِيَ	angaliya	angalia						Look at the textbooks	angaliya	اَنڠَلِيَ	angaliya
+214	9	h	3	هُفُوَتَ	hufuwaṯa	hufuata							hufuwaṯa	هُفُوَتَ	hufuwaṯa
+215	10	a	1	هُوَلِكْوَا	huwalikwā	hualikwa						When I am invited to conferences,	huwalikwā	هُوَلِكْوَا	huwalikwā
 211	9	g	4	وٖنْدانِ	wenḏāni	wendani							wenḏāni	وٖنْدانِ	wenḏāni
-183	8	g	1	وٖنْڠِ	wengi	wengi							wengi	وٖنْڠِ	wengi
-184	8	g	2	هَاوَتُوْك	hāwaṯūk	hawatuk							hāwaṯūk	هَاوَتُوْك	hāwaṯūk
-185	8	g	3	پْوان	pwān	pwan							pwān	پْوان	pwān
-240	11	b	1	ػَنْڠَلِيَ	kʲangaliya	changaliya							kʲangaliya	ػَنْڠَلِيَ	kʲangaliya
+216	10	a	2	كُوْنْڠَمَانٗ	kūngamāno	kongamano							kūngamāno	كُوْنْڠَمَانٗ	kūngamāno
 241	11	b	2	مِتِحَانِ	miṯiḥāni	mitihani							miṯiḥāni	مِتِحَانِ	miṯiḥāni
-186	8	h	1	لِػَ	likʲa	licha							likʲa	لِػَ	likʲa
+219	10	b	3	نْدِيَانِ	nḏiyāni	ndiani							nḏiyāni	نْدِيَانِ	nḏiyāni
 187	8	h	2	كُوَ	kuwa	kuwa							kuwa	كُوَ	kuwa
 188	8	h	3	مْبوا	mbwā	mbwa							mbwā	مْبوا	mbwā
-189	8	h	4	مْڤِتَ	mviṯa	mvita							mviṯa	مْڤِتَ	mviṯa
-212	9	h	1	نَاءٗ	nao	nao							nao	نَاءٗ	nao
 213	9	h	2	نْيُوْمَ	nyūma	nyuma							nyūma	نْيُوْمَ	nyūma
-214	9	h	3	هُفُوَتَ	hufuwaṯa	hufuwata							hufuwaṯa	هُفُوَتَ	hufuwaṯa
-190	9	a	1	اَنڠَلِيَ	angaliya	angaliya							angaliya	اَنڠَلِيَ	angaliya
 191	9	a	2	نَ	na	na							na	نَ	na
 192	9	a	3	زِتَابُ	ziṯābu	zitabu							ziṯābu	زِتَابُ	ziṯābu
-193	9	b	1	زِسُوْمٖشْوَاءٗ	zisūmeshwao	zisumeshwao							zisūmeshwao	زِسُوْمٖشْوَاءٗ	zisūmeshwao
 194	9	b	2	شُلٖنِ	shuleni	shuleni							shuleni	شُلٖنِ	shuleni
-229	10	f	1	لَكِنِ	lakini	lakini							lakini	لَكِنِ	lakini
 230	10	f	2	نِتٖنْدٖ	niṯenḏe	nitende							niṯenḏe	نِتٖنْدٖ	niṯenḏe
-215	10	a	1	هُوَلِكْوَا	huwalikwā	huwalikwa							huwalikwā	هُوَلِكْوَا	huwalikwā
-195	9	c	1	هَازَانْدِكْوِ	hāzānḏikwi	hazandikwi							hāzānḏikwi	هَازَانْدِكْوِ	hāzānḏikwi
 196	9	c	2	نَ	na	na							na	نَ	na
-197	9	c	3	رَجَبُ	rajabu	rajabu							rajabu	رَجَبُ	rajabu
-216	10	a	2	كُوْنْڠَمَانٗ	kūngamāno	kungamano							kūngamāno	كُوْنْڠَمَانٗ	kūngamāno
-231	10	f	3	نْنِ	nni	nni							nni	نْنِ	nni
-198	9	d	1	سِ	si	si							si	سِ	si
-199	9	d	2	سُوْدِ	sūḏi	sudi							sūḏi	سُوْدِ	sūḏi
 200	9	d	3	وَلَ	wala	wala							wala	وَلَ	wala
 201	9	d	4	سِ	si	si							si	سِ	si
-202	9	d	5	شَانِ	shāni	shani							shāni	شَانِ	shāni
-217	10	b	1	ػٖنْدَ	kʲenḏa	chenda							kʲenḏa	ػٖنْدَ	kʲenḏa
-203	9	e	1	ْنْجُوْرٗڠٖ	njūroge	njuroge							njūroge	ْنْجُوْرٗڠٖ	njūroge
 204	9	e	2	نْدِيٖ	nḏiye	ndiye							nḏiye	نْدِيٖ	nḏiye
 205	9	e	3	كَتِبُ	kaṯibu	katibu							kaṯibu	كَتِبُ	kaṯibu
 218	10	b	2	هُرُدِ	huruḏi	hurudi							huruḏi	هُرُدِ	huruḏi
-219	10	b	3	نْدِيَانِ	nḏiyāni	ndiyani							nḏiyāni	نْدِيَانِ	nḏiyāni
-206	9	f	1	اَشِشِيٖؤٗ	ashishiyeo	ashishiyeo							ashishiyeo	اَشِشِيٖؤٗ	ashishiyeo
 207	9	f	2	سُكَانِ	sukāni	sukani							sukāni	سُكَانِ	sukāni
 209	9	g	2	نَ	na	na							na	نَ	na
 210	9	g	3	وَاكٖ	wāke	wake							wāke	وَاكٖ	wāke
-232	10	g	1	وَنَانْڠُ	wanāngu	wanangu							wanāngu	وَنَانْڠُ	wanāngu
 233	10	g	2	مُمٖئِخِنِ	mumeikhini	mumeihini							mumeikhini	مُمٖئِخِنِ	mumeikhini
-220	10	c	1	هُوٗنَ	huwona	huwona							huwona	هُوٗنَ	huwona
 221	10	c	2	اُتُنْڠُ	uṯungu	utungu							uṯungu	اُتُنْڠُ	uṯungu
+220	10	c	1	هُوٗنَ	huwona	huona						I feel exceedingly bitter	huwona	هُوٗنَ	huwona
+231	10	f	3	نْنِ	nni	nini							nni	نْنِ	nni
+195	9	c	1	هَازَانْدِكْوِ	hāzānḏikwi	hazandikwi						They are written neither by Rajabu,	hāzānḏikwi	هَازَانْدِكْوِ	hāzānḏikwi
+198	9	d	1	سِ	si	si						nor by Sudi nor by Shani.	si	سِ	si
+206	9	f	1	اَشِشِيٖؤٗ	ashishiyeo	ashishiyeo						he is the helmsman. 	ashishiyeo	اَشِشِيٖؤٗ	ashishiyeo
+212	9	h	1	نَاءٗ	nao	nao						follow. 	nao	نَاءٗ	nao
+217	10	b	1	ػٖنْدَ	kʲenḏa	chenda						I turn back before I arrive.	kʲenḏa	ػٖنْدَ	kʲenḏa
+229	10	f	1	لَكِنِ	lakini	lakini						but what can I do?	lakini	لَكِنِ	lakini
+232	10	g	1	وَنَانْڠُ	wanāngu	wanangu						My children, you have missed your opportunity.	wanāngu	وَنَانْڠُ	wanāngu
+240	11	b	1	ػَنْڠَلِيَ	kʲangaliya	changaliya						when I look at the results of the school exams.	kʲangaliya	ػَنْڠَلِيَ	kʲangaliya
 222	10	c	3	مْنُو	mnuu	mnuu							mnuu	مْنُو	mnuu
 258	11	h	2	تِنِ	ṯini	tini							ṯini	تِنِ	ṯini
-223	10	d	1	كُوَ	kuwa	kuwa							kuwa	كُوَ	kuwa
+239	11	a	4	مَاتُوْزِ	māṯūzi	matozi							māṯūzi	مَاتُوْزِ	māṯūzi
 224	10	d	2	نْيِنْيِ	nyinyi	nyinyi							nyinyi	نْيِنْيِ	nyinyi
 225	10	d	3	سِوَأٗنِ	siwaoni	siwaoni							siwaoni	سِوَأٗنِ	siwaoni
 261	12	a	2	اُتَفِتِ	uṯafiṯi	utafiti							uṯafiṯi	اُتَفِتِ	uṯafiṯi
-234	10	h	1	مَامٖنُ	māmenu	mamenu							māmenu	مَامٖنُ	māmenu
+244	11	c	3	كِبْوٖزِ	kibwezi	Kibwezi							kibwezi	كِبْوٖزِ	kibwezi
 235	10	h	2	مُمٖنِوَتَ	mumeniwaṯa	mumeniwata							mumeniwaṯa	مُمٖنِوَتَ	mumeniwaṯa
-226	10	e	1	نَ	na	na							na	نَ	na
+247	11	d	3	كِسُومُ	kisūmu	Kisumu				Kibwezi and Kisumu are places in the East African interior.\n			kisūmu	كِسُومُ	kisūmu
 227	10	e	2	هُزِاُمَ	huziuma	huziuma							huziuma	هُزِاُمَ	huziuma
-228	10	e	3	زِتَانِ	ziṯāni	zitani							ziṯāni	زِتَانِ	ziṯāni
 263	12	b	2	أُزَمِلِ	uzamili	uzamili							uzamili	أُزَمِلِ	uzamili
-242	11	c	1	وَنَفُنْدِ	wanafunḏi	wanafundi							wanafunḏi	وَنَفُنْدِ	wanafunḏi
 243	11	c	2	وَ	wa	wa							wa	وَ	wa
-244	11	c	3	كِبْوٖزِ	kibwezi	kibwezi							kibwezi	كِبْوٖزِ	kibwezi
-236	11	a	1	نَ	na	na							na	نَ	na
 237	11	a	2	هُلِيَ	huliya	huliya							huliya	هُلِيَ	huliya
 238	11	a	3	كْوَا	kwā	kwa							kwā	كْوَا	kwā
-239	11	a	4	مَاتُوْزِ	māṯūzi	matuzi							māṯūzi	مَاتُوْزِ	māṯūzi
-249	11	e	1	نْدِوٗ	nḏiwo	ndiwo							nḏiwo	نْدِوٗ	nḏiwo
 250	11	e	2	وَنَاءٗ	wanao	wanao							wanao	وَنَاءٗ	wanao
 251	11	e	3	بَارِزِ	bārizi	barizi							bārizi	بَارِزِ	bārizi
-254	11	g	1	مُلُوْتُوْكَ	mulūṯūka	mulutuka							mulūṯūka	مُلُوْتُوْكَ	mulūṯūka
-245	11	d	1	نَ	na	na							na	نَ	na
 246	11	d	2	وَ	wa	wa							wa	وَ	wa
-247	11	d	3	كِسُومُ	kisūmu	kisumu							kisūmu	كِسُومُ	kisūmu
-248	11	d	4	زِوَنِ	ziwani	ziwani							ziwani	زِوَنِ	ziwani
 255	11	g	2	كْوٖتُ	kweṯu	kwetu							kweṯu	كْوٖتُ	kweṯu
-252	11	f	1	وَلِيُوكُوْ	waliyūkuu	waliyukuu							waliyūkuu	وَلِيُوكُوْ	waliyūkuu
 253	11	f	2	كِلٖلٖنِ	kileleni	kileleni							kileleni	كِلٖلٖنِ	kileleni
 256	11	g	3	پْوانِ	pwāni	pwani							pwāni	پْوانِ	pwāni
-257	11	h	1	مُكُوْ	mukuu	mukuu							mukuu	مُكُوْ	mukuu
-259	11	h	3	هُكُوْكُوْتَ	hukūkūṯa	hukukuta							hukūkūṯa	هُكُوْكُوْتَ	hukūkūṯa
-260	12	a	1	وَفَانْيَاءٗ	wafānyao	wafanyao							wafānyao	وَفَانْيَاءٗ	wafānyao
 264	12	b	3	ػُوٗنِ	kʲuwoni	chuwoni							kʲuwoni	ػُوٗنِ	kʲuwoni
 266	12	c	2	نِ	ni	ni							ni	نِ	ni
-262	12	b	1	وَ	wa	wa							wa	وَ	wa
 267	12	c	3	كَاتِتِ	kāṯiṯi	katiti							kāṯiṯi	كَاتِتِ	kāṯiṯi
 269	12	d	2	هَوَپَاتِكَانِ	hawapāṯikāni	hawapatikani							hawapāṯikāni	هَوَپَاتِكَانِ	hawapāṯikāni
-265	12	c	1	وَسْوَاهِلِ	waswāhili	waswahili							waswāhili	وَسْوَاهِلِ	waswāhili
-268	12	d	1	اَوْ	aw	au							aw	اَوْ	aw
 348	16	a	2	كْوٖنْيٖ	kwenye	kwenye							kwenye	كْوٖنْيٖ	kwenye
-299	13	g	1	سِئٖلٖوِ	sielewi	sielewi							sielewi	سِئٖلٖوِ	sielewi
 300	13	g	2	هُنٖنَانِ	hunenāni	hunenani							hunenāni	هُنٖنَانِ	hunenāni
-270	12	e	1	نِ	ni	ni							ni	نِ	ni
 271	12	e	2	نْيَانِ	nyāni	nyani							nyāni	نْيَانِ	nyāni
 272	12	e	3	نِ	ni	ni							ni	نِ	ni
 273	12	e	4	مْلَئِتِ	mlaiṯi	mlaiti							mlaiṯi	مْلَئِتِ	mlaiṯi
-317	14	f	1	وَنِيُوَاءٗ	waniyuwao	waniyuwao							waniyuwao	وَنِيُوَاءٗ	waniyuwao
-274	12	f	1	مْوٖنْيٖ	mwenye	mwenye							mwenye	مْوٖنْيٖ	mwenye
-275	12	f	2	مَاكُوْسَ	mākūsa	makusa							mākūsa	مَاكُوْسَ	mākūsa
 276	12	f	3	نِ	ni	ni							ni	نِ	ni
 277	12	f	4	نْيَانِ	nyāni	nyani							nyāni	نْيَانِ	nyāni
-318	14	f	2	يَقِيْنِ	yaqı̄ni	yaqini							yaqı̄ni	يَقِيْنِ	yaqı̄ni
-278	12	g	1	مِمِ	mimi	mimi							mimi	مِمِ	mimi
 279	12	g	2	هَامُنِثَمِنِ	hāmunithamini	hamunithamini							hāmunithamini	هَامُنِثَمِنِ	hāmunithamini
-301	13	h	1	هُئِمْبَ	huimba	huimba							huimba	هُئِمْبَ	huimba
 302	13	h	2	اَوْ	aw	au							aw	اَوْ	aw
-280	12	h	1	مْڠِنٖ	mgine	mgine							mgine	مْڠِنٖ	mgine
 281	12	h	2	هَامُكُپَاتَ	hāmukupāṯa	hamukupata							hāmukupāṯa	هَامُكُپَاتَ	hāmukupāṯa
 303	13	h	3	هُتٖتَ	huṯeṯa	huteta							huṯeṯa	هُتٖتَ	huṯeṯa
-282	13	a	1	كِوَسِكِيَ	kiwasikiya	kiwasikiya							kiwasikiya	كِوَسِكِيَ	kiwasikiya
-283	13	a	2	هُنِيْنَ	hunı̄na	hunina							hunı̄na	هُنِيْنَ	hunı̄na
-284	13	b	1	هُنِأٗنْڠُوْنْڠَ	huniongūnga	huniongunga							huniongūnga	هُنِأٗنْڠُوْنْڠَ	huniongūnga
-285	13	b	2	مُويُوْنِ	mūyūni	muyuni							mūyūni	مُويُوْنِ	mūyūni
-341	15	g	1	هِپِجْوَا	hipijwā	hipijwa							hipijwā	هِپِجْوَا	hipijwā
-286	13	c	1	صَرْفَ	ṣarfa	sarfa							ṣarfa	صَرْفَ	ṣarfa
 287	13	c	2	هَكُنَ	hakuna	hakuna							hakuna	هَكُنَ	hakuna
 288	13	c	3	تٖنَ	ṯena	tena							ṯena	تٖنَ	ṯena
-304	14	a	1	لَوْ	law	lau							law	لَوْ	law
-305	14	a	2	مُيَاكَ	muyāka	muyaka							muyāka	مُيَاكَ	muyāka
+236	11	a	1	نَ	na	na						And I shed tears	na	نَ	na
+242	11	c	1	وَنَفُنْدِ	wanafunḏi	wanafundi						Students from Kibwezi, 	wanafunḏi	وَنَفُنْدِ	wanafunḏi
+245	11	d	1	نَ	na	na						and from Kisumu by the lake,	na	نَ	na
+260	12	a	1	وَفَانْيَاءٗ	wafānyao	wafanyao						Amongst those who are researching	wafānyao	وَفَانْيَاءٗ	wafānyao
+262	12	b	1	وَ	wa	wa						for degrees at the universities,	wa	وَ	wa
+268	12	d	1	اَوْ	aw	au						 or non-existent.	aw	اَوْ	aw
+270	12	e	1	نِ	ni	ni						Who is to be blamed?	ni	نِ	ni
+274	12	f	1	مْوٖنْيٖ	mwenye	mwenye						Whose fault is it?	mwenye	مْوٖنْيٖ	mwenye
+282	13	a	1	كِوَسِكِيَ	kiwasikiya	kiwasikiya						When I hear those who are not mother-tongue speakers speaking,	kiwasikiya	كِوَسِكِيَ	kiwasikiya
+299	13	g	1	سِئٖلٖوِ	sielewi	sielewi						I do not understand what they are saying.	sielewi	سِئٖلٖوِ	sielewi
+304	14	a	1	لَوْ	law	lau						Were Bwana Muyaka to return,	law	لَوْ	law
+317	14	f	1	وَنِيُوَاءٗ	waniyuwao	waniyuwao						who know me well,	waniyuwao	وَنِيُوَاءٗ	waniyuwao
+341	15	g	1	هِپِجْوَا	hipijwā	hipijwa						I am given a kick	hipijwā	هِپِجْوَا	hipijwā
+228	10	e	3	زِتَانِ	ziṯāni	zitani				These words echo the words of the {\\FN{Inkishafi}}: ``wakauma zanda na kuiyuta''. Readers unfamiliar with this Swahili gesture of regret could consult Eastman and Omar (1985).\n			ziṯāni	زِتَانِ	ziṯāni
+248	11	d	4	زِوَنِ	ziwani	ziwani				The lake is Lake Nyanza, also known as Lake Victoria.			ziwani	زِوَنِ	ziwani
 306	14	a	3	تَارُدِ	ṯāruḏi	tarudi							ṯāruḏi	تَارُدِ	ṯāruḏi
-289	13	d	1	نَحَؤُ	naḥau	nahau							naḥau	نَحَؤُ	naḥau
-290	13	d	2	نَ	na	na							na	نَ	na
+290	13	d	2	نَ	na	na		~					na	نَ	na
 291	13	d	3	ئِتَمَانِ	iṯamāni	itamani							iṯamāni	ئِتَمَانِ	iṯamāni
-328	15	b	1	وَلَ	wala	wala							wala	وَلَ	wala
-292	13	e	1	نَ	na	na							na	نَ	na
+297	13	f	2	مَشَاپُوْ	mashāpuu	mashapu							mashāpuu	مَشَاپُوْ	mashāpuu
 293	13	e	2	حَتَ	ḥaṯa	hata							ḥaṯa	حَتَ	ḥaṯa
 294	13	e	3	لَذَ	ladha	ladha							ladha	لَذَ	ladha
 295	13	e	4	هَيَانَ	hayāna	hayana							hayāna	هَيَانَ	hayāna
 329	15	b	2	هَامُوْنَ	hāmūna	hamuna							hāmūna	هَامُوْنَ	hāmūna
-319	14	g	1	نْيُوْتٖ	nyūṯe	nyute							nyūṯe	نْيُوْتٖ	nyūṯe
-307	14	b	1	اَيْ	ay	ay							ay	اَيْ	ay
-296	13	f	1	كَمَ	kama	kama							kama	كَمَ	kama
-297	13	f	2	مَشَاپُوْ	mashāpuu	mashapuu							mashāpuu	مَشَاپُوْ	mashāpuu
+305	14	a	2	مُيَاكَ	muyāka	Muyaka							muyāka	مُيَاكَ	muyāka
+307	14	b	1	اَيْ	ay	ae						were he to come back to the world,	ay	اَيْ	ay
 298	13	f	3	كَانْوَانِ	kānwāni	kanwani							kānwāni	كَانْوَانِ	kānwāni
 308	14	b	2	تٖنَ	ṯena	tena							ṯena	تٖنَ	ṯena
 309	14	b	3	دُنِيَانِ	ḏuniyāni	duniyani							ḏuniyāni	دُنِيَانِ	ḏuniyāni
 320	14	g	2	مْوٖنْدٖ	mwenḏe	mwende							mwenḏe	مْوٖنْدٖ	mwenḏe
 321	14	g	3	ڠٖرٖزَنِ	gerezani	gerezani							gerezani	ڠٖرٖزَنِ	gerezani
-310	14	c	1	موَانَانْڠُ	mwānāngu	mwanangu							mwānāngu	موَانَانْڠُ	mwānāngu
+338	15	e	4	مْپِوِرِ	mpiwiri	mpwira							mpiwiri	مْپِوِرِ	mpiwiri
 311	14	c	2	اِتَمْبِدِ	iṯambiḏi	itambidi							iṯambiḏi	اِتَمْبِدِ	iṯambiḏi
-312	14	d	1	كْوٖنٖنْدَ	kwenenḏa	kwenenda							kwenenḏa	كْوٖنٖنْدَ	kwenenḏa
 313	14	d	2	مَحَكَمَانِ	maḥakamāni	mahakamani							maḥakamāni	مَحَكَمَانِ	maḥakamāni
 330	15	b	3	اِمَانِ	imāni	imani							imāni	اِمَانِ	imāni
-314	14	e	1	اَئٖتٖ	aeṯe	aete							aeṯe	اَئٖتٖ	aeṯe
 315	14	e	2	نَ	na	na							na	نَ	na
 316	14	e	3	مَشَهِدِ	mashahiḏi	mashahidi							mashahiḏi	مَشَهِدِ	mashahiḏi
-322	14	h	1	كْوَا	kwā	kwa							kwā	كْوَا	kwā
 323	14	h	2	حَتِيَ	ḥaṯiya	hatiya							ḥaṯiya	حَتِيَ	ḥaṯiya
 324	14	h	3	كُوَپَاتَ	kuwapāṯa	kuwapata							kuwapāṯa	كُوَپَاتَ	kuwapāṯa
-342	15	g	2	تٖكٖنْدِيَانَ	ṯekenḏiyāna	tekendiyana							ṯekenḏiyāna	تٖكٖنْدِيَانَ	ṯekenḏiyāna
-335	15	e	1	مِمِ	mimi	mimi							mimi	مِمِ	mimi
-331	15	c	1	هَمُنَ	hamuna	hamuna							hamuna	هَمُنَ	hamuna
-325	15	a	1	وَاللّٰهِ	wallähi	wallahi							wallähi	وَاللّٰهِ	wallähi
 326	15	a	2	هَمُنَ	hamuna	hamuna							hamuna	هَمُنَ	hamuna
 327	15	a	3	غٖيْرَ	ḡēra	ghera							ḡēra	غٖيْرَ	ḡēra
-332	15	c	2	لَكُوَكٖرَ	lakuwakera	lakuwakera							lakuwakera	لَكُوَكٖرَ	lakuwakera
 336	15	e	2	نِ	ni	ni							ni	نِ	ni
 337	15	e	3	كَامَ	kāma	kama							kāma	كَامَ	kāma
-333	15	d	1	كُوَ	kuwa	kuwa							kuwa	كُوَ	kuwa
 334	15	d	2	هَمُنِثَمِنِ	hamunithamini	hamunithamini							hamunithamini	هَمُنِثَمِنِ	hamunithamini
-338	15	e	4	مْپِوِرِ	mpiwiri	mpiwiri							mpiwiri	مْپِوِرِ	mpiwiri
-339	15	f	1	هُتٖزٖوَ	huṯezewa	hutezewa							huṯezewa	هُتٖزٖوَ	huṯezewa
 340	15	f	2	اُوَنْدَانِ	uwanḏāni	uwandani							uwanḏāni	اُوَنْدَانِ	uwanḏāni
 346	15	h	4	كُپِتَ	kupiṯa	kupita							kupiṯa	كُپِتَ	kupiṯa
-349	16	a	3	اُشَعِرِ	usha'iri	usha'iri							usha'iri	اُشَعِرِ	usha'iri
-343	15	h	1	نَ	na	na							na	نَ	na
-344	15	h	2	كُلَ	kula	kula							kula	كُلَ	kula
 351	16	b	2	وَنْڠُ	wangu	wangu							wangu	وَنْڠُ	wangu
-347	16	a	1	حَتَ	ḥaṯa	hata							ḥaṯa	حَتَ	ḥaṯa
 352	16	b	3	وَمٖبُوْنِ	wamebūni	wamebuni							wamebūni	وَمٖبُوْنِ	wamebūni
 354	16	c	2	حُرُ	ḥuru	huru							ḥuru	حُرُ	ḥuru
-350	16	b	1	وَاسُوْ	wāsuu	wasuu							wāsuu	وَاسُوْ	wāsuu
 355	16	c	3	بَحَارِ	baḥāri	bahari							baḥāri	بَحَارِ	baḥāri
-357	16	d	2	كُوٗلٖزَ	kuwoleza	kuwoleza							kuwoleza	كُوٗلٖزَ	kuwoleza
-353	16	c	1	زِلِزٗ	zilizo	zilizo							zilizo	زِلِزٗ	zilizo
 358	16	d	3	وَڠٖنِ	wageni	wageni							wageni	وَڠٖنِ	wageni
-356	16	d	1	كْوَا	kwā	kwa							kwā	كْوَا	kwā
 391	17	e	3	ئِنَ	ina	ina							ina	ئِنَ	ina
-362	16	f	1	سِ	si	si							si	سِ	si
-363	16	f	2	مَاشَعِرِ	māsha'iri	masha'iri							māsha'iri	مَاشَعِرِ	māsha'iri
 364	16	f	3	كِفَنِ	kifani	kifani							kifani	كِفَنِ	kifani
 420	18	g	3	كْوَاءٗ	kwao	kwao							kwao	كْوَاءٗ	kwao
-421	18	g	4	سِنَانِ	sināni	sinani							sināni	سِنَانِ	sināni
-365	16	g	1	هَاىُوْ	hāyuu	hayuu							hāyuu	هَاىُوْ	hāyuu
-366	16	g	2	ىُوْت	yūṯ	yut							yūṯ	ىُوْت	yūṯ
 367	16	g	3	نِ	ni	ni							ni	نِ	ni
 368	16	g	4	كْوا	kwā	kwa							kwā	كْوا	kwā
-369	16	g	5	نْن	nn	nn							nn	نْن	nn
-392	17	f	1	اَلُوْنَانْدِكَ	alūnānḏika	alunandika							alūnānḏika	اَلُوْنَانْدِكَ	alūnānḏika
 393	17	f	2	نِ	ni	ni							ni	نِ	ni
+314	14	e	1	اَئٖتٖ	aeṯe	aete						and he would need to call witnesses	aeṯe	اَئٖتٖ	aeṯe
+325	15	a	1	وَاللّٰهِ	wallähi	wallahi						Truly you have neither zeal	wallähi	وَاللّٰهِ	wallähi
+328	15	b	1	وَلَ	wala	wala						nor self-confidence.	wala	وَلَ	wala
+331	15	c	1	هَمُنَ	hamuna	hamuna						It irritates you not at all	hamuna	هَمُنَ	hamuna
+333	15	d	1	كُوَ	kuwa	kuwa						that you do not esteem me.	kuwa	كُوَ	kuwa
+335	15	e	1	مِمِ	mimi	mimi						I am just like a ball	mimi	مِمِ	mimi
+347	16	a	1	حَتَ	ḥaṯa	hata						Even in the field of Swahili prosody,	ḥaṯa	حَتَ	ḥaṯa
+353	16	c	1	زِلِزٗ	zilizo	zilizo						free verse,	zilizo	زِلِزٗ	zilizo
+356	16	d	1	كْوَا	kwā	kwa						imitating foreigners.	kwā	كْوَا	kwā
+362	16	f	1	سِ	si	si						That is not Swahili poetry.	si	سِ	si
 394	17	f	3	نْيَانِ	nyāni	nyani							nyāni	نْيَانِ	nyāni
-370	16	h	1	هزٗ	hzo	hzo							hzo	هزٗ	hzo
-371	16	h	2	ن	n	n							n	ن	n
-372	16	h	3	مْبنُ	mbnu	mbnu							mbnu	مْبنُ	mbnu
 373	16	h	4	زَا	zā	za							zā	زَا	zā
-374	16	h	5	زتَ	zṯa	zta							zṯa	زتَ	zṯa
-409	18	d	1	كِنْڠٖرٖزَ	kingereza	kingereza							kingereza	كِنْڠٖرٖزَ	kingereza
-410	18	d	2	هَامُوٗنِ	hāmuwoni	hamuwoni							hāmuwoni	هَامُوٗنِ	hāmuwoni
-375	17	a	1	هَمْبِوَ	hambiwa	hambiwa							hambiwa	هَمْبِوَ	hambiwa
 376	17	a	2	مْوٖنْيٖوٖ	mwenyewe	mwenyewe							mwenyewe	مْوٖنْيٖوٖ	mwenyewe
 377	17	a	3	سِنَ	sina	sina							sina	سِنَ	sina
-395	17	g	1	كِوَ	kiwa	kiwa							kiwa	كِوَ	kiwa
 396	17	g	2	سِ	si	si							si	سِ	si
-397	17	g	3	اُسْوَاحِلِنِ	uswāḥilini	uswahilini							uswāḥilini	اُسْوَاحِلِنِ	uswāḥilini
-378	17	b	1	هِنِ	hini	hini							hini	هِنِ	hini
 379	17	b	2	نِ	ni	ni							ni	نِ	ni
-380	17	b	3	عَجَابُ	'ajābu	'ajabu							'ajābu	عَجَابُ	'ajābu
 381	17	b	4	ڠَانِ	gāni	gani							gāni	ڠَانِ	gāni
-382	17	c	1	هُوَاءٖ	huwae	huwae							huwae	هُوَاءٖ	huwae
-383	17	c	2	كاكُوْسَ	kākūsa	kakusa							kākūsa	كاكُوْسَ	kākūsa
 384	17	c	3	شِنَ	shina	shina							shina	شِنَ	shina
-398	17	h	1	نِ	ni	ni							ni	نِ	ni
-385	17	d	1	كَاوَ	kāwa	kawa							kāwa	كَاوَ	kāwa
 386	17	d	2	نَ	na	na							na	نَ	na
 387	17	d	3	تَانْدُ	ṯānḏu	tandu							ṯānḏu	تَانْدُ	ṯānḏu
 388	17	d	4	يَانْڠَانِ	yāngāni	yangani							yāngāni	يَانْڠَانِ	yāngāni
 399	17	h	2	وَپِ	wapi	wapi							wapi	وَپِ	wapi
-400	17	h	3	نَالِپُوپَاتَ	nālipūpāṯa	nalipupata							nālipūpāṯa	نَالِپُوپَاتَ	nālipūpāṯa
-401	18	a	1	كُوَ	kuwa	kuwa							kuwa	كُوَ	kuwa
 402	18	a	2	وٖنْڠِ	wengi	wengi							wengi	وٖنْڠِ	wengi
 403	18	a	3	هُنِنٖنَ	huninena	huninena							huninena	هُنِنٖنَ	huninena
-411	18	e	1	هُنٖنوَا	hunenwā	hunenwa							hunenwā	هُنٖنوَا	hunenwā
 412	18	e	2	نَ	na	na							na	نَ	na
-404	18	b	1	سِدَلِلِ	siḏalili	sidalili							siḏalili	سِدَلِلِ	siḏalili
 405	18	b	2	اَصِلَانِ	aṣilāni	asilani							aṣilāni	اَصِلَانِ	aṣilāni
 413	18	e	3	وٖنْڠِ	wengi	wengi							wengi	وٖنْڠِ	wengi
 414	18	e	4	سَانَ	sāna	sana							sāna	سَانَ	sāna
-422	18	h	1	مِزِيٖ	miziye	miziye							miziye	مِزِيٖ	miziye
-406	18	c	1	يَاكُوَ	yākuwa	yakuwa							yākuwa	يَاكُوَ	yākuwa
 407	18	c	2	مْوٖنْيٖوٖ	mwenyewe	mwenyewe							mwenyewe	مْوٖنْيٖوٖ	mwenyewe
 423	18	h	2	هَئِكُكَاتَ	haikukāṯa	haikukata							haikukāṯa	هَئِكُكَاتَ	haikukāṯa
-415	18	f	1	پٖمْبٖ	pembe	pembe							pembe	پٖمْبٖ	pembe
 416	18	f	2	زٗتٖ	zoṯe	zote							zoṯe	زٗتٖ	zoṯe
-417	18	f	3	دُنِيَانِ	ḏuniyāni	duniyani							ḏuniyāni	دُنِيَانِ	ḏuniyāni
-418	18	g	1	كِنَ	kina	kina							kina	كِنَ	kina
 419	18	g	2	نَ	na	na							na	نَ	na
+375	17	a	1	هَمْبِوَ	hambiwa	hambiwa						I am told that I belong to nobody in particular.	hambiwa	هَمْبِوَ	hambiwa
+378	17	b	1	هِنِ	hini	hini						How extraordinary!	hini	هِنِ	hini
+382	17	c	1	هُوَاءٖ	huwae	huwae						How can I be rootless below ground	huwae	هُوَاءٖ	huwae
+385	17	d	1	كَاوَ	kāwa	kawa						and yet have branches above?	kāwa	كَاوَ	kāwa
+395	17	g	1	كِوَ	kiwa	kiwa						If I do not hail from Swahililand,	kiwa	كِوَ	kiwa
+398	17	h	1	نِ	ni	ni						then whence do I come? 	ni	نِ	ni
+401	18	a	1	كُوَ	kuwa	kuwa						That many speak me, [Swahili],	kuwa	كُوَ	kuwa
+406	18	c	1	يَاكُوَ	yākuwa	yakuwa						or that I have no owner.	yākuwa	يَاكُوَ	yākuwa
+411	18	e	1	هُنٖنوَا	hunenwā	hunenwa						It is spoken by very many,	hunenwā	هُنٖنوَا	hunenwā
+415	18	f	1	پٖمْبٖ	pembe	pembe						in all corners of the world,	pembe	پٖمْبٖ	pembe
+418	18	g	1	كِنَ	kina	kina						yet the language remains firmly established in its homeland,	kina	كِنَ	kina
+422	18	h	1	مِزِيٖ	miziye	miziye						its roots have not been severed. 	miziye	مِزِيٖ	miziye
+370	16	h	1	هزٗ	hzo	hizo						These are preparations for war.	hzo	هزٗ	hzo
+371	16	h	2	ن	n	ni							n	ن	n
+372	16	h	3	مْبنُ	mbnu	mbinu							mbnu	مْبنُ	mbnu
+374	16	h	5	زتَ	zṯa	zita							zṯa	زتَ	zṯa
+380	17	b	3	عَجَابُ	'ajābu	ajabu							'ajābu	عَجَابُ	'ajābu
+383	17	c	2	كاكُوْسَ	kākūsa	kakosa							kākūsa	كاكُوْسَ	kākūsa
+397	17	g	3	اُسْوَاحِلِنِ	uswāḥilini	Uswahilini							uswāḥilini	اُسْوَاحِلِنِ	uswāḥilini
+400	17	h	3	نَالِپُوپَاتَ	nālipūpāṯa	nalipopata							nālipūpāṯa	نَالِپُوپَاتَ	nālipūpāṯa
+404	18	b	1	سِدَلِلِ	siḏalili	sidalili	si					is not of itself proof of origins,	siḏalili	سِدَلِلِ	siḏalili
+409	18	d	1	كِنْڠٖرٖزَ	kingereza	Kingereza						What of the English language?	kingereza	كِنْڠٖرٖزَ	kingereza
+410	18	d	2	هَامُوٗنِ	hāmuwoni	hamuoni							hāmuwoni	هَامُوٗنِ	hāmuwoni
+417	18	f	3	دُنِيَانِ	ḏuniyāni	duniani							ḏuniyāni	دُنِيَانِ	ḏuniyāni
 \.
 
 

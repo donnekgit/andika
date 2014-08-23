@@ -36,6 +36,71 @@ php poetry/convert.php -i=kiswahili.odt -v=8 -o=txt
 ditto, but import it into txt format (not sure why you'd want to do this on an Arabic text! - it's easier to edit in odt - but conceivably you might want it in a form that fits more easily into an automated workstream)
 
 
+ODT
+------
+
+Note that rezipping the constituent files using the KDE right-click -> Compress option will result in a garbage file.  Instead, go into the dir, open a terminal, and run:
+zip -r <desired_name_of_odt> *
+(-r is required so that files in subdirs will be included in the zip)
+Then change the zip extension to odt.
+
+###Sample content.xml file:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<office:document-content 
+    xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" 
+    xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" 
+    xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" 
+    xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" 
+    office:version="1.2">
+<office:scripts/>
+
+### These list fonts which will override the fonts listed in a style in the document template.
+<office:font-face-decls>
+<style:font-face style:name="Linux Biolinum O" svg:font-family="Linux Biolinum O" style:font-pitch="variable"/>
+</office:font-face-decls>
+
+### These list the template styles whose fonts will be overridden.
+<office:automatic-styles>
+<style:style style:name="Roman" style:family="paragraph" style:parent-style-name="Roman">
+<style:text-properties style:font-name="Linux Biolinum O"/>
+</style:style>
+</office:automatic-styles>
+
+### Begin the document text.
+<office:body>
+<office:text>
+
+<text:p text:style-name="Arabic">دٗوْلَ مْبِلِ زِلِوَانَ * شِكُوٖ نَاسِمْبَ مْبَوَانَ   </text:p>
+<text:p text:style-name="Roman">ḏōla mbili ziliwāna * shikuwe nāsimba mbawāna</text:p>
+<text:p text:style-name="Arabic">كَمَتٖزٗ كُشِنْدَانَ * مْتانَ نَلَيْلِيَ</text:p>
+<text:p text:style-name="Roman">kamaṯezo kushinḏāna * mṯāna nalayliya</text:p>
+<text:p text:style-name="Arabic"/>
+
+<text:p text:style-name="Arabic">زِكِتِمُ سِكُ تَاتُ * شِكُوٖ كَتَكَ وَاتُ</text:p>
+<text:p text:style-name="Roman">zikiṯimu siku ṯāṯu * shikuwe kaṯaka wāṯu</text:p>
+<text:p text:style-name="Arabic">كُتُكُوَ چَاكٖ كِتُ * نْغُوبٖ كَيْ نُنُلِيَ</text:p>
+<text:p text:style-name="Roman">kuṯukuwa chāke kiṯu * nḡūbe kay nunuliya</text:p>
+<text:p text:style-name="Arabic"/>
+
+<text:p text:style-name="Arabic">كَتِيَ نْڠُوْبٖ نْدِيَانِ * مٖمَ اَسِيُ لَحَانِ</text:p>
+<text:p text:style-name="Roman">kaṯiya ngūbe nḏiyāni * mema asiyu laḥāni</text:p>
+<text:p text:style-name="Arabic">سِمْبَ شِيْ كَبَئِينِ * مْپَانِ نْڠُوبٖ مْمُيَ</text:p>
+<text:p text:style-name="Roman">simba shii kabaı̄ni * mpāni ngūbe mmuya</text:p>
+<text:p text:style-name="Arabic"/>
+
+<text:p text:style-name="Arabic">دٗوْلَ مْبِلِ زِلِوَانَ * شِكُوٖ نَاسِمْبَ مْبَوَانَ   </text:p>
+<text:p text:style-name="Roman">ḏōla mbili ziliwāna * shikuwe nāsimba mbawāna</text:p>
+<text:p text:style-name="Arabic">كَمَتٖزٗ كُشِنْدَانَ * مْتانَ نَلَيْلِيَ</text:p>
+<text:p text:style-name="Roman">kamaṯezo kushinḏāna * mṯāna nalayliya</text:p>
+<text:p text:style-name="Arabic"/>
+
+### Close off the document.
+</office:text>
+</office:body>
+</office:document-content>
+
+
 Database
 -----------
 
@@ -49,7 +114,7 @@ Where a note pertains to a word, add it in the note column.  # is used in this c
 
 Put the root of the word in the root column, to allow for building concordances, frequency lists, etc.  Use the Bantu word minus endings such as verbal -a or class prefixes, and give the 3-consonant root of Arabic words.
 
-Put the English translation for the whole kipande into the english column agains the first word of the kipande.
+Put the English translation for the whole kipande into the english column against the first word of the kipande.  thisis not ideal!
 
 Unclear as yet (!):
 word is a copy of close (auto-generated close transcription), but including epenthetic vowels and removing particles.

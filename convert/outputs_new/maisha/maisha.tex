@@ -1,0 +1,131 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage{polyglossia}
+\usepackage{longtable}
+\usepackage{xcolor}  % can't use color with polyglossia
+
+\interfootnotelinepenalty=10000 % prevents the footnote from breaking across pages
+% http://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
+
+% Thanks to Manas Tungare (http://manas.tungare.name/software/latex) for these settings.
+\setlength{\paperwidth}{210mm}
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{247mm}
+
+\setlength{\evensidemargin}{1in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{-0.5in}
+
+\setmainfont[Mapping=tex-text]{Liberation Serif}  % Set the default font for the document (footnotes will also use this font, but see also: http://tex.stackexchange.com/questions/4779/how-to-change-font-family-in-footnote)
+
+\setmainlanguage{english}
+\setotherlanguage{arabic}
+\setotherlanguage{farsi}  % used to allow typesetting the tile in a different font
+
+\newfontfamily\arabicfont[Script=Arabic, Scale=2]{Scheherazade} % Arabic transcription layer
+\newfontfamily\farsifont[Script=Arabic, Scale=2]{GranadaKD} % Arabic transcription layer for titles - uses a version of Granada which has been extended to include glyphs for Swahili.
+\newcommand{\AS}[1]{\fontspec[Script=Arabic, Scale=1.5]{Scheherazade} #1\normalfont} % Arabic when used in footnotes - using \newfontfamily resets following English text as well.  IMPORTANT: this can ONLY be used for single words - multiple words will be written LTR, and not RTL as required.
+\newfontfamily{\Tr}[Scale=0.9, Color=00BB33]{Linux Biolinum O} %  transliteration layer - Biolinum handles diacritics well
+\newfontfamily{\I}[Scale=0.9, Color=blue]{Linux Biolinum O} % interpolated letters in the transliteration layer
+\newfontfamily{\S}[Color=00BB33]{Linux Biolinum O} % standard spelling layer
+\newfontfamily{\E}[Scale=0.9, Color=666666]{Liberation Serif Italic} % English translation layer
+\newfontfamily{\FN}[Color=00BB33]{Liberation Serif Italic} % Alternate type in footnotes.
+
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
+
+\usepackage[obeyspaces]{url}  % Use urls in text and captions with sensible linewrap.
+\urlstyle{rm}  % Set urls in roman.
+
+\begin{document}
+
+\begin{longtable}{r}
+\textfarsi{مَئِيشَ} \\*
+\Tr{maisha} \\
+[6mm]
+\end{longtable}
+
+
+\begin{longtable}{rl} 
+
+\makebox[8cm][r]{} & & \makebox[8cm][r]{} \\ 
+
+\textarabic{كْوَ إِينَ لَ رَهَمَانِ} & \textarabic{١} \\* 
+\Tr{kwa ina la rahamani} & \Tr{1a} \\ 
+\textarabic{نَأَانْدَ نُذُومَ هِينِ} &  \\* 
+\Tr{naanda nudhuma hini} & \Tr{1b} \\ 
+\textarabic{إِينَ يَ پِيلِ رَمَانِ} &  \\* 
+\Tr{ina ya pili ramani} & \Tr{1c} \\ 
+\textarabic{نَمْوَنْدِكِيَ يَهَايَ} &  \\* 
+\Tr{namwandikiya yahaya} & \Tr{1d} \\ 
+\\[8mm] 
+
+\textarabic{كْوٖينْيٖ رَمَانِ يَ كْوَانْدَ} & \textarabic{٢} \\* 
+\Tr{kwenye ramani ya kwanda} & \Tr{2a} \\ 
+\textarabic{بَنَاتِ نَلِوَفُونْدَ} &  \\* 
+\Tr{banati naliwafunda} & \Tr{2b} \\ 
+\textarabic{نَ هِينِ نِمٖئُِونْدَ} &  \\* 
+\Tr{na hini nimeiunda} & \Tr{2c} \\ 
+\textarabic{وَڤُلَانَ كُوَمْبِيَ} &  \\* 
+\Tr{wavulana kuwambiya} & \Tr{2d} \\ 
+\\[8mm] 
+
+\textarabic{نَ أَسِيلِ يَ كْوَنْدِيكَ} & \textarabic{٣} \\* 
+\Tr{na asili ya kwandika} & \Tr{3a} \\ 
+\textarabic{نَهِيسِ وَانَ وَتَاكَ} &  \\* 
+\Tr{nahisi wana wataka} & \Tr{3b} \\ 
+\textarabic{بَابَ پِيَ كَذَلِيكَ} &  \\* 
+\Tr{baba piya kadhalika} & \Tr{3c} \\ 
+\textarabic{مِيمِ أَلِنَنْدِكِيَ} &  \\* 
+\Tr{mimi alinandikiya} & \Tr{3d} \\ 
+\\[8mm] 
+
+\textarabic{بَابَ بوَانَ أَهمَادِ} & \textarabic{٤} \\* 
+\Tr{baba bwana ahmadi} & \Tr{4a} \\ 
+\textarabic{أَتَمْجَازِ وَدُودِ} &  \\* 
+\Tr{atamjazi wadudi} & \Tr{4b} \\ 
+\textarabic{كْوَانِ أَلِجِتَهِيدِ} &  \\* 
+\Tr{kwani alijitahidi} & \Tr{4c} \\ 
+\textarabic{كُنَنْدِكِيَ وَسِيَ} &  \\* 
+\Tr{kunandikiya wasiya} & \Tr{4d} \\ 
+\\[8mm] 
+
+\textarabic{هَاپٗ زَمَانِ زَ يَانَ} & \textarabic{٥} \\* 
+\Tr{hapo zamani za yana} & \Tr{5a} \\ 
+\textarabic{نْدِيٗ لَ وَسِيَ يِينَ} &  \\* 
+\Tr{ndiyo la wasiya yina} & \Tr{5b} \\ 
+\textarabic{أَلٗنَنْدِكِئَ بوَانَ} &  \\* 
+\Tr{alonandikia bwana} & \Tr{5c} \\ 
+\textarabic{بَبَانْڠُ كَنِوَتِيَ} &  \\* 
+\Tr{babangu kaniwatiya} & \Tr{5d} \\ 
+\\[8mm] 
+
+\textarabic{نَامِ كَتِيكَ رَمَانِ} & \textarabic{٦} \\* 
+\Tr{nami katika ramani} & \Tr{6a} \\ 
+\textarabic{تَيِپِينْدَ كُبَئِينِ} &  \\* 
+\Tr{tayipinda kubaini} & \Tr{6b} \\ 
+\textarabic{يَالٖ نِنَيٗؤَمِينِ} &  \\* 
+\Tr{yale ninayoamini} & \Tr{6c} \\ 
+\textarabic{يَوٖيزَ كُسَئِدِيَ} &  \\* 
+\Tr{yaweza kusaidiya} & \Tr{6d} \\ 
+\\[8mm] 
+
+\textarabic{تَنٖينَ نَلٗيَتُومَ} & \textarabic{٧} \\* 
+\Tr{tanena naloyatuma} & \Tr{7a} \\ 
+\textarabic{نَ يَالٖ نِلٗيَسٗومَ} &  \\* 
+\Tr{na yale niloyasoma} & \Tr{7b} \\ 
+\textarabic{تَزِتَايَ نَ هٖكِيمَ} &  \\* 
+\Tr{tazitaya na hekima} & \Tr{7c} \\ 
+\textarabic{كْوَ وَاتُ نِلٗپٗكٖيَ} &  \\* 
+\Tr{kwa watu nilopokeya} & \Tr{7d} \\ 
+\\[8mm] 
+
+\end{longtable}
+
+\begin{longtable}{r}
+% Remember to end each line (except vertical space) with a double backslash
+ \\  % Any material after the end of the poem
+
+\end{longtable}
+
+\end{document}
+
