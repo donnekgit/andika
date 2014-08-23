@@ -29,10 +29,10 @@ include("./includes/fns.php");
 $target="Hamad.txt";
 
 // Open the file we'll write the conversion to.
-$fp = fopen("offline/conversions/{$target}_converted", "w");
+$fp = fopen("conversions/{$target}_converted", "w");
 
 // Read the prepped contents in.
-$lines=file("offline/$target");
+$lines=file("$target");
 foreach ($lines as $line)
 {
 	// Mark penultimate syllables in the standard orthography, and a few other things.
