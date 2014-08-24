@@ -207,6 +207,12 @@ Edit the line:
 adding the Unicode number for the new character at the end.
 
 
+Bugs in convert.sh
+--------------------------
+
+(a) Failure to choose a file on the first screen is not caught.
+(b) Pressing "Cancel" on the output screen still presents the "Roman script" screen.
+
 
 
 

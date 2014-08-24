@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2014.5.16)  25 JUL 2014 14:58
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2014.7.26)  24 AUG 2014 14:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**poetry/outputs/opium/opium.tex
-(./poetry/outputs/opium/opium.tex
+**convert/outputs/opium/opium.tex
+(./convert/outputs/opium/opium.tex
 LaTeX2e <2011/06/27>
 Babel <3.9h> and hyphenation patterns for 4 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
@@ -452,31 +452,8 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/arydshln/arydshln.sty
-Package: arydshln 2004/08/31 v1.71 
-\dashlinedash=\dimen140
-\dashlinegap=\dimen141
-\adl@box=\box45
-\adl@height=\dimen142
-\adl@heightsave=\dimen143
-\adl@depth=\dimen144
-\adl@depthsave=\dimen145
-\adl@finaldepth=\dimen146
-\adl@columns=\count131
-\adl@ncol=\count132
-\adl@currentcolumn=\count133
-\adl@currentcolumnsave=\count134
-\adl@totalheight=\count135
-\adl@totalheightsave=\count136
-\adl@dash=\count137
-\adl@gap=\count138
-\adl@cla=\count139
-\adl@clb=\count140
-\adl@everyvbox=\toks19
-\adl@LTpagetotal=\dimen147
-)
 \g__file_internal_ior=\read1
-\g_fontspec_family_Liberation Serif_int=\count141
+\g_fontspec_family_Liberation Serif_int=\count131
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -584,19 +561,19 @@ Package zref Info: New property: page on input line 761.
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/atbegshi.sty
 Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 )
-\c@abspage=\count142
+\c@abspage=\count132
 Package zref Info: New property: abspage on input line 62.
 )
 (/usr/share/texlive/texmf-dist/tex/xelatex/bidi/latex-xetex-bidi.def
 File: latex-xetex-bidi.def 2013/10/10 v1.1.5 bidi adaptations for `latex.ltx' f
 or XeTeX engine
-\bidi@n@everypar=\toks20
+\bidi@n@everypar=\toks19
 
 (/usr/share/texlive/texmf-dist/tex/xelatex/bidi/footnote-xetex-bidi.def
 File: footnote-xetex-bidi.def 2013/04/26 v0.8 bidi footnote macros for XeTeX en
 gine
-\c@footdir@label=\count143
-\footdir@toks=\toks21
+\c@footdir@label=\count133
+\footdir@toks=\toks20
 )
 (/usr/share/texlive/texmf-dist/tex/xelatex/bidi/report-xetex-bidi.def
 File: report-xetex-bidi.def 2011/08/26 v0.6 bidi adaptations for standard repor
@@ -620,10 +597,6 @@ kage for XeTeX engine
 (/usr/share/texlive/texmf-dist/tex/xelatex/bidi/longtable-xetex-bidi.def
 File: longtable-xetex-bidi.def 2013/04/01 v0.3 bidi adaptations for longtable p
 ackage for XeTeX engine
-)
-(/usr/share/texlive/texmf-dist/tex/xelatex/bidi/arydshln-xetex-bidi.def
-File: arydshln-xetex-bidi.def 2010/08/01 v0.2 bidi adaptations for arydshln pac
-kage for XeTeX engine
 ))
 (/usr/share/texlive/texmf-dist/tex/xelatex/bidi/loadingorder-xetex-bidi.def
 File: loadingorder-xetex-bidi.def 2013/05/22 v0.95 making sure that bidi is the
@@ -638,73 +611,73 @@ Package: hijrical 2010/07/12 v0.2 Islamic calendar
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count144
-\calc@Bcount=\count145
-\calc@Adimen=\dimen148
-\calc@Bdimen=\dimen149
+\calc@Acount=\count134
+\calc@Bcount=\count135
+\calc@Adimen=\dimen140
+\calc@Bdimen=\dimen141
 \calc@Askip=\skip53
 \calc@Bskip=\skip54
 LaTeX Info: Redefining \setlength on input line 76.
 LaTeX Info: Redefining \addtolength on input line 77.
-\calc@Ccount=\count146
+\calc@Ccount=\count136
 \calc@Cskip=\skip55
 )
 (/usr/share/texlive/texmf-dist/tex/latex/polyglossia/cal-util.def
-\c@tmpA=\count147
-\c@tmpB=\count148
-\c@tmpC=\count149
-\c@tmpD=\count150
-\c@tmpE=\count151
-\c@tmpF=\count152
+\c@tmpA=\count137
+\c@tmpB=\count138
+\c@tmpC=\count139
+\c@tmpD=\count140
+\c@tmpE=\count141
+\c@tmpF=\count142
 )
-\c@Hijriday=\count153
-\c@Hijrimonth=\count154
-\c@Hijriyear=\count155
+\c@Hijriday=\count143
+\c@Hijrimonth=\count144
+\c@Hijriyear=\count145
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/polyglossia/gloss-farsi.ldf
 File: gloss-farsi.ldf polyglossia: module for farsi
 
 (/usr/share/texlive/texmf-dist/tex/latex/polyglossia/farsical.sty
 Package: farsical 2008/07/02 v0.1 Farsi (jalali) calendar
-\JALALI@i=\count156
-\JALALI@y=\count157
-\JALALI@m=\count158
-\JALALI@d=\count159
-\JALALI@latini=\count160
-\JALALI@farsii=\count161
-\JALALI@latinii=\count162
-\JALALI@farsiii=\count163
-\JALALI@latiniii=\count164
-\JALALI@farsiiii=\count165
-\JALALI@latiniv=\count166
-\JALALI@farsiiv=\count167
-\JALALI@latinv=\count168
-\JALALI@farsiv=\count169
-\JALALI@latinvi=\count170
-\JALALI@farsivi=\count171
-\JALALI@latinvii=\count172
-\JALALI@farsivii=\count173
-\JALALI@latinviii=\count174
-\JALALI@farsiviii=\count175
-\JALALI@latinix=\count176
-\JALALI@farsiix=\count177
-\JALALI@latinx=\count178
-\JALALI@farsix=\count179
-\JALALI@latinxi=\count180
-\JALALI@farsixi=\count181
-\JALALI@latinxii=\count182
-\JALALI@farsixii=\count183
-\JALALI@farsixiii=\count184
-\JALALI@temp=\count185
-\JALALI@temptwo=\count186
-\JALALI@tempthree=\count187
-\JALALI@yModHundred=\count188
-\JALALI@thirtytwo=\count189
-\JALALI@dn=\count190
-\JALALI@sn=\count191
-\JALALI@mminusone=\count192
+\JALALI@i=\count146
+\JALALI@y=\count147
+\JALALI@m=\count148
+\JALALI@d=\count149
+\JALALI@latini=\count150
+\JALALI@farsii=\count151
+\JALALI@latinii=\count152
+\JALALI@farsiii=\count153
+\JALALI@latiniii=\count154
+\JALALI@farsiiii=\count155
+\JALALI@latiniv=\count156
+\JALALI@farsiiv=\count157
+\JALALI@latinv=\count158
+\JALALI@farsiv=\count159
+\JALALI@latinvi=\count160
+\JALALI@farsivi=\count161
+\JALALI@latinvii=\count162
+\JALALI@farsivii=\count163
+\JALALI@latinviii=\count164
+\JALALI@farsiviii=\count165
+\JALALI@latinix=\count166
+\JALALI@farsiix=\count167
+\JALALI@latinx=\count168
+\JALALI@farsix=\count169
+\JALALI@latinxi=\count170
+\JALALI@farsixi=\count171
+\JALALI@latinxii=\count172
+\JALALI@farsixii=\count173
+\JALALI@farsixiii=\count174
+\JALALI@temp=\count175
+\JALALI@temptwo=\count176
+\JALALI@tempthree=\count177
+\JALALI@yModHundred=\count178
+\JALALI@thirtytwo=\count179
+\JALALI@dn=\count180
+\JALALI@sn=\count181
+\JALALI@mminusone=\count182
 ))
-\g_fontspec_family_Scheherazade_int=\count193
+\g_fontspec_family_Scheherazade_int=\count183
 .................................................
 . fontspec info: "no-font-shape"
 . 
@@ -731,7 +704,7 @@ Package: farsical 2008/07/02 v0.1 Farsi (jalali) calendar
 . * 'normal' with NFSS spec.:
 . <->s*[2]"Scheherazade/ICU:script=arab;language=DFLT;"
 .................................................
-\g_fontspec_family_GranadaKD_int=\count194
+\g_fontspec_family_GranadaKD_int=\count184
 .................................................
 . fontspec info: "no-font-shape"
 . 
@@ -758,7 +731,7 @@ Package: farsical 2008/07/02 v0.1 Farsi (jalali) calendar
 . * 'normal' with NFSS spec.:
 . <->s*[2]"GranadaKD/ICU:script=arab;language=DFLT;"
 .................................................
-\g_fontspec_family_Linux Biolinum O_int=\count195
+\g_fontspec_family_Linux Biolinum O_int=\count185
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -798,7 +771,6 @@ Package: farsical 2008/07/02 v0.1 Farsi (jalali) calendar
 . <->s*[0.9]"Linux Biolinum
 . O/BI/ICU:script=latn;language=DFLT;+smcp;color=00BB33FF ;"
 .................................................
-LaTeX Info: Redefining \T on input line 31.
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -871,8 +843,8 @@ LaTeX Info: Redefining \T on input line 31.
 . <->"Linux Biolinum O/BI/ICU:script=latn;language=DFLT;+smcp;color=00BB33FF
 . ;"
 .................................................
-LaTeX Info: Redefining \S on input line 33.
-\g_fontspec_family_Liberation Serif Italic_int=\count196
+LaTeX Info: Redefining \S on input line 30.
+\g_fontspec_family_Liberation Serif Italic_int=\count186
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -925,29 +897,29 @@ LaTeX Info: Redefining \S on input line 33.
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-(poetry/outputs/opium/opium.aux)
+(convert/outputs/opium/opium.aux)
 \openout1 = `opium.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 42.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 42.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 39.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 39.
  (/usr/share/texmf/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    ... okay on input line 39.
 .................................................
 . fontspec info: "setup-math"
 . 
@@ -955,151 +927,113 @@ LaTeX Font Info:    ... okay on input line 42.
 .................................................
 \symlegacymaths=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 42.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 42.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 42.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 42.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 42.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 42.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 42.
-LaTeX Font Info:    Redeclaring math accent \check on input line 42.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 42.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 42.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \colon on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 42.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 42.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 42.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 39.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 39.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 39.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 39.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 39.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 39.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 39.
+LaTeX Font Info:    Redeclaring math accent \check on input line 39.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 39.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 39.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \colon on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 39.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 39.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 39.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `normal' on input line 42.
+(Font)              `operators' in the math version `normal' on input line 39.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> EU1/LiberationSerif(0)/m/n on input lin
-e 42.
+e 39.
 LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `bold' on input line 42.
+(Font)              `operators' in the math version `bold' on input line 39.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> EU1/LiberationSerif(0)/m/n on input li
-ne 42.
+ne 39.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  EU1/LiberationSerif(0)/m/n --> EU1/LiberationSerif(0)/m
-/n on input line 42.
+/n on input line 39.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
 (Font)                  EU1/LiberationSerif(0)/m/n --> EU1/LiberationSerif(0)/m
-/n on input line 42.
+/n on input line 39.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/cmr/m/it --> EU1/LiberationSerif(0)/m/it on input l
-ine 42.
+ine 39.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/cmr/bx/n --> EU1/LiberationSerif(0)/bx/n on input l
-ine 42.
+ine 39.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> EU1/lmss/m/n on input line 42.
+(Font)                  OT1/cmss/m/n --> EU1/lmss/m/n on input line 39.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> EU1/lmtt/m/n on input line 42.
+(Font)                  OT1/cmtt/m/n --> EU1/lmtt/m/n on input line 39.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  EU1/LiberationSerif(0)/m/n --> EU1/LiberationSerif(0)/b
-x/n on input line 42.
+x/n on input line 39.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
 (Font)                  EU1/LiberationSerif(0)/m/n --> EU1/LiberationSerif(0)/b
-x/n on input line 42.
+x/n on input line 39.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> EU1/LiberationSerif(0)/bx/it on input
- line 42.
+ line 39.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> EU1/lmss/bx/n on input line 42.
+(Font)                  OT1/cmss/bx/n --> EU1/lmss/bx/n on input line 39.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> EU1/lmtt/bx/n on input line 42.
-\AtBeginShipoutBox=\box46
-LaTeX Font Info:    Font shape `EU1/Scheherazade(0)/m/n' will be
-(Font)              scaled to size 24.0pt on input line 46.
-
-! Undefined control sequence.
-\adl@@cr ...tempdima \xdef \adl@rowsL {\adl@rowsL 
-                                                  (\adl@colsL /\number \adl@...
-l.47 \T
-       {fālak lssmāl ālqḏı̄m 'n ı̄ḍā wapaṯa fı̄ūn . a�...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\adl@@cr ...ef \adl@rowsL {\adl@rowsL (\adl@colsL 
-                                                  /\number \adl@height );\if...
-l.47 \T
-       {fālak lssmāl ālqḏı̄m 'n ı̄ḍā wapaṯa fı̄ūn . a�...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\adl@@cr ...a );\fi }\xdef \adl@rowsR {\adl@rowsR 
-                                                  (\adl@colsR /\number \adl@...
-l.47 \T
-       {fālak lssmāl ālqḏı̄m 'n ı̄ḍā wapaṯa fı̄ūn . a�...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\adl@@cr ...ef \adl@rowsR {\adl@rowsR (\adl@colsR 
-                                                  /\number \adl@height );\if...
-l.47 \T
-       {fālak lssmāl ālqḏı̄m 'n ı̄ḍā wapaṯa fı̄ūn . a�...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
+(Font)                  OT1/cmtt/m/n --> EU1/lmtt/bx/n on input line 39.
+\AtBeginShipoutBox=\box45
+LaTeX Font Info:    Font shape `EU1/GranadaKD(0)/m/n' will be
+(Font)              scaled to size 24.0pt on input line 42.
 LaTeX Font Info:    Font shape `EU1/LinuxBiolinumO(0)/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 47.
-Missing character: There is no ّ in font Linux Biolinum O/OT:script=latn;langua
-ge=DFLT;color=00BB33FF ;!
+(Font)              scaled to size 10.79993pt on input line 43.
 
-Overfull \hbox (59.50201pt too wide) in alignment at lines 44--66
- [] [] 
- []
+! Missing # inserted in alignment preamble.
+<to be read again> 
+                   \cr 
+l.48 \begin{longtable}{}
+                        
+There should be exactly one # between &'s, when an
+\halign or \valign is being set up. In this case you had
+none, so I've put one in; maybe that will work.
 
-Missing character: There is no ة in font Linux Biolinum O/OT:script=latn;langua
-ge=DFLT;color=00BB33FF ;!
-Missing character: There is no ة in font Linux Biolinum O/OT:script=latn;langua
-ge=DFLT;color=00BB33FF ;!
+! Extra alignment tab has been changed to \cr.
+<template> \endtemplate 
+                        
+l.50 \makebox[8cm][r]{} &
+                          & \makebox[8cm][r]{} \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
 
-Overfull \hbox (59.50201pt too wide) in alignment at lines 66--78
- [] [] 
- []
-
-
-Overfull \hbox (59.50201pt too wide) has occurred while \output is active
- [] [] 
- []
+! Extra alignment tab has been changed to \cr.
+<template> \endtemplate 
+                        
+l.50 \makebox[8cm][r]{} & &
+                            \makebox[8cm][r]{} \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
 
 [1
 
-] [2] (poetry/outputs/opium/opium.aux) ) 
+] (convert/outputs/opium/opium.aux) ) 
 Here is how much of TeX's memory you used:
- 16239 strings out of 495649
- 327868 string characters out of 6187651
- 401154 words of memory out of 5000000
- 19186 multiletter control sequences out of 15000+600000
+ 15986 strings out of 495649
+ 324321 string characters out of 6187651
+ 382087 words of memory out of 5000000
+ 18940 multiletter control sequences out of 15000+600000
  4106 words of font info for 36 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 53i,5n,43p,10468b,217s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,5n,43p,10469b,177s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on poetry/outputs/opium/opium.pdf (2 pages).
+Output written on convert/outputs/opium/opium.pdf (1 page).

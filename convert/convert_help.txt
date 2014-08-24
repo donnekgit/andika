@@ -1,0 +1,15 @@
+The converter asks you in turn to select:
+
+1. The document (file) to be converted.  For poetry, this should be in the format of two vipande to the line, with a blank line between the stanzas.
+
+2. The script in which the document is written (Arabic or Roman).
+
+3. The genre of the document (poetry or prose).
+
+4. If poetry, the number of vipande in the stanza.
+
+5. The type of output required (pdf, odt, txt, or insertion into a database table).  If database insertion is chosen, no further selections need be made.
+
+6. If poetry, the layout required (2 vipande per line, separated by space; 2 vipande per line, separated by asterisk; or 1 kipande per line).  Only the latter two layouts are available for odt and txt poetry output.  For prose, there is only one layout (the line in Arabic script followed by the line in Roman script), and this will be applied automatically.
+
+7. Whether or not the Roman script (whether original text or generated transliteration) should be included in the output.  The default is to include it.

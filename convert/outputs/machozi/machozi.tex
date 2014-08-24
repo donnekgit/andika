@@ -3,15 +3,12 @@
 \usepackage{polyglossia}
 \usepackage{longtable}
 \usepackage{xcolor}  % can't use color with polyglossia
-\usepackage{arydshln}
 
 \interfootnotelinepenalty=10000 % prevents the footnote from breaking across pages
 % http://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
 
 % Thanks to Manas Tungare (http://manas.tungare.name/software/latex) for these settings.
 \setlength{\paperwidth}{210mm}
-\setlength{\paperheight}{297mm}
-
 \setlength{\textwidth}{160mm}
 \setlength{\textheight}{247mm}
 
@@ -28,54 +25,76 @@
 \newfontfamily\arabicfont[Script=Arabic, Scale=2]{Scheherazade} % Arabic transcription layer
 \newfontfamily\farsifont[Script=Arabic, Scale=2]{GranadaKD} % Arabic transcription layer for titles - uses a version of Granada which has been extended to include glyphs for Swahili.
 \newcommand{\AS}[1]{\fontspec[Script=Arabic, Scale=1.5]{Scheherazade} #1\normalfont} % Arabic when used in footnotes - using \newfontfamily resets following English text as well.  IMPORTANT: this can ONLY be used for single words - multiple words will be written LTR, and not RTL as required.
-\newfontfamily{\T}[Scale=0.9, Color=00BB33]{Linux Biolinum O} %  transliteration layer - Biolinum handles diacritics well
+\newfontfamily{\Tr}[Scale=0.9, Color=00BB33]{Linux Biolinum O} %  transliteration layer - Biolinum handles diacritics well
 \newfontfamily{\I}[Scale=0.9, Color=blue]{Linux Biolinum O} % interpolated letters in the transliteration layer
+\newfontfamily{\S}[Color=00BB33]{Linux Biolinum O} % standard spelling layer
 \newfontfamily{\E}[Scale=0.9, Color=666666]{Liberation Serif Italic} % English translation layer
+\newfontfamily{\FN}[Color=00BB33]{Liberation Serif Italic} % Alternate type in footnotes.
 
-\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696):
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
+
+\usepackage[obeyspaces]{url}  % Use urls in text and captions with sensible linewrap.
+\urlstyle{rm}  % Set urls in roman.
 
 \begin{document}
 
 \begin{longtable}{r}
 \textfarsi{مَچٗوزِ} \\*
-\T{machozi} \\
-\cdashline{1-1}[1pt/3pt] \\
+\Tr{machozi} \\
 [6mm]
 \end{longtable}
 
 
-\begin{longtable}{rrl} 
+\begin{longtable}{rl} 
 
-\textarabic{يَمٖنِدٗنْدٗوكَ} & \textarabic{مَچٗوزِ يَ هُوبَ} & \textarabic{١} \\* 
-\T{yamenidondoka} & \T{machozi ya huba} & \T{1a/b} \\ 
-\textarabic{نِكَفُرَهِيكَ} & \textarabic{سِيلِ نِكَشِيبَ} &  \\* 
-\T{nikafurahika} & \T{sili nikashiba} & \T{1c/d} \\ 
-\textarabic{أَمٖشَنِتٗوكَ} & \textarabic{وَانْڠُ مَهَبُوبَ} &  \\* 
-\T{ameshanitoka} & \T{wangu mahabuba} & \T{1e/f} \\ 
-[8mm] 
+\makebox[8cm][r]{} & & \makebox[8cm][r]{} \\ 
 
-\textarabic{مْپٖنْزِ جَمَانِ} & \textarabic{أَمٖشَنِتٗوكَ} & \textarabic{٢} \\* 
-\T{mpenzi jamani} & \T{ameshanitoka} & \T{2a/b} \\ 
-\textarabic{چٗوزِ كِفُؤَانِ} & \textarabic{مْسِيتُ وَ نْيِيكَ} &  \\* 
-\T{chozi kifuani} & \T{msitu wa nyika} & \T{2c/d} \\ 
-\textarabic{وَالَ سِمُؤٗونِ} & \textarabic{نِنَهَنْڠَئِيكَ} &  \\* 
-\T{wala simuoni} & \T{ninahangaika} & \T{2e/f} \\ 
-[8mm] 
+\textarabic{مَچٗوزِ يَ هُوبَ} & \textarabic{١} \\* 
+\Tr{machozi ya huba} & \Tr{1a} \\ 
+\textarabic{يَمٖنِدٗنْدٗوكَ} &  \\* 
+\Tr{yamenidondoka} & \Tr{1b} \\ 
+\textarabic{سِيلِ نِكَشِيبَ} &  \\* 
+\Tr{sili nikashiba} & \Tr{1c} \\ 
+\textarabic{نِكَفُرَهِيكَ} &  \\* 
+\Tr{nikafurahika} & \Tr{1d} \\ 
+\textarabic{وَانْڠُ مَهَبُوبَ} &  \\* 
+\Tr{wangu mahabuba} & \Tr{1e} \\ 
+\textarabic{أَمٖشَنِتٗوكَ} &  \\* 
+\Tr{ameshanitoka} & \Tr{1f} \\ 
+\\[8mm] 
 
-\textarabic{سِجُئِ أَلِيكٗ} & \textarabic{وَالَ سِمُؤٗونِ} & \textarabic{٣} \\* 
-\T{sijui aliko} & \T{wala simuoni} & \T{3a/b} \\ 
-\textarabic{نَ مَسِكِتِيكٗ} & \textarabic{أَنِيپَ مَشَاكَ} &  \\* 
-\T{na masikitiko} & \T{anipa mashaka} & \T{3c/d} \\ 
-\textarabic{أَجُئٖ نِلِيكٗ} & \textarabic{سَؤُوتِ نَغَانِ} &  \\* 
-\T{ajue niliko} & \T{sauti naghani} & \T{3e/f} \\ 
-[8mm] 
+\textarabic{أَمٖشَنِتٗوكَ} & \textarabic{٢} \\* 
+\Tr{ameshanitoka} & \Tr{2a} \\ 
+\textarabic{مْپٖنْزِ جَمَانِ} &  \\* 
+\Tr{mpenzi jamani} & \Tr{2b} \\ 
+\textarabic{مْسِيتُ وَ نْيِيكَ} &  \\* 
+\Tr{msitu wa nyika} & \Tr{2c} \\ 
+\textarabic{چٗوزِ كِفُؤَانِ} &  \\* 
+\Tr{chozi kifuani} & \Tr{2d} \\ 
+\textarabic{نِنَهَنْڠَئِيكَ} &  \\* 
+\Tr{ninahangaika} & \Tr{2e} \\ 
+\textarabic{وَالَ سِمُؤٗونِ} &  \\* 
+\Tr{wala simuoni} & \Tr{2f} \\ 
+\\[8mm] 
+
+\textarabic{وَالَ سِمُؤٗونِ} & \textarabic{٣} \\* 
+\Tr{wala simuoni} & \Tr{3a} \\ 
+\textarabic{سِجُئِ أَلِيكٗ} &  \\* 
+\Tr{sijui aliko} & \Tr{3b} \\ 
+\textarabic{أَنِيپَ مَشَاكَ} &  \\* 
+\Tr{anipa mashaka} & \Tr{3c} \\ 
+\textarabic{نَ مَسِكِتِيكٗ} &  \\* 
+\Tr{na masikitiko} & \Tr{3d} \\ 
+\textarabic{سَؤُوتِ نَغَانِ} &  \\* 
+\Tr{sauti naghani} & \Tr{3e} \\ 
+\textarabic{أَجُئٖ نِلِيكٗ} &  \\* 
+\Tr{ajue niliko} & \Tr{3f} \\ 
+\\[8mm] 
 
 \end{longtable}
 
-% Remember to end each line (except vertical space) with a double backslash
-
 \begin{longtable}{r}
-
+% Remember to end each line (except vertical space) with a double backslash
  \\  % Any material after the end of the poem
 
 \end{longtable}
