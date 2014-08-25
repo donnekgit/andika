@@ -1,8 +1,8 @@
 <?php
 
 // Set up required (:), optional (::) and valueless command-line arguments which can be passed into the script, both short and long forms.
-$shortopts="i:v:o::l::s::th";  // short options are a string
-$longopts=array("input:", "vipande:", "output::", "layout::", "script::", "transcription", "help");  // long options are an array
+$shortopts="i:v:g:o::l::s::th";  // short options are a string
+$longopts=array("input:", "vipande:", "genre:", "output::", "layout::", "script::", "transcription", "help");  // long options are an array
 if (empty($options)) { $options = getopt($shortopts, $longopts); }  // Handle input coming from CLI.
 //print_r($options);
 

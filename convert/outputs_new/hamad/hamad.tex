@@ -1,0 +1,100 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage{polyglossia}
+\usepackage{longtable}
+\usepackage{xcolor}  % can't use color with polyglossia
+
+\usepackage{marginnote}
+\renewcommand*{\marginfont}{\color{red}\sffamily}
+
+\interfootnotelinepenalty=10000 % prevents the footnote from breaking across pages
+% http://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
+
+% Thanks to Manas Tungare (http://manas.tungare.name/software/latex) for these settings.
+\setlength{\paperwidth}{210mm}
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{247mm}
+
+\setlength{\evensidemargin}{1in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{-0.5in}
+
+\setmainfont[Mapping=tex-text]{Liberation Serif}  % Set the default font for the document (footnotes will also use this font, but see also: http://tex.stackexchange.com/questions/4779/how-to-change-font-family-in-footnote)
+
+\setmainlanguage{english}
+\setotherlanguage{arabic}
+\setotherlanguage{farsi}  % used to allow typesetting the tile in a different font
+
+\newfontfamily\arabicfont[Script=Arabic, Scale=2]{Scheherazade} % Arabic transcription layer
+\newfontfamily\farsifont[Script=Arabic, Scale=2]{GranadaKD} % Arabic transcription layer for titles - uses a version of Granada which has been extended to include glyphs for Swahili.
+\newcommand{\AS}[1]{\fontspec[Script=Arabic, Scale=1.5]{Scheherazade} #1\normalfont} % Arabic when used in footnotes - using \newfontfamily resets following English text as well.  IMPORTANT: this can ONLY be used for single words - multiple words will be written LTR, and not RTL as required.
+\newfontfamily{\Tr}[Scale=0.9, Color=00BB33]{Linux Biolinum O} %  transliteration layer - Biolinum handles diacritics well
+\newfontfamily{\I}[Scale=0.9, Color=blue]{Linux Biolinum O} % interpolated letters in the transliteration layer
+\newfontfamily{\S}[Color=00BB33]{Linux Biolinum O} % standard spelling layer
+\newfontfamily{\E}[Scale=0.9, Color=666666]{Liberation Serif Italic} % English translation layer
+\newfontfamily{\FN}[Color=00BB33]{Liberation Serif Italic} % Alternate type in footnotes.
+
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
+
+\usepackage[obeyspaces]{url}  % Use urls in text and captions with sensible linewrap.
+\urlstyle{rm}  % Set urls in roman.
+
+\begin{document}
+
+\begin{flushright}
+
+{\scriptsize\marginnote{1}[2mm]}\textarabic{هِسْتٗرِئَ يَ سِيتِ إِنَلٖيتَ مْڤُوتٗ كْوَ كُؤٗنْيٖيشَ أُئِمَارَ وَاكٖ كَتِيكَ مَتٖينْدٗ يَاكٖ۔ أَلِوٖيزَ} \\ 
+
+\Tr{Historia ya Siti inaleta mvuto kwa kuonyesha uimara wake katika matendo yake. Aliweza} \\ 
+
+{\scriptsize\marginnote{2}[2mm]}\textarabic{كُفُنْزْوَ كُئِيمْبَ وَكَاتِ هَكُجُؤَ كُسٗومَ وَالَ كُؤَنْدِيكَ كِئَرَابُ وَالَ كِسوَهِيلِ، لُوغَ كُؤُ} \\ 
+
+\Tr{kufunzwa kuimba wakati hakujua kusoma wala kuandika Kiarabu wala Kiswahili, lugha kuu} \\ 
+
+{\scriptsize\marginnote{3}[2mm]}\textarabic{أَمْبَازٗ زِلِفُنْدِيشْوَ كَتِيكَ ڤِسِيوَ ڤْيَ زَنْزِبَر وَكَاتِ هُؤٗ۔ كْوَنْزَ أَلِفُنْدِيشْوَ كُسٗومَ} \\ 
+
+\Tr{ambazo zilifundishwa katika visiwa vya Zanzibar wakati huo. Kwanza alifundishwa kusoma} \\ 
+
+{\scriptsize\marginnote{4}[2mm]}\textarabic{كُرَانِ نَ أَلِفَؤُولُ كُپَاتَ لَفُوذِ نْزُورِ يَ كِئَرَابُ۔ كُتٗكَانَ نَ كِپَاجِ چَاكٖ چَ كُوَ نَ} \\ 
+
+\Tr{Kurani na alifaulu kupata lafudhi nzuri ya Kiarabu. Kutokana na kipaji chake cha kuwa na} \\ 
+
+{\scriptsize\marginnote{5}[2mm]}\textarabic{مٗويٗ مْوٖپٖيسِ وَ كُهِفَاذِ نَ كُپَاتَ لَفُوذِ نْزُورِ، سِيتِ أَلِنْيَنْيُكِئَ كُوَ مْوِمْبَاجِ بٗورَ} \\ 
+
+\Tr{moyo mwepesi wa kuhifadhi na kupata lafudhi nzuri, Siti alinyanyukia kuwa mwimbaji bora} \\ 
+
+{\scriptsize\marginnote{6}[2mm]}\textarabic{كَتِيكَ كِسوَهِيلِ، كِئَرَابُ هَاتَ نَ نْيِيمْبٗ زَ كِهِينْدِ۔} \\ 
+
+\Tr{katika Kiswahili, Kiarabu hata na nyimbo za Kihindi.} \\ 
+
+{\scriptsize\marginnote{7}[2mm]}\textarabic{} \\ 
+
+\Tr{} \\ 
+
+{\scriptsize\marginnote{8}[2mm]}\textarabic{سِيتِ أَلِبَاكِ كَتِيكَ كُفِكِئَ مَفَنِكِؤٗ يَاكٖ لِيچَ يَ كُئٖنْدٖلٖئَ كُسٖيمْوَ مَنٖينٗ ذِيدِ يَاكٖ} \\ 
+
+\Tr{Siti alibaki katika kufikia mafanikio yake licha ya kuendelea kusemwa maneno dhidi yake} \\ 
+
+{\scriptsize\marginnote{9}[2mm]}\textarabic{هَاسَ يَ كُكِؤُوكَ أُتَمَدُونِ وَ مْوَنَامْكٖ وَ وَكَاتِ وَاكٖ نَ كُجِوٖيكَ مْجِينِ كْوَ} \\ 
+
+\Tr{hasa ya kukiuka utamaduni wa mwanamke wa wakati wake na kujiweka mjini kwa} \\ 
+
+{\scriptsize\marginnote{10}[2mm]}\textarabic{كُشِرِكِئَانَ نَ وَنَؤُومٖ كَتِيكَ كُئِيمْبَ، پِئَ أَلِپَاتَ كٖجٖيلِ زَ وَاتُ وَ مْجِينِ كُمُؤٗونَ يٖيٖ} \\ 
+
+\Tr{kushirikiana na wanaume katika kuimba, pia alipata kejeli za watu wa mjini kumuona yeye} \\ 
+
+{\scriptsize\marginnote{11}[2mm]}\textarabic{أَنَتٗوكَ شَامْبَ ؍ أَتَيَوٖزَاجٖ يَ مْجِينِ۔ سِيتِ أَلِجِذَتِئِ كُئٖنْدٖلٖئَ نَ كَازِ يَاكٖ نَ چِينِ يَ} \\ 
+
+\Tr{anatoka shamba - atayawezaje ya mjini. Siti alijidhatii kuendelea na kazi yake na chini ya} \\ 
+
+{\scriptsize\marginnote{12}[2mm]}\textarabic{أُؤٗنْڠٗوزِ وَ مْوَلِيمُ وَاكٖ أَلِپَاتَ مٗويٗ وَ كُئٖنْدٖلٖئَ مْپَاكَ كُفِكِئَ سِيكُ يَ كُتٗكٖيزَ} \\ 
+
+\Tr{uongozi wa mwalimu wake alipata moyo wa kuendelea mpaka kufikia siku ya kutokeza} \\ 
+
+{\scriptsize\marginnote{13}[2mm]}\textarabic{هَذَرَانِ۔} \\ 
+
+\Tr{hadharani.} \\ 
+
+\end{flushright}
+
+\end{document}

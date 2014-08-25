@@ -126,11 +126,11 @@ function ar2rom($text)
 
 function standardise($text)
 {
-    $text=preg_replace("/L([aeiou])/", "$1$2", $text);  // Ustadh Mau initial vowels use alif as carrier, without hamza
+	$text=preg_replace("/L([aeiou])/", "$1$2", $text);  // Ustadh Mau initial vowels use alif as carrier, without hamza
 
 	$text=preg_replace("/(Ll)?([bcdfghjklmnpqrstvwyz])U\+0651/", "$2$2", $text);  // shadda > CC
 
-// Arabic prepositions
+	// Arabic prepositions
 	$text=preg_replace("/biLl([bcdfghjklmnpqrstvwyz])[bcdfghjklmnpqrstvwyz]?/", "bi-$1", $text);  // repetition to deal with shadda
 	$text=preg_replace("/waLl([bcdfghjklmnpqrstvwyz])[bcdfghjklmnpqrstvwyz]?/", "wa-$1", $text);  // repetition to deal with shadda
 	$text=preg_replace("/ls/", "ss", $text);  // as-salamu
@@ -173,7 +173,7 @@ function standardise($text)
 
 	$text=preg_replace("/U\+207F/", "", $text);  // {fatha|damma|kasra}tan > h
 
-    $text=preg_replace("/U\+063B/", "ch", $text);  // keheh with two dots > ch
+	$text=preg_replace("/U\+063B/", "ch", $text);  // keheh with two dots > ch
 
 	// Capitalise sentence-initials (very basic!).
 	// trim() is necessary because click to select seems to insert spaces before the Arabic text.
@@ -336,14 +336,14 @@ function rom2ar($text, $no_sukun=NULL)
 	$text=preg_replace("/eo/", "U+0656U+0624U+0657", $text);  // subscript alef + waw with hamza + inverted damma
 	$text=preg_replace("/eu/", "U+0656U+0624U+064F", $text);  // subscript alef + waw with hamza + damma
     
-    $text=preg_replace("/iiy/", "U+0650U+0624U+064F", $text);  // kasra + waw with hamza + damma
+	$text=preg_replace("/iiy/", "U+0650U+0624U+064F", $text);  // kasra + waw with hamza + damma
 	$text=preg_replace("/ia/", "U+0650U+0626U+064E", $text);  // kasra + yeh with hamza + fatha
 	$text=preg_replace("/ie/", "U+0650U+0626U+0656", $text);  // kasra + yeh with hamza + subscript alef
 	$text=preg_replace("/ii/", "U+0650U+0626U+0650", $text);  // kasra + yeh with hamza + kasra
 	$text=preg_replace("/io/", "U+0650U+0624U+0657", $text);  // kasra + waw with hamza + inverted damma
 	$text=preg_replace("/iu/", "U+0650U+0624U+064F", $text);  // kasra + waw with hamza + damma
 	
-    $text=preg_replace("/oow/", "U+0657U+0624U+0657", $text);   // inverted damma + waw with hamza + inverted damma
+	$text=preg_replace("/oow/", "U+0657U+0624U+0657", $text);   // inverted damma + waw with hamza + inverted damma
 	$text=preg_replace("/oa/", "U+0657U+0624U+064E", $text);  // inverted damma + waw with hamza + fatha
 	$text=preg_replace("/oe/", "U+0657U+0626U+0656", $text);  // inverted damma + yeh with hamza + subscript alef
 	$text=preg_replace("/oi/", "U+0657U+0626U+0650", $text);  // inverted damma + yeh with hamza + kasra

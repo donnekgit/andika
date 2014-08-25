@@ -1,0 +1,112 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage{polyglossia}
+\usepackage{longtable}
+\usepackage{xcolor}  % can't use color with polyglossia
+
+\usepackage{marginnote}
+\renewcommand*{\marginfont}{\color{red}\sffamily}
+
+\interfootnotelinepenalty=10000 % prevents the footnote from breaking across pages
+% http://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
+
+% Thanks to Manas Tungare (http://manas.tungare.name/software/latex) for these settings.
+\setlength{\paperwidth}{210mm}
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{247mm}
+
+\setlength{\evensidemargin}{1in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{-0.5in}
+
+\setmainfont[Mapping=tex-text]{Liberation Serif}  % Set the default font for the document (footnotes will also use this font, but see also: http://tex.stackexchange.com/questions/4779/how-to-change-font-family-in-footnote)
+
+\setmainlanguage{english}
+\setotherlanguage{arabic}
+\setotherlanguage{farsi}  % used to allow typesetting the tile in a different font
+
+\newfontfamily\arabicfont[Script=Arabic, Scale=2]{Scheherazade} % Arabic transcription layer
+\newfontfamily\farsifont[Script=Arabic, Scale=2]{GranadaKD} % Arabic transcription layer for titles - uses a version of Granada which has been extended to include glyphs for Swahili.
+\newcommand{\AS}[1]{\fontspec[Script=Arabic, Scale=1.5]{Scheherazade} #1\normalfont} % Arabic when used in footnotes - using \newfontfamily resets following English text as well.  IMPORTANT: this can ONLY be used for single words - multiple words will be written LTR, and not RTL as required.
+\newfontfamily{\Tr}[Scale=0.9, Color=00BB33]{Linux Biolinum O} %  transliteration layer - Biolinum handles diacritics well
+\newfontfamily{\I}[Scale=0.9, Color=blue]{Linux Biolinum O} % interpolated letters in the transliteration layer
+\newfontfamily{\S}[Color=00BB33]{Linux Biolinum O} % standard spelling layer
+\newfontfamily{\E}[Scale=0.9, Color=666666]{Liberation Serif Italic} % English translation layer
+\newfontfamily{\FN}[Color=00BB33]{Liberation Serif Italic} % Alternate type in footnotes.
+
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
+
+\usepackage[obeyspaces]{url}  % Use urls in text and captions with sensible linewrap.
+\urlstyle{rm}  % Set urls in roman.
+
+\begin{document}
+
+\begin{flushright}
+
+{\scriptsize\marginnote{1}[2mm]}\textarabic{فالَك للسمال القديم عن أيضا وَپَتَ أفيون ۔ اعني كَسُمْبَ ۔ تُوُلَ} \\ 
+
+\Tr{fālak lssmāl ālqḏı̄m 'n ı̄ḍā wapaṯa fı̄ūn . ā'nı̄ kasumba . ṯuwula} \\ 
+
+{\scriptsize\marginnote{2}[2mm]}\textarabic{مُوْجَ ۔ اَعْنِي وِزَانِ وَرُپي مُوْجَ ۔ نَتِنْدِ نُصُ رَطْلِ ۔ أكَسَلِّطِ پَمُوْجَ ڤِتُ} \\ 
+
+\Tr{mūja . a'nii wizāni warupı̄ mūja . naṯinḏi nuṣu raṭli . kasaliّṭi pamūja viṯu} \\ 
+
+{\scriptsize\marginnote{3}[2mm]}\textarabic{ڤِوِلِ هِڤِ بَعْدَ يَكُوُنْدْشَ كُنْغُوَ نَ تِنْدِ ۔ اُكَڤِپُنْدَ حَتَ ڤِكَوَ كِتُ كِمُوْجَ ۔ تِنَ} \\ 
+
+\Tr{viwili hivi ba'ḏa yakuwunḏsha kunḡuwa na ṯinḏi . ukavipunḏa ḥaṯa vikawa kiṯu kimūja . ṯina} \\ 
+
+{\scriptsize\marginnote{4}[2mm]}\textarabic{اُكَپَتَ ڤِتُنْغُوُ مَاجِ ڤِكُبْوَ ڤِكُبْوَ اُكَڤِتُوَ نْيَمَ زَنْدَنِ ڤِكَوَ كَمَ ڤِبُيُ كَمَ هِڤِ۔} \\ 
+
+\Tr{ukapaṯa viṯunḡuwu māji vikubwa vikubwa ukaviṯuwa nyama zanḏani vikawa kama vibuyu kama hivi.} \\ 
+
+{\scriptsize\marginnote{5}[2mm]}\textarabic{اَعنى ڤِكَوَ وَزِ ۔ تِنَ اُكَفُنْدِيَ اِلِ تِنْدِ اِلِيُ پُنْدْوَ نَكَسُمْبَ پَمُوْجَ ۔ نْدَنِ يَكِ ۔ بَسِ} \\ 
+
+\Tr{a'nı̄ vikawa wazi . ṯina ukafunḏiya ili ṯinḏi iliyu punḏwa nakasumba pamūja . nḏani yaki . basi} \\ 
+
+{\scriptsize\marginnote{6}[2mm]}\textarabic{قَدِ ڤِتُنْغُوُ ڤِتَكَڤُ اِنِيَ ۔ تِنَ اُكَزِبَ مِدُ مُوْنِ مْوَكِ كْوَ نْيَمَ نَ ڤِتُنْغُوُ ۔ اَعْنِي} \\ 
+
+\Tr{qaḏi viṯunḡuwu viṯakavu iniya . ṯina ukaziba miḏu mūni mwaki kwa nyama na viṯunḡuwu . a'nii} \\ 
+
+{\scriptsize\marginnote{7}[2mm]}\textarabic{ڤِوِ كَمَ حَڤِكُتُلِوَ كِتُ نْدَنِ يَكِ ۔ تِنَ اُكَپُنْدَ وُنغَ وَ نغَنُ ۔ كِتُنْغِ كَمَ شَاْمْكَتِ ۔ تِنَ} \\ 
+
+\Tr{viwi kama ḥavikuṯuliwa kiṯu nḏani yaki . ṯina ukapunḏa wunḡa wa nḡanu . kiṯunḡi kama shāmkaṯi . ṯina} \\ 
+
+{\scriptsize\marginnote{8}[2mm]}\textarabic{اُكَكِڤِرِنْغِيَ ڤِلِ ڤِتُنْغُوُ اُكَڤِزِبَ كَبِسَ ۔ كِشَ اُكَڤِتِيَ كَتِكَ مُوْتُ ۔ كَمَ كَتِكَ } \\ 
+
+\Tr{ukakivirinḡiya vili viṯunḡuwu ukaviziba kabisa . kisha ukaviṯiya kaṯika mūṯu . kama kaṯika} \\ 
+
+{\scriptsize\marginnote{9}[2mm]}\textarabic{تَنُوْرِ نَيُ نْدِيُ بُوْرَ كُلِكُ مُوْتُ تُو ۔ حَتَى اُتَكَپُ وُنَ وُلِ وُنْغَ وُمِ اُنْغُوَ وُتِ} \\ 
+
+\Tr{ṯanūri nayu nḏiyu būra kuliku mūṯu ṯuu . ḥaṯay uṯakapu wuna wuli wunḡa wumi unḡuwa wuṯi} \\ 
+
+{\scriptsize\marginnote{10}[2mm]}\textarabic{وَمِ كُوَ مْوِوُسِ ۔ اُتُوِ كَتِكَ مُوْتُ ۔ نَوَقَتِ هُوُ اِتَكُوَ ڤِتُنْغُوُ ڤِمِ كْوِڤَ ۔ نَسِرِ يَكِ} \\ 
+
+\Tr{wami kuwa mwiwusi . uṯuwi kaṯika mūṯu . nawaqaṯi huwu iṯakuwa viṯunḡuwu vimi kwiva . nasiri yaki} \\ 
+
+{\scriptsize\marginnote{11}[2mm]}\textarabic{يُوْتِ اِمِ اِنْغِيَ نْدَنِ يَا اِلِتِنْدِ اِلِيُ فُنْدِوَ نْدَنِ يَكِ پَمُوْجَ نَكَسُمْبَ ۔ اُكِشَ هِئُ } \\ 
+
+\Tr{yūṯi imi inḡiya nḏani yā iliṯinḏi iliyu funḏiwa nḏani yaki pamūja nakasumba . ukisha hiu} \\ 
+
+{\scriptsize\marginnote{12}[2mm]}\textarabic{وِكَ دَوَا هِيُ حَتَى اِپُوِ مُوْتُ اُيْوِكِ مَحَلِ پَزُوْرِ اِسِنْغِيِ تَكَتَكَ ۔ كَمَ كَتِكَ تُوْپَ} \\ 
+
+\Tr{wika ḏawā hiyu ḥaṯay ipuwi mūṯu uywiki maḥali pazūri isinḡiyi ṯakaṯaka . kama kaṯika ṯūpa} \\ 
+
+{\scriptsize\marginnote{13}[2mm]}\textarabic{مثل ۔ دَوَا هِيِ اَكِتُمِيَ مْتُ مْوِنَيِ السمال القديم حبة حبة ۔ اَصُبُحِ ۔ نَمْشَانَ} \\ 
+
+\Tr{mthl . ḏawā hiyi akiṯumiya mṯu mwinayi āssmāl ālqḏı̄m ḥbة ḥbة . aṣubuḥi . namshāna} \\ 
+
+{\scriptsize\marginnote{14}[2mm]}\textarabic{نَجِوُنِ ۔ ان شاء الله تعالى كْوَ مُدَ وَ سِيْكُ شَاشِ كَمَ تَانُ اَوْ سَبَعَ ۔ اَپَتَ نَفْعٌ} \\ 
+
+\Tr{najiwuni . ān shā āllh ṯ'ālı̄ kwa muḏa wa sı̄ku shāshi kama ṯānu aw saba'a . apaṯa naf'ⁿ} \\ 
+
+{\scriptsize\marginnote{15}[2mm]}\textarabic{باذن الله تعالى ۔ نَقَدْرِ يَحَبّه مُوْجَ نِكَمَ حَبَّه يَمْتَامَ ۔ پَمُوْجَ نَكُتَزَمَ حَالِ يَا} \\ 
+
+\Tr{bādhn āllh ṯ'ālı̄ . naqaḏri yaḥabbh mūja nikama ḥabbah yamṯāma . pamūja nakuṯazama ḥāli yā} \\ 
+
+{\scriptsize\marginnote{16}[2mm]}\textarabic{مَڠُنْجَوَ ۔ نْغُڤُ زَكِ نَوُضَعِيْفُ وَكِ ۔ اعنى اَكِوَ نَنْغَڤُ اَثَزِدِشَ كِدُڠُ فالله اعلم} \\ 
+
+\Tr{magunjawa . nḡuvu zaki nawuḍa'ı̄fu waki . ā'nı̄ akiwa nanḡavu athaziḏisha kiḏugu fāllh ā'lm} \\ 
+
+\end{flushright}
+
+\end{document}

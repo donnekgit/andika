@@ -20,30 +20,54 @@
 <office:body>   
 <office:text>
 
-<text:p text:style-name="Arabic">مَچٗوزِ يَ هُوبَ * يَمٖنِدٗنْدٗوكَ</text:p>
-<text:p text:style-name="Roman">(1a/b) machozi ya huba * yamenidondoka</text:p>
-<text:p text:style-name="Arabic">سِيلِ نِكَشِيبَ * نِكَفُرَهِيكَ</text:p>
-<text:p text:style-name="Roman">(1c/d) sili nikashiba * nikafurahika</text:p>
-<text:p text:style-name="Arabic">وَانْڠُ مَهَبُوبَ * أَمٖشَنِتٗوكَ</text:p>
-<text:p text:style-name="Roman">(1e/f) wangu mahabuba * ameshanitoka</text:p>
-<text:p text:style-name="Arabic"/>
-
-<text:p text:style-name="Arabic">أَمٖشَنِتٗوكَ * مْپٖنْزِ جَمَانِ</text:p>
-<text:p text:style-name="Roman">(2a/b) ameshanitoka * mpenzi jamani</text:p>
-<text:p text:style-name="Arabic">مْسِيتُ وَ نْيِيكَ * چٗوزِ كِفُؤَانِ</text:p>
-<text:p text:style-name="Roman">(2c/d) msitu wa nyika * chozi kifuani</text:p>
-<text:p text:style-name="Arabic">نِنَهَنْڠَئِيكَ * وَالَ سِمُؤٗونِ</text:p>
-<text:p text:style-name="Roman">(2e/f) ninahangaika * wala simuoni</text:p>
-<text:p text:style-name="Arabic"/>
-
-<text:p text:style-name="Arabic">وَالَ سِمُؤٗونِ * سِجُئِ أَلِيكٗ</text:p>
-<text:p text:style-name="Roman">(3a/b) wala simuoni * sijui aliko</text:p>
-<text:p text:style-name="Arabic">أَنِيپَ مَشَاكَ * نَ مَسِكِتِيكٗ</text:p>
-<text:p text:style-name="Roman">(3c/d) anipa mashaka * na masikitiko</text:p>
-<text:p text:style-name="Arabic">سَؤُوتِ نَغَانِ * أَجُئٖ نِلِيكٗ</text:p>
-<text:p text:style-name="Roman">(3e/f) sauti naghani * ajue niliko</text:p>
-<text:p text:style-name="Arabic"/>
-
+<text:p text:style-name="Arabic">فالَك للسمال القديم عن أيضا وَپَتَ أفيون ۔ اعني كَسُمْبَ ۔ تُوُلَ</text:p>
+<text:p text:style-name="Roman">fālak lssmāl ālqḏı̄m 'n ı̄ḍā wapaṯa fı̄ūn . ā'nı̄ kasumba . ṯuwula
+ (1)</text:p>
+<text:p text:style-name="Arabic">مُوْجَ ۔ اَعْنِي وِزَانِ وَرُپي مُوْجَ ۔ نَتِنْدِ نُصُ رَطْلِ ۔ أكَسَلِّطِ پَمُوْجَ ڤِتُ</text:p>
+<text:p text:style-name="Roman">mūja . a'nii wizāni warupı̄ mūja . naṯinḏi nuṣu raṭli . kasaliّṭi pamūja viṯu
+ (2)</text:p>
+<text:p text:style-name="Arabic">ڤِوِلِ هِڤِ بَعْدَ يَكُوُنْدْشَ كُنْغُوَ نَ تِنْدِ ۔ اُكَڤِپُنْدَ حَتَ ڤِكَوَ كِتُ كِمُوْجَ ۔ تِنَ</text:p>
+<text:p text:style-name="Roman">viwili hivi ba'ḏa yakuwunḏsha kunḡuwa na ṯinḏi . ukavipunḏa ḥaṯa vikawa kiṯu kimūja . ṯina
+ (3)</text:p>
+<text:p text:style-name="Arabic">اُكَپَتَ ڤِتُنْغُوُ مَاجِ ڤِكُبْوَ ڤِكُبْوَ اُكَڤِتُوَ نْيَمَ زَنْدَنِ ڤِكَوَ كَمَ ڤِبُيُ كَمَ هِڤِ۔</text:p>
+<text:p text:style-name="Roman">ukapaṯa viṯunḡuwu māji vikubwa vikubwa ukaviṯuwa nyama zanḏani vikawa kama vibuyu kama hivi.
+ (4)</text:p>
+<text:p text:style-name="Arabic">اَعنى ڤِكَوَ وَزِ ۔ تِنَ اُكَفُنْدِيَ اِلِ تِنْدِ اِلِيُ پُنْدْوَ نَكَسُمْبَ پَمُوْجَ ۔ نْدَنِ يَكِ ۔ بَسِ</text:p>
+<text:p text:style-name="Roman">a'nı̄ vikawa wazi . ṯina ukafunḏiya ili ṯinḏi iliyu punḏwa nakasumba pamūja . nḏani yaki . basi
+ (5)</text:p>
+<text:p text:style-name="Arabic">قَدِ ڤِتُنْغُوُ ڤِتَكَڤُ اِنِيَ ۔ تِنَ اُكَزِبَ مِدُ مُوْنِ مْوَكِ كْوَ نْيَمَ نَ ڤِتُنْغُوُ ۔ اَعْنِي</text:p>
+<text:p text:style-name="Roman">qaḏi viṯunḡuwu viṯakavu iniya . ṯina ukaziba miḏu mūni mwaki kwa nyama na viṯunḡuwu . a'nii
+ (6)</text:p>
+<text:p text:style-name="Arabic">ڤِوِ كَمَ حَڤِكُتُلِوَ كِتُ نْدَنِ يَكِ ۔ تِنَ اُكَپُنْدَ وُنغَ وَ نغَنُ ۔ كِتُنْغِ كَمَ شَاْمْكَتِ ۔ تِنَ</text:p>
+<text:p text:style-name="Roman">viwi kama ḥavikuṯuliwa kiṯu nḏani yaki . ṯina ukapunḏa wunḡa wa nḡanu . kiṯunḡi kama shāmkaṯi . ṯina
+ (7)</text:p>
+<text:p text:style-name="Arabic">اُكَكِڤِرِنْغِيَ ڤِلِ ڤِتُنْغُوُ اُكَڤِزِبَ كَبِسَ ۔ كِشَ اُكَڤِتِيَ كَتِكَ مُوْتُ ۔ كَمَ كَتِكَ </text:p>
+<text:p text:style-name="Roman">ukakivirinḡiya vili viṯunḡuwu ukaviziba kabisa . kisha ukaviṯiya kaṯika mūṯu . kama kaṯika 
+ (8)</text:p>
+<text:p text:style-name="Arabic">تَنُوْرِ نَيُ نْدِيُ بُوْرَ كُلِكُ مُوْتُ تُو ۔ حَتَى اُتَكَپُ وُنَ وُلِ وُنْغَ وُمِ اُنْغُوَ وُتِ</text:p>
+<text:p text:style-name="Roman">ṯanūri nayu nḏiyu būra kuliku mūṯu ṯuu . ḥaṯay uṯakapu wuna wuli wunḡa wumi unḡuwa wuṯi
+ (9)</text:p>
+<text:p text:style-name="Arabic">وَمِ كُوَ مْوِوُسِ ۔ اُتُوِ كَتِكَ مُوْتُ ۔ نَوَقَتِ هُوُ اِتَكُوَ ڤِتُنْغُوُ ڤِمِ كْوِڤَ ۔ نَسِرِ يَكِ</text:p>
+<text:p text:style-name="Roman">wami kuwa mwiwusi . uṯuwi kaṯika mūṯu . nawaqaṯi huwu iṯakuwa viṯunḡuwu vimi kwiva . nasiri yaki
+ (10)</text:p>
+<text:p text:style-name="Arabic">يُوْتِ اِمِ اِنْغِيَ نْدَنِ يَا اِلِتِنْدِ اِلِيُ فُنْدِوَ نْدَنِ يَكِ پَمُوْجَ نَكَسُمْبَ ۔ اُكِشَ هِئُ </text:p>
+<text:p text:style-name="Roman">yūṯi imi inḡiya nḏani yā iliṯinḏi iliyu funḏiwa nḏani yaki pamūja nakasumba . ukisha hiu 
+ (11)</text:p>
+<text:p text:style-name="Arabic">وِكَ دَوَا هِيُ حَتَى اِپُوِ مُوْتُ اُيْوِكِ مَحَلِ پَزُوْرِ اِسِنْغِيِ تَكَتَكَ ۔ كَمَ كَتِكَ تُوْپَ</text:p>
+<text:p text:style-name="Roman">wika ḏawā hiyu ḥaṯay ipuwi mūṯu uywiki maḥali pazūri isinḡiyi ṯakaṯaka . kama kaṯika ṯūpa
+ (12)</text:p>
+<text:p text:style-name="Arabic">مثل ۔ دَوَا هِيِ اَكِتُمِيَ مْتُ مْوِنَيِ السمال القديم حبة حبة ۔ اَصُبُحِ ۔ نَمْشَانَ</text:p>
+<text:p text:style-name="Roman">mthl . ḏawā hiyi akiṯumiya mṯu mwinayi āssmāl ālqḏı̄m ḥbة ḥbة . aṣubuḥi . namshāna
+ (13)</text:p>
+<text:p text:style-name="Arabic">نَجِوُنِ ۔ ان شاء الله تعالى كْوَ مُدَ وَ سِيْكُ شَاشِ كَمَ تَانُ اَوْ سَبَعَ ۔ اَپَتَ نَفْعٌ</text:p>
+<text:p text:style-name="Roman">najiwuni . ān shā āllh ṯ'ālı̄ kwa muḏa wa sı̄ku shāshi kama ṯānu aw saba'a . apaṯa naf'ⁿ
+ (14)</text:p>
+<text:p text:style-name="Arabic">باذن الله تعالى ۔ نَقَدْرِ يَحَبّه مُوْجَ نِكَمَ حَبَّه يَمْتَامَ ۔ پَمُوْجَ نَكُتَزَمَ حَالِ يَا</text:p>
+<text:p text:style-name="Roman">bādhn āllh ṯ'ālı̄ . naqaḏri yaḥabbh mūja nikama ḥabbah yamṯāma . pamūja nakuṯazama ḥāli yā
+ (15)</text:p>
+<text:p text:style-name="Arabic">مَڠُنْجَوَ ۔ نْغُڤُ زَكِ نَوُضَعِيْفُ وَكِ ۔ اعنى اَكِوَ نَنْغَڤُ اَثَزِدِشَ كِدُڠُ فالله اعلم</text:p>
+<text:p text:style-name="Roman">magunjawa . nḡuvu zaki nawuḍa'ı̄fu waki . ā'nı̄ akiwa nanḡavu athaziḏisha kiḏugu fāllh ā'lm
+ (16)</text:p>
 </office:text>
 </office:body>
 

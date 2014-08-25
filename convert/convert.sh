@@ -19,7 +19,7 @@ choose_a_file()
         choose_a_file
     elif [[ $ret -eq 1 ]]; then
 	exit
-    elif [ $ret -eq 0 ] && [ -z $chosenfile ]; then
+    elif [ $ret -eq 0 ] && [ -z "$chosenfile" ]; then
 	yad --width="500" --height="100" --center --title="Error" --form --text="You need to choose a file to convert" --button="Close:1"
 	choose_a_file
     fi 
@@ -80,6 +80,30 @@ desired_output()
     elif [[ $chosenoutput == "Insert into database" ]]; then
 	chosenoutput="db"
 	chosenlayout="kip-line"
+	exit
+    fi
+    
+    ret=$?
+
+    if [[ $ret -eq 2 ]]; then
+	show_help
+	desired_output
+    elif [[ $ret -eq 1 ]]; then
+	exit
+    fi 
+}
+
+# This function can be deleted once prose import to the db is functional.
+prose_desired_output()
+{
+    chosenoutput=`yad --width="300" --height="100" --center --separator="" --title="Output" --form --field="Type of output:CB" "PDF file!ODT file!Text file" --button="Help:2" --button="gtk-cancel:1" --button="gtk-ok:0"`
+    
+    if [[ $chosenoutput == "PDF file" ]]; then
+	chosenoutput="pdf"
+    elif [[ $chosenoutput == "ODT file" ]]; then
+	chosenoutput="odt"
+    elif [[ $chosenoutput == "Text file" ]]; then
+	chosenoutput="txt"
 	exit
     fi
     
@@ -191,7 +215,7 @@ if [[ $chosengenre == "Poetry" ]]; then
     
 elif  [[ $chosengenre == "Prose" ]]; then
 
-    desired_output
+    prose_desired_output
     #echo $chosenoutput
     
     roman_script
