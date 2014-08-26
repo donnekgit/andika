@@ -5,6 +5,7 @@ if ($double==1)  // we have two kipande on the line, so print them
     if ($output=="pdf")
     {
         fwrite($fp, "\\textarabic{".$this_arabic."} & ");
+        
         if (substr($this_kip, 0, 1)=="a") // only put an Arabic number against the first line of the stanza
         {
             fwrite($fp, "\\textarabic{".convert_numbers($stanza_no)."} \\\\* \n");  // * disallows a pagebreak after this row
@@ -13,6 +14,7 @@ if ($double==1)  // we have two kipande on the line, so print them
         {
             fwrite($fp, " \\\\* \n");  // * disallows a pagebreak after this row
         }
+        
         if (isset($options["t"]) or isset($options["transliteration"]) or $transtxt=="TRUE")
         {
             //put stanza and vipande numbers at the beginning of the transliteration line
@@ -22,6 +24,7 @@ if ($double==1)  // we have two kipande on the line, so print them
     elseif ($output=="odt")
     {
         fwrite($fp, "<text:p text:style-name=\"Arabic\">".$this_arabic."</text:p>\n");
+        
         if (isset($options["t"]) or isset($options["transliteration"]) or $transtxt=="TRUE")
         {
             // put stanza and vipande numbers in brackets at the beginning of the transliteration line
@@ -31,12 +34,14 @@ if ($double==1)  // we have two kipande on the line, so print them
     elseif ($output=="txt")
     {
         fwrite($fp, $this_arabic."\n");
+        
         if (isset($options["t"]) or isset($options["transliteration"]) or $transtxt=="TRUE")
         {
             // put stanza and vipande numbers in brackets at the beginning of the transliteration line
             fwrite($fp, "(".$stanza_no.$this_kip.") ".$this_roman."\n");
         }
     }
+
     echo $this_kip.": ".$this_roman."\n";
     unset ($double);
 }

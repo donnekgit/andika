@@ -2,22 +2,6 @@
 
 //Called by convert.php.
 
-// // Open the output file.
-// if ($output=="pdf")
-// {
-//     include("tex/pdf_open.php");  // Open the tex file.
-// }
-// elseif ($output=="txt")
-// {
-//     $fp=fopen("convert/outputs/$poem/{$poem}.txt", "w") or die("Can't create the file");
-// }
-// elseif ($output=="odt")
-// {
-//     $fp=fopen("convert/odt/content.xml", "w") or die("Can't create the file");
-//     $header=file_get_contents("convert/odt/odt_header.txt");
-//     fwrite($fp, $header);
-// }
-
 // Set up stanza furniture.
 $stanza_no=1;  // start stanza counter
 $stanza_contents="";  // set up a holder for the contents of the whole stanza
@@ -26,6 +10,22 @@ $vipande=array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
 array_splice($vipande, $vipande_no);
 // print_r($vipande);
 $first_half=array('a', 'c', 'e', 'g', 'i', 'k', 'm', 'o');  // vipande we want to have at the beginning of a line
+
+// Open the output file.
+if ($output=="pdf")
+{
+    include("tex/pdf_open.php");  // Open the tex file.
+}
+elseif ($output=="txt")
+{
+    $fp=fopen("convert/outputs/$poem/{$poem}.txt", "w") or die("Can't create the file");
+}
+elseif ($output=="odt")
+{
+    $fp=fopen("convert/odt/content.xml", "w") or die("Can't create the file");
+    $header=file_get_contents("convert/odt/odt_header.txt");
+    fwrite($fp, $header);
+}
 
 // Read each line of the array and handle it.
 foreach ($poemlines as $poemline)

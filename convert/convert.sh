@@ -18,9 +18,9 @@ choose_a_file()
         show_help
         choose_a_file
     elif [[ $ret -eq 1 ]]; then
-	exit
+        exit
     elif [ $ret -eq 0 ] && [ -z "$chosenfile" ]; then
-	yad --width="500" --height="100" --center --title="Error" --form --text="You need to choose a file to convert" --button="Close:1"
+        yad --width="500" --height="100" --center --title="Error" --form --text="You need to choose a file to convert" --button="Close:1"
 	choose_a_file
     fi 
 }
@@ -32,10 +32,10 @@ which_script()
     ret=$?
     
     if [[ $ret -eq 2 ]]; then
-	show_help
-	which_script
+        show_help
+        which_script
     elif [[ $ret -eq 1 ]]; then
-	exit
+        exit
     fi 
 }
 
@@ -46,10 +46,10 @@ which_genre()
     ret=$?
     
     if [[ $ret -eq 2 ]]; then
-	show_help
-	which_genre
+        show_help
+        which_genre
     elif [[ $ret -eq 1 ]]; then
-	exit
+        exit
     fi 
 }
 
@@ -60,10 +60,10 @@ number_of_vipande()
     ret=$?
 
     if [[ $ret -eq 2 ]]; then
-	show_help
-	number_of_vipande
+        show_help
+        number_of_vipande
     elif [[ $ret -eq 1 ]]; then
-	exit
+        exit
     fi 
 }
 
@@ -72,24 +72,23 @@ desired_output()
     chosenoutput=`yad --width="300" --height="100" --center --separator="" --title="Output" --form --field="Type of output:CB" "PDF file!ODT file!Text file!Insert into database" --button="Help:2" --button="gtk-cancel:1" --button="gtk-ok:0"`
     
     if [[ $chosenoutput == "PDF file" ]]; then
-	chosenoutput="pdf"
+        chosenoutput="pdf"
     elif [[ $chosenoutput == "ODT file" ]]; then
-	chosenoutput="odt"
+        chosenoutput="odt"
     elif [[ $chosenoutput == "Text file" ]]; then
-	chosenoutput="txt"
+        chosenoutput="txt"
     elif [[ $chosenoutput == "Insert into database" ]]; then
-	chosenoutput="db"
-	chosenlayout="kip-line"
-	exit
+        chosenoutput="db"
+        chosenlayout="kip-line"
     fi
     
     ret=$?
 
     if [[ $ret -eq 2 ]]; then
-	show_help
-	desired_output
+        show_help
+        desired_output
     elif [[ $ret -eq 1 ]]; then
-	exit
+        exit
     fi 
 }
 
@@ -99,21 +98,20 @@ prose_desired_output()
     chosenoutput=`yad --width="300" --height="100" --center --separator="" --title="Output" --form --field="Type of output:CB" "PDF file!ODT file!Text file" --button="Help:2" --button="gtk-cancel:1" --button="gtk-ok:0"`
     
     if [[ $chosenoutput == "PDF file" ]]; then
-	chosenoutput="pdf"
+        chosenoutput="pdf"
     elif [[ $chosenoutput == "ODT file" ]]; then
-	chosenoutput="odt"
+        chosenoutput="odt"
     elif [[ $chosenoutput == "Text file" ]]; then
-	chosenoutput="txt"
-	exit
+        chosenoutput="txt"
     fi
     
     ret=$?
 
     if [[ $ret -eq 2 ]]; then
-	show_help
-	desired_output
+        show_help
+        desired_output
     elif [[ $ret -eq 1 ]]; then
-	exit
+        exit
     fi 
 }
 
@@ -122,20 +120,20 @@ poem_pdf_layout()
     chosenlayout=`yad --width="300" --height="100" --center --separator="" --title="Layout" --form --field="Layout for the output:CB" "2 vipande per line, separated by space!2 vipande per line, separated by asterisk!1 kipande per line" --button="Help:2" --button="gtk-cancel:1" --button="gtk-ok:0"`
 
     if [[ $chosenlayout == "2 vipande per line, separated by space" ]]; then
-	chosenlayout="vip-space"
+        chosenlayout="vip-space"
     elif [[ $chosenlayout == "2 vipande per line, separated by asterisk" ]]; then
-	chosenlayout="vip-star"
+        chosenlayout="vip-star"
     elif [[ $chosenlayout == "1 kipande per line" ]]; then
-	chosenlayout="kip-line"
+        chosenlayout="kip-line"
     fi
     
     ret=$?
 
      if [[ $ret -eq 2 ]]; then
-	show_help
-	poem_pdf_layout
+        show_help
+        poem_pdf_layout
     elif [[ $ret -eq 1 ]]; then
-	exit
+        exit
     fi 
 }
 
@@ -144,18 +142,18 @@ poem_odt_txt_layout()
     chosenlayout=`yad --width="300" --height="100" --center --separator="" --title="Layout" --form --field="Layout for the output:CB" "2 vipande per line, separated by asterisk!1 kipande per line" --button="Help:2" --button="gtk-cancel:1" --button="gtk-ok:0"`
 
     if [[ $chosenlayout == "2 vipande per line, separated by asterisk" ]]; then
-	chosenlayout="vip-star"
+        chosenlayout="vip-star"
     elif [[ $chosenlayout == "1 kipande per line" ]]; then
-	chosenlayout="kip-line"
+        chosenlayout="kip-line"
     fi
 
     ret=$?
 
     if [[ $ret -eq 2 ]]; then
-	show_help
-	poem_odt_txt_layout
+        show_help
+        poem_odt_txt_layout
     elif [[ $ret -eq 1 ]]; then
-	exit
+        exit
     fi 
 }
 
@@ -166,10 +164,10 @@ roman_script()
     ret=$?
  
     if [[ $ret -eq 2 ]]; then
-	show_help
-	roman_script
+        show_help
+        roman_script
     elif [[ $ret -eq 1 ]]; then
-	exit
+	    exit
     fi 
 }
 
@@ -178,53 +176,57 @@ roman_script()
 # -----------------
 
 choose_a_file  
-#echo $chosenfile
+echo $chosenfile
 
 which_script
-#echo $chosenscript
+echo $chosenscript
 
 which_genre
-#echo $chosengenre
+echo $chosengenre
 
 if [[ $chosengenre == "Poetry" ]]; then
 
     number_of_vipande
-    #echo $chosenvipande
+    echo $chosenvipande
 
     desired_output
-    #echo $chosenoutput
+    echo $chosenoutput
 
     if [[ $chosenoutput == "pdf" ]]; then
-	poem_pdf_layout
+        poem_pdf_layout
     elif [[ $chosenoutput == "odt" ]]; then
-	poem_odt_txt_layout
+        poem_odt_txt_layout
     elif [[ $chosenoutput == "txt" ]]; then
-	poem_odt_txt_layout 
+        poem_odt_txt_layout 
     fi
-    #echo $chosenlayout
+    echo $chosenlayout
 
     if [[ $chosenlayout == "vip-space" ]]; then
-	chosencolumns="rrl"
+        chosencolumns="rrl"
     else
-	chosencolumns="rl"
+        chosencolumns="rl"
     fi
-    #echo $chosencolumns
+    echo $chosencolumns
 
-    roman_script
-    #echo $chosenroman
+    if [[ $chosenoutput != "db" ]]; then
+        roman_script
+        echo $chosenroman
+    fi
     
 elif  [[ $chosengenre == "Prose" ]]; then
 
     prose_desired_output
-    #echo $chosenoutput
+    echo $chosenoutput
     
-    roman_script
-    #echo $chosenroman
-
+    if [[ $chosenoutput != "db" ]]; then
+        roman_script
+        echo $chosenroman
+    fi
+    
 fi
 
 collected=$chosenfile+$chosenscript+$chosengenre+$chosenvipande+$chosenoutput+$chosenlayout+$chosencolumns+$chosenroman
-#echo $collected
+echo $collected
 
 # Pass the collected inputs to the convert script.
 php convert/convert.php $collected

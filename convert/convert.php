@@ -29,6 +29,7 @@ generated transcription.
 */
 
 // Handle input coming from convert.sh.
+// -----------------------------------------------
 $collection=explode("+", $argv[1]);
 // print_r($collection);
 
@@ -43,6 +44,7 @@ $type=$pathparts["extension"];  // extension
 $script=lcfirst($script);
 
 // Check options and variables.
+// -----------------------------------
 print_r($options)."\n";
 echo $input."\n";
 echo $poem."\n";
@@ -63,12 +65,14 @@ echo $transtxt."\n";
 // }
 
 // Initialise required stuff.
+// -----------------------------
 include("./andika/config.php");
 include("./includes/fns.php");
 // include("./includes/optionhandling.php");
 require_once 'convert/QueryPath-2.1.2-minimal/QueryPath.php';
 
 // Check options and variables.
+// ------------------------------------
 // print_r($options)."\n";
 // echo $input."\n";
 // echo $poem."\n";
@@ -82,6 +86,7 @@ require_once 'convert/QueryPath-2.1.2-minimal/QueryPath.php';
 // echo $roman."\n";
 
 // Locate the input file, depending on extension.
+// --------------------------------------------------------
 if ($type=="odt")
 {
     $file="zip://convert/inputs/".$poem.".".$type."#content.xml";
@@ -92,15 +97,18 @@ elseif ($type=="txt")
 }
 
 // Set up a dir for each file's output.
+// -----------------------------------------
 exec("mkdir -p convert/outputs/".$poem);
 
 // For database import, set up a table for each file.
+// -----------------------------------------------------------
 if ($output=="db")
 {
     include("convert/create_poemlines.php");
 }
 
 // Read the lines in the file into an array, based on extension.
+// ------------------------------------------------------------------------
 if ($type=="odt")
 {
     foreach (qp($file)->find('text|p') as $line) 
@@ -113,6 +121,36 @@ elseif ($type=="txt")
     $poemlines=file($file);
 }
 
+// Open the output file.
+// --------------------------
+if ($output=="pdf")
+{
+    $fp = fopen("convert/outputs/$poem/{$poem}.tex", "w") or die("Can't create the file");
+    $header=file_get_contents("convert/tex/tex_header.tex");
+    fwrite($fp, $header);
+    fwrite($fp, "\n");
+    if ($genre=="Prose")
+    {
+        fwrite($fp, "\\begin{flushright}\n\n");
+    }
+    elseif ($genre=="Poetry")
+    {
+        fwrite($fp, "\begin{longtable}{{$columns}} \n\n");
+        fwrite($fp, "\makebox[8cm][r]{} & & \makebox[8cm][r]{} \\\\ \n\n"); 
+    }
+}
+elseif ($output=="txt")
+{
+    $fp=fopen("convert/outputs/$poem/{$poem}.txt", "w") or die("Can't create the file");
+}
+elseif ($output=="odt")
+{
+    $fp=fopen("convert/odt/content.xml", "w") or die("Can't create the file");
+    $header=file_get_contents("convert/odt/odt_header.txt");
+    fwrite($fp, $header);
+}
+
+// Branch depending on the genre.
 if ($genre=="Prose")
 {
     include("proseconvert.php");

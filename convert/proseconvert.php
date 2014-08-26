@@ -2,25 +2,25 @@
 
 //Called by convert.php.
 
-// Open the output file.
-if ($output=="pdf")
-{
-    $fp = fopen("convert/outputs/$poem/{$poem}.tex", "w") or die("Can't create the file");
-    $header=file_get_contents("convert/tex/tex_header.tex");
-    fwrite($fp, $header);
-    fwrite($fp, "\n");
-    fwrite($fp, "\\begin{flushright}\n\n");
-}
-elseif ($output=="txt")
-{
-    $fp=fopen("convert/outputs/$poem/{$poem}.txt", "w") or die("Can't create the file");
-}
-elseif ($output=="odt")
-{
-    $fp=fopen("convert/odt/content.xml", "w") or die("Can't create the file");
-    $header=file_get_contents("convert/odt/odt_header.txt");
-    fwrite($fp, $header);
-}
+// // Open the output file.
+// if ($output=="pdf")
+// {
+//     $fp = fopen("convert/outputs/$poem/{$poem}.tex", "w") or die("Can't create the file");
+//     $header=file_get_contents("convert/tex/tex_header.tex");
+//     fwrite($fp, $header);
+//     fwrite($fp, "\n");
+//     fwrite($fp, "\\begin{flushright}\n\n");
+// }
+// elseif ($output=="txt")
+// {
+//     $fp=fopen("convert/outputs/$poem/{$poem}.txt", "w") or die("Can't create the file");
+// }
+// elseif ($output=="odt")
+// {
+//     $fp=fopen("convert/odt/content.xml", "w") or die("Can't create the file");
+//     $header=file_get_contents("convert/odt/odt_header.txt");
+//     fwrite($fp, $header);
+// }
 
 $line_no=1;  // start line counter
 // Read each line of the array and handle it.
