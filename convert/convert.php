@@ -4,18 +4,18 @@
 *********************************************************************
 Copyright Kevin Donnelly 2012-2014.
 kevindonnelly.org.uk
-This file is part of Andika!, a set of tools for writing Swhili in Arbic script..
+This file is part of Andika!, a set of tools for writing Swahili in Arabic script..
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License or the GNU
 Affero General Public License as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.
+Foundation, either version 3 of the License, or (at your option) any 
+later version.
 
 This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+but WITHOUT ANY WARRANTY; without even the implied warranty
+of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 and the GNU Affero General Public License along with this program.
@@ -25,15 +25,24 @@ If not, see <http://www.gnu.org/licenses/>.
 
 /*
 This script converts Swahili poems in Arabic script into Roman script, and vice versa, adding an automatically
-generated transcription.
+generated transcription.  There are many options available, so see the manual for full details.
 */
 
-// Handle input coming from convert.sh.
-// -----------------------------------------------
-$collection=explode("+", $argv[1]);
-// print_r($collection);
+// -----------------------------
+// Initialise required stuff.
+// -----------------------------
+include("./andika/config.php");
+include("./includes/fns.php");
+require_once 'convert/QueryPath-2.1.2-minimal/QueryPath.php';
 
-list($input, $script, $genre, $vipande_no, $output, $layout, $columns, $transtxt)=$collection;
+
+// ---------------------------------------------------------------------------
+// Handle input coming from convert.sh or from command-line
+// ---------------------------------------------------------------------------
+$collection=explode("+", $argv[1]);
+//print_r($collection);
+
+list($input, $script, $genre, $output, $layout, $transtxt)=$collection;
 
 $pathparts = pathinfo($input);
 $inpath=$pathparts["dirname"];  // path
@@ -42,64 +51,30 @@ $poem=$pathparts["filename"];  // filename without the extension
 $type=$pathparts["extension"];  // extension
 
 $script=lcfirst($script);
+$genre=lcfirst($genre);
+$columns=($layout=="vip-space") ? "rrl" : "rl";
 
-// Check options and variables.
-// -----------------------------------
-print_r($options)."\n";
-echo $input."\n";
-echo $poem."\n";
-echo $type."\n";
-echo $script."\n";
-echo $genre."\n";
-echo $vipande_no."\n";
-echo $output."\n";
-echo $layout."\n";
-echo $columns."\n";
-echo $transtxt."\n";
 
-// Set up an array for optionhandling.php, to retain the alternative of CLI input.
-// Needs further work -- optionhandling.php needs revision.
-// if (!empty($collections))
-// { 
-//     $options=array("i"=>$input, "s"=>$script, "g"=>$genre, "v"=>$vipande_no, "o"=>$output, "l"=>$layout, "input"=>$input, "script"=>$script, "genre"=>$genre, "vipande"=>$vipande_no, "output"=>$output, "layout"=>$layout);
-// }
-
-// Initialise required stuff.
-// -----------------------------
-include("./andika/config.php");
-include("./includes/fns.php");
-// include("./includes/optionhandling.php");
-require_once 'convert/QueryPath-2.1.2-minimal/QueryPath.php';
-
-// Check options and variables.
-// ------------------------------------
-// print_r($options)."\n";
-// echo $input."\n";
-// echo $poem."\n";
-// echo $type."\n";
-// echo $script."\n";
-// echo $genre."\n";
-// echo $vipande_no."\n";
-// echo $output."\n";
-// echo $layout."\n";
-// echo $columns."\n";
-// echo $roman."\n";
-
+// --------------------------------------------------------
 // Locate the input file, depending on extension.
 // --------------------------------------------------------
 if ($type=="odt")
 {
-    $file="zip://convert/inputs/".$poem.".".$type."#content.xml";
+    $file="zip://".$inpath."/".$input."#content.xml";
 }
 elseif ($type=="txt")
 {
-    $file="convert/inputs/".$poem.".".$type;
+    $file=$inpath."/".$input;
 }
 
+
+// -----------------------------------------
 // Set up a dir for each file's output.
 // -----------------------------------------
 exec("mkdir -p convert/outputs/".$poem);
 
+
+// -----------------------------------------------------------
 // For database import, set up a table for each file.
 // -----------------------------------------------------------
 if ($output=="db")
@@ -107,6 +82,8 @@ if ($output=="db")
     include("convert/create_poemlines.php");
 }
 
+
+// ------------------------------------------------------------------------
 // Read the lines in the file into an array, based on extension.
 // ------------------------------------------------------------------------
 if ($type=="odt")
@@ -121,6 +98,7 @@ elseif ($type=="txt")
     $poemlines=file($file);
 }
 
+// --------------------------
 // Open the output file.
 // --------------------------
 if ($output=="pdf")
@@ -129,14 +107,21 @@ if ($output=="pdf")
     $header=file_get_contents("convert/tex/tex_header.tex");
     fwrite($fp, $header);
     fwrite($fp, "\n");
-    if ($genre=="Prose")
+    if ($genre=="prose")
     {
         fwrite($fp, "\\begin{flushright}\n\n");
     }
-    elseif ($genre=="Poetry")
+    elseif ($genre=="poetry")
     {
         fwrite($fp, "\begin{longtable}{{$columns}} \n\n");
-        fwrite($fp, "\makebox[8cm][r]{} & & \makebox[8cm][r]{} \\\\ \n\n"); 
+        if ($layout=="vip-space")
+        {
+            fwrite($fp, "\makebox[8cm][r]{} & & \makebox[8cm][r]{} \\\\ \n\n"); 
+        }
+        else
+        {
+            fwrite($fp, "\makebox[8cm][r]{} & \\\\ \n\n"); 
+        }
     }
 }
 elseif ($output=="txt")
@@ -150,14 +135,99 @@ elseif ($output=="odt")
     fwrite($fp, $header);
 }
 
-// Branch depending on the genre.
-if ($genre=="Prose")
+
+// --------------------------------
+// Import and choose layout
+// --------------------------------
+$stanza_no=0;  // start stanza counter
+$vipande=array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');  // letters to signify location of the kipande in the stanza
+$first_half=array('a', 'c', 'e', 'g', 'i', 'k', 'm', 'o', 'q', 's', 'u', 'w', 'y');  // vipande which signify the beginning of a line
+
+foreach ($poemlines as $key=>$poemline)
 {
-    include("proseconvert.php");
+    if (strlen(trim($poemline)) > 0) // there's text on the line ...  ("empty" lines in a txt file contain a \n character, so we have to trim that off)
+    {
+        $stanza_contents[]=trim($poemline);  // ... so put it into an array
+        //print_r($stanza_contents);
+    }
+    else  // when the line is blank, print out what we have (the previous stanza for poetry, the whole text for prose)
+    {
+        foreach ($stanza_contents as $key=>$stanza_line)
+        {
+            if ($genre=="prose")
+            {
+                unset($stanza_no);
+                $key=$key+1;
+                
+                include("layouts/kip-line_{$script}.php");
+            }
+            elseif ($genre=="poetry")
+            {
+                $stanza_no++;  // increment the stanza number
+                array_splice($vipande, count($stanza_contents));  // truncate $vipande to the length of $stanza_contents
+                $stanza_contents=array_combine($vipande, $stanza_contents);  // set $vipande values as $stanza_contents keys
+                
+                if ($layout=="vip-space")
+                {
+                    include("layouts/vip-space_{$script}.php");
+                }
+                elseif ($layout=="vip-star")
+                {
+                    include("layouts/vip-star_{$script}.php");
+                } 
+                elseif ($layout=="kip-line")
+                {
+                    include("layouts/kip-line_{$script}.php");
+                }
+                
+                // Insert a spacer between stanzas, depending on extension.
+                echo "\n";  // add a blank line in the feedback
+
+                if ($output=="pdf")
+                {
+                    fwrite($fp, "\\\\[8mm] \n\n");
+                }
+                elseif ($output=="txt")
+                {
+                    fwrite($fp, "\n");
+                }
+                elseif ($output=="odt")
+                {
+                    fwrite($fp, "<text:p text:style-name=\"Arabic\"/>\n\n");
+                }
+                    
+                unset($stanza_contents);
+            }
+        }
+    }
 }
-elseif ($genre=="Poetry")
+
+// --------------------------------------------------------
+// Close off the output, depending on extension.
+// --------------------------------------------------------
+if ($output=="pdf")
 {
-    include("poemconvert.php");
-} 
+    if ($genre=="prose")
+    {
+        fwrite($fp, "\\end{flushright}\n\n");
+    }
+    elseif ($genre=="poetry")
+    {
+        fwrite($fp, "\\end{longtable} \n\n");
+    }
+    fwrite($fp, "\\end{document}\n");
+    fclose($fp);
+
+    // Compile the tex file into a pdf.
+    exec("xelatex -interaction=nonstopmode -output-directory=convert/outputs/$poem convert/outputs/$poem/{$poem}.tex 2>&1");
+}
+elseif ($output=="txt")
+{
+    fclose($fp);
+}
+elseif ($output=="odt")
+{
+    include("odt/odt_close.php");
+}
 
 ?>

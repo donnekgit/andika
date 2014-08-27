@@ -53,20 +53,6 @@ which_genre()
     fi 
 }
 
-number_of_vipande()
-{
-    chosenvipande=`yad --width="300" --height="100" --center --separator="" --title="Vipande" --form --field="Number of vipande in the stanza:CB" "2!4!6!8!10!12" --button="Help:2" --button="gtk-cancel:1" --button="gtk-ok:0"`
-    
-    ret=$?
-
-    if [[ $ret -eq 2 ]]; then
-        show_help
-        number_of_vipande
-    elif [[ $ret -eq 1 ]]; then
-        exit
-    fi 
-}
-
 desired_output()
 {
     chosenoutput=`yad --width="300" --height="100" --center --separator="" --title="Output" --form --field="Type of output:CB" "PDF file!ODT file!Text file!Insert into database" --button="Help:2" --button="gtk-cancel:1" --button="gtk-ok:0"`
@@ -186,9 +172,6 @@ echo $chosengenre
 
 if [[ $chosengenre == "Poetry" ]]; then
 
-    number_of_vipande
-    echo $chosenvipande
-
     desired_output
     echo $chosenoutput
 
@@ -200,13 +183,6 @@ if [[ $chosengenre == "Poetry" ]]; then
         poem_odt_txt_layout 
     fi
     echo $chosenlayout
-
-    if [[ $chosenlayout == "vip-space" ]]; then
-        chosencolumns="rrl"
-    else
-        chosencolumns="rl"
-    fi
-    echo $chosencolumns
 
     if [[ $chosenoutput != "db" ]]; then
         roman_script
@@ -225,8 +201,8 @@ elif  [[ $chosengenre == "Prose" ]]; then
     
 fi
 
-collected=$chosenfile+$chosenscript+$chosengenre+$chosenvipande+$chosenoutput+$chosenlayout+$chosencolumns+$chosenroman
+collected=$chosenfile+$chosenscript+$chosengenre+$chosenoutput+$chosenlayout+$chosenroman
 echo $collected
 
 # Pass the collected inputs to the convert script.
-php convert/convert.php $collected
+php convert/myconvert.php $collected

@@ -42,7 +42,7 @@ if ($double==1)  // we have two kipande on the line, so print them
         }
     }
 
-    echo $this_kip.": ".$this_roman."\n";
+    echo $stanza_no.$this_kip.": ".$this_roman."\n";
     unset ($double);
 }
 
