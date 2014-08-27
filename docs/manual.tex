@@ -27,6 +27,9 @@
 
 \usepackage[labelfont=bf,textfont=it]{caption} % Set properties for captions.
 
+\usepackage{marginnote}  %provides more flexible margin notes
+\renewcommand*{\marginfont}{\color{red}\sffamily}  % colour the margin notes red
+
 \usepackage{natbib}
 
 \usepackage{cleveref}
@@ -149,17 +152,17 @@
 \frenchspacing
 
 % \include{frontmatter}
-% 
+
 % \input{chapter1intro}
-% 
+
 % \input{chapter2examples}
-% 
+
 % \input{chapter3started}
-% 
+
 % \input{chapter4fonts}
-% 
+
 % \input{chapter5keyboard}
-% 
+
 % \input{chapter6spelling}
 
 
@@ -218,9 +221,30 @@ While there should be no problems transliterating the main text of the webpage, 
 If you wish to convert a number of pages, the offline converter should be used -- see \Cref{s:webconvert} below.
 
 
-\section{Command-line converters}
+\section{Command-line converter}
 
-Cutting and pasting does not make sense for long documents, or where there are a number of documents that need to be converted.  \textbf{Andika!} therefore includes a command-line converter which will act directly on the document, provided it is laid out in a particular format.
+Cutting and pasting does not make sense for long documents.  \textbf{Andika!} therefore includes a converter which will act directly on the document, provided it is laid out in a particular way.  The document can be in either Arabic or Roman script, in \textit{odt} or \textit{txt} format, and can be converted to \textit{pdf}, \textit{odt} or \textit{txt} format, in three possible layouts, with or without Roman transliteration.
+
+The converter can be used in two modes: via a point-and-click interface, or via a command typed directly into a terminal.  The latter option also makes it possible to automate the use of the converter if you have a number of documents that need conversion.
+
+The converter also offers the option of importing the text of the document into a database table.  This is the option recommended for any serious editorial work, and is dealt with in detail in the next chapter.
+
+\subsection{Point-and-click interface}
+
+To start the converter in this mode, open a terminal and enter:
+
+\verb|convert/convert.sh|
+
+A series of windows will open, allowing you to make the following choices:
+\begin{enumerate}
+\item The document (file) to be converted.  For poetry, this should be in the format of two vipande to the line, with a blank line between the stanzas.
+\item The script in which the document is written (Arabic or Roman).
+\item The genre of the document (poetry or prose).
+\item The type of output required (pdf, odt, txt, or insertion into a database table).  If database insertion is chosen, no further selections need be made.
+\item If poetry, the layout required (2 vipande per line, separated by space; 2 vipande per line, separated by asterisk; or 1 kipande per line).  Only the latter two layouts are available for odt and txt poetry output.  For prose, there is only one layout (the line in Arabic script followed by the line in Roman script), and this will be applied automatically.
+\item Whether or not the Roman script (whether original text or generated transliteration) should be included in the output.  The default is to include it.
+\end{enumerate}
+
 
 This script converts Swahili poems in Arabic script into Roman script, and vice versa.  Call it as:
 php convert.php <required arguments> <optional arguments>

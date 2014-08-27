@@ -1,0 +1,74 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage{polyglossia}
+\usepackage{longtable}
+\usepackage{xcolor}  % can't use color with polyglossia
+
+\usepackage{marginnote}
+\renewcommand*{\marginfont}{\color{red}\sffamily}
+
+\interfootnotelinepenalty=10000 % prevents the footnote from breaking across pages
+% http://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
+
+% Thanks to Manas Tungare (http://manas.tungare.name/software/latex) for these settings.
+\setlength{\paperwidth}{210mm}
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{247mm}
+
+\setlength{\evensidemargin}{1in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{-0.5in}
+
+\setmainfont[Mapping=tex-text]{Liberation Serif}  % Set the default font for the document (footnotes will also use this font, but see also: http://tex.stackexchange.com/questions/4779/how-to-change-font-family-in-footnote)
+
+\setmainlanguage{english}
+\setotherlanguage{arabic}
+\setotherlanguage{farsi}  % used to allow typesetting the tile in a different font
+
+\newfontfamily\arabicfont[Script=Arabic, Scale=2]{Scheherazade} % Arabic transcription layer
+\newfontfamily\farsifont[Script=Arabic, Scale=2]{GranadaKD} % Arabic transcription layer for titles - uses a version of Granada which has been extended to include glyphs for Swahili.
+\newcommand{\AS}[1]{\fontspec[Script=Arabic, Scale=1.5]{Scheherazade} #1\normalfont} % Arabic when used in footnotes - using \newfontfamily resets following English text as well.  IMPORTANT: this can ONLY be used for single words - multiple words will be written LTR, and not RTL as required.
+\newfontfamily{\Tr}[Scale=0.9, Color=00BB33]{Linux Biolinum O} %  transliteration layer - Biolinum handles diacritics well
+\newfontfamily{\I}[Scale=0.9, Color=blue]{Linux Biolinum O} % interpolated letters in the transliteration layer
+\newfontfamily{\S}[Color=00BB33]{Linux Biolinum O} % standard spelling layer
+\newfontfamily{\E}[Scale=0.9, Color=666666]{Liberation Serif Italic} % English translation layer
+\newfontfamily{\FN}[Color=00BB33]{Liberation Serif Italic} % Alternate type in footnotes.
+
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
+
+\usepackage[obeyspaces]{url}  % Use urls in text and captions with sensible linewrap.
+\urlstyle{rm}  % Set urls in roman.
+
+\begin{document}
+
+\begin{longtable}{rl} 
+
+\makebox[8cm][r]{} & \\ 
+
+\textarabic{مَچٗوزِ يَ هُوبَ * يَمٖنِدٗنْدٗوكَ} & \textarabic{١} \\* 
+\Tr{machozi ya huba * yamenidondoka} & \Tr{1a/b} \\ 
+\textarabic{سِيلِ نِكَشِيبَ * نِكَفُرَهِيكَ} &  \\* 
+\Tr{sili nikashiba * nikafurahika} & \Tr{1c/d} \\ 
+\textarabic{وَانْڠُ مَهَبُوبَ * أَمٖشَنِتٗوكَ} &  \\* 
+\Tr{wangu mahabuba * ameshanitoka} & \Tr{1e/f} \\ 
+\\[8mm] 
+
+\textarabic{أَمٖشَنِتٗوكَ * مْپٖنْزِ جَمَانِ} & \textarabic{٢} \\* 
+\Tr{ameshanitoka * mpenzi jamani} & \Tr{2a/b} \\ 
+\textarabic{مْسِيتُ وَ نْيِيكَ * چٗوزِ كِفُؤَانِ} &  \\* 
+\Tr{msitu wa nyika * chozi kifuani} & \Tr{2c/d} \\ 
+\textarabic{نِنَهَنْڠَئِيكَ * وَالَ سِمُؤٗونِ} &  \\* 
+\Tr{ninahangaika * wala simuoni} & \Tr{2e/f} \\ 
+\\[8mm] 
+
+\textarabic{وَالَ سِمُؤٗونِ * سِجُئِ أَلِيكٗ} & \textarabic{٣} \\* 
+\Tr{wala simuoni * sijui aliko} & \Tr{3a/b} \\ 
+\textarabic{أَنِيپَ مَشَاكَ * نَ مَسِكِتِيكٗ} &  \\* 
+\Tr{anipa mashaka * na masikitiko} & \Tr{3c/d} \\ 
+\textarabic{سَؤُوتِ نَغَانِ * أَجُئٖ نِلِيكٗ} &  \\* 
+\Tr{sauti naghani * ajue niliko} & \Tr{3e/f} \\ 
+\\[8mm] 
+
+\end{longtable} 
+
+\end{document}

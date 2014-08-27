@@ -205,4 +205,4 @@ collected=$chosenfile+$chosenscript+$chosengenre+$chosenoutput+$chosenlayout+$ch
 echo $collected
 
 # Pass the collected inputs to the convert script.
-php convert/myconvert.php $collected
+php convert/convert.php $collected

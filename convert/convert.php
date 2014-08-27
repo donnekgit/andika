@@ -98,6 +98,7 @@ elseif ($type=="txt")
     $poemlines=file($file);
 }
 
+
 // --------------------------
 // Open the output file.
 // --------------------------
@@ -147,58 +148,62 @@ foreach ($poemlines as $key=>$poemline)
 {
     if (strlen(trim($poemline)) > 0) // there's text on the line ...  ("empty" lines in a txt file contain a \n character, so we have to trim that off)
     {
-        $stanza_contents[]=trim($poemline);  // ... so put it into an array
-        //print_r($stanza_contents);
+        $stanza_contents[]=$poemline;  // ... so put it into an array
     }
     else  // when the line is blank, print out what we have (the previous stanza for poetry, the whole text for prose)
     {
+	$stanza_no++;  // increment the stanza number
+	echo "\n";  // add a blank line in the feedback
+	
+        if ($genre=="poetry")
+        {
+	    // truncate $vipande to the length of $stanza_contents
+	    array_splice($vipande, count($stanza_contents));
+	    // set values of $vipande as keys of $stanza_contents - keys are then letters instead of numbers
+	    $stanza_contents=array_combine($vipande, $stanza_contents);
+	}
+
         foreach ($stanza_contents as $key=>$stanza_line)
         {
-            if ($genre=="prose")
+	    if ($genre=="prose")
             {
                 unset($stanza_no);
                 $key=$key+1;
                 
-                include("layouts/kip-line_{$script}.php");
+		include("layouts/kip-line_{$script}.php");
             }
             elseif ($genre=="poetry")
             {
-                $stanza_no++;  // increment the stanza number
-                array_splice($vipande, count($stanza_contents));  // truncate $vipande to the length of $stanza_contents
-                $stanza_contents=array_combine($vipande, $stanza_contents);  // set $vipande values as $stanza_contents keys
-                
-                if ($layout=="vip-space")
-                {
-                    include("layouts/vip-space_{$script}.php");
-                }
-                elseif ($layout=="vip-star")
-                {
-                    include("layouts/vip-star_{$script}.php");
-                } 
-                elseif ($layout=="kip-line")
-                {
-                    include("layouts/kip-line_{$script}.php");
-                }
-                
-                // Insert a spacer between stanzas, depending on extension.
-                echo "\n";  // add a blank line in the feedback
-
-                if ($output=="pdf")
-                {
-                    fwrite($fp, "\\\\[8mm] \n\n");
-                }
-                elseif ($output=="txt")
-                {
-                    fwrite($fp, "\n");
-                }
-                elseif ($output=="odt")
-                {
-                    fwrite($fp, "<text:p text:style-name=\"Arabic\"/>\n\n");
-                }
-                    
-                unset($stanza_contents);
-            }
-        }
+		if ($layout=="vip-space")
+		{
+		    include("layouts/vip-space_{$script}.php");
+		}
+		elseif ($layout=="vip-star")
+		{
+		    include("layouts/vip-star_{$script}.php");
+		} 
+		elseif ($layout=="kip-line")
+		{
+		    include("layouts/kip-line_{$script}.php");
+		}
+	    }
+	}
+	    
+	// Insert a spacer between stanzas, depending on extension.
+	if ($output=="pdf")
+	{
+	    fwrite($fp, "\\\\[8mm] \n\n");
+	}
+	elseif ($output=="txt")
+	{
+	    fwrite($fp, "\n");
+	}
+	elseif ($output=="odt")
+	{
+	    fwrite($fp, "<text:p text:style-name=\"Arabic\"/>\n\n");
+	}
+	    
+	unset($stanza_contents);
     }
 }
 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2014.5.16)  27 AUG 2014 13:03
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2014.7.26)  27 AUG 2014 21:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1142,7 +1142,7 @@ Package marginnote Info: right page because not two side mode on input line 70.
 Package marginnote Info: xpos seems to be 72.26999pt,
 (marginnote)             \marginnoterightadjust ignored on input line 70.
 ! Misplaced alignment tab character &.
-l.72 ...ı̄ūn . ā'nı̄ kasumba . ṯuwula} &
+l.72 ... wuna wuli wunḡa wumi unḡuwa wuṯi} &
                                                    \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1157,10 +1157,8 @@ Package marginnote Info: right page because not two side mode on input line 73.
 
 Package marginnote Info: xpos seems to be 72.26999pt,
 (marginnote)             \marginnoterightadjust ignored on input line 73.
-Missing character: There is no ّ in font Linux Biolinum O/OT:script=latn;langua
-ge=DFLT;color=00BB33FF ;!
 ! Misplaced alignment tab character &.
-l.75 ... raṭli . kasaliّṭi pamūja viṯu} &
+l.75 ... viṯunḡuwu vimi kwiva . nasiri yaki} &
                                                    \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1176,7 +1174,7 @@ Package marginnote Info: right page because not two side mode on input line 76.
 Package marginnote Info: xpos seems to be 72.26999pt,
 (marginnote)             \marginnoterightadjust ignored on input line 76.
 ! Misplaced alignment tab character &.
-l.78 ...̣aṯa vikawa kiṯu kimūja . ṯina} &
+l.78 ...ni yaki pamūja nakasumba . ukisha hiu} &
                                                    \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1192,7 +1190,7 @@ Package marginnote Info: right page because not two side mode on input line 79.
 Package marginnote Info: xpos seems to be 72.26999pt,
 (marginnote)             \marginnoterightadjust ignored on input line 79.
 ! Misplaced alignment tab character &.
-l.81 ...zanḏani vikawa kama vibuyu kama hivi.} &
+l.81 ...i ṯakaṯaka . kama kaṯika ṯūpa} &
                                                    \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1207,8 +1205,12 @@ Package marginnote Info: right page because not two side mode on input line 82.
 
 Package marginnote Info: xpos seems to be 72.26999pt,
 (marginnote)             \marginnoterightadjust ignored on input line 82.
+Missing character: There is no ة in font Linux Biolinum O/OT:script=latn;langua
+ge=DFLT;color=00BB33FF ;!
+Missing character: There is no ة in font Linux Biolinum O/OT:script=latn;langua
+ge=DFLT;color=00BB33FF ;!
 ! Misplaced alignment tab character &.
-l.84 ...akasumba pamūja . nḏani yaki . basi} &
+l.84 ...̣bة ḥbة . aṣubuḥi . namshāna} &
                                                    \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1224,7 +1226,7 @@ Package marginnote Info: right page because not two side mode on input line 85.
 Package marginnote Info: xpos seems to be 72.26999pt,
 (marginnote)             \marginnoterightadjust ignored on input line 85.
 ! Misplaced alignment tab character &.
-l.87 ...waki kwa nyama na viṯunḡuwu . a'nii} &
+l.87 ...ma ṯānu aw saba'a . apaṯa naf'ⁿ} &
                                                    \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1240,7 +1242,7 @@ Package marginnote Info: right page because not two side mode on input line 88.
 Package marginnote Info: xpos seems to be 72.26999pt,
 (marginnote)             \marginnoterightadjust ignored on input line 88.
 ! Misplaced alignment tab character &.
-l.90 ... kiṯunḡi kama shāmkaṯi . ṯina} &
+l.90 ...a . pamūja nakuṯazama ḥāli yā} &
                                                    \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1256,7 +1258,7 @@ Package marginnote Info: right page because not two side mode on input line 91.
 Package marginnote Info: xpos seems to be 72.26999pt,
 (marginnote)             \marginnoterightadjust ignored on input line 91.
 ! Misplaced alignment tab character &.
-l.93 ...̱iya kaṯika mūṯu . kama kaṯika} &
+l.93 ...u athaziḏisha kiḏugu fāllh ā'lm} &
                                                    \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1265,149 +1267,29 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-Package marginnote Info: Margin note 1.17 is on absolute page 1
-(marginnote)              on input line 94.
-Package marginnote Info: right page because not two side mode on input line 94.
 
-Package marginnote Info: xpos seems to be 72.26999pt,
-(marginnote)             \marginnoterightadjust ignored on input line 94.
-! Misplaced alignment tab character &.
-l.96 ... wuna wuli wunḡa wumi unḡuwa wuṯi} &
-                                                   \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
+! LaTeX Error: There's no line here to end.
 
-Package marginnote Info: Margin note 1.18 is on absolute page 2
-(marginnote)              on input line 97.
-Package marginnote Info: right page because not two side mode on input line 97.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.94 \\
+       [8mm]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
-Package marginnote Info: xpos seems to be 72.26999pt,
-(marginnote)             \marginnoterightadjust ignored on input line 97.
 [1
 
-]
-! Misplaced alignment tab character &.
-l.99 ... viṯunḡuwu vimi kwiva . nasiri yaki} &
-                                                   \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-Package marginnote Info: Margin note 2.1 is on absolute page 2
-(marginnote)              on input line 100.
-Package marginnote Info: right page because not two side mode on input line 100
-.
-Package marginnote Info: xpos seems to be 72.26999pt,
-(marginnote)             \marginnoterightadjust ignored on input line 100.
-! Misplaced alignment tab character &.
-l.102 ...i yaki pamūja nakasumba . ukisha hiu} &
-                                                   \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-Package marginnote Info: Margin note 2.2 is on absolute page 2
-(marginnote)              on input line 103.
-Package marginnote Info: right page because not two side mode on input line 103
-.
-Package marginnote Info: xpos seems to be 72.26999pt,
-(marginnote)             \marginnoterightadjust ignored on input line 103.
-! Misplaced alignment tab character &.
-l.105 ... ṯakaṯaka . kama kaṯika ṯūpa} &
-                                                   \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-Package marginnote Info: Margin note 2.3 is on absolute page 2
-(marginnote)              on input line 106.
-Package marginnote Info: right page because not two side mode on input line 106
-.
-Package marginnote Info: xpos seems to be 72.26999pt,
-(marginnote)             \marginnoterightadjust ignored on input line 106.
-Missing character: There is no ة in font Linux Biolinum O/OT:script=latn;langua
-ge=DFLT;color=00BB33FF ;!
-Missing character: There is no ة in font Linux Biolinum O/OT:script=latn;langua
-ge=DFLT;color=00BB33FF ;!
-! Misplaced alignment tab character &.
-l.108 ...�bة ḥbة . aṣubuḥi . namshāna} &
-                                                   \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-Package marginnote Info: Margin note 2.4 is on absolute page 2
-(marginnote)              on input line 109.
-Package marginnote Info: right page because not two side mode on input line 109
-.
-Package marginnote Info: xpos seems to be 72.26999pt,
-(marginnote)             \marginnoterightadjust ignored on input line 109.
-! Misplaced alignment tab character &.
-l.111 ...a ṯānu aw saba'a . apaṯa naf'ⁿ} &
-                                                   \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-Package marginnote Info: Margin note 2.5 is on absolute page 2
-(marginnote)              on input line 112.
-Package marginnote Info: right page because not two side mode on input line 112
-.
-Package marginnote Info: xpos seems to be 72.26999pt,
-(marginnote)             \marginnoterightadjust ignored on input line 112.
-! Misplaced alignment tab character &.
-l.114 ... . pamūja nakuṯazama ḥāli yā} &
-                                                   \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-Package marginnote Info: Margin note 2.6 is on absolute page 2
-(marginnote)              on input line 115.
-Package marginnote Info: right page because not two side mode on input line 115
-.
-Package marginnote Info: xpos seems to be 72.26999pt,
-(marginnote)             \marginnoterightadjust ignored on input line 115.
-! Misplaced alignment tab character &.
-l.117 ... athaziḏisha kiḏugu fāllh ā'lm} &
-                                                   \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-[2] (convert/outputs/opium/opium.aux) ) 
+] (convert/outputs/opium/opium.aux) ) 
 Here is how much of TeX's memory you used:
- 16058 strings out of 495649
- 325601 string characters out of 6187651
- 394547 words of memory out of 5000000
- 19004 multiletter control sequences out of 15000+600000
+ 16050 strings out of 495649
+ 325511 string characters out of 6187651
+ 393547 words of memory out of 5000000
+ 18996 multiletter control sequences out of 15000+600000
  4130 words of font info for 39 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 53i,8n,43p,10469b,198s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,8n,43p,10469b,190s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on convert/outputs/opium/opium.pdf (2 pages).
+Output written on convert/outputs/opium/opium.pdf (1 page).

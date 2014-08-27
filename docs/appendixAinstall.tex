@@ -12,7 +12,7 @@
 
 These instructions are based on Ubuntu 14.04, both as the main operating system and as a virtual guest on Apple OS X. In either case, your desktop, real or virtual, needs to be working properly and to have network access so that you can download the additional software required.
 
-Users who simply wish to be able to type Swahili in a word-processor need not go through the full installation procedure in this appendix.  They only need to do A/2.1, move into the unzipped download, and then follow A/3-5.
+Users who simply wish to be able to type Swahili in a word-processor need not go through the full installation procedure in this appendix.  They only need to follow \Cref{s:snapshot}, move into the unzipped download, and then follow \Crefrange{s:fonts}{s:libreoffice}.
 
 The full installation procedure here needs to be carried out by users who wish to transcribe, edit and annotate Swahili documents in Arabic script, providing Roman equivalents as well.  The reason there is so much to install is that \textbf{Andika!} does not reinvent the wheel -- rather, it tries to combine already-existing best-of-breed software to do new things.
 
@@ -84,26 +84,27 @@ Git will automatically update those parts of \textbf{Andika!} which have been ch
 
 \subsection{Move the \textit{andika} directory}
 
-We are going to move the working directory for \textbf{Andika!} to a location which will allow you to access a local copy of the website pages (\textit{kevindonnelly.org.uk/swahili}) should you wish (see Section \ref{s:localaccess} below).
+We are going to move the working directory for \textbf{Andika!} to a location which will allow you to access a local copy of the website pages (\textit{kevindonnelly.org.uk/swahili}) should you wish (see Section \ref{s:localaccess} below).  The \textit{/var/www} directory is the default location for storing webpages on your machine.
 
 \verb|sudo mv andika /var/www/|\\
 (note the final slash)
 
-Change permissions so that you can access the new location (by default, ordinary users are not allowed to access the \textit{/var/www} tree):
+Give yourself ownership of the \textit{/var/www} directory (by default, ordinary users are not allowed to access this):
 
-\verb|sudo chown -R USER.USER /var/www/andika|\\
+\verb|sudo chown -R USER.USER /var/www/|
+
 Remember, USER here stands for your username, which you set up when you installed Ubuntu.  For instance, here I would type:\\
-\verb|sudo chown -R kevin.kevin /var/www/andika|
+\verb|sudo chown -R kevin.kevin /var/www/|
 
-Set up a link from your \textit{/home/USER} directory to the \textit{/var/www/andika} directory:
+Set up a link from your \textit{/home/USER} directory to the \textit{/var/www/} directory:
 
-\verb|ln -s /var/www/andika andika|
+\verb|ln -s /var/www/ web|
 
-If you go to your home directory in a file manager (in KDE \textbf{K \textrightarrow\ System \textrightarrow\ Dolphin}; in Unity, the second icon on the left-hand side, the one with a file on it), you will see an entry for \textit{andika}.  If you click this, it will actually take you to \textit{/var/www/andika}.  This makes access to the directory quicker and easier.
+If you go to your home directory in a file manager (in KDE \textbf{K \textrightarrow\ System \textrightarrow\ Dolphin}; in Unity, the second icon on the left-hand side, the one with a file on it), you will see an entry for \textit{web}.  If you click this, it will actually take you to \textit{/var/www/}.  This makes access to the webpage directory quicker and easier.
 
-Move into the andika directory for the rest of the installation:
+Move into the \textit{andika} directory for the rest of the installation:
 
-\verb|cd andika|
+\verb|cd web/andika|
 
 You can check the layout of the directories and files by listing them:
 
@@ -395,7 +396,7 @@ to exit \textit{psql}.
 
 \section{Database interfaces}
 
-To make it easier to read and edit the contents of the PostgreSQL database, it is best to install an interface.  Two of these will be installed, each differing in their capabilities.  The first is a web-based interface called phpPgAdmin, which in turn requires a webserver (Apache) to be installed.  The second interface is called SQL Workbench, and it requires a computing language called Java to be installed.
+To make it easier to read and edit the contents of the PostgreSQL database, it is best to install an interface.  Two of these will be installed, each differing in their capabilities.  The first is a web-based interface called phpPgAdmin, which first requires a webserver (Apache) to be installed.  The second interface is called SQL Workbench, and it requires a computing language called Java to be installed.
 
 \subsection{phpPgAdmin}
 
@@ -455,7 +456,13 @@ Click Execute, and in the first window you should see a listing of the \textit{v
 
 \subsubsection{Install Java}
 
-Add a new software repository:\\
+Andrei Alin\footnote{\url{webupd8.org}} maintains links to up-to-date versions of Java in his software repository.
+
+Check that the helper script \textit{add-apt-repository} is installed:
+
+\verb|sudo apt-get install software-properties-common|
+
+Add the new software repository:\\
 \verb|sudo add-apt-repository ppa:webupd8team/java|
 
 Update the software lists to include software from the new repository:\\
@@ -536,6 +543,20 @@ LaTeX is a typesetting system that is capable of creating very complex layouts. 
 $\hookrightarrow$ \verb|texlive-lang-arabic texlive-latex-extra kile|
 
 These packages will take a good few minutes to download and install.
+
+
+\section{YAD}
+
+YAD (Yet Another Dialogue),\footnote{\url{sourceforge.net/projects/yad-dialog/}} maintained by Victor Ananjevsky, is used by \textbf{Andika!} to provide a point-and-click interface to the conversion script.  To install it, we need to add another of Andrei Alin's\footnote{\url{webupd8.org}} repositories.
+
+Add the new software repository:\\
+\verb|sudo add-apt-repository ppa:webupd8team/y-ppa-manager|
+
+Update the software lists to include software from the new repository:\\
+\verb|sudo apt-get update|
+
+Install YAD:\\
+\verb|sudo apt-get install yad|\footnote{You may also wish to install Andrei's own Y-PPA-Manager -- sudo apt-get install y-ppa-manager.  This is not used by \textbf{Andika!}, but is a very useful system tool to keep track of the software repositories on your machine.}
 
 
 \section{Access the \textit{Andika!} website locally}
