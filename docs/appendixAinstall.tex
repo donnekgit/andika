@@ -39,6 +39,19 @@ If at any point the system suggests adding other packages (called \textit{depend
 Unless otherwise indicated, it is assumed that all commands are run from the suggested base directory of the \textbf{Andika!} software, \textit{/var/www/andika} -- see Section \ref{s:download}.
 
 
+\section {Update the package list}
+
+Before doing anything else, update the lists of software packages on the machine:
+
+\verb|sudo apt-get update|
+
+Then upgrade any software packages to the most recent available versions:
+
+\verb|sudo apt-get upgrade --show-upgraded|
+
+Note that this may take 15-20 minutes, depending on your system.
+
+
 \section{Download \textit{Andika!}}
 \label{s:download}
 
@@ -133,7 +146,7 @@ Add the SIL repository to the list of repositories used by your Ubuntu install:
 If you are not using 14.04 (codenamed Trusty Tahir), change \textit{trusty} accordingly.  To find the codename of your version, use:\\
 \verb|lsb_release -sc|
 
-Update the package list:
+Update the software package lists to include software from the new repository:\\
 
 \verb|sudo apt-get update|
 
@@ -465,7 +478,7 @@ Check that the helper script \textit{add-apt-repository} is installed:
 Add the new software repository:\\
 \verb|sudo add-apt-repository ppa:webupd8team/java|
 
-Update the software lists to include software from the new repository:\\
+Update the software package lists to include software from the new repository:\\
 \verb|sudo apt-get update|
 
 Install the Java installer:\\
@@ -552,7 +565,7 @@ YAD (Yet Another Dialogue),\footnote{\url{sourceforge.net/projects/yad-dialog/}}
 Add the new software repository:\\
 \verb|sudo add-apt-repository ppa:webupd8team/y-ppa-manager|
 
-Update the software lists to include software from the new repository:\\
+Update the software package lists to include software from the new repository:\\
 \verb|sudo apt-get update|
 
 Install YAD:\\
