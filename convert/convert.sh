@@ -162,18 +162,18 @@ roman_script()
 # -----------------
 
 choose_a_file  
-echo $chosenfile
+#echo $chosenfile
 
 which_script
-echo $chosenscript
+#echo $chosenscript
 
 which_genre
-echo $chosengenre
+#echo $chosengenre
 
 if [[ $chosengenre == "Poetry" ]]; then
 
     desired_output
-    echo $chosenoutput
+    #echo $chosenoutput
 
     if [[ $chosenoutput == "pdf" ]]; then
         poem_pdf_layout
@@ -182,27 +182,27 @@ if [[ $chosengenre == "Poetry" ]]; then
     elif [[ $chosenoutput == "txt" ]]; then
         poem_odt_txt_layout 
     fi
-    echo $chosenlayout
+    #echo $chosenlayout
 
     if [[ $chosenoutput != "db" ]]; then
         roman_script
-        echo $chosenroman
+        #echo $chosenroman
     fi
     
 elif  [[ $chosengenre == "Prose" ]]; then
 
     prose_desired_output
-    echo $chosenoutput
+    #echo $chosenoutput
     
     if [[ $chosenoutput != "db" ]]; then
         roman_script
-        echo $chosenroman
+        #echo $chosenroman
     fi
     
 fi
 
 collected=$chosenfile+$chosenscript+$chosengenre+$chosenoutput+$chosenlayout+$chosenroman
-echo $collected
+echo -e "\n"$collected
 
 # Pass the collected inputs to the convert script.
 php convert/convert.php $collected

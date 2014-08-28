@@ -1,0 +1,144 @@
+\chapter{Convert between scripts}
+\label{ch:7}
+
+\section{Introduction}
+
+\textbf{Andika!} includes a number of options to convert between Arabic and Roman scripts.  Because \textbf{Andika!} is a work in progress, it is a good idea to check the output before re-using it in other contexts, since it may require some manual editing -- for instance, Arabic script does not have capital letters, so capitals (other than most sentence-intial capitals) need to be added by hand to Roman output.
+
+\section{Cut-and-paste converters}
+
+The simplest option is to use the cut-and-paste converters on the website.\footnote{\url{kevindonnelly.org.uk/swahili/rom_ar.php} and \url{kevindonnelly.org.uk/swahili/ar_rom.php}.}  If you have followed the instructions in \Cref{s:localaccess} these will also be available on your own machine.\footnote{\url{andika/rom_ar.php} and \url{andika/ar_rom.php}.}
+
+To use these converters, type or paste text into the input box.  Input is truncated to 900 characters, but if your text is longer than this you can convert it in chunks.  the truncation limit can be changed by editing or commenting out the line: \\
+\verb|$mystring=strip_tags(substr($mystring, 0, 900));| \\
+in \textit{convert\_rom\_ar.php} and: \\
+\verb|$input=strip_tags(substr($input, 0, 900));| \\
+in \textit{convert\_ar\_rom.php}.
+
+If you have large amounts of text to convert, the command-line converter should be used -- see \Cref{s:cliconvert} below.
+
+\subsection{Arabic to Roman}
+
+The Arabic to Roman converter transliterates Arabic script into standard Roman orthography.  The correspondence should be perfect if the input text follows the spelling conventions for Arabic script (\Cref{ch:spelling}).\footnote{If you take the Roman output and paste it into the Roman to Arabic converter, you should get your Arabic input back as the output from that.}  Where this is not the case (eg with text copied from manuscripts), the converter transliterates the Arabic text as best it can.
+
+If you have installed the webpages locally, you can replace the standard Roman transliteration with a close transliteration containing diacritics by replacing \verb|$standard| with \verb|$close| at the end of \textit{convert\_ar\_rom.php}.
+
+Note that when converting from Arabic to Roman script, Firefox's spellchecker will underline every word in the Arabic script entry area. To avoid this, turn off as-you-type spellchecking: click on the \textbf{Open Menu} button, select \textbf{Preferences \textrightarrow\ Advanced}, and on the \textit{General} tab, untick \textit{Check my spelling as I type} in the \textit{Browsing} section.
+
+\subsection{Roman to Arabic}
+
+The Roman to Arabic converter transliterates standard Roman orthography into Arabic script. 
+
+The default is to show \textit{sakani} on a consonant where it does not have an accompanying vowel (eg \textbf{kwa, kuboreshwa, sayansi}). This can be changed by ticking \textit{Do not show sakani (sukun) on consonants} - then no \textit{sakani} will be shown.
+
+The default is to show numerals in Western-Arabic form (1234567890). This can be changed by ticking \textit{Convert numerals to Arabic-Indic forms} - then numerals will be shown as \AS{١٢٣٤٥٦٧٨٩٠}.
+
+Some writers use sakani on \AS{و} and \AS{ي} when used as long vowels in the penultimate syllable. The default is not to show this, but this can be changed by ticking \textit{Show sakani (sukun) on \AS{و} and \AS{ي} as long vowels}
+
+\textbf{Andika!} is not a translator - non-Swahili words are simply transliterated letter-for-letter from Roman script into Arabic script. English \textbf{c} is transliterated as \AS{ڮ}, and \textbf{x} as \AS{كْس}. Examples: \textit{Shrewsbury} \AS{شْرٖوسبُري}, \textit{Creative Commons License} \AS{ڮرٖئَتِيڤٖ ڮٗممٗنْس لِڮٖنْسٖ}. A \textit{sakani} is used where it would occur in Swahili (depending on the settings above), but is not applied elsewhere.
+
+\textbf{Andika!} is not a spelling or punctuation corrector - any errors in the text entered will be carried over into the transliteration.
+The conversion may contain lines with out-of-sequence words if the source contains a mixture of Swahili and another language with letters that do not occur in the standard Swahili Roman orthography (the Swahili will be converted to RTL Arabic script, but the non-Swahili letters will be passed through as LTR Roman script). The transliteration equivalents chosen here mean that line continuity is not a problem where the ``other language'' is English. However, be aware that problems may occur if the ``other language'' is French, German, or something else.
+
+Note that the converter will always use the "commonest" Arabic letter. For instance, it will convert \textit{dh} to \AS{ذ} instead of to \AS{ض} or \AS{ظ}, which might be the original Arabic letter in the word. There is no way around this, since the standard Swahili Roman orthography does not preserve these distinctions, and the only option in such cases is to edit the output afterwards.
+
+\subsection{Convert a webpage}
+
+The website also includes a tool to transliterate entire webpages from Roman script to Arabic script.  Although it should work on most webpages, most testing has been done on Wikipedia pages.
+
+To use the tool, simply enter the webpage address in the box -- the initial \textit{http://} can be omitted if desired.  Only a subset of characters are allowed in the web address: alphanumeric characters (a-z, 0-9), full-stops (.), hyphens (-), underscores (\_), single quotes ('), colons (:) and slashes (/).  Non-existent web-addresses will produce a blank conversion page.
+
+While there should be no problems transliterating the main text of the webpage, some peripheral "page furniture" (eg menus, lists of links, etc) may not be transliterated properly.  All links on the converted page will go to unconverted (Roman script) pages. 
+
+If you wish to convert a number of pages, the offline converter should be used -- see \Cref{s:webconvert} below.
+
+
+\section{Command-line converter}
+
+Cutting and pasting does not make sense for long documents.  \textbf{Andika!} therefore includes a converter which will act directly on the document, provided it is laid out in a particular way -- see \Cref{s:layout}.  The document can be in either Arabic or Roman script, in \textit{odt} (libreOffice Writer) or \textit{txt} (plain text) format, and can be converted to \textit{pdf}, \textit{odt} or \textit{txt} format, in three possible layouts, with or without Roman transliteration.
+
+The converter can be used in two modes: via a point-and-click interface, or via a command typed directly into a terminal.  The latter option also makes it possible to automate the use of the converter if you have a number of documents that need conversion.
+
+The converter also offers the option of importing the text of the document into a database table.  This is the option recommended for any serious editorial work, and is dealt with in detail in the next chapter.
+
+It is recommended that files to be converted are stored in \textit{\url{andika/convert/inputs}} -- they can each be put in their own folder beneath that if desired.  The converted documents, along with related files, will be stored in \textit{\url{andika/convert/outputs}} in a folder named after the document.  Thus, converting a document called \textit{mkunumbi.odt} will result in a file \textit{mkunumbi.pdf} in the folder \textit{\url{andika/convert/output/mkunumbi}}.  Note that each invocation of the converter will create output that overwrites the previous output, so if you want to keep multiple layouts of a particular converted document, you need to save the output separately.
+
+It is a good idea to keep the filename format to lower-case, all-one-word.  In contrast to Microsoft Windows, Ubuntu will consider files with capitalised names as different files from the lower-case equivalent, and filenames containing spaces may not be handled as anticipated.  If you need to include multiple words in the filename, linke them with a dash or underscore.
+
+\subsection{Point-and-click interface}
+
+To start the converter in this mode, open a terminal and enter:
+
+\verb|convert/convert.sh|
+
+A series of windows will open, allowing you to make the following choices:
+\begin{enumerate}
+\item The document (file) to be converted.  For poety, the document needs to be in a specific layout -- see \Cref{s:layout} below.
+\item The script in which the document is written (Arabic or Roman).
+\item The genre of the document (poetry or prose).
+\item The type of output required (\textit{pdf}, \textit{odt}, \textit{txt}, or insertion into a database table).  If database insertion is chosen, no further selections need be made.
+\item For poetry, the layout required (two \textit{vipande} per line, separated by space; two \textit{vipande} per line, separated by asterisk; or one \textit{kipande} per line).  Only the latter two layouts are available for \textit{odt} and \textit{txt} poetry output.  For prose, there is only one layout (the line in Arabic script followed by the line in Roman script), and this will be applied automatically.
+\item Whether or not the Roman script (whether original text or generated transliteration) should be included in the output.  The default is to include it.  
+\end{enumerate}
+
+Note that in the case of two \textit{vipande} separated by a space, the transcription below them applies to each \textit{kipande} separately; in the case of two \textit{vipande} separated by an asterisk, the transcription below them applies to the whole line of two \textit{vipande}.  The stanza numbering reflects this.  The following quatrain from the \textit{Utenzi wa Jaafari} shows the difference:
+
+\begin{longtable}{rrl}
+\textarabic{كهٖنْدَ مَتٖمْبٖزِ يَنْڠُ} & \textarabic{پُلِكَنِ نْدُزَنْڠُ} & \textarabic{١} \\* 
+\Tr{kʿenḏa maṯembezi yangu} & \Tr{pulikani nḏuzangu} & \Tr{1b/a} \\ 
+\textarabic{قِصَ چَلٗنِجِرِيَ} & \textarabic{نِوَپٖ خَبَرِ زَنْڠُ} &  \\* 
+\Tr{qiṣa chalonijiriya} & \Tr{niwape khabari zangu} & \Tr{1d/c} \\ 
+\end{longtable}
+
+\begin{longtable}{rrl}
+\textarabic{پُلِكَنِ نْدُزَنْڠُ * كهٖنْدَ مَتٖمْبٖزِ يَنْڠُ} & \textarabic{١} \\* 
+\Tr{pulikani nḏuzangu * kʿenḏa maṯembezi yangu} & \Tr{1a/b} \\ 
+\textarabic{نِوَپٖ خَبَرِ زَنْڠُ * قِصَ چَلٗنِجِرِيَ} &  \\* 
+\Tr{niwape khabari zangu * qiṣa chalonijiriya} & \Tr{1c/d} \\ 
+\end{longtable}
+
+
+\subsection{Command-line input}
+
+In this mode, the  converter is launched by running:
+
+\verb|php convert/convert.php|
+
+followed by the options in the order above (filename, script, genre, output, layout, transliteration) separated by +.  For instance, the command:
+
+\verb|php convert/convert.php convert/inputs/machozi.txt+roman+poetry+pdf+vip-star+TRUE|
+
+will convert the document \textit{machozi.txt}, which is a poem in Roman script, into a \textit{pdf} with the layout of two \textit{vipande} to the line, separated by an asterisk, and including the transliteration (in this case, the original standard Roman orthography).
+
+All options are entered in lower-case, though ``Prose/Poetry'' and ``Arabic/Roman'' can use capitals if desired.
+
+Part of the output from the point-and-click interface will be the above list of +-separated options, so that they can be cut-and-pasted for future use.  This is useful if you are repeatedly converting one document, since you can re-run the command once (using \textit{up-arrow} and then \textit{Return}) rather than have to click through the screens of the interface. 
+
+\subsection{Layout of the input document}
+\label{s:layout}
+
+The documents to be converted can be in either \textit{txt} or \textit{odt} format.
+
+Poems in traditional metres should be laid out one \textit{kipande} to the line, with a blank line between stanzas and one (\textit{odt}) or two (\textit{txt}) blank lines at the end.
+
+Prose will be converted line by line of the original document, so line widths in the output document may vary.\footnote{Prose conversion is not as well-developed as poem conversion at the moment, and may require further work.}  Again, the document should end with one (\textit{odt}) or two (\textit{txt}) blank lines, but there should be no blank line between paragraphs.
+
+Poems in free metres, or prose poems, should be treated as prose.
+
+The output document will include stanza and vipande numbers in the case of poetry, and line numbers in the case of prose. to allow easy reference.
+
+\subsection{Converting pdfs}
+
+Documents in pdf format can also be converted, but need first to be converted to text.  To do this, ensure that the package \textit{poppler-utils} is installed:
+
+\verb|sudo apt-get install poppler-utils|
+
+Then move into the directory where the pdf is located, and run:
+
+\verb|pdftotext file_to_be_converted.pdf|
+
+replacing \textit{file\_to\_be\_converted} with whatever the filename is.  This will produce an equivalently-named \textit{txt} file.
+
+This step is not included in the converter because typically the resulting text file will require some editing before it is fit for use -- in particular, headers and footers on the pdf page will usually interrupt the run of the text, and need to be removed.
+
+Once the text file has been tidied, it can then be converted as explained above.
