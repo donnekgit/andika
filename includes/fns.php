@@ -101,7 +101,8 @@ function ar2rom($text)
 	$text=preg_replace("/\x{0646}/u", "n", $text);  // noon
 	
 	$text=preg_replace("/\x{0647}/u", "h", $text);  // heh
-	
+    $text=preg_replace("/\x{0629}/u", "U+0629", $text);  // teh marbuta
+
 	$text=preg_replace("/\x{06AE}/u", "c", $text);  // kaf with three dots - transliterates English c
 
 	$text=preg_replace("/\x{0660}/u", "0", $text);  // 0
@@ -174,6 +175,8 @@ function standardise($text)
 	$text=preg_replace("/U\+207F/", "", $text);  // {fatha|damma|kasra}tan > h
 
 	$text=preg_replace("/U\+063B/", "ch", $text);  // keheh with two dots > ch
+	
+    $text=preg_replace("/U\+0629/", "t", $text);  // teh marbuta
 
 	// Capitalise sentence-initials (very basic!).
 	// trim() is necessary because click to select seems to insert spaces before the Arabic text.
@@ -233,8 +236,8 @@ function close_trans($text)
 	$text=preg_replace("/U\+0308/", "ä", $text);  // superscript alef
 
 	$text=preg_replace("/U\+062D/", "hU+0323", $text);  // pharyngeal h > h+dot
-// 	$text=preg_replace("/U\+062E/", "hU+0331", $text);  // velar fricative > h+underline
-    $text=preg_replace("/U\+062E/", "kh", $text);  // velar fricative > h+underline
+    //$text=preg_replace("/U\+062E/", "hU+0331", $text);  // velar fricative > h+underline
+    $text=preg_replace("/U\+062E/", "kh", $text);  // velar fricative > kh
 
     $text=preg_replace("/U\+063B/", "kU+02B2", $text);  // keheh with two dots > k+palatal
 
@@ -242,6 +245,8 @@ function close_trans($text)
 	$text=preg_replace("/U\+0636/", "dU+0323", $text);  // dad > d+dot
 	$text=preg_replace("/U\+0637/", "tU+0323", $text);  // tah > t+dot
 	$text=preg_replace("/U\+0638/", "zU+0323", $text);  // zah > z+dot
+	
+    $text=preg_replace("/U\+0629/", "tU+0308", $text);  // teh marbuta
 	
 	$text=html_entity_decode(preg_replace("/U\+([0-9A-F]{4,5})/", "&#x\\1;", $text), ENT_NOQUOTES, 'UTF-8');
 
@@ -260,7 +265,7 @@ function prep_rom($text)
 		
 	// Respellings
 	$text=preg_replace("/\bkila\b/", "kulla", $text);
-	$text=preg_replace("/hariri/", "hhariri", $text);
+	$text=preg_replace("/hariri/", "ḥariri", $text);
 
 	// VC[C][C]V# - mark penultimate syllable as long
 	$text=preg_replace("/a([bcdfghjklmnpqrstvwyz](b|dr?|gw?|hw?|k|n|rc?|v|w|y)?[aeiou]\b)/", "aL$1", $text); // a > aL
@@ -381,6 +386,7 @@ function rom2ar($text, $no_sukun=NULL)
 	
 	$text=preg_replace("/ch/", "U+0686", $text);  // tcheh
 	$text=preg_replace("/kh/", "U+062E", $text);  // khah
+	//$text=preg_replace("/ẖ/", "U+062E", $text);  // khah
 	
 	$text=preg_replace("/ll/", "U+0644U+0651", $text); // lam + shadda
 

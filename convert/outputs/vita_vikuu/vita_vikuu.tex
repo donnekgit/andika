@@ -1,0 +1,152 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage{polyglossia}
+\usepackage{longtable}
+\usepackage{xcolor}  % can't use color with polyglossia
+
+\usepackage{marginnote}
+\renewcommand*{\marginfont}{\color{red}\sffamily}
+
+\interfootnotelinepenalty=10000 % prevents the footnote from breaking across pages
+% http://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
+
+% Thanks to Manas Tungare (http://manas.tungare.name/software/latex) for these settings.
+\setlength{\paperwidth}{210mm}
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{247mm}
+
+\setlength{\evensidemargin}{1in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{-0.5in}
+
+%--------------------------------
+%%% Font definitions %%%
+%--------------------------------
+% Note that these definitions malfunction if used in \chapter.
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont{Charis SIL}  % Set the default font for the document. = \setdefaultfont
+% Footnotes will by default also use this font -- http://tex.stackexchange.com/questions/4779/how-to-change-font-family-in-footnote).
+\defaultfontfeatures{Scale=MatchLowercase}  % needs to be below main font declaration
+
+\setsansfont{Liberation Sans}
+\setmonofont{Lato Bold}
+
+\setmainlanguage{english}
+\setotherlanguage{arabic}
+
+\newfontfamily\arabicfont[Script=Arabic, Scale=2]{Scheherazade} % Arabic transcription -- coloured black, double size.
+% One font needs to be called \arabicfont in order for XeTeX to load Arabic-related hyphenation and other stuff.
+%  The default \textarabic will use this \arabicfont.  Use the \begin{Arabic} ..... \end{Arabic} environment for longer stretches (eg paras).
+% Use \textarabic{\aemph{با}} to give overline emphasis.
+% Omitting Script=Arabic for Amiri or Granada will mean that letters are written in their standalone forms, not connected.  (Omitting Script=Arabic for Scheherazade seems to cause no problem, though.)
+
+\newfontfamily\citationfont[Script=Arabic, Scale=1.5]{Scheherazade}  % Citations, or stand-alone Arabic script in the middle of Roman script -- coloured black, one-and-a-half size.
+\newcommand\AS[1]{{\citationfont\RLE{#1}}}
+% \RLE (from the bidi package, which polyglossia loads automatically) is to allow multiple words of Arabic to be written right-to-left -- if omitted, each word in the sequence will be written RTL, but the sequence as a whole will be written LTR.
+
+%You can either, as above, define a new \fontfamily, and then use it in a \newcommand, or you can, as below, include the font in the \newcommand by calling \fontspec directly.
+
+\newcommand\Atitle[1]{{\fontspec[Script=Arabic, Scale=2]{GranadaKD}\RLE{#1}}}  % Arabic transcription for titles - uses a version of Granada which has been extended to include glyphs for Swahili.
+
+\newcommand\Am[1]{{\fontspec[Script=Arabic]{Amiri}\RLE{#1}}} % Examples using Amiri --  if using Scheherazade's default scale, set Scale=0.8 here.
+
+%\newfontfamily\translitfont[Scale=1, Color=666666]{Linux Biolinum O}
+%\newcommand\Tr[1]{{\translitfont\RLE{#1}}}
+\newcommand\Tr[1]{{\fontspec[Scale=1, Color=666666]{Linux Biolinum O}#1}}   %  Transliteration -- Biolinum handles diacritics well.  Coloured grey, slightly less than normal size.
+% Scale=1 is required because of Scale=MatchLowercase - otherwise the size is too large.
+
+\newcommand\In[1]{{\fontspec[Scale=1, Color=blue]{Linux Biolinum O}#1}}  % Epenthetic letters in the transliteration -- coloured blue, normal size.
+
+\newcommand\Swa[1]{{\fontspec[Color=00BB33, Scale=1]{Linux Biolinum O}#1}}  % Standard spelling -- coloured green, normal size.
+
+\newcommand\E[1]{{\fontspec[Scale=0.9, Color=333333]{Liberation Serif Italic}#1}}  % English translation layer -- coloured grey, slightly less than normal size.
+
+\newcommand\Eit[1]{{\fontspec{Liberation Serif Italic}#1}}  % English italics.
+
+\newcommand\FN[1]{{\fontspec[Color=00BB33]{Liberation Serif Italic}#1}} % Standout type in footnotes -- coloured green, normal size.
+
+% Older versions:
+% \newfontfamily{\Tr}[Scale=0.9, Color=00BB33]{Linux Biolinum O}
+% This can be used as \Tr{text}.  But this will change the font outside the argument until the end of that stretch.
+% This doesn't show up in the poemlines, because they are self-contained, but it does show up in connected text.
+% To avoid this, and have the font only changed within the argument, use \newcommand as above.
+% Though you can also enclose \Tr in braces to limit it: {\Tr{}}
+
+%----------------------------------------
+%%% End of font definitions %%%
+%----------------------------------------
+
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
+
+\usepackage[obeyspaces]{url}  % Use urls in text and captions with sensible linewrap.
+\urlstyle{rm}  % Set urls in roman.
+
+\begin{document}
+
+\begin{longtable}{rrl} 
+
+\makebox[8cm][r]{} & & \makebox[8cm][r]{} \\ 
+
+\textarabic{نَخُبُوزِ يَشَعِيْرِ} & \textarabic{أَكَتٗؤَ تَمَارِ} & \textarabic{١} \\* 
+\Tr{nakhubūzi yasha'ı̄ri} & \Tr{akaṯoa ṯamāri} & \Tr{1b/a} \\ 
+\textarabic{كَكهٖيْتِ كَٹٗئٖلٖئَ} & \textarabic{نَمِلْحِ أَصْفَرِ} &  \\* 
+\Tr{kakʿēṯi kaţoelea} & \Tr{na mil\In{i}ḥi aṣ\In{u}fari} & \Tr{1d/c} \\ 
+\\[8mm] 
+
+\textarabic{ۏَاكٖ إِلَاهِ وَدُوْدِ} & \textarabic{كِشَكُوْلَ كَحِمِيْدِ} & \textarabic{٢} \\* 
+\Tr{w̱āke ilāhi waḏūḏi} & \Tr{kishakūla kaḥimı̄ḏi} & \Tr{2b/a} \\ 
+\textarabic{مَعَدُوِ نَمَوَلِيْ} & \textarabic{مُؤُوْنْبَ زٗوْتهٖ جَسَادِ} &  \\* 
+\Tr{ma'aḏuwi namawalii} & \Tr{muūm̱ba zōṯʿe jasāḏi} & \Tr{2d/c} \\ 
+\\[8mm] 
+
+\textarabic{عَمُوْرِ أَكَتٗوْكَ} & \textarabic{هَاتَ كُكِپَنْبَؤُوْكَ} & \textarabic{٣} \\* 
+\Tr{'amūri akaṯōka} & \Tr{hāṯa kukipam̱baūka} & \Tr{3b/a} \\ 
+\textarabic{سَوْتِ أَكَئِتٗؤَ} & \textarabic{كْوَ عَلِىْ أَكَفِيْكَ} &  \\* 
+\Tr{sawṯi akaiṯoa} & \Tr{kwa 'alii akafı̄ka} & \Tr{3d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَهْلاً يَا مُكَرَّمَ} & \textarabic{عَلِىْ كَتَكَلَامَ} & \textarabic{٤} \\* 
+\Tr{ahlāⁿ yā mukarrama} & \Tr{'alii kaṯakalāma} & \Tr{4b/a} \\ 
+\textarabic{نْدِئَ إِنْڠَاۏَ طَوِلِيَ} & \textarabic{ٹُتَوَصِيْل سَلَامَ} &  \\* 
+\Tr{nḏia ingāw̱a ṭawiliya} & \Tr{ţuṯawaṣı̄l salāma} & \Tr{4d/c} \\ 
+\\[8mm] 
+
+\textarabic{كَئِلَبِيْسِ يُوَانِ} & \textarabic{عَمُوْرِ كَرُوْدِ نْڈَانِ} & \textarabic{٥} \\* 
+\Tr{kailabı̄si yuwāni} & \Tr{'amūri karūḏi nḑāni} & \Tr{5b/a} \\ 
+\textarabic{أَكَئِفُوْنْڠَ زِكَمْكَاءَ} & \textarabic{دِرِيْعِ زَ أُۏَنْدَانِ} &  \\* 
+\Tr{akaifūnga zikamkaa} & \Tr{ḏirī'i za uw̱anḏāni} & \Tr{5d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَرُمْحِ نَتُرُوْسِ} & \textarabic{نَسٖيْفُ نْجٖيْمَ أَسِيْسِ} & \textarabic{٦} \\* 
+\Tr{narumḥi naṯurūsi} & \Tr{nasēfu njēma\footnote{B: \AS{ننْزُوْرِ}, nzūri} ası̄si} & \Tr{6b/a} \\ 
+\textarabic{جُوْ أَكَمْكَلِئَ} & \textarabic{أَكَمْپَانْڈَ فَرَاسِ} &  \\* 
+\Tr{juu akamkalia} & \Tr{akampānḑa farāsi} & \Tr{6d/c} \\ 
+\\[8mm] 
+
+\textarabic{بِاللَّيْلِ وَالنَّهَارِ} & \textarabic{ۏَكٖيْنْڈَ تهَخُبِيْرِ} & \textarabic{٧} \\* 
+\Tr{billayli wannahāri} & \Tr{w̱akēnḑa ṯʿakhubı̄ri} & \Tr{7b/a} \\ 
+\textarabic{نَمِيْٹِ نَمَطَرِيَ} & \textarabic{ۏَكَپَنْبَانَ نَبَحَارِ} &  \\* 
+\Tr{namı̄ţi namaṭariya} & \Tr{w̱akapam̱bāna nabaḥāri} & \Tr{7d/c} \\ 
+\\[8mm] 
+
+\textarabic{عَلِىْ نَمَلِعُوْنِ} & \textarabic{ۏَكٖنٖينْڈَ يُۏَانِ} & \textarabic{٨} \\* 
+\Tr{'alii namali'ūni} & \Tr{w̱akenēnḑa yuw̱āni} & \Tr{8b/a} \\ 
+\textarabic{عَمُوْرِ كَزِٹَنْبُؤَ} & \textarabic{نْدِئَ زِيْلِ زَمَدِيْنِ} &  \\* 
+\Tr{'amūri kaziţam̱bua} & \Tr{nḏia zı̄li zamaḏı̄ni} & \Tr{8d/c} \\ 
+\\[8mm] 
+
+\textarabic{كَمْوَنبِئَ حَيْدَرِ} & \textarabic{عَمُوْرِ كَذُكُوْرِ} & \textarabic{٩} \\* 
+\Tr{kamwam̱bia ḥayḏari} & \Tr{'amūri kadhukūri} & \Tr{9b/a} \\ 
+\textarabic{نْبٗوْنَ ٹْوَئِفُوَٹِئَ} & \textarabic{دُرُوْبُ نْدَ أَنْصَارِ} &  \\* 
+\Tr{m̱bōna ţwaifuwaţia} & \Tr{ḏurūbu nḏa anṣāri} & \Tr{9d/c} \\ 
+\\[8mm] 
+
+\textarabic{يَكْوٖنٖينْڈَ سَفَارِ} & \textarabic{نَاسِ ٹُمٖفَانْيَ مَشَؤُوْرِ} & \textarabic{١٠} \\* 
+\Tr{yakwenēnḑa safāri} & \Tr{nāsi ţumefānya mashaūri} & \Tr{10b/a} \\ 
+\textarabic{جُنُوْدِ كُئِكُسَنْيِئَ} & \textarabic{كْوَنْڠَلِئَ أَمْصَارِ} &  \\* 
+\Tr{junūḏi kuikusanyia} & \Tr{kwangalia amṣāri} & \Tr{10d/c} \\ 
+\\[8mm] 
+
+\end{longtable} 
+
+\end{document}

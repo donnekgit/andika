@@ -1,0 +1,86 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage{polyglossia}
+\usepackage{longtable}
+\usepackage{xcolor}  % can't use color with polyglossia
+
+\usepackage{marginnote}
+\renewcommand*{\marginfont}{\color{red}\sffamily}
+
+\interfootnotelinepenalty=10000 % prevents the footnote from breaking across pages
+% http://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
+
+% Thanks to Manas Tungare (http://manas.tungare.name/software/latex) for these settings.
+\setlength{\paperwidth}{210mm}
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{247mm}
+
+\setlength{\evensidemargin}{1in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{-0.5in}
+
+\setmainfont[Mapping=tex-text]{Liberation Serif}  % Set the default font for the document (footnotes will also use this font, but see also: http://tex.stackexchange.com/questions/4779/how-to-change-font-family-in-footnote)
+
+\setmainlanguage{english}
+\setotherlanguage{arabic}
+\setotherlanguage{farsi}  % used to allow typesetting the tile in a different font
+
+\newfontfamily\arabicfont[Script=Arabic, Scale=2]{Scheherazade} % Arabic transcription layer
+\newfontfamily\farsifont[Script=Arabic, Scale=2]{GranadaKD} % Arabic transcription layer for titles - uses a version of Granada which has been extended to include glyphs for Swahili.
+\newcommand{\AS}[1]{\fontspec[Script=Arabic, Scale=1.5]{Scheherazade} #1\normalfont} % Arabic when used in footnotes - using \newfontfamily resets following English text as well.  IMPORTANT: this can ONLY be used for single words - multiple words will be written LTR, and not RTL as required.
+\newfontfamily{\Tr}[Scale=0.9, Color=00BB33]{Linux Biolinum O} %  transliteration layer - Biolinum handles diacritics well
+\newfontfamily{\I}[Scale=0.9, Color=blue]{Linux Biolinum O} % interpolated letters in the transliteration layer
+\newfontfamily{\S}[Color=00BB33]{Linux Biolinum O} % standard spelling layer
+\newfontfamily{\E}[Scale=0.9, Color=666666]{Liberation Serif Italic} % English translation layer
+\newfontfamily{\FN}[Color=00BB33]{Liberation Serif Italic} % Alternate type in footnotes.
+
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
+
+\usepackage[obeyspaces]{url}  % Use urls in text and captions with sensible linewrap.
+\urlstyle{rm}  % Set urls in roman.
+
+\begin{document}
+
+\begin{longtable}{rrl} 
+
+\makebox[8cm][r]{} & & \makebox[8cm][r]{} \\ 
+
+\textarabic{مْػَػِفُ حَسَنَةِ} & \textarabic{نِغِمَ وَاغُ بِنْتِ} & \textarabic{١} \\* 
+\Tr{mkʲakʲifu ḥasanaẗi} & \Tr{niḡima wāḡu binṯi} & \Tr{1b/a} \\ 
+\textarabic{لَعَلَاوُ كَزِغَتِيَ} & \textarabic{وُپُلِكِ وَصِيَةِ} &  \\* 
+\Tr{la'alāwu kaziḡaṯiya} & \Tr{wupuliki waṣiyaẗi} & \Tr{1d/c} \\ 
+\\[8mm] 
+
+\textarabic{حَتَّ يَمِتِمُ مَكَ} & \textarabic{مَرَاضِ يَمِنِشِكَ} & \textarabic{٢} \\* 
+\Tr{ḥaṯṯa yamiṯimu maka} & \Tr{marāḍi yaminishika} & \Tr{2b/a} \\ 
+\textarabic{نِنُ لِمَ كُكَبِيَ} & \textarabic{سِيپَتَ كُتَمْكَ} &  \\* 
+\Tr{ninu lima kukabiya} & \Tr{sı̄paṯa kuṯamka} & \Tr{2d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَوِنُ نَقَرَطَاسِ} & \textarabic{نْدُبِيْ وُجَلِسِ} & \textarabic{٣} \\* 
+\Tr{nawinu naqaraṭāsi} & \Tr{nḏubii wujalisi} & \Tr{3b/a} \\ 
+\textarabic{نِمِپِدَ كُكَبِيَ} & \textarabic{مُيُنِ نِنَ حَدِيْسِ} &  \\* 
+\Tr{nimipiḏa kukabiya} & \Tr{muyuni nina ḥaḏı̄si} & \Tr{3d/c} \\ 
+\\[8mm] 
+
+\textarabic{بِسْمِ اللَّدِ كُتُبُ} & \textarabic{كِسَكِ كُتَقَ اَبُ} & \textarabic{٤} \\* 
+\Tr{bismi llaḏi kuṯubu} & \Tr{kisaki kuṯaqa abu} & \Tr{4b/a} \\ 
+\textarabic{نَصَحَبَزِ پَمُيَ} & \textarabic{اُمْتَىْ نَحَبِيْبُ} &  \\* 
+\Tr{naṣaḥabazi pamuya} & \Tr{umṯay naḥabı̄bu} & \Tr{4d/c} \\ 
+\\[8mm] 
+
+\textarabic{اِنَ لَمُلَ مُوِزَ} & \textarabic{وُكِسَ كُلِتَغَازَ} & \textarabic{٥} \\* 
+\Tr{ina lamula muwiza} & \Tr{wukisa kuliṯaḡāza} & \Tr{5b/a} \\ 
+\textarabic{مْغُ تَتُ وَفِقِيَ} & \textarabic{بَسِ اُتُپِ مَجَازَ} &  \\* 
+\Tr{mḡu ṯaṯu wafiqiya} & \Tr{basi uṯupi majāza} & \Tr{5d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَوُلِمِغُ سِوِتُ} & \textarabic{مَانَ اَدَامُ سِكِتُ} & \textarabic{٦} \\* 
+\Tr{nawulimiḡu siwiṯu} & \Tr{māna aḏāmu sikiṯu} & \Tr{6b/a} \\ 
+\textarabic{اَبَوُ اَتَسَلِيَ} & \textarabic{وَلَوُ هَكُوْنَ مْتُ} &  \\* 
+\Tr{abawu aṯasaliya} & \Tr{walawu hakūna mṯu} & \Tr{6d/c} \\ 
+\\[8mm] 
+
+\end{longtable} 
+
+\end{document}

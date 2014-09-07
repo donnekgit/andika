@@ -1,5 +1,12 @@
 #! /bin/bash
 
+
+# FIXME
+# --------------------------
+# Failure to choose a file on the first screen is not caught.
+# Pressing "Cancel" on the output screen still presents the "Roman script" screen.
+
+
 # Functions
 # ------------
 

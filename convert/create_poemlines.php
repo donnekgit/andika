@@ -29,7 +29,7 @@ $sql_table = "
 CREATE TABLE $poem (
     poemline_id serial NOT NULL,
     stanza integer,
-    pos character varying(5),
+    loc character varying(5),
     arabic text,
     close text,
     standard text,

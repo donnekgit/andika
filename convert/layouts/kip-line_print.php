@@ -54,15 +54,15 @@ elseif ($output="db")
     if ($script=="arabic")
     {
         $close=pg_escape_string($roman);  // from Arabic, we need to swap, since close is the default
-        $roman=pg_escape_string($standard);
+        $roman=lcfirst(pg_escape_string($standard));  // remove initial caps set by standardise()
     }
     elseif ($script=="roman")
     {
         $roman=pg_escape_string($roman);
     }
-    $sql=query("insert into $poem (stanza, pos, arabic, standard, close) values ($stanza_no, '$key', '$arabic', '$roman', '$close')");
+    $sql=query("insert into ".$poem." (stanza, loc, arabic, standard, close) values ($stanza_no, '$key', '$arabic', '$roman', '$close')");
 }
 
-echo $key.": ".$roman."\n";
+echo $stanza_no.$key.": ".$roman."\n";
 
 ?>

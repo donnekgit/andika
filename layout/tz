@@ -6,7 +6,7 @@
 
 xkb_symbols "swa"
 {
-	name[Group1] = "Swahili";
+	name[Group1] = "Swahili in Arabic script";
 
     include "level3(ralt_switch)"
     
@@ -43,6 +43,7 @@ xkb_symbols "swa"
     // -------------
 	key <AC01> { [Arabic_fatha, Arabic_alef, Arabic_hamzaonalef, Arabic_fathatan] };
 	// 1 fatha (short a), 2 alef (long a), 3 alef with hamza above (vowelcarrier), 4 fathatan
+    key <AC02> { [Arabic_seen, Arabic_sheen, Arabic_sad] }; 
     // 1 seen (s), 2 sheen (sh), 3 sad (sw)
 	key <AC03> { [Arabic_dal, Arabic_thal, Arabic_dad, Arabic_ddal] };
 	// 1 dal (d), 2 thal (dh), 3 dad (dw), 4 ddal (alveolar dr)

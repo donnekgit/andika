@@ -1,41 +1,3 @@
-PPA
------
-
-Some Arabic lines may not appear in the Browse page, but if you press Edit you can see the text is there - it just isn't displayed for some reason.  Likewise, a select shows it.
-
-
-pdf
------
-
-If lines appear ill-aligned, try repeating the invocation.  This happens especially when changing layouts, and is due to LaTeX needing to run the pdf compile again to fix the column layout.
-
-
-Examples of using convert.php
---------------------------------------
-php poetry/convert.php -i=maisha.odt --vipande=4 -o=pdf -s=roman -l=kip-line
-a Roman text in odt, so we need to specify script, and set out in one kipande per line
-php poetry/convert.php -i=maisha.odt --vipande=4 -o=pdf -s=roman -l=vip-star
-ditto, but in two kipande to a line, with a star between them
-php poetry/convert.php -i=maisha.odt --vipande=4 -o=pdf -s=roman
-ditto, but using the default two kipande to a line in columns for pdf (therefore no need to specify layout)
-php poetry/convert.php -i=kiswahili.odt --vipande=8 -o=pdf
-an Arabic text in odt (the default), so no need to specify script, using the default vip-space layout
-php poetry/convert.php -i=kiswahili.odt --vipande=8 -o=pdf -l=kip-line
-ditto, but using kip-line as the layout
-php poetry/convert.php -i=maisha_ar.txt --vipande=4 -o=db -s=arabic
-an Arabic text in txt, so we need to specify the script, and it will be imported into the database
-php poetry/convert.php -i=maisha.txt --vipande=4 -o=db
-a Roman text in txt (the default), so no need to specify script, and getting imported into the database
-php poetry/convert.php -i=maisha.txt --vipande=4 -o=txt
-ditto, but imported into a txt file - result is to give an Arabic only text (ie the transcription of the Roman), which can then be cut-and-pasted into an odt file for editing; the layout is vip-star
-php poetry/convert.php -i=maisha.txt --vipande=4 -o=pdf -l=vip-star
-ditto, but in pdf output using vip-star
-php poetry/convert.php -i=kiswahili.odt -v=8 -o=db
-import an Arabic text in odt (the default) into the database
-php poetry/convert.php -i=kiswahili.odt -v=8 -o=txt
-ditto, but import it into txt format (not sure why you'd want to do this on an Arabic text! - it's easier to edit in odt - but conceivably you might want it in a form that fits more easily into an automated workstream)
-
-
 ODT
 ------
 
@@ -99,27 +61,6 @@ Then change the zip extension to odt.
 </office:text>
 </office:body>
 </office:document-content>
-
-
-Database
------------
-
-For a word where an epenthetic vowel should be added for scansion purposes, but is not written, add it between # in the lemma column, eg namil#i#hi instead of namilhi.  (Note that the incorrectly-joined particle is also written - it will be dealt with in the next rule).
-
-For a word where a particle is written joined, but should be written separately, put the particle in the segment column, eg nahubuzi instead of na hubuzi.
-
-Where word variants are written in different manuscripts, add the variant in the variant column.
-
-Where a note pertains to a word, add it in the note column.  # is used in this column to delineate quoted words, which in the pdf will be printed in a different typeface.
-
-Put the root of the word in the root column, to allow for building concordances, frequency lists, etc.  Use the Bantu word minus endings such as verbal -a or class prefixes, and give the 3-consonant root of Arabic words.
-
-Put the English translation for the whole kipande into the english column against the first word of the kipande.  thisis not ideal!
-
-Unclear as yet (!):
-word is a copy of close (auto-generated close transcription), but including epenthetic vowels and removing particles.
-clword is a copy of close (auto-generated close transcription)
-arword is a copy of arabic
 
 
 Sacleux dictionary
@@ -205,26 +146,4 @@ sudo nano /usr/share/X11/xkb/symbols/tz
 Edit the line:
 \verb|key <AD09> { [          U0657,     Arabic_waw, Arabic_hamzaonwaw, UE000                 ] };|
 adding the Unicode number for the new character at the end.
-
-
-Bugs in convert.sh
---------------------------
-
-(a) Failure to choose a file on the first screen is not caught.
-(b) Pressing "Cancel" on the output screen still presents the "Roman script" screen.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

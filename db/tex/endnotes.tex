@@ -1,0 +1,14 @@
+% Endnotes printout.
+% http://jimsheng.hubpages.com/hub/The-LaTeX-endnotes-package
+% http://www.latex-community.org/forum/viewtopic.php?t=5017&f=5
+\renewcommand\enoteformat{\noindent\textbf{\theenmark}.\hspace{1ex}}  % Change the note numbers to bold normal.
+\chapter*{Endnotes}  % Add our own heading ...
+\renewcommand\notesname{}  % ... delete the given one ...
+\vspace{-8ex}  % ... and shift the notes up to cover that space.
+\begingroup
+\let\clearpage\relax
+\parindent 0pt
+\parskip 1ex
+\def\enotesize{\small}
+\theendnotes
+\endgroup

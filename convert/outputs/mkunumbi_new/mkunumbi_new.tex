@@ -1,8 +1,11 @@
 \documentclass[a4paper, 12pt]{report}
 
-\usepackage{polyglossia}
-\usepackage{longtable}
+\usepackage{titlesec}  % Allow the chapter/section heading settings to be fine-tuned.  Needs to come before bidi, in polyglossia.
+\usepackage{polyglossia}  % multilingual support
+\usepackage{longtable}  % tables that carry across multiple pages
 \usepackage{xcolor}  % can't use color with polyglossia
+
+\input{convert/tex/fontdefs.tex}  % Bring in the font definitions.
 
 \usepackage{marginnote}
 \renewcommand*{\marginfont}{\color{red}\sffamily}
@@ -19,48 +22,33 @@
 \setlength{\oddsidemargin}{0in}
 \setlength{\topmargin}{-0.5in}
 
-\setmainfont[Mapping=tex-text]{Liberation Serif}  % Set the default font for the document (footnotes will also use this font, but see also: http://tex.stackexchange.com/questions/4779/how-to-change-font-family-in-footnote)
-
-\setmainlanguage{english}
-\setotherlanguage{arabic}
-\setotherlanguage{farsi}  % used to allow typesetting the tile in a different font
-
-\newfontfamily\arabicfont[Script=Arabic, Scale=2]{Scheherazade} % Arabic transcription layer
-\newfontfamily\farsifont[Script=Arabic, Scale=2]{GranadaKD} % Arabic transcription layer for titles - uses a version of Granada which has been extended to include glyphs for Swahili.
-\newcommand{\AS}[1]{\fontspec[Script=Arabic, Scale=1.5]{Scheherazade} #1\normalfont} % Arabic when used in footnotes - using \newfontfamily resets following English text as well.  IMPORTANT: this can ONLY be used for single words - multiple words will be written LTR, and not RTL as required.
-\newfontfamily{\Tr}[Scale=0.9, Color=00BB33]{Linux Biolinum O} %  transliteration layer - Biolinum handles diacritics well
-\newfontfamily{\I}[Scale=0.9, Color=blue]{Linux Biolinum O} % interpolated letters in the transliteration layer
-\newfontfamily{\S}[Color=00BB33]{Linux Biolinum O} % standard spelling layer
-\newfontfamily{\E}[Scale=0.9, Color=666666]{Liberation Serif Italic} % English translation layer
-\newfontfamily{\FN}[Color=00BB33]{Liberation Serif Italic} % Alternate type in footnotes.
-
 \renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
 
-\usepackage[obeyspaces]{url}  % Use urls in text and captions with sensible linewrap.
+\usepackage{url}  % Use urls in text and captions with sensible linewrap.  Can't use [obeyspaces] - this option clashes with biblatex.
 \urlstyle{rm}  % Set urls in roman.
 
 \begin{document}
 
-\begin{longtable}{rl} 
+\begin{longtable}{rrl} 
 
-\makebox[8cm][r]{} & \\ 
+\makebox[8cm][r]{} & & \makebox[8cm][r]{} \\ 
 
-\textarabic{دٗوْلَ مْبِلِ زِلِوَانَ * شِكُوٖ نَاسِمْبَ مْبَوَانَ} & \textarabic{١} \\* 
-\Tr{ḏōla mbili ziliwāna * shikuwe nāsimba mbawāna} & \Tr{1a/b} \\ 
-\textarabic{كَمَتٖزٗ كُشِنْدَانَ * مْتانَ نَلَيْلِيَ} &  \\* 
-\Tr{kamaṯezo kushinḏāna * mṯāna nalayliya} & \Tr{1c/d} \\ 
+\textarabic{شِكُوٖ نَاسِمْبَ مْبَوَانَ} & \textarabic{دٗوْلَ مْبِلِ زِلِوَانَ} & \textarabic{١} \\* 
+\Tr{shikuwe nāsimba mbawāna} & \Tr{ḏōla mbili ziliwāna} & \Tr{1b/a} \\ 
+\textarabic{مْتانَ نَلَيْلِيَ} & \textarabic{كَمَتٖزٗ كُشِنْدَانَ} &  \\* 
+\Tr{mṯāna nalayliya} & \Tr{kamaṯezo kushinḏāna} & \Tr{1d/c} \\ 
 \\[8mm] 
 
-\textarabic{زِكِتِمُ سِكُ تَاتُ * شِكُوٖ كَتَكَ وَاتُ} & \textarabic{٢} \\* 
-\Tr{zikiṯimu siku ṯāṯu * shikuwe kaṯaka wāṯu} & \Tr{2a/b} \\ 
-\textarabic{كُتُكُوَ چَاكٖ كِتُ * نْغُوبٖ كَيْ نُنُلِيَ} &  \\* 
-\Tr{kuṯukuwa chāke kiṯu * nḡūbe kay nunuliya} & \Tr{2c/d} \\ 
+\textarabic{شِكُوٖ كَتَكَ وَاتُ} & \textarabic{زِكِتِمُ سِكُ تَاتُ} & \textarabic{٢} \\* 
+\Tr{shikuwe kaṯaka wāṯu} & \Tr{zikiṯimu siku ṯāṯu} & \Tr{2b/a} \\ 
+\textarabic{نْغُوبٖ كَيْ نُنُلِيَ} & \textarabic{كُتُكُوَ چَاكٖ كِتُ} &  \\* 
+\Tr{nḡūbe kay nunuliya} & \Tr{kuṯukuwa chāke kiṯu} & \Tr{2d/c} \\ 
 \\[8mm] 
 
-\textarabic{كَتِيَ نْڠُوْبٖ نْدِيَانِ * مٖمَ اَسِيُ لَحَانِ} & \textarabic{٣} \\* 
-\Tr{kaṯiya ngūbe nḏiyāni * mema asiyu laḥāni} & \Tr{3a/b} \\ 
-\textarabic{سِمْبَ شِيْ كَبَئِينِ * مْپَانِ نْڠُوبٖ مْمُيَ} &  \\* 
-\Tr{simba shii kabaı̄ni * mpāni ngūbe mmuya} & \Tr{3c/d} \\ 
+\textarabic{مٖمَ اَسِيُ لَحَانِ} & \textarabic{كَتِيَ نْڠُوْبٖ نْدِيَانِ} & \textarabic{٣} \\* 
+\Tr{mema asiyu laḥāni} & \Tr{kaṯiya ngūbe nḏiyāni} & \Tr{3b/a} \\ 
+\textarabic{مْپَانِ نْڠُوبٖ مْمُيَ} & \textarabic{سِمْبَ شِيْ كَبَئِينِ} &  \\* 
+\Tr{mpāni ngūbe mmuya} & \Tr{simba shii kabaı̄ni} & \Tr{3d/c} \\ 
 \\[8mm] 
 
 \end{longtable} 

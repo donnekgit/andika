@@ -54,6 +54,7 @@ $script=lcfirst($script);
 $genre=lcfirst($genre);
 $columns=($layout=="vip-space") ? "rrl" : "rl";
 
+$stanza_no=0;  // stanza counter
 
 // --------------------------------------------------------
 // Locate the input file, depending on extension.
@@ -75,7 +76,7 @@ exec("mkdir -p convert/outputs/".$poem);
 
 
 // -----------------------------------------------------------
-// For database import, set up a table for each file.
+// If database import is chosen, set up a table for each file.
 // -----------------------------------------------------------
 if ($output=="db")
 {
@@ -140,7 +141,6 @@ elseif ($output=="odt")
 // --------------------------------
 // Import and choose layout
 // --------------------------------
-$stanza_no=0;  // start stanza counter
 $vipande=array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');  // letters to signify location of the kipande in the stanza
 $first_half=array('a', 'c', 'e', 'g', 'i', 'k', 'm', 'o', 'q', 's', 'u', 'w', 'y');  // vipande which signify the beginning of a line
 

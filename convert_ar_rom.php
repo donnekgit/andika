@@ -37,7 +37,7 @@ $input=nl2br($input);
 
 // Give a one-to-one transliteration of the Arabic glyphs into Roman letters.
 $translit=ar2rom($input);
-// echo $translit."<br />";
+echo $translit."<br />";
 
 // Now smooth the transliteration to give a standard transcription.
 // The most obvious smoother is for the standard Swahili orthography.

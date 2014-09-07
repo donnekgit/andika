@@ -10,11 +10,18 @@
 \usepackage{marginnote}
 \renewcommand*{\marginfont}{\color{red}\sffamily}
 
+\usepackage{csquotes}
+% \usepackage{natbib}
+\usepackage[backend=biber, style=authoryear]{biblatex}
+\addbibresource{andika.bib}
+
 \interfootnotelinepenalty=10000 % prevents the footnote from breaking across pages
 % http://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
 
 % Thanks to Manas Tungare (http://manas.tungare.name/software/latex) for these settings.
 \setlength{\paperwidth}{210mm}
+\setlength{\paperheight}{297mm}
+
 \setlength{\textwidth}{160mm}
 \setlength{\textheight}{247mm}
 
@@ -25,6 +32,16 @@
 \renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
 
 \usepackage{url}  % Use urls in text and captions with sensible linewrap.  Can't use [obeyspaces] - this option clashes with biblatex.
-\urlstyle{rm}  % Set urls in roman.
+% \urlstyle{rm}  % Set urls in roman.
+
+\titleformat{\chapter}[display]{\normalfont\large}{\bfseries\chaptertitlename\ \thechapter}{10pt}{\large\itshape}[\vspace{2ex}\titlerule\vspace{2ex}]  % 10pt is the space between chapter and chapter name.  [display] sets the chapter and chapter name on separate lines.  The square brackets at the end draw a line under each chapter name, with 2ex gap from the name.
+\titlespacing{\chapter}{0pt}{0pt}{10pt}  % First is indent from the side, second is length down from the top, third is gap between heading and text.
+
+% ===== Endnotes =====
+% Uncomment the following two lines to get endnotes instead of footnotes.
+% Remember to uncomment the three lines in andika/db/output_pdf.php as well.
+% \usepackage{endnotes}
+% \let\footnote=\endnote
+% ==================
 
 \begin{document}

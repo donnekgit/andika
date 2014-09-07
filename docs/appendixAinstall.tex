@@ -287,16 +287,20 @@ You should get a message giving details about the version of PHP you've just ins
 
 \verb|sudo nano /etc/php5/cli/php.ini|
 
-nano is a lightweight text editor.  Use the arrow keys on the keyboard to move around, and the Home and End keys to move to the beginning or end of a line.
+This command will open the system file \textit{php.ini} in a lightweight text editor called \textit{nano}, where you have to change some settings.  Use the arrow keys on the keyboard to move around, and the Home and End keys to move to the beginning or end of a line.
 
-This command will open the system file \textit{php.ini} in a basic editor called \textit{nano}, where you have to change some settings. Press \textbf{Ctrl+W}, then type\\
-\verb|max_execution_time|\\
+Press \textbf{Ctrl+W}, then type
+
+\verb|max_execution_time|
+
 into the searchline and press \textbf{Return}. Change the line to read:
 
 \verb|max_execution_time = 300|
 
-Again press \textbf{Ctrl+W}, type\\
-\verb|error_reporting| \\
+Again press \textbf{Ctrl+W}, type
+
+\verb|error_reporting| 
+
 and press \textbf{Return}. Change that line to: 
 
 \verb|error_reporting = E_ALL & ~E_NOTICE & ~E_DEPRECATED|
@@ -319,8 +323,8 @@ PostgreSQL is a database which is used to store the words of the text for editin
 
 \subsection{Install PostgreSQL}
 
-\verb|sudo apt-get install postgresql, postgresql-client, postgresql-common, postgresql-contrib,|
-$\hookrightarrow$ \verb|php5-pgsql|
+\verb|sudo apt-get install postgresql, postgresql-client, postgresql-common.|
+$\hookrightarrow$ \verb|postgresql-contrib, php5-pgsql|
 
 To test the install:\\
 \verb|psql|
@@ -370,9 +374,9 @@ If you chose a username other than \textit{dbmaster}, use that instead.
 
 This creates the \textit{andika} database, and makes the owner the new user you just created.  If you chose a username other than \textit{dbmaster}, use that instead.
 
-\textbf{Andika!} comes with starter data in \textit{andika/db/andika.sql}, which can be imported into the new database.
+\textbf{Andika!} comes with starter data in \textit{andika/db/starter/andika.sql}, which can be imported into the new database.
 
-\verb|psql -U dbmaster -d andika < db/andika.sql|
+\verb|psql -U dbmaster -d andika < db/starter/andika.sql|
 
 If you chose a username other than \textit{dbmaster}, use that instead.
 
@@ -447,6 +451,20 @@ You should see the phpPgAdmin homepage. On the left side there is a list of serv
 
 Fill in the username and password for PostgreSQL (which you created in \Cref{ss:dbuser}) and click \textbf{Login}.
 
+The default session time for PHP is set to 24 minutes (1440 seconds).  This means that if you do not use phpPgAdmin for 24 minutes, it will ask you to log in again before you can continue using it.  If you find that this interrupts your workflow, you can change the setting in the PHP configuration file:
+
+\verb|sudo nano /etc/php5/apache2/php.ini|
+
+Press \textbf{Ctrl+W}, then type:
+
+\verb|session.gc_maxlifetime|
+
+and press \textbf{Return}. Change the line to read: 
+
+\verb|session.gc_maxlifetime = 144000|
+
+This will allow you 40 hours before logging you out, which should be sufficient.
+
 \subsubsection{Test phpPgAdmin}
 \label{ss:testppa}
 
@@ -466,6 +484,7 @@ Click Execute, and in the first window you should see a listing of the \textit{v
 
 
 \subsection{SQL Workbench}
+\label{ss:workbench}
 
 \subsubsection{Install Java}
 
@@ -549,11 +568,12 @@ Close SQL Workbench, clicking Yes to save the new \textit{andika} connection pro
 
 
 \section{LaTeX}
+\label{s:latex}
 
 LaTeX is a typesetting system that is capable of creating very complex layouts.  It is used in \textbf{Andika!} to provide attractive output.
 
 \verb|sudo apt-get install texlive texlive-xetex texlive-generic-extra texlive-humanities|\\
-$\hookrightarrow$ \verb|texlive-lang-arabic texlive-latex-extra kile|
+$\hookrightarrow$ \verb|texlive-lang-arabic texlive-latex-extra texlive-bibtex-extra kile kbibtex biber|
 
 These packages will take a good few minutes to download and install.
 
@@ -614,5 +634,5 @@ Save and exit the configuration file:\\
 \textbf{Ctrl+X, Y, Return}
 
 In a web browser, type:\\
-\verb|http://andika|\\
+\verb|http://andika/index.php|\\
 into the address bar.  You should get the \textbf{Andika!} website loading from the files on your hard disk (in \textit{/var/www/andika}), instead of from the internet.

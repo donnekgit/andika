@@ -1,0 +1,56 @@
+%--------------------------------
+%%% Font definitions %%%
+%--------------------------------
+% Note that these definitions malfunction if used in \chapter.
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont{Charis SIL}  % Set the default font for the document. = \setdefaultfont
+% Footnotes will by default also use this font -- http://tex.stackexchange.com/questions/4779/how-to-change-font-family-in-footnote).
+\defaultfontfeatures{Scale=MatchLowercase}  % needs to be below main font declaration
+
+\setsansfont{Liberation Sans}
+\setmonofont{Liberation Mono}
+
+\setmainlanguage{english}
+\setotherlanguage{arabic}
+
+\newfontfamily\arabicfont[Script=Arabic, Scale=2]{Scheherazade} % Arabic transcription -- coloured black, double size.
+% One font needs to be called \arabicfont in order for XeTeX to load Arabic-related hyphenation and other stuff.
+%  The default \textarabic will use this \arabicfont.  Use the \begin{Arabic} ..... \end{Arabic} environment for longer stretches (eg paras).
+% Use \textarabic{\aemph{با}} to give overline emphasis.
+% Omitting Script=Arabic for Amiri or Granada will mean that letters are written in their standalone forms, not connected.  (Omitting Script=Arabic for Scheherazade seems to cause no problem, though.)
+
+\newfontfamily\citationfont[Script=Arabic, Scale=1.5]{Scheherazade}  % Citations, or stand-alone Arabic script in the middle of Roman script -- coloured black, one-and-a-half size.
+\newcommand\AS[1]{{\citationfont\RLE{#1}}}
+% \RLE (from the bidi package, which polyglossia loads automatically) is to allow multiple words of Arabic to be written right-to-left -- if omitted, each word in the sequence will be written RTL, but the sequence as a whole will be written LTR.
+
+%You can either, as above, define a new \fontfamily, and then use it in a \newcommand, or you can, as below, include the font in the \newcommand by calling \fontspec directly.
+
+\newcommand\Atitle[1]{{\fontspec[Script=Arabic, Scale=2]{GranadaKD}\RLE{#1}}}  % Arabic transcription for titles - uses a version of Granada which has been extended to include glyphs for Swahili.
+
+\newcommand\Am[1]{{\fontspec[Script=Arabic]{Amiri}\RLE{#1}}} % Examples using Amiri --  if using Scheherazade's default scale, set Scale=0.8 here.
+
+%\newfontfamily\translitfont[Scale=1, Color=666666]{Linux Biolinum O}
+%\newcommand\Tr[1]{{\translitfont\RLE{#1}}}
+\newcommand\Tr[1]{{\fontspec[Scale=1, Color=666666]{Linux Biolinum O}#1}}   %  Transliteration -- Biolinum handles diacritics well.  Coloured grey, slightly less than normal size.
+% Scale=1 is required because of Scale=MatchLowercase - otherwise the size is too large.
+
+\newcommand\In[1]{{\fontspec[Scale=1, Color=blue]{Linux Biolinum O}#1}}  % Epenthetic letters in the transliteration -- coloured blue, normal size.
+
+\newcommand\Swa[1]{{\fontspec[Color=00BB33, Scale=1]{Linux Biolinum O}#1}}  % Standard spelling -- coloured green, normal size.
+
+\newcommand\E[1]{{\fontspec[Scale=0.9, Color=333333]{Liberation Serif Italic}#1}}  % English translation layer -- coloured grey, slightly less than normal size.
+
+\newcommand\Eit[1]{{\fontspec{Liberation Serif Italic}#1}}  % English italics.
+
+\newcommand\FN[1]{{\fontspec[Color=00BB33]{Liberation Serif Italic}#1}} % Standout type in footnotes -- coloured green, normal size.
+
+% Older versions:
+% \newfontfamily{\Tr}[Scale=0.9, Color=00BB33]{Linux Biolinum O}
+% This can be used as \Tr{text}.  But this will change the font outside the argument until the end of that stretch.
+% This doesn't show up in the poemlines, because they are self-contained, but it does show up in connected text.
+% To avoid this, and have the font only changed within the argument, use \newcommand as above.
+% Though you can also enclose \Tr in braces to limit it: {\Tr{}}
+
+%----------------------------------------
+%%% End of font definitions %%%
+%----------------------------------------
