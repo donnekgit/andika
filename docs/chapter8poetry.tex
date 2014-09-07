@@ -184,13 +184,24 @@ This word is found mainly in northern dialects (Sacleux 1939).
 
 The \textit{author-year} citation style is default, but it can be changed.  However, since citation management and style is a wide-ranging topic not directly relevant to \textbf{Andika!}, this aspect is not dealt with here.
 
+The bibliography file has to be called \textit{andika.bib}, and has to be in the \url{andika/docs} directory.  You can either add your citation details to that file, or delete it and start your own \textit{andika.bib}.  If you need to use a bibliography file of a different name in a different location, you can delete the existing \textit{andika.bib} and set up a symbolic link to your own file.  For instance, if your bibliography file were called \textit{thesis.bib}, and it was located in \url{/home/USER/thesis}, you would run the following commands in a terminal open at \textit{andika}:
+
+\verb|cd docs|\\
+(change into the \url{andika/docs} directory)
+
+\verb|ln -s ~/thesis/thesis.bib andika.bib|\\
+(create an \textit{andika.bib} link (alias or shortcut) to your bibliography file)
+
+\verb| cd ..|\\
+(change back up to the \url{andika} directory)
+
 It is worth noting that in cases where citations are not printed properly, it is virtually always the case that there is an error in the bibliography file, or that the key being used is incorrect.\footnote{I recently spent almost an hour trying to work out why the entry for \citet{Abdulkadir2013}, key \texttt{Abdulkadir2013}, was not appearing correctly - there were definitely no mistakes in the bibliography entry.  Yet LaTeX reported it could not find that entry.  I tried various increasingly complicated fixes, until eventually I noticed that I had typed the key as \texttt{Adbulkadir2013} when citing the work.  When a problem like this arises, we tend to think that the most likely cause is a fault in the software, but it is far more likely to be a fault in the wetware connecting the chair to the computer.}
 
 
 \section{Output}
 \label{s:output}
 
-Once the database table holding the words of the poem has been edited to include all the annotations required, it can be output in a variety of formats.  The most important is likely to be \textit{pdf} format, since the LaTeX typesetting system produces a very attractive, beautifully laid-out text equally suitable for traditional printing or digital distribution.
+Once the database table holding the words of the poem has been edited to include all the annotations required, it can be output in a variety of formats.  The most important is likely to be \textit{pdf} format, since the LaTeX typesetting system produces a very attractive, beautifully laid-out text equally suitable for traditional printing or digital distribution.  The \textit{pdf} output format is two \textit{vipande} to the line, with a space between them (compare the conversion options in \Cref{ss:pacint}).
 
 To print your annotated poem to a pdf file, run:
 
@@ -207,11 +218,12 @@ By default, the \textit{pdf} output uses the entries in \textit{edclose}, but yo
 
 
 \subsection{Changing the font size}
+\label{s:outfont}
 
 The default font size for the output is 12pt, which is good for computer use.  However, if you need a slightly smaller font for print use, open \textit{andika/db/tex/tex_header.tex} and change \textit{12pt} in the first line to \textit{10pt}.  Save the file, and then run \textit{output_pdf.php} again.
 
-
 \subsection{Location of annotations}
+\label{s:outloc}
 
 By default, all annotations are output as footnotes -- since they refer to individual words in the text, having them on the same page is easier to read.  But if you need endnotes instead, this can be achieved by minimal editing of two files:
 \begin{enumerate}
@@ -225,8 +237,7 @@ After this, running:
 
 will produce a \textit{pdf} with endnotes.  If you want to go back to footnotes, simply comment the five lines again.
 
-
-
+To get an impression of the difference in output, compare \Cref{appD} and \Cref{appF}.
 
 % \subsection{Output to html}
 % 
@@ -244,4 +255,3 @@ will produce a \textit{pdf} with endnotes.  If you want to go back to footnotes,
 % Note that, of the browsers available on Linux, Rekonq provides the best results. It retains all the formatting (fonts, colours, etc), and converts the endnote links in the resulting odt file so that they can be accessed by pressing Ctrl while clicking. Chromium retains the formatting, but does not convert the links, so that they still point to the original html file, and clicking them opens that file in a browser. Chromium also converts some spaces to non-breaking spaces, which are marked with a grey background - to get rid of this, select Tools → Options → LibreOffice Writer → Formatting Aids, untick Non-breaking spaces, and press OK. Firefox is worst of all, losing all the formatting, and leaving the links unconverted. Note that even with Rekonq and Chromium, though, you will need to select all the endnotes in LibreOffice and press the LTR button in order to align them to the left.
 % 
 % You can also open the html file in LibreOffice itself, but in this case you will not be able to save it as an odt file. 
-

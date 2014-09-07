@@ -26,27 +26,12 @@ If not, see <http://www.gnu.org/licenses/>.
 include("./andika/config.php");
 include("./includes/fns.php");
 
-//$poem="kiswahili";
-// $poem="jaafari";
-//echo $poem."\n";
-
 $poem=$argv[1];  // Take the name of the poem from the command-line argument.
 if (empty($argv[1]))
 {
     echo "\nYou need to specify the name of the poem.\nAdd it to the end of the line.\n\n";
     exit;
 }
-
-if ($argv[2]=="standard")  // Choose the field to use for the main transliteration.
-{
-    $trans="standard";
-}
-else
-{
-    $trans="edclose";
-}
-
-echo $trans."\n";
 
 $words="{$poem}_words";
 $stanza_contents="";  // set up a holder for the contents of the whole stanza
@@ -70,7 +55,7 @@ if (file_exists("convert/inputs/$poem/{$poem}_title.tex"))
     $title=file_get_contents("convert/inputs/$poem/{$poem}_title.tex");
 }
 fwrite($fp, $title);
-fwrite($fp, "\n");
+fwrite($fp, "\n\n\n");
 
 // Set up the layout.
 fwrite($fp, "\begin{longtable}{{$columns}} \n\n");
