@@ -1,0 +1,170 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage{titlesec}  % Allow the chapter/section heading settings to be fine-tuned.  Needs to come before bidi, in polyglossia.
+\usepackage{polyglossia}  % multilingual support
+\usepackage{longtable}  % tables that carry across multiple pages
+\usepackage{xcolor}  % can't use color with polyglossia
+
+\input{convert/tex/fontdefs.tex}  % Bring in the font definitions.
+
+\usepackage{marginnote}
+\renewcommand*{\marginfont}{\color{red}\sffamily}
+
+\usepackage{csquotes}
+% \usepackage{natbib}
+\usepackage[backend=biber, style=authoryear]{biblatex}
+\addbibresource{bib/andika.bib}
+
+\interfootnotelinepenalty=10000 % prevents the footnote from breaking across pages
+% http://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
+
+% Thanks to Manas Tungare (http://manas.tungare.name/software/latex) for these settings.
+\setlength{\paperwidth}{210mm}
+\setlength{\paperheight}{297mm}
+
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{247mm}
+
+\setlength{\evensidemargin}{1in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{-0.5in}
+
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
+
+\usepackage{url}  % Use urls in text and captions with sensible linewrap.  Can't use [obeyspaces] - this option clashes with biblatex.
+% \urlstyle{rm}  % Set urls in roman.
+
+\titleformat{\chapter}[display]{\normalfont\large}{\bfseries\chaptertitlename\ \thechapter}{10pt}{\large\itshape}[\vspace{2ex}\titlerule\vspace{2ex}]  % 10pt is the space between chapter and chapter name.  [display] sets the chapter and chapter name on separate lines.  The square brackets at the end draw a line under each chapter name, with 2ex gap from the name.
+\titlespacing{\chapter}{0pt}{0pt}{10pt}  % First is indent from the side, second is length down from the top, third is gap between heading and text.
+
+% \pagenumbering{gobble}  % Suppress page numbering.
+
+% ===== Endnotes =====
+% Uncomment the following two lines to get endnotes instead of footnotes.
+% Remember to uncomment the three lines in andika/db/output_pdf.php as well.
+% \usepackage{endnotes}
+% \let\footnote=\endnote
+% ==================
+
+\begin{document}
+
+\begin{center}
+\Atitle{أُتٖيْنْزِ ۏَ ڤِيْٹَ ڤِكُوْ} \\*  % Name of the poem
+\Tr{uṯēnzi w̱a vı̄ţa vikuu} \\  %Transcription of the name
+\E{The Ballad of the Great Battle} \\
+\end{center}
+
+
+
+\begin{longtable}{rrl} 
+
+\makebox[8cm][r]{} & & \makebox[8cm][r]{} \\ 
+
+\textarabic{نَخُبُوزِ يَشَعِيْرِ} & \textarabic{أَكَتٗؤَ تَمَارِ} & \textarabic{١} \\* 
+\Tr{nakhubūzi yasha'ı̄ri} & \Tr{akaṯoa ṯamāri} &  \Tr{1b/a} \\* 
+\multicolumn{2}{r}{\Swa{akaṯoa ṯamāri * na khubūzi ya sha'ı̄ri}} & \Swa{1a/b} \\* 
+\multicolumn{2}{r}{\E{He took out dates and barley bread}} & \\ 
+\textarabic{كَكهٖيْتِ كَٹٗئٖلٖئَ} & \textarabic{نَمِلْحِ أَصْفَرِ} &  \\* 
+\Tr{kakʿēṯi kaţoelea} & \Tr{namilḥi aṣfari} &  \Tr{1d/c} \\* 
+\multicolumn{2}{r}{\Swa{na mil\In{i}ḥi aṣ\In{u}fari\footnote{The salt is yellow because it is unpurified rock-salt, containing iodine.} * kakʿēṯi kaţoelea}} & \Swa{1c/d} \\* 
+\multicolumn{2}{r}{\E{And yellow salt - he sat down and took [them] out.}} & \\ 
+\\[8mm] 
+
+\textarabic{ۏَاكٖ إِلَاهِ وَدُوْدِ} & \textarabic{كِشَكُوْلَ كَحِمِيْدِ} & \textarabic{٢} \\* 
+\Tr{w̱āke ilāhi waḏūḏi} & \Tr{kishakūla kaḥimı̄ḏi} &  \Tr{2b/a} \\* 
+\multicolumn{2}{r}{\Swa{kishakūla kaḥimı̄ḏi * w̱āke ilāhi waḏūḏi}} & \Swa{2a/b} \\* 
+\multicolumn{2}{r}{\E{When he finished eating he gave thanks to his beloved God,}} & \\ 
+\textarabic{مَعَدُوِ نَمَوَلِيْ} & \textarabic{مُؤُوْنْبَ زٗوْتهٖ جَسَادِ} &  \\* 
+\Tr{ma'aḏuwi namawalii} & \Tr{muūm̱ba zōṯʿe jasāḏi} &  \Tr{2d/c} \\* 
+\multicolumn{2}{r}{\Swa{muūm̱ba zōṯʿe jasāḏi * ma'aḏuwi na mawalii\footnote{The implication is that these are friends and enemies of Islam.}}} & \Swa{2c/d} \\* 
+\multicolumn{2}{r}{\E{The Creator of all individuals - both enemies and friends.}} & \\ 
+\\[8mm] 
+
+\textarabic{عَمُوْرِ أَكَتٗوْكَ} & \textarabic{هَاتَ كُكِپَنْبَؤُوْكَ} & \textarabic{٣} \\* 
+\Tr{'amūri akaṯōka} & \Tr{hāṯa kukipam̱baūka} &  \Tr{3b/a} \\* 
+\multicolumn{2}{r}{\Swa{hāṯa kukipam̱baūka * 'amūri akaṯōka}} & \Swa{3a/b} \\* 
+\multicolumn{2}{r}{\E{Until, when dawn came, Amuri came out}} & \\ 
+\textarabic{سَوْتِ أَكَئِتٗؤَ} & \textarabic{كْوَ عَلِىْ أَكَفِيْكَ} &  \\* 
+\Tr{sawṯi akaiṯoa} & \Tr{kwa 'alii akafı̄ka} &  \Tr{3d/c} \\* 
+\multicolumn{2}{r}{\Swa{kwa 'alii akafı̄ka * sawṯi akaiṯoa}} & \Swa{3c/d} \\* 
+\multicolumn{2}{r}{\E{He arrived beside Ali and [Ali] spoke.}} & \\ 
+\\[8mm] 
+
+\textarabic{أَهْلاً يَا مُكَرَّمَ} & \textarabic{عَلِىْ كَتَكَلَامَ} & \textarabic{٤} \\* 
+\Tr{ahlāⁿ yā mukarrama} & \Tr{'alii kaṯakalāma} &  \Tr{4b/a} \\* 
+\multicolumn{2}{r}{\Swa{'alii kaṯakalāma * ah\In{a}lā yā mukarrama}} & \Swa{4a/b} \\* 
+\multicolumn{2}{r}{\E{Ali said Greetings, Honoured One}} & \\ 
+\textarabic{نْدِئَ إِنْڠَاۏَ طَوِلِيَ} & \textarabic{ٹُتَوَصِيْل سَلَامَ} &  \\* 
+\Tr{nḏia ingāw̱a ṭawiliya} & \Tr{ţuṯawaṣı̄l salāma} &  \Tr{4d/c} \\* 
+\multicolumn{2}{r}{\Swa{ţuṯawaṣı̄l\In{i} salāma * nḏia ingāw̱a ṭawiliya}} & \Swa{4c/d} \\* 
+\multicolumn{2}{r}{\E{We shall arrive safely even if the road is long.}} & \\ 
+\\[8mm] 
+
+\textarabic{كَئِلَبِيْسِ يُوَانِ} & \textarabic{عَمُوْرِ كَرُوْدِ نْڈَانِ} & \textarabic{٥} \\* 
+\Tr{kailabı̄si yuwāni} & \Tr{'amūri karūḏi nḑāni} &  \Tr{5b/a} \\* 
+\multicolumn{2}{r}{\Swa{'amūri karūḏi\footnote{B: \AS{أَكٖينْڈَ} \Tr{akēnḑa}}  nḑāni * kailabı̄si yuwāni}} & \Swa{5a/b} \\* 
+\multicolumn{2}{r}{\E{Amuri went back inside; know that he dressed himself}} & \\ 
+\textarabic{أَكَئِفُوْنْڠَ زِكَمْكَاءَ} & \textarabic{دِرِيْعِ زَ أُۏَنْدَانِ} &  \\* 
+\Tr{akaifūnga zikamkaa} & \Tr{ḏirī'i za uw̱anḏāni} &  \Tr{5d/c} \\* 
+\multicolumn{2}{r}{\Swa{ḏirī'i za uw̱anḏāni\footnote{\AS{أُۏَنْدَ}(\Tr{uwanda}) is an \E{open space}, and by extension a \E{battlefield}.} * akaifūnga zikamkaa\footnote{Lit. \E{and bound himself so that [the armour] stayed on him}.}}} & \Swa{5c/d} \\* 
+\multicolumn{2}{r}{\E{In battle-armour, and fastened it firmly upon himself.}} & \\ 
+\\[8mm] 
+
+\textarabic{نَرُمْحِ نَتُرُوْسِ} & \textarabic{نَسٖيْفُ نْجٖيْمَ أَسِيْسِ} & \textarabic{٦} \\* 
+\Tr{narumḥi naṯurūsi} & \Tr{nasēfu njēma ası̄si} &  \Tr{6b/a} \\* 
+\multicolumn{2}{r}{\Swa{na sēfu njēma ası̄si * narum\In{u}ḥi na ṯurūsi}} & \Swa{6a/b} \\* 
+\multicolumn{2}{r}{\E{And [took up] a good, stout sword, and a spear, and a shield.}} & \\ 
+\textarabic{جُوْ أَكَمْكَلِئَ} & \textarabic{أَكَمْپَانْڈَ فَرَاسِ} &  \\* 
+\Tr{juu akamkalia} & \Tr{akampānḑa farāsi} &  \Tr{6d/c} \\* 
+\multicolumn{2}{r}{\Swa{akampānḑa farāsi * juu akamkalia}} & \Swa{6c/d} \\* 
+\multicolumn{2}{r}{\E{Then he mounted his steed, and seated himself upon it.}} & \\ 
+\\[8mm] 
+
+\textarabic{بِاللَّيْلِ وَالنَّهَارِ} & \textarabic{ۏَكٖيْنْڈَ تهَخُبِيْرِ} & \textarabic{٧} \\* 
+\Tr{billayli wannahāri} & \Tr{w̱akēnḑa ṯʿakhubı̄ri} &  \Tr{7b/a} \\* 
+\multicolumn{2}{r}{\Swa{w̱akēnḑa ṯʿakhubı̄ri * bi-llayli wa-nnahāri}} & \Swa{7a/b} \\* 
+\multicolumn{2}{r}{\E{They went, I'll tell you, by night and day,}} & \\ 
+\textarabic{نَمِيْٹِ نَمَطَرِيَ} & \textarabic{ۏَكَپَنْبَانَ نَبَحَارِ} &  \\* 
+\Tr{namı̄ţi namaṭariya} & \Tr{w̱akapam̱bāna nabaḥāri} &  \Tr{7d/c} \\* 
+\multicolumn{2}{r}{\Swa{w̱akapam̱bāna na baḥāri * na mı̄ţi namaṭariya\footnote{Ar. \AS{مطر}, \E{rain}.  Seemingly used by extension here to mean a place with water.}}} & \Swa{7c/d} \\* 
+\multicolumn{2}{r}{\E{And they encountered oceans, and forests, and oases.}} & \\ 
+\\[8mm] 
+
+\textarabic{عَلِىْ نَمَلِعُوْنِ} & \textarabic{ۏَكٖنٖينْڈَ يُۏَانِ} & \textarabic{٨} \\* 
+\Tr{'alii namali'ūni} & \Tr{w̱akenēnḑa yuw̱āni} &  \Tr{8b/a} \\* 
+\multicolumn{2}{r}{\Swa{w̱akenēnḑa yuw̱āni * 'alii namali'ūni}} & \Swa{8a/b} \\* 
+\multicolumn{2}{r}{\E{Know that they went on, Ali and the Accursed One;}} & \\ 
+\textarabic{عَمُوْرِ كَزِٹَنْبُؤَ} & \textarabic{نْدِئَ زِيْلِ زَمَدِيْنِ} &  \\* 
+\Tr{'amūri kaziţam̱bua} & \Tr{nḏia zı̄li zamaḏı̄ni} &  \Tr{8d/c} \\* 
+\multicolumn{2}{r}{\Swa{nḏia zı̄li zamaḏı̄ni * 'amūri kaziţam̱bua}} & \Swa{8c/d} \\* 
+\multicolumn{2}{r}{\E{These roads [led to] Medina - Amuri recognised them.}} & \\ 
+\\[8mm] 
+
+\textarabic{كَمْوَنبِئَ حَيْدَرِ} & \textarabic{عَمُوْرِ كَذُكُوْرِ} & \textarabic{٩} \\* 
+\Tr{kamwam̱bia ḥayḏari} & \Tr{'amūri kadhukūri} &  \Tr{9b/a} \\* 
+\multicolumn{2}{r}{\Swa{'amūri kadhukūri * kamwam̱bia ḥayḏari\footnote{A frequently-used metonym for Ali.}}} & \Swa{9a/b} \\* 
+\multicolumn{2}{r}{\E{Amuri spoke and said to the Lion:}} & \\ 
+\textarabic{نْبٗوْنَ ٹْوَئِفُوَٹِئَ} & \textarabic{دُرُوْبُ نْدَ أَنْصَارِ} &  \\* 
+\Tr{m̱bōna ţwaifuwaţia} & \Tr{ḏurūbu nḏa anṣāri} &  \Tr{9d/c} \\* 
+\multicolumn{2}{r}{\Swa{ḏurūbu nḏa anṣāri\footnote{The Ansari were the Muslims of Medina who gave refuge to the Prophet after the Hegira.  Possibly this word is in error for \AS{أَمْصَارِ}, \E{city}, used in the next stanza.} * m̱bōna ţwaifuwaţia}} & \Swa{9c/d} \\* 
+\multicolumn{2}{r}{\E{This is the Companions' road why are we following it?}} & \\ 
+\\[8mm] 
+
+\textarabic{يَكْوٖنٖينْڈَ سَفَارِ} & \textarabic{نَاسِ ٹُمٖفَانْيَ مَشَؤُوْرِ} & \textarabic{١٠} \\* 
+\Tr{yakwenēnḑa safāri} & \Tr{nāsi ţumefānya mashaūri} &  \Tr{10b/a} \\* 
+\multicolumn{2}{r}{\Swa{nāsi ţumefānya mashaūri * ya kwenēnḑa safāri}} & \Swa{10a/b} \\* 
+\multicolumn{2}{r}{\E{For we have taken counsel about going on the journey,}} & \\ 
+\textarabic{جُنُوْدِ كُئِكُسَنْيِئَ} & \textarabic{كْوَنْڠَلِئَ أَمْصَارِ} &  \\* 
+\Tr{junūḏi kuikusanyia} & \Tr{kwangalia amṣāri} &  \Tr{10d/c} \\* 
+\multicolumn{2}{r}{\Swa{kwangalia amṣāri * junūḏi kuikusanyia}} & \Swa{10c/d} \\* 
+\multicolumn{2}{r}{\E{to reconnoitre the city while the army assembles.}} & \\ 
+\\[8mm] 
+
+\end{longtable} 
+
+\renewcommand{\bibname}{References} 
+\begingroup 
+\printbibliography 
+\endgroup 
+
+\end{document}

@@ -87,7 +87,7 @@ $\hookrightarrow$ \verb|where w.stanza=b.stanza and w.loc=b.loc and w.position=b
 
 The above query, for instance, will copy the variant and note fields from your manual backup table to your \textit{words} table, and it is then safe to fix the other problems in your \textit{words} table, and run \textit{import_words.php} again.
 
-If you do not correct data losses manually after a first problematic re-import, running \textit{import_words.php} again will lead to data loss -- the first run creates a \textit{backup} table with all your data, but a second run will delete that good \textit{backup} table and create a new one based on the now-faulty \textit{words} table, possibly replacing good entries with faulty ones. 
+If you do not correct the problems manually, running \textit{import_words.php} again will lead to data loss -- the first run creates a \textit{backup} table with all your data, but a second run will delete that good \textit{backup} table and create a new one based on the faulty \textit{words} table, possibly overwriting good entries with faulty ones. 
 
 
 \section{Annotations}
@@ -171,7 +171,7 @@ This field holds an English translation of the \textit{kipande}, placed against 
 
 \subsection{Inserting citations in the annotations}
 
-All the annotation fields can include citations, but they are perhaps most likely in the \textit{note} field.  The citations use a LaTeX package called \textit{biblatex}, which has already been installed (\Cref{s:latex}).\footnote{The older \textit{bibtex} package does not support citations in footnotes.}  This draws on a list of the citations you wish to use, which need to be in BibTeX format -- see \url{andika/docs/andika.bib} for an example of a short bibliography file.  It is possible to write this file using just a text editor, but it is easier to use a frontend such as KBibTex, which has already been installed.\footnote{An alternative is JabRef -- \url{jabref.org}.}  With a frontend, you simply type the bibliographic details of the citation into a series of dialogue boxes.  Each citation is referred to by a ``key'' -- I use the name of the first author and the year, so the key for Sacleux' \textit{Dictionnaire} would be \textit{Sacleux1939}, but you can use anything you like.
+All the annotation fields can include citations, but they are perhaps most likely in the \textit{note} field.  The citations use a LaTeX package called \textit{biblatex}, which has already been installed (\Cref{s:latex}).\footnote{The older \textit{bibtex} package does not support citations in footnotes.}  This draws on a list of the citations you wish to use, which need to be in BibTeX format -- see \url{andika/bib/andika.bib} for an example of a short bibliography file.  It is possible to write this file using just a text editor, but it is easier to use a frontend such as KBibTex, which has already been installed.\footnote{An alternative is JabRef -- \url{jabref.org}.}  With a frontend, you simply type the bibliographic details of the citation into a series of dialogue boxes.  Each citation is referred to by a ``key'' -- I use the name of the first author and the year, so the key for Sacleux' \textit{Dictionnaire} would be \textit{Sacleux1939}, but you can use anything you like.
 
 Using this as an example, we can then refer to a citation in the note by using \verb|\textcite{Sacleux1939}| where the work is a subject:
 \begin{quotation}
@@ -184,16 +184,13 @@ This word is found mainly in northern dialects (Sacleux 1939).
 
 The \textit{author-year} citation style is default, but it can be changed.  However, since citation management and style is a wide-ranging topic not directly relevant to \textbf{Andika!}, this aspect is not dealt with here.
 
-The bibliography file has to be called \textit{andika.bib}, and has to be in the \url{andika/docs} directory.  You can either add your citation details to that file, or delete it and start your own \textit{andika.bib}.  If you need to use a bibliography file of a different name in a different location, you can delete the existing \textit{andika.bib} and set up a symbolic link to your own file.  For instance, if your bibliography file were called \textit{thesis.bib}, and it was located in \url{/home/USER/thesis}, you would run the following commands in a terminal open at \textit{andika}:
+The bibliography file has to be called \textit{andika.bib}, and has to be in the \url{andika/bib} directory.  You can either add your citation details to that file, or delete it and start your own \textit{andika.bib}.  If you need to use a bibliography file of a different name in a different location, you can delete the existing \textit{andika.bib} and set up a symbolic link to your own file.  For instance, if your bibliography file were called \textit{thesis.bib}, and it was located in \url{/home/USER/thesis} (where \textit{USER} is your username), you would run the following commands in a terminal open at \textit{andika}:
 
-\verb|cd docs|\\
-(change into the \url{andika/docs} directory)
+\verb|rm bib/andika.bib|\\
+(delete the existing \textit{andika.bib} file)
 
-\verb|ln -s ~/thesis/thesis.bib andika.bib|\\
-(create an \textit{andika.bib} link (alias or shortcut) to your bibliography file)
-
-\verb| cd ..|\\
-(change back up to the \url{andika} directory)
+\verb|ln -s ~/thesis/thesis.bib bib/andika.bib|\\
+(create an \textit{andika.bib} link (alias or shortcut) to your bibliography file -- remember that $\sim$ stands for \textit{/home/USER})
 
 It is worth noting that in cases where citations are not printed properly, it is virtually always the case that there is an error in the bibliography file, or that the key being used is incorrect.\footnote{I recently spent almost an hour trying to work out why the entry for \citet{Abdulkadir2013}, key \texttt{Abdulkadir2013}, was not appearing correctly - there were definitely no mistakes in the bibliography entry.  Yet LaTeX reported it could not find that entry.  I tried various increasingly complicated fixes, until eventually I noticed that I had typed the key as \texttt{Adbulkadir2013} when citing the work.  When a problem like this arises, we tend to think that the most likely cause is a fault in the software, but it is far more likely to be a fault in the wetware connecting the chair to the computer.}
 

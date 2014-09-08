@@ -1,3 +1,18 @@
+webtrans
+-----------
+
+Need to add note about giving it wider permissions, or the webserver can't write the converted webpages there.
+
+
+Manual
+----------
+
+latexpand manual.tex > manual_xp.tex
+Replace citet and citep with textcite and parencite.
+Kile Alt+1.
+Compiles using biblatex.
+
+
 ODT
 ------
 

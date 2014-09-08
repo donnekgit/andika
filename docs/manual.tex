@@ -29,6 +29,9 @@
 \usepackage{marginnote}  %provides more flexible margin notes
 \renewcommand*{\marginfont}{\color{red}\sffamily}  % colour the margin notes red
 
+% \usepackage{csquotes}
+% \usepackage[backend=biber, style=authoryear]{biblatex}
+% \addbibresource{../bib/andika.bib}
 \usepackage{natbib}
 
 \usepackage{cleveref}
@@ -113,7 +116,9 @@
 \renewcommand{\bibname}{References}
 \bibliographystyle{chicago}
 \bibliography{andika.bib}
-
+% \begingroup 
+% \printbibliography 
+% \endgroup 
 
 \newpage
 \appendix  % Start the appendices.

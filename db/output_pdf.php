@@ -67,7 +67,7 @@ while ($row=pg_fetch_object($sql))
 {
     $stanza=$row->stanza;
     
-    $sql_loc=query("select distinct loc from kiswahili_words where stanza=1 order by loc;");
+    $sql_loc=query("select distinct loc from $words where stanza=$stanza order by loc;");
     while ($row_loc=pg_fetch_object($sql_loc))
     {
         $kipande=$row_loc->loc;
@@ -96,7 +96,7 @@ while ($row=pg_fetch_object($sql))
             
             if ($variant!='')  // Add variant readings.
             {
-                $trans=$trans."\\footnote{".$note."} ";  // Final space in case there are other footnotes.
+                $trans=$trans."\\footnote{".$variant."} ";  // Final space in case there are other footnotes.
             }
             
             if ($note!='')  // Add notes.
@@ -142,7 +142,7 @@ while ($row=pg_fetch_object($sql))
                 fwrite($fp, " \\\\* \n");  
             }
             fwrite($fp, "\Tr{".$b_close."} & \\Tr{".$a_close."} &  \Tr{".$stanza.$close_kip."} \\\\* \n");
-            fwrite($fp, "\multicolumn{2}{r}{\Swa{".$a_trans." * ".$b_trans."}} & \Swa{".$stanza.$edclose_kip."} \\\\* \n");
+            fwrite($fp, "\multicolumn{2}{r}{\Swa{".$a_trans." * ".$b_trans."}} & \Swa{".$stanza.$trans_kip."} \\\\* \n");
             fwrite($fp, "\multicolumn{2}{r}{\E{".$a_english." ".$b_english."}} & \\\\ \n");
            
             echo $stanza.$edclose_kip.": ".$a_trans." + ".$b_trans."\n";
