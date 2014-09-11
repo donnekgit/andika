@@ -1,3 +1,14 @@
+A/9.2: check dbmaster issue
+sudo nano /etc/postgresql/9.3/main/pg_hba.conf
+set to "peer" currently
+set it to md5 to allow users other than username
+if kept as peer, dbuser has to be same as username
+
+remove and readd server files
+
+
+
+
 webtrans
 -----------
 

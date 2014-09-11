@@ -12,13 +12,55 @@
 
 These instructions are based on Ubuntu 14.04, both as the main operating system and as a virtual guest on Apple OS X. In either case, your desktop, real or virtual, needs to be working properly and to have network access so that you can download the additional software required.
 
+
+Download an Ubuntu iso from:
+http://www.ubuntu.com/download/desktop
+Ubuntu 14.04.1 LTS, 64-bit
+and save it somewhere (it's about 960Mb).
+
+Open VirtualBox Manager
+Click the icon for New.
+Fill in:
+        Name: Andika
+        Type: Linux
+        Version: Ubuntu (64 bit)
+Click Next.
+Set 1024Mb (or 1500Mb if you have 3Gb or more of memory) as the memory amount. 
+(Your IT guy set only 512Mb here.)
+Click Next.
+Tick "Create a virtual harddrive now"
+Click Next.
+Tick VDI.
+Click Next.
+Tick "Dynamically allocated"
+Click Next.
+Set 40Gb as the virtual hard drive size. (Your IT guy set only 8Gb here, which 
+was OK sometime in the 90s.  I don't know why Oracle sets that as a default.)
+Click Create.
+Click the new Andika entry in the left-hand pane so that it is highlighted.
+Click the icon for Start.
+You will be asked to select a startup disk
+Click the little folder to the right of the textbox to navigate to wherever 
+you stored the Ubuntu iso.
+Click OK.
+Click Start.
+The Ubuntu will load onto your virtual drive - it will take a couple of 
+minutes.
+Click "Install Ubuntu".
+Click through the screens, accepting the defaults.
+At the end, about 20 minutes, you should have a new Unity desktop, and you can 
+go through Appendix A again.
+You can do this and if it doesn't go right just delete the virtual machine, so 
+it's quite an easy way of experimenting.
+
+
 Users who simply wish to be able to type Swahili in a word-processor need not go through the full installation procedure in this appendix.  They only need to follow \Cref{s:snapshot}, move into the unzipped download, and then follow \Crefrange{s:fonts}{s:libreoffice}.
 
 The full installation procedure here needs to be carried out by users who wish to transcribe, edit and annotate Swahili documents in Arabic script, providing Roman equivalents as well.  The reason there is so much to install is that \textbf{Andika!} does not reinvent the wheel -- rather, it tries to combine already-existing best-of-breed software to do new things.
 
 \section{Preliminaries}
 
-Ubuntu comes by default with a desktop called Unity,\footnote{unity.ubuntu.com} but a variety of different Linux desktops are available, of which perhaps the most popular is KDE.\footnote{kde.org}  (If you want to install KDE, open a terminal as shown below and type: \verb|sudo apt-get install kubuntu-desktop|.  This will take some time to complete.  Log out of Unity, and select KDE at the login screen.)
+Ubuntu comes by default with a desktop called Unity,\footnote{unity.ubuntu.com} but a variety of different Linux desktops are available, of which perhaps the most popular is KDE.\footnote{kde.org}  (If you want to install KDE, open a terminal as shown below and type: \verb|sudo apt-get install kubuntu-desktop|.  This will take some time to complete.  Log out of Unity, and select KDE at the login screen by clicking on the Ubuntu symbol above the login box.)
 
 Most of the install is carried out by typing commands into a terminal: in KDE, go to \textbf{K \textrightarrow\ System \textrightarrow\ Konsole}; in Unity, press \textbf{Ctrl + Alt + T}.  This is because this method is much faster and more succinct than explaining how to point-and-click through various dialogue boxes.
 
@@ -146,7 +188,7 @@ Add the SIL repository to the list of repositories used by your Ubuntu install:
 If you are not using 14.04 (codenamed Trusty Tahir), change \textit{trusty} accordingly.  To find the codename of your version, use:\\
 \verb|lsb_release -sc|
 
-Update the software package lists to include software from the new repository:\\
+Update the software package lists to include software from the new repository:
 
 \verb|sudo apt-get update|
 
@@ -159,7 +201,7 @@ We can now install all the fonts:
 \verb|sudo apt-get install fonts-sil-scheherazade fonts-hosny-amiri fonts-liberation|\\
 $\hookrightarrow$ \verb|fonts-linuxlibertine|
 
-Amiri,\footnote{\url{amirifont.org}} created by Khaled Hosny, is an alternate Naskh-style font -- it is not currently used in Andika!, but could be a possible alternative to Scheherazade -- see \Cref{s:sham}.
+Amiri,\footnote{\url{amirifont.org}} created by Khaled Hosny, is an alternate Naskh-style font -- it is not currently used in \textbf{Andika!}, but could be a possible alternative to Scheherazade -- see \Cref{s:sham}.
 
 Liberation Serif\footnote{\url{fedorahosted.org/liberation-fonts}} in the \textit{fonts-liberation} package is a tidy font used for the English translation in poetry.
 
@@ -201,7 +243,25 @@ You should now see an additional marker in the system tray at the bottom right o
 
 Close the \textit{System Settings} box.
 
-NOTE: If you have the unlock screen activated, this means that when you leave your machine for some time, it will power down the screen and then, when you resume work, present a login box so that you can unlock the desktop.   A problem arises if you changed the  the keyboard to Swahili before leaving your machine -- since the machine was powered down with that keyboard active, the login box will only allow you to type Arabic glyphs, which means that you cannot type in your (Roman glyph) password!
+\subsection{Activate the new keyboard in Unity}
+
+Click the \textbf{System Settings} icon in the Launcher, or click the system icon in the top right-hand corner and select \textbf{System Settings}.
+
+Click \textbf{Text entry} in the \textit{Personal} section.
+
+Click on the + at the bottom of the left-hand pane, \textit{Input sources to use}.
+
+Roll down to \textit{Swahili (Tanzania)}.
+
+Click on it and then click \textbf{Add}.
+
+Close the \textit{Text entry} box.
+
+There should be a new icon on the menu bar.  Either Click on the language chooser icon on the menu bar and choose Swahili from the list.  Alternatively, press \textbf{Super} (usually the key with a Windows logo on it) \textbf{+ Space}.
+
+\subsection{Interaction with the unlock screen in KDE}
+
+If you have the unlock screen activated, this means that when you leave your machine for some time, it will power down the screen and then, when you resume work, present a login box so that you can unlock the desktop.   A problem arises if you changed the  keyboard to Swahili before leaving your machine -- since the machine was powered down with that keyboard active, the login box will only allow you to type Arabic glyphs, which means that you cannot type in your (Roman glyph) password!
 
 To deal with this situation, press \textbf{Crtl+Alt+F5} to get a terminal login.  Type your username and password to log in.
 
@@ -211,7 +271,8 @@ Open the configuration file for the keyboard:\\
 Find the line:\\
 \verb|LayoutList=gb,tz|\\
 and change it to:\\
-\verb|LayoutList=gb|\\
+\verb|LayoutList=gb|
+
 Save the file: \textbf{Ctrl+X, Y, Return}.\\
 (The example here uses the UK English keyboard, \textit{gb} -- replace this with whatever your own default keyboard is.)
 
@@ -335,6 +396,12 @@ You should get an error message saying that the role named after your username d
 \subsection{Set up a database user}
 \label{ss:dbuser}
 
+On Ubuntu, PostgreSQL uses peer authentication by default.  This means that creating a database user with the same name as your system (Ubuntu) user will mean you can log in to the database without entering a password.\footnote{This also means that you cannot create or use databases under a name other than that of your system user.  If you wish to do this, or enter a password each time your user accesses a database, open the configuration file: \texttt{sudo nano /etc/postgresql/9.3/main/pg_hba.conf}.  Find the line: \texttt{local all all peer} and change it to read \texttt{local all all md5}.  Save the file: \textbf{Ctrl+X, Y, Return}.  Restart PostgreSQL: \texttt{sudo service postgresql restart}.  You will now need to enter your database password even to connect to the database under your system username.}  The terminal prompt should tell you what your username is -- it is of the form \textit{user@computer}.  Alternatively, you can run:
+
+\verb|whoami|
+
+to find out your username.
+
 \verb|sudo -i|
 
 The prompt will change to show that you are now \textit{root} (the superuser, or administrator).
@@ -344,9 +411,11 @@ The prompt will change to show that you are now \textit{root} (the superuser, or
 
 The prompt will change to show that you are now the \textit{postgres} master user.
 
-\verb|createuser -P -s -e dbmaster|
+Create a new database user with the same name as your system user (replace USER with your system username):
 
-This will create a database user called \textit{dbmaster}.  (if you don't like that username, choose something else.) You will be asked to enter a password - note that you will get no feedback (the line will stay blank).  Press \textbf{Return} and you will be asked to enter the password again.  Press \textbf{Return} and you should get a messages beginning \textit{CREATE ROLE}, meaning that the new user has been created.
+\verb|createuser -P -s -e USER|
+
+You will be asked to enter a password -- note that you will get no feedback (the line will stay blank).  Press \textbf{Return} and you will be asked to enter the password again.  Press \textbf{Return} and you should get a message beginning \textit{CREATE ROLE}, meaning that the new user has been created.
 
 \verb|exit|\\
 to cease being the postgres user.
@@ -362,21 +431,21 @@ to cease being the superuser.
 Change:\\
 \verb|user=kevin password=kevindbs|\\
 to read:\\
-\verb|user=dbmaster password=yourpassword|\\
+\verb|user=USER password=yourpassword|\\
 and save the file (\textbf{Ctrl+X, Y, Return}).
 
-If you chose a username other than \textit{dbmaster}, use that instead.
+Remember to replace USER with your username.
 
 
 \subsection{Create the andika database}
 
-\verb|createdb -O dbmaster andika|
+\verb|createdb andika|
 
-This creates the \textit{andika} database, and makes the owner the new user you just created.  If you chose a username other than \textit{dbmaster}, use that instead.
+This creates the \textit{andika} database, owned by your new user.
 
 \textbf{Andika!} comes with starter data in \textit{andika/db/starter/andika.sql}, which can be imported into the new database.
 
-\verb|psql -U dbmaster -d andika < db/starter/andika.sql|
+\verb|psql -d andika < db/starter/andika.sql|
 
 If you chose a username other than \textit{dbmaster}, use that instead.
 
@@ -384,7 +453,7 @@ If you chose a username other than \textit{dbmaster}, use that instead.
 \subsection{Connect to the \textit{andika} database}
 \label{ss:connect}
 
-\verb|psql -U dbmaster -d andika|
+\verb|psql -d andika|
 
 The prompt should change to \textit{andika=\#}. 
 
@@ -401,7 +470,7 @@ This will show everything in the \textit{kiswahili} table.  Exit the data displa
 
 To see something more selective:
 
-\verb|select * from kiswahili where stanza=1 order by stanza, pos;|\\
+\verb|select * from kiswahili where stanza=1 order by stanza, loc;|\\
 (again, remember the semicolon at the end)
 
 You should get a listing of the \textit{vipande} in the first stanza of the poem \textit{Kiswahili} from the Abdulkadir and Frankl paper, in order of \textit{kipande}.  Exit the data display and go back to psql:\\
@@ -477,7 +546,7 @@ Click on \textbf{kiswahili} and you will see the data fields in that table. To s
 To see the data fields of each item in more detail, click on the \textbf{Edit} button beside each row in the table -- changes to the fields can be made and saved here.
 
 To make a database query, click the \textit{SQL} link at the top right of the phpPgAdmin window.  This will open another smaller window.  In the large textbox, type:\\
-\verb|select * from kiswahili where stanza=1 order by stanza, pos;|\\
+\verb|select * from kiswahili where stanza=1 order by stanza, loc;|\\
 (again, remember the semicolon at the end)
 
 Click Execute, and in the first window you should see a listing of the \textit{vipande} in the first stanza of the poem, in order of \textit{kipande}, as you did in Section \ref{ss:connect}.  In this case, though, the contents are a lot easier to read!
@@ -552,7 +621,7 @@ Check that the \textit{URL} line reads \textit{jdbc:postgresql://localhost:5432/
 The main screen consists of a top pane where you type database queries, and a bottom pane where the results will appear. 
 
 In the top pane, type:\\
-\verb|select * from kiswahili where stanza=1 order by stanza, pos;|\\
+\verb|select * from kiswahili where stanza=1 order by stanza, loc;|\\
 (remember: the semicolon at the end is an integral part of the command)
 
 Move the cursor somewhere in the middle of that query and press \textbf{Ctrl+Return}.  In the bottom pane, you should see a listing of the \textit{vipande} in the first stanza of the poem, in order of \textit{kipande}, as you did in Sections \ref{ss:connect} and \ref{ss:testppa}.
@@ -589,7 +658,7 @@ Update the software package lists to include software from the new repository:\\
 \verb|sudo apt-get update|
 
 Install YAD:\\
-\verb|sudo apt-get install yad|\footnote{You may also wish to install Andrei's own Y-PPA-Manager -- sudo apt-get install y-ppa-manager.  This is not used by \textbf{Andika!}, but is a very useful system tool to keep track of the software repositories on your machine.}
+\verb|sudo apt-get install yad|\footnote{You may also wish to install Andrei's own Y-PPA-Manager -- \texttt{sudo apt-get install y-ppa-manager}.  This is not used by \textbf{Andika!}, but is a very useful system tool to keep track of the software repositories on your machine.}
 
 
 \section{Access the \textit{Andika!} website locally}
