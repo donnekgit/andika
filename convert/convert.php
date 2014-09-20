@@ -28,6 +28,7 @@ This script converts Swahili poems in Arabic script into Roman script, and vice 
 generated transcription.  There are many options available, so see the manual for full details.
 */
 
+
 // -----------------------------
 // Initialise required stuff.
 // -----------------------------
@@ -55,6 +56,7 @@ $genre=lcfirst($genre);
 $columns=($layout=="vip-space") ? "rrl" : "rl";
 
 $stanza_no=0;  // stanza counter
+
 
 // --------------------------------------------------------
 // Locate the input file, depending on extension.
@@ -98,6 +100,8 @@ elseif ($type=="txt")
 {    
     $poemlines=file($file);
 }
+
+//print_r($poemlines);
 
 
 // --------------------------
@@ -146,11 +150,14 @@ $first_half=array('a', 'c', 'e', 'g', 'i', 'k', 'm', 'o', 'q', 's', 'u', 'w', 'y
 
 foreach ($poemlines as $key=>$poemline)
 {
-    if (strlen(trim($poemline)) > 0) // there's text on the line ...  ("empty" lines in a txt file contain a \n character, so we have to trim that off)
+    if (strlen(trim($poemline)) > 0) // there's text on the line ...  ("empty" lines in a txt file contain a \n character, so we have to trim that off)#
     {
-        $stanza_contents[]=$poemline;  // ... so put it into an array
+	if (!preg_match("/[0-9]+/", $poemline))
+	{
+	    $stanza_contents[]=$poemline;  // ... so put it into an array
+	}
     }
-    else  // when the line is blank, print out what we have (the previous stanza for poetry, the whole text for prose)
+    else  // the line is blank, so print out what we have (the previous stanza for poetry, the whole text for prose)
     {
 	$stanza_no++;  // increment the stanza number
 	echo "\n";  // add a blank line in the feedback
@@ -206,6 +213,7 @@ foreach ($poemlines as $key=>$poemline)
 	unset($stanza_contents);
     }
 }
+
 
 // --------------------------------------------------------
 // Close off the output, depending on extension.
