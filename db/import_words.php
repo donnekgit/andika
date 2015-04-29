@@ -24,7 +24,9 @@ If not, see <http://www.gnu.org/licenses/>.
 */
 
 /*
-This script wordifies the lines in a poem table.  Run it as: typeset/ import-words.php name_of_poem
+This script wordifies the lines in a poem table.  Run it as: 
+php db/import_words.php name_of_poem
+Note that this script restores all fields except arabic and close from a backed-up copy of the previous version of the table.  This means that once you have imported a table, if you then make changes to (eg) the transliteration routine for standard spelling (standardise) and reimport, the results of the changes will not show up - they will be written into the table, but then overwritten when the restore from backup is made.  To avoid this, and do a completely fresh import, comment out the two lines at the top and bottom of the script.
 */
 
 include("./includes/fns.php");
@@ -41,7 +43,12 @@ $backup="{$poem}_backup";
 
 // Do a backup of the words table - edits will be reapplied from here.
 drop_existing_table($backup);
+
+// ===== Fresh import =====
+// Comment out the following line to do a completely fresh import:
 $sql_b=query("create table $backup as select * from $words");
+// ======================
+
 
 // Re-create the poemwords table.
 include("db/create_poemwords.php");
@@ -79,7 +86,11 @@ while ($row=pg_fetch_object($sql))
 
 // Put back any edits.
 echo "\nRe-integrating previous edits.\n\n";
+
+// ===== Fresh import =====
+// Comment out the following line to do a completely fresh import:
 $sql_n=query("update $words w set (standard, edclose, variant, note, root, english) = (b.standard, b.edclose, b.variant, b.note, b.root, b.english) from $backup b where w.stanza=b.stanza and w.loc=b.loc and w.position=b.position;");
+// ======================
 
 // To insert new stanzas (eg from a new MS) into the middle of existing stanzas, edit them as a separate document first, setting the stanza number to suit, eg 5 stanzas which run from 116 to 120, and import as a table.  Then move the numbering of existing stanzas forward (update stanza set stanza=stanza+5 where stanza>115), and copy the new stanzas into the poem table (insert into existing_stanzas select * from new_stanzas).
 

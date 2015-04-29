@@ -44,9 +44,9 @@ CREATE TABLE $words (
     standard character varying(50),	
     edclose character varying(50) default '' not null,
     variant character varying(250) default '' not null,
-	note text default '' not null,
-	root character varying(50) default '' not null,
-	english character varying(250) default '' not null
+    note text default '' not null,
+    root character varying(50) default '' not null,
+    english character varying(250) default '' not null
 );
 ";
 $result_table=pg_query($db_handle, $sql_table);

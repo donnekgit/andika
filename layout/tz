@@ -15,9 +15,9 @@ xkb_symbols "swa"
     // -------------
     // ZXCV row
     // -------------
-    key <LSGT> { [Arabic_superscript_alef, Arabic_maddaonalef, Arabic_hamzaunderalef, U0671] };
-    // 1 superscript alef, 2 alef with madda above, 3 alef with hamza below (vowelcarrier), 4 alef wasla
-    key <AB01> { [Arabic_zain, Arabic_jeh, Arabic_zah] };
+	key <LSGT> { [Arabic_superscript_alef, Arabic_maddaonalef, Arabic_hamzaunderalef, U0671] };
+	// 1 superscript alef, 2 alef with madda above, 3 alef with hamza below (vowelcarrier), 4 alef wasla
+	key <AB01> { [Arabic_zain, Arabic_jeh, Arabic_zah] };
 	// 1 zain (z), 2 jeh (zh), 3 zah (zw)
 	key <AB02> { [Arabic_khah] };
 	// 1 khah (kh)
@@ -30,21 +30,21 @@ xkb_symbols "swa"
 	key <AB06> { [Arabic_noon, U075D] };
 	// 1 noon (n), 2 ain with two dots above (g in ng')
 	key <AB07> { [Arabic_meem] };
-    // 1 meem (m)
+	// 1 meem (m)
 	key <AB08> { [Arabic_comma, Arabic_hamza_above, comma, leftcaret] };
 	// 1 comma, 2 hamza as diacritic, 3 UK comma, 4 closing angle bracket
 	key <AB09> { [Arabic_fullstop, Arabic_sukun, period, rightcaret] };
 	// 1 fullstop, 2 sukun, 3 UK fullstop, 4 opening angle bracket
 	key <AB10> { [Arabic_question_mark, NoSymbol, KP_Divide, question] };
-    // 1 question mark, 3 forward slash, 4 UK question mark
+	// 1 question mark, 3 forward slash, 4 UK question mark
     
     // -------------
     // ASDF row
     // -------------
 	key <AC01> { [Arabic_fatha, Arabic_alef, Arabic_hamzaonalef, Arabic_fathatan] };
 	// 1 fatha (short a), 2 alef (long a), 3 alef with hamza above (vowelcarrier), 4 fathatan
-    key <AC02> { [Arabic_seen, Arabic_sheen, Arabic_sad] }; 
-    // 1 seen (s), 2 sheen (sh), 3 sad (sw)
+	key <AC02> { [Arabic_seen, Arabic_sheen, Arabic_sad] }; 
+	// 1 seen (s), 2 sheen (sh), 3 sad (sw)
 	key <AC03> { [Arabic_dal, Arabic_thal, Arabic_dad, Arabic_ddal] };
 	// 1 dal (d), 2 thal (dh), 3 dad (dw), 4 ddal (alveolar dr)
 	key <AC04> { [Arabic_feh ] };
@@ -62,9 +62,9 @@ xkb_symbols "swa"
 	key <AC10> { [Arabic_semicolon, NoSymbol, semicolon, colon] };
 	// 1 semicolon, 3 UK semicolon, 4 UK colon
 	key <AC11> { [Arabic_ain, Arabic_shadda, quoteright, at] };
-    // 1 ain, 2 shadda, 3 UK single quote, 4 UK @    
-    key <BKSL> { [NoSymbol, NoSymbol, numbersign, asciitilde] };
-    // 3 UK hash, 4 UK tilde
+	// 1 ain, 2 shadda, 3 UK single quote, 4 UK @    
+	key <BKSL> { [NoSymbol, NoSymbol, numbersign, asciitilde] };
+	// 3 UK hash, 4 UK tilde
     
     // -------------
     // QWER row
@@ -92,7 +92,7 @@ xkb_symbols "swa"
 	key <AD11> { [NoSymbol, NoSymbol, bracketleft, braceleft] }; 
 	// 3 UK opening square bracket, 4 UK open١ing brace
 	key <AD12> { [NoSymbol, NoSymbol, bracketright, braceright] };
-    // 3 UK closing square bracket, 4 UK closing brace
+	// 3 UK closing square bracket, 4 UK closing brace
     
     // -------------
     // numeral row
@@ -102,7 +102,7 @@ xkb_symbols "swa"
 	key <AE02> { [Arabic_2, NoSymbol, KP_2, quotedbl] };
 	// 1 digit 2, 3 UK digit 2, 4 UK double quote
 	key <AE03> { [Arabic_3, NoSymbol, KP_3, sterling] }; 
-    // 1 digit 3, 3 UK digit 3, 4 UK pound sign
+	// 1 digit 3, 3 UK digit 3, 4 UK pound sign
 	key <AE04> { [Arabic_4, NoSymbol, KP_4, dollar] };
 	// 1 digit 4, 3 UK digit 4, 4 UK dollar sign
 	key <AE05> { [Arabic_5, NoSymbol, KP_5, percent] }; 
@@ -120,6 +120,6 @@ xkb_symbols "swa"
 	key <AE11> { [U060D, NoSymbol, KP_Subtract, underbar] };
 	// 1 date separator, 3 UK dash, 4 UK underscore
 	key <AE12> { [NoSymbol, NoSymbol, KP_Equal, KP_Add] };
-    // 3 UK equals sign, 4 UK addition sign
+	// 3 UK equals sign, 4 UK addition sign
 
 };

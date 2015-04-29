@@ -1,18 +1,47 @@
-A/9.2: check dbmaster issue
-sudo nano /etc/postgresql/9.3/main/pg_hba.conf
-set to "peer" currently
-set it to md5 to allow users other than username
-if kept as peer, dbuser has to be same as username
+webtrans : Need to add note about giving it wider permissions, or the webserver can't write the converted webpages there.
 
-remove and readd server files
-
+To remove page numbers from the page, insert in the preamble:
+\thispagestyle{empty}
+\pagestyle{empty}
+http://www.wujiewen.com/faq/content/1/47/en/how-to-remove-page-numbers-in-the-latex-documents.html
 
 
+Jaafari
+--------
 
-webtrans
------------
+Convert the odt file into a pdf:
+php convert/convert.php convert/inputs/jaafari/jaafari.odt+Arabic+Poetry+pdf+vip-space+TRUE
 
-Need to add note about giving it wider permissions, or the webserver can't write the converted webpages there.
+Do the addition of the English translation in chunks of 20 stanzas, to make the pdf generation faster.
+Set the query in SQL Workbench to call only those 20 stanzas from jaafari_words.
+select word_id, stanza, loc, position, edclose, english from jaafari_words where stanza between 80 and 100 order by stanza, loc, position;
+To generate the pdf run:
+php db/output_pdf.php jaafari
+But output_pdf.php needs to be edited directly to output only the chunk of 20 stanzas, eg:
+Could add this as another argument to the command?
+
+
+combining
+-------------
+
+If you run:
+php ms/combine_ms.php i C1-3 after A3
+twice by mistake, the insertions will be OK, but the running order will have been bumped up by 3 twice, so your running order is 3 ahead of what it should be.  To recover, just run:
+update binkie set runord=runord-3 where runord>6;
+replacing 6 with the last correct item in the running order.
+
+
+sidebar
+---------
+
+\textarabic{مٖوَتَنْڠَ هَوَؤٗنِ} & \textarabic{وَمٖتٗكَ صَفُنِ} &\textarabic{٩١} \rule[-3mm]{2pt}{1cm} \\* 
+
+Alternative?
+http://stackoverflow.com/questions/4018493/vertical-line-with-every-quotation
+\begin{tabular}{|p{10cm}}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id hendrerit nunc. Sed scelerisque lacus vitae erat eleifend eleifend. Donec eros mi, placerat in porta eleifend, placerat a urna. Pellentesque venenatis neque non turpis convallis vehicula. Aliquam aliquet ultricies tincidunt.\\
+\end{tabular}
+
 
 
 Manual
@@ -92,7 +121,7 @@ Then change the zip extension to odt.
 Sacleux dictionary
 ----------------------
 
-Schadeberg and Sansom's pdfs are on the SwaFo website.
+Schadeberg and Samsom's pdfs are on the SwaFo website.
 Use the large version - the small one has too much noise.
 Converting to text is ok, but leaves a lot of gibberish, and the layout is sometimes mixed up.
 Use OCRFeeder for one-off pages - cut them out with pdftk, import the pdf, then OCD it with Tesseract.

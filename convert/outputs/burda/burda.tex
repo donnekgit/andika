@@ -1,0 +1,145 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage{titlesec}  % Allow the chapter/section heading settings to be fine-tuned.  Needs to come before bidi, in polyglossia.
+\usepackage{polyglossia}  % multilingual support
+\usepackage{longtable}  % tables that carry across multiple pages
+\usepackage{xcolor}  % can't use color with polyglossia
+
+\input{convert/tex/fontdefs.tex}  % Bring in the font definitions.
+
+\usepackage{marginnote}
+\renewcommand*{\marginfont}{\color{red}\sffamily}
+
+\interfootnotelinepenalty=10000 % prevents the footnote from breaking across pages
+% http://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
+
+% Thanks to Manas Tungare (http://manas.tungare.name/software/latex) for these settings.
+\setlength{\paperwidth}{210mm}
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{247mm}
+
+\setlength{\evensidemargin}{1in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{-0.5in}
+
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
+
+\usepackage{url}  % Use urls in text and captions with sensible linewrap.  Can't use [obeyspaces] - this option clashes with biblatex.
+\urlstyle{rm}  % Set urls in roman.
+
+\begin{document}
+
+\begin{longtable}{rrl} 
+
+\makebox[8cm][r]{} & & \makebox[8cm][r]{} \\ 
+
+\textarabic{مَزَجْتَ دَمْعًاجَرَى مِنْ مُقْلَةٍ بِدَمٍ} & \textarabic{نْتَذَكُّرِ جِيْرَانٍ نِذِيْ سَلَمٍ} & \textarabic{١} \\* 
+\Tr{mazajta damʾa̲n̲ājaray min muqlaẗi̲n̲ bidami̲n̲} & \Tr{ntadhakkuri jı̄rāni̲n̲ nidhii salami̲n̲} & \Tr{1b/a} \\ 
+\textarabic{وَلِيٗكٗ هَپٗ نِذِى سَلَمِ} & \textarabic{نِكَڪُكُمْبُكَ جِرَنِ نْيٖمَ} &  \\* 
+\Tr{waliyoko hapo nidhii salami} & \Tr{nikakukumbuka jirani nyema} & \Tr{1d/c} \\ 
+\textarabic{كْوَمْبَ مَعَنَايٖ نِهَيٗ سٖيْمَا} & \textarabic{اُمٖلِتَنْڠَنْيَ تٗزِ كْوَ دَمِ} &  \\* 
+\Tr{kwamba maʾanāye nihayo sēmā} & \Tr{umelitanganya tozi kwa dami} & \Tr{1f/e} \\ 
+\\[8mm] 
+
+\textarabic{وَاَوْ مَضَاْلبَرْقُ فِى الَّظْامَاءِ مِنْ إِضَمٍ} & \textarabic{هُبَّتِ الرِّيحُ مِنْ تِلْقَاءِ كَاظِمَةٍ} & \textarabic{٢} \\* 
+\Tr{waaw maḍālbarqu fii āllaẓāmai min iḍami̲n̲} & \Tr{hubbati rrı̄ḥu min tilqai kāẓimaẗi̲n̲} & \Tr{2b/a} \\ 
+\textarabic{كُتٗكَ كَظِمَ جَنِبُ زَكٖ} & \textarabic{اَمَ نِؤُپٖتٗ كُپِتَ كْوَكٖ} &  \\* 
+\Tr{kutoka kaẓima janibu zake} & \Tr{ama niupeto kupita kwake} & \Tr{2d/c} \\ 
+\textarabic{كُيْنُكَ كِيْزَ هَپٗ اِظَمَا} & \textarabic{اَمَ نِوُ مِمِ كْوَ نُوْرُ يَكٖ} &  \\* 
+\Tr{kuynuka kı̄za hapo iẓamā} & \Tr{ama niwu mimi kwa nūru yake} & \Tr{2f/e} \\ 
+\\[8mm] 
+
+\textarabic{وَمَالِقَلْبِكَ انْ قُلْتُ اسْتَفِقْ يَهِمِ} & \textarabic{لِعَيْبَىْكَ اِنْ قُلْتَ اكْفُفَا هَمَتَا} & \textarabic{٣} \\* 
+\Tr{wamāliqalbika ān qultu āstafiq yahimi} & \Tr{liʾaybayka in qulta ākfufā hamatā} & \Tr{3b/a} \\ 
+\textarabic{اُكِيَزِوِ يَا هَيَسِكِزَ} & \textarabic{مْبٗنَ مَتٗ يَكٗ هُكٗمِ تٗزِ} &  \\* 
+\Tr{ukiyaziwi yā hayasikiza} & \Tr{mbona mato yako hukomi tozi} & \Tr{3d/c} \\ 
+\textarabic{اُكِوُزُ نْدُوَ هُزِدِ هِمَا} & \textarabic{كَذَلِكَ مٗويٗ اُنَ سِمَنْزِ} &  \\* 
+\Tr{ukiwuzu nduwa huzidi himā} & \Tr{kadhalika mōyo una simanzi} & \Tr{3f/e} \\ 
+\\[8mm] 
+
+\textarabic{مَابَيْنَ مُذْسَجِمٍ مِنْهُ وَمُضْطَرِمِ} & \textarabic{تْسَبُ الصَّبُّ اَنَّ اْلحُبَّ مُنكَتِمٌ} & \textarabic{٤} \\* 
+\Tr{mābayna mudhsajimi̲n̲ minhu wamuḍṭarimi} & \Tr{tsabu ālṣṣabbu anna ālḥubba munkatimu̲n̲} & \Tr{4b/a} \\ 
+\textarabic{هُوَ نِعَلَامَ مَحَضِرَانِ} & \textarabic{مْتُ اَپٖنْدَاوٗ هَسِتَمَنِ} &  \\* 
+\Tr{huwa niʾalāma maḥaḍirāni} & \Tr{mtu apendāwo hasitamani} & \Tr{4d/c} \\ 
+\textarabic{نَمُئِلِ وَكٖ هَپَمْبِ تَامَا} & \textarabic{نَخَصَ اَوَاپٗ تٗزِ مَيٗوْنِ} &  \\* 
+\Tr{namuili wake hapambi tāmā} & \Tr{nakhaṣa awāpo tozi mayōni} & \Tr{4f/e} \\ 
+\\[8mm] 
+
+\textarabic{وَلَ اَرِقْتَ لِذِكْرِاْلبَانِ وَالْعَلَمِ} & \textarabic{اَوْ لَاالْهَوَى لَمْ تُرِقُ دَمْعًا عَلَى طَلَلٍ} & \textarabic{٥} \\* 
+\Tr{wala ariqta lidhikriālbāni wālʾalami} & \Tr{aw lāālhaway lam turiqu damʾa̲n̲ā ʾalay ṭalali̲n̲} & \Tr{5b/a} \\ 
+\textarabic{نْدِپٗ هُكُلِزَ اَثَرِزَاوٗ} & \textarabic{نَلَوُ مَپٖنْدِ يَكُپٖتٖوٗ} &  \\* 
+\Tr{ndipo hukuliza atharizāwo} & \Tr{nalawu mapendi yakupetewo} & \Tr{5d/c} \\ 
+\textarabic{يَمِ نَخَبَالِ زِلِيٗ ثَمَا} & \textarabic{نَوُ كُمْبُكَپٗ مِقُوْجٖيَوٗ} &  \\* 
+\Tr{yami nakhabāli ziliyo thamā} & \Tr{nawu kumbukapo miqūjeyawo} & \Tr{5f/e} \\ 
+\\[8mm] 
+
+\textarabic{بِهِ عَلَيْكَ عُدُوْكُ الدَّمْحِ والسَّقَمِ} & \textarabic{كَيْفَ تُنْكِرُ حَبًّا بَعْدَ مَا شَهِدَتْ} & \textarabic{٦} \\* 
+\Tr{bihi ʾalayka ʾudūku ddamḥi ūssaqami} & \Tr{kayfa tunkiru ḥabba̲n̲ā baʾda mā shahidat} & \Tr{6b/a} \\ 
+\textarabic{نَسِ هُكُوٗ نَ حَالِ اُلِيٗ} & \textarabic{كْوَنِ كُيَكَنْيَ مَپٖنْدِ هَيٗ} &  \\* 
+\Tr{nasi hukuwo na ḥāli uliyo} & \Tr{kwani kuyakanya mapendi hayo} & \Tr{6d/c} \\ 
+\textarabic{نْدِيٗ اُشَهِدِ اُلِيٗ تَمَا} & \textarabic{مَتٗزِ نَنْدِيٗ نَوَايٗ وَايٗ} &  \\* 
+\Tr{ndiyo ushahidi uliyo tamā} & \Tr{matozi nandiyo nawāyo wāyo} & \Tr{6f/e} \\ 
+\\[8mm] 
+
+\textarabic{مِثْلُ الْبَهَا رِعَلَى خَدَّيْكَ وَالْعَنَمِ} & \textarabic{اَثْبَتَ الوجْدُخَطَّىْ عبْرَةٍ وَضَنَى} & \textarabic{٧} \\* 
+\Tr{mithlu ālbahā riʾalay khaddayka wālʾanami} & \Tr{athbata ālūjdukhaṭṭay ʾbraẗi̲n̲ waḍanay} & \Tr{7b/a} \\ 
+\textarabic{مِفُنْدَ مِوِلِ زَتٖفُتٖنِ} & \textarabic{اِمٖثُبُتِشَ يَكٗ حُزُنِ} &  \\* 
+\Tr{mifunda miwili zatefuteni} & \Tr{imethubutisha yako ḥuzuni} & \Tr{7d/c} \\ 
+\textarabic{يَمَتٗزِ يَكٗ اَوْ عَنَمَا} & \textarabic{رَنْچِ يَبَهَارِ كُوُ كٗنْدٗنِ} &  \\* 
+\Tr{yamatozi yako aw ʾanamā} & \Tr{ranchi yabahāri kuwu kondoni} & \Tr{7f/e} \\ 
+\\[8mm] 
+
+\textarabic{وَاْلحُبُّ يَعْتَرِضُ الَّلذَّاتِ باْلأَلَمِ} & \textarabic{هَمْ سَرَى طَيْفُ مَنْ اَهْوَى فَأَرِّقَىْ} & \textarabic{٨} \\* 
+\Tr{wālḥubbu yaʾtariḍu āllaldhhāti bālalami} & \Tr{ham saray ṭayfu man ahway faarriqay} & \Tr{8b/a} \\ 
+\textarabic{نِكِڤُلِ ػَكٖ وَنْڠُ خَلِيْلِ} & \textarabic{نِكْوٖلِ مَنٖنٗ يَكٗ نِكْوٖلِ} &  \\* 
+\Tr{nikivuli kʲake wangu khalı̄li} & \Tr{nikweli maneno yako nikweli} & \Tr{8d/c} \\ 
+\textarabic{سِنَ لَذَ تٖنَ وَتَ مَلَامَا} & \textarabic{ػَلِنَنْڠَزِشَ بَيَنْڠُ حَلِ} &  \\* 
+\Tr{sina ladha tena wata malāmā} & \Tr{kʲalinangazisha bayangu ḥali} & \Tr{8f/e} \\ 
+\\[8mm] 
+
+\textarabic{مِنِّيْ الَيْكَ وَلَوْ انْصَفْتَ لِمْيَلُمِ} & \textarabic{الَائِمِيْ فِى الْهَوَى الْعُذْرِيِّ مَعْذِرَةً} & \textarabic{٩} \\* 
+\Tr{minnii ālayka walaw ānṣafta limyalumi} & \Tr{ālaimii fii ālhaway ālʾudhrı̄yi maʾdhiraẗa̲n̲} & \Tr{9b/a} \\ 
+\textarabic{حُبَ يَنْڠُ كَمَ بَنُو عُذٖرَ} & \textarabic{وَلَ سِنَ بُدِ سِنَ صُبِرَ} &  \\* 
+\Tr{ḥuba yangu kama banuu ʾudhera} & \Tr{wala sina budi sina ṣubira} & \Tr{9d/c} \\ 
+\textarabic{وَتَ كُنِيَايَ فَنْيَ رُحُمَا} & \textarabic{نِمٖكُعَرِفُ يَنْڠُ ضَرُوْرَ} &  \\* 
+\Tr{wata kuniyāya fanya ruḥumā} & \Tr{nimekuʾarifu yangu ḍarūra} & \Tr{9f/e} \\ 
+\\[8mm] 
+
+\textarabic{عَنِ اْلُوشَاةِ وَلَادَائِيْ بِمُذْحَسِمِ} & \textarabic{فِدَتْكَ حَالِيَ لَا سِرِّيْ بِمُسْتَتِرٍ} & \textarabic{١٠} \\* 
+\Tr{ʾani ālūshāẗi walādaii bimudhḥasimi} & \Tr{fidatka ḥāliya lā sirrii bimustatiri̲n̲} & \Tr{10b/a} \\ 
+\textarabic{هَوٗ تٗنْڠٗلٖزَ وَ مُهُتٗكَ} & \textarabic{سِنَ سِرِ تٖنَ اِمٖفُنُوكَ} &  \\* 
+\Tr{hawo tongoleza wa muhutoka} & \Tr{sina siri tena imefunūka} & \Tr{10d/c} \\ 
+\textarabic{نِئِپِ فَئِدَ يَنْڠُ كُسٖما} & \textarabic{وَلَ نْدْوٖى زَنْڠُ سِكُپٗزٖكَ} &  \\* 
+\Tr{niipi faida yangu kusemā} & \Tr{wala ndwee zangu sikupozeka} & \Tr{10f/e} \\ 
+\\[8mm] 
+
+\textarabic{اِنَّ الْمُحِبُّ عَنِ الْعُذَّ الِ فِيْ صَمَمِ} & \textarabic{مَحَصْتَنِيَ النُّصْحَ اَلكِنْ لَسْتُ اَسْمَعُهُ} & \textarabic{١١} \\* 
+\Tr{inna ālmuḥibbu ʾani ālʾudhha āli fii ṣamami} & \Tr{maḥaṣtaniya nnuṣḥa alkin lastu asmaʾuhu} & \Tr{11b/a} \\ 
+\textarabic{اِلَّا كُسِكِزَ هِلٗ هَللِكٗ} & \textarabic{اُمٖنِنَصِحِ كْوَطَاقَ يَكٗ} &  \\* 
+\Tr{illā kusikiza hilo halliko} & \Tr{umeninaṣiḥi kwaṭāqa yako} & \Tr{11d/c} \\ 
+\textarabic{كْوَ مَحَبَّا يَنْڠُ سِوَكُكٗمَا} & \textarabic{مْتُ كِنِتَايَ مِمِ نِدُكٗ} &  \\* 
+\Tr{kwa maḥabbā yangu siwakukomā} & \Tr{mtu kinitāya mimi niduko} & \Tr{11f/e} \\ 
+\\[8mm] 
+
+\textarabic{وَ الشَّيْبُ اَبْعَدُ فِيْ نُصْحٍ عَنِ التُّهَمِ} & \textarabic{نِّى اتَّهَمْتُ نَصِيْحَ الصَّيْبِ فِيْ عَذَلٍ} & \textarabic{١٢} \\* 
+\Tr{wa āsshhaybu abʾadu fii nuṣḥi̲n̲ ʾani ttuhami} & \Tr{nnii āttahamtu naṣı̄ḥa ālṣṣaybi fii ʾadhali̲n̲} & \Tr{12b/a} \\ 
+\textarabic{يَمْڤِ نْيٖوُپٖ كُنْڠَرَنْڠَرَ} & \textarabic{مِمِ سِكُكِرِ نَصَحَ بُورَ} &  \\* 
+\Tr{yamvi nyewupe kungarangara} & \Tr{mimi sikukiri naṣaḥa būra} & \Tr{12d/c} \\ 
+\textarabic{نِمٖوُظَنِيَ اُنَ يُهُمَا} & \textarabic{نِمٖووتُهُمُ سِوُپِ سُورَ} &  \\* 
+\Tr{nimewuẓaniya una yuhumā} & \Tr{nimewūtuhumu siwupi sūra} & \Tr{12f/e} \\ 
+\\[8mm] 
+
+\textarabic{مِنْ جَهْلِهَا بِنَذِيْرِ الشُّيْبِ وَالْهَرَمِ} & \textarabic{فَأِنَّ اَمَّا رَتِيْ بِالسُّوْءِمَا َتَّعَظَتْ} & \textarabic{١٣} \\* 
+\Tr{min jahlihā binadhı̄ri āsshhuybi wa-hharami} & \Tr{fainna ammā ratii bissuwimā attaʾaẓat} & \Tr{13b/a} \\ 
+\textarabic{هَئِكُعِظِكَ كْوَ كِلِمْوٖنْڠُ} & \textarabic{كْوَ اُوٗڤُ وَكِ نَفُسِ يَنْڠُ} &  \\* 
+\Tr{haikuʾiẓika kwa kilimwengu} & \Tr{kwa uwovu waki nafusi yangu} & \Tr{13d/c} \\ 
+\textarabic{سِتٗشِكَ يَكٗ كَرُدِ نْيُومَا} & \textarabic{مْڤِ نَوٗ كٗنْڠْوٖ اَتَ نْدُيَنْڠُ} &  \\* 
+\Tr{sitoshika yako karudi nyūmā} & \Tr{mvi nawo kongwe ata nduyangu} & \Tr{13f/e} \\ 
+\\[8mm] 
+
+\end{longtable} 
+
+
+\textit{this}
+\begin{small}\end{small}
+\end{document}

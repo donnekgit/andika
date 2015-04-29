@@ -1,0 +1,49 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage{titlesec}  % Allow the chapter/section heading settings to be fine-tuned.  Needs to come before bidi, in polyglossia.
+\usepackage{polyglossia}  % multilingual support
+\usepackage{longtable}  % tables that carry across multiple pages
+\usepackage[x11names]{xcolor}  % can't use color with polyglossia
+
+\input{convert/tex/fontdefs.tex}  % Bring in the font definitions.
+
+\usepackage{marginnote}
+\renewcommand*{\marginfont}{\color{red}\sffamily}
+
+\interfootnotelinepenalty=10000 % prevents the footnote from breaking across pages
+% http://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
+
+% Thanks to Manas Tungare (http://manas.tungare.name/software/latex) for these settings.
+\setlength{\paperwidth}{210mm}
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{247mm}
+
+\setlength{\evensidemargin}{1in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{-0.5in}
+
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
+
+\usepackage{url}  % Use urls in text and captions with sensible linewrap.  Can't use [obeyspaces] - this option clashes with biblatex.
+\urlstyle{rm}  % Set urls in roman.
+
+\begin{document}
+
+\begin{longtable}{cl} 
+
+\footnote{\Tr{ntadhakkuri jı̄rāni̲n̲ nidhii salami̲n̲ * mazajta damʿa̲n̲ājaray min muqlaẗi̲n̲ bidami̲n̲}} \textcolor{blue}{\textarabic{نْتَذَكُّرِ جِيْرَانٍ نِذِيْ سَلَمٍ * مَزَجْتَ دَمْعًاجَرَى مِنْ مُقْلَةٍ بِدَمٍ}} & \textarabic{١} \\* 
+\footnote{\Tr{nikakukumbuka jirani nyema * waliyoko hapo nidhii salami}} \textcolor{Green4}{\textarabic{نِكَڪُكُمْبُكَ جِرَنِ نْيٖمَ * وَلِيٗكٗ هَپٗ نِذِى سَلَمِ}} &  \\* 
+\footnote{\Tr{umelitanganya tozi kwa dami * kwamba maʿanāye nihayo sēmā}} \textcolor{Green4}{\textarabic{اُمٖلِتَنْڠَنْيَ تٗزِ كْوَ دَمِ * كْوَمْبَ مَعَنَايٖ نِهَيٗ سٖيْمَا}} &  \\*
+\\[8mm] 
+
+\textcolor{blue}{\textarabic{هُبَّتِ الرِّيحُ مِنْ تِلْقَاءِ كَاظِمَةٍ * وَاَوْ مَضَاْلبَرْقُ فِى الَّظْامَاءِ مِنْ إِضَمٍ}} & \textarabic{٢} \\* 
+\Tr{hubbati rrı̄ḥu min tilqai kāẓimaẗi̲n̲ * waaw maḍālbarqu fii āllaẓāmai min iḍami̲n̲} &  \\ 
+\textcolor{Green4}{\textarabic{اَمَ نِؤُپٖتٗ كُپِتَ كْوَكٖ * كُتٗكَ كَظِمَ جَنِبُ زَكٖ}} &  \\* 
+\Tr{ama niupeto kupita kwake * kutoka kaẓima janibu zake} &  \\ 
+\textcolor{Green4}{\textarabic{اَمَ نِوُ مِمِ كْوَ نُوْرُ يَكٖ * كُيْنُكَ كِيْزَ هَپٗ اِظَمَا}} &  \\* 
+\Tr{ama niwu mimi kwa nūru yake * kuynuka kı̄za hapo iẓamā} &  \\ 
+\\[8mm] 
+
+\end{longtable} 
+
+\end{document}

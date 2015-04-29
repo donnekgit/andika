@@ -3,10 +3,10 @@
 
 As noted in \Cref{ch:intro}, a key aim of \textbf{Andika!} is to facilitate the production of digital versions of classical Swahili manuscripts.  This chapter deals with the tools provided to do that -- they are based on the concept of importing each word of the text into a database table, and then adding material such as notes on individual words or sections, variant readings and emendations, translations, etc.  The enriched text can then be output in a number of formats allowing for both print and online publication -- see \Cref{s:output}.  This approach also facilitates the automatic production of word frequency lists, glossaries, concordances, n-grams, and so on, which open the way for detailed linguistic analysis of the text.
 
-These chapter focusses on the possibilities for typesetting traditional poetry in Arabic script.  However, a similar approach can be used for prose, and a further chapter dealing with this may be added at a future date.
+This chapter focusses on the possibilities for typesetting traditional poetry in Arabic script.  However, the tools can also be used for prose in Arabic script -- this aspect could be developed further if there is demand for it.
 
 
-\section{Input}
+\section{Creating the input document}
 
 The first step is to manually transcribe the manuscript letter-for-letter into a LibreOffice \textit{odt} document -- virtually all the Arabic glyphs likely to be used in a manuscript are already on the layout described in \Cref{ch:keyboard}, and it is actually faster to type the Arabic text into the computer than it is to type in a close transliteration. 
 
@@ -14,58 +14,30 @@ Each \textit{kipande} of a poem in traditional metre should be placed on its own
 
 Particles such as  \AS{لَ زَ يَ نَ} (\textbf{na, ya, za, la}) are best written according to the manuscript rendering. In many instances the author or copyist may have attached them to the following word, or (in the case of non-connecting letters like \AS{زَ}) placed them very close to it. But where there is a larger space in the manuscript between the particle and the following word, it may be appropriate to write it separately from that word in the transcription. These decisions are subjective, and may produce some inconsistency in the transcription, but they will reflect the manuscript more faithfully.  Connection or disconnection of the particles (in line with standard Roman orthography) will be handled by annotating the entries in the database.
 
-An input file for stanzas 138-147 of \AS{أُتٖينْزِ وَ ڤِيتَ ڤِكُؤُ} (\textbf{Utenzi wa Vita Vikuu}, \textit{The Ballad of the Great Battle}), a manuscript in the SOAS collection, is at \url{andika/convert/inputs/vita_vikuu/vita_vikuu.odt}.  An input file for \AS{كِسْوَاحِلِ} (\textbf{Kiswahili}), which forms the basis of the output in \Cref{appD}, is at \url{andika/convert/inputs/kiswahili/kiswahili.odt}.
+Samples of input files are in \url{andika/convert/inputs} and subfolders.
 
 
-\section{Import}
+\section{Importing the contents into a database table}
 \label{s:import}
 
-Once the manuscript is transcribed in the input file, it needs to be imported into the database.  To do this, open a terminal and either run:
-
+Once the manuscript is transcribed in the input file, it can be imported into a database table.  This is done by using the conversion tools, but specifying database import instead of output in a particular document format.  To use the point-and-click interface (\Cref{ss:pacint}), open a terminal and run:\\
 \verb|convert/convert.sh|
-
-choose your poem, and then select \textit{Insert into database} on the \textit{Output} screen.  Alternatively, run the following command (replacing \textit{vita_vikuu} with the name of the poem) :
-
+choose your poem, and then select \textit{Insert into database} on the \textit{Output} screen.  To use the command-line interface (\Cref{ss:cliput}), run the following command (replacing \textit{vita_vikuu} with the name of the poem) :\\
 \verb|php convert/convert.php convert/inputs/vita_vikuu/vita_vikuu.odt+Arabic+Poetry+db+kip-line|
 
-A database table of the same name as the poem (in the above case, \textit{vita_vikuu}) will be created in the \textit{andika} database, and each \textit{kipande} of the poem will be imported into that table.  During this import, the Arabic text is transliterated into standard Roman orthography, and also into a close transliteration which more closely reflects the Arabic glyphs.
+In both cases, a database table of the same name as the poem (in the above case, \textit{vita_vikuu}) will be created in the \textit{andika} database, and each \textit{kipande} of the poem will be imported into that table.  During this import, the Arabic text is transliterated into standard Roman orthography, and also into a close transliteration which more closely reflects the Arabic glyphs.
 
-To view the database table, you can access it using phpPgAdmin: in a browser, enter \url{localhost/phppgadmin} and log in to the PostgreSQL server.  In the left panel, click the + beside \textit{andika}, and then \textbf{Tables}, and then click on \textbf{Browse} alongside the name of the poem (in this case, \textit{vita_vikuu}).  You should see the first part of the contents of the table: for each \textit{kipande} of the poem, there will be an index number (\textit{poemline_id}), the stanza number (\textit{stanza}), the location of the line in the stanza (\textit{loc}),\footnote{The default import numbers the stanzas from 1 onwards, and for simplicity, that is retained here, but it is possible to change the numbering to reflect the actual stanza numbers (138-147) by opening \url{convert/convert.php} and changing the line \texttt{\$stanza_no=0;} to \texttt{\$stanza_no=137;}.} the Arabic text (\textit{arabic}),\footnote{Some cells in the Arabic column may appear empty, but this seems to be a display issue -- if you press \textbf{Edit} you can see the text is there, and a \textit{select} query will also show it.} the close transcription (\textit{close}) and the standard transcription (\textit{standard}).
-
-Note that each time the conversion is done, it will delete and then recreate this poem table.  If you want to preserve a specific conversion (perhaps for archival purposes), you need to save (dump) the database table before re-running the conversion.  You can do this in a terminal:
-
-\verb|pg_dump -U dbuser --table=name_of_poem > name_of_poem.sql andika|
-
-in this case, for me:
-
-\verb|pg_dump -U kevin --table=vita_vikuu > vita_vikuu.sql andika|
-
-This will create a file which can be loaded into a PostgreSQL database.  If you want to create a file which can be opened in a spreadsheet, run the following commands:
-
-\verb|psql -U dbuser -d andika|\\
-(replacing \textit{dbuser} with your database user)
-
-\verb|\copy (select * from vita_vikuu) to 'vita_vikuu.csv' with delimiter ',' csv header|\\
-(replacing \textit{vita_vikuu} with the name of the poem)
-
-\verb|\q|
-
-You may want to add dates to the backup filenames, and perhaps create a directory in which to store them.
-
-You can do the same thing with phpPgAdmin.  On the \textit{Tables} screen of the \textit{andika} database, click on the name of the poem (in this case, \textit{vita_vikuu}).  Then click on the \textbf{Export} button at the top.  For a backup which can be loaded into PostgreSQL, tick \textbf{Structure and data}, select \textbf{SQL} from the \textit{Format} drop-down list, tick \textbf{Download}, and then click \textbf{Export}.  For a backup which can be opened in a spreadsheet, tick \textbf{Data only}, select \textbf{CSV} from the \textit{Format} drop-down list, tick \textbf{Download}, and then click \textbf{Export}.  In either case, select a location in which to save the file, and rename it as appropriate.
+To view the database table, you can access it using phpPgAdmin: in a browser, enter \url{localhost/phppgadmin} and log in to the PostgreSQL server.  In the left panel, click the + beside \textit{andika}, and then \textbf{Tables}, and then click on \textbf{Browse} alongside the name of the poem (in this case, \textit{vita_vikuu}).  You should see the first part of the contents of the table: for each \textit{kipande} of the poem, there will be an index number (\textit{poemline_id}), the stanza number (\textit{stanza}), the location of the line in the stanza (\textit{loc}),\footnote{The default import numbers the stanzas from 1 onwards, and for simplicity, that is retained here, but it is easy to change the numbering to reflect the actual stanza numbers  -- see \Cref{ss:stanzano}.} the Arabic text (\textit{arabic}),\footnote{Some cells in the Arabic column may appear empty, but this seems to be a display bug -- if you press \textbf{Edit} you can see the text is there, and a \textit{select} query will also show it.} the close transcription (\textit{close}) and the standard transcription (\textit{standard}).
 
 
 \section{Split lines into words}
 
-The next step is to split each \textit{kipande} of the poem into words, which will allow each word to have individual annotations added to it.  To do this, open a terminal and run:
-
-\verb|php db/import_words.php name_of_the_poem|
-
-replacing \textit{name_of_the_poem} with whatever your poem name is.  In the example, you would run:
-
+The next step is to split each \textit{kipande} of the poem into words, which will allow each word to have individual annotations added to it.  To do this, open a terminal and run:\\
+\verb|php db/import_words.php name_of_the_poem|\\
+replacing \textit{name_of_the_poem} with whatever your poem name is.  In the example, you would run:\\
 \verb|php db/import_words.php vita_vikuu|
 
-Note also that the code relating to annotation and other editorial work in the database are located in the directory \textit{db}, and not in \textit{convert}.
+Note also that once the poem is imported into the database, the code relating to annotation and other editorial work is located in the directory \textit{db}, and not in \textit{convert}.
 
 The import command will create a new table, \textit{name_of_the_poem_words} (in this case, \textit{vita_vikuu_words}), which you can again inspect using phpPgAdmin.  Each word has an entry of its own, consisting of an index number (\textit{word_id}), the stanza (\textit{stanza}) and \textit{kipande} (\textit{loc}) it occurs in, the position it occupies in the \textit{kipande}, eg first word, second word or whatever (\textit{position}), the Arabic text, and the close and standard transliterations.  A copy of the close transliteration is also created (\textit{edclose}) --  this is the entry that will be edited by you to bring the close transcription more into line with standard Swahili.  For instance, going back to the \textbf{Mwana Kupona} example (\Cref{fig:mwanakupona}), the entry \textbf{nawulimiḡu} in \textit{close} would be edited to \textbf{na ulimwengu} in \textit{edclose}.  Other fields are also created to hold annotations for variants, general notes, the root of the word, and an English translation, as explained in \Cref{s:annotation}.
 
@@ -76,29 +48,15 @@ Note that each time \textit{import_words.php} is run (eg as you complete another
 \item Adds your annotations and edits from the backup into the new import.
 \end{enumerate}
 
-Note that \textit{import_words.php} should not be run twice in succession if you notice problems with the new \textit{words} table (eg missing annotations compared to your old \textit{words} table.).  Instead, you should make a manual copy of the \textit{backup} table using an SQL query like:  
-
-\verb|create table mymanual_backup as select * from my_backup;|
-
-Then copy fields manually from there to your \textit{words} table by using an SQL query like:
-
-\verb|update my_words w set (variant, note) = (b.variant, b.note) from mymanual_backup b|
-$\hookrightarrow$ \verb|where w.stanza=b.stanza and w.loc=b.loc and w.position=b.position;|
-
-The above query, for instance, will copy the variant and note fields from your manual backup table to your \textit{words} table, and it is then safe to fix the other problems in your \textit{words} table, and run \textit{import_words.php} again.
-
-If you do not correct the problems manually, running \textit{import_words.php} again will lead to data loss -- the first run creates a \textit{backup} table with all your data, but a second run will delete that good \textit{backup} table and create a new one based on the faulty \textit{words} table, possibly overwriting good entries with faulty ones. 
-
 
 \section{Annotations}
 \label{s:annotation}
 
 It is possible to create as many fields in the \textit{words} table as are required to handle various annotation types, and the content of each of these fields can be selected and edited via code, which means that a versatile framework exists for any editorial apparatus.  The current selection of annotation types is described below, with examples.
 
-
 \subsection{Specifying fonts in the annotations}
 
-Changes from the default font can be marked in any of the annotation types, and it is recommended to to make such changes directly in the annotation, rather than try to edit the output file afterwards.  The alternate fonts use the font definitions as set up in the file \url{andika/convert/tex/fontdefs.tex}, and you can add more to that list using the patterns seen there (see also \Cref{s:changefont}).  To apply the font changes, the LaTeX command format is used: a backslash, then the abbreviation for the desired font, and then the text inside braces.  Likely font changes that might be applied are:
+Changes from the default font can be marked in any of the annotation types, and it is recommended to make such changes directly in the annotation, rather than try to edit the output file afterwards.  The alternate fonts use the font definitions as set up in the file \url{andika/convert/tex/fontdefs.tex}, and you can add more to that list using the patterns seen there (see also \Cref{s:changefont}).  To apply the font changes, the LaTeX command format is used: a backslash, then the abbreviation for the desired font, and then the text inside braces.  Likely font changes that might be applied are:
 \begin{itemize}
 \item Arabic script: \verb|\AS{text here}| -- Scheherazade.  To use Amiri, use \verb|\Am{text here}|
 \item transliteration: \verb|\Tr{text here}| -- Linux Biolinum O in grey.
@@ -109,18 +67,15 @@ Changes from the default font can be marked in any of the annotation types, and 
 \item standout type in footnote: \verb|\FN{text here}| -- Liberation Serif in green italics. 
 \end{itemize}
 
-
 \subsection{Adding and editing the annotations}
 
-SQL Workbench (\Cref{ss:workbench}) allows the annotations to be added directly to the table.  Open SQL Workbench and connect to the \textit{andika} database.  In the top panel, enter an SQL query to show the whole of the \textit{vita_vikuu_words} table in order of stanza and \textit{kipande}:
-
+SQL Workbench (\Cref{ss:workbench}) allows the annotations to be added directly to the table.  Open SQL Workbench and connect to the \textit{andika} database.  In the top panel, enter an SQL query to show the whole of the \textit{vita_vikuu_words} table in order of stanza and \textit{kipande}:\\
 \verb|select * from vita_vikuu_words order by stanza, loc;|\\
 (note that the semi-colon at the end is essential)
 
-Move the cursor somewhere inside the query and press \textbf{Ctrl+Return}.  You can now edit individual cells -- remember to press the \textbf{Save} icon or select \textbf{Data \textrightarrow\ Save Changes to Database} to save any material you add.
+Move the cursor somewhere inside the query and press \textbf{Ctrl+Return}.  You can now edit individual cells in order to add annotations.  
 
-Note that if SQL Workbench is showing data from an \textit{andika} database table, it places a lock on the table which prevents any other program accessing it for some operations (re-creating a table, renaming a field in the table, etc).  If you sometimes find that phpPgAdmin or \textbf{Andika!} commands seem to ``hang'', close SQL Workbench.  You can then reopen it after the other command has completed.
-
+\textcolor{red}{IMPORTANT!} Remember to press the \textbf{Save} icon or select \textbf{Data \textrightarrow\ Save Changes to Database} to save any material you add.  Even though you can see your edits in SQL Workbench, they are not written into the database until you save them!
 
 \subsection{\textit{edclose} field}
 
@@ -133,25 +88,20 @@ Apart from obvious spelling corrections (eg changing \textit{ḡ} to \textit{ng}
 \item Epenthetic vowels to support proper scansion can be added using \verb|\In{text here}|.  For instance, in 1c of \textit{vita_vikuu} an epenthetic vowel can be added to the transliteration of \AS{مِلْحِ} (\textbf{milḥi}, \textit{and salt}) to give \textbf{mil\In{i}ḥi} by editing the \textit{edclose} field to read \verb|na mil\In{i}ḥi|.
 \end{itemize}
 
-
 \subsection{\textit{standard} field}
 
-This field holds an automatically-generated version of the text in standard Swahili orthography.  With most texts, you would give the edited version of the close transliteration from the \textit{edclose} field, but with some texts there may already be a standard Swahili transliteration that you wish to re-use.  In this case, you would edit the standard entries to reflect that existing transliteration, and they will be saved and reapplied in the same way as the other annotation fields every time you re-import the document.  In \textit{kiswahili}, the entries in \textit{standard} are based on the transliteration in \citet{Abdulkadir2013}.
-
+This field holds an automatically-generated version of the text in standard Swahili orthography.  With most texts, you would give the edited version of the close transliteration from the \textit{edclose} field, but with some texts there may already be a standard Swahili transliteration that you wish to re-use.  In this case, you would edit the standard entries to reflect that existing transliteration, and they will be saved and reapplied in the same way as the other annotation fields every time you re-import the document.  In \textit{Kiswahili} (\Cref{appD}), the entries in \textit{standard} are based on the transliteration in \citet{Abdulkadir2013}.
 
 \subsection{\textit{variant} field}
 
-This field allows the recording of variant readings (\textit{variae lectiones}) of the word in different manuscript versions of the same poem.  For instance, 6a of \textit{vita_vikuu} reads: \AS{نَسٖيْفُ نْجٖيْمَ أَسِيْسِ} (\textbf{nasēfu njēma ası̄si}, \textit{and a good, stout sword}).  If you have another manuscript B where this \textit{kipande} reads: \AS{نَسٖيْفُ نْزُوْرِ أَسِيْسِ} (\textbf{nasēfu nzūri ası̄si}), in the variant column against \textbf{njēma} we put (for instance):
-
-\verb|B: \AS{|\texttt{\AS{نْزُوْرِ}}\verb|}, nzūri|
-
-which will be converted to a footnote reading: B: \AS{نْزُوْرِ }, nzūri.
-
+This field allows the recording of variant readings (\textit{variae lectiones}) of the word in different manuscript versions of the same poem.  For instance, 6a of \textit{vita_vikuu} reads: \AS{نَسٖيْفُ نْجٖيْمَ أَسِيْسِ} (\textbf{nasēfu njēma ası̄si}, \textit{and a good, stout sword}).  If you have another manuscript B where this \textit{kipande} reads: \AS{نَسٖيْفُ نْزُوْرِ أَسِيْسِ} (\textbf{nasēfu nzūri ası̄si}), in the variant column against \textbf{njēma} we put (for instance):\\
+\verb|B: \AS{|\texttt{\AS{نْزُوْرِ}}\verb|}, nzūri|\\
+which will be converted to a footnote giving: \\
+B: \AS{نْزُوْرِ }, nzūri.
 
 \subsection{\textit{note} field}
 
 This field holds notes on the meaning or reference of the word, or any other material which may help to elucidate its meaning or usage.  There is no practical limit on the length of these notes.\footnote{The longest possible content that can be stored in any one field is about 1 GB.}  \Cref{appD} demonstrates how \textbf{Andika!} caters easily for a significant number of notes -- for more information the relevant database table, \textit{kiswahili_words}, can be inspected.
-
 
 \subsection{\textit{root} field}
 
@@ -163,21 +113,23 @@ For Arabic words, use the triconsonantal root (\AS{جذر}).\footnote{\url{en.wi
 
 Ideally, the roots would be filled in automatically during import by looking up the word against a digital Swahili dictionary, such as the one used for my Swahili verb segmenter.\footnote{\url{kevindonnelly.org.uk/swahili/segmenter}.  The dictionary here is a heavily-customised version of Beata Wójtowicz's English-Swahili dictionary at \url{freedict.org}.}  That dictionary is not yet extensive enough for that purpose.
 
-
 \subsection{\textit{english} field}
 
-This field holds an English translation of the \textit{kipande}, placed against the first word of each \textit{kipande}.  See the \textit{kiswahili_words} table for examples.
-
+This field holds an English translation of the whole \textit{kipande}, placed against the first word of each \textit{kipande}.  See the \textit{kiswahili_words} table for examples.
 
 \subsection{Inserting citations in the annotations}
 
-All the annotation fields can include citations, but they are perhaps most likely in the \textit{note} field.  The citations use a LaTeX package called \textit{biblatex}, which has already been installed (\Cref{s:latex}).\footnote{The older \textit{bibtex} package does not support citations in footnotes.}  This draws on a list of the citations you wish to use, which need to be in BibTeX format -- see \url{andika/bib/andika.bib} for an example of a short bibliography file.  It is possible to write this file using just a text editor, but it is easier to use a frontend such as KBibTex, which has already been installed.\footnote{An alternative is JabRef -- \url{jabref.org}.}  With a frontend, you simply type the bibliographic details of the citation into a series of dialogue boxes.  Each citation is referred to by a ``key'' -- I use the name of the first author and the year, so the key for Sacleux' \textit{Dictionnaire} would be \textit{Sacleux1939}, but you can use anything you like.
+All the annotation fields can include citations, but they are perhaps most likely in the \textit{note} field.  The citations use a LaTeX package called \textit{biblatex}, which has already been installed (\Cref{s:latex}).\footnote{The older \textit{bibtex} package does not support citations in footnotes.}  This draws on a list of the citations you wish to use, which need to be in BibTeX format -- see \url{andika/bib/andika.bib} for an example of a short bibliography file.  It is possible to write this file using just a text editor, but it is easier to use a frontend such as JabRef, which has already been installed (\Cref{s:jabref}).  With a frontend, you simply type the bibliographic details of the citation into a series of dialogue boxes.  Each citation is referred to by a ``key'' -- I use the name of the first author and the year, so the key for Sacleux' \textit{Dictionnaire} would be \textit{Sacleux1939}, but you can use anything you like.
 
-Using this as an example, we can then refer to a citation in the note by using \verb|\textcite{Sacleux1939}| where the work is a subject:
+Using this dictionary as an example, we can then refer to a citation in the note by using:\\
+\verb|\textcite{Sacleux1939}|\\
+here the work is a subject:
 \begin{quotation}
 Sacleux (1939) was a major achievement in Swahili lexicography.
 \end{quotation}
-and \verb|\parencite{Sacleux1939}| where the work is referred to parenthetically:
+and using:\\
+\verb|\parencite{Sacleux1939}| \\
+where the work is referred to parenthetically:
 \begin{quotation}
 This word is found mainly in northern dialects (Sacleux 1939).
 \end{quotation}
@@ -195,31 +147,27 @@ The bibliography file has to be called \textit{andika.bib}, and has to be in the
 It is worth noting that in cases where citations are not printed properly, it is virtually always the case that there is an error in the bibliography file, or that the key being used is incorrect.\footnote{I recently spent almost an hour trying to work out why the entry for \citet{Abdulkadir2013}, key \texttt{Abdulkadir2013}, was not appearing correctly - there were definitely no mistakes in the bibliography entry.  Yet LaTeX reported it could not find that entry.  I tried various increasingly complicated fixes, until eventually I noticed that I had typed the key as \texttt{Adbulkadir2013} when citing the work.  When a problem like this arises, we tend to think that the most likely cause is a fault in the software, but it is far more likely to be a fault in the wetware connecting the chair to the computer.}
 
 
-\section{Output}
+\section{Output to pdf}
 \label{s:output}
 
 Once the database table holding the words of the poem has been edited to include all the annotations required, it can be output in a variety of formats.  The most important is likely to be \textit{pdf} format, since the LaTeX typesetting system produces a very attractive, beautifully laid-out text equally suitable for traditional printing or digital distribution.  The \textit{pdf} output format is two \textit{vipande} to the line, with a space between them (compare the conversion options in \Cref{ss:pacint}).
 
-To print your annotated poem to a pdf file, run:
-
-\verb|php db/output_pdf.php vita_vikuu|
-
-replacing \textit{vita_vikuu} with the name of your document.
-
+To print your annotated poem to a pdf file, run:\\
+\verb|php db/output_pdf.php vita_vikuu|\\
+replacing \textit{vita_vikuu} with the name of your document.  The generated file will be located in a folder with the same name as your input document -- in this case, \url{andika/db/outputs/vita_vikuu}.
 
 \subsection{Changing the transliteration source}
 
-By default, the \textit{pdf} output uses the entries in \textit{edclose}, but you can override this to use the entries in \textit{standard} instead by including the word \textbf{standard} at the end of the command.  For instance, to print out \textit{kiswahili} with the \textit{standard} entries as the main transliteration instead of the \textit{edclose} entries, use:
-
+By default, the \textit{pdf} output uses the entries in \textit{edclose}, but you can override this to use the entries in \textit{standard} instead by including the word \textbf{standard} at the end of the command.  For instance, to print out \textit{kiswahili} with the \textit{standard} entries as the main transliteration instead of the \textit{edclose} entries, use:\\
 \verb|php db/output_pdf.php kiswahili standard|
-
+This is useful if you are typing out a manuscript which has already been published, and you want to replicate the Roman script from that publication.
 
 \subsection{Changing the font size}
 \label{s:outfont}
 
 The default font size for the output is 12pt, which is good for computer use.  However, if you need a slightly smaller font for print use, open \textit{andika/db/tex/tex_header.tex} and change \textit{12pt} in the first line to \textit{10pt}.  Save the file, and then run \textit{output_pdf.php} again.
 
-\subsection{Location of annotations}
+\subsection{Changing the location of annotations}
 \label{s:outloc}
 
 By default, all annotations are output as footnotes -- since they refer to individual words in the text, having them on the same page is easier to read.  But if you need endnotes instead, this can be achieved by minimal editing of two files:
@@ -228,13 +176,16 @@ By default, all annotations are output as footnotes -- since they refer to indiv
 \item Find the \textit{Endnotes} section towards the bottom of \textit{andika/db/output_pdf.php}.  Uncomment the three lines there by removing the initial \textit{//}, and save the file.
 \end{enumerate}
 
-After this, running:
-
-\verb|php output_pdf.php name_of_poem|
-
+After this, running:\\
+\verb|php output_pdf.php name_of_poem|\\
 will produce a \textit{pdf} with endnotes.  If you want to go back to footnotes, simply comment the five lines again.
 
 To get an impression of the difference in output, compare \Cref{appD} and \Cref{appF}.
+
+\subsection{Changing the layout}
+
+A wide variety of changes to the layout are possible either by adjusting the script \textit{output_pdf.php} (for instance, to suppress the printing of the transcription), or by editing the intermediate LaTeX file (in the \url{andika/db/outputs} folder.  The options are so extensive that there is little point going into them here (if the default output does not meet your needs, you are invited to contact me to discuss how they might be met).  One example, however, is the way in which the default \textit{output_pdf.php} was adjusted to allow the printing of the Burda \Cref{ss:burda} in two colours, giving the script \url{firstline.php}.  These scripts can be compared  in a difference viewer such as Meld\footnote{\url{meldmerge.org/}.  Install it by running: \texttt{sudo apt-get install meld}} to see how relatively minor changes allowed a substantial difference in the layout.
+
 
 % \subsection{Output to html}
 % 
@@ -252,3 +203,85 @@ To get an impression of the difference in output, compare \Cref{appD} and \Cref{
 % Note that, of the browsers available on Linux, Rekonq provides the best results. It retains all the formatting (fonts, colours, etc), and converts the endnote links in the resulting odt file so that they can be accessed by pressing Ctrl while clicking. Chromium retains the formatting, but does not convert the links, so that they still point to the original html file, and clicking them opens that file in a browser. Chromium also converts some spaces to non-breaking spaces, which are marked with a grey background - to get rid of this, select Tools → Options → LibreOffice Writer → Formatting Aids, untick Non-breaking spaces, and press OK. Firefox is worst of all, losing all the formatting, and leaving the links unconverted. Note that even with Rekonq and Chromium, though, you will need to select all the endnotes in LibreOffice and press the LTR button in order to align them to the left.
 % 
 % You can also open the html file in LibreOffice itself, but in this case you will not be able to save it as an odt file. 
+
+
+\section{General notes on usage}
+
+\subsection{Checking the input file}
+
+It is a good idea to use the convert tools to check your input file every page or so by outputting a pdf with transliteration.  This will ensure that you can note and correct typos while you are still in input mode.
+
+\subsection{The import process hangs}
+
+If the database import process hangs (ie appears to be doing nothing), this is because you have the relevant poem table open in SQL Workbench (for example, to review the import, or add annotations).  If SQL Workbench is showing data from an \textit{andika} database table, it places a lock on the table which prevents any other program accessing it for some operations (re-creating a table, renaming a field in the table, etc).  If you then try to run another import (eg to add some more stanzas you have just typed out), the import will hang because the script \textit{convert/create_poemlines.php} cannot delete that table and re-create it.  To allow the import to proceed, all you need to do is close SQL Workbench.  You can then reopen it after the import is complete.
+
+\subsection{Saving a particular import}
+
+Each time a poem is imported, the import process will delete and then recreate the poem table containing the \textit{vipande} and their transliteration.  If for some reason you want to preserve a specific conversion (perhaps for archival purposes), you can save (dump) the database table before re-running the conversion.  To do this, open a terminal and run:\\
+\verb|pg_dump -U dbuser --table=name_of_poem > name_of_poem.sql andika|\\
+If I wanted to do this for the example poem, I would run:\\
+\verb|pg_dump -U kevin --table=vita_vikuu > vita_vikuu.sql andika|\\
+
+This will create a file which can be loaded into a PostgreSQL database.  If you want to create a file which can be opened in a spreadsheet, run the following commands:
+
+\verb|psql -U dbuser -d andika|\\
+(replacing \textit{dbuser} with your database user)
+
+\verb|\copy (select * from vita_vikuu) to 'vita_vikuu.csv' with delimiter ',' csv header|\\
+(replacing \textit{vita_vikuu} with the name of the poem)
+
+\verb|\q|
+
+You may want to add dates to the backup filenames, and perhaps create a directory in which to store them.
+
+You can do the same thing with phpPgAdmin.  On the \textit{Tables} screen of the \textit{andika} database, click on the name of the poem (in this case, \textit{vita_vikuu}).  Then click on the \textbf{Export} button at the top.  For a backup which can be loaded into PostgreSQL, tick \textbf{Structure and data}, select \textbf{SQL} from the \textit{Format} drop-down list, tick \textbf{Download}, and then click \textbf{Export}.  For a backup which can be opened in a spreadsheet, tick \textbf{Data only}, select \textbf{CSV} from the \textit{Format} drop-down list, tick \textbf{Download}, and then click \textbf{Export}.  In either case, select a location in which to save the file, and rename it as appropriate.
+
+\subsection{Warning when word-splitting}
+
+When running \textit{db/import_words.php} for the first time on your poem, you will see something like:
+\begin{quotation}
+\noindent Warning: pg_query(): Query failed: ERROR:  relation "xxx_words" does not exist\\
+\end{quotation}
+at the beginning of the import and:
+\begin{quotation}
+\noindent Warning: pg_query(): Query failed: ERROR:  relation "xxx_backup" does not exist
+\end{quotation}
+at the end.  This is harmless -- it just means that there is as yet no backup table from which previous work can be re-integrated.
+
+\subsection{Re-running word-splitting}
+\label{ss:rerun}
+
+If you notice problems with a new \textit{words} table (eg missing annotations compared to your old \textit{words} table) after running \textit{db/import_words.php}, this means that re-integrating your previous edits has not worked for some reason (see \cref{ss:renumber}).  In such a case, \textit{db/import_words.php} should \textbf{not} be run twice in succession.  
+
+Instead, you should make a manual copy of the \textit{backup} table using an SQL query like:  \\
+\verb|create table mymanual_backup as select * from mypoem_backup;|
+
+Then copy fields manually from there to your \textit{words} table by using an SQL query like:\\
+\verb|update mypoem_words w set (standard, edclose, variant, note, root, english) = |\\
+$\hookrightarrow$ \verb|(b.standard, b.edclose, b.variant, b.note, b.root, b. english) from mymanual_backup b|\\
+$\hookrightarrow$ \verb|where w.stanza=b.stanza and w.loc=b.loc and w.position=b.position;|
+
+The above query will copy all the annotation fields from your manual backup table to the \textit{words} table.  \textcolor{red}{IMPORTANT!} If you run this query in SQL Workbench, you then need to commit (save) this update by selecting \textbf{SQL \textrightarrow\ Commit}, or by pressing \textbf{Alt+M}.  Once the updates are saved, it is then safe to run \textit{db/import_words.php} again.  
+
+If you do not correct the problems manually, running \textit{db/import_words.php} again will lead to \textbf{data loss} -- the first run creates a \textit{backup} table with all your data, but a second run will delete that good \textit{backup} table and create a new one based on the faulty \textit{words} table, possibly overwriting good entries with faulty ones. 
+
+\subsection{Renumbering stanzas during word-splitting}
+\label{ss:renumber}
+
+A specific instance of problems arising during word-splitting (\Cref{ss:rerun}) is where you have renumbered the stanzas by changing the \textit{stanza_no} counter (\Cref{ss:stanzano}).  If you import with \textit{stanza_no} set to 0, and then later change \textit{stanza_no} to something else, the edits you made previously will be in the backup, but cannot be re-integrated because they no longer have the same stanza number.  For a case where you changed \textit{stanza_no} to start at (for instance) 275 instead of 0, you can resolve this by running:\\
+\verb|update mypoem_words w set (standard, edclose, variant, note, root, english) = |\\
+$\hookrightarrow$ \verb|(b.standard, b.edclose, b.variant, b.note, b.root, b. english) from mypoem_backup b|\\
+$\hookrightarrow$ \verb|where w.stanza-275=b.stanza and w.loc=b.loc and w.position=b.position;|
+
+The above query will copy all the annotation fields from the \textit{backup} table to the \textit{words} table.  \textcolor{red}{IMPORTANT!} If you run this query in SQL Workbench, you then need to commit (save) this update by selecting \textbf{SQL \textrightarrow\ Commit}, or by pressing \textbf{Alt+M}.
+
+\subsection{Doing a completely new word-split}
+
+Because \textit{db/import_words.php} re-integrates all annotations except \textit{arabic} and \textit{close} from the backup copy of the previous version of the table, this means that changes made outside the table may not show up.  For instance, suppose you have imported the words, and then (for instance) change the transliteration routine for standard spelling, or separate two words in a line of your input document which were previously joined.  If you run then re-import the document (\Cref{s:import}) and split the words again using \textit{db/import_words.php} again, what will happen is that the results of your changes will be written into the new \textit{words} table, but then immediately overwritten with the old entries from the previous \textit{backup} table when those are re-integrated, so it will look as if none of your changes have taken effect.
+
+In such cases, you need to do a completely fresh import.  To do this, comment out the two lines marked \textit{Fresh import} at the top and bottom of \textit{db/import_words.php}.  Then run the script, and manually copy across any remaining annotations  by running:\\  
+\verb|update mypoem_words w set (variant, note, root, english) = |\\
+$\hookrightarrow$ \verb|(b.variant, b.note, b.root, b. english) from mypoem_backup b|\\
+$\hookrightarrow$ \verb|where w.loc=b.loc and w.position=b.position;|
+
+\textcolor{red}{IMPORTANT!}  Remember to uncomment the \textit{Fresh import} lines again immediately afterwards, or future annotations will not be saved and re-integrated.

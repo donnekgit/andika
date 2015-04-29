@@ -209,7 +209,7 @@ elif  [[ $chosengenre == "Prose" ]]; then
 fi
 
 collected=$chosenfile+$chosenscript+$chosengenre+$chosenoutput+$chosenlayout+$chosenroman
-echo -e "\n"$collected
+echo -e "\nphp convert/convert.php "$collected
 
 # Pass the collected inputs to the convert script.
 php convert/convert.php $collected

@@ -1,14 +1,15 @@
 %--------------------------------
 %%% Font definitions %%%
 %--------------------------------
-% Note that these definitions malfunction if used in \chapter.
+
+% Note that these definitions malfunction if used in \chapter{}.
 \defaultfontfeatures{Mapping=tex-text}
 \setmainfont{Charis SIL}  % Set the default font for the document. = \setdefaultfont
 % Footnotes will by default also use this font -- http://tex.stackexchange.com/questions/4779/how-to-change-font-family-in-footnote).
 \defaultfontfeatures{Scale=MatchLowercase}  % needs to be below main font declaration
 
 \setsansfont{Liberation Sans}
-\setmonofont{Liberation Mono}
+\setmonofont{DejaVu Sans Mono}
 
 \setmainlanguage{english}
 \setotherlanguage{arabic}
@@ -33,6 +34,7 @@
 %\newcommand\Tr[1]{{\translitfont\RLE{#1}}}
 \newcommand\Tr[1]{{\fontspec[Scale=1, Color=666666]{Linux Biolinum O}#1}}   %  Transliteration -- Biolinum handles diacritics well.  Coloured grey, slightly less than normal size.
 % Scale=1 is required because of Scale=MatchLowercase - otherwise the size is too large.
+\newcommand\Trb[1]{{\fontspec[Scale=1, Color=0000BB]{Linux Biolinum O}#1}} 
 
 \newcommand\In[1]{{\fontspec[Scale=1, Color=blue]{Linux Biolinum O}#1}}  % Epenthetic letters in the transliteration -- coloured blue, normal size.
 
@@ -54,3 +56,14 @@
 %----------------------------------------
 %%% End of font definitions %%%
 %----------------------------------------
+
+%--------------------------------
+%%% Colour definitions %%%
+%--------------------------------
+
+\definecolor{mygreen}{RGB}{0, 187, 50}
+
+%----------------------------------------
+%%% End of font definitions %%%
+%----------------------------------------
+

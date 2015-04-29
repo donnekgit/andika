@@ -21,8 +21,13 @@ You should have received a copy of the GNU General Public License
 and the GNU Affero General Public License along with this program.
 If not, see <http://www.gnu.org/licenses/>.
 *********************************************************************
-*/ 
+*/
 
+// include("./andika/config.php");
+// include("./includes/fns.php");
+// require_once 'convert/QueryPath-2.1.2-minimal/QueryPath.php';
+// 
+// $poem="burda";
 drop_existing_table($poem);
 
 $sql_table = "

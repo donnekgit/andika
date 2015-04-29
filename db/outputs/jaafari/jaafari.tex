@@ -1,0 +1,284 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage{titlesec}  % Allow the chapter/section heading settings to be fine-tuned.  Needs to come before bidi, in polyglossia.
+\usepackage{polyglossia}  % multilingual support
+\usepackage{longtable}  % tables that carry across multiple pages
+\usepackage{xcolor}  % can't use color with polyglossia
+
+\input{convert/tex/fontdefs.tex}  % Bring in the font definitions.
+
+\usepackage{marginnote}
+\renewcommand*{\marginfont}{\color{red}\sffamily}
+
+\usepackage{csquotes}
+% \usepackage{natbib}
+\usepackage[backend=biber, style=authoryear]{biblatex}
+\addbibresource{bib/andika.bib}
+
+\interfootnotelinepenalty=10000 % prevents the footnote from breaking across pages
+% http://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
+
+% Thanks to Manas Tungare (http://manas.tungare.name/software/latex) for these settings.
+\setlength{\paperwidth}{210mm}
+\setlength{\paperheight}{297mm}
+
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{247mm}
+
+\setlength{\evensidemargin}{1in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{-0.5in}
+
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
+
+\usepackage{url}  % Use urls in text and captions with sensible linewrap.  Can't use [obeyspaces] - this option clashes with biblatex.
+% \urlstyle{rm}  % Set urls in roman.
+
+\titleformat{\chapter}[display]{\normalfont\large}{\bfseries\chaptertitlename\ \thechapter}{10pt}{\large\itshape}[\vspace{2ex}\titlerule\vspace{2ex}]  % 10pt is the space between chapter and chapter name.  [display] sets the chapter and chapter name on separate lines.  The square brackets at the end draw a line under each chapter name, with 2ex gap from the name.
+\titlespacing{\chapter}{0pt}{0pt}{10pt}  % First is indent from the side, second is length down from the top, third is gap between heading and text.
+
+% \pagenumbering{gobble}  % Suppress page numbering.
+
+% ===== Endnotes =====
+% Uncomment the following two lines to get endnotes instead of footnotes.
+% Remember to uncomment the three lines in andika/db/output_pdf.php as well.
+% \usepackage{endnotes}
+% \let\footnote=\endnote
+% ==================
+
+\begin{document}
+
+\begin{center}
+\Atitle{أُتٖنْزِ وَ جَعْفَر} \\
+\Tr{uṯēnzi wa ja'far} \\
+\E{The Ballad of Ja'far} \\
+[5mm]
+\AS{بِسْمِ اللّٰهِ الرَحمَنِ الرَّحِيْمِ}\\
+\E{In the name of God, the Compassionate, the Merciful}
+\end{center}
+
+
+
+
+\begin{longtable}{rrl} 
+
+\makebox[8cm][r]{} & & \makebox[8cm][r]{} \\ 
+
+\textarabic{وٗتٖ وَٹَٹُ مفَنٗ} & \textarabic{وَكَتَنْڠَنْيَ مِكٗنٗ} & \textarabic{١٦٠} \\* 
+\Tr{woṯe waţaţu mfano} & \Tr{wakaṯanganya mikono} &  \Tr{160b/a} \\* 
+\multicolumn{2}{r}{\Swa{wakaṯanganya mikono * woṯe waţaţu mfano}} & \Swa{160a/b} \\* 
+\multicolumn{2}{r}{\E{They all put their hands [in the communal bowl] all three of them as equals,}} & \\ 
+\textarabic{نْدُڠُيٖ أَكِمْوَمْبِيَ} & \textarabic{أَكِنٖنَ نَ مَنٖنٗ} &  \\* 
+\Tr{nḏuguye akimwambiya} & \Tr{akinena na maneno} &  \Tr{160d/c} \\* 
+\multicolumn{2}{r}{\Swa{akinena na maneno * nḏuguye akimwambiya}} & \Swa{160c/d} \\* 
+\multicolumn{2}{r}{\E{with [Ja'far] saying these words, speaking to his brother:}} & \\ 
+\\[8mm] 
+
+\textarabic{يٖؤٗ نْدُيَنْڠُ كْوَ خٖيْرِ} & \textarabic{أَكَمْوَمْبِيَ نَاصِرِ} & \textarabic{١٦١} \\* 
+\Tr{yeo nḏuyangu kwa khēri} & \Tr{akamwambiya nāṣiri} &  \Tr{161b/a} \\* 
+\multicolumn{2}{r}{\Swa{akamwambiya nāṣiri * yeo nḏuyangu kwa khēri}} & \Swa{161a/b} \\* 
+\multicolumn{2}{r}{\E{He told Nasir: Goodbye today, my brother --}} & \\ 
+\textarabic{تَمَشَ تَكُلٖٹٖيَ} & \textarabic{تَكَپٗرُدِ سَفَرِ} &  \\* 
+\Tr{ṯamasha ṯakuleţeya} & \Tr{ṯakaporuḏi safari} &  \Tr{161d/c} \\* 
+\multicolumn{2}{r}{\Swa{ṯakaporuḏi safari * ṯamasha ṯakuleţeya}} & \Swa{161c/d} \\* 
+\multicolumn{2}{r}{\E{when I come back from my journey I will bring you something nice.}} & \\ 
+\\[8mm] 
+
+\textarabic{نِئٖٹٖيَ نَ فَرَسِ} & \textarabic{أَكَمْجِبُ أُپٖسِ} & \textarabic{١٦٢} \\* 
+\Tr{nieţeya na farasi} & \Tr{akamjibu upesi} &  \Tr{162b/a} \\* 
+\multicolumn{2}{r}{\Swa{akamjibu upesi * nieţeya na farasi}} & \Swa{162a/b} \\* 
+\multicolumn{2}{r}{\E{[Nasir] answered him quickly: Bring me a horse --}} & \\ 
+\textarabic{نَتَكَ كُمْوَنْڠَلِيَ} & \textarabic{نْيَمَ هُيٗ سِمُئِسِ} &  \\* 
+\Tr{naṯaka kumwangaliya} & \Tr{nyama huyo simuisi} &  \Tr{162d/c} \\* 
+\multicolumn{2}{r}{\Swa{nyama huyo simuisi * naṯaka kumwangaliya}} & \Swa{162c/d} \\* 
+\multicolumn{2}{r}{\E{I don't know what that animal [looks like], I would like to see one.}} & \\ 
+\\[8mm] 
+
+\textarabic{أَكَمْبَ مَمَ هُتٗكَ} & \textarabic{كِشَ هَپٗ كَتَمْكَ} & \textarabic{١٦٣} \\* 
+\Tr{akamba mama huṯoka} & \Tr{kisha hapo kaṯamka} &  \Tr{163b/a} \\* 
+\multicolumn{2}{r}{\Swa{kisha hapo kaṯamka * akamba mama huṯoka}} & \Swa{163a/b} \\* 
+\multicolumn{2}{r}{\E{When he had finished, then [Ja'far] spoke, and said: Mother, I am leaving.}} & \\ 
+\textarabic{صَدَكَ كَمْتٗلٖيَ} & \textarabic{مَمَكٖ أَكَئِنُكَ} &  \\* 
+\Tr{ṣaḏaka kamṯoleya} & \Tr{mamake akainuka} &  \Tr{163d/c} \\* 
+\multicolumn{2}{r}{\Swa{mamake akainuka * ṣaḏaka kamṯoleya}} & \Swa{163c/d} \\* 
+\multicolumn{2}{r}{\E{His mother got up and took out alms for him.}} & \\ 
+\\[8mm] 
+
+\textarabic{إٖنٖنْدٖ أَمْفُوَتٖ} & \textarabic{هَپٗ مَمَكٖ أَتٗكٖ} & \textarabic{١٦٤} \\* 
+\Tr{enenḏe amfuwaṯe} & \Tr{hapo mamake aṯoke} &  \Tr{164b/a} \\* 
+\multicolumn{2}{r}{\Swa{hapo mamake aṯoke * enenḏe amfuwaṯe}} & \Swa{164a/b} \\* 
+\multicolumn{2}{r}{\E{Then his mother went out, she went and followed him,}} & \\ 
+\textarabic{مْنْڠُ أَكِمُؤٗمْبٖيَ} & \textarabic{أَكِمْٹٖمٖيَ مَٹٖ} &  \\* 
+\Tr{mngu akimuombeya} & \Tr{akimţemeya maţe} &  \Tr{164d/c} \\* 
+\multicolumn{2}{r}{\Swa{akimţemeya maţe * mngu akimuombeya}} & \Swa{164c/d} \\* 
+\multicolumn{2}{r}{\E{spitting at him, praying to God for him.}} & \\ 
+\\[8mm] 
+
+\textarabic{مْسٗمٖشٖ أَهِتِمُ} & \textarabic{هُي نَاصِرِ مْوَلِمُ} & \textarabic{١٦٥} \\* 
+\Tr{msomeshe ahiṯimu} & \Tr{huy nāṣiri mwalimu} &  \Tr{165b/a} \\* 
+\multicolumn{2}{r}{\Swa{huy nāṣiri mwalimu * msomeshe ahiṯimu}} & \Swa{165a/b} \\* 
+\multicolumn{2}{r}{\E{[Then she said:] Teacher, Nasir here, teach him so that he may complete his studies,}} & \\ 
+\textarabic{عَادَ يَكٗ تَكْوٖٹٖيَ} & \textarabic{أُمْفُنْدٖ نَعِلِمُ} &  \\* 
+\Tr{'āḏa yako ṯakweţeya} & \Tr{umfunḏe na'ilimu} &  \Tr{165d/c} \\* 
+\multicolumn{2}{r}{\Swa{umfunḏe na'ilimu * 'āḏa yako ṯakweţeya}} & \Swa{165c/d} \\* 
+\multicolumn{2}{r}{\E{teach him knowledge. I will pay your fee.}} & \\ 
+\\[8mm] 
+
+\textarabic{هَپٗ كَلِيَ نَاصِرِ} & \textarabic{أَكِتٗكَ جَعْفَرِ} & \textarabic{١٦٦} \\* 
+\Tr{hapo kaliya nāṣiri} & \Tr{akiṯoka ja'fari} &  \Tr{166b/a} \\* 
+\multicolumn{2}{r}{\Swa{akiṯoka ja'fari * hapo kaliya nāṣiri}} & \Swa{166a/b} \\* 
+\multicolumn{2}{r}{\E{As Ja'far was setting off then Nasir began to cry.}} & \\ 
+\textarabic{أُسِكُ أَتَرٖجٖيَ} & \textarabic{مَمَكٖ أَكَفَسِرِ} &  \\* 
+\Tr{usiku aṯarejeya} & \Tr{mamake akafasiri} &  \Tr{166d/c} \\* 
+\multicolumn{2}{r}{\Swa{mamake akafasiri * usiku aṯarejeya}} & \Swa{166c/d} \\* 
+\multicolumn{2}{r}{\E{His mother said: [ja'far] will be back by nightfall.}} & \\ 
+\\[8mm] 
+
+\textarabic{نَمُيُوَ إٖنْدَ مَكَه} & \textarabic{نَاصِرِ أَكَتَمْكَ} & \textarabic{١٦٧} \\* 
+\Tr{namuyuwa enḏa makah} & \Tr{nāṣiri akaṯamka} &  \Tr{167b/a} \\* 
+\multicolumn{2}{r}{\Swa{nāṣiri akaṯamka * namuyuwa enḏa makah}} & \Swa{167a/b} \\* 
+\multicolumn{2}{r}{\E{Nasir spoke: I know he is going to Mecca.}} & \\ 
+\textarabic{أَسِپٗئِيٗنَ نْدِيَ} & \textarabic{كُتُنْڠَ هَنْڠَلِتٗكَ} &  \\* 
+\Tr{asipoiyona nḏiya} & \Tr{kuṯunga hangaliṯoka} &  \Tr{167d/c} \\* 
+\multicolumn{2}{r}{\Swa{kuṯunga hangaliṯoka * asipoiyona nḏiya}} & \Swa{167c/d} \\* 
+\multicolumn{2}{r}{\E{If he were going [to take the animals] to graze he would not take that road.}} & \\ 
+\\[8mm] 
+
+\textarabic{أُكِمْوَمْبِيَ تَمْكٗ} & \textarabic{أَوْ يَنَ سِكُوَكٗ} & \textarabic{١٦٨} \\* 
+\Tr{ukimwambiya ṯamko} & \Tr{aw yana sikuwako} &  \Tr{168b/a} \\* 
+\multicolumn{2}{r}{\Swa{aw yana sikuwako * ukimwambiya ṯamko}} & \Swa{168a/b} \\* 
+\multicolumn{2}{r}{\E{For was I not there yesterday when you said him [those] words to him,}} & \\ 
+\textarabic{يٗتٖ نَلِيَسِكِيَ} & \textarabic{كَوَڠٖ وٖنْدَنِ وَكٗ} &  \\* 
+\Tr{yoṯe naliyasikiya} & \Tr{kawage wenḏani wako} &  \Tr{168d/c} \\* 
+\multicolumn{2}{r}{\Swa{kawage wenḏani wako * yoṯe naliyasikiya}} & \Swa{168c/d} \\* 
+\multicolumn{2}{r}{\E{that he should take leave of your friends? I heard everything.}} & \\ 
+\\[8mm] 
+
+\textarabic{نْڠُوٗ هُتَكُلِيَنِ} & \textarabic{أَوْ وٖنْدَ مَتُنْڠَنِ} & \textarabic{١٦٩} \\* 
+\Tr{nguwo huṯakuliyani} & \Tr{aw wenḏa maṯungani} &  \Tr{169b/a} \\* 
+\multicolumn{2}{r}{\Swa{aw wenḏa maṯungani * nguwo huṯakuliyani}} & \Swa{169a/b} \\* 
+\multicolumn{2}{r}{\E{Or if he is going to the pastures, what is he carrying those clothes for?}} & \\ 
+\textarabic{هَتَ هَيٗ كُنَمْبِيَ} & \textarabic{سِكُ زٗتِ سِمُؤٗنِ} &  \\* 
+\Tr{haṯa hayo kunambiya} & \Tr{siku zoṯi simuoni} &  \Tr{169d/c} \\* 
+\multicolumn{2}{r}{\Swa{siku zoṯi simuoni * haṯa hayo kunambiya}} & \Swa{169c/d} \\* 
+\multicolumn{2}{r}{\E{All these days I have never seen him [do that], So explain these [things] to me.}} & \\ 
+\\[8mm] 
+
+\textarabic{بَسِ وَلِلِيَنِ} & \textarabic{جَعْفَرِ كَبَئِنِ} & \textarabic{١٧٠} \\* 
+\Tr{basi waliliyani} & \Tr{ja'fari kabaini} &  \Tr{170b/a} \\* 
+\multicolumn{2}{r}{\Swa{ja'fari kabaini * basi waliliyani}} & \Swa{170a/b} \\* 
+\multicolumn{2}{r}{\E{Ja'far spoke: So why are you crying?}} & \\ 
+\textarabic{مَنٖنٗ نَلٗكْوَمْبِيَ} & \textarabic{أَوْ ٹْوَلِأ ڠَنَنِ} &  \\* 
+\Tr{maneno nalokwambiya} & \Tr{aw ţwali ganani} &  \Tr{170d/c} \\* 
+\multicolumn{2}{r}{\Swa{aw ţwali ganani * maneno nalokwambiya}} & \Swa{170c/d} \\* 
+\multicolumn{2}{r}{\E{Or why did we agree with the words I spoke to you?}} & \\ 
+\\[8mm] 
+
+\textarabic{نَمْبِيَ نِسِيَتٗكَ} & \textarabic{نَ كَمَ هُكِرِضِكَ} & \textarabic{١٧١} \\* 
+\Tr{nambiya nisiyaṯoka} & \Tr{na kama hukiriḍika} &  \Tr{171b/a} \\* 
+\multicolumn{2}{r}{\Swa{na kama hukiriḍika * nambiya nisiyaṯoka}} & \Swa{171a/b} \\* 
+\multicolumn{2}{r}{\E{And if you are not pleased, tell me before I go.}} & \\ 
+\textarabic{سِكِتِكٗ كُنِٹِيَ} & \textarabic{هُنَ هَتَ كُؤُذِكَ} &  \\* 
+\Tr{sikiṯiko kuniţiya} & \Tr{huna haṯa kuudhika} &  \Tr{171d/c} \\* 
+\multicolumn{2}{r}{\Swa{huna haṯa kuudhika * sikiṯiko kuniţiya}} & \Swa{171c/d} \\* 
+\multicolumn{2}{r}{\E{You have no cause to be hurt and make me feel sad.}} & \\ 
+\\[8mm] 
+
+\textarabic{سِكُئِزَ هَيٗ يَكٗ} & \textarabic{أَكَجِبُ تَمْكٗ} & \textarabic{١٧٢} \\* 
+\Tr{sikuiza hayo yako} & \Tr{akajibu ṯamko} &  \Tr{172b/a} \\* 
+\multicolumn{2}{r}{\Swa{akajibu ṯamko * sikuiza hayo yako}} & \Swa{172a/b} \\* 
+\multicolumn{2}{r}{\E{[Nasir] answered with the words I don't disagree with these [plans] of yours --}} & \\ 
+\textarabic{هَمُنِؤٗنِ كُلِيَ} & \textarabic{سِكُ زٗتٖ نِكٗ} &  \\* 
+\Tr{hamunioni kuliya} & \Tr{siku zoṯe niko} &  \Tr{172d/c} \\* 
+\multicolumn{2}{r}{\Swa{siku zoṯe niko * hamunioni kuliya}} & \Swa{172c/d} \\* 
+\multicolumn{2}{r}{\E{all the days of my life you have never seen me cry.}} & \\ 
+\\[8mm] 
+
+\textarabic{نِمٖزٗيَتَأَمَلِ} & \textarabic{سَسَ هَيٗ نْدَ عَقِلِ} & \textarabic{١٧٣} \\* 
+\Tr{nimezoyaṯaamali} & \Tr{sasa hayo nḏa 'aqili} &  \Tr{173b/a} \\* 
+\multicolumn{2}{r}{\Swa{sasa hayo nḏa 'aqili * nimezoyaṯaamali}} & \Swa{173a/b} \\* 
+\multicolumn{2}{r}{\E{Now, these [things] are [a matter of] commonsense. which I observed.}} & \\ 
+\textarabic{زٖءٗ زَكٗ زَ كُئِنُكِيَ} & \textarabic{نَكُوَ مَتُلِ تُلِ} &  \\* 
+\Tr{zeo zako za kuinukiya} & \Tr{nakuwa maṯuli ṯuli} &  \Tr{173d/c} \\* 
+\multicolumn{2}{r}{\Swa{nakuwa maṯuli ṯuli * zeo zako za kuinukiya}} & \Swa{173c/d} \\* 
+\multicolumn{2}{r}{\E{I am anxious [because] today is the time for you to go.}} & \\ 
+\\[8mm] 
+
+\textarabic{هى إِنُكَ أُتٗكٖ} & \textarabic{أَكَمْوَمْبِيَ نْدُيَكٖ} & \textarabic{١٧٤} \\* 
+\Tr{hı̄ inuka uṯoke} & \Tr{akamwambiya nḏuyake} &  \Tr{174b/a} \\* 
+\multicolumn{2}{r}{\Swa{akamwambiya nḏuyake * hı̄ inuka uṯoke}} & \Swa{174a/b} \\* 
+\multicolumn{2}{r}{\E{He told his brother: So, off you go.}} & \\ 
+\textarabic{كْوَنْدَ مْنْڠُ نِؤٗمْبٖيَ} & \textarabic{جَعْفَرِ أَتَمْكٖ} &  \\* 
+\Tr{kwanḏa mngu niombeya} & \Tr{ja'fari aṯamke} &  \Tr{174d/c} \\* 
+\multicolumn{2}{r}{\Swa{ja'fari aṯamke * kwanḏa mngu niombeya}} & \Swa{174c/d} \\* 
+\multicolumn{2}{r}{\E{Ja'far said: First pray to God for me.}} & \\ 
+\\[8mm] 
+
+\textarabic{أَتَكُپٖكَ مَنَنِ} & \textarabic{نَاصِرِ أَكَبَئِنِ} & \textarabic{١٧٥} \\* 
+\Tr{aṯakupeka manani} & \Tr{nāṣiri akabaini} &  \Tr{175b/a} \\* 
+\multicolumn{2}{r}{\Swa{nāṣiri akabaini * aṯakupeka manani}} & \Swa{175a/b} \\* 
+\multicolumn{2}{r}{\E{Nasir said: May Providence go with you,}} & \\ 
+\textarabic{كْوَ عَفِيَ نَ عَفُوَ} & \textarabic{سَلَامَ سَلِمِيْنِ} &  \\* 
+\Tr{kwa 'afiya na 'afuwa} & \Tr{salāma salimı̄ni} &  \Tr{175d/c} \\* 
+\multicolumn{2}{r}{\Swa{salāma salimı̄ni * kwa 'afiya na 'afuwa}} & \Swa{175c/d} \\* 
+\multicolumn{2}{r}{\E{[and keep you] safe and sound, in health and happiness.}} & \\ 
+\\[8mm] 
+
+\textarabic{كِنٖنْدَ كُتٗسِمَمَ} & \textarabic{هَپٗ نْدِيَ كَيَنْدَمَ} & \textarabic{١٧٦} \\* 
+\Tr{kinenḏa kuṯosimama} & \Tr{hapo nḏiya kayanḏama} &  \Tr{176b/a} \\* 
+\multicolumn{2}{r}{\Swa{hapo nḏiya kayanḏama * kinenḏa kuṯosimama}} & \Swa{176a/b} \\* 
+\multicolumn{2}{r}{\E{Then [Ja'far] set out, going on, not stopping,}} & \\ 
+\textarabic{نَاءٖ مَكَه أَمٖنْڠِيَ} & \textarabic{سَاءَ كْوَ إِكِتٗمَ} &  \\* 
+\Tr{nae makah amengiya} & \Tr{saa kwa ikiṯoma} &  \Tr{176d/c} \\* 
+\multicolumn{2}{r}{\Swa{saa kwa ikiṯoma * nae makah amengiya}} & \Swa{176c/d} \\* 
+\multicolumn{2}{r}{\E{and around four o'clock he entered Mecca.}} & \\ 
+\\[8mm] 
+
+\textarabic{كْوَ بَبَكٖ هَكُئِسِ} & \textarabic{مَكَه أَلِپٗجِلِسِ} & \textarabic{١٧٧} \\* 
+\Tr{kwa babake hakuisi} & \Tr{makah alipojilisi} &  \Tr{177b/a} \\* 
+\multicolumn{2}{r}{\Swa{makah alipojilisi * kwa babake hakuisi}} & \Swa{177a/b} \\* 
+\multicolumn{2}{r}{\E{When he arrived in Mecca he did not know his father's home.}} & \\ 
+\textarabic{كْوَنْدَ تَئِكٖتِلِيَ} & \textarabic{كَمْبَ نْدِيَ سِتَكَسِ} &  \\* 
+\Tr{kwanḏa ṯaikeṯiliya} & \Tr{kamba nḏiya siṯakasi} &  \Tr{177d/c} \\* 
+\multicolumn{2}{r}{\Swa{kamba nḏiya siṯakasi * kwanḏa ṯaikeṯiliya}} & \Swa{177c/d} \\* 
+\multicolumn{2}{r}{\E{He said: I am not sure of the road, first I will sit myself down.}} & \\ 
+\\[8mm] 
+
+\textarabic{أَكَمُؤٗنَ زُبٖيْرِ} & \textarabic{أَكَكٖتِ جَعْفَرِ} & \textarabic{١٧٨} \\* 
+\Tr{akamuona zubēri} & \Tr{akakeṯi ja'fari} &  \Tr{178b/a} \\* 
+\multicolumn{2}{r}{\Swa{akakeṯi ja'fari * akamuona zubēri}} & \Swa{178a/b} \\* 
+\multicolumn{2}{r}{\E{Ja'far sat down and saw Zubair --}} & \\ 
+\textarabic{مِكٗنٗ كَمْوِنُلِيَ} & \textarabic{وٖنْدٖمٖنٖ نَ بَشِيْرِ} &  \\* 
+\Tr{mikono kamwinuliya} & \Tr{wenḏemene na bashı̄ri} &  \Tr{178d/c} \\* 
+\multicolumn{2}{r}{\Swa{wenḏemene na bashı̄ri * mikono kamwinuliya}} & \Swa{178c/d} \\* 
+\multicolumn{2}{r}{\E{he was walking along with the Bearer of Good News -- and Ja'far waved at him.}} & \\ 
+\\[8mm] 
+
+\textarabic{زُبٖيْرِ أَكَسِمَمَ} & \textarabic{مْكٗنٗ كَؤُٹِزَمَ} & \textarabic{١٧٩} \\* 
+\Tr{zubēri akasimama} & \Tr{mkono kauţizama} &  \Tr{179b/a} \\* 
+\multicolumn{2}{r}{\Swa{mkono kauţizama * zubēri akasimama}} & \Swa{179a/b} \\* 
+\multicolumn{2}{r}{\E{Zubair saw the wave and stopped.}} & \\ 
+\textarabic{مْڠٖنِ وٖٹُ هُنْڠِيَ} & \textarabic{أَكَمْوَمْبِيَ هَشِمَ} &  \\* 
+\Tr{mgeni weţu hungiya} & \Tr{akamwambiya hashima} &  \Tr{179d/c} \\* 
+\multicolumn{2}{r}{\Swa{akamwambiya hashima * mgeni weţu hungiya}} & \Swa{179c/d} \\* 
+\multicolumn{2}{r}{\E{He told the Hashimite: Our guest has arrived.}} & \\ 
+\\[8mm] 
+
+\textarabic{مْڠٖنِ وٖٹُ نِ نَنِ} & \textarabic{أَكَمُؤُزَ أَمِيْنِ} & \textarabic{١٨٠} \\* 
+\Tr{mgeni weţu ni nani} & \Tr{akamuuza amı̄ni} &  \Tr{180b/a} \\* 
+\multicolumn{2}{r}{\Swa{akamuuza amı̄ni * mgeni weţu ni nani}} & \Swa{180a/b} \\* 
+\multicolumn{2}{r}{\E{The Trustworthy One asked: Who is our guest?}} & \\ 
+\textarabic{مْكٗنٗ نِپٖ نَبِيَ} & \textarabic{وَسِكِيٖ هُبَئِنِ} &  \\* 
+\Tr{mkono nipe nabiya} & \Tr{wasikiye hubaini} &  \Tr{180d/c} \\* 
+\multicolumn{2}{r}{\Swa{wasikiye hubaini * mkono nipe nabiya}} & \Swa{180c/d} \\* 
+\multicolumn{2}{r}{\E{And they heard [Ja'far] say: Give me your hand, Prophet.}} & \\ 
+\\[8mm] 
+
+\end{longtable} 
+
+\renewcommand{\bibname}{References} 
+\begingroup 
+\printbibliography 
+\endgroup 
+
+\end{document}

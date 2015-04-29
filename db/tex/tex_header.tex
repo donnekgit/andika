@@ -3,7 +3,9 @@
 \usepackage{titlesec}  % Allow the chapter/section heading settings to be fine-tuned.  Needs to come before bidi, in polyglossia.
 \usepackage{polyglossia}  % multilingual support
 \usepackage{longtable}  % tables that carry across multiple pages
-\usepackage{xcolor}  % can't use color with polyglossia
+\usepackage[x11names]{xcolor}  % can't use color with polyglossia
+
+\usepackage{pdfpages}
 
 \input{convert/tex/fontdefs.tex}  % Bring in the font definitions.
 
@@ -29,7 +31,7 @@
 \setlength{\oddsidemargin}{0in}
 \setlength{\topmargin}{-0.5in}
 
-\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
+% \renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
 
 \usepackage{url}  % Use urls in text and captions with sensible linewrap.  Can't use [obeyspaces] - this option clashes with biblatex.
 % \urlstyle{rm}  % Set urls in roman.

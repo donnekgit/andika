@@ -36,6 +36,7 @@ if (empty($argv[1]))
 $words="{$poem}_words";
 $stanza_contents="";  // set up a holder for the contents of the whole stanza
 $columns="rrl";  // Set up the columns for the main table which will hold the text.
+$colour1="mygreen";  // Colour for the Arabic text if desired..
 
 $first_half=array('a', 'c', 'e', 'g', 'i', 'k', 'm', 'o', 'q', 's', 'u', 'w', 'y');  // vipande which signify the beginning of a line
 
@@ -62,10 +63,18 @@ fwrite($fp, "\begin{longtable}{{$columns}} \n\n");
 fwrite($fp, "\makebox[8cm][r]{} & & \makebox[8cm][r]{} \\\\ \n\n"); 
 
 // Collect the content from the table.
+// $sql=query("select stanza from $words where stanza between 180 and 200 group by stanza order by stanza;");  // Collect all the stanza numbers.
 $sql=query("select stanza from $words group by stanza order by stanza;");  // Collect all the stanza numbers.
 while ($row=pg_fetch_object($sql))
 {
     $stanza=$row->stanza;
+    
+    // Set up check for stanzas with odd numbers of lines - get the letter matching the maximum kipande.
+    $sql_nk=query("select max(loc) from $words where stanza=$stanza;");
+    while ($row_nk=pg_fetch_object($sql_nk))
+    {
+	$maxkip=$row_nk->max;
+    }
     
     $sql_loc=query("select distinct loc from $words where stanza=$stanza order by loc;");
     while ($row_loc=pg_fetch_object($sql_loc))
@@ -109,7 +118,7 @@ while ($row=pg_fetch_object($sql))
             $trans_line.=$trans." ";  
             $english_line.=$english." ";
         }
-            
+
         if (in_array($kipande, $first_half))
         {
             $first_kip=$kipande;
@@ -132,7 +141,7 @@ while ($row=pg_fetch_object($sql))
 
         if($double==1)  // We have two kipande on the line, so print them.
         {
-            fwrite($fp, "\\textarabic{".$b_arabic."} & \\textarabic{".$a_arabic."} & ");
+            fwrite($fp, "\\textcolor{{$colour1}}{\\textarabic{".$b_arabic."}} & \\textcolor{{$colour1}}{\\textarabic{".$a_arabic."}} & ");
             if (substr($close_kip, 0, 1)=="b") // only put an Arabic number against the first line of the stanza
             {
                 fwrite($fp, "\\textarabic{".convert_numbers($stanza)."} \\\\* \n");
@@ -141,13 +150,28 @@ while ($row=pg_fetch_object($sql))
             {
                 fwrite($fp, " \\\\* \n");  
             }
-            fwrite($fp, "\Tr{".$b_close."} & \\Tr{".$a_close."} &  \Tr{".$stanza.$close_kip."} \\\\* \n");
-            fwrite($fp, "\multicolumn{2}{r}{\Swa{".$a_trans." * ".$b_trans."}} & \Swa{".$stanza.$trans_kip."} \\\\* \n");
+            //fwrite($fp, "\Tr{".$b_close."} & \\Tr{".$a_close."} &  \Tr{".$stanza.$close_kip."} \\\\* \n");
+            //fwrite($fp, "\multicolumn{2}{r}{\Swa{".$a_trans." * ".$b_trans."}} & \Swa{".$stanza.$trans_kip."} \\\\* \n");
+            fwrite($fp, "\multicolumn{2}{r}{".$a_trans." * ".$b_trans."} & ".$stanza.$trans_kip." \\\\* \n");
             fwrite($fp, "\multicolumn{2}{r}{\E{".$a_english." ".$b_english."}} & \\\\ \n");
            
-            echo $stanza.$edclose_kip.": ".$a_trans." + ".$b_trans."\n";
+            echo $stanza.$close_kip.": ".$a_trans." + ".$b_trans."\n";
             unset($double, $arabic_line, $close_line, $trans_line, $english_line);
         }
+        elseif ($kipande==$maxkip)  // handle stanzas with an odd number of vipande
+	// if the line doesn't have two vipande ($double), check if its loc is the last loc of the stanza, and if it is, print it anyway
+        {
+	    //fwrite($fp, " & \\textarabic{".$a_arabic."} & ");
+	    fwrite($fp, "\multicolumn{2}{r}{\\textcolor{{$colour1}}{\\textarabic{".$a_arabic."}}} & ");
+	    //fwrite($fp, " & \\textcolor{{$colour1}}{\\textarabic{".$a_arabic."}} & ");
+	    fwrite($fp, " \\\\* \n");
+	   // fwrite($fp, " & \\Tr{".$a_close."} &  \Tr{".$stanza.$kipande."} \\\\* \n");
+           // fwrite($fp, "\multicolumn{2}{r}{\Swa{".$a_trans."}} & \Swa{".$stanza.$kipande."} \\\\* \n");
+            fwrite($fp, "\multicolumn{2}{r}{".$a_trans."} & ".$stanza.$kipande." \\\\* \n");
+            fwrite($fp, "\multicolumn{2}{r}{\E{".$a_english."}} & \\\\ \n");
+            
+	    echo $stanza.$kipande.": ".$a_trans."\n";
+        }  
     }
     
     fwrite($fp, "\\\\[8mm] \n\n");
@@ -178,10 +202,10 @@ fclose($fp);
 // Compile the tex file into a pdf.  In contrast to convert, we need to do a couple of passes because of biblatex.
 echo "Doing initial layout...\n";
 exec("xelatex -interaction=nonstopmode -output-directory=db/outputs/$poem db/outputs/$poem/{$poem}.tex 2>&1");
-echo "Integrating citations...\n";
-exec("biber db/outputs/$poem/$poem 2>&1");
-echo "Doing final layout...\n";
-exec("xelatex -interaction=nonstopmode -output-directory=db/outputs/$poem db/outputs/$poem/{$poem}.tex 2>&1");
+// echo "Integrating citations...\n";
+// exec("biber db/outputs/$poem/$poem 2>&1");
+// echo "Doing final layout...\n";
+// exec("xelatex -interaction=nonstopmode -output-directory=db/outputs/$poem db/outputs/$poem/{$poem}.tex 2>&1");
 echo "The document should be ready now.\n";
 
 ?>

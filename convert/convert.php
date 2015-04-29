@@ -41,7 +41,7 @@ require_once 'convert/QueryPath-2.1.2-minimal/QueryPath.php';
 // Handle input coming from convert.sh or from command-line
 // ---------------------------------------------------------------------------
 $collection=explode("+", $argv[1]);
-//print_r($collection);
+// print_r($collection);
 
 list($input, $script, $genre, $output, $layout, $transtxt)=$collection;
 
@@ -55,7 +55,7 @@ $script=lcfirst($script);
 $genre=lcfirst($genre);
 $columns=($layout=="vip-space") ? "rrl" : "rl";
 
-$stanza_no=0;  // stanza counter
+$stanza_no=0;  // stanza counter.  If handling an excerpt, this can be set to one below the lowest stanza number of the excerpt, to allow the numbering to be output correctly.
 
 
 // --------------------------------------------------------
@@ -101,7 +101,7 @@ elseif ($type=="txt")
     $poemlines=file($file);
 }
 
-//print_r($poemlines);
+// print_r($poemlines);
 
 
 // --------------------------
@@ -147,12 +147,14 @@ elseif ($output=="odt")
 // --------------------------------
 $vipande=array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');  // letters to signify location of the kipande in the stanza
 $first_half=array('a', 'c', 'e', 'g', 'i', 'k', 'm', 'o', 'q', 's', 'u', 'w', 'y');  // vipande which signify the beginning of a line
+$second_half=array('b', 'd', 'f', 'h', 'j', 'l', 'n', 'p', 'r', 't', 'v', 'x', 'z');  // vipande which signify the beginning of a line
 
 foreach ($poemlines as $key=>$poemline)
 {
-    if (strlen(trim($poemline)) > 0) // there's text on the line ...  ("empty" lines in a txt file contain a \n character, so we have to trim that off)#
+   //echo $poemline;
+   if (strlen(trim($poemline)) > 0) // there's text on the line ...  ("empty" lines in a txt file contain a \n character, so we have to trim that off)
     {
-	if (!preg_match("/[0-9]+/", $poemline))
+	if (!preg_match("/#/", $poemline))  // This will skip all lines containing #.  This allows you to mark where you are in long poems by putting #nnn before the stanza lines.  See 7.3.3 of the manual and the sample input document andika/convert/inputs/jaafari/jnum.odt.
 	{
 	    $stanza_contents[]=$poemline;  // ... so put it into an array
 	}
@@ -164,10 +166,18 @@ foreach ($poemlines as $key=>$poemline)
 	
         if ($genre=="poetry")
         {
+	    //print_r($stanza_contents);
+	    //echo count($stanza_contents)."\n";
 	    // truncate $vipande to the length of $stanza_contents
 	    array_splice($vipande, count($stanza_contents));
+	    //print_r($vipande);
 	    // set values of $vipande as keys of $stanza_contents - keys are then letters instead of numbers
 	    $stanza_contents=array_combine($vipande, $stanza_contents);
+	    
+	    // Set up check for stanzas with odd numbers of lines.
+	    end($stanza_contents);  // move the internal pointer to the end of the array
+	    $lastkey = key($stanza_contents);  // fetch the key of the last item in the array
+	    reset($stanza_contents);  // move the pointer back to the first item of the array
 	}
 
         foreach ($stanza_contents as $key=>$stanza_line)
@@ -176,7 +186,7 @@ foreach ($poemlines as $key=>$poemline)
             {
                 unset($stanza_no);
                 $key=$key+1;
-                
+                                
 		include("layouts/kip-line_{$script}.php");
             }
             elseif ($genre=="poetry")

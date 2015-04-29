@@ -1,0 +1,58 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage{titlesec}  % Allow the chapter/section heading settings to be fine-tuned.  Needs to come before bidi, in polyglossia.
+\usepackage{polyglossia}  % multilingual support
+\usepackage{longtable}  % tables that carry across multiple pages
+\usepackage{xcolor}  % can't use color with polyglossia
+
+\input{convert/tex/fontdefs.tex}  % Bring in the font definitions.
+
+\usepackage{marginnote}
+\renewcommand*{\marginfont}{\color{red}\sffamily}
+
+\interfootnotelinepenalty=10000 % prevents the footnote from breaking across pages
+% http://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
+
+% Thanks to Manas Tungare (http://manas.tungare.name/software/latex) for these settings.
+\setlength{\paperwidth}{210mm}
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{247mm}
+
+\setlength{\evensidemargin}{1in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{-0.5in}
+
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
+
+\usepackage{url}  % Use urls in text and captions with sensible linewrap.  Can't use [obeyspaces] - this option clashes with biblatex.
+\urlstyle{rm}  % Set urls in roman.
+
+\begin{document}
+
+\begin{flushright}
+
+{\textarabic{مزٖئٖ مَهمٗؤُد أَهمٖد أَبدُل كَدِر أَل؍مَأَرُوفُ أُسْتَذ مَاءُ نِ مْشَئِيرِ مْتَجِيكَ كُتٗوكَ كِسِيوَ چَ لَامُ۔ أَنَكُمْبُوكَ ڤِيلٖ أَلِڤْيٗفُرَاهِ كَتِيكَ شٖرٖيهٖ زَ مِئَاكَ ١٠ يَ أُهُورُ أَلِپٗپَاتَ نَفَاسِ يَ كُغَانِ شَئِيرِ لَاكٖ نَ كِيشَ كُتُوزْوَ ش ٥ كَامَ زَوَادِ۔ هُؤٗ أُلِكُوَ مْوَاكَ ١٩٧٣۔ أَمٖئَنْدِيكَ مَشَئِيرِ چُونْڠُ نْزِيمَ نَ مٖنْڠِينٖ كُيَرٖكٗودِ كَتِيكَ ڮد نَ هُتُمِيكَ نَ وَاتُ وَ تَبَاكَ زٗوتٖ كَامَ نْجِئَ يَ كُوَاپَ مَوَئِيذَ كُهُوسُ مَسُؤَالَ مْبَلِمْبَالِ يَ مَئِيشَ۔ أَمٖئَلِيكْوَ كْوٖينْدَ أُجٖرُمَانِ مْوٖيزِ هُؤُ نَ چُؤٗ كِكُؤُ چَ بَيرٖؤُث إِيلِ كُحَرِيرِ مَشَئِيرِ يَاكٖ نَ مٖنْڠِينٖ يَ كَالٖ كْوَ مْوٖيزِ ممٗوجَ۔} \\ 
+
+ \vspace{10mm} 
+
+{\textarabic{كْوَ نِينِ أُنَئِيتوَ أُسْتَذ مَاءُ؟ جِينَ مَاءُ لِينَ مَأَانَ ڠَانِ؟} \\ 
+
+ \vspace{10mm} 
+
+{\textarabic{هِيلٗ نِ جِينَ لَ هِرِيمُ وَلِلٗنِؤُتَ وٖنْزَانْڠُ۔ لِلِتٗكَانَ نَ يُولٖ كِؤٗنْڠٗوزِ وَ أُچِينَ مَاءٗ تسٖ تسُنْڠ۔ نِلِكُوَ نِكِڤَاءَ شَرتِ كَامَ لَاكٖ كْوَ هِيڤْيٗ وَكَنِؤُتَ جِينَ هِيلٗ۔ پِئَ وٖنْڠِينٖ وَلِئٖنْدٖلٖيزَ جِينَ هِيلٗ وَكِفِكِيرِ نَئِيتوَ هِيڤْيٗ كْوَ سَبَابُ يَ مَاءُ مَاءُ كْوَ كُوَ نِمٖكُوَ نِكِتٖتٖئَ هَاكِ زَ وَنْيٗونْڠٖ۔} \\ 
+
+ \vspace{10mm} 
+
+{\textarabic{تُئٖلٖيزٖ مَچَاچٖ كُهُوسُ أَسِيلِ يَاكٗ۔} \\ 
+
+ \vspace{10mm} 
+
+{\textarabic{نِلِزَلِيوَ فٖبرُؤَارِ ٢٠، ١٩٥٢ كَتِيكَ مْجِ وَ لَامُ۔ نِلِكُوَ كِفُنْڠُؤَ مِيمْبَ كْوَ مَامَ نَ تُلِكُوَ وَتٗوتٗ سِيتَ؛ وَڤُلَانَ وَوِيلِ نَ وَسِچَانَ وَاننٖ۔ نِلِسٗومَ مَدرَسسَ ؍ تُننَجَاهِ بَئِينَ يَ ١٩٥٧ نَ ١٩٦٧۔ نِلِكُوَ مْوَلِيمُ وَ مَدرَسسَ كْوَ مْوَاكَ ممٗوجَ كِيشَ ١٩٦٩ نَ ١٩٧٠ نِكَئِينْدَ مَچَكٗس كُسٗمٖئَ مَدرَسسَ زَئِيدِ۔ نِلِسٗومَ پِئَ كِئِنْڠٖرٖيزَ كِدٗوڠٗ۔} \\ 
+
+ \vspace{10mm} 
+
+\\[8mm] 
+
+\end{flushright}
+
+\end{document}

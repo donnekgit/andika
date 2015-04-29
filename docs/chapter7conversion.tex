@@ -66,26 +66,24 @@ It is recommended that files to be converted are stored in \textit{\url{andika/c
 
 It is a good idea to keep the input filename lower-case and all-one-word.  In contrast to Microsoft Windows, Ubuntu will consider files with capitalised names as different files from the lower-case equivalent, and filenames containing spaces may not be handled as anticipated.  If you need to include multiple words in the filename, link them with an underscore.
 
-In \textit{pdf} output, lines can sometimes appear ill-aligned.  This sometimes happens when you change the desired layout, and is due to LaTeX having to compile the pdf again to apply the new layout.  It can be fixed by simply repeating the import.  
+In \textit{pdf} output, lines can sometimes appear ill-aligned when you change the desired layout.  This is due to LaTeX having to compile the pdf again to apply the new layout.  It can be fixed by simply repeating the import.  
 
 With an \textit{odt} input file, if you get an error message similar to the following:
-
-\verb|Warning: array_combine() expects parameter 2 to be array, null|\\
-\verb|given in /srv/www/andika/convert/convert.php on line 163|\\
-\verb|Warning: Invalid argument supplied for foreach() in /srv/www/andika/convert/convert.php on line 166|
-
+\begin{quotation}
+Warning: array_combine() expects parameter 2 to be array, null given in /srv/www/andika/convert/convert.php on line 163\\
+Warning: Invalid argument supplied for foreach() in /srv/www/andika/convert/convert.php on line 166
+\end{quotation}
 it means that you have two blank lines at the end of the file instead of one.
 
 \subsection{Point-and-click interface}
 \label{ss:pacint}
 
-To start the converter in this mode, open a terminal and enter:
-
+To start the converter in this mode, open a terminal and enter:\\
 \verb|convert/convert.sh|
 
 A series of windows will open, allowing you to make the following choices:
 \begin{enumerate}
-\item The document (file) to be converted.  For poety, the document needs to be in a specific layout -- see \Cref{s:layout} below.
+\item The document (file) to be converted.  For poetry, the document needs to be in a specific layout -- see \Cref{s:layout} below.
 \item The script in which the document is written (Arabic or Roman).
 \item The genre of the document (poetry or prose).
 \item The type of output required (\textit{pdf}, \textit{odt}, \textit{txt}, or insertion into a database table).  If database insertion is chosen, no further selections need be made.
@@ -93,21 +91,31 @@ A series of windows will open, allowing you to make the following choices:
 \item Whether or not the Roman script (whether original text or generated transliteration) should be included in the output.  The default is to include it.  
 \end{enumerate}
 
-Note that in the case of two \textit{vipande} separated by a space, the transcription below them applies to each \textit{kipande} separately; in the case of two \textit{vipande} separated by an asterisk, the transcription below them applies to the whole line of two \textit{vipande}.  The stanza numbering reflects this.  The following two versions of a quatrain from the \textit{Utenzi wa Jaafari}  (\textit{Ballad of Jaafari)} show the difference:
+Note that in the case of two \textit{vipande} separated by a space, the transcription below them applies to each \textit{kipande} separately; in the case of two \textit{vipande} separated by an asterisk, the transcription below them applies to the whole line of two \textit{vipande}.  The stanza numbering reflects this.  The two versions of a quatrain from the \textit{Utenzi wa Jaafari}  (\textit{Ballad of Jaafari)} in \Cref{fig:vip-space} and \Cref{fig:vip-star} show the differences.
 
+\begin{figure}
 \begin{longtable}{rrl}
 \textarabic{كهٖنْدَ مَتٖمْبٖزِ يَنْڠُ} & \textarabic{پُلِكَنِ نْدُزَنْڠُ} & \textarabic{١} \\* 
 \Tr{kʿenḏa maṯembezi yangu} & \Tr{pulikani nḏuzangu} & \Tr{1b/a} \\ 
 \textarabic{قِصَ چَلٗنِجِرِيَ} & \textarabic{نِوَپٖ خَبَرِ زَنْڠُ} &  \\* 
 \Tr{qiṣa chalonijiriya} & \Tr{niwape khabari zangu} & \Tr{1d/c} \\ 
+\\[2mm]
 \end{longtable}
+\caption{\textit{Vipande} separated by a space}
+\label{fig:vip-space}
+\end{figure}
 
-\begin{longtable}{rrl}
+\begin{figure}
+\begin{longtable}{rl}
 \textarabic{پُلِكَنِ نْدُزَنْڠُ * كهٖنْدَ مَتٖمْبٖزِ يَنْڠُ} & \textarabic{١} \\* 
 \Tr{pulikani nḏuzangu * kʿenḏa maṯembezi yangu} & \Tr{1a/b} \\ 
 \textarabic{نِوَپٖ خَبَرِ زَنْڠُ * قِصَ چَلٗنِجِرِيَ} &  \\* 
 \Tr{niwape khabari zangu * qiṣa chalonijiriya} & \Tr{1c/d} \\ 
+\\[2mm]
 \end{longtable}
+\caption{\textit{Vipande} separated by a star}
+\label{fig:vip-star}
+\end{figure}
 
 
 \subsection{Command-line input}
@@ -134,13 +142,11 @@ The documents to be converted can be in either \textit{txt} or \textit{odt} form
 
 Poems in traditional metres should be laid out one \textit{kipande} to the line, with a blank line between stanzas and one (\textit{odt}) or two (\textit{txt}) blank lines at the end.
 
-An alternative format for longer poems (for example, \textbf{tenzi}) is available, which may be useful in helping to pinpoint your location in the transcription.  After the blank stanza-separation line, each stanza can be preceded by a stanza number (eg the number from the manuscript being transcribed) in Roman numerals on a separate line. (Roman numerals are accessible from the Swahili keyboard by holding down \textit{AltGr} and pressing the numeral key.)  These numbers will be ignored by the conversion in favour of its own stanza numbering (it is not unheard of, for instance, for the scribe or copyist to misnumber stanzas).  An example of this format is available in the file \url{andika/convert/inputs/jaafari/jnum.odt}.
+An alternative format for longer poems (for example, \textbf{tenzi}) is available, which may be useful in helping to pinpoint your location in the transcription.  After the blank stanza-separation line, each stanza can be preceded by a line containing other data (eg a number for the stanza being transcribed from the manuscript, a reference to a key aspect of the stanza, etc).  The crucial part is that this line must contain a hash symbol (\#) somewhere within it.  An example of this format is available in the file \url{andika/convert/inputs/jaafari/jnum.odt}.  The hash symbol and Roman numerals are accessible from the Swahili keyboard by holding down \textit{AltGr} and pressing the hash and numeral keys.   Note that any stanza numbers added in this hash line will be ignored by the conversion in favour of its own stanza numbering (the scribe or the copyist may misnumber stanzas, so it is better to let the computer do it).  
 
-Prose will be converted line by line of the original document, so line widths in the output document may vary.\footnote{Prose conversion is not as well-developed as poem conversion at the moment, and may require further work.}  Again, the document should end with one (\textit{odt}) or two (\textit{txt}) blank lines, but there should be no blank line between paragraphs.
+Prose will be converted by paragraph.  Again, the document should end with one (\textit{odt}) or two (\textit{txt}) blank lines, but there should be no blank line between paragraphs.  Where a manuscript has been transcribed line by line, each line in the trascribed document will therefore equate to a paragraph, and be transliterated separately to give an interlinear transliteration.
 
 Poems in free metres, or prose poems, should be treated as prose.
-
-The output document will include stanza and vipande numbers in the case of poetry, and line numbers in the case of prose, to allow easy reference.
 
 \subsection{Converting pdfs}
 
@@ -159,9 +165,36 @@ This step is not included in the converter because typically the resulting text 
 Once the text file has been tidied, it can then be converted as explained above.
 
 
+\section{General notes on usage}
+
+\subsection{Adjusting the import's stanza numbering}
+\label{ss:stanzano}
+
+By default, the conversion process numbers stanzas from 1 onwards.  However, if you are handling an excerpt and want the numbering to reflect the actual stanza numbers of the excerpt, it is easy to do this.  Open the file in a text editor (\textbf{not} in a word-processor):\\
+\verb|kate convert/convert.php|\\
+and locate the line:\\
+\verb|$stanza_no=0;|
+
+Edit the number so that it is set to one below the lowest stanza number of the excerpt -- for instance, for an excerpt beginning at stanza 138 you would edit the line to read:\\
+\verb|$stanza_no=137;|\\
+Save the file and run the conversion.
+
+\subsection{Warning when using the convert tools}
+
+If you get a series of warnings like the following when using the convert tools :
+\begin{quotation}
+\noindent Warning: array_combine(): Both parameters should have an equal number of elements in /var/www/andika/convert/convert.php on line 175\\
+Warning: end() expects parameter 1 to be array, boolean given in /var/www/andika/convert/convert.php on line 178\\
+Warning: key() expects parameter 1 to be array, boolean given in /var/www/andika/convert/convert.php on line 179\\
+Warning: reset() expects parameter 1 to be array, boolean given in /var/www/andika/convert/convert.php on line 180\\
+Warning: Invalid argument supplied for foreach() in /var/www/andika/convert/convert.php on line 184\\
+\end{quotation}
+it means that you have mistakes in your input file (eg you have typed only 5 \textit{vipande} in a stanza when all the others have 6).
+
+
 \section{How the conversion works}
 
-This section gives an overview of how each script is converted into the other.  More details can be gleaned from inspecting the file \url{andika/includes/fns.php}, where the functions (self-contained pieces of code) which handle the conversion are located.  The procedure used here could no doubt be further developed, and I would be happy to take suggestions for improvements.
+This section gives an overview of how each script is converted into the other.  It is not necessary to be aware of this in order to use the conversion tools.  More details can be gleaned from inspecting the file \url{andika/includes/fns.php}, where the functions (self-contained pieces of code) which handle the conversion are located.  The procedure used here could no doubt be further developed, and I would be happy to take suggestions for improvements.
 
 The conversion procedure  is built on applying a series of regular expressions (regexes)\footnote{\url{en.wikipedia.org/wiki/Regular_expression}} to the text, giving a versatile framework where the output can be fine-tuned to suit an individual user's requirements.
 
@@ -222,7 +255,7 @@ to convert \textit{L} or \textit{aL} to \textit{ā}: \textbf{ẖabaLri} \textrig
 to convert \textit{iy} followed by a consonant, semi-vowel or Unicode codepoint to \textit{ı̄}: \textbf{rafiyki} \textrightarrow\ \textbf{rafı̄ki} (the two Unicode codepoints designate a dotless \textit{i} and a macron)
 
 \verb|$text=preg_replace("/uw([bcdfghjklmnpqrstvwyz'U])/", "ū$1", $text);|\\
-to convert \textit{uw} followed by a consonant, semi-vowel or Unicode codepoint to \textit{kūmi}: \textbf{kuwmi} \textrightarrow\ \textbf{kūmi}.
+to convert \textit{uw} followed by a consonant, semi-vowel or Unicode codepoint to \textit{ū}: \textbf{kuwmi} \textrightarrow\ \textbf{kūmi}.
 
 \subsection{Roman to Arabic}
 

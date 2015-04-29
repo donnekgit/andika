@@ -49,9 +49,12 @@ function ar2rom($text)
 
 	$text=preg_replace("/\x{0651}/u", "U+0651", $text);  // shadda
 	$text=preg_replace("/\x{0652}/u", "", $text);  // sukun
-	$text=preg_replace("/\x{064B}/u", "U+207F", $text);  // fathatan
-	$text=preg_replace("/\x{064C}/u", "U+207F", $text);  // dammatan
-	$text=preg_replace("/\x{064D}/u", "U+207F", $text);  // kasratan
+// 	$text=preg_replace("/\x{064B}/u", "U+207F", $text);  // fathatan
+// 	$text=preg_replace("/\x{064C}/u", "U+207F", $text);  // dammatan
+// 	$text=preg_replace("/\x{064D}/u", "U+207F", $text);  // kasratan
+	$text=preg_replace("/\x{064B}/u", "aU+0332nU+0332", $text);  // fathatan
+	$text=preg_replace("/\x{064C}/u", "uU+0332nU+0332", $text);  // dammatan
+	$text=preg_replace("/\x{064D}/u", "iU+0332nU+0332", $text);  // kasratan
 	$text=preg_replace("/\x{0670}/u", "U+0308", $text);  // superscript alef
 
 	$text=preg_replace("/\x{0654}/u", "", $text);  // high hamza - distinguish from high hamza (0674)
@@ -81,12 +84,12 @@ function ar2rom($text)
 	$text=preg_replace("/\x{0633}/u", "s", $text);  // seen
 	$text=preg_replace("/\x{0634}/u", "sh", $text);  // sheen
 	
-	$text=preg_replace("/\x{0635}/u", "U+0635", $text);  // sad - s
+	$text=preg_replace("/\x{0635}/u", "U+0635", $text);  // sad
 	$text=preg_replace("/\x{0636}/u", "U+0636", $text);  // dad - dh
 	$text=preg_replace("/\x{0637}/u", "U+0637", $text);  // tah - t
 	$text=preg_replace("/\x{0638}/u", "U+0638", $text);  // zah - dh
 	
-	$text=preg_replace("/\x{0639}/u", "'", $text);  // ain
+	$text=preg_replace("/\x{0639}/u", "U+02BE", $text);  // ain - glottal stop diacritic
 	$text=preg_replace("/\x{063A}/u", "gh", $text);  // ghain
 	$text=preg_replace("/\x{06A0}/u", "g", $text);  // ain with three dots - g
 	$text=preg_replace("/\x{075D}/u", "ng", $text);  // ain with two dots - used in ŋ
@@ -96,12 +99,14 @@ function ar2rom($text)
 	$text=preg_replace("/\x{06A4}/u", "v", $text);  // veh
 
 	$text=preg_replace("/\x{0643}/u", "k", $text); // kaf
+	$text=preg_replace("/\x{06AA}/u", "k", $text); // swash kaf - ornamentation
+	
 	$text=preg_replace("/\x{0644}/u", "l", $text);  // lam
 	$text=preg_replace("/\x{0645}/u", "m", $text);  // meem
 	$text=preg_replace("/\x{0646}/u", "n", $text);  // noon
 	
 	$text=preg_replace("/\x{0647}/u", "h", $text);  // heh
-    $text=preg_replace("/\x{0629}/u", "U+0629", $text);  // teh marbuta
+	$text=preg_replace("/\x{0629}/u", "U+0629", $text);  // teh marbuta
 
 	$text=preg_replace("/\x{06AE}/u", "c", $text);  // kaf with three dots - transliterates English c
 
@@ -128,9 +133,17 @@ function ar2rom($text)
 function standardise($text)
 {
 	$text=preg_replace("/L([aeiou])/", "$1$2", $text);  // Ustadh Mau initial vowels use alif as carrier, without hamza
+	
+// 	$text=preg_replace("/U\+207F/", "", $text);  // {fatha|damma|kasra}tan > nothing
+	$text=preg_replace("/([aui])U\+0332nU\+0332/", "$1", $text);  // {fatha|damma|kasra}tan > a|u|i
 
 	$text=preg_replace("/(Ll)?([bcdfghjklmnpqrstvwyz])U\+0651/", "$2$2", $text);  // shadda > CC
 
+	$text=preg_replace("/U\+0635U\+0651/", "s", $text);  // ṣad + shadda > CC
+	$text=preg_replace("/U\+0636U\+0651/", "dh", $text);  // ḍad + shadda > CC
+    	$text=preg_replace("/U\+0637U\+0651/", "t", $text);  // ṭah + shadda > CC
+    	$text=preg_replace("/U\+0638U\+0651/", "dh", $text);  // ẓah + shadda > CC
+    	
 	// Arabic prepositions
 	$text=preg_replace("/biLl([bcdfghjklmnpqrstvwyz])[bcdfghjklmnpqrstvwyz]?/", "bi-$1", $text);  // repetition to deal with shadda
 	$text=preg_replace("/waLl([bcdfghjklmnpqrstvwyz])[bcdfghjklmnpqrstvwyz]?/", "wa-$1", $text);  // repetition to deal with shadda
@@ -160,6 +173,8 @@ function standardise($text)
 	$text=preg_replace("/pU\+02BF/", "p", $text);  // p+aspiration > p
 	$text=preg_replace("/tU\+02BF/", "t", $text);  // t+aspiration > t
 	$text=preg_replace("/kU\+02BF/", "k", $text);  // k+aspiration > k
+	
+	$text=preg_replace("/U\+02BE/", "'", $text);  // ain > '
 
 	$text=preg_replace("/U\+0679/", "t", $text);  // alveolar t > t
 	$text=preg_replace("/U\+0688/", "d", $text);  // alveolar d > d
@@ -172,12 +187,10 @@ function standardise($text)
 	$text=preg_replace("/U\+062D/", "h", $text);  // pharyngeal h > h
 	$text=preg_replace("/U\+062E/", "h", $text);  // velar fricative > h
 
-	$text=preg_replace("/U\+207F/", "", $text);  // {fatha|damma|kasra}tan > h
-
 	$text=preg_replace("/U\+063B/", "ch", $text);  // keheh with two dots > ch
 	
-    $text=preg_replace("/U\+0629/", "t", $text);  // teh marbuta
-
+	$text=preg_replace("/U\+0629/", "t", $text);  // teh marbuta
+	
 	// Capitalise sentence-initials (very basic!).
 	// trim() is necessary because click to select seems to insert spaces before the Arabic text.
 	$text=ucfirst(trim($text));
@@ -189,9 +202,15 @@ function standardise($text)
 
 function close_trans($text)
 {
-    $text=preg_replace("/L([aeiou])/", "$1$2", $text);  // Ustadh Mau initial vowels use alif as carrier, without hamza
+	$text=preg_replace("/L([aeiou])/", "$1$2", $text);  // Ustadh Mau initial vowels use alif as carrier, without hamza
     
-    $text=preg_replace("/(Ll)?([bcdfghjklmnpqrstvwyz])U\+0651/", "$2$2", $text);  // shadda > CC
+	$text=preg_replace("/(Ll)?([bcdfghjklmnpqrstvwyz])U\+0651/", "$2$2", $text);  // shadda > CC
+	
+	// deal with shadda in Arabic text
+    	$text=preg_replace("/U\+0635U\+0651/", "U+0635U+0635", $text);  // ṣad + shadda > CC
+    	$text=preg_replace("/U\+0636U\+0651/", "U+0636U+0636", $text);  // ḍad + shadda > CC
+    	$text=preg_replace("/U\+0637U\+0651/", "U+0637U+0637", $text);  // ṭah + shadda > CC
+    	$text=preg_replace("/U\+0638U\+0651/", "U+0638U+0638", $text);  // ẓah + shadda > CC
 
 	// Arabic prepositions
 	$text=preg_replace("/biLl([bcdfghjklmnpqrstvwyz])[bcdfghjklmnpqrstvwyz]?/", "bi-$1$1", $text);  // repetition to deal with shadda
@@ -221,8 +240,8 @@ function close_trans($text)
 	$text=preg_replace("/([ei])y([^aeiou])/", "$1$2", $text); // ey > e, iy > i
 	$text=preg_replace("/([ou])w([^aeiou])/", "$1$2", $text); // ow > o, uw > u
 	
-	$text=preg_replace("/t(?!U\+0327|U\+0323|h)/", "U+0074U+0331", $text);  // t without cedilla or dot or h > t+underline
-	$text=preg_replace("/d(?!U\+0327|U\+0323|h)/", "U+0064U+0331", $text);  // d without cedilla or dot or h > d+underline
+// 	$text=preg_replace("/t(?!U\+0327|U\+0323|h)/", "U+0074U+0331", $text);  // t without cedilla or dot or h > t+underline
+// 	$text=preg_replace("/d(?!U\+0327|U\+0323|h)/", "U+0064U+0331", $text);  // d without cedilla or dot or h > d+underline
 
 	//$text=preg_replace("/v/", "U+0077U+0331", $text);  // v > w+underline (Bajuni)
 	
@@ -236,18 +255,18 @@ function close_trans($text)
 	$text=preg_replace("/U\+0308/", "ä", $text);  // superscript alef
 
 	$text=preg_replace("/U\+062D/", "hU+0323", $text);  // pharyngeal h > h+dot
-    //$text=preg_replace("/U\+062E/", "hU+0331", $text);  // velar fricative > h+underline
-    $text=preg_replace("/U\+062E/", "kh", $text);  // velar fricative > kh
+	//$text=preg_replace("/U\+062E/", "hU+0331", $text);  // velar fricative > h+underline
+	$text=preg_replace("/U\+062E/", "kh", $text);  // velar fricative > kh
 
-    $text=preg_replace("/U\+063B/", "kU+02B2", $text);  // keheh with two dots > k+palatal
+	$text=preg_replace("/U\+063B/", "kU+02B2", $text);  // keheh with two dots > k+palatal
 
 	$text=preg_replace("/U\+0635/", "sU+0323", $text);  // sad > s+dot
 	$text=preg_replace("/U\+0636/", "dU+0323", $text);  // dad > d+dot
 	$text=preg_replace("/U\+0637/", "tU+0323", $text);  // tah > t+dot
 	$text=preg_replace("/U\+0638/", "zU+0323", $text);  // zah > z+dot
 	
-    $text=preg_replace("/U\+0629/", "tU+0308", $text);  // teh marbuta
-	
+	$text=preg_replace("/U\+0629/", "tU+0308", $text);  // teh marbuta
+		
 	$text=html_entity_decode(preg_replace("/U\+([0-9A-F]{4,5})/", "&#x\\1;", $text), ENT_NOQUOTES, 'UTF-8');
 
 	return $text;

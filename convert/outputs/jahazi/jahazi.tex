@@ -1,0 +1,86 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage{titlesec}  % Allow the chapter/section heading settings to be fine-tuned.  Needs to come before bidi, in polyglossia.
+\usepackage{polyglossia}  % multilingual support
+\usepackage{longtable}  % tables that carry across multiple pages
+\usepackage{xcolor}  % can't use color with polyglossia
+
+\input{convert/tex/fontdefs.tex}  % Bring in the font definitions.
+
+\usepackage{marginnote}
+\renewcommand*{\marginfont}{\color{red}\sffamily}
+
+\interfootnotelinepenalty=10000 % prevents the footnote from breaking across pages
+% http://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
+
+% Thanks to Manas Tungare (http://manas.tungare.name/software/latex) for these settings.
+\setlength{\paperwidth}{210mm}
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{247mm}
+
+\setlength{\evensidemargin}{1in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{-0.5in}
+
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
+
+\usepackage{url}  % Use urls in text and captions with sensible linewrap.  Can't use [obeyspaces] - this option clashes with biblatex.
+\urlstyle{rm}  % Set urls in roman.
+
+\begin{document}
+
+\begin{longtable}{rrl} 
+
+\makebox[8cm][r]{} & & \makebox[8cm][r]{} \\ 
+
+\textarabic{تَانْڠَ كْوَ لِينْڠِ شَؤُورِ} & \textarabic{لِئٖمْبٖيتٖ نَ مٗنْڠٗوتِ} & \textarabic{١} \\* 
+\Tr{tanga kwa lingi shauri} & \Tr{Liembete na mongoti} & \Tr{1b/a} \\ 
+\textarabic{إِمٖتُوَامَ بَهَارِ} & \textarabic{هَؤُتُكُوتِ أُكُوتِ} &  \\* 
+\Tr{imetuwama bahari} & \Tr{Hautukuti ukuti} & \Tr{1d/c} \\ 
+\textarabic{تُتَپَتَاءٖ بَنْدَارِ؟} & \textarabic{هَاتَ مَاءِ هَيَڤُوتِ} &  \\* 
+\Tr{tutapatae bandari?} & \Tr{Hata mai hayavuti} & \Tr{1f/e} \\ 
+\\[8mm] 
+
+\textarabic{مَاءِ نْڠَمَانِ هُجِيرِ} & \textarabic{نْڠُرُودِ إِمٖشٗپٗوكَ} & \textarabic{٢} \\* 
+\Tr{mai ngamani hujiri} & \Tr{Ngurudi imeshopoka} & \Tr{2b/a} \\ 
+\textarabic{نَ هَاتَ كْوَ مِسُمَارِ} & \textarabic{هَئِتَاكِ كُزِبِيكَ} &  \\* 
+\Tr{na hata kwa misumari} & \Tr{Haitaki kuzibika} & \Tr{2d/c} \\ 
+\textarabic{مِكٗونٗ هُتُهَئِيرِ} & \textarabic{كُيَفُؤَ تُمٖچٗوكَ} &  \\* 
+\Tr{mikono hutuhairi} & \Tr{Kuyafua tumechoka} & \Tr{2f/e} \\ 
+\\[8mm] 
+
+\textarabic{هَتُونَ تٖينَ شَؤُورِ} & \textarabic{تُمٖكٗوسَ تَرَتِيبُ} & \textarabic{٣} \\* 
+\Tr{hatuna tena shauri} & \Tr{Tumekosa taratibu} & \Tr{3b/a} \\ 
+\textarabic{هَكُپِيتِ مَنُوَارِ} & \textarabic{نَ بَنْدَارِ سِ كَرِيبُ} &  \\* 
+\Tr{hakupiti manuwari} & \Tr{Na bandari si karibu} & \Tr{3d/c} \\ 
+\textarabic{مٖتُزُنْڠُوكَ خَتَارِ} & \textarabic{زِمٖتُتَانْدَ ذَرُوبُ} &  \\* 
+\Tr{metuzunguka khatari} & \Tr{Zimetutanda dharubu} & \Tr{3f/e} \\ 
+\\[8mm] 
+
+\textarabic{تُمٖشِنْدوَ كُفِكِيرِ} & \textarabic{هَتُئِيسِ لَ كُتٖينْدَ} & \textarabic{٤} \\* 
+\Tr{tumeshindwa kufikiri} & \Tr{Hatuisi la kutenda} & \Tr{4b/a} \\ 
+\textarabic{كٗوتٖ كِمٖپِيجَ دٗورِ} & \textarabic{كِيزَ كِينْڠِ كِمٖتَانْدَ} &  \\* 
+\Tr{kote kimepija dori} & \Tr{Kiza kingi kimetanda} & \Tr{4d/c} \\ 
+\textarabic{كَامَ هُونُ أُتِرِيرِ} & \textarabic{نِ هٖيرِ مْوَامْبَ كُپَانْدَ} &  \\* 
+\Tr{kama hunu utiriri} & \Tr{Ni heri mwamba kupanda} & \Tr{4f/e} \\ 
+\\[8mm] 
+
+\textarabic{وَ كُمُؤٗومْبَ جَبَارِ} & \textarabic{هَتُونَ إِيلَ مَنَانِ} & \textarabic{٥} \\* 
+\Tr{wa kumuomba Jabari} & \Tr{Hatuna ila Manani} & \Tr{5b/a} \\ 
+\textarabic{يَپٗكُوَ كْوَ كِهٗورِ} & \textarabic{أَتوٖڠٖيشٖ نَاسِ پوَانِ} &  \\* 
+\Tr{yapokuwa kwa kihori} & \Tr{Atwegeshe nasi pwani} & \Tr{5d/c} \\ 
+\textarabic{وَاجَ وَاكٗ تُسِتِيرِ} & \textarabic{تُؤٗكٗوٖ رَهَمَانِ} &  \\* 
+\Tr{waja wako tusitiri} & \Tr{Tuokowe Rahamani} & \Tr{5f/e} \\ 
+\\[8mm] 
+
+\textarabic{هِيلِ كَتِيكَ شَئِيرِ} & \textarabic{سُوَالِ سِ لَ جَهَازِ} & \textarabic{٦} \\* 
+\Tr{hili katika shairi} & \Tr{Suwali si la jahazi} & \Tr{6b/a} \\ 
+\textarabic{مَفُونْدِ مُولٗ هٗدَارِ} & \textarabic{لِتَمْبُوٖينِ وَيُوزِ} &  \\* 
+\Tr{mafundi mulo hodari} & \Tr{Litambuweni wayuzi} & \Tr{6d/c} \\ 
+\textarabic{مُزِزَمِئَايٗ دُورِ} & \textarabic{وَ مْتٗونِ وٖينْدٖ مْبِيزِ} &  \\* 
+\Tr{muzizamiayo duri} & \Tr{Wa mtoni wende mbizi} & \Tr{6f/e} \\ 
+\\[8mm] 
+
+\end{longtable} 
+
+\end{document}

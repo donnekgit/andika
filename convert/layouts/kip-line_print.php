@@ -21,11 +21,12 @@ if ($output=="pdf")
     }
     elseif ($genre=="prose")
     {
-        fwrite($fp, "{\\scriptsize\\marginnote{".$stanza_no.$key."}[2mm]}\\textarabic{".$arabic."} \\\\ \n\n");
-        
+//         fwrite($fp, "{\\scriptsize\\marginnote{".$stanza_no.$key."}[2mm]}\\textarabic{".$arabic."} \\\\ \n\n \\vspace{10mm} \n\n");
+	fwrite($fp, "{\\textarabic{".$arabic."} \\\\ \n\n \\vspace{10mm} \n\n");
+
         if (isset($options["t"]) or isset($options["transliteration"]) or $transtxt=="TRUE")
         {
-        fwrite($fp, "\Tr{".$roman."} & \\\\ \n");
+        fwrite($fp, "\Tr{".$roman."} \\\\ \n\n \\vspace{10mm} \n\n");
         }
     }
 }
@@ -53,7 +54,7 @@ elseif ($output="db")
 {
     if ($script=="arabic")
     {
-        $close=pg_escape_string($roman);  // from Arabic, we need to swap, since close is the default
+        $close=pg_escape_string($roman);  // from Arabic, we need to swap, since close is the default - why???
         $roman=lcfirst(pg_escape_string($standard));  // remove initial caps set by standardise()
     }
     elseif ($script=="roman")

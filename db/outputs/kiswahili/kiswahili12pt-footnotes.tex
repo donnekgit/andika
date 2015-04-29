@@ -1,0 +1,394 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage{titlesec}  % Allow the chapter/section heading settings to be fine-tuned.  Needs to come before bidi, in polyglossia.
+\usepackage{polyglossia}  % multilingual support
+\usepackage{longtable}  % tables that carry across multiple pages
+\usepackage{xcolor}  % can't use color with polyglossia
+
+\input{convert/tex/fontdefs.tex}  % Bring in the font definitions.
+
+\usepackage{marginnote}
+\renewcommand*{\marginfont}{\color{red}\sffamily}
+
+\usepackage{csquotes}
+% \usepackage{natbib}
+\usepackage[backend=biber, style=authoryear]{biblatex}
+\addbibresource{andika.bib}
+
+\interfootnotelinepenalty=10000 % prevents the footnote from breaking across pages
+% http://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
+
+% Thanks to Manas Tungare (http://manas.tungare.name/software/latex) for these settings.
+\setlength{\paperwidth}{210mm}
+\setlength{\paperheight}{297mm}
+
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{247mm}
+
+\setlength{\evensidemargin}{1in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{-0.5in}
+
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
+
+\usepackage{url}  % Use urls in text and captions with sensible linewrap.  Can't use [obeyspaces] - this option clashes with biblatex.
+% \urlstyle{rm}  % Set urls in roman.
+
+\titleformat{\chapter}[display]{\normalfont\large}{\bfseries\chaptertitlename\ \thechapter}{10pt}{\large\itshape}[\vspace{2ex}\titlerule\vspace{2ex}]  % 10pt is the space between chapter and chapter name.  [display] sets the chapter and chapter name on separate lines.  The square brackets at the end draw a line under each chapter name, with 2ex gap from the name.
+\titlespacing{\chapter}{0pt}{0pt}{10pt}  % First is indent from the side, second is length down from the top, third is gap between heading and text.
+
+% ===== Endnotes =====
+% Uncomment the following two lines to get endnotes instead of footnotes.
+% Remember to uncomment the three lines in andika/db/output_pdf.php as well.
+% \usepackage{endnotes}
+% \let\footnote=\endnote
+% ==================
+
+\begin{document}
+
+\begin{center}
+\Atitle{كِسْوَاحِلِ} \\
+\Swa{kiswāhili}\footnote{From \textcite{Abdulkadir2013}.} \\
+\E{Mtungaji: Ustadh Mau (Mahmoud Ahmad Abdulkadir), 2003} \\
+[6mm]
+
+\textarabic{بسم الله الرحمن الرهيم} \\
+\Tr{bismi llähi arraḥmani arraḥı̄mi} \\
+\Swa{bismillahi arrahmani arrahimi} \\
+\end{center}
+\begin{longtable}{rrl} 
+
+\makebox[8cm][r]{} & & \makebox[8cm][r]{} \\ 
+
+\textarabic{تَانْيَامَا حَتَ لِنِ} & \textarabic{كُنْيَمَا نِ مٖػوْكَ} & \textarabic{١} \\* 
+\Tr{ṯānyāmā ḥaṯa lini} & \Tr{kunyamā ni mekʲūka} &  \Tr{1b/a} \\* 
+\multicolumn{2}{r}{\Swa{kunyamaa  nimechoka * t'anyamaa hata lini}} & \Swa{1} \\* 
+\multicolumn{2}{r}{\E{I am weary of staying silent. For how much longer am I to remain dumb?}} & \\ 
+\textarabic{كُوَأٗنَ نَ تَمَانِ} & \textarabic{وَنَنْڠُ هُنِئٖپُوْكَ} &  \\* 
+\Tr{kuwaona na ṯamāni} & \Tr{wanangu huniepūka} &  \Tr{1d/c} \\* 
+\multicolumn{2}{r}{\Swa{wanangu huniepuka * kuwaona  natamani}} & \Swa{1} \\* 
+\multicolumn{2}{r}{\E{My own children avoid me, though I long to see them.}} & \\ 
+\textarabic{سِوَنْڠُ نِ وَ وٖنْدَانِ} & \textarabic{والُوْبَاكِ كُنِشِكَ} &  \\* 
+\Tr{siwangu ni wa wenḏāni} & \Tr{wālūbāki kunishika} &  \Tr{1f/e} \\* 
+\multicolumn{2}{r}{\Swa{walobaki kunishika * siwangu ni wa wendani}} & \Swa{1} \\* 
+\multicolumn{2}{r}{\E{And those who remain to embrace me are not my own, but are the offspring of others.}} & \\ 
+\textarabic{مْبُوْنَ هُنِپِجَ زِتَ} & \textarabic{مِمِ نِ مٖوَتٖنْدَانِ} &  \\* 
+\Tr{mbūna hunipija ziṯa} & \Tr{mimi ni mewaṯenḏāni} &  \Tr{1h/g} \\* 
+\multicolumn{2}{r}{\Swa{mimi  nimewatendani * mbona wanipija zita}} & \Swa{1} \\* 
+\multicolumn{2}{r}{\E{What have I done to you? Why do you wage war on me?}} & \\ 
+\\[8mm] 
+
+\textarabic{وَانَ وَ أُسْوَاحِلِنِ} & \textarabic{وَنَانْڠُ مِمِ وَ دَمُ} & \textarabic{٢} \\* 
+\Tr{wāna wa uswāḥilini} & \Tr{wanāngu mimi wa ḏamu} &  \Tr{2b/a} \\* 
+\multicolumn{2}{r}{\Swa{wanangu mimi wa damu * wana wa Uswahilini}} & \Swa{2} \\* 
+\multicolumn{2}{r}{\E{My own flesh and blood, the children of Swahililand,}} & \\ 
+\textarabic{يَا كُنِيُوَ نِ نَانِ} & \textarabic{أَصِلِ هَوَنَ هَامُ} &  \\* 
+\Tr{yā kuniyuwa ni nāni} & \Tr{aṣili hawana hāmu} &  \Tr{2d/c} \\* 
+\multicolumn{2}{r}{\Swa{asili hawana hamu * ya kuniyuwa ni nani}} & \Swa{2} \\* 
+\multicolumn{2}{r}{\E{are uninterested in knowing who I am,}} & \\ 
+\textarabic{نَ وَنَ وَ مَجِرَنِ} & \textarabic{وَمٖنَتِيَ قَؤُمُ} &  \\* 
+\Tr{na wana wa majirani} & \Tr{wamenaṯiya qaumu} &  \Tr{2f/e} \\* 
+\multicolumn{2}{r}{\Swa{wamenatia kaumu * na wana wa majirani}} & \Swa{2} \\* 
+\multicolumn{2}{r}{\E{and have left me to other peoples, and to the children of neighbours.}} & \\ 
+\textarabic{مْبُوْنَ هُنِپِجَ زِتَ} & \textarabic{كُوْسَ لَنْڠُ كُوْسَ ڠَانِ} &  \\* 
+\Tr{mbūna hunipija ziṯa} & \Tr{kūsa langu kūsa gāni} &  \Tr{2h/g} \\* 
+\multicolumn{2}{r}{\Swa{kosa langu kosa gani * mbona hunipija zita}} & \Swa{2} \\* 
+\multicolumn{2}{r}{\E{What kind of fault is my fault? [O my children] why do you continue waging war on me?}} & \\ 
+\\[8mm] 
+
+\textarabic{وَلَ سِنَ پُنْڠُوَنِ} & \textarabic{مِمِ مَامٖنُ سِتَاسَ} & \textarabic{٣} \\* 
+\Tr{wala sina punguwani} & \Tr{mimi māmenu siṯāsa} &  \Tr{3b/a} \\* 
+\multicolumn{2}{r}{\Swa{mimi mamenu sit'asa * wala sina punguwani}} & \Swa{3} \\* 
+\multicolumn{2}{r}{\E{I am your mother and am not yet infertile, nor has my ability to reproduce diminished.}} & \\ 
+\textarabic{نَ كُنْڠِنٖ زِسِوَنِ} & \textarabic{نِ مٖزَا وَ مَمْبَاسَ} &  \\* 
+\Tr{na kungine zisiwani} & \Tr{ni mezā wa mambāsa} &  \Tr{3d/c} \\* 
+\multicolumn{2}{r}{\Swa{nimezaa wa Mambasa * na kungine zisiwani}} & \Swa{3} \\* 
+\multicolumn{2}{r}{\E{I have given birth to children in Mambasa, and in the other islands [of the Swahili],}} & \\ 
+\textarabic{نَ زِيُوْنْڠُوْزِ وَدِنِ} & \textarabic{نِزٖ وَنَ سِيَاسَ} &  \\* 
+\Tr{na ziyūngūzi waḏini} & \Tr{nize wana siyāsa} &  \Tr{3f/e} \\* 
+\multicolumn{2}{r}{\Swa{nizee  wanasiasa * na ziongozi wa dini}} & \Swa{3} \\* 
+\multicolumn{2}{r}{\E{to politicians and to religious leaders,}} & \\ 
+\textarabic{نَ مَاشُجَا وَ زِتَ} & \textarabic{مَافُنْدِ وَ كُلَ فَنِ} &  \\* 
+\Tr{na māshujā wa ziṯa} & \Tr{māfunḏi wa kula fani} &  \Tr{3h/g} \\* 
+\multicolumn{2}{r}{\Swa{mafundi wa kula fani * na mashujaa wa zita}} & \Swa{3} \\* 
+\multicolumn{2}{r}{\E{to craftsmen in every field, and to war heroes.}} & \\ 
+\\[8mm] 
+
+\textarabic{پِيَ مْوٖنْڠٗ عَثْمَانِ} & \textarabic{نْدِمِ مَامَاكٖ مُيَاكَ} & \textarabic{٤} \\* 
+\Tr{piya mwengo 'athmāni} & \Tr{nḏimi māmāke muyāka} &  \Tr{4b/a} \\* 
+\multicolumn{2}{r}{\Swa{ndimi mamake Muyaka\footnote{Bwana Muyaka was the outstanding Swahili poet of 19th century Mombasa.  After his death many of his verses were recalled by Mu'allim Sikujua Abdallah al-Batawi (died 1890) and transcribed with annotations by W.E. Taylor (1856-1927). After Taylor’s death his papers were acquired by the library of the School of Oriental and African Studies (SOAS), London.} * pia Mwengo Athumani\footnote{Mwengo Athmani: this 18th century poet from Pate composed the \FN{Utendi wa Tambuka} (\Eit{The Epic of Heraklios}).}}} & \Swa{4} \\* 
+\multicolumn{2}{r}{\E{I am the mother of Bwana Muyaka, and of Mwengo Athmani also,}} & \\ 
+\textarabic{نَ وٖنْڠِ وَاكٖ وٖنْدَانِ} & \textarabic{نَ زَهِدِ كَذَلِكَ} &  \\* 
+\Tr{na wengi wāke wenḏāni} & \Tr{na zahiḏi kadhalika} &  \Tr{4d/c} \\* 
+\multicolumn{2}{r}{\Swa{na Zahidi\footnote{Zahidi: see \textcite{Maawy1973}.}  kadhalika * na wengi wake wendani}} & \Swa{4} \\* 
+\multicolumn{2}{r}{\E{and of Zahidi too, and many of his contemporaries,}} & \\ 
+\textarabic{وٗتٖ مْبوَا مُوْيَ قَرِنِ} & \textarabic{عالى كُوْتِ نَ مَتَاكَ} &  \\* 
+\Tr{woṯe mbwā mūya qarini} & \Tr{'ālı̄ kūṯi na maṯāka} &  \Tr{4f/e} \\* 
+\multicolumn{2}{r}{\Swa{Ali Koti\footnote{Ali Koti of Pate: see \textcite[pp.31-7]{Chiraghdin1987}.}  na Mataka\footnote{Bwana Mataka’s full name is Muhammad bin Shee Mataka al-Famau (1825-1868). He was ruler of Siyu, as was his father. His mother was Mwana Kupona, famous for the poem of advice written to her daughter. Bwana Mataka died in Mombasa’s fort while imprisoned by the Busa‘idi.} * wote mbwa moya karini}} & \Swa{4} \\* 
+\multicolumn{2}{r}{\E{Ali Koti and Mataka, all from just one century,}} & \\ 
+\textarabic{وَ كَوَا كَمَ نْيوتَ} & \textarabic{وَلِتُوْكَ مَاتُوْمبونِ} &  \\* 
+\Tr{wa kawā kama nı̄ūṯa} & \Tr{waliṯūka māṯūmbūni} &  \Tr{4h/g} \\* 
+\multicolumn{2}{r}{\Swa{walitoka mtumboni * wakawaa kama nyota}} & \Swa{4} \\* 
+\multicolumn{2}{r}{\E{they emerged from my womb, and shone like stars.}} & \\ 
+\\[8mm] 
+
+\textarabic{أُكِسٗوْمٖ نَ كِدَنِ} & \textarabic{اِنْكِشَافِ نْڠَلِيَ} & \textarabic{٥} \\* 
+\Tr{ukisōme na kiḏani} & \Tr{inkishāfi ngaliya} &  \Tr{5b/a} \\* 
+\multicolumn{2}{r}{\Swa{Inkishafi\footnote{The \FN{Inkishafi}, according to W.E. Taylor \parencite[pp96-105]{Stigand1915}, is ``a great, if not the greatest, religious classic of [the Swahili-speaking peoples]''. The poem, concerned with the decay of Pate (formerly a flourishing town in northern Swahililand), may remind some readers of Thomas Gray's \Eit{Elegy written in an English churchyard} (London 1751).}  angalia * ukisome na kidani}} & \Swa{5} \\* 
+\multicolumn{2}{r}{\E{Look at Inkishafi. Read it attentively}} & \\ 
+\textarabic{نِ كْوَامْبِيَاءٗ مْوٖنْدانِ} & \textarabic{نْدِپُوْ تَاكَاپُوْ كْوٖلٖيَ} &  \\* 
+\Tr{ni kwāmbiyao mwenḏāni} & \Tr{nḏipuu ṯākāpuu kweleya} &  \Tr{5d/c} \\* 
+\multicolumn{2}{r}{\Swa{ndipo takapo kwelea * nikwambiyao mwendani}} & \Swa{5} \\* 
+\multicolumn{2}{r}{\E{and then you will understand, my dear friend,}} & \\ 
+\textarabic{نَ هَزِفِ اَصِلَانِ} & \textarabic{نِ تُوْنْڠٗ زِمٖسَلِيَ} &  \\* 
+\Tr{na hazifi aṣilāni} & \Tr{ni ṯūngo zimesaliya} &  \Tr{5f/e} \\* 
+\multicolumn{2}{r}{\Swa{ni t'ungo zimesalia * na hazifi asilani}} & \Swa{5} \\* 
+\multicolumn{2}{r}{\E{what I am telling you. These verses are of enduring worth and will never die.}} & \\ 
+\textarabic{نِ وَنَانْڠُ وَالُوْپِتَ} & \textarabic{وَالُوْزِتُنْڠَ نِ نْيَانِ} &  \\* 
+\Tr{ni wanāngu wālūpiṯa} & \Tr{wālūziṯunga ni nyāni} &  \Tr{5h/g} \\* 
+\multicolumn{2}{r}{\Swa{walozitunga ni nyani * ni wanangu walopita}} & \Swa{5} \\* 
+\multicolumn{2}{r}{\E{Who were those who composed them? They were my children who have passed on.}} & \\ 
+\\[8mm] 
+
+\textarabic{نَ پِيَ ػِرَاڠُ دِنِ} & \textarabic{نَ مَالٖنْڠَ وَ مْڤِتَ} & \textarabic{٦} \\* 
+\Tr{na piya kʲirāgu ḏini} & \Tr{na mālenga wa mviṯa} &  \Tr{6b/a} \\* 
+\multicolumn{2}{r}{\Swa{na Malenga\footnote{The Bard of Mambasa refers to Ustadh Ahmad Nassir Juma Bhalo, see \textcite{Chiraghdin1971}.}  wa Mvita * na pia  Chiraghudini\footnote{Shihabdin Chiraghdin (1934-1976). See the biography by his daughter -- \textcite{Chiraghdin2012}.}}} & \Swa{6} \\* 
+\multicolumn{2}{r}{\E{And the Bard of Mambasa, and Chiraghdin too,}} & \\ 
+\textarabic{هَاوَكُكِرِ اُدُنِ} & \textarabic{نْيايُو ولِزِفُوَتَ} &  \\* 
+\Tr{hāwakukiri uḏuni} & \Tr{nyāyuu ūlizifuwaṯa} &  \Tr{6d/c} \\* 
+\multicolumn{2}{r}{\Swa{nyayo walizifuata * hawakukiri uduni}} & \Swa{6} \\* 
+\multicolumn{2}{r}{\E{they followed in my footsteps, they did not submit to lower standards.}} & \\ 
+\textarabic{لَكِنِ هُفَلِييانِ} & \textarabic{نْنَابَهَانِ هُتٖتَ} &  \\* 
+\Tr{lakini hufalı̄yāni} & \Tr{nnābahāni huṯeṯa} &  \Tr{6f/e} \\* 
+\multicolumn{2}{r}{\Swa{Nabahani\footnote{In an unpublished commendation from 12 June 1974 J.W.T. Allen writes about Ahmad Sheikh Nabhany: ``I am privileged to have a wide circle of friends and acquaintances among Swahili scholars of Swahili. I have some knowledge of their rating of themselves and I can name perhaps half a dozen (still living) who are always referred to as the most learned. To me they are walking dictionaries and mines of information and Ahmed is unquestionably one of them. He comes of a family of scholars whose discipline is as tough as any degree course in the world. They have no time for false scholarship or dilettantism. That this profound learning is almost wholly disregarded by those who have been highly educated in the western tradition affects almost everything written today in or about Swahili. When I want to know some word or something about Swahili, I do not go to professors, but to one of the \textit{bingwa} known to me. One of these could give a much greater detail of assessment, but of course his opinion would not carry the weight of one who can put some totally irrelevant letters after his name''. For a biography see \textcite{Said2012}.}  huteta * lakini hufaliyani}} & \Swa{6} \\* 
+\multicolumn{2}{r}{\E{al-Nabhany reproves, but to what effect?}} & \\ 
+\textarabic{اِنْڠَا اَمٖئِكِتَ} & \textarabic{نْدِيٖ پْوٖكٖ اُوَنْدَانِ} &  \\* 
+\Tr{ingā ameikiṯa} & \Tr{nḏiye pweke uwanḏāni} &  \Tr{6h/g} \\* 
+\multicolumn{2}{r}{\Swa{ndiye pweke uwandani * ingawa ameikita}} & \Swa{6} \\* 
+\multicolumn{2}{r}{\E{He remains alone in the field, yet he stays strong.}} & \\ 
+\\[8mm] 
+
+\textarabic{سِيَاكُوْمَ اُكِنڠُوْنِ} & \textarabic{بَادٗ كُزَا نَ وٖزَ} & \textarabic{٧} \\* 
+\Tr{siyākūma ukingūni} & \Tr{bāḏo kuzā na weza} &  \Tr{7b/a} \\* 
+\multicolumn{2}{r}{\Swa{bado kuzaa  naweza * siyakoma ukingoni}} & \Swa{7} \\* 
+\multicolumn{2}{r}{\E{I am still able to give birth. I have not yet reached the limit,}} & \\ 
+\textarabic{مُمٖئِتٗوَ فُوٗنِ} & \textarabic{لَكِنِ مُمٖنِپُوْزَ} &  \\* 
+\Tr{mumeiṯowa fuwoni} & \Tr{lakini mumenipūza} &  \Tr{7d/c} \\* 
+\multicolumn{2}{r}{\Swa{lakini mumenipuuza * mumeitowa fuoni}} & \Swa{7} \\* 
+\multicolumn{2}{r}{\E{but you have all despised me. You have left me high and dry,}} & \\ 
+\textarabic{كُنِپانْڠِيَ كَانُوْنِ} & \textarabic{وَنْڠِنٖ مٖئِتُوكٖزَ} &  \\* 
+\Tr{kunipāngiya kānūni} & \Tr{wangine meiṯūkeza} &  \Tr{7f/e} \\* 
+\multicolumn{2}{r}{\Swa{wangine meitokeza * kunipangia kanuni}} & \Swa{7} \\* 
+\multicolumn{2}{r}{\E{now others have come forward to regulate me,}} & \\ 
+\textarabic{نْيِنْيِ مُلِپُوْنِوَتَ} & \textarabic{مُسَمِيَاتِ كُبُوْنِ} &  \\* 
+\Tr{nyinyi mulipūniwaṯa} & \Tr{musamiyāṯi kubūni} &  \Tr{7h/g} \\* 
+\multicolumn{2}{r}{\Swa{musamiati kubuni\footnote{For almost a century the principal publisher of standardized Swahili dictionaries has been the Oxford University Press (OUP). Clearly OUP has to be profitable, and profitable is what, over the years, their dictionaries of standardized Swahili have been. However, if one considers excellence in research and scholarship not one of the OUP’s standardized Swahili lexicons can begin to compare with the Oxford English Dictionary (`more than 600,000 words over a thousand years'). Fortunately for Swahili and for Swahili studies there exists the monumental \Eit{Dictionnaire swahili-français}, compiled by Charles Sacleux \parencite{Sacleux1939}. Sacleux’s chef d’oeuvre (`unprecedented in historical depth, dialectological detail and philological knowledge') can now be accessed electronically, courtesy of \Eit{Swahili Forum} (\url{uni-leipzig.de/~afrika/swafo/index.php/sacleux}). Heartfelt thanks are due to Thilo Schadeberg and Ridder Samsom.} * nyinyi muliponiwata}} & \Swa{7} \\* 
+\multicolumn{2}{r}{\E{compiling standardized dictionaries. }} & \\ 
+\\[8mm] 
+
+\textarabic{ػَنْڠَلِيَ جَرِدَنِ} & \textarabic{هُلِيَ كِسِكِتِكَ} & \textarabic{٨} \\* 
+\Tr{kʲangaliya jariḏani} & \Tr{huliya kisikiṯika} &  \Tr{8b/a} \\* 
+\multicolumn{2}{r}{\Swa{hulia kisikitika * changaliya jaridani}} & \Swa{8} \\* 
+\multicolumn{2}{r}{\E{I weep and lament when I look at the learned journals,}} & \\ 
+\textarabic{سِوَنَانْڠُ نِ وَڠٖنِ} & \textarabic{وٖنْڠِ وَنَاءُ اَنْدِكَ} &  \\* 
+\Tr{siwanāngu ni wageni} & \Tr{wengi wanau anḏika} &  \Tr{8d/c} \\* 
+\multicolumn{2}{r}{\Swa{wengi  wanaoandika * si wanangu ni wageni}} & \Swa{8} \\* 
+\multicolumn{2}{r}{\E{for many of those who contribute are not my children, they are strangers [to me].}} & \\ 
+\textarabic{وَپٖكَ تُنْڠٗ نِ نْيَانِ} & \textarabic{اِذَاعَانِ كَذَلِكَ} &  \\* 
+\Tr{wapeka ṯungo ni nyāni} & \Tr{idhā'āni kadhalika} &  \Tr{8f/e} \\* 
+\multicolumn{2}{r}{\Swa{idhaani kadhalika * wapeka t'ungo ni nyani}} & \Swa{8} \\* 
+\multicolumn{2}{r}{\E{It is much the same with the media. Who are the ones who send in their compositions?}} & \\ 
+\textarabic{لِػَ كُوَ مْبوا مْڤِتَ} & \textarabic{وٖنْڠِ هَاوَتُوْك پْوان} &  \\* 
+\Tr{likʲa kuwa mbwā mviṯa} & \Tr{wengi hāwaṯūk pwān} &  \Tr{8h/g} \\* 
+\multicolumn{2}{r}{\Swa{wengi hawatoki p'wani * licha kuwa mbwa Mvita}} & \Swa{8} \\* 
+\multicolumn{2}{r}{\E{Many do not come from the coast, although they may have a Mambasa address.}} & \\ 
+\\[8mm] 
+
+\textarabic{زِسُوْمٖشْوَاءٗ شُلٖنِ} & \textarabic{اَنڠَلِيَ نَ زِتَابُ} & \textarabic{٩} \\* 
+\Tr{zisūmeshwao shuleni} & \Tr{angaliya na ziṯābu} &  \Tr{9b/a} \\* 
+\multicolumn{2}{r}{\Swa{angalia na zitabu * zisumeshwao shuleni}} & \Swa{9} \\* 
+\multicolumn{2}{r}{\E{Look at the textbooks which are studied at our schools.}} & \\ 
+\textarabic{سِ سُوْدِ وَلَ سِ شَانِ} & \textarabic{هَازَانْدِكْوِ نَ رَجَبُ} &  \\* 
+\Tr{si sūḏi wala si shāni} & \Tr{hāzānḏikwi na rajabu} &  \Tr{9d/c} \\* 
+\multicolumn{2}{r}{\Swa{hazandikwi na Rajabu * si Sudi wala si Shani}} & \Swa{9} \\* 
+\multicolumn{2}{r}{\E{They are written neither by Rajabu, nor by Sudi nor by Shani.}} & \\ 
+\textarabic{اَشِشِيٖؤٗ سُكَانِ} & \textarabic{ْنْجُوْرٗڠٖ نْدِيٖ كَتِبُ} &  \\* 
+\Tr{ashishiyeo sukāni} & \Tr{njūroge nḏiye kaṯibu} &  \Tr{9f/e} \\* 
+\multicolumn{2}{r}{\Swa{Njoroge\footnote{\Eit{njoroge}: a name representing those who have their origins in the East African interior (the \Eit{bara}).}  ndiye katibu * ashishiyeo sukani}} & \Swa{9} \\* 
+\multicolumn{2}{r}{\E{The author is Njoroge, he is the helmsman.}} & \\ 
+\textarabic{نَاءٗ نْيُوْمَ هُفُوَتَ} & \textarabic{ػَارٗ نَ وَاكٖ وٖنْدانِ} &  \\* 
+\Tr{nao nyūma hufuwaṯa} & \Tr{kʲāro na wāke wenḏāni} &  \Tr{9h/g} \\* 
+\multicolumn{2}{r}{\Swa{Charo\footnote{\Eit{charo}: a name representing those who have their origins in the coastal hinterland (the \Eit{nyika}).}  na wake wendani * nao nyuma hufuata}} & \Swa{9} \\* 
+\multicolumn{2}{r}{\E{Charo and his colleagues follow.}} & \\ 
+\\[8mm] 
+
+\textarabic{ػٖنْدَ هُرُدِ نْدِيَانِ} & \textarabic{هُوَلِكْوَا كُوْنْڠَمَانٗ} & \textarabic{١٠} \\* 
+\Tr{kʲenḏa huruḏi nḏiyāni} & \Tr{huwalikwā kūngamāno} &  \Tr{10b/a} \\* 
+\multicolumn{2}{r}{\Swa{hualikwa kongamano * chenda hurudi ndiani}} & \Swa{10} \\* 
+\multicolumn{2}{r}{\E{When I am invited to conferences, I turn back before I arrive.}} & \\ 
+\textarabic{كُوَ نْيِنْيِ سِوَأٗنِ} & \textarabic{هُوٗنَ اُتُنْڠُ مْنُو} &  \\* 
+\Tr{kuwa nyinyi siwaoni} & \Tr{huwona uṯungu mnuu} &  \Tr{10d/c} \\* 
+\multicolumn{2}{r}{\Swa{huona utungu mno * kuwa nyinyi siwaoni}} & \Swa{10} \\* 
+\multicolumn{2}{r}{\E{I feel exceedingly bitter that I do not see you all there.}} & \\ 
+\textarabic{لَكِنِ نِتٖنْدٖ نْنِ} & \textarabic{نَ هُزِاُمَ زِتَانِ} &  \\* 
+\Tr{lakini niṯenḏe nni} & \Tr{na huziuma ziṯāni} &  \Tr{10f/e} \\* 
+\multicolumn{2}{r}{\Swa{na huziuma zitano\footnote{These words echo the words of the \FN{Inkishafi}: ``\Eit{wakauma zanda na kuiyuta}''. Readers unfamiliar with this Swahili gesture of regret could consult \textcite{Eastman1985}.} * lakini nitende nini}} & \Swa{10} \\* 
+\multicolumn{2}{r}{\E{I bite my fingers in frustration, but what can I do?}} & \\ 
+\textarabic{مَامٖنُ مُمٖنِوَتَ} & \textarabic{وَنَانْڠُ مُمٖئِخِنِ} &  \\* 
+\Tr{māmenu mumeniwaṯa} & \Tr{wanāngu mumeikhini} &  \Tr{10h/g} \\* 
+\multicolumn{2}{r}{\Swa{wanangu mumeihini * mamenu mumeniwata}} & \Swa{10} \\* 
+\multicolumn{2}{r}{\E{My children, you have missed your opportunity. You have abandoned your own mother.}} & \\ 
+\\[8mm] 
+
+\textarabic{ػَنْڠَلِيَ مِتِحَانِ} & \textarabic{نَ هُلِيَ كْوَا مَاتُوْزِ} & \textarabic{١١} \\* 
+\Tr{kʲangaliya miṯiḥāni} & \Tr{na huliya kwā māṯūzi} &  \Tr{11b/a} \\* 
+\multicolumn{2}{r}{\Swa{na hulia kwa matozi * changaliya mitihani}} & \Swa{11} \\* 
+\multicolumn{2}{r}{\E{And I shed tears when I look at the results of the school exams.}} & \\ 
+\textarabic{نَ وَ كِسُومُ زِوَنِ} & \textarabic{وَنَفُنْدِ وَ كِبْوٖزِ} &  \\* 
+\Tr{na wa kisūmu ziwani} & \Tr{wanafunḏi wa kibwezi} &  \Tr{11d/c} \\* 
+\multicolumn{2}{r}{\Swa{wanafundi wa Kibwezi * na wa Kisumu\footnote{Kibwezi and Kisumu are places in the East African interior.}  ziwani\footnote{The lake is Lake Nyanza, also known as Lake Victoria.}}} & \Swa{11} \\* 
+\multicolumn{2}{r}{\E{Students from Kibwezi, and from Kisumu by the lake,}} & \\ 
+\textarabic{وَلِيُوكُوْ كِلٖلٖنِ} & \textarabic{نْدِوٗ وَنَاءٗ بَارِزِ} &  \\* 
+\Tr{waliyūkuu kileleni} & \Tr{nḏiwo wanao bārizi} &  \Tr{11f/e} \\* 
+\multicolumn{2}{r}{\Swa{ndiwo wanao barizi * waliyukuu kileleni}} & \Swa{11} \\* 
+\multicolumn{2}{r}{\E{they are the ones who are ahead, who are at the top;}} & \\ 
+\textarabic{مُكُوْ تِنِ هُكُوْكُوْتَ} & \textarabic{مُلُوْتُوْكَ كْوٖتُ پْوانِ} &  \\* 
+\Tr{mukuu ṯini hukūkūṯa} & \Tr{mulūṯūka kweṯu pwāni} &  \Tr{11h/g} \\* 
+\multicolumn{2}{r}{\Swa{mulotoka kwetu p'wani * muko t'ini hukokota\footnote{Over the years young people on Lamu Island (and indeed elsewhere in northern Swahililand) have received a raw deal in their primary and secondary education. They have `lagged far behind' their counterparts from the interior, and so Mother Swahili grieves for her marginalised children.}}} & \Swa{11} \\* 
+\multicolumn{2}{r}{\E{and you, students from the coast, you lag far behind.}} & \\ 
+\\[8mm] 
+
+\textarabic{وَ أُزَمِلِ ػُوٗنِ} & \textarabic{وَفَانْيَاءٗ اُتَفِتِ} & \textarabic{١٢} \\* 
+\Tr{wa uzamili kʲuwoni} & \Tr{wafānyao uṯafiṯi} &  \Tr{12b/a} \\* 
+\multicolumn{2}{r}{\Swa{wafanyao utafiti * wa uzamili chuwoni}} & \Swa{12} \\* 
+\multicolumn{2}{r}{\E{Amongst those who are researching for degrees at the universities,}} & \\ 
+\textarabic{اَوْ هَوَپَاتِكَانِ} & \textarabic{وَسْوَاهِلِ نِ كَاتِتِ} &  \\* 
+\Tr{aw hawapāṯikāni} & \Tr{waswāhili ni kāṯiṯi} &  \Tr{12d/c} \\* 
+\multicolumn{2}{r}{\Swa{Waswahili ni katiti * au hawapatikani}} & \Swa{12} \\* 
+\multicolumn{2}{r}{\E{Swahili students are few or non-existent.}} & \\ 
+\textarabic{مْوٖنْيٖ مَاكُوْسَ نِ نْيَانِ} & \textarabic{نِ نْيَانِ نِ مْلَئِتِ} &  \\* 
+\Tr{mwenye mākūsa ni nyāni} & \Tr{ni nyāni ni mlaiṯi} &  \Tr{12f/e} \\* 
+\multicolumn{2}{r}{\Swa{ni nyani ni mlaiti * mwenye makosa ni nyani}} & \Swa{12} \\* 
+\multicolumn{2}{r}{\E{Who is to be blamed? Whose fault is it?}} & \\ 
+\textarabic{مْڠِنٖ هَامُكُپَاتَ} & \textarabic{مِمِ هَامُنِثَمِنِ} &  \\* 
+\Tr{mgine hāmukupāṯa} & \Tr{mimi hāmunithamini} &  \Tr{12h/g} \\* 
+\multicolumn{2}{r}{\Swa{mimi hamunithamini * mngine hamukupata}} & \Swa{12} \\* 
+\multicolumn{2}{r}{\E{You esteem me not at all, yet you have not replaced me by another.}} & \\ 
+\\[8mm] 
+
+\textarabic{هُنِأٗنْڠُوْنْڠَ مُويُوْنِ} & \textarabic{كِوَسِكِيَ هُنِيْنَ} & \textarabic{١٣} \\* 
+\Tr{huniongūnga mūyūni} & \Tr{kiwasikiya hunı̄na} &  \Tr{13b/a} \\* 
+\multicolumn{2}{r}{\Swa{kiwasikiya hunena * huniungonga moyoni}} & \Swa{13} \\* 
+\multicolumn{2}{r}{\E{When I hear those who are not mother-tongue speakers speaking, I feel sick at heart.}} & \\ 
+\textarabic{نَحَؤُ نَ ئِتَمَانِ} & \textarabic{صَرْفَ هَكُنَ تٖنَ} &  \\* 
+\Tr{naḥau na iṯamāni} & \Tr{ṣarfa hakuna ṯena} &  \Tr{13d/c} \\* 
+\multicolumn{2}{r}{\Swa{sarufi hakuna tena * nahau  naitamani}} & \Swa{13} \\* 
+\multicolumn{2}{r}{\E{Inflection is no longer employed, while grammatical [Swahili] is what I desire!}} & \\ 
+\textarabic{كَمَ مَشَاپُوْ كَانْوَانِ} & \textarabic{نَ حَتَ لَذَ هَيَانَ} &  \\* 
+\Tr{kama mashāpuu kānwāni} & \Tr{na ḥaṯa ladha hayāna} &  \Tr{13f/e} \\* 
+\multicolumn{2}{r}{\Swa{na hata ladha hayana * kama mashapu kanwani}} & \Swa{13} \\* 
+\multicolumn{2}{r}{\E{Even [their speech] is wanting in flavour, like a plug of tobacco in one’s mouth.}} & \\ 
+\textarabic{هُئِمْبَ اَوْ هُتٖتَ} & \textarabic{سِئٖلٖوِ هُنٖنَانِ} &  \\* 
+\Tr{huimba aw huṯeṯa} & \Tr{sielewi hunenāni} &  \Tr{13h/g} \\* 
+\multicolumn{2}{r}{\Swa{sielewi hunenani * huimba au huteta}} & \Swa{13} \\* 
+\multicolumn{2}{r}{\E{I do not understand what they are saying. Are they singing? Are they complaining?}} & \\ 
+\\[8mm] 
+
+\textarabic{اَيْ تٖنَ دُنِيَانِ} & \textarabic{لَوْ مُيَاكَ تَارُدِ} & \textarabic{١٤} \\* 
+\Tr{ay ṯena ḏuniyāni} & \Tr{law muyāka ṯāruḏi} &  \Tr{14b/a} \\* 
+\multicolumn{2}{r}{\Swa{lau Muyaka tarudi * ae tena duniani}} & \Swa{14} \\* 
+\multicolumn{2}{r}{\E{Were Bwana Muyaka to return, were he to come back to the world,}} & \\ 
+\textarabic{كْوٖنٖنْدَ مَحَكَمَانِ} & \textarabic{موَانَانْڠُ اِتَمْبِدِ} &  \\* 
+\Tr{kwenenḏa maḥakamāni} & \Tr{mwānāngu iṯambiḏi} &  \Tr{14d/c} \\* 
+\multicolumn{2}{r}{\Swa{mwanangu itambidi * kwenenda mahakamani}} & \Swa{14} \\* 
+\multicolumn{2}{r}{\E{it would be necessary, my child, for him to go to a court of law,}} & \\ 
+\textarabic{وَنِيُوَاءٗ يَقِيْنِ} & \textarabic{اَئٖتٖ نَ مَشَهِدِ} &  \\* 
+\Tr{waniyuwao yaqı̄ni} & \Tr{aeṯe na mashahiḏi} &  \Tr{14f/e} \\* 
+\multicolumn{2}{r}{\Swa{aete na mashahidi * waniyuwao yakini}} & \Swa{14} \\* 
+\multicolumn{2}{r}{\E{and he would need to call witnesses who know me well,}} & \\ 
+\textarabic{كْوَا حَتِيَ كُوَپَاتَ} & \textarabic{نْيُوْتٖ مْوٖنْدٖ ڠٖرٖزَنِ} &  \\* 
+\Tr{kwā ḥaṯiya kuwapāṯa} & \Tr{nyūṯe mwenḏe gerezani} &  \Tr{14h/g} \\* 
+\multicolumn{2}{r}{\Swa{nyote mwende gerezani * kwa hatia kuwapata}} & \Swa{14} \\* 
+\multicolumn{2}{r}{\E{and all of you would go to prison for the offence which you have committed against me.}} & \\ 
+\\[8mm] 
+
+\textarabic{وَلَ هَامُوْنَ اِمَانِ} & \textarabic{وَاللّٰهِ هَمُنَ غٖيْرَ} & \textarabic{١٥} \\* 
+\Tr{wala hāmūna imāni} & \Tr{wallähi hamuna ḡēra} &  \Tr{15b/a} \\* 
+\multicolumn{2}{r}{\Swa{wallahi hamuna ghera * wala hamuna imani}} & \Swa{15} \\* 
+\multicolumn{2}{r}{\E{Truly you have neither zeal nor self-confidence.}} & \\ 
+\textarabic{كُوَ هَمُنِثَمِنِ} & \textarabic{هَمُنَ لَكُوَكٖرَ} &  \\* 
+\Tr{kuwa hamunithamini} & \Tr{hamuna lakuwakera} &  \Tr{15d/c} \\* 
+\multicolumn{2}{r}{\Swa{hamuna la kuwakera * kuwa hamunithamini}} & \Swa{15} \\* 
+\multicolumn{2}{r}{\E{It irritates you not at all that you do not esteem me.}} & \\ 
+\textarabic{هُتٖزٖوَ اُوَنْدَانِ} & \textarabic{مِمِ نِ كَامَ مْپِوِرِ} &  \\* 
+\Tr{huṯezewa uwanḏāni} & \Tr{mimi ni kāma mpiwiri} &  \Tr{15f/e} \\* 
+\multicolumn{2}{r}{\Swa{mimi ni kama mpwira * hutezewa uwandani}} & \Swa{15} \\* 
+\multicolumn{2}{r}{\E{I am just like a ball in the play-ground,}} & \\ 
+\textarabic{نَ كُلَ مْوٖنْيٖ كُپِتَ} & \textarabic{هِپِجْوَا تٖكٖنْدِيَانَ} &  \\* 
+\Tr{na kula mwenye kupiṯa} & \Tr{hipijwā ṯekenḏiyāna} &  \Tr{15h/g} \\* 
+\multicolumn{2}{r}{\Swa{hipijwa teke ndiani * na kula mwenye kupita}} & \Swa{15} \\* 
+\multicolumn{2}{r}{\E{I am given a kick by anyone who passes by in the street.}} & \\ 
+\\[8mm] 
+
+\textarabic{وَاسُوْ وَنْڠُ وَمٖبُوْنِ} & \textarabic{حَتَ كْوٖنْيٖ اُشَعِرِ} & \textarabic{١٦} \\* 
+\Tr{wāsuu wangu wamebūni} & \Tr{ḥaṯa kwenye usha'iri} &  \Tr{16b/a} \\* 
+\multicolumn{2}{r}{\Swa{hata kwenye ushairi * waso wangu wamebuni}} & \Swa{16} \\* 
+\multicolumn{2}{r}{\E{Even in the field of Swahili prosody, those who are not mine have invented}} & \\ 
+\textarabic{كْوَا كُوٗلٖزَ وَڠٖنِ} & \textarabic{زِلِزٗ حُرُ بَحَارِ} &  \\* 
+\Tr{kwā kuwoleza wageni} & \Tr{zilizo ḥuru baḥāri} &  \Tr{16d/c} \\* 
+\multicolumn{2}{r}{\Swa{zilizo huru bahari * kwa kuoleza wageni}} & \Swa{16} \\* 
+\multicolumn{2}{r}{\E{free verse, imitating foreigners.}} & \\ 
+\textarabic{سِ مَاشَعِرِ كِفَنِ} & \textarabic{ممِ هَايُو سِيَاكِرِ} &  \\* 
+\Tr{si māsha'iri kifani} & \Tr{mmi hāyuu siyākiri} &  \Tr{16f/e} \\* 
+\multicolumn{2}{r}{\Swa{mimi hayo siyakiri * si mashairi kifani}} & \Swa{16} \\* 
+\multicolumn{2}{r}{\E{For myself, I cannot accept that. That is not Swahili poetry.}} & \\ 
+\textarabic{هزٗ ن مْبنُ زَا زتَ} & \textarabic{هَاىُوْ ىُوْت نِ كْوا نْن} &  \\* 
+\Tr{hzo n mbnu zā zṯa} & \Tr{hāyuu yūṯ ni kwā nn} &  \Tr{16h/g} \\* 
+\multicolumn{2}{r}{\Swa{hayo yote ni kwa nini * hizo ni mbinu za zita}} & \Swa{16} \\* 
+\multicolumn{2}{r}{\E{What is the point of it all? These are preparations for war.}} & \\ 
+\\[8mm] 
+
+\textarabic{هِنِ نِ عَجَابُ ڠَانِ} & \textarabic{هَمْبِوَ مْوٖنْيٖوٖ سِنَ} & \textarabic{١٧} \\* 
+\Tr{hini ni 'ajābu gāni} & \Tr{hambiwa mwenyewe sina} &  \Tr{17b/a} \\* 
+\multicolumn{2}{r}{\Swa{hambiwa mwenyewe sina * hini ni ajabu gani}} & \Swa{17} \\* 
+\multicolumn{2}{r}{\E{I am told that I belong to nobody in particular. How extraordinary!}} & \\ 
+\textarabic{كَاوَ نَ تَانْدُ يَانْڠَانِ} & \textarabic{هُوَاءٖ كاكُوْسَ شِنَ} &  \\* 
+\Tr{kāwa na ṯānḏu yāngāni} & \Tr{huwae kākūsa shina} &  \Tr{17d/c} \\* 
+\multicolumn{2}{r}{\Swa{huwae kakosa shina * kawa na tandu yangani}} & \Swa{17} \\* 
+\multicolumn{2}{r}{\E{How can I be rootless below ground and yet have branches above?}} & \\ 
+\textarabic{اَلُوْنَانْدِكَ نِ نْيَانِ} & \textarabic{نْيَانِ اَلُوْنِپَ ئِنَ} &  \\* 
+\Tr{alūnānḏika ni nyāni} & \Tr{nyāni alūnipa ina} &  \Tr{17f/e} \\* 
+\multicolumn{2}{r}{\Swa{nyani alonipa ina * alonandika ni nyani}} & \Swa{17} \\* 
+\multicolumn{2}{r}{\E{Who gave me my name? And who are they who wrote me down?}} & \\ 
+\textarabic{نِ وَپِ نَالِپُوپَاتَ} & \textarabic{كِوَ سِ اُسْوَاحِلِنِ} &  \\* 
+\Tr{ni wapi nālipūpāṯa} & \Tr{kiwa si uswāḥilini} &  \Tr{17h/g} \\* 
+\multicolumn{2}{r}{\Swa{kiwa si Uswahilini * ni wapi nalipopata}} & \Swa{17} \\* 
+\multicolumn{2}{r}{\E{If I do not hail from Swahililand, then whence do I come?}} & \\ 
+\\[8mm] 
+
+\textarabic{سِدَلِلِ اَصِلَانِ} & \textarabic{كُوَ وٖنْڠِ هُنِنٖنَ} & \textarabic{١٨} \\* 
+\Tr{siḏalili aṣilāni} & \Tr{kuwa wengi huninena} &  \Tr{18b/a} \\* 
+\multicolumn{2}{r}{\Swa{kuwa wengi huninena * si dalili asilani}} & \Swa{18} \\* 
+\multicolumn{2}{r}{\E{That many speak me, [Swahili], is not of itself proof of origins,}} & \\ 
+\textarabic{كِنْڠٖرٖزَ هَامُوٗنِ} & \textarabic{يَاكُوَ مْوٖنْيٖوٖ سِنَ} &  \\* 
+\Tr{kingereza hāmuwoni} & \Tr{yākuwa mwenyewe sina} &  \Tr{18d/c} \\* 
+\multicolumn{2}{r}{\Swa{yakuwa mwenyewe sina * Kiingereza hamuoni}} & \Swa{18} \\* 
+\multicolumn{2}{r}{\E{or that I have no owner. What of the English language?}} & \\ 
+\textarabic{پٖمْبٖ زٗتٖ دُنِيَانِ} & \textarabic{هُنٖنوَا نَ وٖنْڠِ سَانَ} &  \\* 
+\Tr{pembe zoṯe ḏuniyāni} & \Tr{hunenwā na wengi sāna} &  \Tr{18f/e} \\* 
+\multicolumn{2}{r}{\Swa{hunenwa na wengi sana * pembe zote duniani}} & \Swa{18} \\* 
+\multicolumn{2}{r}{\E{It is spoken by very many, in all corners of the world,}} & \\ 
+\textarabic{مِزِيٖ هَئِكُكَاتَ} & \textarabic{كِنَ نَ كْوَاءٗ سِنَانِ} &  \\* 
+\Tr{miziye haikukāṯa} & \Tr{kina na kwao sināni} &  \Tr{18h/g} \\* 
+\multicolumn{2}{r}{\Swa{kina na kwao sinani * miziye haikukata}} & \Swa{18} \\* 
+\multicolumn{2}{r}{\E{yet the language remains firmly established in its homeland, its roots have not been severed.}} & \\ 
+\\[8mm] 
+
+\end{longtable} 
+
+\renewcommand{\bibname}{References} 
+\begingroup 
+\printbibliography 
+\endgroup 
+
+\end{document}

@@ -1,17 +1,20 @@
 \documentclass[a4paper, 12pt]{report}
 
-\usepackage{polyglossia}
-\usepackage{longtable}
+\usepackage{titlesec}  % Allow the chapter/section heading settings to be fine-tuned.  Needs to come before bidi, in polyglossia.
+\usepackage{polyglossia}  % multilingual support
+\usepackage{longtable}  % tables that carry across multiple pages
 \usepackage{xcolor}  % can't use color with polyglossia
-\usepackage{arydshln}
+
+\input{convert/tex/fontdefs.tex}  % Bring in the font definitions.
+
+\usepackage{marginnote}
+\renewcommand*{\marginfont}{\color{red}\sffamily}
 
 \interfootnotelinepenalty=10000 % prevents the footnote from breaking across pages
 % http://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
 
 % Thanks to Manas Tungare (http://manas.tungare.name/software/latex) for these settings.
 \setlength{\paperwidth}{210mm}
-\setlength{\paperheight}{297mm}
-
 \setlength{\textwidth}{160mm}
 \setlength{\textheight}{247mm}
 
@@ -19,111 +22,1907 @@
 \setlength{\oddsidemargin}{0in}
 \setlength{\topmargin}{-0.5in}
 
-\setmainfont[Mapping=tex-text]{Liberation Serif}  % Set the default font for the document (footnotes will also use this font, but see also: http://tex.stackexchange.com/questions/4779/how-to-change-font-family-in-footnote)
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
 
-\setmainlanguage{english}
-\setotherlanguage{arabic}
-\setotherlanguage{farsi}  % used to allow typesetting the tile in a different font
-
-\newfontfamily\arabicfont[Script=Arabic, Scale=2]{Scheherazade} % Arabic transcription layer
-\newfontfamily\farsifont[Script=Arabic, Scale=4]{GranadaKD} % Arabic transcription layer for titles - uses a version of Granada which has been extended to include glyphs for Swahili.
-\newcommand{\AS}[1]{\fontspec[Script=Arabic, Scale=1.5]{Scheherazade} #1\normalfont} % Arabic when used in footnotes - using \newfontfamily resets following English text as well.  IMPORTANT: this can ONLY be used for single words - multiple words will be written LTR, and not RTL as required.
-\newfontfamily{\T}[Scale=1.1, Color=00BB33]{Linux Biolinum O} %  transliteration layer - Biolinum handles diacritics well
-\newfontfamily{\I}[Scale=1.1, Color=blue]{Linux Biolinum O} % interpolated letters in the transliteration layer
-\newfontfamily{\E}[Color=666666]{Liberation Serif Italic} % English translation layer
-
-\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote merkers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696):
+\usepackage{url}  % Use urls in text and captions with sensible linewrap.  Can't use [obeyspaces] - this option clashes with biblatex.
+\urlstyle{rm}  % Set urls in roman.
 
 \begin{document}
 
-% \chapter{Introduction}
+\begin{longtable}{rrl} 
 
-\begin{longtable}{rl}
+\makebox[8cm][r]{} & & \makebox[8cm][r]{} \\ 
 
+\textarabic{پَمْوٖ نَ رَحْمٰنِ} & \textarabic{بِسْمِ اللّٰهِ إِخْوَانِ} & \textarabic{١} \\* 
+\Tr{pamwe na raḥmäni} & \Tr{bismi llähi ikhwāni} & \Tr{1b/a} \\ 
+\textarabic{نْدِيٗ يَلٗأَنْدَمِيَ} & \textarabic{نَ الرَّحِيْمُ يُوَنِ} &  \\* 
+\Tr{nḏiyo yaloanḏamiya} & \Tr{na rraḥı̄mu yuwani} & \Tr{1d/c} \\ 
+\\[8mm] 
 
-% \textfarsi{أُتٖيْنْزِ ۏَ ڤِيْٹَ ڤِكُوْ} & \textfarsi{ }\\
-% \nopagebreak \T{uṯēnzi w̱a vı̄ţa vikuu} & \\
-% \nopagebreak \E{The Ballad of the Great Battle} & \\ [12mm]
+\textarabic{كهٖنْدَ مَتٖمْبٖزِ يَنْڠُ} & \textarabic{پُلِكَنِ نْدُزَنْڠُ} & \textarabic{٢} \\* 
+\Tr{kʿenḏa maṯembezi yangu} & \Tr{pulikani nḏuzangu} & \Tr{2b/a} \\ 
+\textarabic{قِصَ چَلٗنِجِرِيَ} & \textarabic{نِوَپٖ خَبَرِ زَنْڠُ} &  \\* 
+\Tr{qiṣa chalonijiriya} & \Tr{niwape khabari zangu} & \Tr{2d/c} \\ 
+\\[8mm] 
 
-\textfarsi{أُتٖنْزِ وَ جَعْفَر} & \textfarsi{ }\\
-\nopagebreak \T{uṯenzi wa ja'far} &\\
-\nopagebreak \E{The Ballad of Ja'far} & \\
+\textarabic{كْوَلِ نَ مْٹُ چُمْبَنِ} & \textarabic{نِلِ نٖنْدَءٗ نْدِيَنِ} & \textarabic{٣} \\* 
+\Tr{kwali na mţu chumbani} & \Tr{nili nenḏao nḏiyani} & \Tr{3b/a} \\ 
+\textarabic{كْوَ حَلَالِ كُرِضِيَ} & \textarabic{مٗيٗ أُكَمْتَمَنِ} &  \\* 
+\Tr{kwa ḥalāli kuriḍiya} & \Tr{moyo ukamṯamani} & \Tr{3d/c} \\ 
+\\[8mm] 
 
-\nopagebreak  & \\
-\nopagebreak \cdashline{1-1}[1pt/3pt] & \\  % requires arydshln package
+\textarabic{نَلٗمْپَ زَيْدَنِ} & \textarabic{نَ مَهَرِيٖ يُوَنِ} & \textarabic{٤} \\* 
+\Tr{nalompa zayḏani} & \Tr{na mahariye yuwani} & \Tr{4b/a} \\ 
+\textarabic{كَوَهِ كُمْڤَلِيَ} & \textarabic{نَلِنَ پٖٹٖ چَنْدَنِ} &  \\* 
+\Tr{kawahi kumvaliya} & \Tr{nalina peţe chanḏani} & \Tr{4d/c} \\ 
+\\[8mm] 
 
-\textarabic{بِسْمِ اللّٰهِ الرحْمَنِ الرَّحِيْمِ} & \textarabic{ }\\
-\nopagebreak \T{bismi llähi arr}\I{a}\T{ḥmani arraḥı̄mi} &\\
-\nopagebreak \E{In the name of God, the Compassionate, the Merciful} & \\
+\textarabic{أُنَ رُبَ مٗيٗ وَكٖ} & \textarabic{عَلِى كُتٗكَ كْوَكٖ} & \textarabic{٥} \\* 
+\Tr{una ruba moyo wake} & \Tr{'alii kuṯoka kwake} & \Tr{5b/a} \\ 
+\textarabic{مْكٗنٗ هُمْفُمْبِيَ} & \textarabic{أَكٖنْدَ كْوَ مْكٖ وَكٖ} &  \\* 
+\Tr{mkono humfumbiya} & \Tr{akenḏa kwa mke wake} & \Tr{5d/c} \\ 
+\\[8mm] 
 
-\nopagebreak  & \\
-\nopagebreak \cdashline{1-1}[1pt/3pt] & \\[6mm]  % requires arydshln package
+\textarabic{يَلِ هَيَتَأَمَلِ} & \textarabic{مْوَنَ بِنْتِ رَسُوْلِ} & \textarabic{٦} \\* 
+\Tr{yali hayaṯaamali} & \Tr{mwana binṯi rasūli} & \Tr{6b/a} \\ 
+\textarabic{خَبَرِ أَكَمْوَمْبِيَ} & \textarabic{كَنٖنْدَ مْوٖنْيٖ عَقِلِ} &  \\* 
+\Tr{khabari akamwambiya} & \Tr{kanenḏa mwenye 'aqili} & \Tr{6d/c} \\ 
+\\[8mm] 
 
-\textarabic{بِسْمِ اللّٰهِ إِخْوَانِ * پَمْوٖ نَ رَحْمٰنِ} & \textarabic{١} \\ 
-\nopagebreak \T{bismi llähi iẖwāni * pamwe na raḥmäni} & \T{1a/b} \\ 
-\nopagebreak \E{ } & \\ 
-\textarabic{نَ الرَّحِيْمُ يُوَنِ * نْدِيٗ يَلٗأَنْدَمِيَ} & \\ 
-\nopagebreak \T{na rraḥı̄mu yuwani * nḏiyo yaloanḏamiya} & \T{1c/d} \\ 
-\nopagebreak \E{ } & \\ [8mm] 
+\textarabic{فَاطِمَه أَكَمْوَمْبِيٖ} & \textarabic{أَكٖنٖنْدَءٖ كِزٖيْ} & \textarabic{٧} \\* 
+\Tr{fāṭimah akamwambiye} & \Tr{akenenḏae kizee} & \Tr{7b/a} \\ 
+\textarabic{خَبَرِ هُكِسِكِيَ} & \textarabic{شٖيْحٖ عَليْ أُوٗزٖيْ} &  \\* 
+\Tr{khabari hukisikiya} & \Tr{shēḥe 'alı̄ uwozee} & \Tr{7d/c} \\ 
+\\[8mm] 
 
-\textarabic{پُلِكَنِ نْدُزَنْڠُ * كهٖنْدَ مَتٖمْبٖزِ يَنْڠُ} & \textarabic{٢} \\ 
-\nopagebreak \T{pulikani nḏuzangu * kʿenḏa maṯembezi yangu} & \T{2a/b} \\ 
-\nopagebreak \E{ } & \\ 
-\textarabic{نِوَپٖ خَبَرِ زَنْڠُ * قِصَ چَلٗنِجِرِيَ} & \\ 
-\nopagebreak \T{niwape ẖabari zangu * qiṣa chalonijiriya} & \T{2c/d} \\ 
-\nopagebreak \E{ } & \\ [8mm] 
+\textarabic{فَاطِمَه كَمْكَنُشَ} & \textarabic{أَكَفَنْيَ مْشَوَشَ} & \textarabic{٨} \\* 
+\Tr{fāṭimah kamkanusha} & \Tr{akafanya mshawasha} & \Tr{8b/a} \\ 
+\textarabic{أُتُنْڠُ أَكَمْٹِيَ} & \textarabic{عَلَامَ كَمُؤٗنٖشَ} &  \\* 
+\Tr{uṯungu akamţiya} & \Tr{'alāma kamuonesha} & \Tr{8d/c} \\ 
+\\[8mm] 
 
-\textarabic{نِلِ نٖنْدَءٗ نْدِيَنِ * كْوَلِ نَ مْٹُ چُمْبَنِ} & \textarabic{٣} \\ 
-\nopagebreak \T{nili nenḏao nḏiyani * kwali na mţu chumbani} & \T{3a/b} \\ 
-\nopagebreak \E{ } & \\ 
-\textarabic{مٗيٗ أُكَمْتَمَنِ * كْوَ حَلَالِ كُرِضِيَ} & \\ 
-\nopagebreak \T{moyo ukamṯamani * kwa ḥalāli kuriḍiya} & \T{3c/d} \\ 
-\nopagebreak \E{ } & \\ [8mm] 
+\textarabic{هِيٗ نْدِيٗ يَمْكِنِ} & \textarabic{مْوَنَ بِنْتِ أَمِيْنِ} & \textarabic{٩} \\* 
+\Tr{hiyo nḏiyo yamkini} & \Tr{mwana binṯi amı̄ni} & \Tr{9b/a} \\ 
+\textarabic{كَوَهِ كُمْفُلِيَ} & \textarabic{أَلِ نَ پٖٹٖ چَنْدَنِ} &  \\* 
+\Tr{kawahi kumfuliya} & \Tr{ali na peţe chanḏani} & \Tr{9d/c} \\ 
+\\[8mm] 
 
-\textarabic{نَمَهَرِيٖ يُوَنِ * نَلٗمْپَ زَيْدَنِ} & \textarabic{٤} \\ 
-\nopagebreak \T{namahariye yuwani * nalompa zayḏani} & \T{4a/b} \\ 
-\nopagebreak \E{ } & \\ 
-\textarabic{نَلِنَ پٖٹٖ چَنْدَنِ * هَوَهِ كُمْڤَلِيَ} & \\ 
-\nopagebreak \T{nalina peţe chanḏani * hawahi kumvaliya} & \T{4c/d} \\ 
-\nopagebreak \E{ } & \\ [8mm] 
+\textarabic{مِمِ سِمتَأَمَلِ} & \textarabic{سِجُوِ كهَنٖنَ نِ كوٖلِ} & \textarabic{١٠} \\* 
+\Tr{mimi simṯaamali} & \Tr{sijuwi kʿanena ni kweli} & \Tr{10b/a} \\ 
+\textarabic{يٖئٗ تهَمْزِنْڠَتِيَ} & \textarabic{أَرُدِپٗ كْوَ رَسُوْلِ} &  \\* 
+\Tr{yeo ṯʿamzingaṯiya} & \Tr{aruḏipo kwa rasūli} & \Tr{10d/c} \\ 
+\\[8mm] 
 
-\textarabic{عَلى كُتٗكَ كْوَكٖ * أُنَ رُبَ مٗيٗ وَكٖ} & \textarabic{٥} \\ 
-\nopagebreak \T{'alı̄ kuṯoka kwake * una ruba moyo wake} & \T{5a/b} \\ 
-\nopagebreak \E{ } & \\ 
-\textarabic{أَكٖنْدَ كْوَ مْكٖ وَكٖ * مْكٗنٗ هُمْفُمْبِيَ} & \\ 
-\nopagebreak \T{akenḏa kwa mke wake * mkono humfumbiya} & \T{5c/d} \\ 
-\nopagebreak \E{ } & \\ [8mm] 
+\textarabic{أَسِئِوٖزٖ فَاطِمَه} & \textarabic{أَكَفَنْيَ هِمَ هِمَ} & \textarabic{١١} \\* 
+\Tr{asiiweze fāṭimah} & \Tr{akafanya hima hima} & \Tr{11b/a} \\ 
+\textarabic{بَبَكٗ نَمْكُلِيَ} & \textarabic{حَسَنِ أَكَمْٹُمَ} &  \\* 
+\Tr{babako namkuliya} & \Tr{ḥasani akamţuma} & \Tr{11d/c} \\ 
+\\[8mm] 
 
-\textarabic{مْوَنَ بِنْتِ رَسُوْلِ * يَلِ هَيَتَأَمَلِ} & \textarabic{٦} \\ 
-\nopagebreak \T{mwana binṯi rasūli * yali hayaṯaamali} & \T{6a/b} \\ 
-\nopagebreak \E{ } & \\ 
-\textarabic{كَنٖنْدَ مْوٖنْيٖ عقِلِ * خَبَرِ أكَمْوَمْبِيَ} & \\ 
-\nopagebreak \T{kanenḏa mwenye 'qili * ẖabari kamwambiya} & \T{6c/d} \\ 
-\nopagebreak \E{ } & \\ [8mm] 
+\textarabic{أَسِسِكِيٖ بَشِيْرِ} & \textarabic{نَمْكُلِيَ كْوَ سِرِ} & \textarabic{١٢} \\* 
+\Tr{asisikiye bashı̄ri} & \Tr{namkuliya kwa siri} & \Tr{12b/a} \\ 
+\textarabic{مْبٖلٖ زَ ٹُمْوَ نَبِيَ} & \textarabic{كٖنٖنْدَ أَكَفَسِرِ} &  \\* 
+\Tr{mbele za ţumwa nabiya} & \Tr{kenenḏa akafasiri} & \Tr{12d/c} \\ 
+\\[8mm] 
 
-\textarabic{أَكٖنٖنْدَءٖ كِزٖيْ * فَاطِمَه أكَمْوَمْبِيٖ} & \textarabic{٧} \\ 
-\nopagebreak \T{akenenḏae kizee * fāṭimah kamwambiye} & \T{7a/b} \\ 
-\nopagebreak \E{ } & \\ 
-\textarabic{شٖيْحٖ عَليْ أُوٗزٖيْ * خَبَرِ هُكِسِكِيَ} & \\ 
-\nopagebreak \T{shēḥe 'alı̄ uwozee * ẖabari hukisikiya} & \T{7c/d} \\ 
-\nopagebreak \E{ } & \\ [8mm] 
+\textarabic{هَمْكُلِوَ نْيُمْبَنِ} & \textarabic{كَفَسِرِ مُعَيَنِ} & \textarabic{١٣} \\* 
+\Tr{hamkuliwa nyumbani} & \Tr{kafasiri mu'ayani} & \Tr{13b/a} \\ 
+\textarabic{عَجَبُ إِكَمْنْڠِيَ} & \textarabic{أَكِسِكِيَ أَمِيْنِ} &  \\* 
+\Tr{'ajabu ikamngiya} & \Tr{akisikiya amı̄ni} & \Tr{13d/c} \\ 
+\\[8mm] 
 
-\textarabic{أَكَفَنْيَ مْشَوَشَ * فَاطِمَه كَمْكَنُشَ} & \textarabic{٨} \\ 
-\nopagebreak \T{akafanya mshawasha * fāṭimah kamkanusha} & \T{8a/b} \\ 
-\nopagebreak \E{ } & \\ 
-\textarabic{عَلَامَ كَمُؤٗنٖشَ * أُتُنْڠُ أَكَمْٹِيَ} & \\ 
-\nopagebreak \T{'alāma kamuonesha * uṯungu akamţiya} & \T{8c/d} \\ 
-\nopagebreak \E{ } & \\ [8mm] 
+\textarabic{يٖئٗ أُ نَنِ فَاطِمَه} & \textarabic{أَكَمُؤُزَ هَشِمِ} & \textarabic{١٤} \\* 
+\Tr{yeo u nani fāṭimah} & \Tr{akamuuza hashimi} & \Tr{14b/a} \\ 
+\textarabic{نَايٗ سِيٗ مَزٗوٖيَ} & \textarabic{هُكْوَمْكُوَ كْوَ مِمِ} &  \\* 
+\Tr{nāyo siyo mazoweya} & \Tr{hukwamkuwa kwa mimi} & \Tr{14d/c} \\ 
+\\[8mm] 
 
-\textarabic{9 * } & \textarabic{٩} \\ 
-\nopagebreak \T{9 * } & \T{9a/b} \\ 
-\nopagebreak \E{ } & \\ 
-\textarabic{ * } & \\ 
-\nopagebreak \T{ * } & \T{9c/d} \\ 
-\nopagebreak \E{ } & \\ [8mm] 
+\textarabic{أَكَنٖنْدَ كْوَ هَرَكَ} & \textarabic{عَلِى أَكَئِنُكَ} & \textarabic{١٥} \\* 
+\Tr{akanenḏa kwa haraka} & \Tr{'alii akainuka} & \Tr{15b/a} \\ 
+\textarabic{مْوَنَ فَاطِمَ هُلِيَ} & \textarabic{هَتَ نْيُمْبَنِ كِفِكَ} &  \\* 
+\Tr{mwana fāṭima huliya} & \Tr{haṯa nyumbani kifika} & \Tr{15d/c} \\ 
+\\[8mm] 
 
+\textarabic{عَلِيْ كَشَوِشِكَ} & \textarabic{هُرُمَ زِكَمْشِكَ} & \textarabic{١٦} \\* 
+\Tr{'alii kashawishika} & \Tr{huruma zikamshika} & \Tr{16b/a} \\ 
+\textarabic{أُلِلٗنَلٗ نَمْبِيَ} & \textarabic{كَمْبَ فَتُمَ پُلِكَ} &  \\* 
+\Tr{ulilonalo nambiya} & \Tr{kamba faṯuma pulika} & \Tr{16d/c} \\ 
+\\[8mm] 
 
-\end{longtable}
+\textarabic{أَمَ أُمٖشِكْوَ نِ حُمَ} & \textarabic{أُنَ كِتْوَ هُكُؤُمَ} & \textarabic{١٧} \\* 
+\Tr{ama umeshikwa ni ḥuma} & \Tr{una kiṯwa hukuuma} & \Tr{17b/a} \\ 
+\textarabic{كْوَ مَرَضِ سِكُلِيَ} & \textarabic{أَكَمْجِبُ فَتُمَ} &  \\* 
+\Tr{kwa maraḍi sikuliya} & \Tr{akamjibu faṯuma} & \Tr{17d/c} \\ 
+\\[8mm] 
+
+\textarabic{وٖوٖ هُنٖنَ هُتٖكَ} & \textarabic{مِمِ هَپَ نَلِتٗكَ} & \textarabic{١٨} \\* 
+\Tr{wewe hunena huṯeka} & \Tr{mimi hapa naliṯoka} & \Tr{18b/a} \\ 
+\textarabic{أُسِخٗفُ كُنَمْبِيَ} & \textarabic{نَ كَمَ كهِٹُ وتَكَ} &  \\* 
+\Tr{usikhofu kunambiya} & \Tr{na kama kʿiţu ūṯaka} & \Tr{18d/c} \\ 
+\\[8mm] 
+
+\textarabic{نِئِفِدِ رٗحٗ يَنْڠُ} & \textarabic{وَتَكَ نِنِ نْدُيَنْڠُ} & \textarabic{١٩} \\* 
+\Tr{niifiḏi roḥo yangu} & \Tr{waṯaka nini nḏuyangu} & \Tr{19b/a} \\ 
+\textarabic{نَوٖ أُكٗمٖ كُلِيَ} & \textarabic{مٗيٗ أُوَتٖ مَتُنْڠُ} &  \\* 
+\Tr{nawe ukome kuliya} & \Tr{moyo uwaṯe maṯungu} & \Tr{19d/c} \\ 
+\\[8mm] 
+
+\textarabic{پٖٹٖ يَكٗ نَئِتَكَ} & \textarabic{فَتُمَ أَكَتَمْكَ} & \textarabic{٢٠} \\* 
+\Tr{peţe yako naiṯaka} & \Tr{faṯuma akaṯamka} & \Tr{20b/a} \\ 
+\textarabic{هَؤٗنِ لَ كُمْوَمْبِيَ} & \textarabic{عَلِى أَكَشُٹُكَ} &  \\* 
+\Tr{haoni la kumwambiya} & \Tr{'alii akashuţuka} & \Tr{20d/c} \\ 
+\\[8mm] 
+
+\textarabic{نٖنٗ أَلِلٗفَسِرِ} & \textarabic{كِشَ عَلِيْ حَيْدَرِ} & \textarabic{٢١} \\* 
+\Tr{neno alilofasiri} & \Tr{kisha 'alii ḥayḏari} & \Tr{21b/a} \\ 
+\textarabic{تهكْوٖنْدَ كُٹْوَلِيَ} & \textarabic{أَنَيٗ أَبُوْ بَكِرَِ} &  \\* 
+\Tr{ṯʿkwenḏa kuţwaliya} & \Tr{anayo abuu bakiria} & \Tr{21d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَبُوْ بَكَرِ سِ كِفَنِ} & \textarabic{پٖٹٖ يَكٗ يَ چَنْدَنِ} & \textarabic{٢٢} \\* 
+\Tr{abuu bakari si kifani} & \Tr{peţe yako ya chanḏani} & \Tr{22b/a} \\ 
+\textarabic{كْوَ أُلِيٗنَمْبِيَ} & \textarabic{نِمٖٹْوَاءَ تَمْكِنِ} &  \\* 
+\Tr{kwa uliyonambiya} & \Tr{nimeţwaa ṯamkini} & \Tr{22d/c} \\ 
+\\[8mm] 
+
+\textarabic{مِمِ سِكُتَأَمَلِ} & \textarabic{هُنُ مْوٖزِ نِ وَ پِلِ} & \textarabic{٢٣} \\* 
+\Tr{mimi sikuṯaamali} & \Tr{hunu mwezi ni wa pili} & \Tr{23b/a} \\ 
+\textarabic{هَبَرِ نِمٖسِكِيَ} & \textarabic{أُنَ نَ مْكٖ وَ پِلِ} &  \\* 
+\Tr{habari nimesikiya} & \Tr{una na mke wa pili} & \Tr{23d/c} \\ 
+\\[8mm] 
+
+\textarabic{نِ وٖيْ پْوٖكٖ مْكٖ وَنْڠُ} & \textarabic{نَأَپَ وَاللّٰهِ نْدُيَنْڠُ} & \textarabic{٢٤} \\* 
+\Tr{ni wee pweke mke wangu} & \Tr{naapa wallähi nḏuyangu} & \Tr{24b/a} \\ 
+\textarabic{هُيٗ أَلٗنِزُلِيَ} & \textarabic{نِ نَنِ عَدُوِ يَنْڠُ} &  \\* 
+\Tr{huyo alonizuliya} & \Tr{ni nani 'aḏuwi yangu} & \Tr{24d/c} \\ 
+\\[8mm] 
+
+\textarabic{مْٹُيٖ سِمْبَئِنِ} & \textarabic{كَمْجِبُ كْوَ لِسَنِ} & \textarabic{٢٥} \\* 
+\Tr{mţuye simbaini} & \Tr{kamjibu kwa lisani} & \Tr{25b/a} \\ 
+\textarabic{أُنِپَپٗ تهَرِضِيَ} & \textarabic{پٖٹٖ أُمْپٖيْ نَنِ} &  \\* 
+\Tr{unipapo ṯʿariḍiya} & \Tr{peţe umpee nani} & \Tr{25d/c} \\ 
+\\[8mm] 
+
+\textarabic{تهَكْوَمْبِيَ تَمْكِنِ} & \textarabic{عَلِى أَكَبَئِنِ} & \textarabic{٢٦} \\* 
+\Tr{ṯʿakwambiya ṯamkini} & \Tr{'alii akabaini} & \Tr{26b/a} \\ 
+\textarabic{تهَكْوٖنْدَ كُكُتٗلٖيَ} & \textarabic{يَلِنْڠِيَ كِسِمَنِ} &  \\* 
+\Tr{ṯʿakwenḏa kukuṯoleya} & \Tr{yalingiya kisimani} & \Tr{26d/c} \\ 
+\\[8mm] 
+
+\textarabic{مَهَلٖ أُئِوٖسٖپٗ} & \textarabic{هَيَ نٖنَ پٖٹٖ يَكٗ} & \textarabic{٢٧} \\* 
+\Tr{mahale uiwesepo} & \Tr{haya nena peţe yako} & \Tr{27b/a} \\ 
+\textarabic{بَبَنْڠُ سِنٗمْوَمْبِيَ} & \textarabic{كَمَ هَيَ مَتَمْكٗ} &  \\* 
+\Tr{babangu sinomwambiya} & \Tr{kama haya maṯamko} & \Tr{27d/c} \\ 
+\\[8mm] 
+
+\textarabic{فَتُمَ كُكَسِرِكَ} & \textarabic{علِيْ أَكَؤُذِكَ} & \textarabic{٢٨} \\* 
+\Tr{faṯuma kukasirika} & \Tr{'lii akaudhika} & \Tr{28b/a} \\ 
+\textarabic{أَكَنٖنْندَ كْوَ نَبِيَ} & \textarabic{أَلِئِنُكَ كَتٗكَ} &  \\* 
+\Tr{akanennḏa kwa nabiya} & \Tr{aliinuka kaṯoka} & \Tr{28d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَلِ نَ نِنِ فَتُمَ} & \textarabic{أَكَمُؤُزَ هَشِمَ} & \textarabic{٢٩} \\* 
+\Tr{ali na nini faṯuma} & \Tr{akamuuza hashima} & \Tr{29b/a} \\ 
+\textarabic{مْٹُمٖ أَكَمْوَمْبِيَ} & \textarabic{أَلِكهَاٹَ كَلِمَ} &  \\* 
+\Tr{mţume akamwambiya} & \Tr{alikʿāţa kalima} & \Tr{29d/c} \\ 
+\\[8mm] 
+
+\textarabic{فَتُمَ مٖنِكَلِفُ} & \textarabic{أَكَمْوَمْبِيَ شَرِيْفُ} & \textarabic{٣٠} \\* 
+\Tr{faṯuma menikalifu} & \Tr{akamwambiya sharı̄fu} & \Tr{30b/a} \\ 
+\textarabic{زِنْڠِ نِمٖمْٹِلِيَ} & \textarabic{زِيَپٗ زِسِزٗخٗوْفُ} &  \\* 
+\Tr{zingi nimemţiliya} & \Tr{ziyapo zisizokhōfu} & \Tr{30d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَمِ نِمٖٹٖنْدَ كْوٖلِ} & \textarabic{أَلِكِلِيَ يَا رَسُوْلِ} & \textarabic{٣١} \\* 
+\Tr{nami nimeţenḏa kweli} & \Tr{alikiliya yā rasūli} & \Tr{31b/a} \\ 
+\textarabic{حٗوْفُ زَمٖنِنْڠِيَ} & \textarabic{كُمْوَبِيَ سِهِمِلِ} &  \\* 
+\Tr{ḥōfu zameningiya} & \Tr{kumwabiya sihimili} & \Tr{31d/c} \\ 
+\\[8mm] 
+
+\textarabic{أُمُؤٗنْيٖ أَبُرُدِ} & \textarabic{تٖنَ إٖنٖنْدَ سَيِدِ} & \textarabic{٣٢} \\* 
+\Tr{umuonye aburuḏi} & \Tr{ṯena enenḏa sayiḏi} & \Tr{32b/a} \\ 
+\textarabic{هَپٗ كَأَنْدَمَ نْدِيَنِ} & \textarabic{كَئِنُكَ مُحَمَدِ} &  \\* 
+\Tr{hapo kaanḏama nḏiyani} & \Tr{kainuka muḥamaḏi} & \Tr{32d/c} \\ 
+\\[8mm] 
+
+\textarabic{مٗيٗ أُنَ وَسِوَسِ} & \textarabic{أَكٖنْدَ أَكَجِلِسِ} & \textarabic{٣٣} \\* 
+\Tr{moyo una wasiwasi} & \Tr{akenḏa akajilisi} & \Tr{33b/a} \\ 
+\textarabic{ٰإٖنٖنْدٖيْ كُمْوَنْڠَلِيَ} & \textarabic{كَئِفَنْيَ كَمَ هَئِسِ} &  \\* 
+\Tr{äenenḏee kumwangaliya} & \Tr{kaifanya kama haisi} & \Tr{33d/c} \\ 
+\\[8mm] 
+
+\textarabic{وَلِ نَ نِنِ فَتُمَ} & \textarabic{كَمُؤُلِزَ هَشِمِ} & \textarabic{٣٤} \\* 
+\Tr{wali na nini faṯuma} & \Tr{kamuuliza hashimi} & \Tr{34b/a} \\ 
+\textarabic{عَليْ كُمْوَنْدَمِيَ} & \textarabic{حَسَنِ مٖكُيَ هِمَ} &  \\* 
+\Tr{'alı̄ kumwanḏamiya} & \Tr{ḥasani mekuya hima} & \Tr{34d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَكَمْوَمْبِيَ نَشِيْرِ} & \textarabic{فَتُمَ هَكُكَسِرِ} & \textarabic{٣٥} \\* 
+\Tr{akamwambiya nashı̄ri} & \Tr{faṯuma hakukasiri} & \Tr{35b/a} \\ 
+\textarabic{يٖؤٗ نِمٖزِسِكِيَ} & \textarabic{علِيْ نْدَكٖ هَبَرِ} &  \\* 
+\Tr{yeo nimezisikiya} & \Tr{'lii nḏake habari} & \Tr{35d/c} \\ 
+\\[8mm] 
+
+\textarabic{نِ كَمَ هَبَرِ ڠَنِ} & \textarabic{أَكَمُؤُزَ أَمِيْنِ} & \textarabic{٣٦} \\* 
+\Tr{ni kama habari gani} & \Tr{akamuuza amı̄ni} & \Tr{36b/a} \\ 
+\textarabic{أُكَجَ أُكَمُأَمْكُوَ} & \textarabic{أُسِمْنْڠٗجٖ نْيُمْبَنِ} &  \\* 
+\Tr{ukaja ukamuamkuwa} & \Tr{usimngoje nyumbani} & \Tr{36d/c} \\ 
+\\[8mm] 
+
+\textarabic{كُمْسِتَحِ هَشِمَ} & \textarabic{أَكَئِنَمَ فَتُمَ} & \textarabic{٣٧} \\* 
+\Tr{kumsiṯaḥi hashima} & \Tr{akainama faṯuma} & \Tr{37b/a} \\ 
+\textarabic{بَبَكٖ أَكَمْوَمْبِيَ} & \textarabic{يَلٗمْتٗكَ كَلِمَ} &  \\* 
+\Tr{babake akamwambiya} & \Tr{yalomṯoka kalima} & \Tr{37d/c} \\ 
+\\[8mm] 
+
+\textarabic{أُسِٹٖٹٖ نَ مُمٖئٗ} & \textarabic{يَوَتٖ مَنٖنٗ هَيٗ} & \textarabic{٣٨} \\* 
+\Tr{usiţeţe na mumeo} & \Tr{yawaṯe maneno hayo} & \Tr{38b/a} \\ 
+\textarabic{فَاطِمَة الزَّهْرِيَّة} & \textarabic{أَكَرُدِشَ كِلِيٗ} &  \\* 
+\Tr{fāṭimaẗ zzahrı̄yaẗ} & \Tr{akaruḏisha kiliyo} & \Tr{38d/c} \\ 
+\\[8mm] 
+
+\textarabic{أُتَكَپٗ رَضِ يَنْڠُ} & \textarabic{أَكَمْوَمْبِيَ مْوَنَنْڠُ} & \textarabic{٣٩} \\* 
+\Tr{uṯakapo raḍi yangu} & \Tr{akamwambiya mwanangu} & \Tr{39b/a} \\ 
+\textarabic{تُوَ أُكِيَسِكِيَ} & \textarabic{نِ هَيَ مَنٖنٗ يَنْڠُ} &  \\* 
+\Tr{ṯuwa ukiyasikiya} & \Tr{ni haya maneno yangu} & \Tr{39d/c} \\ 
+\\[8mm] 
+
+\textarabic{يَلٖ أَكَيَسُكُمَ} & \textarabic{كُتٗكَ كْوَكٖ فَتُمَ} & \textarabic{٤٠} \\* 
+\Tr{yale akayasukuma} & \Tr{kuṯoka kwake faṯuma} & \Tr{40b/a} \\ 
+\textarabic{بَبَكٖ أَكَمْوَمْبِيَ} & \textarabic{كِشَ كَڤُٹَ كَلِمَ} &  \\* 
+\Tr{babake akamwambiya} & \Tr{kisha kavuţa kalima} & \Tr{40d/c} \\ 
+\\[8mm] 
+
+\textarabic{ٹُنَنِ نَ مُمٖ وَنْڠُ} & \textarabic{أَكَمْوَمْبِيَ بَبَنْڠُ} & \textarabic{٤١} \\* 
+\Tr{ţunani na mume wangu} & \Tr{akamwambiya babangu} & \Tr{41b/a} \\ 
+\textarabic{سِ مْوٖنْيٖ كُچٖنْدٖلٖيَ} & \textarabic{كَبِسَ مَؤٗڤُ يَنْڠُ} &  \\* 
+\Tr{si mwenye kuchenḏeleya} & \Tr{kabisa maovu yangu} & \Tr{41d/c} \\ 
+\\[8mm] 
+
+\textarabic{سَسَ نِمٖفِكِرِ} & \textarabic{نَ مْٹُ أَلٗنِغُرِ} & \textarabic{٤٢} \\* 
+\Tr{sasa nimefikiri} & \Tr{na mţu aloniḡuri} & \Tr{42b/a} \\ 
+\textarabic{هَوٖزِ كُٹْوَنْڠَلِيَ} & \textarabic{هَٹُچٖنْدٖلٖئِ خٖيْرِ} &  \\* 
+\Tr{hawezi kuţwangaliya} & \Tr{haţuchenḏelei khēri} & \Tr{42d/c} \\ 
+\\[8mm] 
+
+\textarabic{مْٹُيٖ نِ شَيْطَانِ} & \textarabic{تٖنَ هُضُمُ مٗيٗنِ} & \textarabic{٤٣} \\* 
+\Tr{mţuye ni shayṭāni} & \Tr{ṯena huḍumu moyoni} & \Tr{43b/a} \\ 
+\textarabic{نِيَه مْبٗڤُ كُنِٹِيَ} & \textarabic{مْلَنِوَ مَلْعُوْنِ} &  \\* 
+\Tr{niyah mbovu kuniţiya} & \Tr{mlaniwa mal'ūni} & \Tr{43d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَ مٖنْڠِنٖ تهَنُظُمُ} & \textarabic{هَيَ نِمٖيَجِتِمُ} & \textarabic{٤٤} \\* 
+\Tr{na mengine ṯʿanuẓumu} & \Tr{haya nimeyajiṯimu} & \Tr{44b/a} \\ 
+\textarabic{نِمٖچٖنْدَ كُوَمْبِيَ} & \textarabic{جَمِيْعِ مُيَفَهَمُ} &  \\* 
+\Tr{nimechenḏa kuwambiya} & \Tr{jamī'i muyafahamu} & \Tr{44d/c} \\ 
+\\[8mm] 
+
+\textarabic{يٖؤٗ نِوَپٖ مَعَنَ} & \textarabic{فَهَمُنِ وَؤُنْڠْوَنَ} & \textarabic{٤٥} \\* 
+\Tr{yeo niwape ma'ana} & \Tr{fahamuni waungwana} & \Tr{45b/a} \\ 
+\textarabic{حُجَ نَلٗئِوَتِيَ} & \textarabic{پٖٹٖ يَنْڠُ ي عَيْنَ} &  \\* 
+\Tr{ḥuja naloiwaṯiya} & \Tr{peţe yangu ı̄ 'ayna} & \Tr{45d/c} \\ 
+\\[8mm] 
+
+\textarabic{سِ مَهَبَ كُنِزِدِ} & \textarabic{نَلِئِوَتَ قَصِدِ} & \textarabic{٤٦} \\* 
+\Tr{si mahaba kuniziḏi} & \Tr{naliiwaṯa qaṣiḏi} & \Tr{46b/a} \\ 
+\textarabic{أَصِلِ إِكَپٗتِيَ} & \textarabic{مَرَ هُزَءَ وَلِدِ} &  \\* 
+\Tr{aṣili ikapoṯiya} & \Tr{mara huzaa waliḏi} & \Tr{46d/c} \\ 
+\\[8mm] 
+
+\textarabic{نْدِيٗ يٗتٖ يَلٗجِرِ} & \textarabic{بَسِ نَلٗيَفِكِرِ} & \textarabic{٤٧} \\* 
+\Tr{nḏiyo yoṯe yalojiri} & \Tr{basi naloyafikiri} & \Tr{47b/a} \\ 
+\textarabic{وَ مَوْلَانَا عَلِيَ} & \textarabic{أَكَزَوَ جَعْفَرِ} &  \\* 
+\Tr{wa mawlānā 'aliya} & \Tr{akazawa ja'fari} & \Tr{47d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَ بَبَكٖ وَ كِفَنَ} & \textarabic{أَكَئِسِنْڠَ كِجَنَ} & \textarabic{٤٨} \\* 
+\Tr{na babake wa kifana} & \Tr{akaisinga kijana} & \Tr{48b/a} \\ 
+\textarabic{صُوْرَ زَ لِكِمْوَمْبِيَ} & \textarabic{كُلَ أَلٗكِمُؤٗنَ} &  \\* 
+\Tr{ṣūra za likimwambiya} & \Tr{kula alokimuona} & \Tr{48d/c} \\ 
+\\[8mm] 
+
+\textarabic{عَلِى هَنَ هَبَرِ} & \textarabic{وَٹُ وَلِكِنُكُرِ} & \textarabic{٤٩} \\* 
+\Tr{'alii hana habari} & \Tr{waţu walikinukuri} & \Tr{49b/a} \\ 
+\textarabic{َٰأَكَفِكَ كُمْوَمْبِيَ} & \textarabic{هَتَ مْمٗيَ كْوَ سِرِ} &  \\* 
+\Tr{äaakafika kumwambiya} & \Tr{haṯa mmoya kwa siri} & \Tr{49d/c} \\ 
+\\[8mm] 
+
+\textarabic{كَمُؤٗنَ مُعَيَنِ} & \textarabic{أَلِپٗپٖنْدَ مَنَانِ} & \textarabic{٥٠} \\* 
+\Tr{kamuona mu'ayani} & \Tr{alipopenḏa manāni} & \Tr{50b/a} \\ 
+\textarabic{أَكٖنْدَ كُچَنْڠَلِيَ} & \textarabic{كُنَ كِسِمَ مْوِٹُنِ} &  \\* 
+\Tr{akenḏa kuchangaliya} & \Tr{kuna kisima mwiţuni} & \Tr{50d/c} \\ 
+\\[8mm] 
+
+\textarabic{مَاءِ أَسِپٗيَتَكَ} & \textarabic{نَاءٖ أَكٖنْدَ كْوَ شَكَ} & \textarabic{٥١} \\* 
+\Tr{mai asipoyaṯaka} & \Tr{nae akenḏa kwa shaka} & \Tr{51b/a} \\ 
+\textarabic{كِوَزِ أَكِچٖنْدٖيَ} & \textarabic{نَاءٖ أَلِكِفُنِكَ} &  \\* 
+\Tr{kiwazi akichenḏeya} & \Tr{nae alikifunika} & \Tr{51d/c} \\ 
+\\[8mm] 
+
+\textarabic{كِوَزَ نَ كُفِكِرِ} & \textarabic{هَپٗ عَلِى حَيْدَرِ} & \textarabic{٥٢} \\* 
+\Tr{kiwaza na kufikiri} & \Tr{hapo 'alii ḥayḏari} & \Tr{52b/a} \\ 
+\textarabic{يٖؤٗ كُنِفُنُلِيَ} & \textarabic{وَمٖكُيَ مَكَفِرِ} &  \\* 
+\Tr{yeo kunifunuliya} & \Tr{wamekuya makafiri} & \Tr{52d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَ يٖؤٗ تهَكِفُنِكَ} & \textarabic{كِشَ أَكَتَمْكَ} & \textarabic{٥٣} \\* 
+\Tr{na yeo ṯʿakifunika} & \Tr{kisha akaṯamka} & \Tr{53b/a} \\ 
+\textarabic{مْٹُيٖ أَمٖزٗوٖيَ} & \textarabic{سِنَ بَدِ تهَمْشِكَ} &  \\* 
+\Tr{mţuye amezoweya} & \Tr{sina baḏi ṯʿamshika} & \Tr{53d/c} \\ 
+\\[8mm] 
+
+\textarabic{جَعْفَرِ كَئٖڠٖمَ} & \textarabic{أَچٗنْدٗكَ هُكُ نْيُمَ} & \textarabic{٥٤} \\* 
+\Tr{ja'fari kaegema} & \Tr{achonḏoka huku nyuma} & \Tr{54b/a} \\ 
+\textarabic{مْبَلِ أَكَلَتِلِيَ} & \textarabic{لِلٖ نَاءٗ كَسُكُمَ} &  \\* 
+\Tr{mbali akalaṯiliya} & \Tr{lile nao kasukuma} & \Tr{54d/c} \\ 
+\\[8mm] 
+
+\textarabic{جَعْفَرِ أُكَلِكٗ نْيُمَ} & \textarabic{مْبُزِ وَكَنْوَ كْوَ هِمَ} & \textarabic{٥٥} \\* 
+\Tr{ja'fari ukaliko nyuma} & \Tr{mbuzi wakanwa kwa hima} & \Tr{55b/a} \\ 
+\textarabic{عَلِيْ هُمْوَنْڠَلِيَ} & \textarabic{كِشَ نَاءٖ كَئٖڠٖمَ} &  \\* 
+\Tr{'alii humwangaliya} & \Tr{kisha nae kaegema} & \Tr{55d/c} \\ 
+\\[8mm] 
+
+\textarabic{ٹُتَصِنْدَنَ قَصِدِ} & \textarabic{أَپٖڠٖمَ كُرَدِدِ} & \textarabic{٥٦} \\* 
+\Tr{ţuṯaṣinḏana qaṣiḏi} & \Tr{apegema kuraḏiḏi} & \Tr{56b/a} \\ 
+\textarabic{هَلِدِرِكِ أَكِيَ} & \textarabic{كْوَ ندَ يٖؤٗ أَكِرُدِ} &  \\* 
+\Tr{haliḏiriki akiya} & \Tr{kwa nḏa yeo akiruḏi} & \Tr{56d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَيَپٗ أَتَنِكِرِ} & \textarabic{چَمْبَ هُفَنْيَ نِ بِرِ} & \textarabic{٥٧} \\* 
+\Tr{ayapo aṯanikiri} & \Tr{chamba hufanya ni biri} & \Tr{57b/a} \\ 
+\textarabic{نْڠٗٹٖ تهَمْفِنِكِيَ} & \textarabic{هِلِ لِپٖٹٖ بَنْدَرِ} &  \\* 
+\Tr{ngoţe ṯʿamfinikiya} & \Tr{hili lipeţe banḏari} & \Tr{57d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَ عَلِى أَكَتٗكَ} & \textarabic{مَاءِ كَٹِكَ كُٹٖكَ} & \textarabic{٥٨} \\* 
+\Tr{na 'alii akaṯoka} & \Tr{mai kaţika kuţeka} & \Tr{58b/a} \\ 
+\textarabic{جَعْفَرِ كَمْوَمْبِيَ} & \textarabic{مْكٗنٗ أَكَمْصِكَ} &  \\* 
+\Tr{ja'fari kamwambiya} & \Tr{mkono akamṣika} & \Tr{58d/c} \\ 
+\\[8mm] 
+
+\textarabic{مِمِ سِكُچِ سِنَنِ} & \textarabic{وٖوٖ هُنِشِكِيَنِ} & \textarabic{٥٩} \\* 
+\Tr{mimi sikuchi sinani} & \Tr{wewe hunishikiyani} & \Tr{59b/a} \\ 
+\textarabic{نَيُوَ كُكُسٗمٖيَ} & \textarabic{هَتَ أُكِوَ نِ جِنِ} &  \\* 
+\Tr{nayuwa kukusomeya} & \Tr{haṯa ukiwa ni jini} & \Tr{59d/c} \\ 
+\\[8mm] 
+
+\textarabic{سِكُيَنٖنَ كْوَ سِرِ} & \textarabic{هَيَ نِمٖزٗفَسِرِ} & \textarabic{٦٠} \\* 
+\Tr{sikuyanena kwa siri} & \Tr{haya nimezofasiri} & \Tr{60b/a} \\ 
+\textarabic{نَ زَيْدِ تهَكْوَمْبِيَ} & \textarabic{أُكِتَكَ أَظْهَرِ} &  \\* 
+\Tr{na zayḏi ṯʿakwambiya} & \Tr{ukiṯaka aẓhari} & \Tr{60d/c} \\ 
+\\[8mm] 
+
+\textarabic{وَكَوَنَ سَاءَ مْبِلِ} & \textarabic{كَمْڠُٹِيَ كْوَ مْبَلِ} & \textarabic{٦١} \\* 
+\Tr{wakawana saa mbili} & \Tr{kamguţiya kwa mbali} & \Tr{61b/a} \\ 
+\textarabic{جَعْفَرِ كَمْوَمْبِيَ} & \textarabic{كِشَ كَڠُٹَ قَوْلِ} &  \\* 
+\Tr{ja'fari kamwambiya} & \Tr{kisha kaguţa qawli} & \Tr{61d/c} \\ 
+\\[8mm] 
+
+\textarabic{مْوَنَ آدَمُ نْنَنِ} & \textarabic{كَمْوَمْبِيَ مْبَئِنِ} & \textarabic{٦٢} \\* 
+\Tr{mwana ḏamu nnani} & \Tr{kamwambiya mbaini} & \Tr{62b/a} \\ 
+\textarabic{نْدِپٗ أُكَنِؤٗنٖيَ} & \textarabic{بَبَ هَكٗ دُنِيَنِ} &  \\* 
+\Tr{nḏipo ukanioneya} & \Tr{baba hako ḏuniyani} & \Tr{62d/c} \\ 
+\\[8mm] 
+
+\textarabic{وٖوٖ بَبَكٗ نِ نَنِ} & \textarabic{كَمُؤٗزَ هُنٖنَنِ} & \textarabic{٦٣} \\* 
+\Tr{wewe babako ni nani} & \Tr{kamuoza hunenani} & \Tr{63b/a} \\ 
+\textarabic{عَلِى كَيَنْڠَلِيَ} & \textarabic{كَمْبَ نِ پٖٹٖ چَنْدَنِ} &  \\* 
+\Tr{'alii kayangaliya} & \Tr{kamba ni peţe chanḏani} & \Tr{63d/c} \\ 
+\\[8mm] 
+
+\textarabic{كِسٗمَ نَ جِنَ لَكٖ} & \textarabic{پٖٹٖ كُئِيٗنَ كْوَكٖ} & \textarabic{٦٤} \\* 
+\Tr{kisoma na jina lake} & \Tr{peţe kuiyona kwake} & \Tr{64b/a} \\ 
+\textarabic{نَ مَيُتٗ كُمْنْڠِيَ} & \textarabic{أَرُدِ أَسِكِتِكٖ} &  \\* 
+\Tr{na mayuṯo kumngiya} & \Tr{aruḏi asikiṯike} & \Tr{64d/c} \\ 
+\\[8mm] 
+
+\textarabic{سِنْڠَلِكُپِجِئٖ} & \textarabic{كِشَ هَپٗ أَمْوَمْبِئٖ} & \textarabic{٦٥} \\* 
+\Tr{singalikupijie} & \Tr{kisha hapo amwambie} & \Tr{65b/a} \\ 
+\textarabic{بَبَكٗ نْدِيٖ عَلِيَ} & \textarabic{إِنَ لَكٗ هُئِٹْوَيٖ} &  \\* 
+\Tr{babako nḏiye 'aliya} & \Tr{ina lako huiţwaye} & \Tr{65d/c} \\ 
+\\[8mm] 
+
+\textarabic{كَمَ سِكُكُفَهَمُ} & \textarabic{نِنْڠَلِپٗتٖزَ دَمُ} & \textarabic{٦٦} \\* 
+\Tr{kama sikukufahamu} & \Tr{ningalipoṯeza ḏamu} & \Tr{66b/a} \\ 
+\textarabic{جَعْفَرِ كَمْوَمْبِيَ} & \textarabic{أَكِشَ كَتَكَلَمُ} &  \\* 
+\Tr{ja'fari kamwambiya} & \Tr{akisha kaṯakalamu} & \Tr{66d/c} \\ 
+\\[8mm] 
+
+\textarabic{هُمُؤُزِ لَكٖ إِنَ} & \textarabic{وٖوٖ مْٹُ هُمُؤٗنَ} & \textarabic{٦٧} \\* 
+\Tr{humuuzi lake ina} & \Tr{wewe mţu humuona} & \Tr{67b/a} \\ 
+\textarabic{أُلِؤٗنَ تهَكَمْبِيَ} & \textarabic{هُجِؤٗنَ أُجَڠِنَ} &  \\* 
+\Tr{uliona ṯʿakambiya} & \Tr{hujiona ujagina} & \Tr{67d/c} \\ 
+\\[8mm] 
+
+\textarabic{إِنُكَإٖوٖ بَبَنْڠُ} & \textarabic{كْوَنْزَ نِپَ پٖٹٖ يَنْڠُ} & \textarabic{٦٨} \\* 
+\Tr{inukaewe babangu} & \Tr{kwanza nipa peţe yangu} & \Tr{68b/a} \\ 
+\textarabic{مْوِلِنِ كُنِٹِيَ} & \textarabic{هُنْڠَلِوٖزٖ مَتُنْڠُ} &  \\* 
+\Tr{mwilini kuniţiya} & \Tr{hungaliweze maṯungu} & \Tr{68d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَمُيُوَ سُرَ زَكٖ} & \textarabic{أَكَمْوَمْبِيَ مَمَكٖ} & \textarabic{٦٩} \\* 
+\Tr{namuyuwa sura zake} & \Tr{akamwambiya mamake} & \Tr{69b/a} \\ 
+\textarabic{إِنَ لَكٖ أَمْوَمْبِيٖ} & \textarabic{نَاءٖ هَپٗ أَتَمْكٖ} &  \\* 
+\Tr{ina lake amwambiye} & \Tr{nae hapo aṯamke} & \Tr{69d/c} \\ 
+\\[8mm] 
+
+\textarabic{مِمِ هُئِٹْوَ جَعْفَرِ} & \textarabic{كِمْوَمْبِيَ كَفَسِرِ} & \textarabic{٧٠} \\* 
+\Tr{mimi huiţwa ja'fari} & \Tr{kimwambiya kafasiri} & \Tr{70b/a} \\ 
+\textarabic{نَ مْوَكَ نِ وَ تِسِيَ} & \textarabic{وَ عَلِيْ حَيْدَرِ} &  \\* 
+\Tr{na mwaka ni wa ṯisiya} & \Tr{wa 'alii ḥayḏari} & \Tr{70d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَ أُوَپٖكٖ ݝْدِيَنِ} & \textarabic{وَتٗوٖ مْبُزِ مْوِٹُنِ} & \textarabic{٧١} \\* 
+\Tr{na uwapeke ngḏiyani} & \Tr{waṯowe mbuzi mwiţuni} & \Tr{71b/a} \\ 
+\textarabic{جَعْفَرِ كَمْوَمْبِيَ} & \textarabic{ٹْوٖنٖنْدٖ زٖٹُ مُئِنِ} &  \\* 
+\Tr{ja'fari kamwambiya} & \Tr{ţwenenḏe zeţu muini} & \Tr{71d/c} \\ 
+\\[8mm] 
+
+\textarabic{نِنَ نَ مْوَلِمُ وَنْڠُ} & \textarabic{كَمَْمْبِيَ نٖنْدَ زَنْڠُ} & \textarabic{٧٢} \\* 
+\Tr{nina na mwalimu wangu} & \Tr{kamambiya nenḏa zangu} & \Tr{72b/a} \\ 
+\textarabic{كِشَ كٖشٗ نِتَكُيَ} & \textarabic{نِمُوَڠٖ نَ مَمَنْڠُ} &  \\* 
+\Tr{kisha kesho niṯakuya} & \Tr{nimuwage na mamangu} & \Tr{72d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَ مَپِمَ يَئِنُكَ} & \textarabic{كٖشٗ كُكِپَمْبَؤُكَ} & \textarabic{٧٣} \\* 
+\Tr{na mapima yainuka} & \Tr{kesho kukipambauka} & \Tr{73b/a} \\ 
+\textarabic{بَبَ يَكُوَصِلِيَ} & \textarabic{سَاءَ مٗيَ إِكِفِكَ} &  \\* 
+\Tr{baba yakuwaṣiliya} & \Tr{saa moya ikifika} & \Tr{73d/c} \\ 
+\\[8mm] 
+
+\textarabic{أُيَپٗ نْدِيَ يَ مْبَلِ} & \textarabic{أَكَمْطِبُ قَوْلِ} & \textarabic{٧٤} \\* 
+\Tr{uyapo nḏiya ya mbali} & \Tr{akamṭibu qawli} & \Tr{74b/a} \\ 
+\textarabic{أُسِتَكٖ كُپٗتٖيَ} & \textarabic{يَ مَكَه نِ يَ كُقُلِ} &  \\* 
+\Tr{usiṯake kupoṯeya} & \Tr{ya makah ni ya kuquli} & \Tr{74d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَسِ هَيَ نٖنْدَ زَكٗ} & \textarabic{كُمْرُدِشِيَ تَمْكٗ} & \textarabic{٧٥} \\* 
+\Tr{nasi haya nenḏa zako} & \Tr{kumruḏishiya ṯamko} & \Tr{75b/a} \\ 
+\textarabic{نَ نْدُزٗ نِسَلِمِيَ} & \textarabic{مْوَلِمُ نَ مَمَكٗ} &  \\* 
+\Tr{na nḏuzo nisalimiya} & \Tr{mwalimu na mamako} & \Tr{75d/c} \\ 
+\\[8mm] 
+
+\textarabic{كَمْوَمْبِيَ مَرْحَبَا} & \textarabic{نَاءٖ مْوَنَ وَ نَسَبَ} & \textarabic{٧٦} \\* 
+\Tr{kamwambiya marḥabā} & \Tr{nae mwana wa nasaba} & \Tr{76b/a} \\ 
+\textarabic{أُپٖنْدَ نِسَلِمِيَ} & \textarabic{نَمِ مُكٗ أَقْرَبَ} &  \\* 
+\Tr{upenḏa nisalimiya} & \Tr{nami muko aqraba} & \Tr{76d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَزْوَاجِ نَ ذُرِيَ} & \textarabic{سَلَامُ أَبُوْ بَكَرِ} & \textarabic{٧٧} \\* 
+\Tr{azwāji na dhuriya} & \Tr{salāmu abuu bakari} & \Tr{77b/a} \\ 
+\textarabic{هَؤٗ نَوَفَهَمِيَ} & \textarabic{سُزَاءٗ نَ إِظْهَارِ} &  \\* 
+\Tr{hao nawafahamiya} & \Tr{suzao na iẓhāri} & \Tr{77d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَكَمْوَمْبِيَ كْوَ هٖرِ} & \textarabic{نَسِ هَپٗ جَعْفَرِ} & \textarabic{٧٨} \\* 
+\Tr{akamwambiya kwa heri} & \Tr{nasi hapo ja'fari} & \Tr{78b/a} \\ 
+\textarabic{مْنْڠُ أَكَمُؤٗمْبٖيَ} & \textarabic{نَ عَلِى حَيْدَرِ} &  \\* 
+\Tr{mngu akamuombeya} & \Tr{na 'alii ḥayḏari} & \Tr{78d/c} \\ 
+\\[8mm] 
+
+\textarabic{كٖنْدَ كْوَ مْوَلِمُ وَكٖ} & \textarabic{مُئِنِ كُنْڠِيَ كْوَكٖ} & \textarabic{٧٩} \\* 
+\Tr{kenḏa kwa mwalimu wake} & \Tr{muini kungiya kwake} & \Tr{79b/a} \\ 
+\textarabic{كْوَءٗ هَيَسِكِلِيَ} & \textarabic{كَمْپَ هَبَرِ زَكٖ} &  \\* 
+\Tr{kwao hayasikiliya} & \Tr{kampa habari zake} & \Tr{79d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَكَلِيَ مُعَلِمُ} & \textarabic{أَكِشَ كُيَنُظُمَ} & \textarabic{٨٠} \\* 
+\Tr{akaliya mu'alimu} & \Tr{akisha kuyanuẓuma} & \Tr{80b/a} \\ 
+\textarabic{هَپٗ أُمٖزٗنَمْبِيَ} & \textarabic{كَمبَ وَنِٹِيَ هَمُ} &  \\* 
+\Tr{hapo umezonambiya} & \Tr{kamba waniţiya hamu} & \Tr{80d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَ وِنْڠِ وَ مَؤُذِكٗ} & \textarabic{ٖوَنِٹِيَ سِكِتِكٗ} & \textarabic{٨١} \\* 
+\Tr{na wingi wa maudhiko} & \Tr{ewaniţiya sikiṯiko} & \Tr{81b/a} \\ 
+\textarabic{سِوٖزِ كُكُزِوِيَ} & \textarabic{وَلَ نَ هُكٗ وٖنْدَكٗ} &  \\* 
+\Tr{siwezi kukuziwiya} & \Tr{wala na huko wenḏako} & \Tr{81d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَ هُكٗ أُ حَلِ ڠَنِ} & \textarabic{سِ رَحِمُ كُئٖنْدَنِ} & \textarabic{٨٢} \\* 
+\Tr{na huko u ḥali gani} & \Tr{si raḥimu kuenḏani} & \Tr{82b/a} \\ 
+\textarabic{نْدِيٖ وَ كُٹَنْڠُلِيَ} & \textarabic{نَاءٖ بَبَكٗ زِٹَنِ} &  \\* 
+\Tr{nḏiye wa kuţanguliya} & \Tr{nae babako ziţani} & \Tr{82d/c} \\ 
+\\[8mm] 
+
+\textarabic{كْوَنِ نَيُوَ نِ هَكِ} & \textarabic{نَ كُكِكِنْدَ سِتَكِ} & \textarabic{٨٣} \\* 
+\Tr{kwani nayuwa ni haki} & \Tr{na kukikinḏa siṯaki} & \Tr{83b/a} \\ 
+\textarabic{نَ زَيْدِ كِكْوٖٹٖيَ} & \textarabic{نِ رَضِ أَلٗفُلَكِ} &  \\* 
+\Tr{na zayḏi kikweţeya} & \Tr{ni raḍi alofulaki} & \Tr{83d/c} \\ 
+\\[8mm] 
+
+\textarabic{مَمَكٗ أَيَفَهَمُ} & \textarabic{أَكَمْوَمْبِيَ مْوَلِمُ} & \textarabic{٨٤} \\* 
+\Tr{mamako ayafahamu} & \Tr{akamwambiya mwalimu} & \Tr{84b/a} \\ 
+\textarabic{كْوَكٖ سِيَسِكِلِيَ} & \textarabic{كَمْجِبِشَ كَلِمُ} &  \\* 
+\Tr{kwake siyasikiliya} & \Tr{kamjibisha kalimu} & \Tr{84d/c} \\ 
+\\[8mm] 
+
+\textarabic{أُكَمُؤُلِزَ مَمَكٗ} & \textarabic{كَْوَمْبِيَ إٖنْدَ زَكٗ} & \textarabic{٨٥} \\* 
+\Tr{ukamuuliza mamako} & \Tr{kawambiya enḏa zako} & \Tr{85b/a} \\ 
+\textarabic{نَاءٖ تَكَلٗكْوَمْبِيَ} & \textarabic{أُسِكِزٖ مَتَمْكٗ} &  \\* 
+\Tr{nae ṯakalokwambiya} & \Tr{usikize maṯamko} & \Tr{85d/c} \\ 
+\\[8mm] 
+
+\textarabic{هَپٗ نْدِيَ كَيَنْدَمَ} & \textarabic{َكِشَ هِيٗ كَلِمَ} & \textarabic{٨٦} \\* 
+\Tr{hapo nḏiya kayanḏama} & \Tr{akisha hiyo kalima} & \Tr{86b/a} \\ 
+\textarabic{كْوَ مَمَكٖ أَكِنْڠِيَ} & \textarabic{مٗيٗ أُنَ هَلِمَمَ} &  \\* 
+\Tr{kwa mamake akingiya} & \Tr{moyo una halimama} & \Tr{86d/c} \\ 
+\\[8mm] 
+
+\textarabic{كّوَ أُپٗلِ نَ تَرَتِبُ} & \textarabic{كِنْڠِيَ كَوٖكَ كِبُ} & \textarabic{٨٧} \\* 
+\Tr{kkwa upoli na ṯaraṯibu} & \Tr{kingiya kaweka kibu} & \Tr{87b/a} \\ 
+\textarabic{جَعْفَرِ أَكَمْوَمْبِيَ} & \textarabic{مَمَكٖ كَتَعَجَبُ} &  \\* 
+\Tr{ja'fari akamwambiya} & \Tr{mamake kaṯa'ajabu} & \Tr{87d/c} \\ 
+\\[8mm] 
+
+\textarabic{وَٹُؤٗنٖشَ جَوْرِ} & \textarabic{كَمْبَ سِوٖ جَعْفَرِ} & \textarabic{٨٨} \\* 
+\Tr{waţuonesha jawri} & \Tr{kamba siwe ja'fari} & \Tr{88b/a} \\ 
+\textarabic{مْٹُ أَمٖزٗكِمْبِيَ} & \textarabic{هُنْڠِيَ كَمَ كْوَ سِرِ} &  \\* 
+\Tr{mţu amezokimbiya} & \Tr{hungiya kama kwa siri} & \Tr{88d/c} \\ 
+\\[8mm] 
+
+\textarabic{پَپٗ هَپٗ أَتَمْكٖ} & \textarabic{نَاصِرِ نِ نْدُڠُ يَكٖ} & \textarabic{٨٩} \\* 
+\Tr{papo hapo aṯamke} & \Tr{nāṣiri ni nḏugu yake} & \Tr{89b/a} \\ 
+\textarabic{هَتَكِ كُٹْوَنْڠَلِيَ} & \textarabic{عَيْنِ يَ مَنٗ يَكٖ} &  \\* 
+\Tr{haṯaki kuţwangaliya} & \Tr{'ayni ya mano yake} & \Tr{89d/c} \\ 
+\\[8mm] 
+
+\textarabic{تَكْوَمْبِيَ حُجَ يَكٖ} & \textarabic{إٖوٖ مِمِ سِؤُذِكٖ} & \textarabic{٩٠} \\* 
+\Tr{ṯakwambiya ḥuja yake} & \Tr{ewe mimi siudhike} & \Tr{90b/a} \\ 
+\textarabic{وَوِلِ وَمٖپٗتٖيَ} & \textarabic{يٖؤٗ أُنَ مْبُزِ وَكٖ} &  \\* 
+\Tr{wawili wamepoṯeya} & \Tr{yeo una mbuzi wake} & \Tr{90d/c} \\ 
+\\[8mm] 
+
+\textarabic{مٖوَتَنْڠَ هَوَؤٗنِ} & \textarabic{وَمٖتٗكَ صَفُنِ} & \textarabic{٩١} \\* 
+\Tr{mewaṯanga hawaoni} & \Tr{wameṯoka ṣafuni} & \Tr{91b/a} \\ 
+\textarabic{يُوَ نِ كَلِ لَنْدِيَ} & \textarabic{كِشَ أَتٗكَ مْوِٹُنِ} &  \\* 
+\Tr{yuwa ni kali lanḏiya} & \Tr{kisha aṯoka mwiţuni} & \Tr{91d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَكَمْپِجَ نَاصِرِ} & \textarabic{كَئِنُكَ جَعْفَرِ} & \textarabic{٩٢} \\* 
+\Tr{akampija nāṣiri} & \Tr{kainuka ja'fari} & \Tr{92b/a} \\ 
+\textarabic{يٖؤٗ نِكِكْوَنْڠَلِيَ} & \textarabic{زِتَكُتٗك جٖؤُرِ} &  \\* 
+\Tr{yeo nikikwangaliya} & \Tr{ziṯakuṯok jeuri} & \Tr{92d/c} \\ 
+\\[8mm] 
+
+\textarabic{كَمْشِكَ جَعْفَرِ} & \textarabic{هَپٗ مَمَ أَسِكِرِ} & \textarabic{٩٣} \\* 
+\Tr{kamshika ja'fari} & \Tr{hapo mama asikiri} & \Tr{93b/a} \\ 
+\textarabic{هَپٗ سِنْڠٖلِكِمْبِيَ} & \textarabic{إِوَپٗ نِ مِيْ نَاصِرِ} &  \\* 
+\Tr{hapo singelikimbiya} & \Tr{iwapo ni mii nāṣiri} & \Tr{93d/c} \\ 
+\\[8mm] 
+
+\textarabic{مْوَنَنْڠُ مْٹٗٹٗ وَكٗ} & \textarabic{نَاصِرِ نِ نْدُڠُ يَكٗ} & \textarabic{٩٤} \\* 
+\Tr{mwanangu mţoţo wako} & \Tr{nāṣiri ni nḏugu yako} & \Tr{94b/a} \\ 
+\textarabic{وَتَكُمْٹَنْڠُلِيَ} & \textarabic{كِشَ نِ عَوْنِ هَكٗ} &  \\* 
+\Tr{waṯakumţanguliya} & \Tr{kisha ni 'awni hako} & \Tr{94d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَكِؤُلِزْوَ هَنٖنِ} & \textarabic{أَلِئِنَمِيَ تِنِ} & \textarabic{٩٥} \\* 
+\Tr{akiulizwa haneni} & \Tr{aliinamiya ṯini} & \Tr{95b/a} \\ 
+\textarabic{هَيَ نِمٖزٗكْوَمْبِيَ} & \textarabic{يَمٖكُپَٹَ مْوٖنْدَنِ} &  \\* 
+\Tr{haya nimezokwambiya} & \Tr{yamekupaţa mwenḏani} & \Tr{95d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَاصِرِ هُتُأَدَبُ} & \textarabic{هَپٗ مَمَكٖ أَجِبُ} & \textarabic{٩٦} \\* 
+\Tr{nāṣiri huṯuaḏabu} & \Tr{hapo mamake ajibu} & \Tr{96b/a} \\ 
+\textarabic{نَمِ نَيُوَ طَبِيَ} & \textarabic{كِوَ وٖوٖ نِ هَرَبُ} &  \\* 
+\Tr{nami nayuwa ṭabiya} & \Tr{kiwa wewe ni harabu} & \Tr{96d/c} \\ 
+\\[8mm] 
+
+\textarabic{هَيَ نِپَ جَعْفَرِ} & \textarabic{نَتَكَ زَكٗ هَبَرِ} & \textarabic{٩٧} \\* 
+\Tr{haya nipa ja'fari} & \Tr{naṯaka zako habari} & \Tr{97b/a} \\ 
+\textarabic{صُوْرَ زِمٖكُپٗتٖيَ} & \textarabic{أُسٗ أُسِمٖمٖ هَرِ} &  \\* 
+\Tr{ṣūra zimekupoṯeya} & \Tr{uso usimeme hari} & \Tr{97d/c} \\ 
+\\[8mm] 
+
+\textarabic{وَتَكَ هَبَرِ ڠَنِ} & \textarabic{جَعْفَرِ أَكَبَئِنِ} & \textarabic{٩٨} \\* 
+\Tr{waṯaka habari gani} & \Tr{ja'fari akabaini} & \Tr{98b/a} \\ 
+\textarabic{كْوَكٗ إِوٖ نَ پِيَ} & \textarabic{نِكْوَمْبِيَ لُغه ڠَنِ} &  \\* 
+\Tr{kwako iwe na piya} & \Tr{nikwambiya luḡh gani} & \Tr{98d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَيُوَ أُتَنِجِبُ} & \textarabic{كِكْوَمْبِيَ كِعَرَبُ} & \textarabic{٩٩} \\* 
+\Tr{nayuwa uṯanijibu} & \Tr{kikwambiya ki'arabu} & \Tr{99b/a} \\ 
+\textarabic{مِمِ مْوٖنْيٖوٖ كُكْوَمْبِيَ} & \textarabic{تٖنَ نَؤٗنَ عَجَبُ} &  \\* 
+\Tr{mimi mwenyewe kukwambiya} & \Tr{ṯena naona 'ajabu} & \Tr{99d/c} \\ 
+\\[8mm] 
+
+\textarabic{بَبَ هُنَمْبِيَ هَكٗ} & \textarabic{كِكُؤُلِزَ أَلِكٗ} & \textarabic{١٠٠} \\* 
+\Tr{baba hunambiya hako} & \Tr{kikuuliza aliko} & \Tr{100b/a} \\ 
+\textarabic{أَلِفَرِكِ دُُنِيَ} & \textarabic{يَنْڠُ نِنَ مِمْبَ يَكٗ} &  \\* 
+\Tr{alifariki ḏuuniya} & \Tr{yangu nina mimba yako} & \Tr{100d/c} \\ 
+\\[8mm] 
+
+\textarabic{أُتَڠٖؤُزَ مَنْڠِنٖ} & \textarabic{كِكْوَمْبِيَ يُمُئِنِ} & \textarabic{١٠١} \\* 
+\Tr{uṯageuza mangine} & \Tr{kikwambiya yumuini} & \Tr{101b/a} \\ 
+\textarabic{خٖيْرِ كُئِنْيَمَزِيَ} & \textarabic{أُتَنَمْبِيَ وَ فٖنٖ} &  \\* 
+\Tr{khēri kuinyamaziya} & \Tr{uṯanambiya wa fene} & \Tr{101d/c} \\ 
+\\[8mm] 
+
+\textarabic{وَلَ مَكَه هُكُئِسِ} & \textarabic{وٖوٖ هُيَوَ فَرِسِ} & \textarabic{١٠٢} \\* 
+\Tr{wala makah hukuisi} & \Tr{wewe huyawa farisi} & \Tr{102b/a} \\ 
+\textarabic{أُكَمُؤٗنَ عَلِيَ} & \textarabic{وٖنْدٖلٖپِ مَجْلِسِ} &  \\* 
+\Tr{ukamuona 'aliya} & \Tr{wenḏelepi majlisi} & \Tr{102d/c} \\ 
+\\[8mm] 
+
+\textarabic{ٹُمٖؤٗنَنَ مْوِٹُنِ} & \textarabic{جَعْفَرِ كَبَئِنِ} & \textarabic{١٠٣} \\* 
+\Tr{ţumeonana mwiţuni} & \Tr{ja'fari kabaini} & \Tr{103b/a} \\ 
+\textarabic{أُكِتَكَ نَكْوَمْبِيَ} & \textarabic{صِفَ زَكٖ مُعَيَنِ} &  \\* 
+\Tr{ukiṯaka nakwambiya} & \Tr{ṣifa zake mu'ayani} & \Tr{103d/c} \\ 
+\\[8mm] 
+
+\textarabic{كِوَ سِيٗ أُنِرُدِ} & \textarabic{نِسِكِزَ نِرَدِدِ} & \textarabic{١٠٤} \\* 
+\Tr{kiwa siyo uniruḏi} & \Tr{nisikiza niraḏiḏi} & \Tr{104b/a} \\ 
+\textarabic{كَمَ چَنْڠُ أَنْڠَلِيَ} & \textarabic{كِمٗ چَكٖ هَكِزِدِ} &  \\* 
+\Tr{kama changu angaliya} & \Tr{kimo chake hakiziḏi} & \Tr{104d/c} \\ 
+\\[8mm] 
+
+\textarabic{نْيٖيْ زَكٖ زَ كِتْوَنِ} & \textarabic{نَ لَ پِلِ نِبَئِنِ} & \textarabic{١٠٥} \\* 
+\Tr{nyee zake za kiṯwani} & \Tr{na la pili nibaini} & \Tr{105b/a} \\ 
+\textarabic{نَ كَمَ سِيٗ نَمْبِيَ} & \textarabic{مَكُمٖيَ أُپَآنِ} &  \\* 
+\Tr{na kama siyo nambiya} & \Tr{makumeya upani} & \Tr{105d/c} \\ 
+\\[8mm] 
+
+\textarabic{أُنَ ٹُنْدُ يَ كُزِمُ} & \textarabic{نَ يَ ٹَاٹُ أُفَهَمُ} & \textarabic{١٠٦} \\* 
+\Tr{una ţunḏu ya kuzimu} & \Tr{na ya ţāţu ufahamu} & \Tr{106b/a} \\ 
+\textarabic{نَ هِزٗ نِمٖكْوَمْبِيَ} & \textarabic{صِفَ زَكٖ زٖمٖيِمُ} &  \\* 
+\Tr{na hizo nimekwambiya} & \Tr{ṣifa zake zemeyimu} & \Tr{106d/c} \\ 
+\\[8mm] 
+
+\textarabic{كِشَ نِ جَڠِنَ مْنٗ} & \textarabic{نِ زَ عُوفُ وَ مَنٖنٗ} & \textarabic{١٠٧} \\* 
+\Tr{kisha ni jagina mno} & \Tr{ni za 'ūfu wa maneno} & \Tr{107b/a} \\ 
+\textarabic{هُنُ نِمٖكُپِجِنَ} & \textarabic{نَ أُكِتَكَ مْفَنٗ} &  \\* 
+\Tr{hunu nimekupijina} & \Tr{na ukiṯaka mfano} & \Tr{107d/c} \\ 
+\\[8mm] 
+
+\textarabic{نِ كْوٖلِ نْدِيٗ يَلِيٗ} & \textarabic{هَيٗ أُنَمْبِزِ يٖؤٗ} & \textarabic{١٠٨} \\* 
+\Tr{ni kweli nḏiyo yaliyo} & \Tr{hayo unambizi yeo} & \Tr{108b/a} \\ 
+\textarabic{هَتَ كُمْفَهَمِيَ} & \textarabic{نِپَ جِنْسِ يَوٖءٖؤٗ} &  \\* 
+\Tr{haṯa kumfahamiya} & \Tr{nipa jinsi yaweeo} & \Tr{108d/c} \\ 
+\\[8mm] 
+
+\textarabic{هِكِ چَكَ نِ ثَقِلِ} & \textarabic{تَكُپَ ٹَنْڠُ أَوَلِ} & \textarabic{١٠٩} \\* 
+\Tr{hiki chaka ni thaqili} & \Tr{ṯakupa ţangu awali} & \Tr{109b/a} \\ 
+\textarabic{نِكَتَكَسَ نَ نْدِيَ} & \textarabic{كِتَنْڠَ مَاءِ نِ غَالِ} &  \\* 
+\Tr{nikaṯakasa na nḏiya} & \Tr{kiṯanga mai ni ḡāli} & \Tr{109d/c} \\ 
+\\[8mm] 
+
+\textarabic{نِمٖتَنْڠَ بَرَ هِلِ} & \textarabic{صَدِقِ يَنْڠُ قَوْلِ} & \textarabic{١١٠} \\* 
+\Tr{nimeṯanga bara hili} & \Tr{ṣaḏiqi yangu qawli} & \Tr{110b/a} \\ 
+\textarabic{نِ خٖيْرِ كَئِرُدِيَ} & \textarabic{مَاءَ هَپَنَ مَهَلِ} &  \\* 
+\Tr{ni khēri kairuḏiya} & \Tr{maa hapana mahali} & \Tr{110d/c} \\ 
+\\[8mm] 
+
+\textarabic{نٖنٖنْدٖ جَنِبُ ڠَنِ} & \textarabic{هٖنْدَ هِوَزَ مٗيٗنِ} & \textarabic{١١١} \\* 
+\Tr{nenenḏe janibu gani} & \Tr{henḏa hiwaza moyoni} & \Tr{111b/a} \\ 
+\textarabic{وَٹَٹُ وٖنْدٖمٖ نْدِيَ} & \textarabic{كُؤٗنَ وَٹُ وٖنْڠِنٖ} &  \\* 
+\Tr{waţaţu wenḏeme nḏiya} & \Tr{kuona waţu wengine} & \Tr{111d/c} \\ 
+\\[8mm] 
+
+\textarabic{كِنٖنَ نَئِمُهُلِ} & \textarabic{كَوَءٗنَ وَكٗ مْبَلِ} & \textarabic{١١٢} \\* 
+\Tr{kinena naimuhuli} & \Tr{kawaona wako mbali} & \Tr{112b/a} \\ 
+\textarabic{مَاءَ وَنِنِمْبِيَ} & \textarabic{مَرَ نِكِوَصِلِ} &  \\* 
+\Tr{maa waninimbiya} & \Tr{mara nikiwaṣili} & \Tr{112d/c} \\ 
+\\[8mm] 
+
+\textarabic{هَتَ نَاءٗ وَكَپِٹَ} & \textarabic{پَنَ كِڤُلِ كِنْيٖسَ} & \textarabic{١١٣} \\* 
+\Tr{haṯa nao wakapiţa} & \Tr{pana kivuli kinyesa} & \Tr{113b/a} \\ 
+\textarabic{سَلَامُ كَوَپِسِيَ} & \textarabic{نِوَوٖنٖ وَكِنُسَ} &  \\* 
+\Tr{salāmu kawapisiya} & \Tr{niwawene wakinusa} & \Tr{113d/c} \\ 
+\\[8mm] 
+
+\textarabic{كِكِ نِ كِپُنْڠُ كَٹِ} & \textarabic{كَمْبَ مْوٖنْدَپِ مَتِتِ} & \textarabic{١١٤} \\* 
+\Tr{kiki ni kipungu kaţi} & \Tr{kamba mwenḏapi maṯiṯi} & \Tr{114b/a} \\ 
+\textarabic{لِپَٹٖ كُپِنْدُكِيَ} & \textarabic{هٖلَ نْدٗنِ مُكٖيْتِ} &  \\* 
+\Tr{lipaţe kupinḏukiya} & \Tr{hela nḏoni mukēṯi} & \Tr{114d/c} \\ 
+\\[8mm] 
+
+\textarabic{كُلَنْدَمَ نِ خَطَرِ} & \textarabic{نَ هِلِ يُوَ سِ زُرِ} & \textarabic{١١٥} \\* 
+\Tr{kulanḏama ni khaṭari} & \Tr{na hili yuwa si zuri} & \Tr{115b/a} \\ 
+\textarabic{كَمَ مُتَلِمَٹِيَ} & \textarabic{وَلَ زٖؤٗ سِ أَخِرِ} &  \\* 
+\Tr{kama muṯalimaţiya} & \Tr{wala zeo si akhiri} & \Tr{115d/c} \\ 
+\\[8mm] 
+
+\textarabic{وَكِزُنْڠُكِيَ نْيُمَ} & \textarabic{وَكِسِكِيَ كَلِمَ} & \textarabic{١١٦} \\* 
+\Tr{wakizungukiya nyuma} & \Tr{wakisikiya kalima} & \Tr{116b/a} \\ 
+\textarabic{مْمٗيَ كَنِٹِلِيَ} & \textarabic{وَوِلِ وَكَسِمَمَ} &  \\* 
+\Tr{mmoya kaniţiliya} & \Tr{wawili wakasimama} & \Tr{116d/c} \\ 
+\\[8mm] 
+
+\textarabic{كَنِؤُزَ نْدِوٖ نَنِ} & \textarabic{أَكِجَ أَكَبَئِنِ} & \textarabic{١١٧} \\* 
+\Tr{kaniuza nḏiwe nani} & \Tr{akija akabaini} & \Tr{117b/a} \\ 
+\textarabic{خَطَرِ كُٹُفِكِيَ} & \textarabic{أَوْ وَٹُتَكِيَنِ} &  \\* 
+\Tr{khaṭari kuţufikiya} & \Tr{aw waţuṯakiyani} & \Tr{117d/c} \\ 
+\\[8mm] 
+
+\textarabic{وَلَ سِ نْدُڠُ زَكٗ} & \textarabic{سِسِ هَٹُشِكَ يَكٗ} & \textarabic{١١٨} \\* 
+\Tr{wala si nḏugu zako} & \Tr{sisi haţushika yako} & \Tr{118b/a} \\ 
+\textarabic{يَپٖسٖنِ كُٹْوَمْبِيَ} & \textarabic{أُئٖٹَيٗ مَتَمْكٗ} &  \\* 
+\Tr{yapeseni kuţwambiya} & \Tr{ueţayo maṯamko} & \Tr{118d/c} \\ 
+\\[8mm] 
+
+\textarabic{نِ مْپٗتٖزَ قَوْمُ} & \textarabic{وٖوٖ نِ مْوَنَ آدَمُ} & \textarabic{١١٩} \\* 
+\Tr{ni mpoṯeza qawmu} & \Tr{wewe ni mwana ḏamu} & \Tr{119b/a} \\ 
+\textarabic{كْوَنْدَ ٹُيَوٖ طَبِيَ} & \textarabic{ٹْوَمْبِيٖ ٹُكَفَهَمُ} &  \\* 
+\Tr{kwanḏa ţuyawe ṭabiya} & \Tr{ţwambiye ţukafahamu} & \Tr{119d/c} \\ 
+\\[8mm] 
+
+\textarabic{نِ دِيْنِ يَكٖ رَسُوْلِ} & \textarabic{كَوَجِبِشَ قَوْلِ} & \textarabic{١٢٠} \\* 
+\Tr{ni ḏı̄ni yake rasūli} & \Tr{kawajibisha qawli} & \Tr{120b/a} \\ 
+\textarabic{مْبٖلٖ زَنْڠُ نٗنْدٗكٖيَ} & \textarabic{كِوَ وٖوٖ نِ جَمِلِ} &  \\* 
+\Tr{mbele zangu nonḏokeya} & \Tr{kiwa wewe ni jamili} & \Tr{120d/c} \\ 
+\\[8mm] 
+
+\textarabic{هُمْوِٹَ أَبُوْ بَكَرِ} & \textarabic{كِسِكِيَ هُفَسِرِ} & \textarabic{١٢١} \\* 
+\Tr{humwiţa abuu bakari} & \Tr{kisikiya hufasiri} & \Tr{121b/a} \\ 
+\textarabic{وٗتٖ وَوِلِ وَكَيَ} & \textarabic{نْدٗوْ وٖوٖ نَ زُبَيْرِ} &  \\* 
+\Tr{woṯe wawili wakaya} & \Tr{nḏoo wewe na zubayri} & \Tr{121d/c} \\ 
+\\[8mm] 
+
+\textarabic{أُسٗ وَكِنِٹِزَمَ} & \textarabic{وَكَيَ وَكَسِمَمَ} & \textarabic{١٢٢} \\* 
+\Tr{uso wakiniţizama} & \Tr{wakaya wakasimama} & \Tr{122b/a} \\ 
+\textarabic{وَجْهِ وَكٖ نَبِيَ} & \textarabic{كَمْبَ مُكِمْفَهَمَ} &  \\* 
+\Tr{wajhi wake nabiya} & \Tr{kamba mukimfahama} & \Tr{122d/c} \\ 
+\\[8mm] 
+
+\textarabic{عَلِي بِنْ طَالِبُ} & \textarabic{هُسِكِيَ هُنِجِبُ} & \textarabic{١٢٣} \\* 
+\Tr{'alii bin ṭālibu} & \Tr{husikiya hunijibu} & \Tr{123b/a} \\ 
+\textarabic{كْوَ وٗتٖ هُنَنْڠَلِيَ} & \textarabic{مَمَ وَمٖتَعَجَبُ} &  \\* 
+\Tr{kwa woṯe hunangaliya} & \Tr{mama wameṯa'ajabu} & \Tr{123d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَ هٗيٗ هُئِٹْوَ زُبٖئْرِ} & \textarabic{هٗىٗ نِ أَبُوْ بَكَرِ} & \textarabic{١٢٤} \\* 
+\Tr{na hoyo huiţwa zuberi} & \Tr{hoyo ni abuu bakari} & \Tr{124b/a} \\ 
+\textarabic{أِنَ ٹُكَلِسِكِيَ} & \textarabic{نَوٖ لَكٗ هُفَسِرِ} &  \\* 
+\Tr{ina ţukalisikiya} & \Tr{nawe lako hufasiri} & \Tr{124d/c} \\ 
+\\[8mm] 
+
+\textarabic{مِمِ هُئِٹْوَ أَزْوَجِ} & \textarabic{أَكَتَمْكَ مْبُجِ} & \textarabic{١٢٥} \\* 
+\Tr{mimi huiţwa azwaji} & \Tr{akaṯamka mbuji} & \Tr{125b/a} \\ 
+\textarabic{نَ إِنَ لَكٖ نَمْبِيَ} & \textarabic{نَمِ سَسَ نِتَرَجِ} &  \\* 
+\Tr{na ina lake nambiya} & \Tr{nami sasa niṯaraji} & \Tr{125d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَمِ إِنَ كُفَسِرِ} & \textarabic{كَوَمْبِيَ نِمٖكِرِ} & \textarabic{١٢٦} \\* 
+\Tr{nami ina kufasiri} & \Tr{kawambiya nimekiri} & \Tr{126b/a} \\ 
+\textarabic{وَ مَوْلَانَا عَلِيَ} & \textarabic{مِمِ نْدِيٖ جَعْفَرِ} &  \\* 
+\Tr{wa mawlānā 'aliya} & \Tr{mimi nḏiye ja'fari} & \Tr{126d/c} \\ 
+\\[8mm] 
+
+\textarabic{وٖنْدَءٗ وَپِ غَرِيْبُ} & \textarabic{وَنِؤُزٖ تَرَتِبُ} & \textarabic{١٢٧} \\* 
+\Tr{wenḏao wapi ḡarı̄bu} & \Tr{waniuze ṯaraṯibu} & \Tr{127b/a} \\ 
+\textarabic{نِتَكَلٗ كَوَمْبِيَ} & \textarabic{هَپٗ مَمَ كَوَجِبُ} &  \\* 
+\Tr{niṯakalo kawambiya} & \Tr{hapo mama kawajibu} & \Tr{127d/c} \\ 
+\\[8mm] 
+
+\textarabic{نِمٖچٗكَ سِيَؤٗنِ} & \textarabic{نِمٖتَنْڠَ مَاءَ بَرَنِ} & \textarabic{١٢٨} \\* 
+\Tr{nimechoka siyaoni} & \Tr{nimeṯanga maa barani} & \Tr{128b/a} \\ 
+\textarabic{سَسَ كُيُتَ هَلِيَ} & \textarabic{مْبُزِ وَمٖلِشَ يَنِ} &  \\* 
+\Tr{sasa kuyuṯa haliya} & \Tr{mbuzi wamelisha yani} & \Tr{128d/c} \\ 
+\\[8mm] 
+
+\textarabic{مَاءِ هَمْكُيَكُٹَ} & \textarabic{هُكٗ مْمٖزٗپِٹَ} & \textarabic{١٢٩} \\* 
+\Tr{mai hamkuyakuţa} & \Tr{huko mmezopiţa} & \Tr{129b/a} \\ 
+\textarabic{چَمْبَ مْوَيُوَ نَمْبِيَ} & \textarabic{مْبُزِ وَنْڠُ وَنَنْيٗٹَ} &  \\* 
+\Tr{chamba mwayuwa nambiya} & \Tr{mbuzi wangu wananyoţa} & \Tr{129d/c} \\ 
+\\[8mm] 
+
+\textarabic{كٔوَمْبَ كِسِمَ سِ مْبَلِ} & \textarabic{وَكَنِجِبُ قَوْلِ} & \textarabic{١٣٠} \\* 
+\Tr{kwamba kisima si mbali} & \Tr{wakanijibu qawli} & \Tr{130b/a} \\ 
+\textarabic{هِيٗ نْدٗوْ كُئِٹِيَ} & \textarabic{لَكِنِ كِنَ ثَقِلِ} &  \\* 
+\Tr{hiyo nḏoo kuiţiya} & \Tr{lakini kina thaqili} & \Tr{130d/c} \\ 
+\\[8mm] 
+
+\textarabic{مْفَنٗ وَ زَمْزَمُ} & \textarabic{هَيٗ مَاءِ نِ مَتَمُ} & \textarabic{١٣١} \\* 
+\Tr{mfano wa zamzamu} & \Tr{hayo mai ni maṯamu} & \Tr{131b/a} \\ 
+\textarabic{كُكُؤٗنْيَ هُچٖلٖيَ} & \textarabic{لَكِنِ سِسِ فَهَمُ} &  \\* 
+\Tr{kukuonya hucheleya} & \Tr{lakini sisi fahamu} & \Tr{131d/c} \\ 
+\\[8mm] 
+
+\textarabic{كُكُپٖكَ ٹُتَيَرِ} & \textarabic{أُوَپٗ أُمٖخِتَرِ} & \textarabic{١٣٢} \\* 
+\Tr{kukupeka ţuṯayari} & \Tr{uwapo umekhiṯari} & \Tr{132b/a} \\ 
+\textarabic{نِ سِسِ ٹُلٗكْوَمْبِيَ} & \textarabic{وَلَ أُسِٹُفَسِرِ} &  \\* 
+\Tr{ni sisi ţulokwambiya} & \Tr{wala usiţufasiri} & \Tr{132d/c} \\ 
+\\[8mm] 
+
+\textarabic{هَپٗ نْدِيٗ كَفُوَٹَ} & \textarabic{وَكَنِؤٗنْيَ أُسِٹَ} & \textarabic{١٣٣} \\* 
+\Tr{hapo nḏiyo kafuwaţa} & \Tr{wakanionya usiţa} & \Tr{133b/a} \\ 
+\textarabic{مْبِيٗ وَكَنِتٗلٖيَ} & \textarabic{كْوَ مْوِٹُنِ وَكَپِٹَ} &  \\* 
+\Tr{mbiyo wakaniṯoleya} & \Tr{kwa mwiţuni wakapiţa} & \Tr{133d/c} \\ 
+\\[8mm] 
+
+\textarabic{لِپٗ بَاءٗ كَسُكُمَ} & \textarabic{هَتَ كِدُسَ كِسِمَ} & \textarabic{١٣٤} \\* 
+\Tr{lipo bao kasukuma} & \Tr{haṯa kiḏusa kisima} & \Tr{134b/a} \\ 
+\textarabic{وَءٗ هُنِٹَنْڠَلِيَ} & \textarabic{كْوَ كِوَڤُ كُٹِزَمَ} &  \\* 
+\Tr{wao huniţangaliya} & \Tr{kwa kiwavu kuţizama} & \Tr{134d/c} \\ 
+\\[8mm] 
+
+\textarabic{بُوْ بَكَرِ سِشُٹُكٖ} & \textarabic{جَعْفَرِ أَتَمْكٖ} & \textarabic{١٣٥} \\* 
+\Tr{buu bakari sishuţuke} & \Tr{ja'fari aṯamke} & \Tr{135b/a} \\ 
+\textarabic{نِتَرُدِ كُكْوَمْبِيَ} & \textarabic{كِسِمَ سِكِفُنِكٖ} &  \\* 
+\Tr{niṯaruḏi kukwambiya} & \Tr{kisima sikifunike} & \Tr{135d/c} \\ 
+\\[8mm] 
+
+\textarabic{كُنْوَ مَاءِ مْبُزِ وَنْڠُ} & \textarabic{سِنَ خٗوْفُ مٗيٗ وَنْڠُ} & \textarabic{١٣٦} \\* 
+\Tr{kunwa mai mbuzi wangu} & \Tr{sina khōfu moyo wangu} & \Tr{136b/a} \\ 
+\textarabic{نِزِتَكَسٖ نَ نْدِيَ} & \textarabic{كِنٖنَ نٖنْدَ زَنْڠُ} &  \\* 
+\Tr{niziṯakase na nḏiya} & \Tr{kinena nenḏa zangu} & \Tr{136d/c} \\ 
+\\[8mm] 
+
+\textarabic{نِنَ فُرَهَ مُتٖكَ} & \textarabic{يُوَ كُكِپَمْبَؤُكَ} & \textarabic{١٣٧} \\* 
+\Tr{nina furaha muṯeka} & \Tr{yuwa kukipambauka} & \Tr{137b/a} \\ 
+\textarabic{مُدَ وَ يُوَ كُوَاءَ} & \textarabic{مَلِشٗنِ كِوَپٖكَ} &  \\* 
+\Tr{muḏa wa yuwa kuwaa} & \Tr{malishoni kiwapeka} & \Tr{137d/c} \\ 
+\\[8mm] 
+
+\textarabic{هَپٗ مْبُزِ كَوَسُتَ} & \textarabic{أَوَلِ يَ سَاءَ سِتَ} & \textarabic{١٣٨} \\* 
+\Tr{hapo mbuzi kawasuṯa} & \Tr{awali ya saa siṯa} & \Tr{138b/a} \\ 
+\textarabic{هُتُرِ نِ كُكُمْبِيَ} & \textarabic{نَؤٗنَ وَمٖنِوَتَ} &  \\* 
+\Tr{huṯuri ni kukumbiya} & \Tr{naona wameniwaṯa} & \Tr{138d/c} \\ 
+\\[8mm] 
+
+\textarabic{مْوَكُيُوَ كِسِمَنِ} & \textarabic{كَوَمْبِيَ إٖنٖنْدَنِ} & \textarabic{١٣٩} \\* 
+\Tr{mwakuyuwa kisimani} & \Tr{kawambiya enenḏani} & \Tr{139b/a} \\ 
+\textarabic{نْدِمَ وَ كُوَٹٖكٖيَ} & \textarabic{لَِكِنِ هُفَلِيَنِ} &  \\* 
+\Tr{nḏima wa kuwaţekeya} & \Tr{laikini hufaliyani} & \Tr{139d/c} \\ 
+\\[8mm] 
+
+\textarabic{كُفُنِشِوٖ كِسِمَ} & \textarabic{وَكٖنْدَ وَكَسِمَمَ} & \textarabic{١٤٠} \\* 
+\Tr{kufunishiwe kisima} & \Tr{wakenḏa wakasimama} & \Tr{140b/a} \\ 
+\textarabic{نِمٗيٖ مْٹُ أَكِيَ} & \textarabic{نَاءٗ نِكَلِسُكُمَ} &  \\* 
+\Tr{nimoye mţu akiya} & \Tr{nao nikalisukuma} & \Tr{140d/c} \\ 
+\\[8mm] 
+
+\textarabic{مَاءِ نِسِيَثٖكَ} & \textarabic{أَكِيَ أَكَنِشِكَ} & \textarabic{١٤١} \\* 
+\Tr{mai nisiyatheka} & \Tr{akiya akanishika} & \Tr{141b/a} \\ 
+\textarabic{يَ غَضَبُ كَمْوَمْبِيَ} & \textarabic{مَمَ هَپٗ كَتَمْكَ} &  \\* 
+\Tr{ya ḡaḍabu kamwambiya} & \Tr{mama hapo kaṯamka} & \Tr{141d/c} \\ 
+\\[8mm] 
+
+\textarabic{كُنٖٹٖيَ بَبَنْڠُ} & \textarabic{نِكَمُحِمِدِ مْنْڠُ} & \textarabic{١٤٢} \\* 
+\Tr{kuneţeya babangu} & \Tr{nikamuḥimiḏi mngu} & \Tr{142b/a} \\ 
+\textarabic{چَنْدَنِ كَمْتٗلٖيَ} & \textarabic{كَنِؤُزَ پٖٹٖ يَنْڠُ} &  \\* 
+\Tr{chanḏani kamṯoleya} & \Tr{kaniuza peţe yangu} & \Tr{142d/c} \\ 
+\\[8mm] 
+
+\textarabic{كَپِجَ نَ هَلِمَمَ} & \textarabic{پٖٹٖ أَكَئِٹِزِمَ} & \textarabic{١٤٣} \\* 
+\Tr{kapija na halimama} & \Tr{peţe akaiţizima} & \Tr{143b/a} \\ 
+\textarabic{يٗتٖ يَكَمْرُدِيَ} & \textarabic{يَپِسِيٖ يَ نْيُمَ} &  \\* 
+\Tr{yoṯe yakamruḏiya} & \Tr{yapisiye ya nyuma} & \Tr{143d/c} \\ 
+\\[8mm] 
+
+\textarabic{نِسِمْوَمْبِيَ كَئِزَ} & \textarabic{جِنَ أَلِپٗنِؤُلِزَ} & \textarabic{١٤٤} \\* 
+\Tr{nisimwambiya kaiza} & \Tr{jina aliponiuliza} & \Tr{144b/a} \\ 
+\textarabic{پِيَ نَ كُنِپِجِيَ} & \textarabic{أَكَنِپَ مِؤُجِزَ} &  \\* 
+\Tr{piya na kunipijiya} & \Tr{akanipa miujiza} & \Tr{144d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَ صِفَ زَ نْيُمْبَ يَكٗ} & \textarabic{أُنِپِيٖ شُوْرَ زَكٗ} & \textarabic{١٤٥} \\* 
+\Tr{na ṣifa za nyumba yako} & \Tr{unipiye shūra zako} & \Tr{145b/a} \\ 
+\textarabic{إِنَ لَنْڠُ كَمْوَمْبِيَ} & \textarabic{هَپٗ كَئٖٹَ تَمْكٗ} &  \\* 
+\Tr{ina langu kamwambiya} & \Tr{hapo kaeţa ṯamko} & \Tr{145d/c} \\ 
+\\[8mm] 
+
+\textarabic{نِزٖزٗوٖءٗ هَكِكَ} & \textarabic{نِكَمْوَمْبِيَ نْيَكَ} & \textarabic{١٤٦} \\* 
+\Tr{nizezoweo hakika} & \Tr{nikamwambiya nyaka} & \Tr{146b/a} \\ 
+\textarabic{نَ وٖوٖ تَرٖهٖ ٹِيَ} & \textarabic{نِ تِسِيَ زَسِزٗشَكَ} &  \\* 
+\Tr{na wewe ṯarehe ţiya} & \Tr{ni ṯisiya zasizoshaka} & \Tr{146d/c} \\ 
+\\[8mm] 
+
+\textarabic{نِمٖكُشَ أُفَهَمُ} & \textarabic{خَبَرِ زَكٖ تِمَمُ} & \textarabic{١٤٧} \\* 
+\Tr{nimekusha ufahamu} & \Tr{khabari zake ṯimamu} & \Tr{147b/a} \\ 
+\textarabic{نِمٖرُدِ كُمْوَمْبِيَ} & \textarabic{تٖنَ نَ كْوَ مْوَلِمُ} &  \\* 
+\Tr{nimeruḏi kumwambiya} & \Tr{ṯena na kwa mwalimu} & \Tr{147d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَسُبهِ نِ سَفَرِ} & \textarabic{نِمٖمُؤَڠَ كْوَ خٖيْرِ} & \textarabic{١٤٨} \\* 
+\Tr{asubhi ni safari} & \Tr{nimemuaga kwa khēri} & \Tr{148b/a} \\ 
+\textarabic{نَ رَصِ كُنِوٖيَ} & \textarabic{نِؤٗمْبٖيَ كْوَ جَبَارِ} &  \\* 
+\Tr{na raṣi kuniweya} & \Tr{niombeya kwa jabāri} & \Tr{148d/c} \\ 
+\\[8mm] 
+
+\textarabic{ٹُپٖنْدَنٖ نَ بَبَنْڠُ} & \textarabic{تٖنَ نِؤٗمْبٖيَ مْنْڠُ} & \textarabic{١٤٩} \\* 
+\Tr{ţupenḏane na babangu} & \Tr{ṯena niombeya mngu} & \Tr{149b/a} \\ 
+\textarabic{تَكُيَ كُوَنْڠَلِيَ} & \textarabic{نَمِ كِشَ مُنِ وَنڠُ} &  \\* 
+\Tr{ṯakuya kuwangaliya} & \Tr{nami kisha muni wangu} & \Tr{149d/c} \\ 
+\\[8mm] 
+
+\textarabic{مَمَكٖ أَسِحِمِلِ} & \textarabic{أَكِسَكِيَ قَوْلِ} & \textarabic{١٥٠} \\* 
+\Tr{mamake asiḥimili} & \Tr{akisakiya qawli} & \Tr{150b/a} \\ 
+\textarabic{كْوَ مَكٗنْدٖ كَئِٹِيَ} & \textarabic{أَكَتَرَدَدِ عَفِلِ} &  \\* 
+\Tr{kwa makonḏe kaiţiya} & \Tr{akaṯaraḏaḏi 'afili} & \Tr{150d/c} \\ 
+\\[8mm] 
+
+\textarabic{تِيَتِ أَكَئِرُشَ} & \textarabic{كَئِٹُنْدَ كَيِنْڠُشَ} & \textarabic{١٥١} \\* 
+\Tr{ṯiyaṯi akairusha} & \Tr{kaiţunḏa kayingusha} & \Tr{151b/a} \\ 
+\textarabic{إِكَوَ كُمْسٗمٖيَ} & \textarabic{هَتَ نْڠُوٗ كَمْڤِشَ} &  \\* 
+\Tr{ikawa kumsomeya} & \Tr{haṯa nguwo kamvisha} & \Tr{151d/c} \\ 
+\\[8mm] 
+
+\textarabic{كَمُحِمِدِ كَرِيْمُ} & \textarabic{َأَلِپٗپَٹَ فَهَمُ} & \textarabic{١٥٢} \\* 
+\Tr{kamuḥimiḏi karı̄mu} & \Tr{aalipopaţa fahamu} & \Tr{152b/a} \\ 
+\textarabic{مْنْڠُ أَكَمُؤٗمْبٖيَ} & \textarabic{كِشَ أَكَتَكَلَمُ} &  \\* 
+\Tr{mngu akamuombeya} & \Tr{kisha akaṯakalamu} & \Tr{152d/c} \\ 
+\\[8mm] 
+
+\textarabic{نِنُصُرِيَ مْوَنَنْڠُ} & \textarabic{يَا أَللّٰهُ مٗلَ وَنْڠُ} & \textarabic{١٥٣} \\* 
+\Tr{ninuṣuriya mwanangu} & \Tr{yā alllähu mola wangu} & \Tr{153b/a} \\ 
+\textarabic{حِفَظِنِ نِٹِلِيَ} & \textarabic{نَ وَٹٹُ وَ وٖنْزَنْڠُ} &  \\* 
+\Tr{ḥifaẓini niţiliya} & \Tr{na waţţu wa wenzangu} & \Tr{153d/c} \\ 
+\\[8mm] 
+
+\textarabic{نِرَضِ أَلْفُ مَرَ} & \textarabic{إٖنٖنْدَ هُنَ مَضَرَ} & \textarabic{١٥٤} \\* 
+\Tr{niraḍi alfu mara} & \Tr{enenḏa huna maḍara} & \Tr{154b/a} \\ 
+\textarabic{مٗيٗ نِمٖكُؤُصِيَ} & \textarabic{نَاوٖ أُوٖ نَ فِكِرَ} &  \\* 
+\Tr{moyo nimekuuṣiya} & \Tr{nāwe uwe na fikira} & \Tr{154d/c} \\ 
+\\[8mm] 
+
+\textarabic{سِيٗكُوَ نَ غَيْظِ} & \textarabic{مِمِ أُيَپٗنِؤُذِ} & \textarabic{١٥٥} \\* 
+\Tr{siyokuwa na ḡayẓi} & \Tr{mimi uyaponiudhi} & \Tr{155b/a} \\ 
+\textarabic{نَ كْوَ عَلِيْ زٖنْڠٖيَ} & \textarabic{إِوَپٗ وَتَكَ رَضِ} &  \\* 
+\Tr{na kwa 'alii zengeya} & \Tr{iwapo waṯaka raḍi} & \Tr{155d/c} \\ 
+\\[8mm] 
+
+\textarabic{كْوَ بَبَكٗ أُوٖ تِنِ} & \textarabic{إِتُنْدٖ أُوٖ نْيَؤٗنِ} & \textarabic{١٥٦} \\* 
+\Tr{kwa babako uwe ṯini} & \Tr{iṯunḏe uwe nyaoni} & \Tr{156b/a} \\ 
+\textarabic{كْوَكٗ لِپٗ مَرْصِيَ} & \textarabic{نَ أَتَكَلٗبَئِنِ} &  \\* 
+\Tr{kwako lipo marṣiya} & \Tr{na aṯakalobaini} & \Tr{156d/c} \\ 
+\\[8mm] 
+
+\textarabic{هَنَ بُدِ كُكُزِدِ} & \textarabic{نَ مْٹُمٖ مُحَمَدِ} & \textarabic{١٥٧} \\* 
+\Tr{hana buḏi kukuziḏi} & \Tr{na mţume muḥamaḏi} & \Tr{157b/a} \\ 
+\textarabic{نْڠَاءَ أُپَٹٖ وَصِيَ} & \textarabic{أَللّٰهَ اللّٰهَ جِتَهِدِ} &  \\* 
+\Tr{ngaa upaţe waṣiya} & \Tr{allläha lläha jiṯahiḏi} & \Tr{157d/c} \\ 
+\\[8mm] 
+
+\textarabic{كٖتِ نَاءٖ كْوَ ثَوَابُ} & \textarabic{نَاءٖ بِنْتِ حَبِيْبُ} & \textarabic{١٥٨} \\* 
+\Tr{keṯi nae kwa thawābu} & \Tr{nae binṯi ḥabı̄bu} & \Tr{158b/a} \\ 
+\textarabic{أُمْطِيْ نَ كُمْوَنْڠُكِيَ} & \textarabic{كْوَكٖ أُوٖ نَ أَدَبُ} &  \\* 
+\Tr{umṭii na kumwangukiya} & \Tr{kwake uwe na aḏabu} & \Tr{158d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَ چَكُلَ كِتَيَرِ} & \textarabic{أَكَتٗكَ جَعْفَرِ} & \textarabic{١٥٩} \\* 
+\Tr{na chakula kiṯayari} & \Tr{akaṯoka ja'fari} & \Tr{159b/a} \\ 
+\textarabic{نَ مْوَلِمُ كَتٗكٖيَ} & \textarabic{كَلَ نَ نْدُيٖ نَاصِرِ} &  \\* 
+\Tr{na mwalimu kaṯokeya} & \Tr{kala na nḏuye nāṣiri} & \Tr{159d/c} \\ 
+\\[8mm] 
+
+\textarabic{وٗتٖ وَٹَٹُ مفَنٗ} & \textarabic{وَكَتَنْڠَنْيَ مِكٗنٗ} & \textarabic{١٦٠} \\* 
+\Tr{woṯe waţaţu mfano} & \Tr{wakaṯanganya mikono} & \Tr{160b/a} \\ 
+\textarabic{نْدُڠُيٖ أَكِمْوَمْبِيَ} & \textarabic{أَكِنٖنَ نَ مَنٖنٗ} &  \\* 
+\Tr{nḏuguye akimwambiya} & \Tr{akinena na maneno} & \Tr{160d/c} \\ 
+\\[8mm] 
+
+\textarabic{يٖؤٗ نْدُيَنْڠُ كْوَ خٖيْرِ} & \textarabic{أَكَمْوَمْبِيَ نَاصِرِ} & \textarabic{١٦١} \\* 
+\Tr{yeo nḏuyangu kwa khēri} & \Tr{akamwambiya nāṣiri} & \Tr{161b/a} \\ 
+\textarabic{تَمَشَ تَكُلٖٹٖيَ} & \textarabic{تَكَپٗرُدِ سَفَرِ} &  \\* 
+\Tr{ṯamasha ṯakuleţeya} & \Tr{ṯakaporuḏi safari} & \Tr{161d/c} \\ 
+\\[8mm] 
+
+\textarabic{نِئٖٹٖيَ نَ فَرَسِ} & \textarabic{أَكَمْجِبُ أُپٖسِ} & \textarabic{١٦٢} \\* 
+\Tr{nieţeya na farasi} & \Tr{akamjibu upesi} & \Tr{162b/a} \\ 
+\textarabic{نَتَكَ كُمْوَنْڠَلِيَ} & \textarabic{نْيَمَ هُيٗ سِمُئِسِ} &  \\* 
+\Tr{naṯaka kumwangaliya} & \Tr{nyama huyo simuisi} & \Tr{162d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَكَمْبَ مَمَ هُتٗكَ} & \textarabic{كِشَ هَپٗ كَتَمْكَ} & \textarabic{١٦٣} \\* 
+\Tr{akamba mama huṯoka} & \Tr{kisha hapo kaṯamka} & \Tr{163b/a} \\ 
+\textarabic{صَدَكَ كَمْتٗلٖيَ} & \textarabic{مَمَكٖ أَكَئِنُكَ} &  \\* 
+\Tr{ṣaḏaka kamṯoleya} & \Tr{mamake akainuka} & \Tr{163d/c} \\ 
+\\[8mm] 
+
+\textarabic{إٖنٖنْدٖ أَمْفُوَتٖ} & \textarabic{هَپٗ مَمَكٖ أَتٗكٖ} & \textarabic{١٦٤} \\* 
+\Tr{enenḏe amfuwaṯe} & \Tr{hapo mamake aṯoke} & \Tr{164b/a} \\ 
+\textarabic{مْنْڠُ أَكِمُؤٗمْبٖيَ} & \textarabic{أَكِمْٹٖمٖيَ مَٹٖ} &  \\* 
+\Tr{mngu akimuombeya} & \Tr{akimţemeya maţe} & \Tr{164d/c} \\ 
+\\[8mm] 
+
+\textarabic{مْسٗمٖشٖ أَهِتِمُ} & \textarabic{هُي نَاصِرِ مْوَلِمُ} & \textarabic{١٦٥} \\* 
+\Tr{msomeshe ahiṯimu} & \Tr{huy nāṣiri mwalimu} & \Tr{165b/a} \\ 
+\textarabic{عَادَ يَكٗ تَكْوٖٹٖيَ} & \textarabic{أُمْفُنْدٖ نَعِلِمُ} &  \\* 
+\Tr{'āḏa yako ṯakweţeya} & \Tr{umfunḏe na'ilimu} & \Tr{165d/c} \\ 
+\\[8mm] 
+
+\textarabic{هَپٗ كَلِيَ نَاصِرِ} & \textarabic{أَكِتٗكَ جَعْفَرِ} & \textarabic{١٦٦} \\* 
+\Tr{hapo kaliya nāṣiri} & \Tr{akiṯoka ja'fari} & \Tr{166b/a} \\ 
+\textarabic{أُسِكُ أَتَرٖجٖيَ} & \textarabic{مَمَكٖ أَكَفَسِرِ} &  \\* 
+\Tr{usiku aṯarejeya} & \Tr{mamake akafasiri} & \Tr{166d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَمُيُوَ إٖنْدَ مَكَه} & \textarabic{نَاصِرِ أَكَتَمْكَ} & \textarabic{١٦٧} \\* 
+\Tr{namuyuwa enḏa makah} & \Tr{nāṣiri akaṯamka} & \Tr{167b/a} \\ 
+\textarabic{أَسِپٗئِيٗنَ نْدِيَ} & \textarabic{كُتُنْڠَ هَنْڠَلِتٗكَ} &  \\* 
+\Tr{asipoiyona nḏiya} & \Tr{kuṯunga hangaliṯoka} & \Tr{167d/c} \\ 
+\\[8mm] 
+
+\textarabic{أُكِمْوَمْبِيَ تَمْكٗ} & \textarabic{أَوْ يَنَ سِكُوَكٗ} & \textarabic{١٦٨} \\* 
+\Tr{ukimwambiya ṯamko} & \Tr{aw yana sikuwako} & \Tr{168b/a} \\ 
+\textarabic{يٗتٖ نَلِيَسِكِيَ} & \textarabic{كَوَڠٖ وٖنْدَنِ وَكٗ} &  \\* 
+\Tr{yoṯe naliyasikiya} & \Tr{kawage wenḏani wako} & \Tr{168d/c} \\ 
+\\[8mm] 
+
+\textarabic{نْڠُوٗ هُتَكُلِيَنِ} & \textarabic{أَوْ وٖنْدَ مَتُنْڠَنِ} & \textarabic{١٦٩} \\* 
+\Tr{nguwo huṯakuliyani} & \Tr{aw wenḏa maṯungani} & \Tr{169b/a} \\ 
+\textarabic{هَتَ هَيٗ كُنَمْبِيَ} & \textarabic{سِكُ زٗتِ سِمُؤٗنِ} &  \\* 
+\Tr{haṯa hayo kunambiya} & \Tr{siku zoṯi simuoni} & \Tr{169d/c} \\ 
+\\[8mm] 
+
+\textarabic{بَسِ وَلِلِيَنِ} & \textarabic{جَعْفَرِ كَبَئِنِ} & \textarabic{١٧٠} \\* 
+\Tr{basi waliliyani} & \Tr{ja'fari kabaini} & \Tr{170b/a} \\ 
+\textarabic{مَنٖنٗ نَلٗكْوَمْبِيَ} & \textarabic{أَوْ ٹْوَلِأ ڠَنَنِ} &  \\* 
+\Tr{maneno nalokwambiya} & \Tr{aw ţwali ganani} & \Tr{170d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَمْبِيَ نِسِيَتٗكَ} & \textarabic{نَ كَمَ هُكِرِضِكَ} & \textarabic{١٧١} \\* 
+\Tr{nambiya nisiyaṯoka} & \Tr{na kama hukiriḍika} & \Tr{171b/a} \\ 
+\textarabic{سِكِتِكٗ كُنِٹِيَ} & \textarabic{هُنَ هَتَ كُؤُذِكَ} &  \\* 
+\Tr{sikiṯiko kuniţiya} & \Tr{huna haṯa kuudhika} & \Tr{171d/c} \\ 
+\\[8mm] 
+
+\textarabic{سِكُئِزَ هَيٗ يَكٗ} & \textarabic{أَكَجِبُ تَمْكٗ} & \textarabic{١٧٢} \\* 
+\Tr{sikuiza hayo yako} & \Tr{akajibu ṯamko} & \Tr{172b/a} \\ 
+\textarabic{هَمُنِؤٗنِ كُلِيَ} & \textarabic{سِكُ زٗتٖ نِكٗ} &  \\* 
+\Tr{hamunioni kuliya} & \Tr{siku zoṯe niko} & \Tr{172d/c} \\ 
+\\[8mm] 
+
+\textarabic{نِمٖزٗيَتَأَمَلِ} & \textarabic{سَسَ هَيٗ نْدَ عَقِلِ} & \textarabic{١٧٣} \\* 
+\Tr{nimezoyaṯaamali} & \Tr{sasa hayo nḏa 'aqili} & \Tr{173b/a} \\ 
+\textarabic{زٖءٗ زَكٗ زَ كُئِنُكِيَ} & \textarabic{نَكُوَ مَتُلِ تُلِ} &  \\* 
+\Tr{zeo zako za kuinukiya} & \Tr{nakuwa maṯuli ṯuli} & \Tr{173d/c} \\ 
+\\[8mm] 
+
+\textarabic{هى إِنُكَ أُتٗكٖ} & \textarabic{أَكَمْوَمْبِيَ نْدُيَكٖ} & \textarabic{١٧٤} \\* 
+\Tr{hı̄ inuka uṯoke} & \Tr{akamwambiya nḏuyake} & \Tr{174b/a} \\ 
+\textarabic{كْوَنْدَ مْنْڠُ نِؤٗمْبٖيَ} & \textarabic{جَعْفَرِ أَتَمْكٖ} &  \\* 
+\Tr{kwanḏa mngu niombeya} & \Tr{ja'fari aṯamke} & \Tr{174d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَتَكُپٖكَ مَنَنِ} & \textarabic{نَاصِرِ أَكَبَئِنِ} & \textarabic{١٧٥} \\* 
+\Tr{aṯakupeka manani} & \Tr{nāṣiri akabaini} & \Tr{175b/a} \\ 
+\textarabic{كْوَ عَفِيَ نَ عَفُوَ} & \textarabic{سَلَامَ سَلِمِيْنِ} &  \\* 
+\Tr{kwa 'afiya na 'afuwa} & \Tr{salāma salimı̄ni} & \Tr{175d/c} \\ 
+\\[8mm] 
+
+\textarabic{كِنٖنْدَ كُتٗسِمَمَ} & \textarabic{هَپٗ نْدِيَ كَيَنْدَمَ} & \textarabic{١٧٦} \\* 
+\Tr{kinenḏa kuṯosimama} & \Tr{hapo nḏiya kayanḏama} & \Tr{176b/a} \\ 
+\textarabic{نَاءٖ مَكَه أَمٖنْڠِيَ} & \textarabic{سَاءَ كْوَ إِكِتٗمَ} &  \\* 
+\Tr{nae makah amengiya} & \Tr{saa kwa ikiṯoma} & \Tr{176d/c} \\ 
+\\[8mm] 
+
+\textarabic{كْوَ بَبَكٖ هَكُئِسِ} & \textarabic{مَكَه أَلِپٗجِلِسِ} & \textarabic{١٧٧} \\* 
+\Tr{kwa babake hakuisi} & \Tr{makah alipojilisi} & \Tr{177b/a} \\ 
+\textarabic{كْوَنْدَ تَئِكٖتِلِيَ} & \textarabic{كَمْبَ نْدِيَ سِتَكَسِ} &  \\* 
+\Tr{kwanḏa ṯaikeṯiliya} & \Tr{kamba nḏiya siṯakasi} & \Tr{177d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَكَمُؤٗنَ زُبٖيْرِ} & \textarabic{أَكَكٖتِ جَعْفَرِ} & \textarabic{١٧٨} \\* 
+\Tr{akamuona zubēri} & \Tr{akakeṯi ja'fari} & \Tr{178b/a} \\ 
+\textarabic{مِكٗنٗ كَمْوِنُلِيَ} & \textarabic{وٖنْدٖمٖنٖ نَ بَشِيْرِ} &  \\* 
+\Tr{mikono kamwinuliya} & \Tr{wenḏemene na bashı̄ri} & \Tr{178d/c} \\ 
+\\[8mm] 
+
+\textarabic{زُبٖيْرِ أَكَسِمَمَ} & \textarabic{مْكٗنٗ كَؤُٹِزَمَ} & \textarabic{١٧٩} \\* 
+\Tr{zubēri akasimama} & \Tr{mkono kauţizama} & \Tr{179b/a} \\ 
+\textarabic{مْڠٖنِ وٖٹُ هُنْڠِيَ} & \textarabic{أَكَمْوَمْبِيَ هَشِمَ} &  \\* 
+\Tr{mgeni weţu hungiya} & \Tr{akamwambiya hashima} & \Tr{179d/c} \\ 
+\\[8mm] 
+
+\textarabic{مْڠٖنِ وٖٹُ نِ نَنِ} & \textarabic{أَكَمُؤُزَ أَمِيْنِ} & \textarabic{١٨٠} \\* 
+\Tr{mgeni weţu ni nani} & \Tr{akamuuza amı̄ni} & \Tr{180b/a} \\ 
+\textarabic{مْكٗنٗ نِپٖ نَبِيَ} & \textarabic{وَسِكِيٖ هُبَئِنِ} &  \\* 
+\Tr{mkono nipe nabiya} & \Tr{wasikiye hubaini} & \Tr{180d/c} \\ 
+\\[8mm] 
+
+\textarabic{وَمُيُوَپِ حَبِيْبُ} & \textarabic{زُبٖيْرِ كَتَعَجَبُ} & \textarabic{١٨١} \\* 
+\Tr{wamuyuwapi ḥabı̄bu} & \Tr{zubēri kaṯa'ajabu} & \Tr{181b/a} \\ 
+\textarabic{وَجْهِ وَكٖ نَبِيَ} & \textarabic{جَعْفَرِ كَمْجِبُ} &  \\* 
+\Tr{wajhi wake nabiya} & \Tr{ja'fari kamjibu} & \Tr{181d/c} \\ 
+\\[8mm] 
+
+\textarabic{كْوَ بَبَنْڠُ نِپٖكٖنِ} & \textarabic{كِشَ هَپٗ كَبَئِنِ} & \textarabic{١٨٢} \\* 
+\Tr{kwa babangu nipekeni} & \Tr{kisha hapo kabaini} & \Tr{182b/a} \\ 
+\textarabic{كٖنْدَ نَاءٖ كْوَ عَلِيَ} & \textarabic{كَمْتُكُوَ أَمِيْنِ} &  \\* 
+\Tr{kenḏa nae kwa 'aliya} & \Tr{kamṯukuwa amı̄ni} & \Tr{182d/c} \\ 
+\\[8mm] 
+
+\textarabic{كْوَءٗ أَكَپِجَ هٗدِ} & \textarabic{أَلِپٗكْوٖنْدَ سَيِّدِ} & \textarabic{١٨٣} \\* 
+\Tr{kwao akapija hoḏi} & \Tr{alipokwenḏa sayyiḏi} & \Tr{183b/a} \\ 
+\textarabic{أَكَمْبَ هَكٗ نَبِيَ} & \textarabic{فَتُمَ أَكَرَدِدِ} &  \\* 
+\Tr{akamba hako nabiya} & \Tr{faṯuma akaraḏiḏi} & \Tr{183d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَمْكُوَءٗ نِ نْيَانِ} & \textarabic{أَكَمُؤُزَ حُسَيْبِ} & \textarabic{١٨٤} \\* 
+\Tr{amkuwao ni nyāni} & \Tr{akamuuza ḥusaybi} & \Tr{184b/a} \\ 
+\textarabic{نِ جَدِ يَنْفُ سِكِيَ} & \textarabic{كِجَنَ أَكَبئِنِ} &  \\* 
+\Tr{ni jaḏi yanfu sikiya} & \Tr{kijana akabini} & \Tr{184d/c} \\ 
+\\[8mm] 
+
+\textarabic{يٖيٖ نَ وَٹُ وَوِلِ} & \textarabic{نَ جَدِ يَنْڠُ رَسُوْلِ} & \textarabic{١٨٥} \\* 
+\Tr{yeye na waţu wawili} & \Tr{na jaḏi yangu rasūli} & \Tr{185b/a} \\ 
+\textarabic{كَتٗكَ كَمْوَنْڠَلِيَ} & \textarabic{كُسِكِيَكْوٖ قَوْلِ} &  \\* 
+\Tr{kaṯoka kamwangaliya} & \Tr{kusikiyakwe qawli} & \Tr{185d/c} \\ 
+\\[8mm] 
+
+\textarabic{كَمُؤُلِزَ خَبَرِ} & \textarabic{أَكِتٗكَ جَعْفَرِ} & \textarabic{١٨٦} \\* 
+\Tr{kamuuliza khabari} & \Tr{akiṯoka ja'fari} & \Tr{186b/a} \\ 
+\textarabic{فَتُمَ كَمْپٗكٖيَ} & \textarabic{أَكِكٗمَ كَفَسِرِ} &  \\* 
+\Tr{faṯuma kampokeya} & \Tr{akikoma kafasiri} & \Tr{186d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَكَمُؤُزَ هَشِمُ} & \textarabic{فَتُمَ كَتَكَلَمُ} & \textarabic{١٨٧} \\* 
+\Tr{akamuuza hashimu} & \Tr{faṯuma kaṯakalamu} & \Tr{187b/a} \\ 
+\textarabic{كِجَنَ هُيُ نَبِيَ} & \textarabic{بَبَ سِيَمْفَهَمُ} &  \\* 
+\Tr{kijana huyu nabiya} & \Tr{baba siyamfahamu} & \Tr{187d/c} \\ 
+\\[8mm] 
+
+\textarabic{إِنَ لَكٖ نٔدِيٖ نَنِ} & \textarabic{سِكُ زٗتٖ سِمُؤٗنَ} & \textarabic{١٨٨} \\* 
+\Tr{ina lake nḏiye nani} & \Tr{siku zoṯe simuona} & \Tr{188b/a} \\ 
+\textarabic{فَتُمَ أَكَمْوَمْبِيَ} & \textarabic{مْٹُمٖ أَكَبَئِنِ} &  \\* 
+\Tr{faṯuma akamwambiya} & \Tr{mţume akabaini} & \Tr{188d/c} \\ 
+\\[8mm] 
+
+\textarabic{هُيُ نْدِيٖ جَعْفَرِ} & \textarabic{أَكَمْوَمْبِيَ بَشِيْرِ} & \textarabic{١٨٩} \\* 
+\Tr{huyu nḏiye ja'fari} & \Tr{akamwambiya bashı̄ri} & \Tr{189b/a} \\ 
+\textarabic{هِزٗ صُوْرَ هُكْوَمْبِيَ} & \textarabic{وَ عَلِيْ حَيْدَرِ} &  \\* 
+\Tr{hizo ṣūra hukwambiya} & \Tr{wa 'alii ḥayḏari} & \Tr{189d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَكَمْٹُمَ حُسَيْنِ} & \textarabic{هَپٗ سَيِدِ أَمِيْنِ} & \textarabic{١٩٠} \\* 
+\Tr{akamţuma ḥusayni} & \Tr{hapo sayiḏi amı̄ni} & \Tr{190b/a} \\ 
+\textarabic{بَبَكٗ نَمْكُلِيَ} & \textarabic{إٖنٖنْدَ مْسِكِٹِنِ} &  \\* 
+\Tr{babako namkuliya} & \Tr{enenḏa msikiţini} & \Tr{190d/c} \\ 
+\\[8mm] 
+
+\textarabic{كَفِكَ مْسِكِٹِنِ} & \textarabic{هَپٗ كَتٗكَ حُسَيْنِ} & \textarabic{١٩١} \\* 
+\Tr{kafika msikiţini} & \Tr{hapo kaṯoka ḥusayni} & \Tr{191b/a} \\ 
+\textarabic{ٹُمِوٖ كُكْوَنْدَمِيَ} & \textarabic{بَبَ كُئِيٖ مْڠٖنِ} &  \\* 
+\Tr{ţumiwe kukwanḏamiya} & \Tr{baba kuiye mgeni} & \Tr{191d/c} \\ 
+\\[8mm] 
+
+\textarabic{چٖنْدٖمٖنٖ نَ بَشِيْرِ} & \textarabic{كُنَ كِجَنَ مْزُرِ} & \textarabic{١٩٢} \\* 
+\Tr{chenḏemene na bashı̄ri} & \Tr{kuna kijana mzuri} & \Tr{192b/a} \\ 
+\textarabic{نِ هِلٗ نِمٖكْوَمْبِيَ} & \textarabic{نَ إِنَ نِ جَعْفَرِ} &  \\* 
+\Tr{ni hilo nimekwambiya} & \Tr{na ina ni ja'fari} & \Tr{192d/c} \\ 
+\\[8mm] 
+
+\textarabic{پَپٗ نْدِيَ كَيَنْدَمَ} & \textarabic{چَنْبِوَ هِيٗ كَلِمَ} & \textarabic{١٩٣} \\* 
+\Tr{papo nḏiya kayanḏama} & \Tr{cham̱biwa hiyo kalima} & \Tr{193b/a} \\ 
+\textarabic{سَلَامُ كَوَپِسِيَ} & \textarabic{مْلَنْڠٗنِ أَكِكٗمَ} &  \\* 
+\Tr{salāmu kawapisiya} & \Tr{mlangoni akikoma} & \Tr{193d/c} \\ 
+\\[8mm] 
+
+\textarabic{هَپٗ عَلِيْ حَيْدَرِ} & \textarabic{سَلَامُ أَكِفَسِرِ} & \textarabic{١٩٤} \\* 
+\Tr{hapo 'alii ḥayḏari} & \Tr{salāmu akifasiri} & \Tr{194b/a} \\ 
+\textarabic{مكٗنٗ كَمْپٗكٖيَ} & \textarabic{كَئِتٗكَ جَعْفَرِ} &  \\* 
+\Tr{mkono kampokeya} & \Tr{kaiṯoka ja'fari} & \Tr{194d/c} \\ 
+\\[8mm] 
+
+\textarabic{نِ سَلَامَ أُتٗكَكٗ} & \textarabic{عَلِيْ كٖٹَ تَمْكٗ} & \textarabic{١٩٥} \\* 
+\Tr{ni salāma uṯokako} & \Tr{'alii keţa ṯamko} & \Tr{195b/a} \\ 
+\textarabic{حَالِ زَءٗ نَمْبِيَ} & \textarabic{جُمْلَ وٖنْدَنِ وَكٗ} &  \\* 
+\Tr{ḥāli zao nambiya} & \Tr{jumla wenḏani wako} & \Tr{195d/c} \\ 
+\\[8mm] 
+
+\textarabic{نِتٗكَجكٗ نِ سَلَامَ} & \textarabic{أَكَمْجِبُ كَلَمُ} & \textarabic{١٩٦} \\* 
+\Tr{niṯokajko ni salāma} & \Tr{akamjibu kalamu} & \Tr{196b/a} \\ 
+\textarabic{سِپَٹِ لَكُكْوَمْبِيَ} & \textarabic{سِيُوِ يَ هٗكٗ نْيُمَ} &  \\* 
+\Tr{sipaţi lakukwambiya} & \Tr{siyuwi ya hoko nyuma} & \Tr{196d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَ مَمَ وَكُسَلِمُ} & \textarabic{تٖنَ بَبَ مْوَلِمُ} & \textarabic{١٩٧} \\* 
+\Tr{na mama wakusalimu} & \Tr{ṯena baba mwalimu} & \Tr{197b/a} \\ 
+\textarabic{عَلِيْ كَپٗكٖيَ} & \textarabic{وَعَلَيْكَ السَّلَامَ} &  \\* 
+\Tr{'alii kapokeya} & \Tr{wa'alayka āssaّlāma} & \Tr{197d/c} \\ 
+\\[8mm] 
+
+\textarabic{نِمٖكُنْڠٗجَ نْدِيَنِ} & \textarabic{عَلِيْ أَكَبَئِنِ} & \textarabic{١٩٨} \\* 
+\Tr{nimekungoja nḏiyani} & \Tr{'alii akabaini} & \Tr{198b/a} \\ 
+\textarabic{مْبٗنَ أُمٖلِمَٹِيَ} & \textarabic{وَلِتٗكَ زٖءٗ ڠَنِ} &  \\* 
+\Tr{mbona umelimaţiya} & \Tr{waliṯoka zeo gani} & \Tr{198d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَصُبُحِ نَلِصَلِ} & \textarabic{أَكَمْجِبُ قَوْلِ} & \textarabic{١٩٩} \\* 
+\Tr{aṣubuḥi naliṣali} & \Tr{akamjibu qawli} & \Tr{199b/a} \\ 
+\textarabic{إِنَ أُرٖفُ وَ نْدِيَ} & \textarabic{لَكِنِ بَبَ نِ مْبَلِ} &  \\* 
+\Tr{ina urefu wa nḏiya} & \Tr{lakini baba ni mbali} & \Tr{199d/c} \\ 
+\\[8mm] 
+
+\textarabic{پَنَ مْٹٖنْدٖ نْدِيَنِ} & \textarabic{نَمِ كِپَٹَ يَنْڠٗنِ} & \textarabic{٢٠٠} \\* 
+\Tr{pana mţenḏe nḏiyani} & \Tr{nami kipaţa yangoni} & \Tr{200b/a} \\ 
+\textarabic{يَلٖ وَلٗنَمْبِيَ} & \textarabic{يَلِنِتٗكَ مٗيٗنِ} &  \\* 
+\Tr{yale walonambiya} & \Tr{yaliniṯoka moyoni} & \Tr{200d/c} \\ 
+\\[8mm] 
+
+\textarabic{كَأَنْدَمَ إِلٗ مْبَلِ} & \textarabic{كَئِوَتَ يَ كُڤُلِ} & \textarabic{٢٠١} \\* 
+\Tr{kaanḏama ilo mbali} & \Tr{kaiwaṯa ya kuvuli} & \Tr{201b/a} \\ 
+\textarabic{سَاءَ إِمٖنِپِٹِيَ} & \textarabic{هَتَ كِتَأَمَلِ} &  \\* 
+\Tr{saa imenipiţiya} & \Tr{haṯa kiṯaamali} & \Tr{201d/c} \\ 
+\\[8mm] 
+
+\textarabic{إِيُ لَ بَرَ كَپِٹُ} & \textarabic{نِپَ أُوِنْڠَ كَئٖٹَ} & \textarabic{٢٠٢} \\* 
+\Tr{iyu la bara kapiţu} & \Tr{nipa uwinga kaeţa} & \Tr{202b/a} \\ 
+\textarabic{نْيُمَ نِسِپٗرٖجٖيَ} & \textarabic{إِلِ نْدِيَ كُئِوَتَ} &  \\* 
+\Tr{nyuma nisiporejeya} & \Tr{ili nḏiya kuiwaṯa} & \Tr{202d/c} \\ 
+\\[8mm] 
+
+\textarabic{إِلٖ نْدِيَ سِئِيٗنِ} & \textarabic{سُرَ نٖنْدَءٗ بَرَنِ} & \textarabic{٢٠٣} \\* 
+\Tr{ile nḏiya siiyoni} & \Tr{sura nenḏao barani} & \Tr{203b/a} \\ 
+\textarabic{زٗتٖ زِمٖنِپٗتٖيَ} & \textarabic{هُؤٗنَ نِكٗ بَرَنِ} &  \\* 
+\Tr{zoṯe zimenipoṯeya} & \Tr{huona niko barani} & \Tr{203d/c} \\ 
+\\[8mm] 
+
+\textarabic{كَلَنْدَمَ ڠُوْ لَنْڠُ} & \textarabic{كِپِجَ فِكِرَ زَنْڠُ} & \textarabic{٢٠٤} \\* 
+\Tr{kalanḏama guu langu} & \Tr{kipija fikira zangu} & \Tr{204b/a} \\ 
+\textarabic{كِشَ نْيُمَ كَرٖجٖيَ} & \textarabic{نَرُدِيَ پَلٖ پَنْڠُ} &  \\* 
+\Tr{kisha nyuma karejeya} & \Tr{naruḏiya pale pangu} & \Tr{204d/c} \\ 
+\\[8mm] 
+
+\textarabic{هَپٗ نْدِيَ كَيَنْدَمَ} & \textarabic{كِشَ كُرُدِيَ نْيُمَ} & \textarabic{٢٠٥} \\* 
+\Tr{hapo nḏiya kayanḏama} & \Tr{kisha kuruḏiya nyuma} & \Tr{205b/a} \\ 
+\textarabic{صَالَ إِمٖنِسِمَمِيَ} & \textarabic{پٖنْيٖ مْٹٖنْدٖ كَكٗمَ} &  \\* 
+\Tr{ṣāla imenisimamiya} & \Tr{penye mţenḏe kakoma} & \Tr{205d/c} \\ 
+\\[8mm] 
+
+\textarabic{نْدِپٗ نِْيَ كَعَبِرِ} & \textarabic{أَوَلِ يَ أَظُهُرِ} & \textarabic{٢٠٦} \\* 
+\Tr{nḏipo niya ka'abiri} & \Tr{awali ya aẓuhuri} & \Tr{206b/a} \\ 
+\textarabic{نَعَانَ نِمٖكْوَمْبِيَ} & \textarabic{حُجَ يَ كُجَ أَخِيْرِ} &  \\* 
+\Tr{na'āna nimekwambiya} & \Tr{ḥuja ya kuja akhı̄ri} & \Tr{206d/c} \\ 
+\\[8mm] 
+
+\textarabic{عَلِيْ أَكَتَمْكَ} & \textarabic{كِمَلِزَ كُپُلِكَ} & \textarabic{٢٠٧} \\* 
+\Tr{'alii akaṯamka} & \Tr{kimaliza kupulika} & \Tr{207b/a} \\ 
+\textarabic{هَپٗ كَنٖنَ نَبِيَ} & \textarabic{مْوَنَنْڠُ أُمٖسُمْبُكَ} &  \\* 
+\Tr{hapo kanena nabiya} & \Tr{mwanangu umesumbuka} & \Tr{207d/c} \\ 
+\\[8mm] 
+
+\textarabic{سِ هَبَ كُيَ سَلَام} & \textarabic{هَپٗ كَنٖنَ هَشِمَ} & \textarabic{٢٠٨} \\* 
+\Tr{si haba kuya salām} & \Tr{hapo kanena hashima} & \Tr{208b/a} \\ 
+\textarabic{خَطَرِ هُمْزٖنْڠٖيَ} & \textarabic{نْدِيَ مٖزٗإِيَنْدَمَ} &  \\* 
+\Tr{khaṭari humzengeya} & \Tr{nḏiya mezoiyanḏama} & \Tr{208d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَسِؤٗوْنٖ مَيَهُوْدِ} & \textarabic{أَمْكِنْڠَ وَدُوْدِ} & \textarabic{٢٠٩} \\* 
+\Tr{asiōne mayahūḏi} & \Tr{amkinga waḏūḏi} & \Tr{209b/a} \\ 
+\textarabic{وَٹُ وَ نْڠِسِ مْمٗيَ} & \textarabic{كْوَنِ وَنْڠَلِمْزِدِ} &  \\* 
+\Tr{waţu wa ngisi mmoya} & \Tr{kwani wangalimziḏi} & \Tr{209d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَكَمْوٖپُكَ أَمِيْنِ} & \textarabic{فَتُمَ أُكٗ كِٹِنِ} & \textarabic{٢١٠} \\* 
+\Tr{akamwepuka amı̄ni} & \Tr{faṯuma uko kiţini} & \Tr{210b/a} \\ 
+\textarabic{نَ نْدَنِ كَمُأَمْكُوَ} & \textarabic{كْوَ مْكٗنٗ كَبَئِنِ} &  \\* 
+\Tr{na nḏani kamuamkuwa} & \Tr{kwa mkono kabaini} & \Tr{210d/c} \\ 
+\\[8mm] 
+
+\textarabic{عَلِيْ أَكَفَهَمَ} & \textarabic{مكٗنٗ كِؤُٹِزَمَ} & \textarabic{٢١١} \\* 
+\Tr{'alii akafahama} & \Tr{mkono kiuţizama} & \Tr{211b/a} \\ 
+\textarabic{نٖنْدَ نْدَمِ مَرَ مٗيَ} & \textarabic{أَكَمْوَمْبِيَ هَشِمَ} &  \\* 
+\Tr{nenḏa nḏami mara moya} & \Tr{akamwambiya hashima} & \Tr{211d/c} \\ 
+\\[8mm] 
+
+\textarabic{فَتُمَ أَكَتَمْكَ} & \textarabic{كْوَ نْدَمِ أَلِپٗفِكَ} & \textarabic{٢١٢} \\* 
+\Tr{faṯuma akaṯamka} & \Tr{kwa nḏami alipofika} & \Tr{212b/a} \\ 
+\textarabic{هَيَتَسَ كْوَنْدِكِوَ} & \textarabic{چَكُلَ نِمٖكِپِكَ} &  \\* 
+\Tr{hayaṯasa kwanḏikiwa} & \Tr{chakula nimekipika} & \Tr{212d/c} \\ 
+\\[8mm] 
+
+\textarabic{خَبَرِ أَكَتَمْكَ} & \textarabic{كْوَنْدَ سِكُمَكِنِكَ} & \textarabic{٢١٣} \\* 
+\Tr{khabari akaṯamka} & \Tr{kwanḏa sikumakinika} & \Tr{213b/a} \\ 
+\textarabic{كْوَ أَثَقِلِ وَ نْدِيَ} & \textarabic{مٗيٗ هُمْپَپَٹِكَ} &  \\* 
+\Tr{kwa athaqili wa nḏiya} & \Tr{moyo humpapaţika} & \Tr{213d/c} \\ 
+\\[8mm] 
+
+\textarabic{أُمٖزِيُوَ هَكِكَ} & \textarabic{نَ زٖءٗ أَلِزٗتٗكَ} & \textarabic{٢١٤} \\* 
+\Tr{umeziyuwa hakika} & \Tr{na zeo alizoṯoka} & \Tr{214b/a} \\ 
+\textarabic{مَنٖنٗيٖ هُرٹْوَمْبِيَ} & \textarabic{نَ سِسِ هُمْپُلِكَ} &  \\* 
+\Tr{manenoye hurţwambiya} & \Tr{na sisi humpulika} & \Tr{214d/c} \\ 
+\\[8mm] 
+
+\textarabic{هُمْصُبِرِ حُسَيْنِ} & \textarabic{عَلِيْ أَكَبَئِنِ} & \textarabic{٢١٥} \\* 
+\Tr{humṣubiri ḥusayni} & \Tr{'alii akabaini} & \Tr{215b/a} \\ 
+\textarabic{إٖنْدٖ كُمُؤَمْكُوَ} & \textarabic{نِمٖمْٹُمَ حَسَنِ} &  \\* 
+\Tr{enḏe kumuamkuwa} & \Tr{nimemţuma ḥasani} & \Tr{215d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَلِپٗكٖتِ كِٹِنِ} & \textarabic{عَلِيْ كُتٗكَ نْدَنِ} & \textarabic{٢١٦} \\* 
+\Tr{alipokeṯi kiţini} & \Tr{'alii kuṯoka nḏani} & \Tr{216b/a} \\ 
+\textarabic{سَلَامُ هُوَپِسِيَ} & \textarabic{أَمْسِكِيٖ حَسَنِ} &  \\* 
+\Tr{salāmu huwapisiya} & \Tr{amsikiye ḥasani} & \Tr{216d/c} \\ 
+\\[8mm] 
+
+\textarabic{كُوَپِسِزَ سَلَامُ} & \textarabic{حَسَنِ أَكَنُظُمُ} & \textarabic{٢١٧} \\* 
+\Tr{kuwapisiza salāmu} & \Tr{ḥasani akanuẓumu} & \Tr{217b/a} \\ 
+\textarabic{جَّْفَرِ كَمْوَمْبِيَ} & \textarabic{أَمْرُدِشٖ كَلِمُ} &  \\* 
+\Tr{jaّfari kamwambiya} & \Tr{amruḏishe kalimu} & \Tr{217d/c} \\ 
+\\[8mm] 
+
+\textarabic{كَمُؤُلِزَ سَلَامَ} & \textarabic{كْوَ أُ نْدَنِ كْوِمَ} & \textarabic{٢١٨} \\* 
+\Tr{kamuuliza salāma} & \Tr{kwa u nḏani kwima} & \Tr{218b/a} \\ 
+\textarabic{وٗتٖ وَكَمْپٗكٖيَ} & \textarabic{وَلِؤٗپٗ وَكَسِمَ} &  \\* 
+\Tr{woṯe wakampokeya} & \Tr{waliopo wakasima} & \Tr{218d/c} \\ 
+\\[8mm] 
+
+\textarabic{نِ سَلَامَ نِتٗكَكٗ} & \textarabic{كَمْوَمْبِيَ مَتَمْكٗ} & \textarabic{٢١٩} \\* 
+\Tr{ni salāma niṯokako} & \Tr{kamwambiya maṯamko} & \Tr{219b/a} \\ 
+\textarabic{أَيُوَءٖ نِ جَلِيَ} & \textarabic{سِيُوِ مْبٖيْ نٖنْدَكٗ} &  \\* 
+\Tr{ayuwae ni jaliya} & \Tr{siyuwi mbee nenḏako} & \Tr{219d/c} \\ 
+\\[8mm] 
+
+\textarabic{كَوَمْبِيَ كْوَ هٖرِنِ} & \textarabic{أَكَتَمْكَ أَمِيْنِ} & \textarabic{٢٢٠} \\* 
+\Tr{kawambiya kwa herini} & \Tr{akaṯamka amı̄ni} & \Tr{220b/a} \\ 
+\textarabic{مْبٗنَ هُتٗكَ نَبِيَ} & \textarabic{عَلِيْ أَكَبَئِنِ} &  \\* 
+\Tr{mbona huṯoka nabiya} & \Tr{'alii akabaini} & \Tr{220d/c} \\ 
+\\[8mm] 
+
+\textarabic{زٖءٗ زِمٖأَخِرِكَ} & \textarabic{مْٹُمٖ أَكَتَمْكَ} & \textarabic{٢٢١} \\* 
+\Tr{zeo zimeakhirika} & \Tr{mţume akaṯamka} & \Tr{221b/a} \\ 
+\textarabic{نْيُمْبَنِ سِيَرٖجٖيَ} & \textarabic{سَاءَ تِسِيَ هَكِكَ} &  \\* 
+\Tr{nyumbani siyarejeya} & \Tr{saa ṯisiya hakika} & \Tr{221d/c} \\ 
+\\[8mm] 
+
+\textarabic{ٹُمْلِشٖ جَعْفَرِ} & \textarabic{كَمْبَ صُبِرِ بَشِيْرِ} & \textarabic{٢٢٢} \\* 
+\Tr{ţumlishe ja'fari} & \Tr{kamba ṣubiri bashı̄ri} & \Tr{222b/a} \\ 
+\textarabic{هَپٗ كَكٖتِ نَبِيَ} & \textarabic{چَكُلَ كِكٗ تَيَرِ} &  \\* 
+\Tr{hapo kakeṯi nabiya} & \Tr{chakula kiko ṯayari} & \Tr{222d/c} \\ 
+\\[8mm] 
+
+\textarabic{كْوَ أُپٖسِ نَ هَرَكَ} & \textarabic{فَتُمَ أَكَئِنُكَ} & \textarabic{٢٢٣} \\* 
+\Tr{kwa upesi na haraka} & \Tr{faṯuma akainuka} & \Tr{223b/a} \\ 
+\textarabic{نَ مَاءِ كَوَپٖكٖيَ} & \textarabic{تَمَشَ أَكَئِوٖكَ} &  \\* 
+\Tr{na mai kawapekeya} & \Tr{ṯamasha akaiweka} & \Tr{223d/c} \\ 
+\\[8mm] 
+
+\textarabic{وَكَتَنْڠَنْيَ مِكٗنٗ} & \textarabic{وَكَكٖتِ كْوَ مْفَنٗ} & \textarabic{٢٢٤} \\* 
+\Tr{wakaṯanganya mikono} & \Tr{wakakeṯi kwa mfano} & \Tr{224b/a} \\ 
+\textarabic{وَلَ أَسِلٖ نَبِيَ} & \textarabic{جُمْلَ وَٹُ وَ نَنٗ} &  \\* 
+\Tr{wala asile nabiya} & \Tr{jumla waţu wa nano} & \Tr{224d/c} \\ 
+\\[8mm] 
+
+\textarabic{مْكٗنٗ أَلِؤُپٖكَ} & \textarabic{مَرَ ٹَاٹُ كْوَ هَكِكَ} & \textarabic{٢٢٥} \\* 
+\Tr{mkono aliupeka} & \Tr{mara ţāţu kwa hakika} & \Tr{225b/a} \\ 
+\textarabic{وَءٗ أَكَوَتِيَ} & \textarabic{أَكِشَ أَكَئِنُكَ} &  \\* 
+\Tr{wao akawaṯiya} & \Tr{akisha akainuka} & \Tr{225d/c} \\ 
+\\[8mm] 
+
+\textarabic{كَپٗوَ مَاءِ أَمِيْرِ} & \textarabic{أَكَئِنُكَ كِٹِنِ} & \textarabic{٢٢٦} \\* 
+\Tr{kapowa mai amı̄ri} & \Tr{akainuka kiţini} & \Tr{226b/a} \\ 
+\textarabic{نَاءٖ أَكَسُكُتُوَ} & \textarabic{نَ يَ كُنْوَ كِكٗمْبٖنِ} &  \\* 
+\Tr{nae akasukuṯuwa} & \Tr{na ya kunwa kikombeni} & \Tr{226d/c} \\ 
+\\[8mm] 
+
+\textarabic{هَپٗ كَپٗوَ بَشِيْرِ} & \textarabic{تَمْبُوْ يَ كُخِتَرِ} & \textarabic{٢٢٧} \\* 
+\Tr{hapo kapowa bashı̄ri} & \Tr{ṯambuu ya kukhiṯari} & \Tr{227b/a} \\ 
+\textarabic{ٹُمْوَ أَكَئِتٗكٖيَ} & \textarabic{أَكَوَآڠَ كْوَ هٖرِ} &  \\* 
+\Tr{ţumwa akaiṯokeya} & \Tr{akawaga kwa heri} & \Tr{227d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَاءٗ كُلَ وَمٖكْوِشَ} & \textarabic{ٹُمْوَ أَكِشَ كُتٗكَ} & \textarabic{٢٢٨} \\* 
+\Tr{nao kula wamekwisha} & \Tr{ţumwa akisha kuṯoka} & \Tr{228b/a} \\ 
+\textarabic{مَاءِ أَكَوَپٖكٖيَ} & \textarabic{فَتُمَ أَكَئِنُكَ} &  \\* 
+\Tr{mai akawapekeya} & \Tr{faṯuma akainuka} & \Tr{228d/c} \\ 
+\\[8mm] 
+
+\textarabic{پٹٖ أَكَئِٹِزَمَ} & \textarabic{أَكَئِيٗنَ فَتُمَ} & \textarabic{٢٢٩} \\* 
+\Tr{pţe akaiţizama} & \Tr{akaiyona faṯuma} & \Tr{229b/a} \\ 
+\textarabic{يٗتٖ يَكَمْرُدِيَ} & \textarabic{يَپِسِيٗ يَ نْيُمَ} &  \\* 
+\Tr{yoṯe yakamruḏiya} & \Tr{yapisiyo ya nyuma} & \Tr{229d/c} \\ 
+\\[8mm] 
+
+\textarabic{مْبٗنَ أُمٖبَدِلِكَ} & \textarabic{عَلِيْ أكَتَمْكَ} & \textarabic{٢٣٠} \\* 
+\Tr{mbona umebaḏilika} & \Tr{'alii kaṯamka} & \Tr{230b/a} \\ 
+\textarabic{يٖؤٗ نِكِكْوَنْڠَلِيَ} & \textarabic{كَمَ أُمٖزٗؤُدِكَ} &  \\* 
+\Tr{yeo nikikwangaliya} & \Tr{kama umezouḏika} & \Tr{230d/c} \\ 
+\\[8mm] 
+
+\textarabic{وٖوٖ هُنٖنْدِ بَعِيْدِ} & \textarabic{فَتُمَ َكَرَدِدِ} & \textarabic{٢٣١} \\* 
+\Tr{wewe hunenḏi ba'ı̄ḏi} & \Tr{faṯuma akaraḏiḏi} & \Tr{231b/a} \\ 
+\textarabic{إِلَّا نَاوٖ كُكْوَمْبِيَ} & \textarabic{نِلٗنَلٗ سِنَ بُدِ} &  \\* 
+\Tr{illā nāwe kukwambiya} & \Tr{nilonalo sina buḏi} & \Tr{231d/c} \\ 
+\\[8mm] 
+
+\textarabic{كَتٗكَ كُلٖ نْيُمْبَنِ} & \textarabic{أَكِسِكِيَ حَسَنِ} & \textarabic{٢٣٢} \\* 
+\Tr{kaṯoka kule nyumbani} & \Tr{akisikiya ḥasani} & \Tr{232b/a} \\ 
+\textarabic{حر أَكَمْوَمْبِيَ} & \textarabic{أَكَنٖنْدَ كْوَ أَمِيْنِ} &  \\* 
+\Tr{ḥr akamwambiya} & \Tr{akanenḏa kwa amı̄ni} & \Tr{232d/c} \\ 
+\\[8mm] 
+
+\textarabic{كْوَ مْٹُمٖ كَتَمْكَ} & \textarabic{حَسَنِ كِشَ كُفِكَ} & \textarabic{٢٣٣} \\* 
+\Tr{kwa mţume kaṯamka} & \Tr{ḥasani kisha kufika} & \Tr{233b/a} \\ 
+\textarabic{بِبِ يَنْڠُ نَكْوَمْبِيَ} & \textarabic{مِمِ أَمٖكَسِرِكَ} &  \\* 
+\Tr{bibi yangu nakwambiya} & \Tr{mimi amekasirika} & \Tr{233d/c} \\ 
+\\[8mm] 
+
+\textarabic{مٖكُسِرِ كِيَ نِنِ} & \textarabic{أَكَمُؤُزَ أمِيْنِ} & \textarabic{٢٣٤} \\* 
+\Tr{mekusiri kiya nini} & \Tr{akamuuza mı̄ni} & \Tr{234b/a} \\ 
+\textarabic{مٗيٗ سِكُفَهَمِيَ} & \textarabic{مْوٖنْيٖوٖ هَكُبَئِنِ} &  \\* 
+\Tr{moyo sikufahamiya} & \Tr{mwenyewe hakubaini} & \Tr{234d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَكَمُؤٗنَ حُسَيْنِ} & \textarabic{كُرُدِ كْوَكٖ نْدِيَنِ} & \textarabic{٢٣٥} \\* 
+\Tr{akamuona ḥusayni} & \Tr{kuruḏi kwake nḏiyani} & \Tr{235b/a} \\ 
+\textarabic{هُكُ كْوٖٹُ نَسِكِيَ} & \textarabic{آٹِ مٖكُيَ مْڠٖنِ} &  \\* 
+\Tr{huku kweţu nasikiya} & \Tr{ţi mekuya mgeni} & \Tr{235d/c} \\ 
+\\[8mm] 
+
+\textarabic{مْوٖنْيٖ خَتَرِ هُئِنِ} & \textarabic{أَكَمْجِبُ حَسَنِ} & \textarabic{٢٣٦} \\* 
+\Tr{mwenye khaṯari huini} & \Tr{akamjibu ḥasani} & \Tr{236b/a} \\ 
+\textarabic{هٗيٗ أَمٖزٗوَمْبِيَ} & \textarabic{َِنَ يٖيٖ تَمْكِنِ} &  \\* 
+\Tr{hoyo amezowambiya} & \Tr{aina yeye ṯamkini} & \Tr{236d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَكَرَدِدِ حُسَيْنِ} & \textarabic{أَكَپِٹَ مْلَنْڠٗنِ} & \textarabic{٢٣٧} \\* 
+\Tr{akaraḏiḏi ḥusayni} & \Tr{akapiţa mlangoni} & \Tr{237b/a} \\ 
+\textarabic{پٖنُ أَلِوَپٗتٖيَ} & \textarabic{آسَ وَ مْتَكِيَن} &  \\* 
+\Tr{penu aliwapoṯeya} & \Tr{sa wa mṯakiyan} & \Tr{237d/c} \\ 
+\\[8mm] 
+
+\textarabic{أُ نَنِ هُنٖنَ پْوٖكٖ} & \textarabic{أَكَمُؤُزَ بَبَكٖ} & \textarabic{٢٣٨} \\* 
+\Tr{u nani hunena pweke} & \Tr{akamuuza babake} & \Tr{238b/a} \\ 
+\textarabic{خَبَرِ زِمٖئٖنٖيَ} & \textarabic{أَكَمْبَ خٖيْرِ بِتٗكٖ} &  \\* 
+\Tr{khabari zimeeneya} & \Tr{akamba khēri biṯoke} & \Tr{238d/c} \\ 
+\\[8mm] 
+
+\textarabic{جَمِيْعِ يَ أَنْشَارِ} & \textarabic{كُمٖپَنَنَ خَبَرِ} & \textarabic{٢٣٩} \\* 
+\Tr{jamī'i ya anshāri} & \Tr{kumepanana khabari} & \Tr{239b/a} \\ 
+\textarabic{وَ مَوْلَانَا عَلِيَ} & \textarabic{أَمٖكُيَ جَعْفَرِ} &  \\* 
+\Tr{wa mawlānā 'aliya} & \Tr{amekuya ja'fari} & \Tr{239d/c} \\ 
+\\[8mm] 
+
+\textarabic{نٖنٗ أَلِلٗفَسِرِ} & \textarabic{هَپٗ عَلِيْ حَيْدَرِ} & \textarabic{٢٤٠} \\* 
+\Tr{neno alilofasiri} & \Tr{hapo 'alii ḥayḏari} & \Tr{240b/a} \\ 
+\textarabic{مَمْبٗ يَكِتُمِلِيَ} & \textarabic{أُوٖنْڠَ أُنَ خَطَرِ} &  \\* 
+\Tr{mambo yakiṯumiliya} & \Tr{uwenga una khaṭari} & \Tr{240d/c} \\ 
+\\[8mm] 
+
+\textarabic{هِلٗ هُكُؤُذِيَنِ} & \textarabic{كْوٖنُ كُئِيٖ مْڠٖنِ} & \textarabic{٢٤١} \\* 
+\Tr{hilo hukuudhiyani} & \Tr{kwenu kuiye mgeni} & \Tr{241b/a} \\ 
+\textarabic{هُئِنَ هَتٗتٖمْبٖيَ} & \textarabic{تَمُوٖكَ هُكُ نْيُمْبَنِ} &  \\* 
+\Tr{huina haṯoṯembeya} & \Tr{ṯamuweka huku nyumbani} & \Tr{241d/c} \\ 
+\\[8mm] 
+
+\textarabic{كْوَنِ سِ مْوَنَ حَرَمُ} & \textarabic{فَتُمَ أَكَنُطُمُ} & \textarabic{٢٤٢} \\* 
+\Tr{kwani si mwana ḥaramu} & \Tr{faṯuma akanuṭumu} & \Tr{242b/a} \\ 
+\textarabic{عَلِيْ كِمْوَنْڠَلِيَ} & \textarabic{مْوَنَ هَنَ تَبَسَمُ} &  \\* 
+\Tr{'alii kimwangaliya} & \Tr{mwana hana ṯabasamu} & \Tr{242d/c} \\ 
+\\[8mm] 
+
+\textarabic{هٖلَ نْدٗوْ فَطُمَ} & \textarabic{عَلِيْ هَپٗ كَسٖمَ} & \textarabic{٢٤٣} \\* 
+\Tr{hela nḏoo faṭuma} & \Tr{'alii hapo kasema} & \Tr{243b/a} \\ 
+\textarabic{مْكٖوٖ كَمُئٖنْدٖيَ} & \textarabic{أَكَئِنُكَ كْوَ هِمَ} &  \\* 
+\Tr{mkewe kamuenḏeya} & \Tr{akainuka kwa hima} & \Tr{243d/c} \\ 
+\\[8mm] 
+
+\textarabic{مْبٗنَ أُنَ كِسِرَنِ} & \textarabic{أَكَمُؤُزَ أُ نَنِ} & \textarabic{٢٤٤} \\* 
+\Tr{mbona una kisirani} & \Tr{akamuuza u nani} & \Tr{244b/a} \\ 
+\textarabic{يَ مَتُنْڠُ هُكْوَمْبِيَ} & \textarabic{فَتُمَ أَكَمْبَ كُنِ} &  \\* 
+\Tr{ya maṯungu hukwambiya} & \Tr{faṯuma akamba kuni} & \Tr{244d/c} \\ 
+\\[8mm] 
+
+\textarabic{هِيٗ سِ طَبِيَ يَكٗ} & \textarabic{أَكَمْجِبُ تَمْكٗ} & \textarabic{٢٤٥} \\* 
+\Tr{hiyo si ṭabiya yako} & \Tr{akamjibu ṯamko} & \Tr{245b/a} \\ 
+\textarabic{أَمْبَ هَيٗ هُنَمْبِيَ} & \textarabic{مِمِ سِ كِجَنَ چَكٗ} &  \\* 
+\Tr{amba hayo hunambiya} & \Tr{mimi si kijana chako} & \Tr{245d/c} \\ 
+\\[8mm] 
+
+\textarabic{سِ إِلٖ پٖٹٖ چَنْدَنِ} & \textarabic{فَتُمَ أَكَبَئِنِ} & \textarabic{٢٤٦} \\* 
+\Tr{si ile peţe chanḏani} & \Tr{faṯuma akabaini} & \Tr{246b/a} \\ 
+\textarabic{آٹِ زِيَپٗ هُٹِيَ} & \textarabic{يَلٗنْڠِيَ كِسِمَنِ} &  \\* 
+\Tr{ţi ziyapo huţiya} & \Tr{yalongiya kisimani} & \Tr{246d/c} \\ 
+\\[8mm] 
+
+\textarabic{نْدِپٗ أُكَكَسِرِكَ} & \textarabic{عَلِيْ أَكَمْبَ هَكِكَ} & \textarabic{٢٤٧} \\* 
+\Tr{nḏipo ukakasirika} & \Tr{'alii akamba hakika} & \Tr{247b/a} \\ 
+\textarabic{كَمَ كِلٖ نَكْوَمْبِيَ} & \textarabic{پَلٖ أُنْڠٖلِؤُدِكَ} &  \\* 
+\Tr{kama kile nakwambiya} & \Tr{pale ungeliuḏika} & \Tr{247d/c} \\ 
+\\[8mm] 
+
+\textarabic{نْدُڠُ يَنْڠُ وَتَ غَرَضِ} & \textarabic{نَ سَسَ نِنْڠٖكُؤُذِ} & \textarabic{٢٤٨} \\* 
+\Tr{nḏugu yangu waṯa ḡaraḍi} & \Tr{na sasa ningekuudhi} & \Tr{248b/a} \\ 
+\textarabic{نَ أُتَكَلٗ نَمْبِيَ} & \textarabic{مٗيٗ وَكٖ أُوٖ رَضِ} &  \\* 
+\Tr{na uṯakalo nambiya} & \Tr{moyo wake uwe raḍi} & \Tr{248d/c} \\ 
+\\[8mm] 
+
+\textarabic{كِٹُ سِ يَ كُلَ دَلِيْلِ} & \textarabic{فَتُمَ كٖٹَ قَوْلِ} & \textarabic{٢٤٩} \\* 
+\Tr{kiţu si ya kula ḏalı̄li} & \Tr{faṯuma keţa qawli} & \Tr{249b/a} \\ 
+\textarabic{رَضِ نِمٖكْوٖلٖيَ} & \textarabic{أُوَپٗ أُمٖكُبَلِ} &  \\* 
+\Tr{raḍi nimekweleya} & \Tr{uwapo umekubali} & \Tr{249d/c} \\ 
+\\[8mm] 
+
+\textarabic{يٖيٖ نَ مْوَنَ نْيُمْبَنِ} & \textarabic{وَكَكٖتِ كْوَ لِسَنِ} & \textarabic{٢٥٠} \\* 
+\Tr{yeye na mwana nyumbani} & \Tr{wakakeṯi kwa lisani} & \Tr{250b/a} \\ 
+\textarabic{وَچٖنْدَ وٗتٖ پَمٗيَ} & \textarabic{نَوٖ نٖنْدَپٗ زِٹَنِ} &  \\* 
+\Tr{wachenḏa woṯe pamoya} & \Tr{nawe nenḏapo ziţani} & \Tr{250d/c} \\ 
+\\[8mm] 
+
+\textarabic{هَيَزٗوٖيَ زِٹَنِ} & \textarabic{جَعْفَرِ نِ مْڠٖنِ} & \textarabic{٢٥١} \\* 
+\Tr{hayazoweya ziţani} & \Tr{ja'fari ni mgeni} & \Tr{251b/a} \\ 
+\textarabic{عَلِيْ أَكِمْوٖنْدٖلٖيَ} & \textarabic{مَهَلَ پَ مَيْتِنِ} &  \\* 
+\Tr{'alii akimwenḏeleya} & \Tr{mahala pa mayṯini} & \Tr{251d/c} \\ 
+\\[8mm] 
+
+\textarabic{زِٹَنِ أَمٖصِفِكَ} & \textarabic{هَتَ أَكِتِمُ مْوَكَ} & \textarabic{٢٥٢} \\* 
+\Tr{ziţani ameṣifika} & \Tr{haṯa akiṯimu mwaka} & \Tr{252b/a} \\ 
+\textarabic{هُتِنْدَ أَسِپٗيُوَ} & \textarabic{سَبَا مِيَ هَكِكَ} &  \\* 
+\Tr{huṯinḏa asipoyuwa} & \Tr{sabā miya hakika} & \Tr{252d/c} \\ 
+\\[8mm] 
+
+\textarabic{هَپٗ أَكٖنْدَ جِهَدِ} & \textarabic{هَتَ مْوَكَ أُكِزِدِ} & \textarabic{٢٥٣} \\* 
+\Tr{hapo akenḏa jihaḏi} & \Tr{haṯa mwaka ukiziḏi} & \Tr{253b/a} \\ 
+\textarabic{هَكُنَ هَتَ مْمٗيَ} & \textarabic{لَكِ مٗيَ مَيَهُدِ} &  \\* 
+\Tr{hakuna haṯa mmoya} & \Tr{laki moya mayahuḏi} & \Tr{253d/c} \\ 
+\\[8mm] 
+
+\textarabic{عَلِيْ أَكَبَئِنِ} & \textarabic{أَلِپٗكُيَ مُئِنِ} & \textarabic{٢٥٤} \\* 
+\Tr{'alii akabaini} & \Tr{alipokuya muini} & \Tr{254b/a} \\ 
+\textarabic{نِنَ يَمْبٗ يَكْوَمْبِيَ} & \textarabic{أَكَمْوَمْبِيَ أَمِنِ} &  \\* 
+\Tr{nina yambo yakwambiya} & \Tr{akamwambiya amini} & \Tr{254d/c} \\ 
+\\[8mm] 
+
+\textarabic{َٖنْدٖ پْوٖكٖ جَعْفَرِ} & \textarabic{نَپٖنْدَ سَسَ بَشِرِ} & \textarabic{٢٥٥} \\* 
+\Tr{aenḏe pweke ja'fari} & \Tr{napenḏa sasa bashiri} & \Tr{255b/a} \\ 
+\textarabic{هُتٗشَ كِمْوَنْڠَلِيَ} & \textarabic{أَكَپِجٖ مَكُفَرِ} &  \\* 
+\Tr{huṯosha kimwangaliya} & \Tr{akapije makufari} & \Tr{255d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَكمْوَمْبِيَ رَسُوْلِ} & \textarabic{أَكَشُكَ جِبْرِيْلِ} & \textarabic{٢٥٦} \\* 
+\Tr{akmwambiya rasūli} & \Tr{akashuka jibrı̄li} & \Tr{256b/a} \\ 
+\textarabic{أَكُسَلِمُ نَبِيَ} & \textarabic{هَوٖكَ سِمْبَ وَوِلِ} &  \\* 
+\Tr{akusalimu nabiya} & \Tr{haweka simba wawili} & \Tr{256d/c} \\ 
+\\[8mm] 
+
+\textarabic{عَلِيْ ٹْوٖنْدٖ نْيُمْبَنِ} & \textarabic{أَكَتَمْكَ أَمِيْنِ} & \textarabic{٢٥٧} \\* 
+\Tr{'alii ţwenḏe nyumbani} & \Tr{akaṯamka amı̄ni} & \Tr{257b/a} \\ 
+\textarabic{هُئِفَرِكِ دُنِيَ} & \textarabic{مْوَنٗ هُيٗ يَقِيْنِ} &  \\* 
+\Tr{huifariki ḏuniya} & \Tr{mwano huyo yaqı̄ni} & \Tr{257d/c} \\ 
+\\[8mm] 
+
+\textarabic{هَپٗ أَسِيَمُهَلِ} & \textarabic{چَمْبِوَ هِيٗ قَوْلِ} & \textarabic{٢٥٨} \\* 
+\Tr{hapo asiyamuhali} & \Tr{chambiwa hiyo qawli} & \Tr{258b/a} \\ 
+\textarabic{هَپٗ وَكَنْدَمَ نْدِيَ} & \textarabic{كَئِنُكَ نَ رَسُوْلِ} &  \\* 
+\Tr{hapo wakanḏama nḏiya} & \Tr{kainuka na rasūli} & \Tr{258d/c} \\ 
+\\[8mm] 
+
+\textarabic{فَتُمَ أَكَبَئِنِ} & \textarabic{أَكِپَٹَ مْلَنْڠٗنِ} & \textarabic{٢٥٩} \\* 
+\Tr{faṯuma akabaini} & \Tr{akipaţa mlangoni} & \Tr{259b/a} \\ 
+\textarabic{أُيَاءٗ كُكْوَنْدَمِيَ} & \textarabic{أَلِهُتٗكَ حَسَنِ} &  \\* 
+\Tr{uyao kukwanḏamiya} & \Tr{alihuṯoka ḥasani} & \Tr{259d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَ حَسَنِ نَ حُسَيْنِ} & \textarabic{مْوَنٗ أَلِپٗ كِٹِنِ} & \textarabic{٢٦٠} \\* 
+\Tr{na ḥasani na ḥusayni} & \Tr{mwano alipo kiţini} & \Tr{260b/a} \\ 
+\textarabic{بَبَنْڠُ نَمْكُلِيَ} & \textarabic{غَفُلَ أَكَبَئِنِ} &  \\* 
+\Tr{babangu namkuliya} & \Tr{ḡafula akabaini} & \Tr{260d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَمٖپَنْدَ فِرَشَنِ} & \textarabic{أَمٖئِنُكَ كِٹِنِ} & \textarabic{٢٦١} \\* 
+\Tr{amepanḏa firashani} & \Tr{ameinuka kiţini} & \Tr{261b/a} \\ 
+\textarabic{يَمْبٗ لَلٗمْزِدِيَ} & \textarabic{نَاءٖ مْوَنْڠَلِيِنِ} &  \\* 
+\Tr{yambo lalomziḏiya} & \Tr{nae mwangaliyini} & \Tr{261d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَ عَلِىْ حَىْدَرِ} & \textarabic{هَپٗ أَكٖنْدَ بَشِيْرِ} & \textarabic{٢٦٢} \\* 
+\Tr{na 'alii ḥayḏari} & \Tr{hapo akenḏa bashı̄ri} & \Tr{262b/a} \\ 
+\textarabic{هَپٗ بَبَكٖ كَلِيَ} & \textarabic{كِمْوٗنَ جَعْفَرِ} &  \\* 
+\Tr{hapo babake kaliya} & \Tr{kimwona ja'fari} & \Tr{262d/c} \\ 
+\\[8mm] 
+
+\textarabic{إٖوٖ مْوَنَنْڠُ أُ نَنِ} & \textarabic{أَكَلِيَ كِبَنِ} & \textarabic{٢٦٣} \\* 
+\Tr{ewe mwanangu u nani} & \Tr{akaliya kibani} & \Tr{263b/a} \\ 
+\textarabic{كَٹِكَ كْوَنْدَم نْدِيَ} & \textarabic{أُپٖٹْوٖ نَ يَمْبٗ ڠَنِ} &  \\* 
+\Tr{kaţika kwanḏam nḏiya} & \Tr{upeţwe na yambo gani} & \Tr{263d/c} \\ 
+\\[8mm] 
+
+\textarabic{جَعْفَرِ كَفَهَمَ} & \textarabic{أَكِسِكِيَ كَلِمُ} & \textarabic{٢٦٤} \\* 
+\Tr{ja'fari kafahama} & \Tr{akisikiya kalimu} & \Tr{264b/a} \\ 
+\textarabic{َمَيٗ أَكَمْوَنْڠَلِيَ} & \textarabic{كْوَ ضَرُبُ كَٹِزَمَ} &  \\* 
+\Tr{amayo akamwangaliya} & \Tr{kwa ḍarubu kaţizama} & \Tr{264d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَكَمْبَ نِپَ يَسِنِ} & \textarabic{كِمْوَنْڠَلِيَ أَمِيْنِ} & \textarabic{٢٦٥} \\* 
+\Tr{akamba nipa yasini} & \Tr{kimwangaliya amı̄ni} & \Tr{265b/a} \\ 
+\textarabic{أَمٖكْوِشَ كُئِفِيَ} & \textarabic{أَكِكٗمَ كُبَئِنِ} &  \\* 
+\Tr{amekwisha kuifiya} & \Tr{akikoma kubaini} & \Tr{265d/c} \\ 
+\\[8mm] 
+
+\textarabic{يٗتٖ أَسِيَفِكِرِ} & \textarabic{هَپٗ عَلِيْ حَيْدَرِ} & \textarabic{٢٦٦} \\* 
+\Tr{yoṯe asiyafikiri} & \Tr{hapo 'alii ḥayḏari} & \Tr{266b/a} \\ 
+\textarabic{مَصَحَبَ كَوَمْبِيَ} & \textarabic{أَكَسِمَمَ بَشِيْرِ} &  \\* 
+\Tr{maṣaḥaba kawambiya} & \Tr{akasimama bashı̄ri} & \Tr{266d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَ جَمِيْعِ وَكَتٗكَ} & \textarabic{كَوَمْبِيَ كِپُلِكَ} & \textarabic{٢٦٧} \\* 
+\Tr{na jamī'i wakaṯoka} & \Tr{kawambiya kipulika} & \Tr{267b/a} \\ 
+\textarabic{عَلِيْ أَسِپٗيُوَ} & \textarabic{هَيَ وَكِشَ كُزِكَ} &  \\* 
+\Tr{'alii asipoyuwa} & \Tr{haya wakisha kuzika} & \Tr{267d/c} \\ 
+\\[8mm] 
+
+\textarabic{مْٹُمِ أَكَمُوٖكَ} & \textarabic{أَلِپٗكْوِشَ كُزِكَ} & \textarabic{٢٦٨} \\* 
+\Tr{mţumi akamuweka} & \Tr{alipokwisha kuzika} & \Tr{268b/a} \\ 
+\textarabic{عَلِيْ أَكَمْوَمْبِيَ} & \textarabic{مَنٖنٗ أَكَتَمْكَ} &  \\* 
+\Tr{'alii akamwambiya} & \Tr{maneno akaṯamka} & \Tr{268d/c} \\ 
+\\[8mm] 
+
+\textarabic{صُبِرِ كْوَكٖ رَبُك} & \textarabic{كَمْوَمْبِيَ كِپُلِكَ} & \textarabic{٢٦٩} \\* 
+\Tr{ṣubiri kwake rabuk} & \Tr{kamwambiya kipulika} & \Tr{269b/a} \\ 
+\textarabic{نَوٖ أُكَمْوَمْڠَلِيَ} & \textarabic{مْٹُ هَنْڠَلِكُپٗكَ} &  \\* 
+\Tr{nawe ukamwamgaliya} & \Tr{mţu hangalikupoka} & \Tr{269d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَدُمُوٗ دُنِيَنِ} & \textarabic{وَ أَمَّا نِ مْٹُ ڠَنِ} & \textarabic{٢٧٠} \\* 
+\Tr{aḏumuwo ḏuniyani} & \Tr{wa ammā ni mţu gani} & \Tr{270b/a} \\ 
+\textarabic{نِوٖ وَيَفَهَمِيَ} & \textarabic{إِسِپٗكُوَ مَنَّانِ} &  \\* 
+\Tr{niwe wayafahamiya} & \Tr{isipokuwa mannāni} & \Tr{270d/c} \\ 
+\\[8mm] 
+
+\textarabic{مَمْبٗ هُچِجْوَ مْفَنٗ} & \textarabic{عَلِيْ سٖنٖنْدٖ مْنٗ} & \textarabic{٢٧١} \\* 
+\Tr{mambo huchijwa mfano} & \Tr{'alii senenḏe mno} & \Tr{271b/a} \\ 
+\textarabic{عَقِلِ إِكَمْنْڠِيَ} & \textarabic{كَپٖوَ هَيٗ مَنٖنٗ} &  \\* 
+\Tr{'aqili ikamngiya} & \Tr{kapewa hayo maneno} & \Tr{271d/c} \\ 
+\\[8mm] 
+
+\textarabic{زُبَيْرِ كَمْوَمْكُوَ} & \textarabic{هَپٗ أَكِشَ كُتٗوَ} & \textarabic{٢٧٢} \\* 
+\Tr{zubayri kamwamkuwa} & \Tr{hapo akisha kuṯowa} & \Tr{272b/a} \\ 
+\textarabic{أُپَٹٖ كُنِپٖكٖيَ} & \textarabic{تَكُپَ زَنْڠُ بَرُوَ} &  \\* 
+\Tr{upaţe kunipekeya} & \Tr{ṯakupa zangu baruwa} & \Tr{272d/c} \\ 
+\\[8mm] 
+
+\textarabic{مٗيَ نْدَ مْوَلِمُ وَكٖ} & \textarabic{هِيْ مٗيَ نْدَ مَمَكٖ} & \textarabic{٢٧٣} \\* 
+\Tr{moya nḏa mwalimu wake} & \Tr{hii moya nḏa mamake} & \Tr{273b/a} \\ 
+\textarabic{نٖنٗ مٗيَ كُوَمْبِيَ} & \textarabic{نَ أُچٖنْدَ سِتَمْكٖ} &  \\* 
+\Tr{neno moya kuwambiya} & \Tr{na uchenḏa siṯamke} & \Tr{273d/c} \\ 
+\\[8mm] 
+
+\textarabic{كَپٗكٖيَ كَرَتَسِ} & \textarabic{زُبَيْرِ أَسِجِلِسِ} & \textarabic{٢٧٤} \\* 
+\Tr{kapokeya karaṯasi} & \Tr{zubayri asijilisi} & \Tr{274b/a} \\ 
+\textarabic{كَمْپٖكٖيَ عَطِيَ} & \textarabic{كَنٖنْدَ نَزٗ أُپٖسِ} &  \\* 
+\Tr{kampekeya 'aṭiya} & \Tr{kanenḏa nazo upesi} & \Tr{274d/c} \\ 
+\\[8mm] 
+
+\textarabic{كِشَ زُبٖىْرِ أَتٗكٖ} & \textarabic{بَرُوَ كُمْپَ كْوَكٖ} & \textarabic{٢٧٥} \\* 
+\Tr{kisha zubēri aṯoke} & \Tr{baruwa kumpa kwake} & \Tr{275b/a} \\ 
+\textarabic{كٖنٖنْدَ كُمْپٖكٖيَ} & \textarabic{إِلٖ يَ مْوَلِمُ وَكٖ} &  \\* 
+\Tr{kenenḏa kumpekeya} & \Tr{ile ya mwalimu wake} & \Tr{275d/c} \\ 
+\\[8mm] 
+
+\textarabic{يٖيٖ أَسٗمٖ مَمَكٖ} & \textarabic{زُبَىْرِ كُتٗكَ كْوَكٖ} & \textarabic{٢٧٦} \\* 
+\Tr{yeye asome mamake} & \Tr{zubayri kuṯoka kwake} & \Tr{276b/a} \\ 
+\textarabic{مْٹُ أَسِپٗزٖنْڠٖيَ} & \textarabic{أَكَتٗكَ پْوٖكٖ يَكٖ} &  \\* 
+\Tr{mţu asipozengeya} & \Tr{akaṯoka pweke yake} & \Tr{276d/c} \\ 
+\\[8mm] 
+
+\textarabic{يُوَ لِمٗ هُسَلِمُ} & \textarabic{نَاءٖ أََكِيَنُظُمُ} & \textarabic{٢٧٧} \\* 
+\Tr{yuwa limo husalimu} & \Tr{nae aakiyanuẓumu} & \Tr{277b/a} \\ 
+\textarabic{أُسِكُ هُمْنْڠِلِيَ} & \textarabic{وَلَ أ َسِپٗفَهَمُ} &  \\* 
+\Tr{usiku humngiliya} & \Tr{wala  asipofahamu} & \Tr{277d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَسِپَٹٖ فَقْصِيْرِ} & \textarabic{نَ نُكٗ نْيُمَ زُبٖيْرِ} & \textarabic{٢٧٨} \\* 
+\Tr{asipaţe faqṣı̄ri} & \Tr{na nuko nyuma zubēri} & \Tr{278b/a} \\ 
+\textarabic{كِمْزٖنْڠٖيَ عَطِيَ} & \textarabic{كِلَ مْيُمَ كِعَبِرِ} &  \\* 
+\Tr{kimzengeya 'aṭiya} & \Tr{kila myuma ki'abiri} & \Tr{278d/c} \\ 
+\\[8mm] 
+
+\textarabic{كِنٖنْدَ كِتٗمْكُٹَ} & \textarabic{هَتَ نْدِيَ كِفُوَٹَ} & \textarabic{٢٧٩} \\* 
+\Tr{kinenḏa kiṯomkuţa} & \Tr{haṯa nḏiya kifuwaţa} & \Tr{279b/a} \\ 
+\textarabic{مْلَنْڠٗنِ أَكِنْڠِيَ} & \textarabic{نْيُمْبَ يَ كْوَنْدَ كِپَٹَ} &  \\* 
+\Tr{mlangoni akingiya} & \Tr{nyumba ya kwanḏa kipaţa} & \Tr{279d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَ مَوْلَانَا عُمَرِ} & \textarabic{حَمْزَة أَكَفَسِرِ} & \textarabic{٢٨٠} \\* 
+\Tr{na mawlānā 'umari} & \Tr{ḥamzaẗ akafasiri} & \Tr{280b/a} \\ 
+\textarabic{صَلَ إِمٖسِمَمِيَ} & \textarabic{هِيِ نِ أَلْفَجِرِ} &  \\* 
+\Tr{ṣala imesimamiya} & \Tr{hiyi ni alfajiri} & \Tr{280d/c} \\ 
+\\[8mm] 
+
+\textarabic{كَنٖنَ نْدِمِ أَتْوِكَ} & \textarabic{مْوَنَمْكٖ كَتَمْكَ} & \textarabic{٢٨١} \\* 
+\Tr{kanena nḏimi aṯwika} & \Tr{mwanamke kaṯamka} & \Tr{281b/a} \\ 
+\textarabic{كْوَ مَوْلَانَا عَلِيَ} & \textarabic{چَمْبَ مْتَنِپِلٖكَ} &  \\* 
+\Tr{kwa mawlānā 'aliya} & \Tr{chamba mṯanipileka} & \Tr{281d/c} \\ 
+\\[8mm] 
+
+\textarabic{نْيُمْبَ سِكُئِفَسِرِ} & \textarabic{نْدِ يَ نِمٖعَبِرِ} & \textarabic{٢٨٢} \\* 
+\Tr{nyumba sikuifasiri} & \Tr{nḏi ya nime'abiri} & \Tr{282b/a} \\ 
+\textarabic{كَمَ هَيَ يَوٖلٖيَ} & \textarabic{نْدِمِ أُمِ جَعْفَرِ} &  \\* 
+\Tr{kama haya yaweleya} & \Tr{nḏimi umi ja'fari} & \Tr{282d/c} \\ 
+\\[8mm] 
+
+\textarabic{كْوَ أُپٖسِ نَ هَرَكَ} & \textarabic{هَپٗ حَمْزَ كَتٗكَ} & \textarabic{٢٨٣} \\* 
+\Tr{kwa upesi na haraka} & \Tr{hapo ḥamza kaṯoka} & \Tr{283b/a} \\ 
+\textarabic{إِلِ كُمْفُنْڠُلِيَ} & \textarabic{مْلَنْڠٗ أَكَؤُشِكَ} &  \\* 
+\Tr{ili kumfunguliya} & \Tr{mlango akaushika} & \Tr{283d/c} \\ 
+\\[8mm] 
+
+\textarabic{هَپٗ نْدِيَ هَيَنْدَمَ} & \textarabic{نْدِ كِتٗكَ كَٹِكَ هٖمَ} & \textarabic{٢٨٤} \\* 
+\Tr{hapo nḏiya hayanḏama} & \Tr{nḏi kiṯoka kaţika hema} & \Tr{284b/a} \\ 
+\textarabic{مْلَنْڠٗ كِمْبِشِيَ} & \textarabic{كْوَ عَلِيْ أَكِكٗمَ} &  \\* 
+\Tr{mlango kimbishiya} & \Tr{kwa 'alii akikoma} & \Tr{284d/c} \\ 
+\\[8mm] 
+
+\textarabic{عَلِيْ نْدِمِ حَمْزَ} & \textarabic{كِنٖنَ أَكِمَلِزَ} & \textarabic{٢٨٥} \\* 
+\Tr{'alii nḏimi ḥamza} & \Tr{kinena akimaliza} & \Tr{285b/a} \\ 
+\textarabic{هَپٗ كَتٗكَ عَلِيَ} & \textarabic{مْڠٖنِ هُكُؤُلِزَ} &  \\* 
+\Tr{hapo kaṯoka 'aliya} & \Tr{mgeni hukuuliza} & \Tr{285d/c} \\ 
+\\[8mm] 
+
+\textarabic{هُلِيَ ََكِبَئِنِ} & \textarabic{يٖيٖ يُپٗ مْلَنْڠٗنِ} & \textarabic{٢٨٦} \\* 
+\Tr{huliya aakibaini} & \Tr{yeye yupo mlangoni} & \Tr{286b/a} \\ 
+\textarabic{نَپٖنْدَ كُيَنْڠَلِيَ} & \textarabic{قَبُرِ نِ نِپٖكَنِ} &  \\* 
+\Tr{napenḏa kuyangaliya} & \Tr{qaburi ni nipekani} & \Tr{286d/c} \\ 
+\\[8mm] 
+
+\textarabic{مَتٗزِ يَكِمْشُكَ} & \textarabic{هَپٗ عَلِيْ كَتٗكَ} & \textarabic{٢٨٧} \\* 
+\Tr{maṯozi yakimshuka} & \Tr{hapo 'alii kaṯoka} & \Tr{287b/a} \\ 
+\textarabic{مَنٖنٗ أَكَمْوَمْبِيَ} & \textarabic{هَتَ نْدٖ كَتَمْكَ} &  \\* 
+\Tr{maneno akamwambiya} & \Tr{haṯa nḏe kaṯamka} & \Tr{287d/c} \\ 
+\\[8mm] 
+
+\textarabic{سٖنْدٖلٖيْ إِسِلَامُ} & \textarabic{كَمْوَمْبِيَ كِنُطُمُ} & \textarabic{٢٨٨} \\* 
+\Tr{senḏelee isilāmu} & \Tr{kamwambiya kinuṭumu} & \Tr{288b/a} \\ 
+\textarabic{أَمْبَيٗ أَكُلٖٹٖيَ} & \textarabic{صُبِرِ كْوَكٖ كَرِيْمُ} &  \\* 
+\Tr{ambayo akuleţeya} & \Tr{ṣubiri kwake karı̄mu} & \Tr{288d/c} \\ 
+\\[8mm] 
+
+\textarabic{نْدِيٖ مْوٖنْي كِٹِ چَكٖ} & \textarabic{مِمِ هُىُ نِ مَمَكٖ} & \textarabic{٢٨٩} \\* 
+\Tr{nḏiye mwenı̄ kiţi chake} & \Tr{mimi huyu ni mamake} & \Tr{289b/a} \\ 
+\textarabic{نَتَكَ كُيَنْڠَلِيَ} & \textarabic{نِؤٗنْيَ قَبُرِ يَكٖ} &  \\* 
+\Tr{naṯaka kuyangaliya} & \Tr{nionya qaburi yake} & \Tr{289d/c} \\ 
+\\[8mm] 
+
+\textarabic{لَكٖ هٗنْدٗوَ كِوٖكَ} & \textarabic{يٗوَ مْوٖنْيٖ مَمْلَكَه} & \textarabic{٢٩٠} \\* 
+\Tr{lake honḏowa kiweka} & \Tr{yowa mwenye mamlakah} & \Tr{290b/a} \\ 
+\textarabic{أَئِفَرِكِ دُنِيَ} & \textarabic{وَلَ مِمِ سِكُتَكَ} &  \\* 
+\Tr{aifariki ḏuniya} & \Tr{wala mimi sikuṯaka} & \Tr{290d/c} \\ 
+\\[8mm] 
+
+\textarabic{أُسِپٗتٖيْ كّوَ مْنْڠُ} & \textarabic{نَوٖ صُبِرِ نْدُيَنْڠُ} & \textarabic{٢٩١} \\* 
+\Tr{usipoṯee kkwa mngu} & \Tr{nawe ṣubiri nḏuyangu} & \Tr{291b/a} \\ 
+\textarabic{لَ أَجٖرَ نَ دُنِيَ} & \textarabic{وَلَ هُتٗكٗسَ فُنْڠُ} &  \\* 
+\Tr{la ajera na ḏuniya} & \Tr{wala huṯokosa fungu} & \Tr{291d/c} \\ 
+\\[8mm] 
+
+\textarabic{مَتٗزِ يَكِمْشُكَ} & \textarabic{هُمُؤٗوَ كِپُلِكَ} & \textarabic{٢٩٢} \\* 
+\Tr{maṯozi yakimshuka} & \Tr{humuowa kipulika} & \Tr{292b/a} \\ 
+\textarabic{أَكَتَمْكَ عَلِيَ} & \textarabic{هَپٗ كَشُكَ عَطِكَ} &  \\* 
+\Tr{akaṯamka 'aliya} & \Tr{hapo kashuka 'aṭika} & \Tr{292d/c} \\ 
+\\[8mm] 
+
+\textarabic{بَسِ نَاءٖ كَفَسِرِ} & \textarabic{هَپٗ عَلِيْ حَيْدَرِ} & \textarabic{٢٩٣} \\* 
+\Tr{basi nae kafasiri} & \Tr{hapo 'alii ḥayḏari} & \Tr{293b/a} \\ 
+\textarabic{أُيِنٖ پْوٖكٖ عَلِيَ} & \textarabic{مْبٗنَ هَكُيَ زُبٖيْرِ} &  \\* 
+\Tr{uyine pweke 'aliya} & \Tr{mbona hakuya zubēri} & \Tr{293d/c} \\ 
+\\[8mm] 
+
+\textarabic{كَٹِكَ كُئِفُنْڠُوَ} & \textarabic{أُنِئٖٹٖيْ بَرُوَ} & \textarabic{٢٩٤} \\* 
+\Tr{kaţika kuifunguwa} & \Tr{unieţee baruwa} & \Tr{294b/a} \\ 
+\textarabic{وَلَ سِكُمْزٖنْڠٖيَ} & \textarabic{أَلِپٗ سِكُمُيُوَ} &  \\* 
+\Tr{wala sikumzengeya} & \Tr{alipo sikumuyuwa} & \Tr{294d/c} \\ 
+\\[8mm] 
+
+\textarabic{نْدِيَ نَلِئِعَبِرِ} & \textarabic{بَرُوَ كِئِفَسِرِ} & \textarabic{٢٩٥} \\* 
+\Tr{nḏiya nalii'abiri} & \Tr{baruwa kiifasiri} & \Tr{295b/a} \\ 
+\textarabic{يَنَبُهِ كُنِنْڠِيَ} & \textarabic{هَنْدَ سَسَ كُفِكِرِ} &  \\* 
+\Tr{yanabuhi kuningiya} & \Tr{hanḏa sasa kufikiri} & \Tr{295d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَكَمْپَ مَجِ يَمُ} & \textarabic{فَطِمَ كَمْكَلِمُ} & \textarabic{٢٩٦} \\* 
+\Tr{akampa maji yamu} & \Tr{faṭima kamkalimu} & \Tr{296b/a} \\ 
+\textarabic{نْدَنِ أَلِيَسٗمٖيَ} & \textarabic{دُعَ سَبَا تِمَمُ} &  \\* 
+\Tr{nḏani aliyasomeya} & \Tr{ḏu'a sabā ṯimamu} & \Tr{296d/c} \\ 
+\\[8mm] 
+
+\textarabic{سِيَوٖزِ يَ فَتُمَ} & \textarabic{أَكَمْجِبُ كَلِمَ} & \textarabic{٢٩٧} \\* 
+\Tr{siyawezi ya faṯuma} & \Tr{akamjibu kalima} & \Tr{297b/a} \\ 
+\textarabic{رُوْحُ يَتَكَ كُلِيَ} & \textarabic{مٗيٗ نِنَ هَلِمَمَ} &  \\* 
+\Tr{rūḥu yaṯaka kuliya} & \Tr{moyo nina halimama} & \Tr{297d/c} \\ 
+\\[8mm] 
+
+\textarabic{عَطِكَ مَاءِ سِ كِٹُ} & \textarabic{صُبِرِ كْوَ بْوَنَ وٖٹُ} & \textarabic{٢٩٨} \\* 
+\Tr{'aṭika mai si kiţu} & \Tr{ṣubiri kwa bwana weţu} & \Tr{298b/a} \\ 
+\textarabic{يَبَكِيٖؤٗ تَٹُوَ} & \textarabic{چِجَ مَٹَمَ مَٹَٹُ} &  \\* 
+\Tr{yabakiyeo ṯaţuwa} & \Tr{chija maţama maţaţu} & \Tr{298d/c} \\ 
+\\[8mm] 
+
+\textarabic{مِيٗمٗنِ كَيَپٖكَ} & \textarabic{مََءِ أَسِپٗيَتَكَ} & \textarabic{٢٩٩} \\* 
+\Tr{miyomoni kayapeka} & \Tr{maai asipoyaṯaka} & \Tr{299b/a} \\ 
+\textarabic{فَتُمَ كَمْپٗكٖيَ} & \textarabic{أَكَٹُمْوَ نَ عَطِكَ} &  \\* 
+\Tr{faṯuma kampokeya} & \Tr{akaţumwa na 'aṭika} & \Tr{299d/c} \\ 
+\\[8mm] 
+
+\textarabic{وَ عَظِ كُمُؤٗنٖشَ} & \textarabic{هَپٗ كَمْكَلِفِشَ} & \textarabic{٣٠٠} \\* 
+\Tr{wa 'aẓi kumuonesha} & \Tr{hapo kamkalifisha} & \Tr{300b/a} \\ 
+\textarabic{مُنْڠُ أَكَمُؤٗمْبٖيَ} & \textarabic{مَاءِ أَلِپٗيَشُشَ} &  \\* 
+\Tr{mungu akamuombeya} & \Tr{mai alipoyashusha} & \Tr{300d/c} \\ 
+\\[8mm] 
+
+\textarabic{زَ مْوَنَوٖ جَبَرِزٖ} & \textarabic{نَسِ هَپٗ أَمُؤُزٖ} & \textarabic{٣٠١} \\* 
+\Tr{za mwanawe jabarize} & \Tr{nasi hapo amuuze} & \Tr{301b/a} \\ 
+\textarabic{كِشَ أَكِلِيَ} & \textarabic{نَ عَلِيْ أَمْوٖلٖزٖ} &  \\* 
+\Tr{kisha akiliya} & \Tr{na 'alii amweleze} & \Tr{301d/c} \\ 
+\\[8mm] 
+
+\textarabic{فَتُمَ أَكَئِنُكَ} & \textarabic{هَتَ كُكِپَمْبَؤُكَ} & \textarabic{٣٠٢} \\* 
+\Tr{faṯuma akainuka} & \Tr{haṯa kukipambauka} & \Tr{302b/a} \\ 
+\textarabic{وَكَلَ وٗتٖ پَمٗيَ} & \textarabic{كَمْپِكِيَ عَطِكَ} &  \\* 
+\Tr{wakala woṯe pamoya} & \Tr{kampikiya 'aṭika} & \Tr{302d/c} \\ 
+\\[8mm] 
+
+\textarabic{سَسَ نَمِ كْوَ خٖرِنِ} & \textarabic{عَطِكَ أَكَبَئِنِ} & \textarabic{٣٠٣} \\* 
+\Tr{sasa nami kwa kherini} & \Tr{'aṭika akabaini} & \Tr{303b/a} \\ 
+\textarabic{مْٹُ سِكُمُوَتِيَ} & \textarabic{مْوَنَنْڠُ أُكٗ مُئِنِ} &  \\* 
+\Tr{mţu sikumuwaṯiya} & \Tr{mwanangu uko muini} & \Tr{303d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَمْوَمْبِيٖ مُمٖ وَكٖ} & \textarabic{نَ فَتُمَ أَتَمْكَ} & \textarabic{٣٠٤} \\* 
+\Tr{amwambiye mume wake} & \Tr{na faṯuma aṯamka} & \Tr{304b/a} \\ 
+\textarabic{أَسٖنْدٖ پْوٖكٖ عَطِيَ} & \textarabic{نَاوٖ نٖنْدَ كَمْپٖكٖ} &  \\* 
+\Tr{asenḏe pweke 'aṭiya} & \Tr{nāwe nenḏa kampeke} & \Tr{304d/c} \\ 
+\\[8mm] 
+
+\textarabic{كْوَ مْكٗنٗ كَبَئِنِ} & \textarabic{عَلِيْ كَنْڠِيَ نْدَنِ} & \textarabic{٣٠٥} \\* 
+\Tr{kwa mkono kabaini} & \Tr{'alii kangiya nḏani} & \Tr{305b/a} \\ 
+\textarabic{فَتُمَ أَكَمْوٖنْدٖيَ} & \textarabic{أَكَئِنُكَ كِٹِنِ} &  \\* 
+\Tr{faṯuma akamwenḏeya} & \Tr{akainuka kiţini} & \Tr{305d/c} \\ 
+\\[8mm] 
+
+\textarabic{فَتُمَ هُتٗؤُذِكَ} & \textarabic{كَْبَ چٖنْدَ كِمْيٖكَ} & \textarabic{٣٠٦} \\* 
+\Tr{faṯuma huṯoudhika} & \Tr{kaba chenḏa kimyeka} & \Tr{306b/a} \\ 
+\textarabic{كَمَ هَيٗ كُنَمْبِيَ} & \textarabic{كْوَمْبَ وَٹُ هُتَمْكَ} &  \\* 
+\Tr{kama hayo kunambiya} & \Tr{kwamba waţu huṯamka} & \Tr{306d/c} \\ 
+\\[8mm] 
+
+\textarabic{هَيَمٗ مٗيٗنِ مْوَنڠُ} & \textarabic{كَنٖنَ شَهِدِ مْنْڠُ} & \textarabic{٣٠٧} \\* 
+\Tr{hayamo moyoni mwangu} & \Tr{kanena shahiḏi mngu} & \Tr{307b/a} \\ 
+\textarabic{نَ قَاسِمُ نِ مَمٗيَ} & \textarabic{سَسَ نِ كَمَ نْدُيَنْڠُ} &  \\* 
+\Tr{na qāsimu ni mamoya} & \Tr{sasa ni kama nḏuyangu} & \Tr{307d/c} \\ 
+\\[8mm] 
+
+\textarabic{كَنْدَمَنَ نَ عَطِكَ} & \textarabic{هَپٗ عَلِيْ كَتٗكَ} & \textarabic{٣٠٨} \\* 
+\Tr{kanḏamana na 'aṭika} & \Tr{hapo 'alii kaṯoka} & \Tr{308b/a} \\ 
+\textarabic{هَتَ كْوَءٗ أَكَنْڠِيَ} & \textarabic{أَكٖنْدَ أَكَمْپٖكَ} &  \\* 
+\Tr{haṯa kwao akangiya} & \Tr{akenḏa akampeka} & \Tr{308d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَكَصَلِ أَظُهُرِ} & \textarabic{هَپٗ عَلِيْ حَيْدَرِ} & \textarabic{٣٠٩} \\* 
+\Tr{akaṣali aẓuhuri} & \Tr{hapo 'alii ḥayḏari} & \Tr{309b/a} \\ 
+\textarabic{مُئِنِ أَكَرٖجٖيَ} & \textarabic{كَنْدَمَنَ نَ زُبٖيْرِ} &  \\* 
+\Tr{muini akarejeya} & \Tr{kanḏamana na zubēri} & \Tr{309d/c} \\ 
+\\[8mm] 
+
+\textarabic{نْدِپٗ أَلِپٗرَدِدِ} & \textarabic{نَ هَپٗ أَلِپٗرُدِ} & \textarabic{٣١٠} \\* 
+\Tr{nḏipo aliporaḏiḏi} & \Tr{na hapo aliporuḏi} & \Tr{310b/a} \\ 
+\textarabic{مصَحَبَ كِوَمْبِيَ} & \textarabic{مَنٖنٗ كِجِتَهِدِ} &  \\* 
+\Tr{mṣaḥaba kiwambiya} & \Tr{maneno kijiṯahiḏi} & \Tr{310d/c} \\ 
+\\[8mm] 
+
+\textarabic{بَيْتِ زَنْڠُ هُكٗمَ} & \textarabic{هَپَ نِمٖٹِيَ تَمَ} & \textarabic{٣١١} \\* 
+\Tr{bayṯi zangu hukoma} & \Tr{hapa nimeţiya ṯama} & \Tr{311b/a} \\ 
+\textarabic{كْوَ زٗتٖ زِكَوٖلٖيَ} & \textarabic{نَ أَمْبَؤٗ وَتَسٗمَ} &  \\* 
+\Tr{kwa zoṯe zikaweleya} & \Tr{na ambao waṯasoma} & \Tr{311d/c} \\ 
+\\[8mm] 
+
+\textarabic{مْٹُ أَكَزِبَئِنِ} & \textarabic{بَيْتِزٖ زِيُوٖنِ} & \textarabic{٣١٢} \\* 
+\Tr{mţu akazibaini} & \Tr{bayṯize ziyuweni} & \Tr{312b/a} \\ 
+\textarabic{مٗيٗ أُسٗپُنْڠُلِيَ} & \textarabic{أَصُبُحِ نَ جِيٗنِ} &  \\* 
+\Tr{moyo usopunguliya} & \Tr{aṣubuḥi na jiyoni} & \Tr{312d/c} \\ 
+\\[8mm] 
+
+\textarabic{مْٹُيٖ هَتٗسُمْبُكَ} & \textarabic{كْوَنْدَ هَتٗذَلِلِكَ} & \textarabic{٣١٣} \\* 
+\Tr{mţuye haṯosumbuka} & \Tr{kwanḏa haṯodhalilika} & \Tr{313b/a} \\ 
+\textarabic{مٗلَ هُمُوَفِقِيَ} & \textarabic{نَ أَتَكَلٗتَمْكَ} &  \\* 
+\Tr{mola humuwafiqiya} & \Tr{na aṯakaloṯamka} & \Tr{313d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَتَجِبِوَ جَوَبُ} & \textarabic{أَؤٗمْبَلٗ كْوَ وَهَابُ} & \textarabic{٣١٤} \\* 
+\Tr{aṯajibiwa jawabu} & \Tr{aombalo kwa wahābu} & \Tr{314b/a} \\ 
+\textarabic{أَدَلِلِشٖ وَصِيَ} & \textarabic{أَوْ مْٹُ نَجَرِبُ} &  \\* 
+\Tr{aḏalilishe waṣiya} & \Tr{aw mţu najaribu} & \Tr{314d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَنْيِ سٗمَنِ ضَمِيْرِ} & \textarabic{نِمٖپٖنْدَ كُكَرِرِ} & \textarabic{٣١٥} \\* 
+\Tr{nanyi somani ḍamı̄ri} & \Tr{nimepenḏa kukariri} & \Tr{315b/a} \\ 
+\textarabic{وَ مَوْلَانَا عَلِيَ} & \textarabic{أُتٖنْدِ وَ جَعْفَرِ} &  \\* 
+\Tr{wa mawlānā 'aliya} & \Tr{uṯenḏi wa ja'fari} & \Tr{315d/c} \\ 
+\\[8mm] 
+
+\end{longtable} 
 
 \end{document}
-

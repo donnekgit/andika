@@ -1,0 +1,68 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage{titlesec}  % Allow the chapter/section heading settings to be fine-tuned.  Needs to come before bidi, in polyglossia.
+\usepackage{polyglossia}  % multilingual support
+\usepackage{longtable}  % tables that carry across multiple pages
+\usepackage{xcolor}  % can't use color with polyglossia
+
+\input{convert/tex/fontdefs.tex}  % Bring in the font definitions.
+
+\usepackage{marginnote}
+\renewcommand*{\marginfont}{\color{red}\sffamily}
+
+\interfootnotelinepenalty=10000 % prevents the footnote from breaking across pages
+% http://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
+
+% Thanks to Manas Tungare (http://manas.tungare.name/software/latex) for these settings.
+\setlength{\paperwidth}{210mm}
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{247mm}
+
+\setlength{\evensidemargin}{1in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{-0.5in}
+
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
+
+\usepackage{url}  % Use urls in text and captions with sensible linewrap.  Can't use [obeyspaces] - this option clashes with biblatex.
+\urlstyle{rm}  % Set urls in roman.
+
+\begin{document}
+
+\begin{longtable}{rrl} 
+
+\makebox[8cm][r]{} & & \makebox[8cm][r]{} \\ 
+
+\textarabic{نِكِغَ كُنَ جَبَلِ} & \textarabic{نَلِغُ حِلُ ثَقِلِ} & \textarabic{١} \\* 
+\Tr{nikiḡa kuna jabali} & \Tr{naliḡu ḥilu thaqili} & \Tr{1b/a} \\ 
+\textarabic{زَحَدِدِ نَصِفُرِ} & \textarabic{لِفُغَ كَسِلِ سِلِ} &  \\* 
+\Tr{zaḥadidi naṣifuri} & \Tr{lifuḡa kasili sili} & \Tr{1d/c} \\ 
+\\[8mm] 
+
+\textarabic{وَسِمَامِ وِنْيِ قُوَ} & \textarabic{وِدَبُ وَكِفُغُوَ} & \textarabic{٢} \\* 
+\Tr{wasimāmi winyi quwa} & \Tr{widabu wakifuḡuwa} & \Tr{2b/a} \\ 
+\textarabic{سَبْعِنِ مَكُفَرِ} & \textarabic{وَوُمِ وَسِوُتُوَ} &  \\* 
+\Tr{sabʾini makufari} & \Tr{wawumi wasiwutuwa} & \Tr{2d/c} \\ 
+\\[8mm] 
+
+\textarabic{كُفُغَ هَوَحِمِلِ} & \textarabic{وَتُ وَكِوَ قَلِلِ} & \textarabic{٣} \\* 
+\Tr{kufuḡa hawaḥimili} & \Tr{watu wakiwa qalili} & \Tr{3b/a} \\ 
+\textarabic{مُشَبَهَ وَحَجَرِ} & \textarabic{كَلَغُ كُوَ ثَقِلِ} &  \\* 
+\Tr{mushabaha waḥajari} & \Tr{kalaḡu kuwa thaqili} & \Tr{3d/c} \\ 
+\\[8mm] 
+
+\textarabic{تِنَ ِدِكَوَثِقِ} & \textarabic{مَلْعُوُنِ مُنَفِقِ} & \textarabic{٤} \\* 
+\Tr{tina idikawathiqi} & \Tr{malʾuwuni munafiqi} & \Tr{4b/a} \\ 
+\textarabic{كَزِعَ دَوِمَدَرِ} & \textarabic{اَمَتِبَ نَحَدَقِ} &  \\* 
+\Tr{kaziʾa dawimadari} & \Tr{amatiba naḥadaqi} & \Tr{4d/c} \\ 
+\\[8mm] 
+
+\textarabic{مَبَنَيِ تَبَيِنِ} & \textarabic{نَخَدَقِ فَهَمُنِ} & \textarabic{٥} \\* 
+\Tr{mabanayi tabayini} & \Tr{nakhadaqi fahamuni} & \Tr{5b/a} \\ 
+\textarabic{كَذِرَعَ زَمَكُفَرِ} & \textarabic{نِذِرَعَ عِشِرِنِ} &  \\* 
+\Tr{kadhiraʾa zamakufari} & \Tr{nidhiraʾa ʾishirini} & \Tr{5d/c} \\ 
+\\[8mm] 
+
+\end{longtable} 
+
+\end{document}

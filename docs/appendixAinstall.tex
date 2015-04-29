@@ -5,72 +5,38 @@
 
 
 \begin{quotation}
-\noindent I am grateful to Natalie Kontny, Student Assistant on Project C07, \textbf{The Place of Swahili Manuscripts in East African Collections},  at the University of Hamburg's Centre for the Study of Manuscript Cultures,\footnote{\url{www.manuscript-cultures.uni-hamburg.de/Projekte_e.html}} for road-testing these instructions and helping to write them up.
+\begin{small}
+\noindent I am grateful to Natalie Kontny, Student Assistant on Project C07, \textbf{The Place of Swahili Manuscripts in East African Collections},  at the University of Hamburg's Centre for the Study of Manuscript Cultures,\footnote{\url{www.manuscript-cultures.uni-hamburg.de/Projekte_e.html}} for road-testing these instructions and helping to write them up.                                                                                                                                                                                                                                                                                                                                                                         \end{small}
 \end{quotation}
 
-\section{Introduction}
 
-These instructions are based on Ubuntu 14.04, both as the main operating system and as a virtual guest on Apple OS X. In either case, your desktop, real or virtual, needs to be working properly and to have network access so that you can download the additional software required.
+\section{How much of this do I need to do?}
 
+If you simply wish to be able to type Swahili in a word-processor, you need not go through the full installation procedure in this appendix.  After installing Ubuntu, you only need to follow \Cref{s:snapshot}, move into the unzipped download, and then follow \Crefrange{s:fonts}{s:libreoffice}.
 
-Download an Ubuntu iso from:
-http://www.ubuntu.com/download/desktop
-Ubuntu 14.04.1 LTS, 64-bit
-and save it somewhere (it's about 960Mb).
+However, if you wish to transcribe, edit and annotate Swahili documents in Arabic script, providing Roman equivalents as well, then you will need to carry out the full installation procedure here.  The reason there is so much to install is that \textbf{Andika!} tries not to reinvent the wheel -- rather, it combines already-existing best-of-breed software to do new things.
 
-Open VirtualBox Manager
-Click the icon for New.
-Fill in:
-        Name: Andika
-        Type: Linux
-        Version: Ubuntu (64 bit)
-Click Next.
-Set 1024Mb (or 1500Mb if you have 3Gb or more of memory) as the memory amount. 
-(Your IT guy set only 512Mb here.)
-Click Next.
-Tick "Create a virtual harddrive now"
-Click Next.
-Tick VDI.
-Click Next.
-Tick "Dynamically allocated"
-Click Next.
-Set 40Gb as the virtual hard drive size. (Your IT guy set only 8Gb here, which 
-was OK sometime in the 90s.  I don't know why Oracle sets that as a default.)
-Click Create.
-Click the new Andika entry in the left-hand pane so that it is highlighted.
-Click the icon for Start.
-You will be asked to select a startup disk
-Click the little folder to the right of the textbox to navigate to wherever 
-you stored the Ubuntu iso.
-Click OK.
-Click Start.
-The Ubuntu will load onto your virtual drive - it will take a couple of 
-minutes.
-Click "Install Ubuntu".
-Click through the screens, accepting the defaults.
-At the end, about 20 minutes, you should have a new Unity desktop, and you can 
-go through Appendix A again.
-You can do this and if it doesn't go right just delete the virtual machine, so 
-it's quite an easy way of experimenting.
+Most of the install is carried out by typing in commands directly.  This is because this method is much faster and more succinct than explaining how to point-and-click through various dialogue boxes.
 
 
-Users who simply wish to be able to type Swahili in a word-processor need not go through the full installation procedure in this appendix.  They only need to follow \Cref{s:snapshot}, move into the unzipped download, and then follow \Crefrange{s:fonts}{s:libreoffice}.
+\section{Ubuntu Linux}
 
-The full installation procedure here needs to be carried out by users who wish to transcribe, edit and annotate Swahili documents in Arabic script, providing Roman equivalents as well.  The reason there is so much to install is that \textbf{Andika!} does not reinvent the wheel -- rather, it tries to combine already-existing best-of-breed software to do new things.
+\textbf{Andika!} was developed on Ubuntu 14.04,\footnote{\url{ubuntu.com}} a variety of GNU/Linux,\footnote{\url{en.wikipedia.org/wiki/Linux}} a secure and free operating system.  ``Free'' here means not only that it is available at no cost (free as in beer), but also that the user is free to copy, change and distribute it without fear of copyright lawsuits (free as in freedom).\footnote{\url{fsf.org}}  Ubuntu is a user-friendly packaging of a wide variety of software which is suitable for any computing need -- the name is a Southern Bantu cognate of the Swahili \textbf{utu}, and means ``humanity'' or ``humanness'': it is intended to emphasise that the free software concept of sharing brings out the best in all of us.
 
-\section{Preliminaries}
+You can download the current 64-bit\footnote{Most modern machines should be 64-bit capable.} version of Ubuntu 14.04 from \url{http://www.ubuntu.com/download/desktop}\footnote{Although versions such as 15.04 are now available, it is best to stick to 14.04, since this is a Long Term Support release which will be supported for 5 years.}  You can install Ubuntu as the sole operating system on a computer (highly recommended),\footnote{\url{ubuntu.com/download/desktop/install-ubuntu-desktop}} or install it alongside an existing operating system so that you can ``dual-boot'' into either operating system.\footnote{Doing an internet search on ``dual-boot Ubuntu'' should produce a number of guides, such as the one at \url{linux.about.com/od/LinuxNewbieDesktopGuide/ss/The-Ultimate-Windows-81-And-Ubuntu-Dual-Boot-Guide.htm}}
 
-Ubuntu comes by default with a desktop called Unity,\footnote{unity.ubuntu.com} but a variety of different Linux desktops are available, of which perhaps the most popular is KDE.\footnote{kde.org}  (If you want to install KDE, open a terminal as shown below and type: \verb|sudo apt-get install kubuntu-desktop|.  This will take some time to complete.  Log out of Unity, and select KDE at the login screen by clicking on the Ubuntu symbol above the login box.)
+Another possibility is to run Ubuntu inside your existing operating system, as a ``virtual machine''.  This will work well on most machines, though there may be issues with some, and it is always less efficient than running Ubuntu directly ``on the metal''.  Notes on installing a virtual machine are in \Cref{s:ubuntuvm}.
 
-Most of the install is carried out by typing commands into a terminal: in KDE, go to \textbf{K \textrightarrow\ System \textrightarrow\ Konsole}; in Unity, press \textbf{Ctrl + Alt + T}.  This is because this method is much faster and more succinct than explaining how to point-and-click through various dialogue boxes.
+
+\section{Conventions}
 
 Unless otherwise indicated, lines in\\
 \texttt{monospaced font}\\
-are commands that should be typed into the terminal.  
+are commands to be typed in.  
 
 Unless otherwise indicated, all commands should be activated by pressing \textbf{Return} at the end of the command.
 
-The symbol $\hookrightarrow$ at the beginning of a line means that it is a continuation of the previous command, and therefore \textbf{Return} should only be pressed after this line.
+The symbol $\hookrightarrow$ at the beginning of a line means that it is a continuation of the previous command, and therefore \textbf{Return} should only be pressed after the end of this line.
 
 Keys separated by + should be pressed simultaneously.  Thus \textbf{Ctrl+X} means ``press the Ctrl key at the same time as the X key''.
 
@@ -81,17 +47,46 @@ If at any point the system suggests adding other packages (called \textit{depend
 Unless otherwise indicated, it is assumed that all commands are run from the suggested base directory of the \textbf{Andika!} software, \textit{/var/www/andika} -- see Section \ref{s:download}.
 
 
-\section {Update the package list}
+\section{Running Ubuntu as a virtual machine}
+\label{s:ubuntuvm}
 
-Before doing anything else, update the lists of software packages on the machine:
+As noted above, this option is less versatile than a proper install of Ubuntu, so the following notes do not attempt to cover every issue.\footnote{In particular, running Ubuntu as a guest on an Apple Mac OS X host throws up some keyboard problems -- it is unclear how you access the | (pipe) and \textbackslash (backslash) keys on an Apple keyboard when you need to use them in Ubuntu.  In an Apple UK keyboard they are accessed respectively by \textbf{Shift+Alt+L} and \textbf{Shift+Alt+/}, but these keystrokes do not work in virtual machines.}
 
-\verb|sudo apt-get update|
+Install the version of Oracle's VirtualBox software\footnote{\url{virtualbox.org}} appropriate for your operating system.  Once installed, open VirtualBox Manager and click the icon for \textbf{New}.  Fill in \textbf{Andika} against \textit{Name}, \textbf{Linux} against \textit{Type} and \textbf{Ubuntu (64 bit)} against \textit{Version}. Click \textbf{Next}.  As the memory amount, set \textbf{2000Mb} if you have at least 3Gb memory in your machine -- raise the level if you have more memory (if you have less memory you will need to accept that VirtualBox may not run very well.  Click \textbf{Next}.  Tick \textbf{Create a virtual harddrive now}.  Click \textbf{Next}.  Tick \textbf{VDI}.  Click \textbf{Next}.  Tick \textbf{Dynamically allocated}.  Click \textbf{Next}.  Set \textbf{40Gb} as the virtual hard drive size if you have a hard drive of at least 300Mb.  Click \textbf{Create}.
 
-Then upgrade any software packages to the most recent available versions:
+You have now set up a virtual machine, and the next step is to install Ubuntu on it.  Click the new \textit{Andika} entry in the left-hand pane so that it is highlighted.  Click the icon for \textbf{Start}.  You will be asked to select a startup disk.  Click the folder icon to the right of the textbox to navigate to wherever you stored your download of Ubuntu 14.04.  Click \textbf{OK}. Click \textbf{Start}.  The Ubuntu boot process will start, and after a couple of minutes you should see an screen with two large icons on it.  Click \textbf{Install Ubuntu}.  Click through the screens, accepting the defaults.  It is important to make a note of your username and password.  After about 20 minutes, you should have a new Ubuntu install using the Unity desktop.
 
-\verb|sudo apt-get upgrade --show-upgraded|
+However, the screen resolution is limited to 800x600.  To get higher resolutions, you need to install VirtualBox's Guest Additions.
+In the running Andika instance of Ubuntu, press \textbf{Ctrl+Alt+T} to get a command-line terminal.  Update the lists of software packages on the machine:\\
+\verb|sudo apt-get update|\\
+entering your password when requested (the one you entered during the Ubuntu install).  Then upgrade any software packages to the most recent available versions:\\
+\verb|sudo apt-get upgrade|
 
-Note that this may take 15-20 minutes, depending on your system.
+Note that this may take 15-20 minutes, depending on your system.  Install software that the system will use to build other software:\\
+\verb|apt-get install dkms|\\
+\verb|apt-get install build-essential|
+
+Now, click \textbf{Devices} on the menu-bar of the VirtualBox software on your host machine, and select \textbf{Install Guest Additions}. A CDROM icon will appear on the Ubuntu desktop -- click on it to install the additional software.  Once completed (which may take 5 minutes or so), shutdown the Ubuntu Andika instance by closing the window it is running in.  Then restart Andika again from VirtualBox.  If you now resize the Andika window, or select \textit{Fullscreen} mode in VirtualBox, you should get the full resolution possible on your screen.
+
+
+\section{Change the desktop to KDE}
+
+Once you have Ubuntu installed (whichever method you choose), you can go on to install \textbf{Andika!}.
+
+Ubuntu comes by default with a desktop called Unity,\footnote{unity.ubuntu.com} but a variety of different Linux desktops are available, of which perhaps the most popular is KDE.\footnote{kde.org}  Since KDE is easier to work with, it is a good idea to change the desktop to KDE (though this is not essential).
+
+Open a terminal (\textbf{Ctrl+Alt+T} on Unity), and update all software:\\
+\verb|sudo apt-get update|\\
+\verb|sudo apt-get upgrade|
+
+Then install KDE:\\
+\verb|sudo apt-get install kubuntu-desktop|
+
+Note that this may take some time to complete.
+
+Log out of Unity by pressing the wheel icon at the top right of the screen, and at the login screen select KDE as your preferred desktop by clicking on the Ubuntu symbol above the login box.
+
+Once you have logged in to KDE, right-click the K on the lower left of the screen and select \textbf{Switch to Classic Menu Style}.  You can then bring up a terminal by selecting \textbf{K \textrightarrow\ System \textrightarrow\ Konsole}.  You can also drag the menu entry to the panel at the bottom of the screen to allow for faster access.
 
 
 \section{Download \textit{Andika!}}
@@ -144,25 +139,21 @@ We are going to move the working directory for \textbf{Andika!} to a location wh
 \verb|sudo mv andika /var/www/|\\
 (note the final slash)
 
-Give yourself ownership of the \textit{/var/www} directory (by default, ordinary users are not allowed to access this):
-
+Give yourself ownership of the \textit{/var/www} directory (by default, ordinary users are not allowed to access this):\\
 \verb|sudo chown -R USER.USER /var/www/|
 
 Remember, USER here stands for your username, which you set up when you installed Ubuntu.  For instance, here I would type:\\
 \verb|sudo chown -R kevin.kevin /var/www/|
 
-Set up a link from your \textit{/home/USER} directory to the \textit{/var/www/} directory:
-
+Set up a link from your \textit{/home/USER} directory to the \textit{/var/www/} directory:\\
 \verb|ln -s /var/www/ web|
 
 If you go to your home directory in a file manager (in KDE \textbf{K \textrightarrow\ System \textrightarrow\ Dolphin}; in Unity, the second icon on the left-hand side, the one with a file on it), you will see an entry for \textit{web}.  If you click this, it will actually take you to \textit{/var/www/}.  This makes access to the webpage directory quicker and easier.
 
-Move into the \textit{andika} directory for the rest of the installation:
-
+Move into the \textit{andika} directory for the rest of the installation:\\
 \verb|cd web/andika|
 
-You can check the layout of the directories and files by listing them:
-
+You can check the layout of the directories and files by listing them:\\
 \verb|ls|
 
 
@@ -173,31 +164,25 @@ A number of default fonts is used in printing the output from \textbf{Andika!}, 
 
 The most important font, Scheherazade,\footnote{\url{scripts.sil.org/cms/scripts/page.php?item_id=Scheherazade}} created by Bob Hallissy and Jonathan Kew, is a Naskh-style font used for the Arabic text.  The version available by default from Ubuntu is somewhat old, so it is preferable to use SIL's own package collection to get the latest package.  SIL has a page with instructions on how to do this for the Unity desktop,\footnote{\url{packages.sil.org}} but as usual it is quicker to use the terminal.
 
-Fetch the authentication key:
-
+Fetch the authentication key:\\
 \verb|wget http://packages.sil.org/sil.gpg|
 
-Add the key:
-
+Add the key:\\
 \verb|sudo apt-key add sil.gpg|
 
-Add the SIL repository to the list of repositories used by your Ubuntu install:
-
+Add the SIL repository to the list of repositories used by your Ubuntu install:\\
 \verb|sudo add-apt-repository "deb http://packages.sil.org/ubuntu trusty main"|
 
 If you are not using 14.04 (codenamed Trusty Tahir), change \textit{trusty} accordingly.  To find the codename of your version, use:\\
 \verb|lsb_release -sc|
 
-Update the software package lists to include software from the new repository:
-
+Update the software package lists to include software from the new repository:\\
 \verb|sudo apt-get update|
 
-Remove the authentication key:
-
+Remove the authentication key:\\
 \verb|rm sil.gpg|
 
-We can now install all the fonts:
-
+We can now install all the fonts:\\
 \verb|sudo apt-get install fonts-sil-scheherazade fonts-hosny-amiri fonts-liberation|\\
 $\hookrightarrow$ \verb|fonts-linuxlibertine|
 
@@ -243,9 +228,11 @@ You should now see an additional marker in the system tray at the bottom right o
 
 Close the \textit{System Settings} box.
 
+Note that if you make changes to the keyboard layout, you need to re-apply the layout -- see the end of \Cref{appC}.
+
 \subsection{Activate the new keyboard in Unity}
 
-Click the \textbf{System Settings} icon in the Launcher, or click the system icon in the top right-hand corner and select \textbf{System Settings}.
+If you have decided to stick to Unity as your desktop, click the \textbf{System Settings} icon in the Launcher, or click the system icon in the top right-hand corner and select \textbf{System Settings}.
 
 Click \textbf{Text entry} in the \textit{Personal} section.
 
@@ -263,7 +250,9 @@ There should be a new icon on the menu bar.  Either Click on the language choose
 
 If you have the unlock screen activated, this means that when you leave your machine for some time, it will power down the screen and then, when you resume work, present a login box so that you can unlock the desktop.   A problem arises if you changed the  keyboard to Swahili before leaving your machine -- since the machine was powered down with that keyboard active, the login box will only allow you to type Arabic glyphs, which means that you cannot type in your (Roman glyph) password!
 
-To deal with this situation, press \textbf{Crtl+Alt+F5} to get a terminal login.  Type your username and password to log in.
+The easiest way to deal with this is to disable the unlock screen by going to \textbf{K} \textrightarrow\ \textbf{Settings} \textrightarrow\ \textbf{System Settings \textrightarrow\ Power Management \textrightarrow\ Advanced Settings}, and unticking \textit{Lock screen on resume}.
+
+If for some reason you wish to retain the lock screen, you can recover from this situation whenever it occurs by pressing \textbf{Crtl+Alt+F5} to get a terminal login.  Type your username and password to log in.
 
 Open the configuration file for the keyboard:\\
 \verb|nano ~/.kde/share/config/kxkbrc|
@@ -277,8 +266,6 @@ Save the file: \textbf{Ctrl+X, Y, Return}.\\
 (The example here uses the UK English keyboard, \textit{gb} -- replace this with whatever your own default keyboard is.)
 
 Press \textbf{Ctrl+Alt+F7} to return to the unlock screen.  Click the login box, and you should be able to login as normal.  However, you will need to re-add the Swahili keyboard as shown above.
-
-Alternatively, you can disable the unlock screen by going to \textbf{K} \textrightarrow\ \textbf{Settings} \textrightarrow\ \textbf{System Settings \textrightarrow\ Power Management \textrightarrow\ Advanced Settings}, and unticking \textit{Lock screen on resume}.
 
 
 \section{LibreOffice}
@@ -337,7 +324,7 @@ PHP is a computer language which is used to convert text from one script to the 
 
 \subsection{Install PHP}
 
-\verb|sudo apt-get install php5, php5-cli|
+\verb|sudo apt-get install php5 php5-cli|
 
 To test the install:\\
 \verb|php --version|\\
@@ -350,28 +337,20 @@ You should get a message giving details about the version of PHP you've just ins
 
 This command will open the system file \textit{php.ini} in a lightweight text editor called \textit{nano}, where you have to change some settings.  Use the arrow keys on the keyboard to move around, and the Home and End keys to move to the beginning or end of a line.
 
-Press \textbf{Ctrl+W}, then type
-
-\verb|max_execution_time|
-
-into the searchline and press \textbf{Return}. Change the line to read:
-
+Press \textbf{Ctrl+W}, then type\\
+\verb|max_execution_time|\\
+into the searchline and press \textbf{Return}. Change the line to read:\\
 \verb|max_execution_time = 300|
 
-Again press \textbf{Ctrl+W}, type
-
-\verb|error_reporting| 
-
-and press \textbf{Return}. Change that line to: 
-
+Again press \textbf{Ctrl+W}, type\\
+\verb|error_reporting| \\
+and press \textbf{Return}. Change that line to: \\
 \verb|error_reporting = E_ALL & ~E_NOTICE & ~E_DEPRECATED|
 
-A bit lower down from that (you can scroll down using the mouse), there is a \textit{display\_errors} line. Change it to read: 
-
+A bit lower down from that (you can scroll down using the mouse), there is a \textit{display\_errors} line. Change it to read: \\
 \verb|display_errors = On|
 
-Below that there is a \textit{log\_errors} line. Change it to read: 
-
+Below that there is a \textit{log\_errors} line. Change it to read: \\
 \verb|log_errors = Off|
 
 To save the file, press \textbf{Ctrl+X}, then press \textbf{Y} to confirm you want to save the modifications, and press \textbf{Return} to close the file.
@@ -384,8 +363,9 @@ PostgreSQL is a database which is used to store the words of the text for editin
 
 \subsection{Install PostgreSQL}
 
-\verb|sudo apt-get install postgresql, postgresql-client, postgresql-common.|
-$\hookrightarrow$ \verb|postgresql-contrib, php5-pgsql|
+\verb|sudo apt-get install postgresql postgresql-client postgresql-common|
+
+$\hookrightarrow$ \verb|postgresql-contrib php5-pgsql|
 
 To test the install:\\
 \verb|psql|
@@ -396,10 +376,8 @@ You should get an error message saying that the role named after your username d
 \subsection{Set up a database user}
 \label{ss:dbuser}
 
-On Ubuntu, PostgreSQL uses peer authentication by default.  This means that creating a database user with the same name as your system (Ubuntu) user will mean you can log in to the database without entering a password.\footnote{This also means that you cannot create or use databases under a name other than that of your system user.  If you wish to do this, or enter a password each time your user accesses a database, open the configuration file: \texttt{sudo nano /etc/postgresql/9.3/main/pg_hba.conf}.  Find the line: \texttt{local all all peer} and change it to read \texttt{local all all md5}.  Save the file: \textbf{Ctrl+X, Y, Return}.  Restart PostgreSQL: \texttt{sudo service postgresql restart}.  You will now need to enter your database password even to connect to the database under your system username.}  The terminal prompt should tell you what your username is -- it is of the form \textit{user@computer}.  Alternatively, you can run:
-
-\verb|whoami|
-
+On Ubuntu, PostgreSQL uses peer authentication by default.  This means that creating a database user with the same name as your system (Ubuntu) user will mean you can log in to the database without entering a password.\footnote{If for security reasons you wish to enter a password each time your user accesses a database, open the configuration file: \texttt{sudo nano /etc/postgresql/9.3/main/pg_hba.conf}.  Find the line: \texttt{local all all peer} and change it to read \texttt{local all all md5}.  Save the file: \textbf{Ctrl+X, Y, Return}.  Restart PostgreSQL: \texttt{sudo service postgresql restart}.  You will now need to enter your database password even to connect to the database under your system username.}  The terminal prompt should tell you what your username is -- it is of the form \textit{user@computer}.  Alternatively, you can run:\\
+\verb|whoami|\\
 to find out your username.
 
 \verb|sudo -i|
@@ -411,8 +389,7 @@ The prompt will change to show that you are now \textit{root} (the superuser, or
 
 The prompt will change to show that you are now the \textit{postgres} master user.
 
-Create a new database user with the same name as your system user (replace USER with your system username):
-
+Create a new database user with the same name as your system user (replace USER with your system username):\\
 \verb|createuser -P -s -e USER|
 
 You will be asked to enter a password -- note that you will get no feedback (the line will stay blank).  Press \textbf{Return} and you will be asked to enter the password again.  Press \textbf{Return} and you should get a message beginning \textit{CREATE ROLE}, meaning that the new user has been created.
@@ -443,8 +420,7 @@ Remember to replace USER with your username.
 
 This creates the \textit{andika} database, owned by your new user.
 
-\textbf{Andika!} comes with starter data in \textit{andika/db/starter/andika.sql}, which can be imported into the new database.
-
+\textbf{Andika!} comes with starter data in \textit{andika/db/starter/andika.sql}, which can be imported into the new database:\\
 \verb|psql -d andika < db/starter/andika.sql|
 
 If you chose a username other than \textit{dbmaster}, use that instead.
@@ -468,8 +444,7 @@ This should show a list with 18 rows, each representing a database table holding
 This will show everything in the \textit{kiswahili} table.  Exit the data display and go back to psql:\\
 \verb|q|
 
-To see something more selective:
-
+To see something more selective:\\
 \verb|select * from kiswahili where stanza=1 order by stanza, loc;|\\
 (again, remember the semicolon at the end)
 
@@ -495,7 +470,7 @@ Start the webserver:\\
 \verb|sudo service apache2 start|
 
 If you want to get rid of the (harmless) message \textit{Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the `ServerName' directive globally to suppress this message}, issue the following commands:\\
-\verb|echo "ServerName localhost" | sudo tee /etc/apache2/conf-available/servername.conf|\\
+\verb+echo "ServerName localhost" | sudo tee /etc/apache2/conf-available/servername.conf+\\
 \verb|sudo a2enconf servername|\\
 \verb|sudo service apache2 restart|
 
@@ -505,8 +480,7 @@ into the address bar. A page should open, telling you that Apache is installed a
 
 \subsubsection{Configure phpPgAdmin}
 
-Activate the phpPgAdmin configuration file:
-
+Activate the phpPgAdmin configuration file:\\
 \verb|sudo cp /etc/apache2/conf.d/phppgadmin /etc/apache2/conf-enabled/phppgadmin.conf|
 
 Restart the webserver:\\
@@ -520,16 +494,13 @@ You should see the phpPgAdmin homepage. On the left side there is a list of serv
 
 Fill in the username and password for PostgreSQL (which you created in \Cref{ss:dbuser}) and click \textbf{Login}.
 
-The default session time for PHP is set to 24 minutes (1440 seconds).  This means that if you do not use phpPgAdmin for 24 minutes, it will ask you to log in again before you can continue using it.  If you find that this interrupts your workflow, you can change the setting in the PHP configuration file:
-
+The default session time for PHP is set to 24 minutes (1440 seconds).  This means that if you do not use phpPgAdmin for 24 minutes, it will ask you to log in again before you can continue using it.  If you find that this interrupts your workflow, you can change the setting in the PHP configuration file:\\
 \verb|sudo nano /etc/php5/apache2/php.ini|
 
-Press \textbf{Ctrl+W}, then type:
-
+Press \textbf{Ctrl+W}, then type:\\
 \verb|session.gc_maxlifetime|
 
-and press \textbf{Return}. Change the line to read: 
-
+and press \textbf{Return}. Change the line to read: \\
 \verb|session.gc_maxlifetime = 144000|
 
 This will allow you 40 hours before logging you out, which should be sufficient.
@@ -559,8 +530,7 @@ Click Execute, and in the first window you should see a listing of the \textit{v
 
 Andrei Alin\footnote{\url{webupd8.org}} maintains links to up-to-date versions of Java in his software repository.
 
-Check that the helper script \textit{add-apt-repository} is installed:
-
+Check that the helper script \textit{add-apt-repository} is installed:\\
 \verb|sudo apt-get install software-properties-common|
 
 Add the new software repository:\\
@@ -629,7 +599,7 @@ Move the cursor somewhere in the middle of that query and press \textbf{Ctrl+Ret
 The main benefit of SQL Workbench compared to phpPgAdmin is that a result set can be directly edited -- this makes it easy to add data.  To try this, select one of the cells under the \textit{english} column, type something in, and press \textbf{Return}.  A yellow diamond will appear in the leftmost column, showing that the record has been edited but not saved yet. To save it you need to click the disk icon, or select \textbf{Data \textrightarrow\ Save changes to database} and click \textbf{OK} when asked to confirm.
 
 You can check the change was made by running the same query in phpPgAdmin's SQL box (see Section \ref{ss:testppa}) :\\
-\verb|select * from kiswahili where stanza=1 order by stanza, pos;|
+\verb|select * from kiswahili where stanza=1 order by stanza, loc;|
 
 To delete the change, click the cell in SQL Workbench, press \textbf{Backspace} and then \textbf{Return}, and then save as before.
 
@@ -644,7 +614,15 @@ LaTeX is a typesetting system that is capable of creating very complex layouts. 
 \verb|sudo apt-get install texlive texlive-xetex texlive-generic-extra texlive-humanities|\\
 $\hookrightarrow$ \verb|texlive-lang-arabic texlive-latex-extra texlive-bibtex-extra kile kbibtex biber|
 
-These packages will take a good few minutes to download and install.
+Note that these packages will take perhaps 20 minutes to download and install.
+
+
+\section{JabRef}
+\label{s:jabref}
+
+JabRef\footnote{jabref.org} is a bibliography manager.
+
+\verb|sudo apt-get install jabref|
 
 
 \section{YAD}
@@ -705,3 +683,5 @@ Save and exit the configuration file:\\
 In a web browser, type:\\
 \verb|http://andika/index.php|\\
 into the address bar.  You should get the \textbf{Andika!} website loading from the files on your hard disk (in \textit{/var/www/andika}), instead of from the internet.
+
+

@@ -1,0 +1,140 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage{titlesec}  % Allow the chapter/section heading settings to be fine-tuned.  Needs to come before bidi, in polyglossia.
+\usepackage{polyglossia}  % multilingual support
+\usepackage{longtable}  % tables that carry across multiple pages
+\usepackage[x11names]{xcolor}  % can't use color with polyglossia
+
+\usepackage{pdfpages}
+
+\input{convert/tex/fontdefs.tex}  % Bring in the font definitions.
+
+\usepackage{marginnote}
+\renewcommand*{\marginfont}{\color{red}\sffamily}
+
+\usepackage{csquotes}
+% \usepackage{natbib}
+\usepackage[backend=biber, style=authoryear]{biblatex}
+\addbibresource{bib/andika.bib}
+
+\interfootnotelinepenalty=10000 % prevents the footnote from breaking across pages
+% http://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
+
+% Thanks to Manas Tungare (http://manas.tungare.name/software/latex) for these settings.
+\setlength{\paperwidth}{210mm}
+\setlength{\paperheight}{297mm}
+
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{247mm}
+
+\setlength{\evensidemargin}{1in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{-0.5in}
+
+% \renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
+
+\usepackage{url}  % Use urls in text and captions with sensible linewrap.  Can't use [obeyspaces] - this option clashes with biblatex.
+% \urlstyle{rm}  % Set urls in roman.
+
+\titleformat{\chapter}[display]{\normalfont\large}{\bfseries\chaptertitlename\ \thechapter}{10pt}{\large\itshape}[\vspace{2ex}\titlerule\vspace{2ex}]  % 10pt is the space between chapter and chapter name.  [display] sets the chapter and chapter name on separate lines.  The square brackets at the end draw a line under each chapter name, with 2ex gap from the name.
+\titlespacing{\chapter}{0pt}{0pt}{10pt}  % First is indent from the side, second is length down from the top, third is gap between heading and text.
+
+% \pagenumbering{gobble}  % Suppress page numbering.
+
+\thispagestyle{empty}
+\pagestyle{empty}
+
+% ===== Endnotes =====
+% Uncomment the following two lines to get endnotes instead of footnotes.
+% Remember to uncomment the three lines in andika/db/output_pdf.php as well.
+% \usepackage{endnotes}
+% \let\footnote=\endnote
+% ==================
+
+\begin{document}
+
+
+\includepdf[pages={ - }, pagecommand={}]{convert/inputs/burda/titlepage2.pdf}
+
+
+\centering\textcolor{red}{\textarabic{بِسْمِآللّٰهِ الرَّحْمٰن الرَّحِْمِ}}
+
+
+\begin{longtable}{cl} 
+
+\footnote{\Tr{amin nadhakkuri jı̄rāni̲n̲ nidhii salami̲n̲ * mazajta damʾa̲n̲ājaray min muqlaẗi̲n̲ bidami̲n̲}} \textcolor{blue}{\textarabic{أَمِنْ نَذَكُّرِ جِيْرَانٍ نِذِيْ سَلَمٍ * مَزَجْتَ دَمْعًاجَرَى مِنْ مُقْلَةٍ بِدَمٍ}} & \textarabic{١} \\* 
+\footnote{\Tr{nikakukumbuka jirani nyema * waliyoko hapo nidhii salami}} \textcolor{mygreen}{\textarabic{نِكَڪُكُمْبُكَ جِرَنِ نْيٖمَ * وَلِيٗكٗ هَپٗ نِذِى سَلَمِ}} & \\* 
+\footnote{\Tr{umelitanganya tozi kwa dami * kwamba maʾanāye nihayo sēmā}} \textcolor{mygreen}{\textarabic{اُمٖلِتَنْڠَنْيَ تٗزِ كْوَ دَمِ * كْوَمْبَ مَعَنَايٖ نِهَيٗ سٖيْمَا}} & \\* 
+\\[8mm] 
+
+\footnote{\Tr{am hubbati rrı̄ḥu min tilqai kāẓimaẗi̲n̲ * waaw maḍa ālbarqu fii ālẓẓāmai min iḍami̲n̲}} \textcolor{blue}{\textarabic{أَمْ هُبَّتِ الرِّيحُ مِنْ تِلْقَاءِ كَاظِمَةٍ * وَأَوْ مَضَ الْبَرْقُ فِى الظَّامَاءِ مِنْ إِضَمٍ}} & \textarabic{٢} \\* 
+\footnote{\Tr{ama niupeto kupita kwake * kutoka kaẓima janibu zake}} \textcolor{mygreen}{\textarabic{اَمَ نِؤُپٖتٗ كُپِتَ كْوَكٖ * كُتٗكَ كَظِمَ جَنِبُ زَكٖ}} & \\* 
+\footnote{\Tr{ama niwu mimi kwa nūru yake * kuynuka kı̄za hapo iẓamā}} \textcolor{mygreen}{\textarabic{اَمَ نِوُ مِمِ كْوَ نُوْرُ يَكٖ * كُيْنُكَ كِيْزَ هَپٗ اِظَمَا}} & \\* 
+\\[8mm] 
+
+\footnote{\Tr{namā liʾaybayka in qulta ākfufā hamatā * wamā liqalbika in qultu āstafiq yahimi}} \textcolor{blue}{\textarabic{نَمَا لِعَيْبَىْكَ أِنْ قُلْتَ اكْفُفَا هَمَتَا * وَمَا لِقَلْبِكَ إِنْ قُلْتُ اسْتَفِقْ يَهِمِ}} & \textarabic{٣} \\* 
+\footnote{\Tr{mbona mato yako hukomi tozi * ukiyaziwi yā hayasikiza}} \textcolor{mygreen}{\textarabic{مْبٗنَ مَتٗ يَكٗ هُكٗمِ تٗزِ * اُكِيَزِوِ يَا هَيَسِكِزَ}} & \\* 
+\footnote{\Tr{kadhalika mōyo una simanzi * ukiwuzu nduwa huzidi himā}} \textcolor{mygreen}{\textarabic{كَذَلِكَ مٗويٗ اُنَ سِمَنْزِ * اُكِوُزُ نْدُوَ هُزِدِ هِمَا}} & \\* 
+\\[8mm] 
+
+\footnote{\Tr{abakhsabu ālṣṣabbu anna ālḥubba munkatimu̲n̲ * mābayna mudhsajimi̲n̲ minhu wamuḍṭarimi}} \textcolor{blue}{\textarabic{أَبَخسَبُ الصَّبُّ أَنَّ الْحُبَّ مُنكَتِمٌ * مَابَيْنَ مُذْسَجِمٍ مِنْهُ وَمُضْطَرِمِ}} & \textarabic{٤} \\* 
+\footnote{\Tr{mtu apendāwo hasitamani * huwa niʾalāma maḥaḍirāni}} \textcolor{mygreen}{\textarabic{مْتُ اَپٖنْدَاوٗ هَسِتَمَنِ * هُوَ نِعَلَامَ مَحَضِرَانِ}} & \\* 
+\footnote{\Tr{nakhaṣa awāpo tozi mayōni * namuili wake hapambi tāmā}} \textcolor{mygreen}{\textarabic{نَخَصَ اَوَاپٗ تٗزِ مَيٗوْنِ * نَمُئِلِ وَكٖ هَپَمْبِ تَامَا}} & \\* 
+\\[8mm] 
+
+\footnote{\Tr{law lāālhaway lam turiqu damʾa̲n̲ā ʾalay ṭalali̲n̲ * walā ariqta lidhikri ālbāni wālʾalami}} \textcolor{blue}{\textarabic{لَوْ لَاالْهَوَى لَمْ تُرِقُ دَمْعًا عَلَى طَلَلٍ * وَلَا أَرِقْتَ لِذِكْرِ الْبَانِ وَالْعَلَمِ}} & \textarabic{٥} \\* 
+\footnote{\Tr{nalawu mapendi yakupetewo * ndipo hukuliza atharizāwo}} \textcolor{mygreen}{\textarabic{نَلَوُ مَپٖنْدِ يَكُپٖتٖوٗ * نْدِپٗ هُكُلِزَ اَثَرِزَاوٗ}} & \\* 
+\footnote{\Tr{nawu kumbukapo miqūjeyawo * yami nakhabāli ziliyo thamā}} \textcolor{mygreen}{\textarabic{نَوُ كُمْبُكَپٗ مِقُوْجٖيَوٗ * يَمِ نَخَبَالِ زِلِيٗ ثَمَا}} & \\* 
+\\[8mm] 
+
+\footnote{\Tr{fakayfa tunkiru ḥabba̲n̲ā baʾda mā shahidat * bihi ʾalayka ʾudūlu ddamʾi wassaqami}} \textcolor{blue}{\textarabic{فَكَيْفَ تُنْكِرُ حَبًّا بَعْدَ مَا شَهِدَتْ * بِهِ عَلَيْكَ عُدُوْلُ الْدَّمْعِ وَالسَّقَمِ}} & \textarabic{٦} \\* 
+\footnote{\Tr{kwani kuyakanya mapendi hayo * nasi hukuwo na ḥāli uliyo}} \textcolor{mygreen}{\textarabic{كْوَنِ كُيَكَنْيَ مَپٖنْدِ هَيٗ * نَسِ هُكُوٗ نَ حَالِ اُلِيٗ}} & \\* 
+\footnote{\Tr{matozi nandiyo nawāyo wāyo * ndiyo ushahidi uliyo tamā}} \textcolor{mygreen}{\textarabic{مَتٗزِ نَنْدِيٗ نَوَايٗ وَايٗ * نْدِيٗ اُشَهِدِ اُلِيٗ تَمَا}} & \\* 
+\\[8mm] 
+
+\footnote{\Tr{waathbata ālwajdukhaṭṭay ʾbraẗi̲n̲ waḍana̲n̲y * mithla ālmahāri ʾalay khaddayka wālʾanami}} \textcolor{blue}{\textarabic{وَأَثْبَتَ اْلوَجْدُخَطَّىْ عبْرَةٍ وَضَنًى * مِثْلَ الْمَهَارِ عَلَى خَدَّيْكَ وَالْعَنَمِ}} & \textarabic{٧} \\* 
+\footnote{\Tr{imethubutisha yako ḥuzuni * mifunda miwili zatefuteni}} \textcolor{mygreen}{\textarabic{اِمٖثُبُتِشَ يَكٗ حُزُنِ * مِفُنْدَ مِوِلِ زَتٖفُتٖنِ}} & \\* 
+\footnote{\Tr{ranchi yabahāri kuwu kondoni * yamatozi yako aw ʾanamā}} \textcolor{mygreen}{\textarabic{رَنْچِ يَبَهَارِ كُوُ كٗنْدٗنِ * يَمَتٗزِ يَكٗ اَوْ عَنَمَا}} & \\* 
+\\[8mm] 
+
+\footnote{\Tr{naʾam saray ṭayfu man ahway faarri qanii * wālḥubbu yaʾtariḍu ullaldhhāti bālalami}} \textcolor{blue}{\textarabic{نَعَمْ سَرَى طَيْفُ مَنْ أَهْوَى فَأَرِّ قَنِى * وَالْحُبُّ يَعْتَرِضُ اُلَّلذَّاتِ باْلأَلَمِ}} & \textarabic{٨} \\* 
+\footnote{\Tr{nikweli maneno yako nikweli * nikivuli kʲake wangu khalı̄li}} \textcolor{mygreen}{\textarabic{نِكْوٖلِ مَنٖنٗ يَكٗ نِكْوٖلِ * نِكِڤُلِ ػَكٖ وَنْڠُ خَلِيْلِ}} & \\* 
+\footnote{\Tr{kʲalinangazisha bayangu ḥali * sina ladha tena wata malāmā}} \textcolor{mygreen}{\textarabic{ػَلِنَنْڠَزِشَ بَيَنْڠُ حَلِ * سِنَ لَذَ تٖنَ وَتَ مَلَامَا}} & \\* 
+\\[8mm] 
+
+\footnote{\Tr{yālaimii fii ālhaway ālʾudhrı̄yi maʾdhiraẗa̲n̲ * minnii ilayka walaw anṣafta lim yalumi}} \textcolor{blue}{\textarabic{يَالَائِمِيْ فِى الْهَوَى الْعُذْرِيِّ مَعْذِرَةً * مِنِّيْ إِلَيْكَ وَلَوْ أَنْصَفْتَ لِمْ يَلُمِ}} & \textarabic{٩} \\* 
+\footnote{\Tr{wala sina budi sina ṣubira * ḥuba yangu kama banuu ʾudhera}} \textcolor{mygreen}{\textarabic{وَلَ سِنَ بُدِ سِنَ صُبِرَ * حُبَ يَنْڠُ كَمَ بَنُو عُذٖرَ}} & \\* 
+\footnote{\Tr{nimekuʾarifu yangu ḍarūra * wata kuniyāya fanya ruḥumā}} \textcolor{mygreen}{\textarabic{نِمٖكُعَرِفُ يَنْڠُ ضَرُوْرَ * وَتَ كُنِيَايَ فَنْيَ رُحُمَا}} & \\* 
+\\[8mm] 
+
+\footnote{\Tr{ʾadatka ḥāliya lā sirrii bimustatiri̲n̲ * ʾani ālwushāẗi walā daii bimunḥasimi}} \textcolor{blue}{\textarabic{عَدَتْكَ حَالِيَ لَا سِرِّيْ بِمُسْتَتِرٍ * عَنِ الْوُشَاةِ وَلَا دَائِيْ بِمُنْحَسِمِ}} & \textarabic{١٠} \\* 
+\footnote{\Tr{sina siri tena imefunūka * hawo tongoleza wa muhutoka}} \textcolor{mygreen}{\textarabic{سِنَ سِرِ تٖنَ اِمٖفُنُوكَ * هَوٗ تٗنْڠٗلٖزَ وَ مُهُتٗكَ}} & \\* 
+\footnote{\Tr{wala ndwee zangu sikupozeka * niipi faida yangu kusemā}} \textcolor{mygreen}{\textarabic{وَلَ نْدْوٖى زَنْڠُ سِكُپٗزٖكَ * نِئِپِ فَئِدَ يَنْڠُ كُسٖما}} & \\* 
+\\[8mm] 
+
+\footnote{\Tr{maḥaḍtaniya nnuṣḥa lakin lastu asmaʾuhu * nna āluḥibbu ʾani ālʾudhha āli fii ṣamami}} \textcolor{blue}{\textarabic{مَحَضْتَنِيَ النُّصْحَ لَكِنْ لَسْتُ أَسْمَعُهُ * إنَّ الُحِبُّ عَنِ الْعُذَّ الِ فِيْ صَمَمِ}} & \textarabic{١١} \\* 
+\footnote{\Tr{umeninaṣiḥi kwaṭāqa yako * illā kusikiza hilo halliko}} \textcolor{mygreen}{\textarabic{اُمٖنِنَصِحِ كْوَطَاقَ يَكٗ * اِلَّا كُسِكِزَ هِلٗ هَللِكٗ}} & \\* 
+\footnote{\Tr{mtu kinitāya mimi niduko * kwa maḥabbā yangu siwakukomā}} \textcolor{mygreen}{\textarabic{مْتُ كِنِتَايَ مِمِ نِدُكٗ * كْوَ مَحَبَّا يَنْڠُ سِوَكُكٗمَا}} & \\* 
+\\[8mm] 
+
+\footnote{\Tr{innii āttahamtu naṣı̄ḥa āsshhaybi fii ʾadhali̲n̲ * wa-sshaybu abʾadu fii nuṣḥi̲n̲ ʾani ttuhami}} \textcolor{blue}{\textarabic{إِنِّى اتَّهَمْتُ نَصِيْحَ الشَّيْبِ فِيْ عَذَلٍ * وَالشَّيْبُ أَبْعَدُ فِيْ نُصْحٍ عَنِ التُّهَمِ}} & \textarabic{١٢} \\* 
+\footnote{\Tr{mimi sikukiri naṣaḥa būra * yamvi nyewupe kungarangara}} \textcolor{mygreen}{\textarabic{مِمِ سِكُكِرِ نَصَحَ بُورَ * يَمْڤِ نْيٖوُپٖ كُنْڠَرَنْڠَرَ}} & \\* 
+\footnote{\Tr{nimewūtuhumu siwupi sūra * nimewuẓaniya una yuhumā}} \textcolor{mygreen}{\textarabic{نِمٖووتُهُمُ سِوُپِ سُورَ * نِمٖوُظَنِيَ اُنَ يُهُمَا}} & \\* 
+\\[8mm] 
+
+\footnote{\Tr{fainna ammāratii bissuwi māuttaʾaẓat * min jahlihā binadhı̄ri āsshhaybi wa-hharami}} \textcolor{blue}{\textarabic{فَإِنَّ أَمَّارَتِيْ بِالسُّوْءِ مَااُتَّعَظَتْ * مِنْ جَهْلِهَا بِنَذِيْرِ الشَّيْبِ وَالْهَرَمِ}} & \textarabic{١٣} \\* 
+\footnote{\Tr{kwa uwovu waki nafusi yangu * haikuʾiẓika kwa kilimwengu}} \textcolor{mygreen}{\textarabic{كْوَ اُوٗڤُ وَكِ نَفُسِ يَنْڠُ * هَئِكُعِظِكَ كْوَ كِلِمْوٖنْڠُ}} & \\* 
+\footnote{\Tr{mvi nawo kongwe ata nduyangu * sitoshika yako karudi nyūmā}} \textcolor{mygreen}{\textarabic{مْڤِ نَوٗ كٗنْڠْوٖ اَتَ نْدُيَنْڠُ * سِتٗشِكَ يَكٗ كَرُدِ نْيُومَا}} & \\* 
+\\[8mm] 
+
+\end{longtable} 
+
+\renewcommand{\bibname}{References} 
+\begingroup 
+\printbibliography 
+\endgroup 
+
+\includepdf[pages={ - }, pagecommand={}]{convert/inputs/burda/backpage.pdf}
+
+
+\end{document}

@@ -1,0 +1,182 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage{titlesec}  % Allow the chapter/section heading settings to be fine-tuned.  Needs to come before bidi, in polyglossia.
+\usepackage{polyglossia}  % multilingual support
+\usepackage{longtable}  % tables that carry across multiple pages
+\usepackage{xcolor}  % can't use color with polyglossia
+
+\input{convert/tex/fontdefs.tex}  % Bring in the font definitions.
+
+\usepackage{marginnote}
+\renewcommand*{\marginfont}{\color{red}\sffamily}
+
+\interfootnotelinepenalty=10000 % prevents the footnote from breaking across pages
+% http://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
+
+% Thanks to Manas Tungare (http://manas.tungare.name/software/latex) for these settings.
+\setlength{\paperwidth}{210mm}
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{247mm}
+
+\setlength{\evensidemargin}{1in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{-0.5in}
+
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
+
+\usepackage{url}  % Use urls in text and captions with sensible linewrap.  Can't use [obeyspaces] - this option clashes with biblatex.
+\urlstyle{rm}  % Set urls in roman.
+
+\begin{document}
+
+\begin{longtable}{rrl} 
+
+\makebox[8cm][r]{} & & \makebox[8cm][r]{} \\ 
+
+\textarabic{يَ ذَاتِ سِ يَ مزَاهَ} & \textarabic{نَتَاكَ تٗوَ نَسَاهَ} & \textarabic{١} \\* 
+\Tr{ya dhati si ya mzaha} & \Tr{nataka towa nasaha} & \Tr{1b/a} \\ 
+\textarabic{دُنِئَ لِلٗئِنْڠِيَ} & \textarabic{كُهُوسُ كُؤُ جَرَاهَ} &  \\* 
+\Tr{dunia liloingiya} & \Tr{kuhusu kuu jaraha} & \Tr{1d/c} \\ 
+\\[8mm] 
+
+\textarabic{جَانْڠَ لَاكٖ هَلِكٗومِ} & \textarabic{جَرَاهَ نِ لَ أُكِيمْوِ} & \textarabic{٢} \\* 
+\Tr{janga lake halikomi} & \Tr{jaraha ni la ukimwi} & \Tr{2b/a} \\ 
+\textarabic{هُولَ ممٗويَ ممٗويَ} & \textarabic{لِمٖكُوَ كَامَ زِيمْوِ} &  \\* 
+\Tr{hula mmoya mmoya} & \Tr{limekuwa kama zimwi} & \Tr{2d/c} \\ 
+\\[8mm] 
+
+\textarabic{تٖينَ نِ خَتَارِ سَانَ} & \textarabic{أُكِيمْوِ دَاوَ هَؤُونَ} & \textarabic{٣} \\* 
+\Tr{tena ni khatari sana} & \Tr{ukimwi dawa hauna} & \Tr{3b/a} \\ 
+\textarabic{وَاكٖ نَ وَؤُومٖ پِيَ} & \textarabic{كْوَ وَزٖئٖ نَ زِجَانَ} &  \\* 
+\Tr{wake na waume piya} & \Tr{kwa wazee na zijana} & \Tr{3d/c} \\ 
+\\[8mm] 
+
+\textarabic{يُوَ زَاكٗ زِمٖفِيكَ} & \textarabic{أُكِيمْوِ أُكِكُشِيكَ} & \textarabic{٤} \\* 
+\Tr{yuwa zako zimefika} & \Tr{ukimwi ukikushika} & \Tr{4b/a} \\ 
+\textarabic{وٖيوٖ نَ وَنْڠِينٖ پِيَ} & \textarabic{نِ مْنٗ أُتَتٖسٖيكَ} &  \\* 
+\Tr{wewe na wangine piya} & \Tr{ni mno utateseka} & \Tr{4d/c} \\ 
+\\[8mm] 
+
+\textarabic{دَامُ أُكَكُكَؤُوشَ} & \textarabic{أُكِيمْوِ هُكُكٗنْدٖيشَ} & \textarabic{٥} \\* 
+\Tr{damu ukakukausha} & \Tr{ukimwi hukukondesha} & \Tr{5b/a} \\ 
+\textarabic{جَمَاءَ وَكُكِمْبِيَ} & \textarabic{سُورَ زِكَاوَ هُتِيشَ} &  \\* 
+\Tr{jamaa wakukimbiya} & \Tr{sura zikawa hutisha} & \Tr{5d/c} \\ 
+\\[8mm] 
+
+\textarabic{أُكِيمْوِ أُونَ خَتَارِ} & \textarabic{بَاسِ نْدُوڠُ جِهَذَارِ} & \textarabic{٦} \\* 
+\Tr{ukimwi una khatari} & \Tr{basi ndugu jihadhari} & \Tr{6b/a} \\ 
+\textarabic{نِ نْيِينْڠِ زَاكٖ بَلَايَ} & \textarabic{كُؤُ مْنٗ لَاكٖ شَارِ} &  \\* 
+\Tr{ni nyingi zake balaya} & \Tr{kuu mno lake shari} & \Tr{6d/c} \\ 
+\\[8mm] 
+
+\textarabic{إٖپُوكَ أُهَشَرَاتِ} & \textarabic{جِتُونْڠٖ كُلَّ وَكَاتِ} & \textarabic{٧} \\* 
+\Tr{epuka uhasharati} & \Tr{jitunge kila wakati} & \Tr{7b/a} \\ 
+\textarabic{مْتٖڠٗونِ أُتَنْڠِيَ} & \textarabic{سِفَانْيٖ هَاتَ كَتِيتِ} &  \\* 
+\Tr{mtegoni utangiya} & \Tr{sifanye hata katiti} & \Tr{7d/c} \\ 
+\\[8mm] 
+
+\textarabic{أَاهَ زٗوتٖ كُزِفُونْڠَ} & \textarabic{هِيٗ نْدِيٗ يَاكٖ كِينْڠَ} & \textarabic{٨} \\* 
+\Tr{aha zote kuzifunga} & \Tr{hiyo ndiyo yake kinga} & \Tr{8b/a} \\ 
+\textarabic{سَلَامَ كُئِپَتِيَ} & \textarabic{كُبَالِ كُوَ مْجِينْڠَ} &  \\* 
+\Tr{salama kuipatiya} & \Tr{kubali kuwa mjinga} & \Tr{8d/c} \\ 
+\\[8mm] 
+
+\textarabic{بَالِ نِ مَأَنْڠَمِيڤُ} & \textarabic{أُزِنِيفُ سِ وٖرٖيڤُ} & \textarabic{٩} \\* 
+\Tr{bali ni maangamivu} & \Tr{uzinifu si werevu} & \Tr{9b/a} \\ 
+\textarabic{نِ چَامْبٗ هُكُڤُتِيَ} & \textarabic{نَ مَنْڠِنٖيٗ مَؤٗوڤُ} &  \\* 
+\Tr{ni chambo hukuvutiya} & \Tr{na mangineyo maovu} & \Tr{9d/c} \\ 
+\\[8mm] 
+
+\textarabic{كِنٖينَ چَامْبٗ سِتَاكِ} & \textarabic{مُؤَنْڠَلِيٖ سَمَاكِ} & \textarabic{١٠} \\* 
+\Tr{kinena chambo sitaki} & \Tr{muangaliye samaki} & \Tr{10b/a} \\ 
+\textarabic{سَلَامَ أَتَسَلِيَ} & \textarabic{أَسِلَانِ هُمْشِيكِ} &  \\* 
+\Tr{salama atasaliya} & \Tr{asilani humshiki} & \Tr{10d/c} \\ 
+\\[8mm] 
+
+\textarabic{مُونْڠُ مٖكُوپَ فَهَامُ} & \textarabic{نَ وٖيوٖ مْوَانَ أَدَامُ} & \textarabic{١١} \\* 
+\Tr{mungu mekupa fahamu} & \Tr{na wewe mwana adamu} & \Tr{11b/a} \\ 
+\textarabic{نَ هَالِ وَأَنْڠَلِيَ} & \textarabic{هُوَاجٖ أُكَنْيوَ سُومُ} &  \\* 
+\Tr{na hali waangaliya} & \Tr{huwaje ukanywa sumu} & \Tr{11d/c} \\ 
+\\[8mm] 
+
+\textarabic{كْوَ نِينِ وَيَفُپِيشَ} & \textarabic{فِكِيرِ يَاكٗ مَئِيشَ} & \textarabic{١٢} \\* 
+\Tr{kwa nini wayafupisha} & \Tr{fikiri yako maisha} & \Tr{12b/a} \\ 
+\textarabic{يَتِيمَ بِيلَ هَتِيَ} & \textarabic{وَنَاءٗ كُوَبَكِيشَ} &  \\* 
+\Tr{yatima bila hatiya} & \Tr{wanao kuwabakisha} & \Tr{12d/c} \\ 
+\\[8mm] 
+
+\textarabic{وٖينْڠِ وَوَاپَ كَرَاهَ} & \textarabic{وٖيوٖ كْوَ كُتَاكَ رَاهَ} & \textarabic{١٣} \\* 
+\Tr{wengi wawapa karaha} & \Tr{wewe kwa kutaka raha} & \Tr{13b/a} \\ 
+\textarabic{يَتَاكَ كُفِكِرِيَ} & \textarabic{هَايَ مَامْبٗ سِ مزَاهَ} &  \\* 
+\Tr{yataka kufikiriya} & \Tr{haya mambo si mzaha} & \Tr{13d/c} \\ 
+\\[8mm] 
+
+\textarabic{كْوٖينْيٖ جَانْڠَ لٖينْيٖ ڠِيزَ} & \textarabic{وٖينْدَ كُجِتُمْبُكِيزَ} & \textarabic{١٤} \\* 
+\Tr{kwenye janga lenye giza} & \Tr{wenda kujitumbukiza} & \Tr{14b/a} \\ 
+\textarabic{كْوَ رَهَايَ مَارَ مٗويَ} & \textarabic{وٖنْزِؤٗ كُؤَنْڠَمِيزَ} &  \\* 
+\Tr{kwa rahaya mara moya} & \Tr{wenzio kuangamiza} & \Tr{14d/c} \\ 
+\\[8mm] 
+
+\textarabic{وٖيوٖ مْوٖنْيٖيوٖ مْوٖنْدَانِ} & \textarabic{وَجِتِيَ مَيُتٗونِ} & \textarabic{١٥} \\* 
+\Tr{wewe mwenyewe mwendani} & \Tr{wajitiya mayutoni} & \Tr{15b/a} \\ 
+\textarabic{كِيفٗ كُجِتَفُتِيَ} & \textarabic{هُؤُ نِ أُجِينْڠَ ڠَانِ} &  \\* 
+\Tr{kifo kujitafutiya} & \Tr{huu ni ujinga gani} & \Tr{15d/c} \\ 
+\\[8mm] 
+
+\textarabic{أُتَمُؤُوَ نَ مْكٖ} & \textarabic{كِيفٗ سِ چَاكٗ وٖپوٖيكٖ} & \textarabic{١٦} \\* 
+\Tr{utamuuwa na mke} & \Tr{kifo si chako wepweke} & \Tr{16b/a} \\ 
+\textarabic{لِيپِ وَلِلٗكٗسٖيَ} & \textarabic{وَتٗوتٗ وَؤُنْڠُلِيكٖ} &  \\* 
+\Tr{lipi walilokoseya} & \Tr{watoto waungulike} & \Tr{16d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَ كْوَ هِشِيمَ تُكٖيتِ} & \textarabic{تُؤَاتٖ أُهَشَرَاتِ} & \textarabic{١٧} \\* 
+\Tr{na kwa hishima tuketi} & \Tr{tuate uhasharati} & \Tr{17b/a} \\ 
+\textarabic{إِلَّ تُكِؤُزٖنْڠٖيَ} & \textarabic{أُكِيمْوِ هَؤُتُپَاتِ} &  \\* 
+\Tr{illa tukiuzengeya} & \Tr{ukimwi hautupati} & \Tr{17d/c} \\ 
+\\[8mm] 
+
+\textarabic{كَذَلِيكَ وَڤُلَانَ} & \textarabic{نَ زَئِيدِ وَسِچَانَ} & \textarabic{١٨} \\* 
+\Tr{kadhalika wavulana} & \Tr{na zaidi wasichana} & \Tr{18b/a} \\ 
+\textarabic{كْوَ أُكِيمْوِ كُپٗتٖيَ} & \textarabic{هَاوَ نْدِيوٗ وٖينْڠِ سَانَ} &  \\* 
+\Tr{kwa ukimwi kupoteya} & \Tr{hawa ndiwo wengi sana} & \Tr{18d/c} \\ 
+\\[8mm] 
+
+\textarabic{جِزِوِيٖينِ مْپَارٗ} & \textarabic{وَسِچَانَ بَرٗبَارٗ} & \textarabic{١٩} \\* 
+\Tr{jiziwiyeni mparo} & \Tr{wasichana barobaro} & \Tr{19b/a} \\ 
+\textarabic{أُكِيمْوِ كُتٗسَلِيَ} & \textarabic{هَاپٗ أُتَكْوٖينْدَ زِيرٗ} &  \\* 
+\Tr{ukimwi kutosaliya} & \Tr{hapo utakwenda ziro} & \Tr{19d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَ زَ أُپُوزِ أَنَاسَ} & \textarabic{جِئٖپُشٖينِ كَبِيسَ} & \textarabic{٢٠} \\* 
+\Tr{na za upuzi anasa} & \Tr{jiepusheni kabisa} & \Tr{20b/a} \\ 
+\textarabic{مْتٖڠٗونِ مُكَنْڠِيَ} & \textarabic{هِيزٗ نْدِيزٗ هُوَتٗوسَ} &  \\* 
+\Tr{mtegoni mukangiya} & \Tr{hizo ndizo huwatosa} & \Tr{20d/c} \\ 
+\\[8mm] 
+
+\textarabic{لٗلٗوتٖ هَلِكُشِينْدِ} & \textarabic{أُكِشَپِيجَ مْتِينْدِ} & \textarabic{٢١} \\* 
+\Tr{lolote halikushindi} & \Tr{ukishapija mtindi} & \Tr{21b/a} \\ 
+\textarabic{مْوٖنْيٖيوٖ أُتَئِتِيَ} & \textarabic{هَاتَ كٗؤٗ كْوٖينْيٖ لَانْدِ} &  \\* 
+\Tr{mwenyewe utaitiya} & \Tr{hata koo kwenye landi} & \Tr{21d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَ وَنْڠِينٖ هَوَوٖيزِ} & \textarabic{وٖيوٖ نْدِيٖ مُؤَمُوزِ} & \textarabic{٢٢} \\* 
+\Tr{na wangine hawawezi} & \Tr{wewe ndiye muamuzi} & \Tr{22b/a} \\ 
+\textarabic{مْوٖنْيٖيوٖ أُتَؤُمِيَ} & \textarabic{أُكِئَمُؤَ أُپُوزِ} &  \\* 
+\Tr{mwenyewe utaumiya} & \Tr{ukiamua upuzi} & \Tr{22d/c} \\ 
+\\[8mm] 
+
+\textarabic{تَهَذَارِ تَهَذَارِ} & \textarabic{نَسَاهَ نَئِكَرِيرِ} & \textarabic{٢٣} \\* 
+\Tr{tahadhari tahadhari} & \Tr{nasaha naikariri} & \Tr{23b/a} \\ 
+\textarabic{إِنَتِشِئَ دُنِيَ} & \textarabic{أُكِيمْوِ كُؤُ خَتَارِ} &  \\* 
+\Tr{inatishia duniya} & \Tr{ukimwi kuu khatari} & \Tr{23d/c} \\ 
+\\[8mm] 
+
+\textarabic{نِ نَسَاهَ كْوَ أُمَاتِ} & \textarabic{كَؤُولِ يٖيتُ تَممَاتِ} & \textarabic{٢٤} \\* 
+\Tr{ni nasaha kwa umati} & \Tr{kauli yetu tammati} & \Tr{24b/a} \\ 
+\textarabic{أُكِيمْوِ نِ مٗويَ نْدِيَ} & \textarabic{هَيَانَ دَاوَ مَؤُوتِ} &  \\* 
+\Tr{ukimwi ni moya ndiya} & \Tr{hayana dawa mauti} & \Tr{24d/c} \\ 
+\\[8mm] 
+
+\end{longtable} 
+
+\end{document}

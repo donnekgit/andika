@@ -1,0 +1,293 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage{titlesec}  % Allow the chapter/section heading settings to be fine-tuned.  Needs to come before bidi, in polyglossia.
+\usepackage{polyglossia}  % multilingual support
+\usepackage{longtable}  % tables that carry across multiple pages
+\usepackage[x11names]{xcolor}  % can't use color with polyglossia
+
+\input{convert/tex/fontdefs.tex}  % Bring in the font definitions.
+
+\usepackage{marginnote}
+\renewcommand*{\marginfont}{\color{red}\sffamily}
+
+\usepackage{csquotes}
+% \usepackage{natbib}
+\usepackage[backend=biber, style=authoryear]{biblatex}
+\addbibresource{bib/andika.bib}
+
+\interfootnotelinepenalty=10000 % prevents the footnote from breaking across pages
+% http://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
+
+% Thanks to Manas Tungare (http://manas.tungare.name/software/latex) for these settings.
+\setlength{\paperwidth}{210mm}
+\setlength{\paperheight}{297mm}
+
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{247mm}
+
+\setlength{\evensidemargin}{1in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{-0.5in}
+
+% \renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
+
+\usepackage{url}  % Use urls in text and captions with sensible linewrap.  Can't use [obeyspaces] - this option clashes with biblatex.
+% \urlstyle{rm}  % Set urls in roman.
+
+\titleformat{\chapter}[display]{\normalfont\large}{\bfseries\chaptertitlename\ \thechapter}{10pt}{\large\itshape}[\vspace{2ex}\titlerule\vspace{2ex}]  % 10pt is the space between chapter and chapter name.  [display] sets the chapter and chapter name on separate lines.  The square brackets at the end draw a line under each chapter name, with 2ex gap from the name.
+\titlespacing{\chapter}{0pt}{0pt}{10pt}  % First is indent from the side, second is length down from the top, third is gap between heading and text.
+
+% \pagenumbering{gobble}  % Suppress page numbering.
+
+% ===== Endnotes =====
+% Uncomment the following two lines to get endnotes instead of footnotes.
+% Remember to uncomment the three lines in andika/db/output_pdf.php as well.
+% \usepackage{endnotes}
+% \let\footnote=\endnote
+% ==================
+
+\begin{document}
+
+
+\begin{center}
+\Atitle{مَامَا مُسِمْلَؤُمُ} \\
+\E{Mtungaji:  Ustadh Mau (Mahmoud Ahmad Abdulkadir), 2005} \\
+\vspace{8mm}
+\end{center}
+
+\begin{small}
+This poem was written in response to a report in the newspaper \textit{Taifa Jumapili} of 8 May 2005 about how a dog had found an abandoned baby girl in the forest and rescued her, carrying her home in its mouth to the dog's owner.  In the face of the general criticism about how a mother could have left her baby like this, the poet argues for greater compassion for the mother, reminding us that we do not know what pressures she was facing.
+\end{small}
+\vspace{8mm}
+
+
+\begin{longtable}{ccl} 
+
+\multicolumn{2}{c}{\textcolor{red}{\textarabic{بسم الله الرحمن الرحم}}} & \\*
+\multicolumn{2}{c}{} & \\[3mm]
+
+
+\textcolor{mygreen}{\textarabic{قَبْلَ وَنْڠُ وَقَاتِ}} & \textcolor{mygreen}{\textarabic{إمٖنِبِدِ كُنٖينَ}} & \textarabic{١} \\* 
+% \multicolumn{2}{c}{imenibidi kunena * kabla wangu wakati} & 1a/b \\* 
+\multicolumn{2}{c}{\E{I have been compelled to talk before my time}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{مَامَانْڠُ هُمْلَئِتِ}} & \textcolor{mygreen}{\textarabic{سَبَابُ نِمٖوَأٗنَ}} &  \\* 
+% \multicolumn{2}{c}{sababu nimewaona * mamangu humlaiti} & 1c/d \\* 
+\multicolumn{2}{c}{\E{because I have seen them condemning my mother}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{سِپْوٖكٖ أمٖزٗهِتِ}} & \textcolor{mygreen}{\textarabic{مَامَانْڠُ مَاكُوْسَ هَانَ}} &  \\* 
+% \multicolumn{2}{c}{mamangu makosa hana * si pweke amezohiti} & 1e/f \\* 
+\multicolumn{2}{c}{\E{my mother is blameless, she is not the only one who is guilty}} & \\[2mm] 
+\multicolumn{2}{c}{\textcolor{mygreen}{\textarabic{كُوسَ هِلِ نْدَ اُمَّتِ}}} &  \\* 
+% \multicolumn{2}{c}{kosa hili nda ummati} & 1g \\* 
+\multicolumn{2}{c}{\E{this is everyone's fault}} & \\[2mm] 
+\\[6mm] 
+
+\textcolor{mygreen}{\textarabic{نَ زِأٗنْڠُوْزِ وَ نْتِ}} & \textcolor{mygreen}{\textarabic{نْدَ اُمَّتِ هِلِ كُوسَ}} & \textarabic{٢} \\* 
+% \multicolumn{2}{c}{nda ummati hili kosa * na ziongozi wa nti} & 2a/b \\* 
+\multicolumn{2}{c}{\E{this is fault of everyone and the leaders of the country}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{نَ مَاحَكِمُ وَ كُوْتِ}} & \textcolor{mygreen}{\textarabic{كُوْسَ نْددَ وَنَ سِيَاسَ}} &  \\* 
+% \multicolumn{2}{c}{kosa nda wanasiasa * na mahakimu wa koti} & 2c/d \\* 
+\multicolumn{2}{c}{\E{the fault belongs to the politicians and the magistrates in the courts}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{نَ وَسِيُوْ نَ سٖنْتِ}} & \textcolor{mygreen}{\textarabic{كُوْسَ نْدَ وٖنْيٖ مَاپٖسَ}} &  \\* 
+% \multicolumn{2}{c}{kosa nda wenye mapesa * na wasiyo na senti} & 2e/f \\* 
+\multicolumn{2}{c}{\E{it is the fault of the wealthy and of those who have no money}} & \\[2mm] 
+\multicolumn{2}{c}{\textcolor{mygreen}{\textarabic{كُوْسَ هِلِ نْدَ اُمَّتِ}}} &  \\* 
+% \multicolumn{2}{c}{kosa hili nda ummati} & 2g \\* 
+\multicolumn{2}{c}{\E{this is everyone's fault}} & \\[2mm] 
+\\[6mm] 
+
+\textcolor{mygreen}{\textarabic{وَعِمْرَنَ بِنْتِ}} & \textcolor{mygreen}{\textarabic{مَامَانْڠُ سِمَرِيَامُ}} & \textarabic{٣} \\* 
+% \multicolumn{2}{c}{mamangu si Mariyamu * wa Imrana binti} & 3a/b \\* 
+\multicolumn{2}{c}{\E{my mother is not Maryam the daughter of Imran}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{مٖئِشِ هَاپَ تِيَاتِ}} & \textcolor{mygreen}{\textarabic{مَامَ نِ مْوَانَ اَدَمُ}} &  \\* 
+% \multicolumn{2}{c}{mama ni mwana adamu * meishi hapa tiyati} & 3c/d \\* 
+\multicolumn{2}{c}{\E{she is [just] a human being living here on the earth}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{كُنَ ضَعِفُ وَقَاتِ}} & \textcolor{mygreen}{\textarabic{نَ نْيُوْتٖنِ مْوَافَهَامُ}} &  \\* 
+% \multicolumn{2}{c}{na nyoteni mwafahamu * kuna dhaifu wakati} & 3e/f \\* 
+\multicolumn{2}{c}{\E{and you all understand there is weakness sometimes}} & \\[2mm] 
+\multicolumn{2}{c}{\textcolor{mygreen}{\textarabic{هُشِنْدوَا كُئِذِبِتِ}}} &  \\* 
+% \multicolumn{2}{c}{hushindwa kuidhibiti} & 3g \\* 
+\multicolumn{2}{c}{\E{one is incapable of restraining oneself}} & \\[2mm] 
+\\[6mm] 
+
+\textcolor{mygreen}{\textarabic{نَ لَبُدِ هَاكُكِرِ}} & \textcolor{mygreen}{\textarabic{مَامَا هَكُتٖنْدَ پْوٖكٖ}} & \textarabic{٤} \\* 
+% \multicolumn{2}{c}{mama hakutenda pweke * na labuda hakukiri} & 4a/b \\* 
+\multicolumn{2}{c}{\E{[my] mother did not act alone and perhaps she did not consent}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{أَلُوْئِفَنْيَ جَاسِرِ}} & \textcolor{mygreen}{\textarabic{أُلِ نَ مُوٖنْدَانِ وَكٖ}} &  \\* 
+% \multicolumn{2}{c}{ali na mwendani wake * aloifanya jasiri} & 4c/d \\* 
+\multicolumn{2}{c}{\E{there was a companion of hers who acted as if brave}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{مَامَانْڠُ كُمُعَزِرِ}} & \textcolor{mygreen}{\textarabic{نْدِپُوْ مِمِ نِأُمْبِكٖ}} &  \\* 
+% \multicolumn{2}{c}{ndipo mimi niumbike * mamangu kumuaziri} & 4e/f \\* 
+\multicolumn{2}{c}{\E{and that was when I was created to demean my mother}} & \\[2mm] 
+\multicolumn{2}{c}{\textcolor{mygreen}{\textarabic{پَاسِنَ يَانْڠُ خِيَارِ}}} &  \\* 
+% \multicolumn{2}{c}{pasina yangu khiari} & 4g \\* 
+\multicolumn{2}{c}{\E{without my willing it}} & \\[2mm] 
+\\[6mm] 
+
+\textcolor{mygreen}{\textarabic{لَوَمَ نَ زِتَانْڠانْيٖ}} & \textcolor{mygreen}{\textarabic{ئِكِوَ كُوْنَ لَوَمَ}} & \textarabic{٥} \\* 
+% \multicolumn{2}{c}{ikiwa kuna lawama * lawama na zitanganye} & 5a/b \\* 
+\multicolumn{2}{c}{\E{if there is blame let it be spread about}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{نَاءٖ بَابَ مُمْكنْيٖ}} & \textcolor{mygreen}{\textarabic{مُكِمْلَئُمُ مَامَا}} &  \\* 
+% \multicolumn{2}{c}{mukimlaumu mama * naye baba mumkanye} & 5c/d \\* 
+\multicolumn{2}{c}{\E{if you blame my mother criticise my father too}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{اُبَاڠُوْزِ مُسِفَنْيٖ}} & \textcolor{mygreen}{\textarabic{نْدِپُوْ هاپُوْ يَاتَاكُوْمَ}} &  \\* 
+% \multicolumn{2}{c}{ndipo hapo yatakoma * ubaguzi musifanye} & 5e/f \\* 
+\multicolumn{2}{c}{\E{that's when [things] will come to a conclusion don't make a distinction}} & \\[2mm] 
+\multicolumn{2}{c}{\textcolor{mygreen}{\textarabic{وَنَوَاكٖ مُسِفِنْيٖ}}} &  \\* 
+% \multicolumn{2}{c}{wanawake musifinye} & 5g \\* 
+\multicolumn{2}{c}{\E{do not oppress women}} & \\[2mm] 
+\\[6mm] 
+
+\textcolor{mygreen}{\textarabic{مَامَانْڠُ كُمْلَئُمُ}} & \textcolor{mygreen}{\textarabic{مِمِ قَطُّ سِكُبَالِ}} & \textarabic{٦} \\* 
+% \multicolumn{2}{c}{mimi katu sikubali * mamangu kumlaumu} & 6a/b \\* 
+\multicolumn{2}{c}{\E{I refuse point-blank to criticise my mother}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{هُوَ نِ كُمْظُلُمُ}} & \textcolor{mygreen}{\textarabic{نَ پْوٖكٖ كُمْكٖجٖلِ}} &  \\* 
+% \multicolumn{2}{c}{na pweke kumkejeli * huwa ni kumdhulumu} & 6c/d \\* 
+\multicolumn{2}{c}{\E{and to berate her by herself is to oppress her}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{اَصِلَانِ هَلِتِمُ}} & \textcolor{mygreen}{\textarabic{كْوَايٖ پْوٖكٖ يَامْبُ هِلِ}} &  \\* 
+% \multicolumn{2}{c}{kwaye pweke yambo hili * asilani halitimu} & 6e/f \\* 
+\multicolumn{2}{c}{\E{left to herself this issue could not have occurred to start with}} & \\[2mm] 
+\multicolumn{2}{c}{\textcolor{mygreen}{\textarabic{هِلُوْ نْيُوْتٖ مْوَافَهَامُ}}} &  \\* 
+% \multicolumn{2}{c}{hilo nyote mwafahamu} & 6g \\* 
+\multicolumn{2}{c}{\E{you all understand this}} & \\[2mm] 
+\\[6mm] 
+
+\textcolor{mygreen}{\textarabic{اَلِپٗوَ كَاپُوْكِيَا}} & \textcolor{mygreen}{\textarabic{كِتٖنْدٗ نِػَ وَوِلِ}} & \textarabic{٧} \\* 
+% \multicolumn{2}{c}{kitendo ni cha wawili * alipoa kapokea} & 7a/b \\* 
+\multicolumn{2}{c}{\E{it is a joint act -- he offered and she accepted}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{مَامَا پْوٖكٖ كُمْوٖمٖيَا}} & \textcolor{mygreen}{\textarabic{هُئِتُوكُوَ عَدِلِ}} &  \\* 
+% \multicolumn{2}{c}{huitokuwa adili * mama pweke kumwemea} & 7c/d \\* 
+\multicolumn{2}{c}{\E{it is not proper to burden my mother alone}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{وَلَ حُجَّ كُزٖنْڠٖيَا}} & \textcolor{mygreen}{\textarabic{هَالِهِتَاجِ دَلِيْلِ}} &  \\* 
+% \multicolumn{2}{c}{halihitaji dalili * wala huja kuzengeya} & 7e/f \\* 
+\multicolumn{2}{c}{\E{there is no need of proof or to search for evidence}} & \\[2mm] 
+\multicolumn{2}{c}{\textcolor{mygreen}{\textarabic{اَيُوَ كُلَ مْمُوْيَا}}} &  \\* 
+% \multicolumn{2}{c}{ayuwa kula mmuya} & 7g \\* 
+\multicolumn{2}{c}{\E{every one of us knows}} & \\[2mm] 
+\\[6mm] 
+
+\textcolor{mygreen}{\textarabic{كِوَسِكِيَ هُنِينَ}} & \textcolor{mygreen}{\textarabic{مْنُوْ هُوٗنَ اُتُنْڠُ}} & \textarabic{٨} \\* 
+% \multicolumn{2}{c}{mno huona utungu * kiwasikiya hunena} & 8a/b \\* 
+\multicolumn{2}{c}{\E{we hear too much bitterness listening to people talk}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{كْوا كُوَ مْكُوْسَ سَانَ}} & \textcolor{mygreen}{\textarabic{هُمْلَؤُمَ مَامَانْڠُ}} &  \\* 
+% \multicolumn{2}{c}{humlaumu mamangu * kwa kuwa mkosa sana} & 8c/d \\* 
+\multicolumn{2}{c}{\E{blaming my mother for being at fault}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{هَتُپاتِ هَاتَ ئِنَ}} & \textcolor{mygreen}{\textarabic{مِمِ نَ وٖنْدَنِ وَنْڠُ}} &  \\* 
+% \multicolumn{2}{c}{mimi na wendani wangu * hatupati hata ina} & 8e/f \\* 
+\multicolumn{2}{c}{\E{I and those like me do not have even a name}} & \\[2mm] 
+\multicolumn{2}{c}{\textcolor{mygreen}{\textarabic{نِ سِنَ اَوْ سِبِنَ}}} &  \\* 
+% \multicolumn{2}{c}{ni sina au sibina} & 8g \\* 
+\multicolumn{2}{c}{\E{}} & \\[2mm] 
+\\[6mm] 
+
+\textcolor{mygreen}{\textarabic{سِكْوَاكُوَ هَنِپٖنْدِ}} & \textcolor{mygreen}{\textarabic{مٖنِتُپَ وَنْڠُ مَامَا}} & \textarabic{٩} \\* 
+% \multicolumn{2}{c}{menitupa wangu mama * si kwa kuwa hanipendi} & 9a/b \\* 
+\multicolumn{2}{c}{\E{my mother abandoned me [but] it was not because she did not love me}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{كِسَ كُمْوَاوِكَ لَنْدِ}} & \textcolor{mygreen}{\textarabic{نِ بَابَا مِمْسُكُوْمَ}} &  \\* 
+% \multicolumn{2}{c}{ni baba memsukuma * kisa kumwawika landi} & 9c/d \\* 
+\multicolumn{2}{c}{\E{it was [because] my father pressured her and forced her}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{زا وٖنْيٖ نْدِمِ نَ تُنْدِ}} & \textcolor{mygreen}{\textarabic{نَاءٖ كْوَا كُػَ لَوَمَ}} &  \\* 
+% \multicolumn{2}{c}{naye kwa kucha lawama * za wenye ndimi na tundi} & 9e/f \\* 
+\multicolumn{2}{c}{\E{and from fearing blame from gossips and critics}} & \\[2mm] 
+\multicolumn{2}{c}{\textcolor{mygreen}{\textarabic{مٖنِتُپَ يَكٖ كَانْدِ}}} &  \\* 
+% \multicolumn{2}{c}{menitupa yake kandi} & 9g \\* 
+\multicolumn{2}{c}{\E{she abandoned her light}} & \\[2mm] 
+\\[6mm] 
+
+\textcolor{mygreen}{\textarabic{مَامَا هَكُنِتُوكِيَ}} & \textcolor{mygreen}{\textarabic{نَ أمِنِ اَنِپٖنْدَ}} & \textarabic{١٠} \\* 
+% \multicolumn{2}{c}{naamini  anipenda * mama hakunitukiya} & 10a/b \\* 
+\multicolumn{2}{c}{\E{I believe she loves me -- my mother does not hate me}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{پُمْزِ كُنِزِوِيَ}} & \textcolor{mygreen}{\textarabic{نِ لِپِ لِلُوْمْشِنْدَ}} &  \\* 
+% \multicolumn{2}{c}{ni lipi lilomshinda * pumzi kuniziwiya} & 10c/d \\* 
+\multicolumn{2}{c}{\E{what prevented her from suffocating me?}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{دُنِيَانِ مِمِ كُوْيَ}} & \textcolor{mygreen}{\textarabic{تُوْكٖيَ سِكُ يَا كْوَنْدَ}} &  \\* 
+% \multicolumn{2}{c}{tokea siku ya kwanda * duniyani mimi kuya} & 10e/f \\* 
+\multicolumn{2}{c}{\E{from the first day I came into this world}} & \\[2mm] 
+\multicolumn{2}{c}{\textcolor{mygreen}{\textarabic{نِ رُحُمَ كُنُوْنٖيَ}}} &  \\* 
+% \multicolumn{2}{c}{ni ruhuma kunonea} & 10g \\* 
+\multicolumn{2}{c}{\E{it was compassion she felt for me}} & \\[2mm] 
+\\[6mm] 
+
+\textcolor{mygreen}{\textarabic{وَنْڠُ مَامَا كُمْپَاتَ}} & \textcolor{mygreen}{\textarabic{نَ تَمَانِ نَ تَمَانِ}} & \textarabic{١١} \\* 
+% \multicolumn{2}{c}{natamani  natamani * wangu mama kumpata} & 11a/b \\* 
+\multicolumn{2}{c}{\E{I really wish to find my mother}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{نِ مْپِيْ أحَسَنْتَ}} & \textcolor{mygreen}{\textarabic{نِ مْوَامْبِيٖ شُكُرَنِ}} &  \\* 
+% \multicolumn{2}{c}{nimwambiye  shukurani * nimpe  ahasanta} & 11c/d \\* 
+\multicolumn{2}{c}{\E{so that I can thank her and give her my gratitude}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{هَاتَ سِكُ زِكاپِتَ}} & \textcolor{mygreen}{\textarabic{كْوَا كُنِلِػَ تُمْبُوْنِ}} &  \\* 
+% \multicolumn{2}{c}{kwa kunilicha tumboni * hata siku zikapita} & 11e/f \\* 
+\multicolumn{2}{c}{\E{for sustaining me in her womb until the days passed}} & \\[2mm] 
+\multicolumn{2}{c}{\textcolor{mygreen}{\textarabic{نْدِيَ نَامِ كَفُوَتَ}}} &  \\* 
+% \multicolumn{2}{c}{ndiya nami kafuata} & 11g \\* 
+\multicolumn{2}{c}{\E{I was lucky}} & \\[2mm] 
+\\[6mm] 
+
+\textcolor{mygreen}{\textarabic{مَامَانْڠُ كْوَا وََكٖ وٖمَ}} & \textcolor{mygreen}{\textarabic{هُمْپِجِيَ سِلُوْتِ}} & \textarabic{١٢} \\* 
+% \multicolumn{2}{c}{humpijiya siloti * mamangu kwa wake wema} & 12a/b \\* 
+\multicolumn{2}{c}{\E{I give my mother a salute for her goodness}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{مَاتُوْمْبُوْنِ كْوَا سَلَامَ}} & \textcolor{mygreen}{\textarabic{كْوَا كُنِوَتَ نِكٖتِ}} &  \\* 
+% \multicolumn{2}{c}{kwa kuniwa niketi * matumboni kwa salama} & 12c/d \\* 
+\multicolumn{2}{c}{\E{for letting me stay in her womb in safety}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{كْوَا اَلِلُوْفَنْيَ مَامَا}} & \textcolor{mygreen}{\textarabic{نَ وَلَ سِمْلَئِتِ}} &  \\* 
+% \multicolumn{2}{c}{na wala simlaiti * kwa alilofanya mama} & 12e/f \\* 
+\multicolumn{2}{c}{\E{and do not blame her either for what she did, my mother,}} & \\[2mm] 
+\multicolumn{2}{c}{\textcolor{mygreen}{\textarabic{اَلِتٖنْدَ كْوَا لَزِمَ}}} &  \\* 
+% \multicolumn{2}{c}{alitenda kwa lazima} & 12g \\* 
+\multicolumn{2}{c}{\E{she did it from necessity}} & \\[2mm] 
+\\[6mm] 
+
+\textcolor{mygreen}{\textarabic{كُسُدِ كُنِذِبِتِ}} & \textcolor{mygreen}{\textarabic{مٖنِتَاتِيَ تَمْبَارَ}} & \textarabic{١٣} \\* 
+% \multicolumn{2}{c}{menitatiya tambara * kusudi kunididhibiti} & 13a/b \\* 
+\multicolumn{2}{c}{\E{she wrapped me in cloth in order to protect me}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{كِنِوٖكَ كَاڤُ نْتِ}} & \textcolor{mygreen}{\textarabic{نِسِپَاتٖ لَمَظَرَ}} &  \\* 
+% \multicolumn{2}{c}{nisipate la madhara * kiniweka kavu nti} & 13c/d \\* 
+\multicolumn{2}{c}{\E{so that I should not come to harm, putting me on dry land}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{نِ كَاكُتْوَا نِ مَئِتِ}} & \textcolor{mygreen}{\textarabic{بَارِدِ إنْڠٖنِكٖرَ}} &  \\* 
+% \multicolumn{2}{c}{baridi ingenikera * nikakutwa  ni maiti} & 13e/f \\* 
+\multicolumn{2}{c}{\E{the cold would have hurt me and I would have been found dead}} & \\[2mm] 
+\multicolumn{2}{c}{\textcolor{mygreen}{\textarabic{اَلُوْفَنْيَ سِكَاتِتِ}}} &  \\* 
+% \multicolumn{2}{c}{alofanya si katiti} & 13g \\* 
+\multicolumn{2}{c}{\E{what she did was no small thing}} & \\[2mm] 
+\\[6mm] 
+
+\textcolor{mygreen}{\textarabic{كُفُنْڠَ يَانْڠُ قَؤُلِ}} & \textcolor{mygreen}{\textarabic{قَبْلَ يَا كُمَلِزَ}} & \textarabic{١٤} \\* 
+% \multicolumn{2}{c}{kabla ya kumaliza * kufunga yangu kauli} & 14a/b \\* 
+\multicolumn{2}{c}{\E{before finishing and closing my statement}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{تَزَاوَ مَارَ يَا پِلِ}} & \textcolor{mygreen}{\textarabic{وَلِمْوٖنْڠُ نَؤُلِزَ}} &  \\* 
+% \multicolumn{2}{c}{walimwengu nauliza * tazawa mara ya pili} & 14c/d \\* 
+\multicolumn{2}{c}{\E{I ask people -- will I be born a second time?}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{كُوَ وَ مَامَا بَدَلِ}} & \textcolor{mygreen}{\textarabic{هَاكُوْنَ تَكَاءٗوٖزَ}} &  \\* 
+% \multicolumn{2}{c}{hakuna takaoweza * kuwa wa mama badali} & 14e/f \\* 
+\multicolumn{2}{c}{\E{there is no-one who would be able to be my mother in her place}} & \\[2mm] 
+\multicolumn{2}{c}{\textcolor{mygreen}{\textarabic{نَشُكُرُ وَفَاضِلِ}}} &  \\* 
+% \multicolumn{2}{c}{nashukuru wafadhili} & 14g \\* 
+\multicolumn{2}{c}{\E{I am grateful to my benefactors}} & \\[2mm] 
+\\[6mm] 
+
+\textcolor{mygreen}{\textarabic{نَوَ مْبْوَا مَشُهُوْرِ}} & \textcolor{mygreen}{\textarabic{وٖمَ وٖنُ سِأُكَانِ}} & \textarabic{١٥} \\* 
+% \multicolumn{2}{c}{wema wenu siukani * na wa mbwa mashuhuri} & 15a/b \\* 
+\multicolumn{2}{c}{\E{I do not dispute your kindness and that of the famous dog}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{مُمٖ نِ فَنْيَ مَازُوْرِ}} & \textcolor{mygreen}{\textarabic{مُمٖ نِ تٖنْدَ حِسَانِ}} &  \\* 
+% \multicolumn{2}{c}{mumenitenda   hisani * mumenifanya   mazuri} & 15c/d \\* 
+\multicolumn{2}{c}{\E{you have done me a favour you have done me a good turn}} & \\[2mm] 
+\textcolor{mygreen}{\textarabic{وَجَ وَپٖنْدَاءٗ خٖرِ}} & \textcolor{mygreen}{\textarabic{وَنْڠالِكُوْ دُنِيَانِ}} &  \\* 
+% \multicolumn{2}{c}{wangaliko duniani * waja wapendao heri} & 15e/f \\* 
+\multicolumn{2}{c}{\E{there are still those in the world who love to do good}} & \\[2mm] 
+\multicolumn{2}{c}{\textcolor{mygreen}{\textarabic{تَمَّتِ هَاپَ شَئِرِ}}} &  \\* 
+% \multicolumn{2}{c}{tammati hapa shairi} & 15g \\* 
+\multicolumn{2}{c}{\E{I conclude my poem here}} & \\[2mm] 
+\\[10mm] 
+
+\multicolumn{2}{c}{\Am{محمود احمد عبد القادر}} & \\*
+\multicolumn{2}{c}{} &  \\*
+\multicolumn{2}{c}{\Am{لَامُ ٩/٥/٢٠٠٥}} &  \\
+
+
+\end{longtable} 
+
+
+\renewcommand{\bibname}{References} 
+\begingroup 
+\printbibliography 
+\endgroup 
+
+\end{document}

@@ -1,0 +1,68 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage{titlesec}  % Allow the chapter/section heading settings to be fine-tuned.  Needs to come before bidi, in polyglossia.
+\usepackage{polyglossia}  % multilingual support
+\usepackage{longtable}  % tables that carry across multiple pages
+\usepackage{xcolor}  % can't use color with polyglossia
+
+\input{convert/tex/fontdefs.tex}  % Bring in the font definitions.
+
+\usepackage{marginnote}
+\renewcommand*{\marginfont}{\color{red}\sffamily}
+
+\interfootnotelinepenalty=10000 % prevents the footnote from breaking across pages
+% http://tex.stackexchange.com/questions/32208/footnote-runs-onto-second-page
+
+% Thanks to Manas Tungare (http://manas.tungare.name/software/latex) for these settings.
+\setlength{\paperwidth}{210mm}
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{247mm}
+
+\setlength{\evensidemargin}{1in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{-0.5in}
+
+\renewcommand\thefootnote{\textcolor{red}{\arabic{footnote}}}  % Alter the colour of the footnote markers - thanks to Gonzalo Medina (http://tex.stackexchange.com/questions/26693/change-the-color-of-footnote-marker-in-latex#26696).
+
+\usepackage{url}  % Use urls in text and captions with sensible linewrap.  Can't use [obeyspaces] - this option clashes with biblatex.
+\urlstyle{rm}  % Set urls in roman.
+
+\begin{document}
+
+\begin{longtable}{rrl} 
+
+\makebox[8cm][r]{} & & \makebox[8cm][r]{} \\ 
+
+\textarabic{كهٖنْدَ مَتٖمْبٖزِ يَنْڠُ} & \textarabic{پُلِكَنِ نْدُزَنْڠُ} & \textarabic{١} \\* 
+\Tr{kʿenda matembezi yangu} & \Tr{pulikani nduzangu} & \Tr{1b/a} \\ 
+\textarabic{قِصَ چَلٗنِجِرِيَ} & \textarabic{نِوَپٖ خَبَرِ زَنْڠُ} &  \\* 
+\Tr{qiṣa chalonijiriya} & \Tr{niwape khabari zangu} & \Tr{1d/c} \\ 
+\\[8mm] 
+
+\textarabic{كْوَلِ نَ مْٹُ چُمْبَنِ} & \textarabic{نِلِ نٖنْدَءٗ نْدِيَنِ} & \textarabic{٢} \\* 
+\Tr{kwali na mţu chumbani} & \Tr{nili nendao ndiyani} & \Tr{2b/a} \\ 
+\textarabic{كْوَ حَلَالِ كُرِضِيَ} & \textarabic{مٗيٗ أُكَمْتَمَنِ} &  \\* 
+\Tr{kwa ḥalāli kuriḍiya} & \Tr{moyo ukamtamani} & \Tr{2d/c} \\ 
+\\[8mm] 
+
+\textarabic{نَلٗمْپَ زَيْدَنِ} & \textarabic{نَ مَهَرِيٖ يُوَنِ} & \textarabic{٣} \\* 
+\Tr{nalompa zaydani} & \Tr{na mahariye yuwani} & \Tr{3b/a} \\ 
+\textarabic{كَوَهِ كُمْڤَلِيَ} & \textarabic{نَلِنَ پٖٹٖ چَنْدَنِ} &  \\* 
+\Tr{kawahi kumvaliya} & \Tr{nalina peţe chandani} & \Tr{3d/c} \\ 
+\\[8mm] 
+
+\textarabic{أُنَ رُبَ مٗيٗ وَكٖ} & \textarabic{عَلِى كُتٗكَ كْوَكٖ} & \textarabic{٤} \\* 
+\Tr{una ruba moyo wake} & \Tr{ʾalii kutoka kwake} & \Tr{4b/a} \\ 
+\textarabic{مْكٗنٗ هُمْفُمْبِيَ} & \textarabic{أَكٖنْدَ كْوَ مْكٖ وَكٖ} &  \\* 
+\Tr{mkono humfumbiya} & \Tr{akenda kwa mke wake} & \Tr{4d/c} \\ 
+\\[8mm] 
+
+\textarabic{يَلِ هَيَتَأَمَلِ} & \textarabic{مْوَنَ بِنْتِ رَسُوْلِ} & \textarabic{٥} \\* 
+\Tr{yali hayataamali} & \Tr{mwana binti rasūli} & \Tr{5b/a} \\ 
+\textarabic{خَبَرِ أَكَمْوَمْبِيَ} & \textarabic{كَنٖنْدَ مْوٖنْيٖ عَقِلِ} &  \\* 
+\Tr{khabari akamwambiya} & \Tr{kanenda mwenye ʾaqili} & \Tr{5d/c} \\ 
+\\[8mm] 
+
+\end{longtable} 
+
+\end{document}
