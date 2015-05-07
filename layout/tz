@@ -27,8 +27,8 @@ xkb_symbols "swa"
 	// 1 veh (v)
 	key <AB05> { [Arabic_beh] };
 	// 1 beh (b)
-	key <AB06> { [Arabic_noon, U075D] };
-	// 1 noon (n), 2 ain with two dots above (g in ng')
+	key <AB06> { [Arabic_noon, U075D, U0767] };
+	// 1 noon (n), 2 ain with two dots above (g in ng'), 3 noon with two dots below (ny)
 	key <AB07> { [Arabic_meem] };
 	// 1 meem (m)
 	key <AB08> { [Arabic_comma, Arabic_hamza_above, comma, leftcaret] };
@@ -85,8 +85,8 @@ xkb_symbols "swa"
 	// 1 damma (short u), 2 waw (long u), 3 waw with hamza above (vowel-carrier), 4 dammatan
 	key <AD08> { [Arabic_kasra, Arabic_yeh, Arabic_hamzaonyeh, Arabic_kasratan] };
 	// 1 kasra (short i), 2 yeh (long i), 3 yeh with hamza above (vowel carrier), 4 kasratan
-	key <AD09> { [U0657, Arabic_waw, Arabic_hamzaonwaw] };
-	// 1 inverted damma (short o), 2 waw (long o), 3 waw with hamza above (vowel-carrier)
+	key <AD09> { [U0657, Arabic_waw, Arabic_hamzaonwaw, U065D] };
+	// 1 inverted damma (short o), 2 waw (long o), 3 waw with hamza above (vowel-carrier), 4 reversed damma
 	key <AD10> { [Arabic_peh] };
 	// 1 peh (p)
 	key <AD11> { [NoSymbol, NoSymbol, bracketleft, braceleft] }; 

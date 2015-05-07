@@ -3,7 +3,9 @@
 \usepackage{titlesec}  % Allow the chapter/section heading settings to be fine-tuned.  Needs to come before bidi, in polyglossia.
 \usepackage{polyglossia}  % multilingual support
 \usepackage{longtable}  % tables that carry across multiple pages
-\usepackage{xcolor}  % can't use color with polyglossia
+\usepackage[x11names]{xcolor}  % can't use color with polyglossia
+
+\usepackage{pdfpages}
 
 \input{convert/tex/fontdefs.tex}  % Bring in the font definitions.
 
@@ -60,221 +62,1584 @@
 
 
 
-\begin{longtable}{rrl} 
+\begin{center} 
 
-\makebox[8cm][r]{} & & \makebox[8cm][r]{} \\ 
-
-\textarabic{وٗتٖ وَٹَٹُ مفَنٗ} & \textarabic{وَكَتَنْڠَنْيَ مِكٗنٗ} & \textarabic{١٦٠} \\* 
-\Tr{woṯe waţaţu mfano} & \Tr{wakaṯanganya mikono} &  \Tr{160b/a} \\* 
-\multicolumn{2}{r}{\Swa{wakaṯanganya mikono * woṯe waţaţu mfano}} & \Swa{160a/b} \\* 
-\multicolumn{2}{r}{\E{They all put their hands [in the communal bowl] all three of them as equals,}} & \\ 
-\textarabic{نْدُڠُيٖ أَكِمْوَمْبِيَ} & \textarabic{أَكِنٖنَ نَ مَنٖنٗ} &  \\* 
-\Tr{nḏuguye akimwambiya} & \Tr{akinena na maneno} &  \Tr{160d/c} \\* 
-\multicolumn{2}{r}{\Swa{akinena na maneno * nḏuguye akimwambiya}} & \Swa{160c/d} \\* 
-\multicolumn{2}{r}{\E{with [Ja'far] saying these words, speaking to his brother:}} & \\ 
+\textarabic{(١) \textcolor{mygreen}{بِسْمِ اللّٰهِ إِخْوَانِ  * پَمْوٖ نَ رَحْمٰنِ  * نَ الرَّحِيْمُ يُوَنِ  * نْدِيٗ يَلٗأَنْدَمِيَ }} \\* 
+(1) bismillahi  ikhwāni  * pamwe na rahmani  * na rahimu yuwani  * ndiyo yaloandamia  \\* 
+\E{"In the name of God", my friends   along with "the Compassionate"   and "the Merciful" -- know   that that is what is written first.  } \\ 
 \\[8mm] 
 
-\textarabic{يٖؤٗ نْدُيَنْڠُ كْوَ خٖيْرِ} & \textarabic{أَكَمْوَمْبِيَ نَاصِرِ} & \textarabic{١٦١} \\* 
-\Tr{yeo nḏuyangu kwa khēri} & \Tr{akamwambiya nāṣiri} &  \Tr{161b/a} \\* 
-\multicolumn{2}{r}{\Swa{akamwambiya nāṣiri * yeo nḏuyangu kwa khēri}} & \Swa{161a/b} \\* 
-\multicolumn{2}{r}{\E{He told Nasir: Goodbye today, my brother --}} & \\ 
-\textarabic{تَمَشَ تَكُلٖٹٖيَ} & \textarabic{تَكَپٗرُدِ سَفَرِ} &  \\* 
-\Tr{ṯamasha ṯakuleţeya} & \Tr{ṯakaporuḏi safari} &  \Tr{161d/c} \\* 
-\multicolumn{2}{r}{\Swa{ṯakaporuḏi safari * ṯamasha ṯakuleţeya}} & \Swa{161c/d} \\* 
-\multicolumn{2}{r}{\E{when I come back from my journey I will bring you something nice.}} & \\ 
+\textarabic{(٢) \textcolor{mygreen}{پُلِكَنِ نْدُزَنْڠُ  * كهٖنْدَ مَتٖمْبٖزِ يَنْڠُ  * نِوَپٖ خَبَرِ زَنْڠُ  * قِصَ چَلٗنِجِرِيَ }} \\* 
+(2) pulikani nduzangu  * kenda matembezi yangu  * niwape habari zangu  * kisa chalonijiria  \\* 
+\E{Listen, my brothers --   I went on a journey   (let me give you my story,    an account of what befell me).  } \\ 
 \\[8mm] 
 
-\textarabic{نِئٖٹٖيَ نَ فَرَسِ} & \textarabic{أَكَمْجِبُ أُپٖسِ} & \textarabic{١٦٢} \\* 
-\Tr{nieţeya na farasi} & \Tr{akamjibu upesi} &  \Tr{162b/a} \\* 
-\multicolumn{2}{r}{\Swa{akamjibu upesi * nieţeya na farasi}} & \Swa{162a/b} \\* 
-\multicolumn{2}{r}{\E{[Nasir] answered him quickly: Bring me a horse --}} & \\ 
-\textarabic{نَتَكَ كُمْوَنْڠَلِيَ} & \textarabic{نْيَمَ هُيٗ سِمُئِسِ} &  \\* 
-\Tr{naṯaka kumwangaliya} & \Tr{nyama huyo simuisi} &  \Tr{162d/c} \\* 
-\multicolumn{2}{r}{\Swa{nyama huyo simuisi * naṯaka kumwangaliya}} & \Swa{162c/d} \\* 
-\multicolumn{2}{r}{\E{I don't know what that animal [looks like], I would like to see one.}} & \\ 
+\textarabic{(٣) \textcolor{mygreen}{نِلِ نٖنْدَءٗ نْدِيَنِ  * كْوَلِ نَ مْٹُ چُمْبَنِ  * مٗيٗ أُكَمْتَمَنِ  * كْوَ حَلَالِ كُرِضِيَ }} \\* 
+(3) nili nendao ndiani  * kwali na mtu chumbani\footnote{The woman probably went indoors to hide from Ali.  The custom is for  women to hide from men of their own status.  Therefore, if they hide when they see a man coming, the man will be pleased, because it is a compliment to him to be considered of noble status.  On the other hand, if the woman does not hide, the man may be angry, because he will think she is looking down on him. Thus, women will not hide from lascivious people, but only from those who aren't, because they are worthy of more respect.}   * moyo ukamtamani  * kwa halali kuridhia\footnote{Ali did not want to sin by committing adultery with her, so he decides to marry in secret -- \Swa{kuoa kwa siri}.  Among the Swahili it is possible to have a secret wife (\Swa{mke wa siri}) if it is thought that the first wife or other people would object.  An \Swa{mke wa siri} has all the rights of an ordinary wife, except that the marriage is not publicised.  This custom has certain similarities to one formerly widespread in the Scottish village of Ford (ref req), where the courtship, betrothal and even marriage of the couple were done secretly.  Even if it was known that a certain couple were courting, it was considered a breach of etiquette to mention this in public.}   \\* 
+\E{I was going along the road,   and there was a person in a room,    and my heart desired her,  [but I wished] to be gratified lawfully.   } \\ 
 \\[8mm] 
 
-\textarabic{أَكَمْبَ مَمَ هُتٗكَ} & \textarabic{كِشَ هَپٗ كَتَمْكَ} & \textarabic{١٦٣} \\* 
-\Tr{akamba mama huṯoka} & \Tr{kisha hapo kaṯamka} &  \Tr{163b/a} \\* 
-\multicolumn{2}{r}{\Swa{kisha hapo kaṯamka * akamba mama huṯoka}} & \Swa{163a/b} \\* 
-\multicolumn{2}{r}{\E{When he had finished, then [Ja'far] spoke, and said: Mother, I am leaving.}} & \\ 
-\textarabic{صَدَكَ كَمْتٗلٖيَ} & \textarabic{مَمَكٖ أَكَئِنُكَ} &  \\* 
-\Tr{ṣaḏaka kamṯoleya} & \Tr{mamake akainuka} &  \Tr{163d/c} \\* 
-\multicolumn{2}{r}{\Swa{mamake akainuka * ṣaḏaka kamṯoleya}} & \Swa{163c/d} \\* 
-\multicolumn{2}{r}{\E{His mother got up and took out alms for him.}} & \\ 
+\textarabic{(٤) \textcolor{mygreen}{نَ مَهَرِيٖ يُوَنِ  * نَلٗمْپَ زَيْدَنِ  * نَلِنَ پٖٹٖ چَنْدَنِ  * كَوَهِ كُمْڤَلِيَ }} \\* 
+(4) na mahariye yuwani  * nalompa zaidani  * nali na pete\footnote{This ring is an important factor in the rest of the story, because it had been given to Ali by his wife Fatima.}  chandani  * kawahi kumvalia  \\* 
+\E{ And know that as for her dowry,  which I gave her as well,   I had a ring on my finger,   and I persuaded her to wear it.  } \\ 
 \\[8mm] 
 
-\textarabic{إٖنٖنْدٖ أَمْفُوَتٖ} & \textarabic{هَپٗ مَمَكٖ أَتٗكٖ} & \textarabic{١٦٤} \\* 
-\Tr{enenḏe amfuwaṯe} & \Tr{hapo mamake aṯoke} &  \Tr{164b/a} \\* 
-\multicolumn{2}{r}{\Swa{hapo mamake aṯoke * enenḏe amfuwaṯe}} & \Swa{164a/b} \\* 
-\multicolumn{2}{r}{\E{Then his mother went out, she went and followed him,}} & \\ 
-\textarabic{مْنْڠُ أَكِمُؤٗمْبٖيَ} & \textarabic{أَكِمْٹٖمٖيَ مَٹٖ} &  \\* 
-\Tr{mngu akimuombeya} & \Tr{akimţemeya maţe} &  \Tr{164d/c} \\* 
-\multicolumn{2}{r}{\Swa{akimţemeya maţe * mngu akimuombeya}} & \Swa{164c/d} \\* 
-\multicolumn{2}{r}{\E{spitting at him, praying to God for him.}} & \\ 
+\textarabic{(٥) \textcolor{mygreen}{عَلِى كُتٗكَ كْوَكٖ  * أُنَ رُبَ مٗيٗ وَكٖ  * أَكٖنْدَ كْوَ مْكٖ وَكٖ  * مْكٗنٗ هُمْفُمْبِيَ }} \\* 
+(5) Ali kutoka kwake  * una ruba moyo wake  * akenda kwa mke wake  * mkono humfumbia  \\* 
+\E{When Ali left [the council-place]   his heart was troubled.    He went to his wife,    and clasped her in his arms.  } \\ 
 \\[8mm] 
 
-\textarabic{مْسٗمٖشٖ أَهِتِمُ} & \textarabic{هُي نَاصِرِ مْوَلِمُ} & \textarabic{١٦٥} \\* 
-\Tr{msomeshe ahiṯimu} & \Tr{huy nāṣiri mwalimu} &  \Tr{165b/a} \\* 
-\multicolumn{2}{r}{\Swa{huy nāṣiri mwalimu * msomeshe ahiṯimu}} & \Swa{165a/b} \\* 
-\multicolumn{2}{r}{\E{[Then she said:] Teacher, Nasir here, teach him so that he may complete his studies,}} & \\ 
-\textarabic{عَادَ يَكٗ تَكْوٖٹٖيَ} & \textarabic{أُمْفُنْدٖ نَعِلِمُ} &  \\* 
-\Tr{'āḏa yako ṯakweţeya} & \Tr{umfunḏe na'ilimu} &  \Tr{165d/c} \\* 
-\multicolumn{2}{r}{\Swa{umfunḏe na'ilimu * 'āḏa yako ṯakweţeya}} & \Swa{165c/d} \\* 
-\multicolumn{2}{r}{\E{teach him knowledge. I will pay your fee.}} & \\ 
+\textarabic{(٦) \textcolor{mygreen}{مْوَنَ بِنْتِ رَسُوْلِ  * يَلِ هَيَتَأَمَلِ  * كَنٖنْدَ مْوٖنْيٖ عَقِلِ  * خَبَرِ أَكَمْوَمْبِيَ }} \\* 
+(6) mwana binti rasuli  * yale hayataamali\footnote{\Swa{-taamali}, \E{observe}}   * kanenda mwenye akili  * habari akamwambia  \\* 
+\E{The daughter of the Prophet   was unaware of these things  [until] someone in the know went   and told her the news.  } \\ 
 \\[8mm] 
 
-\textarabic{هَپٗ كَلِيَ نَاصِرِ} & \textarabic{أَكِتٗكَ جَعْفَرِ} & \textarabic{١٦٦} \\* 
-\Tr{hapo kaliya nāṣiri} & \Tr{akiṯoka ja'fari} &  \Tr{166b/a} \\* 
-\multicolumn{2}{r}{\Swa{akiṯoka ja'fari * hapo kaliya nāṣiri}} & \Swa{166a/b} \\* 
-\multicolumn{2}{r}{\E{As Ja'far was setting off then Nasir began to cry.}} & \\ 
-\textarabic{أُسِكُ أَتَرٖجٖيَ} & \textarabic{مَمَكٖ أَكَفَسِرِ} &  \\* 
-\Tr{usiku aṯarejeya} & \Tr{mamake akafasiri} &  \Tr{166d/c} \\* 
-\multicolumn{2}{r}{\Swa{mamake akafasiri * usiku aṯarejeya}} & \Swa{166c/d} \\* 
-\multicolumn{2}{r}{\E{His mother said: [ja'far] will be back by nightfall.}} & \\ 
+\textarabic{(٧) \textcolor{mygreen}{أَكٖنٖنْدَءٖ كِزٖيْ  * فَاطِمَه أَكَمْوَمْبِيٖ  * شٖيْحٖ عَليْ أُوٗزٖيْ  * خَبَرِ هُكِسِكِيَ }} \\* 
+(7) akenendaye kizee  * Fatima akamwambie  * shehe Ali uozee  * habari hukisikia  \\* 
+\E{The person who went was an old woman,  and she said to Fatima:  "Sheikh Ali has got married --   have you heard the news?"  } \\ 
 \\[8mm] 
 
-\textarabic{نَمُيُوَ إٖنْدَ مَكَه} & \textarabic{نَاصِرِ أَكَتَمْكَ} & \textarabic{١٦٧} \\* 
-\Tr{namuyuwa enḏa makah} & \Tr{nāṣiri akaṯamka} &  \Tr{167b/a} \\* 
-\multicolumn{2}{r}{\Swa{nāṣiri akaṯamka * namuyuwa enḏa makah}} & \Swa{167a/b} \\* 
-\multicolumn{2}{r}{\E{Nasir spoke: I know he is going to Mecca.}} & \\ 
-\textarabic{أَسِپٗئِيٗنَ نْدِيَ} & \textarabic{كُتُنْڠَ هَنْڠَلِتٗكَ} &  \\* 
-\Tr{asipoiyona nḏiya} & \Tr{kuṯunga hangaliṯoka} &  \Tr{167d/c} \\* 
-\multicolumn{2}{r}{\Swa{kuṯunga hangaliṯoka * asipoiyona nḏiya}} & \Swa{167c/d} \\* 
-\multicolumn{2}{r}{\E{If he were going [to take the animals] to graze he would not take that road.}} & \\ 
+\textarabic{(٨) \textcolor{mygreen}{أَكَفَنْيَ مْشَوَشَ  * فَاطِمَه كَمْكَنُشَ  * عَلَامَ كَمُؤٗنٖشَ  * أُتُنْڠُ أَكَمْٹِيَ }} \\* 
+(8) akafanya mshawasha  * Fatima kamkanusha  * alama kamuonesha  * utungu akamtia  \\* 
+\E{She tried to convince Fatima,  but Fatima refused to believe her,  but [the old woman] gave her proof,  and made her worried.  } \\ 
 \\[8mm] 
 
-\textarabic{أُكِمْوَمْبِيَ تَمْكٗ} & \textarabic{أَوْ يَنَ سِكُوَكٗ} & \textarabic{١٦٨} \\* 
-\Tr{ukimwambiya ṯamko} & \Tr{aw yana sikuwako} &  \Tr{168b/a} \\* 
-\multicolumn{2}{r}{\Swa{aw yana sikuwako * ukimwambiya ṯamko}} & \Swa{168a/b} \\* 
-\multicolumn{2}{r}{\E{For was I not there yesterday when you said him [those] words to him,}} & \\ 
-\textarabic{يٗتٖ نَلِيَسِكِيَ} & \textarabic{كَوَڠٖ وٖنْدَنِ وَكٗ} &  \\* 
-\Tr{yoṯe naliyasikiya} & \Tr{kawage wenḏani wako} &  \Tr{168d/c} \\* 
-\multicolumn{2}{r}{\Swa{kawage wenḏani wako * yoṯe naliyasikiya}} & \Swa{168c/d} \\* 
-\multicolumn{2}{r}{\E{that he should take leave of your friends? I heard everything.}} & \\ 
+\textarabic{(٩) \textcolor{mygreen}{مْوَنَ بِنْتِ أَمِيْنِ  * هِيٗ نْدِيٗ يَمْكِنِ  * أَلِ نَ پٖٹٖ چَنْدَنِ  * كَوَهِ كُمْفُلِيَ }} \\* 
+(9) Mwana binti Amini  * hiyo ndiyo yamkini  * ali na pete chandani  * kawahi kumfulia  \\* 
+\E{"Lady, daughter of the Trustworthy One,    this is true.   He had a ring on his finger,     and he left it with her."  } \\ 
 \\[8mm] 
 
-\textarabic{نْڠُوٗ هُتَكُلِيَنِ} & \textarabic{أَوْ وٖنْدَ مَتُنْڠَنِ} & \textarabic{١٦٩} \\* 
-\Tr{nguwo huṯakuliyani} & \Tr{aw wenḏa maṯungani} &  \Tr{169b/a} \\* 
-\multicolumn{2}{r}{\Swa{aw wenḏa maṯungani * nguwo huṯakuliyani}} & \Swa{169a/b} \\* 
-\multicolumn{2}{r}{\E{Or if he is going to the pastures, what is he carrying those clothes for?}} & \\ 
-\textarabic{هَتَ هَيٗ كُنَمْبِيَ} & \textarabic{سِكُ زٗتِ سِمُؤٗنِ} &  \\* 
-\Tr{haṯa hayo kunambiya} & \Tr{siku zoṯi simuoni} &  \Tr{169d/c} \\* 
-\multicolumn{2}{r}{\Swa{siku zoṯi simuoni * haṯa hayo kunambiya}} & \Swa{169c/d} \\* 
-\multicolumn{2}{r}{\E{All these days I have never seen him [do that], So explain these [things] to me.}} & \\ 
+\textarabic{(١٠) \textcolor{mygreen}{سِجُوِ كهَنٖنَ نِ كوٖلِ  * مِمِ سِمتَأَمَلِ  * أَرُدِپٗ كْوَ رَسُوْلِ  * يٖئٗ تهَمْزِنْڠَتِيَ }} \\* 
+(10) sijui kanena ni kweli  * mimi simtaamali  * arudipo kwa Rasuli  * yeo tamzingatia  \\* 
+\E{"I don't know if I can say that that is true," [said Fatima]    I didn't pay him any heed.  When he comes back from the Prophet's   today, I will ask him.  } \\ 
 \\[8mm] 
 
-\textarabic{بَسِ وَلِلِيَنِ} & \textarabic{جَعْفَرِ كَبَئِنِ} & \textarabic{١٧٠} \\* 
-\Tr{basi waliliyani} & \Tr{ja'fari kabaini} &  \Tr{170b/a} \\* 
-\multicolumn{2}{r}{\Swa{ja'fari kabaini * basi waliliyani}} & \Swa{170a/b} \\* 
-\multicolumn{2}{r}{\E{Ja'far spoke: So why are you crying?}} & \\ 
-\textarabic{مَنٖنٗ نَلٗكْوَمْبِيَ} & \textarabic{أَوْ ٹْوَلِأ ڠَنَنِ} &  \\* 
-\Tr{maneno nalokwambiya} & \Tr{aw ţwali ganani} &  \Tr{170d/c} \\* 
-\multicolumn{2}{r}{\Swa{aw ţwali ganani * maneno nalokwambiya}} & \Swa{170c/d} \\* 
-\multicolumn{2}{r}{\E{Or why did we agree with the words I spoke to you?}} & \\ 
+\textarabic{(١١) \textcolor{mygreen}{أَكَفَنْيَ هِمَ هِمَ  * أَسِئِوٖزٖ فَاطِمَه  * حَسَنِ أَكَمْٹُمَ  * بَبَكٗ نَمْكُلِيَ }} \\* 
+(11) akafanya hima hima  * asiiweze Fatima  * Hasani akamtuma  * babako namkulia  \\* 
+\E{But Fatima then acted immediately --   she could not restrain herself.  She sent Hasan, [saying:]  "I am summoning your father."  } \\ 
 \\[8mm] 
 
-\textarabic{نَمْبِيَ نِسِيَتٗكَ} & \textarabic{نَ كَمَ هُكِرِضِكَ} & \textarabic{١٧١} \\* 
-\Tr{nambiya nisiyaṯoka} & \Tr{na kama hukiriḍika} &  \Tr{171b/a} \\* 
-\multicolumn{2}{r}{\Swa{na kama hukiriḍika * nambiya nisiyaṯoka}} & \Swa{171a/b} \\* 
-\multicolumn{2}{r}{\E{And if you are not pleased, tell me before I go.}} & \\ 
-\textarabic{سِكِتِكٗ كُنِٹِيَ} & \textarabic{هُنَ هَتَ كُؤُذِكَ} &  \\* 
-\Tr{sikiṯiko kuniţiya} & \Tr{huna haṯa kuudhika} &  \Tr{171d/c} \\* 
-\multicolumn{2}{r}{\Swa{huna haṯa kuudhika * sikiṯiko kuniţiya}} & \Swa{171c/d} \\* 
-\multicolumn{2}{r}{\E{You have no cause to be hurt and make me feel sad.}} & \\ 
+\textarabic{(١٢) \textcolor{mygreen}{نَمْكُلِيَ كْوَ سِرِ  * أَسِسِكِيٖ بَشِيْرِ  * كٖنٖنْدَ أَكَفَسِرِ  * مْبٖلٖ زَ ٹُمْوَ نَبِيَ }} \\* 
+(12) namkulia kwa siri  * asisikie Bashiri  * kenenda akafasiri  * mbele za Tumwa Nabia  \\* 
+\E{"I am summoning him secretly,    so that the Bearer of Good Tidings does not hear."  [But Hasan] went and spoke [openly],  in front of the Prophet.    } \\ 
 \\[8mm] 
 
-\textarabic{سِكُئِزَ هَيٗ يَكٗ} & \textarabic{أَكَجِبُ تَمْكٗ} & \textarabic{١٧٢} \\* 
-\Tr{sikuiza hayo yako} & \Tr{akajibu ṯamko} &  \Tr{172b/a} \\* 
-\multicolumn{2}{r}{\Swa{akajibu ṯamko * sikuiza hayo yako}} & \Swa{172a/b} \\* 
-\multicolumn{2}{r}{\E{[Nasir] answered with the words I don't disagree with these [plans] of yours --}} & \\ 
-\textarabic{هَمُنِؤٗنِ كُلِيَ} & \textarabic{سِكُ زٗتٖ نِكٗ} &  \\* 
-\Tr{hamunioni kuliya} & \Tr{siku zoṯe niko} &  \Tr{172d/c} \\* 
-\multicolumn{2}{r}{\Swa{siku zoṯe niko * hamunioni kuliya}} & \Swa{172c/d} \\* 
-\multicolumn{2}{r}{\E{all the days of my life you have never seen me cry.}} & \\ 
+\textarabic{(١٣) \textcolor{mygreen}{كَفَسِرِ مُعَيَنِ  * هَمْكُلِوَ نْيُمْبَنِ  * أَكِسِكِيَ أَمِيْنِ  * عَجَبُ إِكَمْنْڠِيَ }} \\* 
+(13) kafasiri muayani  * hamkuliwa nyumbani  * akisikiya Amini  * ajabu ikamngia  \\* 
+\E{He addressed [Ali], the Appointed One, [saying:]  "You are wanted at home."  When the Trustworthy One heard this  he was filled with wonder.  } \\ 
 \\[8mm] 
 
-\textarabic{نِمٖزٗيَتَأَمَلِ} & \textarabic{سَسَ هَيٗ نْدَ عَقِلِ} & \textarabic{١٧٣} \\* 
-\Tr{nimezoyaṯaamali} & \Tr{sasa hayo nḏa 'aqili} &  \Tr{173b/a} \\* 
-\multicolumn{2}{r}{\Swa{sasa hayo nḏa 'aqili * nimezoyaṯaamali}} & \Swa{173a/b} \\* 
-\multicolumn{2}{r}{\E{Now, these [things] are [a matter of] commonsense. which I observed.}} & \\ 
-\textarabic{زٖءٗ زَكٗ زَ كُئِنُكِيَ} & \textarabic{نَكُوَ مَتُلِ تُلِ} &  \\* 
-\Tr{zeo zako za kuinukiya} & \Tr{nakuwa maṯuli ṯuli} &  \Tr{173d/c} \\* 
-\multicolumn{2}{r}{\Swa{nakuwa maṯuli ṯuli * zeo zako za kuinukiya}} & \Swa{173c/d} \\* 
-\multicolumn{2}{r}{\E{I am anxious [because] today is the time for you to go.}} & \\ 
+\textarabic{(١٤) \textcolor{mygreen}{أَكَمُؤُزَ هَشِمِ  * يٖئٗ أُ نَنِ فَاطِمَه  * هُكْوَمْكُوَ كْوَ مِمِ  * نَايٗ سِيٗ مَزٗوٖيَ }} \\* 
+(14) akamuuza Hashimi  * yeo u nani Fatima  * hukwamkua kwa mimi  * nayo siyo mazoea  \\* 
+\E{The Hashimite asked [Ali]:  "What is the matter with Fatima today?    She wants you in a hurry,    and that is not like her."   } \\ 
 \\[8mm] 
 
-\textarabic{هى إِنُكَ أُتٗكٖ} & \textarabic{أَكَمْوَمْبِيَ نْدُيَكٖ} & \textarabic{١٧٤} \\* 
-\Tr{hı̄ inuka uṯoke} & \Tr{akamwambiya nḏuyake} &  \Tr{174b/a} \\* 
-\multicolumn{2}{r}{\Swa{akamwambiya nḏuyake * hı̄ inuka uṯoke}} & \Swa{174a/b} \\* 
-\multicolumn{2}{r}{\E{He told his brother: So, off you go.}} & \\ 
-\textarabic{كْوَنْدَ مْنْڠُ نِؤٗمْبٖيَ} & \textarabic{جَعْفَرِ أَتَمْكٖ} &  \\* 
-\Tr{kwanḏa mngu niombeya} & \Tr{ja'fari aṯamke} &  \Tr{174d/c} \\* 
-\multicolumn{2}{r}{\Swa{ja'fari aṯamke * kwanḏa mngu niombeya}} & \Swa{174c/d} \\* 
-\multicolumn{2}{r}{\E{Ja'far said: First pray to God for me.}} & \\ 
+\textarabic{(١٥) \textcolor{mygreen}{عَلِى أَكَئِنُكَ  * أَكَنٖنْدَ كْوَ هَرَكَ  * هَتَ نْيُمْبَنِ كِفِكَ  * مْوَنَ فَاطِمَ هُلِيَ }} \\* 
+(15) Ali akainuka  * akanenda kwa haraka  * hata nyumbani kifika  * Mwana Fatima hulia  \\* 
+\E{Ali got up  and went in haste   until he arrived home.   Lady Fatima was crying.   } \\ 
 \\[8mm] 
 
-\textarabic{أَتَكُپٖكَ مَنَنِ} & \textarabic{نَاصِرِ أَكَبَئِنِ} & \textarabic{١٧٥} \\* 
-\Tr{aṯakupeka manani} & \Tr{nāṣiri akabaini} &  \Tr{175b/a} \\* 
-\multicolumn{2}{r}{\Swa{nāṣiri akabaini * aṯakupeka manani}} & \Swa{175a/b} \\* 
-\multicolumn{2}{r}{\E{Nasir said: May Providence go with you,}} & \\ 
-\textarabic{كْوَ عَفِيَ نَ عَفُوَ} & \textarabic{سَلَامَ سَلِمِيْنِ} &  \\* 
-\Tr{kwa 'afiya na 'afuwa} & \Tr{salāma salimı̄ni} &  \Tr{175d/c} \\* 
-\multicolumn{2}{r}{\Swa{salāma salimı̄ni * kwa 'afiya na 'afuwa}} & \Swa{175c/d} \\* 
-\multicolumn{2}{r}{\E{[and keep you] safe and sound, in health and happiness.}} & \\ 
+\textarabic{(١٦) \textcolor{mygreen}{هُرُمَ زِكَمْشِكَ  * عَلِيْ كَشَوِشِكَ  * كَمْبَ فَتُمَ پُلِكَ  * أُلِلٗنَلٗ نَمْبِيَ }} \\* 
+(16) huruma zikamshika  * Ali kashawishika  * kamba Fatima pulika  * ulilonalo nambiya  \\* 
+\E{Ali was seized with pity,  and became perplexed.  He said, "Fatima, listen --    tell me what's wrong?"  } \\ 
 \\[8mm] 
 
-\textarabic{كِنٖنْدَ كُتٗسِمَمَ} & \textarabic{هَپٗ نْدِيَ كَيَنْدَمَ} & \textarabic{١٧٦} \\* 
-\Tr{kinenḏa kuṯosimama} & \Tr{hapo nḏiya kayanḏama} &  \Tr{176b/a} \\* 
-\multicolumn{2}{r}{\Swa{hapo nḏiya kayanḏama * kinenḏa kuṯosimama}} & \Swa{176a/b} \\* 
-\multicolumn{2}{r}{\E{Then [Ja'far] set out, going on, not stopping,}} & \\ 
-\textarabic{نَاءٖ مَكَه أَمٖنْڠِيَ} & \textarabic{سَاءَ كْوَ إِكِتٗمَ} &  \\* 
-\Tr{nae makah amengiya} & \Tr{saa kwa ikiṯoma} &  \Tr{176d/c} \\* 
-\multicolumn{2}{r}{\Swa{saa kwa ikiṯoma * nae makah amengiya}} & \Swa{176c/d} \\* 
-\multicolumn{2}{r}{\E{and around four o'clock he entered Mecca.}} & \\ 
+\textarabic{(١٧) \textcolor{mygreen}{أُنَ كِتْوَ هُكُؤُمَ  * أَمَ أُمٖشِكْوَ نِ حُمَ  * أَكَمْجِبُ فَتُمَ  * كْوَ مَرَضِ سِكُلِيَ }} \\* 
+(17) una kitwa hukuuma  * ama umeshikwa ni huma  * akamjibu Fatima  * kwa maradhi sikulia  \\* 
+\E{"Do you have a headache,   or have you a temperature?"    And Fatima replied,   "I am not crying because I am ill."   } \\ 
 \\[8mm] 
 
-\textarabic{كْوَ بَبَكٖ هَكُئِسِ} & \textarabic{مَكَه أَلِپٗجِلِسِ} & \textarabic{١٧٧} \\* 
-\Tr{kwa babake hakuisi} & \Tr{makah alipojilisi} &  \Tr{177b/a} \\* 
-\multicolumn{2}{r}{\Swa{makah alipojilisi * kwa babake hakuisi}} & \Swa{177a/b} \\* 
-\multicolumn{2}{r}{\E{When he arrived in Mecca he did not know his father's home.}} & \\ 
-\textarabic{كْوَنْدَ تَئِكٖتِلِيَ} & \textarabic{كَمْبَ نْدِيَ سِتَكَسِ} &  \\* 
-\Tr{kwanḏa ṯaikeṯiliya} & \Tr{kamba nḏiya siṯakasi} &  \Tr{177d/c} \\* 
-\multicolumn{2}{r}{\Swa{kamba nḏiya siṯakasi * kwanḏa ṯaikeṯiliya}} & \Swa{177c/d} \\* 
-\multicolumn{2}{r}{\E{He said: I am not sure of the road, first I will sit myself down.}} & \\ 
+\textarabic{(١٨) \textcolor{mygreen}{مِمِ هَپَ نَلِتٗكَ  * وٖوٖ هُنٖنَ هُتٖكَ  * نَ كَمَ كهِٹُ وتَكَ  * أُسِخٗفُ كُنَمْبِيَ }} \\* 
+(18) mimi hapa nalitoka  * wewe hunena huteka  * na kama kitu utaka  * usihofu kunambia  \\* 
+\E{"When I left here," [said Ali],   "you were talking and laughing.   And if there's anything you want,    don't be afraid to ask me [for it]."  } \\ 
 \\[8mm] 
 
-\textarabic{أَكَمُؤٗنَ زُبٖيْرِ} & \textarabic{أَكَكٖتِ جَعْفَرِ} & \textarabic{١٧٨} \\* 
-\Tr{akamuona zubēri} & \Tr{akakeṯi ja'fari} &  \Tr{178b/a} \\* 
-\multicolumn{2}{r}{\Swa{akakeṯi ja'fari * akamuona zubēri}} & \Swa{178a/b} \\* 
-\multicolumn{2}{r}{\E{Ja'far sat down and saw Zubair --}} & \\ 
-\textarabic{مِكٗنٗ كَمْوِنُلِيَ} & \textarabic{وٖنْدٖمٖنٖ نَ بَشِيْرِ} &  \\* 
-\Tr{mikono kamwinuliya} & \Tr{wenḏemene na bashı̄ri} &  \Tr{178d/c} \\* 
-\multicolumn{2}{r}{\Swa{wenḏemene na bashı̄ri * mikono kamwinuliya}} & \Swa{178c/d} \\* 
-\multicolumn{2}{r}{\E{he was walking along with the Bearer of Good News -- and Ja'far waved at him.}} & \\ 
+\textarabic{(١٩) \textcolor{mygreen}{وَتَكَ نِنِ نْدُيَنْڠُ  * نِئِفِدِ رٗحٗ يَنْڠُ  * مٗيٗ أُوَتٖ مَتُنْڠُ  * نَوٖ أُكٗمٖ كُلِيَ }} \\* 
+(19) wataka nini nduyangu  * niifidi roho yangu  * moyo uwate matungu  * nawe ukome kulia  \\* 
+\E{"What do you want, my dear,    that I may save my soul,   that your heart will leave aside pain,    so that you will stop crying?"   } \\ 
 \\[8mm] 
 
-\textarabic{زُبٖيْرِ أَكَسِمَمَ} & \textarabic{مْكٗنٗ كَؤُٹِزَمَ} & \textarabic{١٧٩} \\* 
-\Tr{zubēri akasimama} & \Tr{mkono kauţizama} &  \Tr{179b/a} \\* 
-\multicolumn{2}{r}{\Swa{mkono kauţizama * zubēri akasimama}} & \Swa{179a/b} \\* 
-\multicolumn{2}{r}{\E{Zubair saw the wave and stopped.}} & \\ 
-\textarabic{مْڠٖنِ وٖٹُ هُنْڠِيَ} & \textarabic{أَكَمْوَمْبِيَ هَشِمَ} &  \\* 
-\Tr{mgeni weţu hungiya} & \Tr{akamwambiya hashima} &  \Tr{179d/c} \\* 
-\multicolumn{2}{r}{\Swa{akamwambiya hashima * mgeni weţu hungiya}} & \Swa{179c/d} \\* 
-\multicolumn{2}{r}{\E{He told the Hashimite: Our guest has arrived.}} & \\ 
+\textarabic{(٢٠) \textcolor{mygreen}{فَتُمَ أَكَتَمْكَ  * پٖٹٖ يَكٗ نَئِتَكَ  * عَلِى أَكَشُٹُكَ  * هَؤٗنِ لَ كُمْوَمْبِيَ }} \\* 
+(20) faṯuma akaṯamka  * peţe yako naiṯaka  * 'alii akashuţuka  * haoni la kumwambiya  \\* 
+\E{Fatima replied:  "I want my ring."   Ali was startled --  he could not see what he could tell her.   } \\ 
 \\[8mm] 
 
-\textarabic{مْڠٖنِ وٖٹُ نِ نَنِ} & \textarabic{أَكَمُؤُزَ أَمِيْنِ} & \textarabic{١٨٠} \\* 
-\Tr{mgeni weţu ni nani} & \Tr{akamuuza amı̄ni} &  \Tr{180b/a} \\* 
-\multicolumn{2}{r}{\Swa{akamuuza amı̄ni * mgeni weţu ni nani}} & \Swa{180a/b} \\* 
-\multicolumn{2}{r}{\E{The Trustworthy One asked: Who is our guest?}} & \\ 
-\textarabic{مْكٗنٗ نِپٖ نَبِيَ} & \textarabic{وَسِكِيٖ هُبَئِنِ} &  \\* 
-\Tr{mkono nipe nabiya} & \Tr{wasikiye hubaini} &  \Tr{180d/c} \\* 
-\multicolumn{2}{r}{\Swa{wasikiye hubaini * mkono nipe nabiya}} & \Swa{180c/d} \\* 
-\multicolumn{2}{r}{\E{And they heard [Ja'far] say: Give me your hand, Prophet.}} & \\ 
+\textarabic{(٢١) \textcolor{mygreen}{كِشَ عَلِيْ حَيْدَرِ  * نٖنٗ أَلِلٗفَسِرِ  * ٰأَنَيٗ ٰإبُوْ بَكِرَِ  * تهكْوٖنْدَ كُٹْوَلِيَ }} \\* 
+(21) kisha 'alii ḥayḏari  * neno alilofasiri  * äanayo äbuu bakiria  * ṯʿkwenḏa kuţwaliya  \\* 
+\E{Then Ali the Lion-like,   what he told her [was this:]  "Abu Bakr has it --   I'll go and fetch it."  } \\ 
 \\[8mm] 
 
-\end{longtable} 
+\textarabic{(٢٢) \textcolor{mygreen}{پٖٹٖ يَكٗ يَ چَنْدَنِ  * أَبُوْ بَكَرِ سِ كِفَنِ  * نِمٖٹْوَاءَ تَمْكِنِ  * كْوَ أُلِيٗنَمْبِيَ }} \\* 
+(22) peţe yako ya chanḏani  * abuu bakari si kifani  * nimeţwaa ṯamkini  * kwa uliyonambiya  \\* 
+\E{[But Fatima said:] "Your ring is for your finger --    it will not fit Abu Bakr.    "I have discovered the real reason  for what you told me.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٣) \textcolor{mygreen}{هُنُ مْوٖزِ نِ وَ پِلِ  * مِمِ سِكُتَأَمَلِ  * أُنَ نَ مْكٖ وَ پِلِ  * هَبَرِ نِمٖسِكِيَ }} \\* 
+(23) hunu mwezi ni wa pili  * mimi sikuṯaamali  * una na mke wa pili  * habari nimesikiya  \\* 
+\E{"This is the second month [that you haven't been wearing the ring] --     I didn't realise it before.  "You have a second wife --     I have heard the whole story."  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٤) \textcolor{mygreen}{نَأَپَ وَاللّٰهِ نْدُيَنْڠُ  * نِ وٖيْ پْوٖكٖ مْكٖ وَنْڠُ  * نِ نَنِ عَدُوِ يَنْڠُ  * هُيٗ أَلٗنِزُلِيَ }} \\* 
+(24) naapa wallähi nḏuyangu  * ni wee pweke mke wangu  * ni nani 'aḏuwi yangu  * huyo alonizuliya  \\* 
+\E{[Ali said:] "I swear to God, dearest --   you are my only wife.     Who is this enemy of mine    who has told you this lie about me?"  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٥) \textcolor{mygreen}{كَمْجِبُ كْوَ لِسَنِ  * مْٹُيٖ سِمْبَئِنِ  * پٖٹٖ أُمْپٖيْ نَنِ  * أُنِپَپٗ تهَرِضِيَ }} \\* 
+(25) kamjibu kwa lisani  * mţuye simbaini  * peţe umpee nani  * unipapo ṯʿariḍiya  \\* 
+\E{She replied with these words:   "I will not name that person.  Who have you given the ring to?   When will you return it to me?"  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٦) \textcolor{mygreen}{عَلِى أَكَبَئِنِ  * تهَكْوَمْبِيَ تَمْكِنِ  * يَلِنْڠِيَ كِسِمَنِ  * تهَكْوٖنْدَ كُكُتٗلٖيَ }} \\* 
+(26) 'alii akabaini  * ṯʿakwambiya ṯamkini  * yalingiya kisimani  * ṯʿakwenḏa kukuṯoleya  \\* 
+\E{Ali declared:  "I will tell you what really happened.  It fell into a well --  I'l go and get it out for you."  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٧) \textcolor{mygreen}{هَيَ نٖنَ پٖٹٖ يَكٗ  * مَهَلٖ أُئِوٖسٖپٗ  * كَمَ هَيَ مَتَمْكٗ  * بَبَنْڠُ سِنٗمْوَمْبِيَ }} \\* 
+(27) haya nena peţe yako  * mahale uiwesepo  * kama haya maṯamko  * babangu sinomwambiya  \\* 
+\E{[Fatima said:] "Well, your ring -- say    where you have put it.  so that these exchanges   I don't tell my father [about them]."  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٨) \textcolor{mygreen}{علِيْ أَكَؤُذِكَ  * فَتُمَ كُكَسِرِكَ  * أَلِئِنُكَ كَتٗكَ  * أَكَنٖنْندَ كْوَ نَبِيَ }} \\* 
+(28) 'lii akaudhika  * faṯuma kukasirika  * aliinuka kaṯoka  * akanennḏa kwa nabiya  \\* 
+\E{Ali was worried  that Fatima was angry.  He got up and left,  and went to the Prophet.   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٩) \textcolor{mygreen}{أَكَمُؤُزَ هَشِمَ  * أَلِ نَ نِنِ فَتُمَ  * أَلِكهَاٹَ كَلِمَ  * مْٹُمٖ أَكَمْوَمْبِيَ }} \\* 
+(29) akamuuza hashima  * ali na nini faṯuma  * alikʿāţa kalima  * mţume akamwambiya  \\* 
+\E{The Hashimite asked him:  "What was up with Fatima?"    [Ali] interrupted him,  and told the Prophet:  } \\ 
+\\[8mm] 
+
+\textarabic{(٣٠) \textcolor{mygreen}{أَكَمْوَمْبِيَ شَرِيْفُ  * فَتُمَ مٖنِكَلِفُ  * زِيَپٗ زِسِزٗخٗوْفُ  * زِنْڠِ نِمٖمْٹِلِيَ }} \\* 
+(30) akamwambiya sharı̄fu  * faṯuma menikalifu  * ziyapo zisizokhōfu  * zingi nimemţiliya  \\* 
+\E{He told the Noble One:  "Fatima is annoyed with me --  things that are not true,  I have told her many of them.  } \\ 
+\\[8mm] 
+
+\textarabic{(٣١) \textcolor{mygreen}{أَلِكِلِيَ يَا رَسُوْلِ  * نَمِ نِمٖٹٖنْدَ كْوٖلِ  * كُمْوَبِيَ سِهِمِلِ  * حٗوْفُ زَمٖنِنْڠِيَ }} \\* 
+(31) alikiliya yā rasūli  * nami nimeţenḏa kweli  * kumwabiya sihimili  * ḥōfu zameningiya  \\* 
+\E{He cried, "Oh Prophet!   I've really done it now.   I haven't the nerve to tell her.  I'm filled with fear.  } \\ 
+\\[8mm] 
+
+\textarabic{(٣٢) \textcolor{mygreen}{تٖنَ إٖنٖنْدَ سَيِدِ  * أُمُؤٗنْيٖ أَبُرُدِ  * كَئِنُكَ مُحَمَدِ  * هَپٗ كَأَنْدَمَ نْدِيَنِ }} \\* 
+(32) ṯena enenḏa sayiḏi  * umuonye aburuḏi  * kainuka muḥamaḏi  * hapo kaanḏama nḏiyani  \\* 
+\E{"So you go, my Lord,   and tell her to calm down."  Muhammad got up,  and then set out on the way [to Fatima's house].   } \\ 
+\\[8mm] 
+
+\textarabic{(٣٣) \textcolor{mygreen}{أَكٖنْدَ أَكَجِلِسِ  * مٗيٗ أُنَ وَسِوَسِ  * كَئِفَنْيَ كَمَ هَئِسِ  * ٰإٖنٖنْدٖيْ كُمْوَنْڠَلِيَ }} \\* 
+(33) akenḏa akajilisi  * moyo una wasiwasi  * kaifanya kama haisi  * äenenḏee kumwangaliya  \\* 
+\E{He went [to the house] and sat down.  His heart was confused,   He pretended he knew nothing,   [that] he had just come to look in on her.  } \\ 
+\\[8mm] 
+
+\textarabic{(٣٤) \textcolor{mygreen}{كَمُؤُلِزَ هَشِمِ  * وَلِ نَ نِنِ فَتُمَ  * حَسَنِ مٖكُيَ هِمَ  * عَليْ كُمْوَنْدَمِيَ }} \\* 
+(34) kamuuliza hashimi  * wali na nini faṯuma  * ḥasani mekuya hima  * 'alı̄ kumwanḏamiya  \\* 
+\E{The Hashimite asked her:  "Was there anything wrong, Fatima?    Hasan came [to us] in a hurry   to fetch Ali."  } \\ 
+\\[8mm] 
+
+\textarabic{(٣٥) \textcolor{mygreen}{فَتُمَ هَكُكَسِرِ  * أَكَمْوَمْبِيَ نَشِيْرِ  * علِيْ نْدَكٖ هَبَرِ  * يٖؤٗ نِمٖزِسِكِيَ }} \\* 
+(35) faṯuma hakukasiri  * akamwambiya nashı̄ri  * 'lii nḏake habari  * yeo nimezisikiya  \\* 
+\E{Fatima did not hesitate,  she told the Bearer of Glad Tidings:  "It's news about Ali --   I heard it today."  } \\ 
+\\[8mm] 
+
+\textarabic{(٣٦) \textcolor{mygreen}{أَكَمُؤُزَ أَمِيْنِ  * نِ كَمَ هَبَرِ ڠَنِ  * أُسِمْنْڠٗجٖ نْيُمْبَنِ  * أُكَجَ أُكَمُأَمْكُوَ }} \\* 
+(36) akamuuza amı̄ni  * ni kama habari gani  * usimngoje nyumbani  * ukaja ukamuamkuwa  \\* 
+\E{The Trustworthy One asked her:  "What sort of news is it    that you couldn't wait for him at home,  but came and fetched him?"  } \\ 
+\\[8mm] 
+
+\textarabic{(٣٧) \textcolor{mygreen}{أَكَئِنَمَ فَتُمَ  * كُمْسِتَحِ هَشِمَ  * يَلٗمْتٗكَ كَلِمَ  * بَبَكٖ أَكَمْوَمْبِيَ }} \\* 
+(37) akainama faṯuma  * kumsiṯaḥi hashima  * yalomṯoka kalima  * babake akamwambiya  \\* 
+\E{Fatima bowed down  to show honour to the Hashimite,  and words came tumbling out,   and she explained [everything] to her father.  } \\ 
+\\[8mm] 
+
+\textarabic{(٣٨) \textcolor{mygreen}{يَوَتٖ مَنٖنٗ هَيٗ  * أُسِٹٖٹٖ نَ مُمٖئٗ  * أَكَرُدِشَ كِلِيٗ  * فَاطِمَة الزَّهْرِيَّة }} \\* 
+(38) yawaṯe maneno hayo  * usiţeţe na mumeo  * akaruḏisha kiliyo  * fāṭimaẗ zzahrı̄yaẗ  \\* 
+\E{"Leave off these words," [he said].   "Don't quarrel with your husband."   And he comforted her,  Fatima the Radiant.  } \\ 
+\\[8mm] 
+
+\textarabic{(٣٩) \textcolor{mygreen}{أَكَمْوَمْبِيَ مْوَنَنْڠُ  * أُتَكَپٗ رَضِ يَنْڠُ  * نِ هَيَ مَنٖنٗ يَنْڠُ  * تُوَ أُكِيَسِكِيَ }} \\* 
+(39) akamwambiya mwanangu  * uṯakapo raḍi yangu  * ni haya maneno yangu  * ṯuwa ukiyasikiya  \\* 
+\E{He told her, "My child,   if you want my esteem,   this is my advice --    you know, if you'll listen to it."  } \\ 
+\\[8mm] 
+
+\textarabic{(٤٠) \textcolor{mygreen}{كُتٗكَ كْوَكٖ فَتُمَ  * يَلٖ أَكَيَسُكُمَ  * كِشَ كَڤُٹَ كَلِمَ  * بَبَكٖ أَكَمْوَمْبِيَ }} \\* 
+(40) kuṯoka kwake faṯuma  * yale akayasukuma  * kisha kavuţa kalima  * babake akamwambiya  \\* 
+\E{For her part, Fatima   weighed those [words] carefully,  then she spoke some words,   and told her father:  } \\ 
+\\[8mm] 
+
+\textarabic{(٤١) \textcolor{mygreen}{أَكَمْوَمْبِيَ بَبَنْڠُ  * ٹُنَنِ نَ مُمٖ وَنْڠُ  * كَبِسَ مَؤٗڤُ يَنْڠُ  * سِ مْوٖنْيٖ كُچٖنْدٖلٖيَ }} \\* 
+(41) akamwambiya babangu  * ţunani na mume wangu  * kabisa maovu yangu  * si mwenye kuchenḏeleya  \\* 
+\E{She said, "Father,  what quarrel do I have with my husband?   [It was] my fault entirely,    and I am not going to continue with it."   } \\ 
+\\[8mm] 
+
+\textarabic{(٤٢) \textcolor{mygreen}{نَ مْٹُ أَلٗنِغُرِ  * سَسَ نِمٖفِكِرِ  * هَٹُچٖنْدٖلٖئِ خٖيْرِ  * هَوٖزِ كُٹْوَنْڠَلِيَ }} \\* 
+(42) na mţu aloniḡuri  * sasa nimefikiri  * haţuchenḏelei khēri  * hawezi kuţwangaliya  \\* 
+\E{"And the person who deceived me --   now I have realised  she did not want good fortune for us --  she couldn't look at us [without envy].  } \\ 
+\\[8mm] 
+
+\textarabic{(٤٣) \textcolor{mygreen}{تٖنَ هُضُمُ مٗيٗنِ  * مْٹُيٖ نِ شَيْطَانِ  * مْلَنِوَ مَلْعُوْنِ  * نِيَه مْبٗڤُ كُنِٹِيَ }} \\* 
+(43) ṯena huḍumu moyoni  * mţuye ni shayṭāni  * mlaniwa mal'ūni  * niyah mbovu kuniţiya  \\* 
+\E{And the conclusion in my heart   [is that] that person was the Devil,   the  Cursed One, the Damned One,  planting evil intentions in me.   } \\ 
+\\[8mm] 
+
+\textarabic{(٤٤) \textcolor{mygreen}{هَيَ نِمٖيَجِتِمُ  * نَ مٖنْڠِنٖ تهَنُظُمُ  * جَمِيْعِ مُيَفَهَمُ  * نِمٖچٖنْدَ كُوَمْبِيَ }} \\* 
+(44) haya nimeyajiṯimu  * na mengine ṯʿanuẓumu  * jamī'i muyafahamu  * nimechenḏa kuwambiya  \\* 
+\E{I have completed these [things],  and I will put others into verse,   so that all of you may understand them --   I have gone on now to tell you.  } \\ 
+\\[8mm] 
+
+\textarabic{(٤٥) \textcolor{mygreen}{فَهَمُنِ وَؤُنْڠْوَنَ  * يٖؤٗ نِوَپٖ مَعَنَ  * پٖٹٖ يَنْڠُ ي عَيْنَ  * حُجَ نَلٗئِوَتِيَ }} \\* 
+(45) fahamuni waungwana  * yeo niwape ma'ana  * peţe yangu ı̄ 'ayna  * ḥuja naloiwaṯiya  \\* 
+\E{Pay attention, noble [listeners],  so that today I may give you an explanation   [about] my distinctive ring --    why I left it behind.  } \\ 
+\\[8mm] 
+
+\textarabic{(٤٦) \textcolor{mygreen}{نَلِئِوَتَ قَصِدِ  * سِ مَهَبَ كُنِزِدِ  * مَرَ هُزَءَ وَلِدِ  * أَصِلِ إِكَپٗتِيَ }} \\* 
+(46) naliiwaṯa qaṣiḏi  * si mahaba kuniziḏi  * mara huzaa waliḏi  * aṣili ikapoṯiya  \\* 
+\E{I left it for the purpose,  not of increasing [her] love for me,   [but lest] once the child was born,   its heritage should be lost.  } \\ 
+\\[8mm] 
+
+\textarabic{(٤٧) \textcolor{mygreen}{بَسِ نَلٗيَفِكِرِ  * نْدِيٗ يٗتٖ يَلٗجِرِ  * أَكَزَوَ جَعْفَرِ  * وَ مَوْلَانَا عَلِيَ }} \\* 
+(47) basi naloyafikiri  * nḏiyo yoṯe yalojiri  * akazawa ja'fari  * wa mawlānā 'aliya  \\* 
+\E{Indeed, what I had supposed  was exactly what happened.   Jaafar wa born,  [son of] Lord Ali.   } \\ 
+\\[8mm] 
+
+\textarabic{(٤٨) \textcolor{mygreen}{أَكَئِسِنْڠَ كِجَنَ  * نَ بَبَكٖ وَ كِفَنَ  * كُلَ أَلٗكِمُؤٗنَ  * صُوْرَ زَ لِكِمْوَمْبِيَ }} \\* 
+(48) akaisinga kijana  * na babake wa kifana  * kula alokimuona  * ṣūra za likimwambiya  \\* 
+\E{The boy grew up  resembling his father.    [To] everyone who saw him,  his features said who he was.   } \\ 
+\\[8mm] 
+
+\textarabic{(٤٩) \textcolor{mygreen}{وَٹُ وَلِكِنُكُرِ  * عَلِى هَنَ هَبَرِ  * هَتَ مْمٗيَ كْوَ سِرِ  * َٰأَكَفِكَ كُمْوَمْبِيَ }} \\* 
+(49) waţu walikinukuri  * 'alii hana habari  * haṯa mmoya kwa siri  * äaakafika kumwambiya  \\* 
+\E{People constantly referred to it,  [but] Ali knew nothing of it   until one person secretly    arrived to tell him.  } \\ 
+\\[8mm] 
+
+\textarabic{(٥٠) \textcolor{mygreen}{أَلِپٗپٖنْدَ مَنَانِ  * كَمُؤٗنَ مُعَيَنِ  * كُنَ كِسِمَ مْوِٹُنِ  * أَكٖنْدَ كُچَنْڠَلِيَ }} \\* 
+(50) alipopenḏa manāni  * kamuona mu'ayani  * kuna kisima mwiţuni  * akenḏa kuchangaliya  \\* 
+\E{When it pleased Providence  [Ali], the Appointed One, saw him.  There was a well in the forest,   and [Ali] went to examine it.  } \\ 
+\\[8mm] 
+
+\textarabic{(٥١) \textcolor{mygreen}{نَاءٖ أَكٖنْدَ كْوَ شَكَ  * مَاءِ أَسِپٗيَتَكَ  * نَاءٖ أَلِكِفُنِكَ  * كِوَزِ أَكِچٖنْدٖيَ }} \\* 
+(51) nae akenḏa kwa shaka  * mai asipoyaṯaka  * nae alikifunika  * kiwazi akichenḏeya  \\* 
+\E{And he went from suspicion,    not wanting water.   [Although] he had [earlier] covered it,  it was open when he got there.  } \\ 
+\\[8mm] 
+
+\textarabic{(٥٢) \textcolor{mygreen}{هَپٗ عَلِى حَيْدَرِ  * كِوَزَ نَ كُفِكِرِ  * وَمٖكُيَ مَكَفِرِ  * يٖؤٗ كُنِفُنُلِيَ }} \\* 
+(52) hapo 'alii ḥayḏari  * kiwaza na kufikiri  * wamekuya makafiri  * yeo kunifunuliya  \\* 
+\E{So Ali the Lion-like   pondered and considered.   "Infidels have come here  to uncover it today in spite of me."  } \\ 
+\\[8mm] 
+
+\textarabic{(٥٣) \textcolor{mygreen}{كِشَ أَكَتَمْكَ  * نَ يٖؤٗ تهَكِفُنِكَ  * سِنَ بَدِ تهَمْشِكَ  * مْٹُيٖ أَمٖزٗوٖيَ }} \\* 
+(53) kisha akaṯamka  * na yeo ṯʿakifunika  * sina baḏi ṯʿamshika  * mţuye amezoweya  \\* 
+\E{Then he said,  "I will cover it again today,   and doubtless I will catch   that person who is behaving like that."  } \\ 
+\\[8mm] 
+
+\textarabic{(٥٤) \textcolor{mygreen}{أَچٗنْدٗكَ هُكُ نْيُمَ  * جَعْفَرِ كَئٖڠٖمَ  * لِلٖ نَاءٗ كَسُكُمَ  * مْبَلِ أَكَلَتِلِيَ }} \\* 
+(54) achonḏoka huku nyuma  * ja'fari kaegema  * lile nao kasukuma  * mbali akalaṯiliya  \\* 
+\E{When he had gone off [to hide] behind it,   Jaafari approached,  pushed off the plank [covering the well],   and threw it far away.  } \\ 
+\\[8mm] 
+
+\textarabic{(٥٥) \textcolor{mygreen}{مْبُزِ وَكَنْوَ كْوَ هِمَ  * جَعْفَرِ أُكَلِكٗ نْيُمَ  * كِشَ نَاءٖ كَئٖڠٖمَ  * عَلِيْ هُمْوَنْڠَلِيَ }} \\* 
+(55) mbuzi wakanwa kwa hima  * ja'fari ukaliko nyuma  * kisha nae kaegema  * 'alii humwangaliya  \\* 
+\E{His goats drank greedily    and Jaafar was there behind them.   Then he too came forward,    and Ali watched him.  } \\ 
+\\[8mm] 
+
+\textarabic{(٥٦) \textcolor{mygreen}{أَپٖڠٖمَ كُرَدِدِ  * ٹُتَصِنْدَنَ قَصِدِ  * كْوَ ندَ يٖؤٗ أَكِرُدِ  * هَلِدِرِكِ أَكِيَ }} \\* 
+(56) apegema kuraḏiḏi  * ţuṯaṣinḏana qaṣiḏi  * kwa nḏa yeo akiruḏi  * haliḏiriki akiya  \\* 
+\E{Jaafar approached, saying:  "We will compete tit-for-tat --  and if it's today that he comes back,    he will not find [the plank] when he gets here."  } \\ 
+\\[8mm] 
+
+\textarabic{(٥٧) \textcolor{mygreen}{چَمْبَ هُفَنْيَ نِ بِرِ  * أَيَپٗ أَتَنِكِرِ  * هِلِ لِپٖٹٖ بَنْدَرِ  * نْڠٗٹٖ تهَمْفِنِكِيَ }} \\* 
+(57) chamba hufanya ni biri  * ayapo aṯanikiri  * hili lipeţe banḏari  * ngoţe ṯʿamfinikiya  \\* 
+\E{He was saying: "If he is challenging me,     when he gets here he will submit to me.  I'm at the end of my tether --   I'll teach him a lesson."  } \\ 
+\\[8mm] 
+
+\textarabic{(٥٨) \textcolor{mygreen}{مَاءِ كَٹِكَ كُٹٖكَ  * نَ عَلِى أَكَتٗكَ  * مْكٗنٗ أَكَمْصِكَ  * جَعْفَرِ كَمْوَمْبِيَ }} \\* 
+(58) mai kaţika kuţeka  * na 'alii akaṯoka  * mkono akamṣika  * ja'fari kamwambiya  \\* 
+\E{[But] while he was drawing water,    Ali came out [of hiding]  and grabbed him by the arm.  Jaafari said to him:  } \\ 
+\\[8mm] 
+
+\textarabic{(٥٩) \textcolor{mygreen}{وٖوٖ هُنِشِكِيَنِ  * مِمِ سِكُچِ سِنَنِ  * هَتَ أُكِوَ نِ جِنِ  * نَيُوَ كُكُسٗمٖيَ }} \\* 
+(59) wewe hunishikiyani  * mimi sikuchi sinani  * haṯa ukiwa ni jini  * nayuwa kukusomeya  \\* 
+\E{"Why are you grabbing hold of me?  I'm not in the least afraid of you.   Even if you were a djinn    I would know how to read [the Qur'an] against you.  } \\ 
+\\[8mm] 
+
+\textarabic{(٦٠) \textcolor{mygreen}{هَيَ نِمٖزٗفَسِرِ  * سِكُيَنٖنَ كْوَ سِرِ  * أُكِتَكَ أَظْهَرِ  * نَ زَيْدِ تهَكْوَمْبِيَ }} \\* 
+(60) haya nimezofasiri  * sikuyanena kwa siri  * ukiṯaka aẓhari  * na zayḏi ṯʿakwambiya  \\* 
+\E{"These [things] I have said,  I have not spoken secretly --    if you want it in plain terms  I will say even more to you."   } \\ 
+\\[8mm] 
+
+\textarabic{(٦١) \textcolor{mygreen}{كَمْڠُٹِيَ كْوَ مْبَلِ  * وَكَوَنَ سَاءَ مْبِلِ  * كِشَ كَڠُٹَ قَوْلِ  * جَعْفَرِ كَمْوَمْبِيَ }} \\* 
+(61) kamguţiya kwa mbali  * wakawana saa mbili  * kisha kaguţa qawli  * ja'fari kamwambiya  \\* 
+\E{He attacked Ali repeatedly,   and they fought for two hours.   Then he paused,   and Jaafar spoke to him.  } \\ 
+\\[8mm] 
+
+\textarabic{(٦٢) \textcolor{mygreen}{كَمْوَمْبِيَ مْبَئِنِ  * مْوَنَ آدَمُ نْنَنِ  * بَبَ هَكٗ دُنِيَنِ  * نْدِپٗ أُكَنِؤٗنٖيَ }} \\* 
+(62) kamwambiya mbaini  * mwana ḏamu nnani  * baba hako ḏuniyani  * nḏipo ukanioneya  \\* 
+\E{He spoke to him and said:  "What sort of person are you?   [My] father is no longer in this world,   and that is why you are bullying me."  } \\ 
+\\[8mm] 
+
+\textarabic{(٦٣) \textcolor{mygreen}{كَمُؤٗزَ هُنٖنَنِ  * وٖوٖ بَبَكٗ نِ نَنِ  * كَمْبَ نِ پٖٹٖ چَنْدَنِ  * عَلِى كَيَنْڠَلِيَ }} \\* 
+(63) kamuoza hunenani  * wewe babako ni nani  * kamba ni peţe chanḏani  * 'alii kayangaliya  \\* 
+\E{[Ali] asked him: "What are you saying?  Who is your father?    [Jaafar] said: "He is the ring on my finger."    Ali looked at it.  } \\ 
+\\[8mm] 
+
+\textarabic{(٦٤) \textcolor{mygreen}{پٖٹٖ كُئِيٗنَ كْوَكٖ  * كِسٗمَ نَ جِنَ لَكٖ  * أَرُدِ أَسِكِتِكٖ  * نَ مَيُتٗ كُمْنْڠِيَ }} \\* 
+(64) peţe kuiyona kwake  * kisoma na jina lake  * aruḏi asikiṯike  * na mayuṯo kumngiya  \\* 
+\E{Once he saw the ring   and read his name [on it],    he stepped back greatly saddened  and was filled with remorse.   } \\ 
+\\[8mm] 
+
+\textarabic{(٦٥) \textcolor{mygreen}{كِشَ هَپٗ أَمْوَمْبِئٖ  * سِنْڠَلِكُپِجِئٖ  * إِنَ لَكٗ هُئِٹْوَيٖ  * بَبَكٗ نْدِيٖ عَلِيَ }} \\* 
+(65) kisha hapo amwambie  * singalikupijie  * ina lako huiţwaye  * babako nḏiye 'aliya  \\* 
+\E{Then he told [Jaafar]:   "I should not have attacked you. As for the name you are to be called,   your father is [me], Ali.   } \\ 
+\\[8mm] 
+
+\textarabic{(٦٦) \textcolor{mygreen}{نِنْڠَلِپٗتٖزَ دَمُ  * كَمَ سِكُكُفَهَمُ  * أَكِشَ كَتَكَلَمُ  * جَعْفَرِ كَمْوَمْبِيَ }} \\* 
+(66) ningalipoṯeza ḏamu  * kama sikukufahamu  * akisha kaṯakalamu  * ja'fari kamwambiya  \\* 
+\E{I would have spilt your blood  if I had not recognised you."  When he finished speaking,  Jaafar spoke to him:  } \\ 
+\\[8mm] 
+
+\textarabic{(٦٧) \textcolor{mygreen}{وٖوٖ مْٹُ هُمُؤٗنَ  * هُمُؤُزِ لَكٖ إِنَ  * هُجِؤٗنَ أُجَڠِنَ  * أُلِؤٗنَ تهَكَمْبِيَ }} \\* 
+(67) wewe mţu humuona  * humuuzi lake ina  * hujiona ujagina  * uliona ṯʿakambiya  \\* 
+\E{"When you see someone,   you don't even ask his name.   You see yourself as a bruiser,  and you thought I would run away.  } \\ 
+\\[8mm] 
+
+\textarabic{(٦٨) \textcolor{mygreen}{كْوَنْزَ نِپَ پٖٹٖ يَنْڠُ  * إِنُكَإٖوٖ بَبَنْڠُ  * هُنْڠَلِوٖزٖ مَتُنْڠُ  * مْوِلِنِ كُنِٹِيَ }} \\* 
+(68) kwanza nipa peţe yangu  * inukaewe babangu  * hungaliweze maṯungu  * mwilini kuniţiya  \\* 
+\E{First, give me back my ring,    and get up, father --  you would not have been able   to inflict injuries on my body.  } \\ 
+\\[8mm] 
+
+\textarabic{(٦٩) \textcolor{mygreen}{أَكَمْوَمْبِيَ مَمَكٖ  * نَمُيُوَ سُرَ زَكٖ  * نَاءٖ هَپٗ أَتَمْكٖ  * إِنَ لَكٖ أَمْوَمْبِيٖ }} \\* 
+(69) akamwambiya mamake  * namuyuwa sura zake  * nae hapo aṯamke  * ina lake amwambiye  \\* 
+\E{He told him [who] his mother [was]:  "I recognise her features."   And then [Jaafar] spoke   in order to tell [Ali] his name.   } \\ 
+\\[8mm] 
+
+\textarabic{(٧٠) \textcolor{mygreen}{كِمْوَمْبِيَ كَفَسِرِ  * مِمِ هُئِٹْوَ جَعْفَرِ  * وَ عَلِيْ حَيْدَرِ  * نَ مْوَكَ نِ وَ تِسِيَ }} \\* 
+(70) kimwambiya kafasiri  * mimi huiţwa ja'fari  * wa 'alii ḥayḏari  * na mwaka ni wa ṯisiya  \\* 
+\E{|He spoke, saying:  "I am called Jaafar,   [son] of Ali the Lion-like   and I am nine years old."     } \\ 
+\\[8mm] 
+
+\textarabic{(٧١) \textcolor{mygreen}{وَتٗوٖ مْبُزِ مْوِٹُنِ  * نَ أُوَپٖكٖ ݝْدِيَنِ  * ٹْوٖنٖنْدٖ زٖٹُ مُئِنِ  * جَعْفَرِ كَمْوَمْبِيَ }} \\* 
+(71) waṯowe mbuzi mwiţuni  * na uwapeke ngḏiyani  * ţwenenḏe zeţu muini  * ja'fari kamwambiya  \\* 
+\E{"Bring your goats out of the forest," [said Ali],    "and herd them along the road  so that we may go on towards our town."   But Jaafar spoke to him.  } \\ 
+\\[8mm] 
+
+\textarabic{(٧٢) \textcolor{mygreen}{كَمَْمْبِيَ نٖنْدَ زَنْڠُ  * نِنَ نَ مْوَلِمُ وَنْڠُ  * نِمُوَڠٖ نَ مَمَنْڠُ  * كِشَ كٖشٗ نِتَكُيَ }} \\* 
+(72) kamambiya nenḏa zangu  * nina na mwalimu wangu  * nimuwage na mamangu  * kisha kesho niṯakuya  \\* 
+\E{He told him: "I am going off --   I have my teacher    whom I must take leave of, and my mother.   Then I will come tomorrow."   } \\ 
+\\[8mm] 
+
+\textarabic{(٧٣) \textcolor{mygreen}{كٖشٗ كُكِپَمْبَؤُكَ  * نَ مَپِمَ يَئِنُكَ  * سَاءَ مٗيَ إِكِفِكَ  * بَبَ يَكُوَصِلِيَ }} \\* 
+(73) kesho kukipambauka  * na mapima yainuka  * saa moya ikifika  * baba yakuwaṣiliya  \\* 
+\E{"When tomorrow has dawned,  I will get up early,    and when the first hour comes   I will arrive with you, father."  } \\ 
+\\[8mm] 
+
+\textarabic{(٧٤) \textcolor{mygreen}{أَكَمْطِبُ قَوْلِ  * أُيَپٗ نْدِيَ يَ مْبَلِ  * يَ مَكَه نِ يَ كُقُلِ  * أُسِتَكٖ كُپٗتٖيَ }} \\* 
+(74) akamṭibu qawli  * uyapo nḏiya ya mbali  * ya makah ni ya kuquli  * usiṯake kupoṯeya  \\* 
+\E{Ali gave him some advice:   "When you come to the fork in the road,   the way to Mecca is the one on the right --     just so you don't get lost."  } \\ 
+\\[8mm] 
+
+\textarabic{(٧٥) \textcolor{mygreen}{كُمْرُدِشِيَ تَمْكٗ  * نَسِ هَيَ نٖنْدَ زَكٗ  * مْوَلِمُ نَ مَمَكٗ  * نَ نْدُزٗ نِسَلِمِيَ }} \\* 
+(75) kumruḏishiya ṯamko  * nasi haya nenḏa zako  * mwalimu na mamako  * na nḏuzo nisalimiya  \\* 
+\E{He wished Jaafar well:  "So, now, off you go,    the teacher and your mother   and your relatives -- give them my best wishes."   } \\ 
+\\[8mm] 
+
+\textarabic{(٧٦) \textcolor{mygreen}{نَاءٖ مْوَنَ وَ نَسَبَ  * كَمْوَمْبِيَ مَرْحَبَا  * نَمِ مُكٗ أَقْرَبَ  * أُپٖنْدَ نِسَلِمِيَ }} \\* 
+(76) nae mwana wa nasaba  * kamwambiya marḥabā  * nami muko aqraba  * upenḏa nisalimiya  \\* 
+\E{And [Jaafar], a polite child,    told him: "Thank you.  And from me to your relatives there,   kindly give them my regards."  } \\ 
+\\[8mm] 
+
+\textarabic{(٧٧) \textcolor{mygreen}{سَلَامُ أَبُوْ بَكَرِ  * أَزْوَاجِ نَ ذُرِيَ  * سُزَاءٗ نَ إِظْهَارِ  * هَؤٗ نَوَفَهَمِيَ }} \\* 
+(77) salāmu abuu bakari  * azwāji na dhuriya  * suzao na iẓhāri  * hao nawafahamiya  \\* 
+\E{Greetings to Abu Bakr,   your wives and children,   both close and extended family --   I am thinking of them."  } \\ 
+\\[8mm] 
+
+\textarabic{(٧٨) \textcolor{mygreen}{نَسِ هَپٗ جَعْفَرِ  * أَكَمْوَمْبِيَ كْوَ هٖرِ  * نَ عَلِى حَيْدَرِ  * مْنْڠُ أَكَمُؤٗمْبٖيَ }} \\* 
+(78) nasi hapo ja'fari  * akamwambiya kwa heri  * na 'alii ḥayḏari  * mngu akamuombeya  \\* 
+\E{So then Jaafar   said goodbye to him,   and Ali the Lion-like   prayed to God for him.  } \\ 
+\\[8mm] 
+
+\textarabic{(٧٩) \textcolor{mygreen}{مُئِنِ كُنْڠِيَ كْوَكٖ  * كٖنْدَ كْوَ مْوَلِمُ وَكٖ  * كَمْپَ هَبَرِ زَكٖ  * كْوَءٗ هَيَسِكِلِيَ }} \\* 
+(79) muini kungiya kwake  * kenḏa kwa mwalimu wake  * kampa habari zake  * kwao hayasikiliya  \\* 
+\E{When [Jaafar] entered his village   he went to his teacher's house,    and gave him his news --   [the teacher] had not yet heard it there.  } \\ 
+\\[8mm] 
+
+\textarabic{(٨٠) \textcolor{mygreen}{أَكِشَ كُيَنُظُمَ  * أَكَلِيَ مُعَلِمُ  * كَمبَ وَنِٹِيَ هَمُ  * هَپٗ أُمٖزٗنَمْبِيَ }} \\* 
+(80) akisha kuyanuẓuma  * akaliya mu'alimu  * kamba waniţiya hamu  * hapo umezonambiya  \\* 
+\E{When he had finished explaining [everything],  the teacher wept,  and said, "You are  making me sad   with what you have told me here."  } \\ 
+\\[8mm] 
+
+\textarabic{(٨١) \textcolor{mygreen}{ٖوَنِٹِيَ سِكِتِكٗ  * نَ وِنْڠِ وَ مَؤُذِكٗ  * وَلَ نَ هُكٗ وٖنْدَكٗ  * سِوٖزِ كُكُزِوِيَ }} \\* 
+(81) ewaniţiya sikiṯiko  * na wingi wa maudhiko  * wala na huko wenḏako  * siwezi kukuziwiya  \\* 
+\E{"You are bringing me worry,  and many concerns.    Yet that place you are going to --    I cannot keep you back from it."  } \\ 
+\\[8mm] 
+
+\textarabic{(٨٢) \textcolor{mygreen}{سِ رَحِمُ كُئٖنْدَنِ  * نَ هُكٗ أُ حَلِ ڠَنِ  * نَاءٖ بَبَكٗ زِٹَنِ  * نْدِيٖ وَ كُٹَنْڠُلِيَ }} \\* 
+(82) si raḥimu kuenḏani  * na huko u ḥali gani  * nae babako ziţani  * nḏiye wa kuţanguliya  \\* 
+\E{"It is not easy to go there,   and what sort of situation will you be in there,     with your father at war,   always in the front line?"   } \\ 
+\\[8mm] 
+
+\textarabic{(٨٣) \textcolor{mygreen}{نَ كُكِكِنْدَ سِتَكِ  * كْوَنِ نَيُوَ نِ هَكِ  * نِ رَضِ أَلٗفُلَكِ  * نَ زَيْدِ كِكْوٖٹٖيَ }} \\* 
+(83) na kukikinḏa siṯaki  * kwani nayuwa ni haki  * ni raḍi alofulaki  * na zayḏi kikweţeya  \\* 
+\E{Yet I don't intend to oppose it,   because I know it is proper.    What [Ali] explained was right,   and the other things he told you."   } \\ 
+\\[8mm] 
+
+\textarabic{(٨٤) \textcolor{mygreen}{أَكَمْوَمْبِيَ مْوَلِمُ  * مَمَكٗ أَيَفَهَمُ  * كَمْجِبِشَ كَلِمُ  * كْوَكٖ سِيَسِكِلِيَ }} \\* 
+(84) akamwambiya mwalimu  * mamako ayafahamu  * kamjibisha kalimu  * kwake siyasikiliya  \\* 
+\E{The teacher asked him:  "Is your mother aware of these [things]?"  And [Jaafar] answered him:  "I have not yet heard from her place."  } \\ 
+\\[8mm] 
+
+\textarabic{(٨٥) \textcolor{mygreen}{كَْوَمْبِيَ إٖنْدَ زَكٗ  * أُكَمُؤُلِزَ مَمَكٗ  * أُسِكِزٖ مَتَمْكٗ  * نَاءٖ تَكَلٗكْوَمْبِيَ }} \\* 
+(85) kawambiya enḏa zako  * ukamuuliza mamako  * usikize maṯamko  * nae ṯakalokwambiya  \\* 
+\E{And [the teacher] told him: "Off you go,   and ask your mother.  Pay heed to the things  that she will tell you."  } \\ 
+\\[8mm] 
+
+\textarabic{(٨٦) \textcolor{mygreen}{َكِشَ هِيٗ كَلِمَ  * هَپٗ نْدِيَ كَيَنْدَمَ  * مٗيٗ أُنَ هَلِمَمَ  * كْوَ مَمَكٖ أَكِنْڠِيَ }} \\* 
+(86) akisha hiyo kalima  * hapo nḏiya kayanḏama  * moyo una halimama  * kwa mamake akingiya  \\* 
+\E{Once [the teacher] had finished these words,   [Jaafar] then continued on his way.   His heart was beating fast   as he went in to his mother.   } \\ 
+\\[8mm] 
+
+\textarabic{(٨٧) \textcolor{mygreen}{كِنْڠِيَ كَوٖكَ كِبُ  * كّوَ أُپٗلِ نَ تَرَتِبُ  * مَمَكٖ كَتَعَجَبُ  * جَعْفَرِ أَكَمْوَمْبِيَ }} \\* 
+(87) kingiya kaweka kibu  * kkwa upoli na ṯaraṯibu  * mamake kaṯa'ajabu  * ja'fari akamwambiya  \\* 
+\E{When he went in he put his stick away   quietly and carefully.    His mother was surprised,   and spoke to Jaafar.  } \\ 
+\\[8mm] 
+
+\textarabic{(٨٨) \textcolor{mygreen}{كَمْبَ سِوٖ جَعْفَرِ  * وَٹُؤٗنٖشَ جَوْرِ  * هُنْڠِيَ كَمَ كْوَ سِرِ  * مْٹُ أَمٖزٗكِمْبِيَ }} \\* 
+(88) kamba siwe ja'fari  * waţuonesha jawri  * hungiya kama kwa siri  * mţu amezokimbiya  \\* 
+\E{She said: "That's not [like] you, Jaafar --   are you being showing impudence to us,  entering as if secretly,    [like] a person who is running away?"  } \\ 
+\\[8mm] 
+
+\textarabic{(٨٩) \textcolor{mygreen}{نَاصِرِ نِ نْدُڠُ يَكٖ  * پَپٗ هَپٗ أَتَمْكٖ  * عَيْنِ يَ مَنٗ يَكٖ  * هَتَكِ كُٹْوَنْڠَلِيَ }} \\* 
+(89) nāṣiri ni nḏugu yake  * papo hapo aṯamke  * 'ayni ya mano yake  * haṯaki kuţwangaliya  \\* 
+\E{Nasir was [Jaafar's] brother,    and at that moment he spoke:   "To judge by his eyes,    he doesn't want to look at us."  } \\ 
+\\[8mm] 
+
+\textarabic{(٩٠) \textcolor{mygreen}{إٖوٖ مِمِ سِؤُذِكٖ  * تَكْوَمْبِيَ حُجَ يَكٖ  * يٖؤٗ أُنَ مْبُزِ وَكٖ  * وَوِلِ وَمٖپٗتٖيَ }} \\* 
+(90) ewe mimi siudhike  * ṯakwambiya ḥuja yake  * yeo una mbuzi wake  * wawili wamepoṯeya  \\* 
+\E{"Don't worry --   I'll tell you [the reason]:   today, his goats,    two of them went missing."  } \\ 
+\\[8mm] 
+
+\textarabic{(٩١) \textcolor{mygreen}{وَمٖتٗكَ صَفُنِ  * مٖوَتَنْڠَ هَوَؤٗنِ  * كِشَ أَتٗكَ مْوِٹُنِ  * يُوَ نِ كَلِ لَنْدِيَ }} \\* 
+(91) wameṯoka ṣafuni  * mewaṯanga hawaoni  * kisha aṯoka mwiţuni  * yuwa ni kali lanḏiya  \\* 
+\E{"They left the herd,  they went off and he couldn't find them.  And as well he's just back from the forest --   the sun is fierce on the journey."    } \\ 
+\\[8mm] 
+
+\textarabic{(٩٢) \textcolor{mygreen}{كَئِنُكَ جَعْفَرِ  * أَكَمْپِجَ نَاصِرِ  * زِتَكُتٗك جٖؤُرِ  * يٖؤٗ نِكِكْوَنْڠَلِيَ }} \\* 
+(92) kainuka ja'fari  * akampija nāṣiri  * ziṯakuṯok jeuri  * yeo nikikwangaliya  \\* 
+\E{Jaafari got up  and hit Nasir:  "your impudence will leave you  today, I'll see to it."  } \\ 
+\\[8mm] 
+
+\textarabic{(٩٣) \textcolor{mygreen}{هَپٗ مَمَ أَسِكِرِ  * كَمْشِكَ جَعْفَرِ  * إِوَپٗ نِ مِيْ نَاصِرِ  * هَپٗ سِنْڠٖلِكِمْبِيَ }} \\* 
+(93) hapo mama asikiri  * kamshika ja'fari  * iwapo ni mii nāṣiri  * hapo singelikimbiya  \\* 
+\E{But his mother would have none of that,   and grabbed Jaafar, [and said:]  "If I were you, Nasir,     I would not have run away just now."  } \\ 
+\\[8mm] 
+
+\textarabic{(٩٤) \textcolor{mygreen}{نَاصِرِ نِ نْدُڠُ يَكٗ  * مْوَنَنْڠُ مْٹٗٹٗ وَكٗ  * كِشَ نِ عَوْنِ هَكٗ  * وَتَكُمْٹَنْڠُلِيَ }} \\* 
+(94) nāṣiri ni nḏugu yako  * mwanangu mţoţo wako  * kisha ni 'awni hako  * waṯakumţanguliya  \\* 
+\E{[To Jaafar she said:] "Nasir is your brother,    my son, your younger brother --   you can depend on him,    so don't attack him." } \\ 
+\\[8mm] 
+
+\textarabic{(٩٥) \textcolor{mygreen}{أَلِئِنَمِيَ تِنِ  * أَكِؤُلِزْوَ هَنٖنِ  * يَمٖكُپَٹَ مْوٖنْدَنِ  * هَيَ نِمٖزٗكْوَمْبِيَ }} \\* 
+(95) aliinamiya ṯini  * akiulizwa haneni  * yamekupaţa mwenḏani  * haya nimezokwambiya  \\* 
+\E{[Jaafar] lay down --  he did not answer when spoken to.  [Nasir said:] "It was right on the mark, my friend,  what I said to you."  } \\ 
+\\[8mm] 
+
+\textarabic{(٩٦) \textcolor{mygreen}{هَپٗ مَمَكٖ أَجِبُ  * نَاصِرِ هُتُأَدَبُ  * كِوَ وٖوٖ نِ هَرَبُ  * نَمِ نَيُوَ طَبِيَ }} \\* 
+(96) hapo mamake ajibu  * nāṣiri huṯuaḏabu  * kiwa wewe ni harabu  * nami nayuwa ṭabiya  \\* 
+\E{Then his mother retorted:   "You are ill-mannered, Nasir --  whenever you are impudent    I can tell from your behaviour."   } \\ 
+\\[8mm] 
+
+\textarabic{(٩٧) \textcolor{mygreen}{نَتَكَ زَكٗ هَبَرِ  * هَيَ نِپَ جَعْفَرِ  * أُسٗ أُسِمٖمٖ هَرِ  * صُوْرَ زِمٖكُپٗتٖيَ }} \\* 
+(97) naṯaka zako habari  * haya nipa ja'fari  * uso usimeme hari  * ṣūra zimekupoṯeya  \\* 
+\E{[She told Jaafar:] I want [to hear] your news,   tell it to me, Jaafar.   Your face is flushed,   and your bearing is different."  } \\ 
+\\[8mm] 
+
+\textarabic{(٩٨) \textcolor{mygreen}{جَعْفَرِ أَكَبَئِنِ  * وَتَكَ هَبَرِ ڠَنِ  * نِكْوَمْبِيَ لُغه ڠَنِ  * كْوَكٗ إِوٖ نَ پِيَ }} \\* 
+(98) ja'fari akabaini  * waṯaka habari gani  * nikwambiya luḡh gani  * kwako iwe na piya  \\* 
+\E{Jaafar said:  "What news do you want?   In what language should I tell you,    so that it will be new to you?"   } \\ 
+\\[8mm] 
+
+\textarabic{(٩٩) \textcolor{mygreen}{كِكْوَمْبِيَ كِعَرَبُ  * نَيُوَ أُتَنِجِبُ  * تٖنَ نَؤٗنَ عَجَبُ  * مِمِ مْوٖنْيٖوٖ كُكْوَمْبِيَ }} \\* 
+(99) kikwambiya ki'arabu  * nayuwa uṯanijibu  * ṯena naona 'ajabu  * mimi mwenyewe kukwambiya  \\* 
+\E{"If I tell you in Arabic  I know you will answer me.  Again, I feel amazement,   even as I myself speak to you."   } \\ 
+\\[8mm] 
+
+\textarabic{(١٠٠) \textcolor{mygreen}{كِكُؤُلِزَ أَلِكٗ  * بَبَ هُنَمْبِيَ هَكٗ  * يَنْڠُ نِنَ مِمْبَ يَكٗ  * أَلِفَرِكِ دُُنِيَ }} \\* 
+(100) kikuuliza aliko  * baba hunambiya hako  * yangu nina mimba yako  * alifariki ḏuuniya  \\* 
+\E{"If I ask you where he is,  my father, you tell me he is not here.   When I was still pregnant with you (you say),    he passed away from this world."  } \\ 
+\\[8mm] 
+
+\textarabic{(١٠١) \textcolor{mygreen}{كِكْوَمْبِيَ يُمُئِنِ  * أُتَڠٖؤُزَ مَنْڠِنٖ  * أُتَنَمْبِيَ وَ فٖنٖ  * خٖيْرِ كُئِنْيَمَزِيَ }} \\* 
+(101) kikwambiya yumuini  * uṯageuza mangine  * uṯanambiya wa fene  * khēri kuinyamaziya  \\* 
+\E{"If I tell you he is in the town,  you will change your words --  you will tell me [I've seen someone who] looks like him,   and that it's best to keep quiet about it."  } \\ 
+\\[8mm] 
+
+\textarabic{(١٠٢) \textcolor{mygreen}{وٖوٖ هُيَوَ فَرِسِ  * وَلَ مَكَه هُكُئِسِ  * وٖنْدٖلٖپِ مَجْلِسِ  * أُكَمُؤٗنَ عَلِيَ }} \\* 
+(102) wewe huyawa farisi  * wala makah hukuisi  * wenḏelepi majlisi  * ukamuona 'aliya  \\* 
+\E{[His mother said:] "You have not yet been to Persia,   nor do you know Mecca --   which people did you go among,  that you saw Ali?"  } \\ 
+\\[8mm] 
+
+\textarabic{(١٠٣) \textcolor{mygreen}{جَعْفَرِ كَبَئِنِ  * ٹُمٖؤٗنَنَ مْوِٹُنِ  * صِفَ زَكٖ مُعَيَنِ  * أُكِتَكَ نَكْوَمْبِيَ }} \\* 
+(103) ja'fari kabaini  * ţumeonana mwiţuni  * ṣifa zake mu'ayani  * ukiṯaka nakwambiya  \\* 
+\E{Jaafar said:  "We met in the forest --  the Appointed One's description,   if you want it, I will tell you."  } \\ 
+\\[8mm] 
+
+\textarabic{(١٠٤) \textcolor{mygreen}{نِسِكِزَ نِرَدِدِ  * كِوَ سِيٗ أُنِرُدِ  * كِمٗ چَكٖ هَكِزِدِ  * كَمَ چَنْڠُ أَنْڠَلِيَ }} \\* 
+(104) nisikiza niraḏiḏi  * kiwa siyo uniruḏi  * kimo chake hakiziḏi  * kama changu angaliya  \\* 
+\E{"Listen to me, let me answer --  if I am wrong, correct me --   his build is not much more   than my own, look."   } \\ 
+\\[8mm] 
+
+\textarabic{(١٠٥) \textcolor{mygreen}{نَ لَ پِلِ نِبَئِنِ  * نْيٖيْ زَكٖ زَ كِتْوَنِ  * مَكُمٖيَ أُپَآنِ  * نَ كَمَ سِيٗ نَمْبِيَ }} \\* 
+(105) na la pili nibaini  * nyee zake za kiṯwani  * makumeya upani  * na kama siyo nambiya  \\* 
+\E{"And let me tell you the second thing:    the hair on his head    does not cover his crown,  and if that is not so, tell me."    } \\ 
+\\[8mm] 
+
+\textarabic{(١٠٦) \textcolor{mygreen}{نَ يَ ٹَاٹُ أُفَهَمُ  * أُنَ ٹُنْدُ يَ كُزِمُ  * صِفَ زَكٖ زٖمٖيِمُ  * نَ هِزٗ نِمٖكْوَمْبِيَ }} \\* 
+(106) na ya ţāţu ufahamu  * una ţunḏu ya kuzimu  * ṣifa zake zemeyimu  * na hizo nimekwambiya  \\* 
+\E{"And know the third thing:    he has a hole [leading to the] Underworld (?).    His description is finished,   and I have told you these things."   } \\ 
+\\[8mm] 
+
+\textarabic{(١٠٧) \textcolor{mygreen}{نِ زَ عُوفُ وَ مَنٖنٗ  * كِشَ نِ جَڠِنَ مْنٗ  * نَ أُكِتَكَ مْفَنٗ  * هُنُ نِمٖكُپِجِنَ }} \\* 
+(107) ni za 'ūfu wa maneno  * kisha ni jagina mno  * na ukiṯaka mfano  * hunu nimekupijina  \\* 
+\E{"He is courteous of speech,     and further, he is a great warrior.    If you want a likeness of him,   I have given you this one."  } \\ 
+\\[8mm] 
+
+\textarabic{(١٠٨) \textcolor{mygreen}{هَيٗ أُنَمْبِزِ يٖؤٗ  * نِ كْوٖلِ نْدِيٗ يَلِيٗ  * نِپَ جِنْسِ يَوٖءٖؤٗ  * هَتَ كُمْفَهَمِيَ }} \\* 
+(108) hayo unambizi yeo  * ni kweli nḏiyo yaliyo  * nipa jinsi yaweeo  * haṯa kumfahamiya  \\* 
+\E{[His mother said:] "These things you have told me today   are indeed exactly correct.    Tell me how it happened   that you came to recognise him."  } \\ 
+\\[8mm] 
+
+\textarabic{(١٠٩) \textcolor{mygreen}{تَكُپَ ٹَنْڠُ أَوَلِ  * هِكِ چَكَ نِ ثَقِلِ  * كِتَنْڠَ مَاءِ نِ غَالِ  * نِكَتَكَسَ نَ نْدِيَ }} \\* 
+(109) ṯakupa ţangu awali  * hiki chaka ni thaqili  * kiṯanga mai ni ḡāli  * nikaṯakasa na nḏiya  \\* 
+\E{[Jaafar said:] "I will give you [the whole story] from the beginning.   This drought was severe,    and finding water was hard,    so I set out along the road."   } \\ 
+\\[8mm] 
+
+\textarabic{(١١٠) \textcolor{mygreen}{صَدِقِ يَنْڠُ قَوْلِ  * نِمٖتَنْڠَ بَرَ هِلِ  * مَاءَ هَپَنَ مَهَلِ  * نِ خٖيْرِ كَئِرُدِيَ }} \\* 
+(110) ṣaḏiqi yangu qawli  * nimeṯanga bara hili  * maa hapana mahali  * ni khēri kairuḏiya  \\* 
+\E{"Believe my words:   I wandered around in the hinterland,   but there was no water anywhere,   [and I thought] I'd better come back."   } \\ 
+\\[8mm] 
+
+\textarabic{(١١١) \textcolor{mygreen}{هٖنْدَ هِوَزَ مٗيٗنِ  * نٖنٖنْدٖ جَنِبُ ڠَنِ  * كُؤٗنَ وَٹُ وٖنْڠِنٖ  * وَٹَٹُ وٖنْدٖمٖ نْدِيَ }} \\* 
+(111) henḏa hiwaza moyoni  * nenenḏe janibu gani  * kuona waţu wengine  * waţaţu wenḏeme nḏiya  \\* 
+\E{As I went along, pondering in my heart   which direction I should take,   I saw some people,   three of them, coming along the road."   } \\ 
+\\[8mm] 
+
+\textarabic{(١١٢) \textcolor{mygreen}{كَوَءٗنَ وَكٗ مْبَلِ  * كِنٖنَ نَئِمُهُلِ  * مَرَ نِكِوَصِلِ  * مَاءَ وَنِنِمْبِيَ }} \\* 
+(112) kawaona wako mbali  * kinena naimuhuli  * mara nikiwaṣili  * maa waninimbiya  \\* 
+\E{"I saw them when they were far off,   and I said to myself that I should wait --  once I arrive [by them]  they may tell me [where to find] water."  } \\ 
+\\[8mm] 
+
+\textarabic{(١١٣) \textcolor{mygreen}{پَنَ كِڤُلِ كِنْيٖسَ  * هَتَ نَاءٗ وَكَپِٹَ  * نِوَوٖنٖ وَكِنُسَ  * سَلَامُ كَوَپِسِيَ }} \\* 
+(113) pana kivuli kinyesa  * haṯa nao wakapiţa  * niwawene wakinusa  * salāmu kawapisiya  \\* 
+\E{Waiting there in the shade   until they passed,   I saw them approach  and greeted them.  } \\ 
+\\[8mm] 
+
+\textarabic{(١١٤) \textcolor{mygreen}{كَمْبَ مْوٖنْدَپِ مَتِتِ  * كِكِ نِ كِپُنْڠُ كَٹِ  * هٖلَ نْدٗنِ مُكٖيْتِ  * لِپَٹٖ كُپِنْدُكِيَ }} \\* 
+(114) kamba mwenḏapi maṯiṯi  * kiki ni kipungu kaţi  * hela nḏoni mukēṯi  * lipaţe kupinḏukiya  \\* 
+\E{I said: "Where are you going in such a hurry?   This is high noon --    why don't you come and sit down   until the sun goes down a bit?"  } \\ 
+\\[8mm] 
+
+\textarabic{(١١٥) \textcolor{mygreen}{نَ هِلِ يُوَ سِ زُرِ  * كُلَنْدَمَ نِ خَطَرِ  * وَلَ زٖؤٗ سِ أَخِرِ  * كَمَ مُتَلِمَٹِيَ }} \\* 
+(115) na hili yuwa si zuri  * kulanḏama ni khaṭari  * wala zeo si akhiri  * kama muṯalimaţiya  \\* 
+\E{"And this sun is not good for you --     to go out in it is dangerous,   nor is the time so late    that you will be delayed [if you stop here]."  } \\ 
+\\[8mm] 
+
+\textarabic{(١١٦) \textcolor{mygreen}{وَكِسِكِيَ كَلِمَ  * وَكِزُنْڠُكِيَ نْيُمَ  * وَوِلِ وَكَسِمَمَ  * مْمٗيَ كَنِٹِلِيَ }} \\* 
+(116) wakisikiya kalima  * wakizungukiya nyuma  * wawili wakasimama  * mmoya kaniţiliya  \\* 
+\E{When they heard my words, they turned round.   Two stood where they were,   and one came up to me.  } \\ 
+\\[8mm] 
+
+\textarabic{(١١٧) \textcolor{mygreen}{أَكِجَ أَكَبَئِنِ  * كَنِؤُزَ نْدِوٖ نَنِ  * أَوْ وَٹُتَكِيَنِ  * خَطَرِ كُٹُفِكِيَ }} \\* 
+(117) akija akabaini  * kaniuza nḏiwe nani  * aw waţuṯakiyani  * khaṭari kuţufikiya  \\* 
+\E{When he came over he spoke,  and asked me: "Who are you?   And why are you concerned  about danger to us?"  } \\ 
+\\[8mm] 
+
+\textarabic{(١١٨) \textcolor{mygreen}{سِسِ هَٹُشِكَ يَكٗ  * وَلَ سِ نْدُڠُ زَكٗ  * أُئٖٹَيٗ مَتَمْكٗ  * يَپٖسٖنِ كُٹْوَمْبِيَ }} \\* 
+(118) sisi haţushika yako  * wala si nḏugu zako  * ueţayo maṯamko  * yapeseni kuţwambiya  \\* 
+\E{"We do not need your [advice] --   we are not relatives of yours.    The words you have spoken,  what good is it to tell us them?"  } \\ 
+\\[8mm] 
+
+\textarabic{(١١٩) \textcolor{mygreen}{وٖوٖ نِ مْوَنَ آدَمُ  * نِ مْپٗتٖزَ قَوْمُ  * ٹْوَمْبِيٖ ٹُكَفَهَمُ  * كْوَنْدَ ٹُيَوٖ طَبِيَ }} \\* 
+(119) wewe ni mwana ḏamu  * ni mpoṯeza qawmu  * ţwambiye ţukafahamu  * kwanḏa ţuyawe ṭabiya  \\* 
+\E{"Are you a human being,    [or] are you [a spirit] who makes people lose their way?   Tell us so that we may understand,  so that we may immediately know your character."   } \\ 
+\\[8mm] 
+
+\textarabic{(١٢٠) \textcolor{mygreen}{كَوَجِبِشَ قَوْلِ  * نِ دِيْنِ يَكٖ رَسُوْلِ  * كِوَ وٖوٖ نِ جَمِلِ  * مْبٖلٖ زَنْڠُ نٗنْدٗكٖيَ }} \\* 
+(120) kawajibisha qawli  * ni ḏı̄ni yake rasūli  * kiwa wewe ni jamili  * mbele zangu nonḏokeya  \\* 
+\E{I answered them with the words:  [My religion] is that of the Prophet ---    if you are an unbeliever,    go away from in front of me."   } \\ 
+\\[8mm] 
+
+\textarabic{(١٢١) \textcolor{mygreen}{كِسِكِيَ هُفَسِرِ  * هُمْوِٹَ أَبُوْ بَكَرِ  * نْدٗوْ وٖوٖ نَ زُبَيْرِ  * وٗتٖ وَوِلِ وَكَيَ }} \\* 
+(121) kisikiya hufasiri  * humwiţa abuu bakari  * nḏoo wewe na zubayri  * woṯe wawili wakaya  \\* 
+\E{And I heard him speak  and call: "Abu Bakr,   come here, and you Zubeir!"    And both of them came over.   } \\ 
+\\[8mm] 
+
+\textarabic{(١٢٢) \textcolor{mygreen}{وَكَيَ وَكَسِمَمَ  * أُسٗ وَكِنِٹِزَمَ  * كَمْبَ مُكِمْفَهَمَ  * وَجْهِ وَكٖ نَبِيَ }} \\* 
+(122) wakaya wakasimama  * uso wakiniţizama  * kamba mukimfahama  * wajhi wake nabiya  \\* 
+\E{They came over and stood,  and looked at my face.  [The first man] said: "When you look at him closely,  his face [resembles] the Prophet's."   } \\ 
+\\[8mm] 
+
+\textarabic{(١٢٣) \textcolor{mygreen}{هُسِكِيَ هُنِجِبُ  * عَلِي بِنْ طَالِبُ  * مَمَ وَمٖتَعَجَبُ  * كْوَ وٗتٖ هُنَنْڠَلِيَ }} \\* 
+(123) husikiya hunijibu  * 'alii bin ṭālibu  * mama wameṯa'ajabu  * kwa woṯe hunangaliya  \\* 
+\E{When [the others] heard this, [they said:] "He reminds me  of Ali ibn Talib."   Mother, they were amazed  as they all stared at me.   } \\ 
+\\[8mm] 
+
+\textarabic{(١٢٤) \textcolor{mygreen}{هٗىٗ نِ أَبُوْ بَكَرِ  * نَ هٗيٗ هُئِٹْوَ زُبٖئْرِ  * نَوٖ لَكٗ هُفَسِرِ  * أِنَ ٹُكَلِسِكِيَ }} \\* 
+(124) hoyo ni abuu bakari  * na hoyo huiţwa zuberi  * nawe lako hufasiri  * ina ţukalisikiya  \\* 
+\E{"This is Abu Bakr," [said the first man],    "and this person is called Zubeir.    But you have not spoken your   name for us to hear it."  } \\ 
+\\[8mm] 
+
+\textarabic{(١٢٥) \textcolor{mygreen}{أَكَتَمْكَ مْبُجِ  * مِمِ هُئِٹْوَ أَزْوَجِ  * نَمِ سَسَ نِتَرَجِ  * نَ إِنَ لَكٖ نَمْبِيَ }} \\* 
+(125) akaṯamka mbuji  * mimi huiţwa azwaji  * nami sasa niṯaraji  * na ina lake nambiya  \\* 
+\E{This gentleman spoke:  "I am called Azwaj,   and I am now waiting   for you to tell me your name too."    } \\ 
+\\[8mm] 
+
+\textarabic{(١٢٦) \textcolor{mygreen}{كَوَمْبِيَ نِمٖكِرِ  * نَمِ إِنَ كُفَسِرِ  * مِمِ نْدِيٖ جَعْفَرِ  * وَ مَوْلَانَا عَلِيَ }} \\* 
+(126) kawambiya nimekiri  * nami ina kufasiri  * mimi nḏiye ja'fari  * wa mawlānā 'aliya  \\* 
+\E{And I told them: "I have decided  to speak my name too.   I am Jaafar,   [son] of Lord Ali.   } \\ 
+\\[8mm] 
+
+\textarabic{(١٢٧) \textcolor{mygreen}{وَنِؤُزٖ تَرَتِبُ  * وٖنْدَءٗ وَپِ غَرِيْبُ  * هَپٗ مَمَ كَوَجِبُ  * نِتَكَلٗ كَوَمْبِيَ }} \\* 
+(127) waniuze ṯaraṯibu  * wenḏao wapi ḡarı̄bu  * hapo mama kawajibu  * niṯakalo kawambiya  \\* 
+\E{And they asked me politely,  "Where are you going, stranger?"   Then, Mother, I answered them:   saying to them what I wanted.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٢٨) \textcolor{mygreen}{نِمٖتَنْڠَ مَاءَ بَرَنِ  * نِمٖچٗكَ سِيَؤٗنِ  * مْبُزِ وَمٖلِشَ يَنِ  * سَسَ كُيُتَ هَلِيَ }} \\* 
+(128) nimeṯanga maa barani  * nimechoka siyaoni  * mbuzi wamelisha yani  * sasa kuyuṯa haliya  \\* 
+\E{I have been searching for water in the hinterland --   I am tired and I still haven't seen any.  The goats have eaten all the grass,   and now they are bleating with hunger."   } \\ 
+\\[8mm] 
+
+\textarabic{(١٢٩) \textcolor{mygreen}{هُكٗ مْمٖزٗپِٹَ  * مَاءِ هَمْكُيَكُٹَ  * مْبُزِ وَنْڠُ وَنَنْيٗٹَ  * چَمْبَ مْوَيُوَ نَمْبِيَ }} \\* 
+(129) huko mmezopiţa  * mai hamkuyakuţa  * mbuzi wangu wananyoţa  * chamba mwayuwa nambiya  \\* 
+\E{"In that area you've passed through,  did you come upon any water there?  My goats are thirsty --   if you know of [a well], tell me."   } \\ 
+\\[8mm] 
+
+\textarabic{(١٣٠) \textcolor{mygreen}{وَكَنِجِبُ قَوْلِ  * كٔوَمْبَ كِسِمَ سِ مْبَلِ  * لَكِنِ كِنَ ثَقِلِ  * هِيٗ نْدٗوْ كُئِٹِيَ }} \\* 
+(130) wakanijibu qawli  * kwamba kisima si mbali  * lakini kina thaqili  * hiyo nḏoo kuiţiya  \\* 
+\E{They answered me with word  that there was a well not far away.    "But," [they said,] "it is difficult   to put the bucket into it."   } \\ 
+\\[8mm] 
+
+\textarabic{(١٣١) \textcolor{mygreen}{هَيٗ مَاءِ نِ مَتَمُ  * مْفَنٗ وَ زَمْزَمُ  * لَكِنِ سِسِ فَهَمُ  * كُكُؤٗنْيَ هُچٖلٖيَ }} \\* 
+(131) hayo mai ni maṯamu  * mfano wa zamzamu  * lakini sisi fahamu  * kukuonya hucheleya  \\* 
+\E{"The water is sweet,    just like Zamzam's,   but we, you understand,   are afraid to show it to you."  } \\ 
+\\[8mm] 
+
+\textarabic{(١٣٢) \textcolor{mygreen}{أُوَپٗ أُمٖخِتَرِ  * كُكُپٖكَ ٹُتَيَرِ  * وَلَ أُسِٹُفَسِرِ  * نِ سِسِ ٹُلٗكْوَمْبِيَ }} \\* 
+(132) uwapo umekhiṯari  * kukupeka ţuṯayari  * wala usiţufasiri  * ni sisi ţulokwambiya  \\* 
+\E{"If you want to risk it,  we are willing to take you there,  but don't mention  [that] it was us who told you [about it]."   } \\ 
+\\[8mm] 
+
+\textarabic{(١٣٣) \textcolor{mygreen}{وَكَنِؤٗنْيَ أُسِٹَ  * هَپٗ نْدِيٗ كَفُوَٹَ  * كْوَ مْوِٹُنِ وَكَپِٹَ  * مْبِيٗ وَكَنِتٗلٖيَ }} \\* 
+(133) wakanionya usiţa  * hapo nḏiyo kafuwaţa  * kwa mwiţuni wakapiţa  * mbiyo wakaniṯoleya  \\* 
+\E{They showed me the way,  and then I followed the path.   They went into the forest,   and directed me onwards.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٣٤) \textcolor{mygreen}{هَتَ كِدُسَ كِسِمَ  * لِپٗ بَاءٗ كَسُكُمَ  * كْوَ كِوَڤُ كُٹِزَمَ  * وَءٗ هُنِٹَنْڠَلِيَ }} \\* 
+(134) haṯa kiḏusa kisima  * lipo bao kasukuma  * kwa kiwavu kuţizama  * wao huniţangaliya  \\* 
+\E{Until, when I came to the well,   there was a plank there that I pushed away.   They watched me,   staring at me. (?)  } \\ 
+\\[8mm] 
+
+\textarabic{(١٣٥) \textcolor{mygreen}{جَعْفَرِ أَتَمْكٖ  * بُوْ بَكَرِ سِشُٹُكٖ  * كِسِمَ سِكِفُنِكٖ  * نِتَرُدِ كُكْوَمْبِيَ }} \\* 
+(135) ja'fari aṯamke  * buu bakari sishuţuke  * kisima sikifunike  * niṯaruḏi kukwambiya  \\* 
+\E{Jaafar said:  "Abu Bakr, don't worry --   don't cover the well.  I will return to tell you." (?)  } \\ 
+\\[8mm] 
+
+\textarabic{(١٣٦) \textcolor{mygreen}{سِنَ خٗوْفُ مٗيٗ وَنْڠُ  * كُنْوَ مَاءِ مْبُزِ وَنْڠُ  * كِنٖنَ نٖنْدَ زَنْڠُ  * نِزِتَكَسٖ نَ نْدِيَ }} \\* 
+(136) sina khōfu moyo wangu  * kunwa mai mbuzi wangu  * kinena nenḏa zangu  * niziṯakase na nḏiya  \\* 
+\E{"I have no fear [in] my heart    that my goats should drink the water."    I said, "I'm going now,   so that I can herd them along the road."   } \\ 
+\\[8mm] 
+
+\textarabic{(١٣٧) \textcolor{mygreen}{يُوَ كُكِپَمْبَؤُكَ  * نِنَ فُرَهَ مُتٖكَ  * مَلِشٗنِ كِوَپٖكَ  * مُدَ وَ يُوَ كُوَاءَ }} \\* 
+(137) yuwa kukipambauka  * nina furaha muṯeka  * malishoni kiwapeka  * muḏa wa yuwa kuwaa  \\* 
+\E{When the sun rose [next day]  I was laughing with joy,   and took [the goats] to the pasture  when the sun was burning hot.    } \\ 
+\\[8mm] 
+
+\textarabic{(١٣٨) \textcolor{mygreen}{أَوَلِ يَ سَاءَ سِتَ  * هَپٗ مْبُزِ كَوَسُتَ  * نَؤٗنَ وَمٖنِوَتَ  * هُتُرِ نِ كُكُمْبِيَ }} \\* 
+(138) awali ya saa siṯa  * hapo mbuzi kawasuṯa  * naona wameniwaṯa  * huṯuri ni kukumbiya  \\* 
+\E{"Just before the seventh hour (noon),    I was then driving the goats along,   and I saw that they had broken away from me,  running and frisking.   } \\ 
+\\[8mm] 
+
+\textarabic{(١٣٩) \textcolor{mygreen}{كَوَمْبِيَ إٖنٖنْدَنِ  * مْوَكُيُوَ كِسِمَنِ  * لَِكِنِ هُفَلِيَنِ  * نْدِمَ وَ كُوَٹٖكٖيَ }} \\* 
+(139) kawambiya enenḏani  * mwakuyuwa kisimani  * laikini hufaliyani  * nḏima wa kuwaţekeya  \\* 
+\E{I told them: "On you go --  you know where the well is.  But what good will it do you,  when I'm the only one who can draw water for you?"   } \\ 
+\\[8mm] 
+
+\textarabic{(١٤٠) \textcolor{mygreen}{وَكٖنْدَ وَكَسِمَمَ  * كُفُنِشِوٖ كِسِمَ  * نَاءٗ نِكَلِسُكُمَ  * نِمٗيٖ مْٹُ أَكِيَ }} \\* 
+(140) wakenḏa wakasimama  * kufunishiwe kisima  * nao nikalisukuma  * nimoye mţu akiya  \\* 
+\E{They went on and stood  where the well had been covered over.  I pushed away the plank,  and I saw someone coming.   } \\ 
+\\[8mm] 
+
+\textarabic{(١٤١) \textcolor{mygreen}{أَكِيَ أَكَنِشِكَ  * مَاءِ نِسِيَثٖكَ  * مَمَ هَپٗ كَتَمْكَ  * يَ غَضَبُ كَمْوَمْبِيَ }} \\* 
+(141) akiya akanishika  * mai nisiyatheka  * mama hapo kaṯamka  * ya ḡaḍabu kamwambiya  \\* 
+\E{When he arrived he grabbed hold of me  before I had drawn any water.  Mother, then I spoke,   and said to him angrily:   } \\ 
+\\[8mm] 
+
+\textarabic{(١٤٢) \textcolor{mygreen}{نِكَمُحِمِدِ مْنْڠُ  * كُنٖٹٖيَ بَبَنْڠُ  * كَنِؤُزَ پٖٹٖ يَنْڠُ  * چَنْدَنِ كَمْتٗلٖيَ }} \\* 
+(142) nikamuḥimiḏi mngu  * kuneţeya babangu  * kaniuza peţe yangu  * chanḏani kamṯoleya  \\* 
+\E{I pleaded with God  to send me my father.  [The man] asked about the ring   on my finger, and I gave it to him.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٤٣) \textcolor{mygreen}{پٖٹٖ أَكَئِٹِزِمَ  * كَپِجَ نَ هَلِمَمَ  * يَپِسِيٖ يَ نْيُمَ  * يٗتٖ يَكَمْرُدِيَ }} \\* 
+(143) peţe akaiţizima  * kapija na halimama  * yapisiye ya nyuma  * yoṯe yakamruḏiya  \\* 
+\E{He looked at the ring  and became anxious.   everything that had happened in the past,   all of it came back to him.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٤٤) \textcolor{mygreen}{جِنَ أَلِپٗنِؤُلِزَ  * نِسِمْوَمْبِيَ كَئِزَ  * أَكَنِپَ مِؤُجِزَ  * پِيَ نَ كُنِپِجِيَ }} \\* 
+(144) jina aliponiuliza  * nisimwambiya kaiza  * akanipa miujiza  * piya na kunipijiya  \\* 
+\E{When he asked me my name  I wouldn't tell him -- I refused.  He told me things he could not have known [unless he was my father]  giving me example after example.   } \\ 
+\\[8mm] 
+
+\textarabic{(١٤٥) \textcolor{mygreen}{أُنِپِيٖ شُوْرَ زَكٗ  * نَ صِفَ زَ نْيُمْبَ يَكٗ  * هَپٗ كَئٖٹَ تَمْكٗ  * إِنَ لَنْڠُ كَمْوَمْبِيَ }} \\* 
+(145) unipiye shūra zako  * na ṣifa za nyumba yako  * hapo kaeţa ṯamko  * ina langu kamwambiya  \\* 
+\E{He described your features to me,   and the characteristics of your house.     Then I spoke   and told him my name.   } \\ 
+\\[8mm] 
+
+\textarabic{(١٤٦) \textcolor{mygreen}{نِكَمْوَمْبِيَ نْيَكَ  * نِزٖزٗوٖءٗ هَكِكَ  * نِ تِسِيَ زَسِزٗشَكَ  * نَ وٖوٖ تَرٖهٖ ٹِيَ }} \\* 
+(146) nikamwambiya nyaka  * nizezoweo hakika  * ni ṯisiya zasizoshaka  * na wewe ṯarehe ţiya  \\* 
+\E{I told him for certain [the number of] years  since I was born -- definitely  it is nine, and no mistake;   and you should remember the number.    } \\ 
+\\[8mm] 
+
+\textarabic{(١٤٧) \textcolor{mygreen}{خَبَرِ زَكٖ تِمَمُ  * نِمٖكُشَ أُفَهَمُ  * تٖنَ نَ كْوَ مْوَلِمُ  * نِمٖرُدِ كُمْوَمْبِيَ }} \\* 
+(147) khabari zake ṯimamu  * nimekusha ufahamu  * ṯena na kwa mwalimu  * nimeruḏi kumwambiya  \\* 
+\E{The news about him is finished.   I have completed it so that you may understand.  And via my teacher's [house]    I came back to tell him [about it].  } \\ 
+\\[8mm] 
+
+\textarabic{(١٤٨) \textcolor{mygreen}{نِمٖمُؤَڠَ كْوَ خٖيْرِ  * أَسُبهِ نِ سَفَرِ  * نِؤٗمْبٖيَ كْوَ جَبَارِ  * نَ رَصِ كُنِوٖيَ }} \\* 
+(148) nimemuaga kwa khēri  * asubhi ni safari  * niombeya kwa jabāri  * na raṣi kuniweya  \\* 
+\E{I have said farewell to him.   [tomorrow] morning I will set off [to go to my father].   Pray for me to the Almighty,   and give me your blessing.   } \\ 
+\\[8mm] 
+
+\textarabic{(١٤٩) \textcolor{mygreen}{تٖنَ نِؤٗمْبٖيَ مْنْڠُ  * ٹُپٖنْدَنٖ نَ بَبَنْڠُ  * نَمِ كِشَ مُنِ وَنڠُ  * تَكُيَ كُوَنْڠَلِيَ }} \\* 
+(149) ṯena niombeya mngu  * ţupenḏane na babangu  * nami kisha muni wangu  * ṯakuya kuwangaliya  \\* 
+\E{And pray for me to God   that my father and I will get along well together.   And then [the people] in my town    I will get to see them.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٥٠) \textcolor{mygreen}{أَكِسَكِيَ قَوْلِ  * مَمَكٖ أَسِحِمِلِ  * أَكَتَرَدَدِ عَفِلِ  * كْوَ مَكٗنْدٖ كَئِٹِيَ }} \\* 
+(150) akisakiya qawli  * mamake asiḥimili  * akaṯaraḏaḏi 'afili  * kwa makonḏe kaiţiya  \\* 
+\E{When she heard these words  his mother could not bear it.  She went out of her mind  and beat herself with her fists.   } \\ 
+\\[8mm] 
+
+\textarabic{(١٥١) \textcolor{mygreen}{كَئِٹُنْدَ كَيِنْڠُشَ  * تِيَتِ أَكَئِرُشَ  * هَتَ نْڠُوٗ كَمْڤِشَ  * إِكَوَ كُمْسٗمٖيَ }} \\* 
+(151) kaiţunḏa kayingusha  * ṯiyaṯi akairusha  * haṯa nguwo kamvisha  * ikawa kumsomeya  \\* 
+\E{She took and threw herself down,  she hurled herself to the ground,  so that her clothing came undone,   as if she was being read over.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٥٢) \textcolor{mygreen}{َأَلِپٗپَٹَ فَهَمُ  * كَمُحِمِدِ كَرِيْمُ  * كِشَ أَكَتَكَلَمُ  * مْنْڠُ أَكَمُؤٗمْبٖيَ }} \\* 
+(152) aalipopaţa fahamu  * kamuḥimiḏi karı̄mu  * kisha akaṯakalamu  * mngu akamuombeya  \\* 
+\E{When she regained her senses  she pleaded with the Generous One,  and then she spoke  and prayed to God.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٥٣) \textcolor{mygreen}{يَا أَللّٰهُ مٗلَ وَنْڠُ  * نِنُصُرِيَ مْوَنَنْڠُ  * نَ وَٹٹُ وَ وٖنْزَنْڠُ  * حِفَظِنِ نِٹِلِيَ }} \\* 
+(153) yā alllähu mola wangu  * ninuṣuriya mwanangu  * na waţţu wa wenzangu  * ḥifaẓini niţiliya  \\* 
+\E{Oh God,  my Lord,  protect my child for me,  and the children of my friends,    place them for me in your care.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٥٤) \textcolor{mygreen}{إٖنٖنْدَ هُنَ مَضَرَ  * نِرَضِ أَلْفُ مَرَ  * نَاوٖ أُوٖ نَ فِكِرَ  * مٗيٗ نِمٖكُؤُصِيَ }} \\* 
+(154) enenḏa huna maḍara  * niraḍi alfu mara  * nāwe uwe na fikira  * moyo nimekuuṣiya  \\* 
+\E{[To Ja'far she said:] Off you go -- there is no fault with you.   I bless you a thousand times.   And that you should be sensible    is what I charge you to do.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٥٥) \textcolor{mygreen}{مِمِ أُيَپٗنِؤُذِ  * سِيٗكُوَ نَ غَيْظِ  * إِوَپٗ وَتَكَ رَضِ  * نَ كْوَ عَلِيْ زٖنْڠٖيَ }} \\* 
+(155) mimi uyaponiudhi  * siyokuwa na ḡayẓi  * iwapo waṯaka raḍi  * na kwa 'alii zengeya  \\* 
+\E{Although you have saddened me  I will not bear a grudge.   If you want my blessing   then go and visit Ali.    } \\ 
+\\[8mm] 
+
+\textarabic{(١٥٦) \textcolor{mygreen}{إِتُنْدٖ أُوٖ نْيَؤٗنِ  * كْوَ بَبَكٗ أُوٖ تِنِ  * نَ أَتَكَلٗبَئِنِ  * كْوَكٗ لِپٗ مَرْصِيَ }} \\* 
+(156) iṯunḏe uwe nyaoni  * kwa babako uwe ṯini  * na aṯakalobaini  * kwako lipo marṣiya  \\* 
+\E{Take care that you be humble   and subservient to your father,    and [accept] whatever he says to you   without demur.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٥٧) \textcolor{mygreen}{نَ مْٹُمٖ مُحَمَدِ  * هَنَ بُدِ كُكُزِدِ  * أَللّٰهَ اللّٰهَ جِتَهِدِ  * نْڠَاءَ أُپَٹٖ وَصِيَ }} \\* 
+(157) na mţume muḥamaḏi  * hana buḏi kukuziḏi  * allläha lläha jiṯahiḏi  * ngaa upaţe waṣiya  \\* 
+\E{And the Prophet Muhammad,   there is no doubt that he is better than you,   so mind you exert yourself   to gain even a little wisdom [from him].   } \\ 
+\\[8mm] 
+
+\textarabic{(١٥٨) \textcolor{mygreen}{نَاءٖ بِنْتِ حَبِيْبُ  * كٖتِ نَاءٖ كْوَ ثَوَابُ  * كْوَكٖ أُوٖ نَ أَدَبُ  * أُمْطِيْ نَ كُمْوَنْڠُكِيَ }} \\* 
+(158) nae binṯi ḥabı̄bu  * keṯi nae kwa thawābu  * kwake uwe na aḏabu  * umṭii na kumwangukiya  \\* 
+\E{And as for his beloved daughter,   sit politely with her;    be courteous towards her,    obey her and be bow down to her.   } \\ 
+\\[8mm] 
+
+\textarabic{(١٥٩) \textcolor{mygreen}{أَكَتٗكَ جَعْفَرِ  * نَ چَكُلَ كِتَيَرِ  * كَلَ نَ نْدُيٖ نَاصِرِ  * نَ مْوَلِمُ كَتٗكٖيَ }} \\* 
+(159) akaṯoka ja'fari  * na chakula kiṯayari  * kala na nḏuye nāṣiri  * na mwalimu kaṯokeya  \\* 
+\E{Ja'far arose [the next morning]  and a meal was ready.   He ate with his brother Nasir    and then his teacher arrived.   } \\ 
+\\[8mm] 
+
+\textarabic{(١٦٠) \textcolor{mygreen}{وَكَتَنْڠَنْيَ مِكٗنٗ  * وٗتٖ وَٹَٹُ مفَنٗ  * أَكِنٖنَ نَ مَنٖنٗ  * نْدُڠُيٖ أَكِمْوَمْبِيَ }} \\* 
+(160) wakaṯanganya mikono  * woṯe waţaţu mfano  * akinena na maneno  * nḏuguye akimwambiya  \\* 
+\E{They all put their hands [in the communal bowl]  all three of them as equals,   with [Ja'far] saying these words,   speaking to his brother:  } \\ 
+\\[8mm] 
+
+\textarabic{(١٦١) \textcolor{mygreen}{أَكَمْوَمْبِيَ نَاصِرِ  * يٖؤٗ نْدُيَنْڠُ كْوَ خٖيْرِ  * تَكَپٗرُدِ سَفَرِ  * تَمَشَ تَكُلٖٹٖيَ }} \\* 
+(161) akamwambiya nāṣiri  * yeo nḏuyangu kwa khēri  * ṯakaporuḏi safari  * ṯamasha ṯakuleţeya  \\* 
+\E{He told Nasir:  Goodbye today, my brother --    when I come back from my journey  I will bring you something nice.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٦٢) \textcolor{mygreen}{أَكَمْجِبُ أُپٖسِ  * نِئٖٹٖيَ نَ فَرَسِ  * نْيَمَ هُيٗ سِمُئِسِ  * نَتَكَ كُمْوَنْڠَلِيَ }} \\* 
+(162) akamjibu upesi  * nieţeya na farasi  * nyama huyo simuisi  * naṯaka kumwangaliya  \\* 
+\E{[Nasir] answered him quickly:  Bring me a horse --   I don't know what that animal [looks like],   I would like to see one.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٦٣) \textcolor{mygreen}{كِشَ هَپٗ كَتَمْكَ  * أَكَمْبَ مَمَ هُتٗكَ  * مَمَكٖ أَكَئِنُكَ  * صَدَكَ كَمْتٗلٖيَ }} \\* 
+(163) kisha hapo kaṯamka  * akamba mama huṯoka  * mamake akainuka  * ṣaḏaka kamṯoleya  \\* 
+\E{When he had finished, then [Ja'far] spoke,   and said: Mother, I am leaving.   His mother got up  and took out alms for him.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٦٤) \textcolor{mygreen}{هَپٗ مَمَكٖ أَتٗكٖ  * إٖنٖنْدٖ أَمْفُوَتٖ  * أَكِمْٹٖمٖيَ مَٹٖ  * مْنْڠُ أَكِمُؤٗمْبٖيَ }} \\* 
+(164) hapo mamake aṯoke  * enenḏe amfuwaṯe  * akimţemeya maţe  * mngu akimuombeya  \\* 
+\E{Then his mother went out,   she went and followed him,  spitting at him,  praying to God for him.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٦٥) \textcolor{mygreen}{هُي نَاصِرِ مْوَلِمُ  * مْسٗمٖشٖ أَهِتِمُ  * أُمْفُنْدٖ نَعِلِمُ  * عَادَ يَكٗ تَكْوٖٹٖيَ }} \\* 
+(165) huy nāṣiri mwalimu  * msomeshe ahiṯimu  * umfunḏe na'ilimu  * 'āḏa yako ṯakweţeya  \\* 
+\E{[Then she said:] Teacher, Nasir here,   teach him so that he may complete his studies,  teach him knowledge.  I will pay your fee.   } \\ 
+\\[8mm] 
+
+\textarabic{(١٦٦) \textcolor{mygreen}{أَكِتٗكَ جَعْفَرِ  * هَپٗ كَلِيَ نَاصِرِ  * مَمَكٖ أَكَفَسِرِ  * أُسِكُ أَتَرٖجٖيَ }} \\* 
+(166) akiṯoka ja'fari  * hapo kaliya nāṣiri  * mamake akafasiri  * usiku aṯarejeya  \\* 
+\E{As Ja'far was setting off  then Nasir began to cry.   His mother said:  [ja'far] will be back by nightfall.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٦٧) \textcolor{mygreen}{نَاصِرِ أَكَتَمْكَ  * نَمُيُوَ إٖنْدَ مَكَه  * كُتُنْڠَ هَنْڠَلِتٗكَ  * أَسِپٗئِيٗنَ نْدِيَ }} \\* 
+(167) nāṣiri akaṯamka  * namuyuwa enḏa makah  * kuṯunga hangaliṯoka  * asipoiyona nḏiya  \\* 
+\E{Nasir spoke:  I know he is going to Mecca.   If he were going [to take the animals] to graze  he would not take that road.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٦٨) \textcolor{mygreen}{أَوْ يَنَ سِكُوَكٗ  * أُكِمْوَمْبِيَ تَمْكٗ  * كَوَڠٖ وٖنْدَنِ وَكٗ  * يٗتٖ نَلِيَسِكِيَ }} \\* 
+(168) aw yana sikuwako  * ukimwambiya ṯamko  * kawage wenḏani wako  * yoṯe naliyasikiya  \\* 
+\E{For was I not there yesterday   when you said him [those] words to him,  that he should take leave of your friends?   I heard everything.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٦٩) \textcolor{mygreen}{أَوْ وٖنْدَ مَتُنْڠَنِ  * نْڠُوٗ هُتَكُلِيَنِ  * سِكُ زٗتِ سِمُؤٗنِ  * هَتَ هَيٗ كُنَمْبِيَ }} \\* 
+(169) aw wenḏa maṯungani  * nguwo huṯakuliyani  * siku zoṯi simuoni  * haṯa hayo kunambiya  \\* 
+\E{Or if he is going to the pastures,   what is he carrying those clothes for?  All these days I have never seen him [do that],   So explain these [things] to me.   } \\ 
+\\[8mm] 
+
+\textarabic{(١٧٠) \textcolor{mygreen}{جَعْفَرِ كَبَئِنِ  * بَسِ وَلِلِيَنِ  * أَوْ ٹْوَلِأ ڠَنَنِ  * مَنٖنٗ نَلٗكْوَمْبِيَ }} \\* 
+(170) ja'fari kabaini  * basi waliliyani  * aw ţwali ganani  * maneno nalokwambiya  \\* 
+\E{Ja'far spoke:  So why are you crying?  Or why did we agree   with the words I spoke to you?  } \\ 
+\\[8mm] 
+
+\textarabic{(١٧١) \textcolor{mygreen}{نَ كَمَ هُكِرِضِكَ  * نَمْبِيَ نِسِيَتٗكَ  * هُنَ هَتَ كُؤُذِكَ  * سِكِتِكٗ كُنِٹِيَ }} \\* 
+(171) na kama hukiriḍika  * nambiya nisiyaṯoka  * huna haṯa kuudhika  * sikiṯiko kuniţiya  \\* 
+\E{ And if you are not pleased,  tell me before I go.  You have no cause to be hurt   and make me feel sad.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٧٢) \textcolor{mygreen}{أَكَجِبُ تَمْكٗ  * سِكُئِزَ هَيٗ يَكٗ  * سِكُ زٗتٖ نِكٗ  * هَمُنِؤٗنِ كُلِيَ }} \\* 
+(172) akajibu ṯamko  * sikuiza hayo yako  * siku zoṯe niko  * hamunioni kuliya  \\* 
+\E{[Nasir] answered with the words  I don't disagree with these [plans] of yours --   all the days of my life   you have never seen me cry.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٧٣) \textcolor{mygreen}{سَسَ هَيٗ نْدَ عَقِلِ  * نِمٖزٗيَتَأَمَلِ  * نَكُوَ مَتُلِ تُلِ  * زٖءٗ زَكٗ زَ كُئِنُكِيَ }} \\* 
+(173) sasa hayo nḏa 'aqili  * nimezoyaṯaamali  * nakuwa maṯuli ṯuli  * zeo zako za kuinukiya  \\* 
+\E{Now, these [things] are [a matter of] commonsense.    which I observed. I am anxious [because]   today is the time for you to go.    } \\ 
+\\[8mm] 
+
+\textarabic{(١٧٤) \textcolor{mygreen}{أَكَمْوَمْبِيَ نْدُيَكٖ  * هى إِنُكَ أُتٗكٖ  * جَعْفَرِ أَتَمْكٖ  * كْوَنْدَ مْنْڠُ نِؤٗمْبٖيَ }} \\* 
+(174) akamwambiya nḏuyake  * hı̄ inuka uṯoke  * ja'fari aṯamke  * kwanḏa mngu niombeya  \\* 
+\E{He told his brother:  So, off you go.   Ja'far said:  First pray to God for me.   } \\ 
+\\[8mm] 
+
+\textarabic{(١٧٥) \textcolor{mygreen}{نَاصِرِ أَكَبَئِنِ  * أَتَكُپٖكَ مَنَنِ  * سَلَامَ سَلِمِيْنِ  * كْوَ عَفِيَ نَ عَفُوَ }} \\* 
+(175) nāṣiri akabaini  * aṯakupeka manani  * salāma salimı̄ni  * kwa 'afiya na 'afuwa  \\* 
+\E{Nasir said:  May Providence go with you,  [and keep you] safe and sound,  in health and happiness.    } \\ 
+\\[8mm] 
+
+\textarabic{(١٧٦) \textcolor{mygreen}{هَپٗ نْدِيَ كَيَنْدَمَ  * كِنٖنْدَ كُتٗسِمَمَ  * سَاءَ كْوَ إِكِتٗمَ  * نَاءٖ مَكَه أَمٖنْڠِيَ }} \\* 
+(176) hapo nḏiya kayanḏama  * kinenḏa kuṯosimama  * saa kwa ikiṯoma  * nae makah amengiya  \\* 
+\E{Then [Ja'far] set out,   going on, not stopping,   and around four o'clock   he entered Mecca.   } \\ 
+\\[8mm] 
+
+\textarabic{(١٧٧) \textcolor{mygreen}{مَكَه أَلِپٗجِلِسِ  * كْوَ بَبَكٖ هَكُئِسِ  * كَمْبَ نْدِيَ سِتَكَسِ  * كْوَنْدَ تَئِكٖتِلِيَ }} \\* 
+(177) makah alipojilisi  * kwa babake hakuisi  * kamba nḏiya siṯakasi  * kwanḏa ṯaikeṯiliya  \\* 
+\E{When he arrived in Mecca  he did not know his father's home.   He said: I am not sure of the road,   first I will sit myself down.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٧٨) \textcolor{mygreen}{أَكَكٖتِ جَعْفَرِ  * أَكَمُؤٗنَ زُبٖيْرِ  * وٖنْدٖمٖنٖ نَ بَشِيْرِ  * مِكٗنٗ كَمْوِنُلِيَ }} \\* 
+(178) akakeṯi ja'fari  * akamuona zubēri  * wenḏemene na bashı̄ri  * mikono kamwinuliya  \\* 
+\E{Ja'far sat down  and saw Zubair --  he was walking along with the Bearer of Good News --   and Ja'far waved at him.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٧٩) \textcolor{mygreen}{مْكٗنٗ كَؤُٹِزَمَ  * زُبٖيْرِ أَكَسِمَمَ  * أَكَمْوَمْبِيَ هَشِمَ  * مْڠٖنِ وٖٹُ هُنْڠِيَ }} \\* 
+(179) mkono kauţizama  * zubēri akasimama  * akamwambiya hashima  * mgeni weţu hungiya  \\* 
+\E{Zubair saw the wave  and stopped.  He told the Hashimite:  Our guest has arrived.   } \\ 
+\\[8mm] 
+
+\textarabic{(١٨٠) \textcolor{mygreen}{أَكَمُؤُزَ أَمِيْنِ  * مْڠٖنِ وٖٹُ نِ نَنِ  * وَسِكِيٖ هُبَئِنِ  * مْكٗنٗ نِپٖ نَبِيَ }} \\* 
+(180) akamuuza amı̄ni  * mgeni weţu ni nani  * wasikiye hubaini  * mkono nipe nabiya  \\* 
+\E{The Trustworthy One asked:  Who is our guest?    And they heard [Ja'far] say:  Give me your hand, Prophet.   } \\ 
+\\[8mm] 
+
+\textarabic{(١٨١) \textcolor{mygreen}{زُبٖيْرِ كَتَعَجَبُ  * وَمُيُوَپِ حَبِيْبُ  * جَعْفَرِ كَمْجِبُ  * وَجْهِ وَكٖ نَبِيَ }} \\* 
+(181) zubēri kaṯa'ajabu  * wamuyuwapi ḥabı̄bu  * ja'fari kamjibu  * wajhi wake nabiya  \\* 
+\E{Zubair was amazed:  How does he know you, Prophet?  Ja'far answered him:  His face is that of the Prophet.   } \\ 
+\\[8mm] 
+
+\textarabic{(١٨٢) \textcolor{mygreen}{كِشَ هَپٗ كَبَئِنِ  * كْوَ بَبَنْڠُ نِپٖكٖنِ  * كَمْتُكُوَ أَمِيْنِ  * كٖنْدَ نَاءٖ كْوَ عَلِيَ }} \\* 
+(182) kisha hapo kabaini  * kwa babangu nipekeni  * kamṯukuwa amı̄ni  * kenḏa nae kwa 'aliya  \\* 
+\E{Then he said:   Could you show me to my father's?   The Trustworthy One accompanied him  and went with him to Ali's.    } \\ 
+\\[8mm] 
+
+\textarabic{(١٨٣) \textcolor{mygreen}{أَلِپٗكْوٖنْدَ سَيِّدِ  * كْوَءٗ أَكَپِجَ هٗدِ  * فَتُمَ أَكَرَدِدِ  * أَكَمْبَ هَكٗ نَبِيَ }} \\* 
+(183) alipokwenḏa sayyiḏi  * kwao akapija hoḏi  * faṯuma akaraḏiḏi  * akamba hako nabiya  \\* 
+\E{When the Lord got there  he called: Hello!.   Fatima answered  and said: The Prophet is not here.   } \\ 
+\\[8mm] 
+
+\textarabic{(١٨٤) \textcolor{mygreen}{أَكَمُؤُزَ حُسَيْبِ  * أَمْكُوَءٗ نِ نْيَانِ  * كِجَنَ أَكَبئِنِ  * نِ جَدِ يَنْفُ سِكِيَ }} \\* 
+(184) akamuuza ḥusaybi  * amkuwao ni nyāni  * kijana akabini  * ni jaḏi yanfu sikiya  \\* 
+\E{She asked Husayn:  Who is calling?   And the boy answered:  Listen -- it is my grandfather.    } \\ 
+\\[8mm] 
+
+\textarabic{(١٨٥) \textcolor{mygreen}{نَ جَدِ يَنْڠُ رَسُوْلِ  * يٖيٖ نَ وَٹُ وَوِلِ  * كُسِكِيَكْوٖ قَوْلِ  * كَتٗكَ كَمْوَنْڠَلِيَ }} \\* 
+(185) na jaḏi yangu rasūli  * yeye na waţu wawili  * kusikiyakwe qawli  * kaṯoka kamwangaliya  \\* 
+\E{It is my grandfather the Prophet,    he and two people.    When she heard these words,  [Fatima] went out to see him.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٨٦) \textcolor{mygreen}{أَكِتٗكَ جَعْفَرِ  * كَمُؤُلِزَ خَبَرِ  * أَكِكٗمَ كَفَسِرِ  * فَتُمَ كَمْپٗكٖيَ }} \\* 
+(186) akiṯoka ja'fari  * kamuuliza khabari  * akikoma kafasiri  * faṯuma kampokeya  \\* 
+\E{When she came out, Ja'far  asked her how she was.  When he had finished speaking  Fatima answered him.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٨٧) \textcolor{mygreen}{فَتُمَ كَتَكَلَمُ  * أَكَمُؤُزَ هَشِمُ  * بَبَ سِيَمْفَهَمُ  * كِجَنَ هُيُ نَبِيَ }} \\* 
+(187) faṯuma kaṯakalamu  * akamuuza hashimu  * baba siyamfahamu  * kijana huyu nabiya  \\* 
+\E{Fatima spoke  And asked the Hashimite:  Father, I still don't recognise  this boy, Prophet.   } \\ 
+\\[8mm] 
+
+\textarabic{(١٨٨) \textcolor{mygreen}{سِكُ زٗتٖ سِمُؤٗنَ  * إِنَ لَكٖ نٔدِيٖ نَنِ  * مْٹُمٖ أَكَبَئِنِ  * فَتُمَ أَكَمْوَمْبِيَ }} \\* 
+(188) siku zoṯe simuona  * ina lake nḏiye nani  * mţume akabaini  * faṯuma akamwambiya  \\* 
+\E{I have never seen him before,   What is his name?    The Prophet spoke  and addressed Fatima.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٨٩) \textcolor{mygreen}{أَكَمْوَمْبِيَ بَشِيْرِ  * هُيُ نْدِيٖ جَعْفَرِ  * وَ عَلِيْ حَيْدَرِ  * هِزٗ صُوْرَ هُكْوَمْبِيَ }} \\* 
+(189) akamwambiya bashı̄ri  * huyu nḏiye ja'fari  * wa 'alii ḥayḏari  * hizo ṣūra hukwambiya  \\* 
+\E{The Bringer of Good Tidings told her:  This is Ja'far   [son] of Ali the Lionlike --   his features would tell you that.   } \\ 
+\\[8mm] 
+
+\textarabic{(١٩٠) \textcolor{mygreen}{هَپٗ سَيِدِ أَمِيْنِ  * أَكَمْٹُمَ حُسَيْنِ  * إٖنٖنْدَ مْسِكِٹِنِ  * بَبَكٗ نَمْكُلِيَ }} \\* 
+(190) hapo sayiḏi amı̄ni  * akamţuma ḥusayni  * enenḏa msikiţini  * babako namkuliya  \\* 
+\E{Then the Lord, the Trustworthy One,   sent Husain:  Go to the mosque,  [and tell] your father I am calling him.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٩١) \textcolor{mygreen}{هَپٗ كَتٗكَ حُسَيْنِ  * كَفِكَ مْسِكِٹِنِ  * بَبَ كُئِيٖ مْڠٖنِ  * ٹُمِوٖ كُكْوَنْدَمِيَ }} \\* 
+(191) hapo kaṯoka ḥusayni  * kafika msikiţini  * baba kuiye mgeni  * ţumiwe kukwanḏamiya  \\* 
+\E{So Husain went off   and arrived at the mosque.  Father, a stranger has come --    I have been sent to bring you along.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٩٢) \textcolor{mygreen}{كُنَ كِجَنَ مْزُرِ  * چٖنْدٖمٖنٖ نَ بَشِيْرِ  * نَ إِنَ نِ جَعْفَرِ  * نِ هِلٗ نِمٖكْوَمْبِيَ }} \\* 
+(192) kuna kijana mzuri  * chenḏemene na bashı̄ri  * na ina ni ja'fari  * ni hilo nimekwambiya  \\* 
+\E{There is a handsome boy there,   he came with the Bringer of Good Tidings   and his name is Ja'far --     this is what I have [come to] tell you.   } \\ 
+\\[8mm] 
+
+\textarabic{(١٩٣) \textcolor{mygreen}{چَنْبِوَ هِيٗ كَلِمَ  * پَپٗ نْدِيَ كَيَنْدَمَ  * مْلَنْڠٗنِ أَكِكٗمَ  * سَلَامُ كَوَپِسِيَ }} \\* 
+(193) cham̱biwa hiyo kalima  * papo nḏiya kayanḏama  * mlangoni akikoma  * salāmu kawapisiya  \\* 
+\E{When these words had been said   [Ali] set off immediately.   When he reached the door [of his house]  he greeted [those inside].  } \\ 
+\\[8mm] 
+
+\textarabic{(١٩٤) \textcolor{mygreen}{سَلَامُ أَكِفَسِرِ  * هَپٗ عَلِيْ حَيْدَرِ  * كَئِتٗكَ جَعْفَرِ  * مكٗنٗ كَمْپٗكٖيَ }} \\* 
+(194) salāmu akifasiri  * hapo 'alii ḥayḏari  * kaiṯoka ja'fari  * mkono kampokeya  \\* 
+\E{While he was greeting [them],  Ali the Lionlike,   Ja'far got up  and took his hand.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٩٥) \textcolor{mygreen}{عَلِيْ كٖٹَ تَمْكٗ  * نِ سَلَامَ أُتٗكَكٗ  * جُمْلَ وٖنْدَنِ وَكٗ  * حَالِ زَءٗ نَمْبِيَ }} \\* 
+(195) 'alii keţa ṯamko  * ni salāma uṯokako  * jumla wenḏani wako  * ḥāli zao nambiya  \\* 
+\E{Ali spoke:   Is everything well where you came from?   All your friends,   tell me how they are.   } \\ 
+\\[8mm] 
+
+\textarabic{(١٩٦) \textcolor{mygreen}{أَكَمْجِبُ كَلَمُ  * نِتٗكَجكٗ نِ سَلَامَ  * سِيُوِ يَ هٗكٗ نْيُمَ  * سِپَٹِ لَكُكْوَمْبِيَ }} \\* 
+(196) akamjibu kalamu  * niṯokajko ni salāma  * siyuwi ya hoko nyuma  * sipaţi lakukwambiya  \\* 
+\E{And [Ja'far] answered him with the words:  Everything is well where I come from,   [though] I don't know about after [I left].    I have nothing [unpleasant] to tell you.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٩٧) \textcolor{mygreen}{تٖنَ بَبَ مْوَلِمُ  * نَ مَمَ وَكُسَلِمُ  * وَعَلَيْكَ السَّلَامَ  * عَلِيْ كَپٗكٖيَ }} \\* 
+(197) ṯena baba mwalimu  * na mama wakusalimu  * wa'alayka āssaّlāma  * 'alii kapokeya  \\* 
+\E{Also, my revered teacher   and my mother greet you:   Peace be with you.  Ali answered.  } \\ 
+\\[8mm] 
+
+\textarabic{(١٩٨) \textcolor{mygreen}{عَلِيْ أَكَبَئِنِ  * نِمٖكُنْڠٗجَ نْدِيَنِ  * وَلِتٗكَ زٖءٗ ڠَنِ  * مْبٗنَ أُمٖلِمَٹِيَ }} \\* 
+(198) 'alii akabaini  * nimekungoja nḏiyani  * waliṯoka zeo gani  * mbona umelimaţiya  \\* 
+\E{Ali spoke:  I waited for you on the road --   what time did you set out?   Wy are you late?  } \\ 
+\\[8mm] 
+
+\textarabic{(١٩٩) \textcolor{mygreen}{أَكَمْجِبُ قَوْلِ  * أَصُبُحِ نَلِصَلِ  * لَكِنِ بَبَ نِ مْبَلِ  * إِنَ أُرٖفُ وَ نْدِيَ }} \\* 
+(199) akamjibu qawli  * aṣubuḥi naliṣali  * lakini baba ni mbali  * ina urefu wa nḏiya  \\* 
+\E{[ja'far] answered him with the words:  I said my morning [prayers at 5 o'clock],  but, father, it is far --    the road is a long one.    } \\ 
+\\[8mm] 
+
+\textarabic{(٢٠٠) \textcolor{mygreen}{نَمِ كِپَٹَ يَنْڠٗنِ  * پَنَ مْٹٖنْدٖ نْدِيَنِ  * يَلِنِتٗكَ مٗيٗنِ  * يَلٖ وَلٗنَمْبِيَ }} \\* 
+(200) nami kipaţa yangoni  * pana mţenḏe nḏiyani  * yaliniṯoka moyoni  * yale walonambiya  \\* 
+\E{And when I reached the cave   there was the date-tree by the road,   but they left my head,  the [directions] you had told me.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٠١) \textcolor{mygreen}{كَئِوَتَ يَ كُڤُلِ  * كَأَنْدَمَ إِلٗ مْبَلِ  * هَتَ كِتَأَمَلِ  * سَاءَ إِمٖنِپِٹِيَ }} \\* 
+(201) kaiwaṯa ya kuvuli  * kaanḏama ilo mbali  * haṯa kiṯaamali  * saa imenipiţiya  \\* 
+\E{I left behind the [road] to the right   and walked on for a while   until I realised  an hour had passed.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٠٢) \textcolor{mygreen}{نِپَ أُوِنْڠَ كَئٖٹَ  * إِيُ لَ بَرَ كَپِٹُ  * إِلِ نْدِيَ كُئِوَتَ  * نْيُمَ نِسِپٗرٖجٖيَ }} \\* 
+(202) nipa uwinga kaeţa  * iyu la bara kapiţu  * ili nḏiya kuiwaṯa  * nyuma nisiporejeya  \\* 
+\E{Then I did something stupid --    I walked out into the scrubland    and left the road behind,   instead of going back.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٠٣) \textcolor{mygreen}{سُرَ نٖنْدَءٗ بَرَنِ  * إِلٖ نْدِيَ سِئِيٗنِ  * هُؤٗنَ نِكٗ بَرَنِ  * زٗتٖ زِمٖنِپٗتٖيَ }} \\* 
+(203) sura nenḏao barani  * ile nḏiya siiyoni  * huona niko barani  * zoṯe zimenipoṯeya  \\* 
+\E{Wherever I went in the scrubland   I couldn't find the road --   I realised I was [lost] in the scrubland,    and I had lost track of all [the roads].  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٠٤) \textcolor{mygreen}{كِپِجَ فِكِرَ زَنْڠُ  * كَلَنْدَمَ ڠُوْ لَنْڠُ  * نَرُدِيَ پَلٖ پَنْڠُ  * كِشَ نْيُمَ كَرٖجٖيَ }} \\* 
+(204) kipija fikira zangu  * kalanḏama guu langu  * naruḏiya pale pangu  * kisha nyuma karejeya  \\* 
+\E{I cudgelled my brains   and then retraced my footsteps   and returned to my [correct] place   and finally I got back.   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٠٥) \textcolor{mygreen}{كِشَ كُرُدِيَ نْيُمَ  * هَپٗ نْدِيَ كَيَنْدَمَ  * پٖنْيٖ مْٹٖنْدٖ كَكٗمَ  * صَالَ إِمٖنِسِمَمِيَ }} \\* 
+(205) kisha kuruḏiya nyuma  * hapo nḏiya kayanḏama  * penye mţenḏe kakoma  * ṣāla imenisimamiya  \\* 
+\E{At last I returned back   and then I followed the road.   At the place with the date-tree I stopped --   it was time to pray.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٠٦) \textcolor{mygreen}{أَوَلِ يَ أَظُهُرِ  * نْدِپٗ نِْيَ كَعَبِرِ  * حُجَ يَ كُجَ أَخِيْرِ  * نَعَانَ نِمٖكْوَمْبِيَ }} \\* 
+(206) awali ya aẓuhuri  * nḏipo niya ka'abiri  * ḥuja ya kuja akhı̄ri  * na'āna nimekwambiya  \\* 
+\E{Just after noon   was when I set out [again] on the road.   Regarding coming late,    I have told you the reason.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٠٧) \textcolor{mygreen}{كِمَلِزَ كُپُلِكَ  * عَلِيْ أَكَتَمْكَ  * مْوَنَنْڠُ أُمٖسُمْبُكَ  * هَپٗ كَنٖنَ نَبِيَ }} \\* 
+(207) kimaliza kupulika  * 'alii akaṯamka  * mwanangu umesumbuka  * hapo kanena nabiya  \\* 
+\E{When he had finished listening  Ali spoke:  My child, youhave been through a lot.  Then the Prophet spoke.   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٠٨) \textcolor{mygreen}{هَپٗ كَنٖنَ هَشِمَ  * سِ هَبَ كُيَ سَلَام  * نْدِيَ مٖزٗإِيَنْدَمَ  * خَطَرِ هُمْزٖنْڠٖيَ }} \\* 
+(208) hapo kanena hashima  * si haba kuya salām  * nḏiya mezoiyanḏama  * khaṭari humzengeya  \\* 
+\E{Then the Hashimite spoke:   It is no small thing to arrive safely,    when on the road he came along  [danger] stalked him.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٠٩) \textcolor{mygreen}{أَمْكِنْڠَ وَدُوْدِ  * أَسِؤٗوْنٖ مَيَهُوْدِ  * كْوَنِ وَنْڠَلِمْزِدِ  * وَٹُ وَ نْڠِسِ مْمٗيَ }} \\* 
+(209) amkinga waḏūḏi  * asiōne mayahūḏi  * kwani wangalimziḏi  * waţu wa ngisi mmoya  \\* 
+\E{The Loving One protected him  so that he met no unbelievers,  for they would have overwhelmed him --   one against many.    } \\ 
+\\[8mm] 
+
+\textarabic{(٢١٠) \textcolor{mygreen}{فَتُمَ أُكٗ كِٹِنِ  * أَكَمْوٖپُكَ أَمِيْنِ  * كْوَ مْكٗنٗ كَبَئِنِ  * نَ نْدَنِ كَمُأَمْكُوَ }} \\* 
+(210) faṯuma uko kiţini  * akamwepuka amı̄ni  * kwa mkono kabaini  * na nḏani kamuamkuwa  \\* 
+\E{Fatima had been sitting down.   She moved back from the Trustworthy One  and made a sign with her hand   and beckoned [Ali] into the inner [room].   } \\ 
+\\[8mm] 
+
+\textarabic{(٢١١) \textcolor{mygreen}{مكٗنٗ كِؤُٹِزَمَ  * عَلِيْ أَكَفَهَمَ  * أَكَمْوَمْبِيَ هَشِمَ  * نٖنْدَ نْدَمِ مَرَ مٗيَ }} \\* 
+(211) mkono kiuţizama  * 'alii akafahama  * akamwambiya hashima  * nenḏa nḏami mara moya  \\* 
+\E{When he saw her hand [sign]  Ali understood [what it meant].  He told the Hashimite:  I am going to the inner [room]  immediately.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢١٢) \textcolor{mygreen}{كْوَ نْدَمِ أَلِپٗفِكَ  * فَتُمَ أَكَتَمْكَ  * چَكُلَ نِمٖكِپِكَ  * هَيَتَسَ كْوَنْدِكِوَ }} \\* 
+(212) kwa nḏami alipofika  * faṯuma akaṯamka  * chakula nimekipika  * hayaṯasa kwanḏikiwa  \\* 
+\E{When he entered the inner [room]   Fatima spoke:  I have cooked some food  but it is not yet ready to serve.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢١٣) \textcolor{mygreen}{كْوَنْدَ سِكُمَكِنِكَ  * خَبَرِ أَكَتَمْكَ  * مٗيٗ هُمْپَپَٹِكَ  * كْوَ أَثَقِلِ وَ نْدِيَ }} \\* 
+(213) kwanḏa sikumakinika  * khabari akaṯamka  * moyo humpapaţika  * kwa athaqili wa nḏiya  \\* 
+\E{[Ali said:] First he must relax  and tell his news --   his heart is fluttering  because of the hardships of the journey.    } \\ 
+\\[8mm] 
+
+\textarabic{(٢١٤) \textcolor{mygreen}{نَ زٖءٗ أَلِزٗتٗكَ  * أُمٖزِيُوَ هَكِكَ  * نَ سِسِ هُمْپُلِكَ  * مَنٖنٗيٖ هُرٹْوَمْبِيَ }} \\* 
+(214) na zeo alizoṯoka  * umeziyuwa hakika  * na sisi humpulika  * manenoye hurţwambiya  \\* 
+\E{And the things he has been through   you know them well  and we will listen to him   as he tells us his words.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢١٥) \textcolor{mygreen}{عَلِيْ أَكَبَئِنِ  * هُمْصُبِرِ حُسَيْنِ  * نِمٖمْٹُمَ حَسَنِ  * إٖنْدٖ كُمُؤَمْكُوَ }} \\* 
+(215) 'alii akabaini  * humṣubiri ḥusayni  * nimemţuma ḥasani  * enḏe kumuamkuwa  \\* 
+\E{Ali realised  Husain was waiting for him,  [and said]: I have sent Hassan [an an errand] --   go and call him.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢١٦) \textcolor{mygreen}{عَلِيْ كُتٗكَ نْدَنِ  * أَلِپٗكٖتِ كِٹِنِ  * أَمْسِكِيٖ حَسَنِ  * سَلَامُ هُوَپِسِيَ }} \\* 
+(216) 'alii kuṯoka nḏani  * alipokeṯi kiţini  * amsikiye ḥasani  * salāmu huwapisiya  \\* 
+\E{Ali came out of the inner [room]   and sat down on a chair.  He heard Hassan  greeting them.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢١٧) \textcolor{mygreen}{حَسَنِ أَكَنُظُمُ  * كُوَپِسِزَ سَلَامُ  * أَمْرُدِشٖ كَلِمُ  * جَّْفَرِ كَمْوَمْبِيَ }} \\* 
+(217) ḥasani akanuẓumu  * kuwapisiza salāmu  * amruḏishe kalimu  * jaّfari kamwambiya  \\* 
+\E{Hassan spoke  and greeted them  so that they could return the greeting.  He spoke to Ja'far.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢١٨) \textcolor{mygreen}{كْوَ أُ نْدَنِ كْوِمَ  * كَمُؤُلِزَ سَلَامَ  * وَلِؤٗپٗ وَكَسِمَ  * وٗتٖ وَكَمْپٗكٖيَ }} \\* 
+(218) kwa u nḏani kwima  * kamuuliza salāma  * waliopo wakasima  * woṯe wakampokeya  \\* 
+\E{With deference    he asked how he was.  Thos present spoke  and all returned his greeting.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢١٩) \textcolor{mygreen}{كَمْوَمْبِيَ مَتَمْكٗ  * نِ سَلَامَ نِتٗكَكٗ  * سِيُوِ مْبٖيْ نٖنْدَكٗ  * أَيُوَءٖ نِ جَلِيَ }} \\* 
+(219) kamwambiya maṯamko  * ni salāma niṯokako  * siyuwi mbee nenḏako  * ayuwae ni jaliya  \\* 
+\E{He spoke [these] words:  All is well where I come from;   I do not know about where I am going --   the one who knows is the Almighty.   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٢٠) \textcolor{mygreen}{أَكَتَمْكَ أَمِيْنِ  * كَوَمْبِيَ كْوَ هٖرِنِ  * عَلِيْ أَكَبَئِنِ  * مْبٗنَ هُتٗكَ نَبِيَ }} \\* 
+(220) akaṯamka amı̄ni  * kawambiya kwa herini  * 'alii akabaini  * mbona huṯoka nabiya  \\* 
+\E{The Trustworthy One spoke  and bade them goodbye.   Ali spoke:  Surely you are not leaving, Prophet?   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٢١) \textcolor{mygreen}{مْٹُمٖ أَكَتَمْكَ  * زٖءٗ زِمٖأَخِرِكَ  * سَاءَ تِسِيَ هَكِكَ  * نْيُمْبَنِ سِيَرٖجٖيَ }} \\* 
+(221) mţume akaṯamka  * zeo zimeakhirika  * saa ṯisiya hakika  * nyumbani siyarejeya  \\* 
+\E{The Prophet spoke:  these things have taken some time --   it is now the ninth hour for certain,   and I have not yet returned home.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٢٢) \textcolor{mygreen}{كَمْبَ صُبِرِ بَشِيْرِ  * ٹُمْلِشٖ جَعْفَرِ  * چَكُلَ كِكٗ تَيَرِ  * هَپٗ كَكٖتِ نَبِيَ }} \\* 
+(222) kamba ṣubiri bashı̄ri  * ţumlishe ja'fari  * chakula kiko ṯayari  * hapo kakeṯi nabiya  \\* 
+\E{[Ali] said: Wait, Bringer of Good Tidings,   until we have given Ja'far something to eat.  The food is ready.   So the Prophet sat down.   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٢٣) \textcolor{mygreen}{فَتُمَ أَكَئِنُكَ  * كْوَ أُپٖسِ نَ هَرَكَ  * تَمَشَ أَكَئِوٖكَ  * نَ مَاءِ كَوَپٖكٖيَ }} \\* 
+(223) faṯuma akainuka  * kwa upesi na haraka  * ṯamasha akaiweka  * na mai kawapekeya  \\* 
+\E{Fatima got up  quickly, in a hurry,    and placed delicacies [before them]  and brought them water [to wash their hands].   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٢٤) \textcolor{mygreen}{وَكَكٖتِ كْوَ مْفَنٗ  * وَكَتَنْڠَنْيَ مِكٗنٗ  * جُمْلَ وَٹُ وَ نَنٗ  * وَلَ أَسِلٖ نَبِيَ }} \\* 
+(224) wakakeṯi kwa mfano  * wakaṯanganya mikono  * jumla waţu wa nano  * wala asile nabiya  \\* 
+\E{They sat equally,   sharing the same dish,  all five of them,    though the Prophet did not eat [much].   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٢٥) \textcolor{mygreen}{مَرَ ٹَاٹُ كْوَ هَكِكَ  * مْكٗنٗ أَلِؤُپٖكَ  * أَكِشَ أَكَئِنُكَ  * وَءٗ أَكَوَتِيَ }} \\* 
+(225) mara ţāţu kwa hakika  * mkono aliupeka  * akisha akainuka  * wao akawaṯiya  \\* 
+\E{Three times indeed    he put his hand [into the dish]  and then he got up  and left them.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٢٦) \textcolor{mygreen}{أَكَئِنُكَ كِٹِنِ  * كَپٗوَ مَاءِ أَمِيْرِ  * نَ يَ كُنْوَ كِكٗمْبٖنِ  * نَاءٖ أَكَسُكُتُوَ }} \\* 
+(226) akainuka kiţini  * kapowa mai amı̄ri  * na ya kunwa kikombeni  * nae akasukuṯuwa  \\* 
+\E{He rose from his chair  and accepted water, the Trustworthy One,   in a cup to drink,    and rinsed his mouth.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٢٧) \textcolor{mygreen}{تَمْبُوْ يَ كُخِتَرِ  * هَپٗ كَپٗوَ بَشِيْرِ  * أَكَوَآڠَ كْوَ هٖرِ  * ٹُمْوَ أَكَئِتٗكٖيَ }} \\* 
+(227) ṯambuu ya kukhiṯari  * hapo kapowa bashı̄ri  * akawaga kwa heri  * ţumwa akaiṯokeya  \\* 
+\E{Choice tambuu   he was then given, the Bearer of Good Tidings,   and he bade them farewell --    the Prophet went off.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٢٨) \textcolor{mygreen}{ٹُمْوَ أَكِشَ كُتٗكَ  * نَاءٗ كُلَ وَمٖكْوِشَ  * فَتُمَ أَكَئِنُكَ  * مَاءِ أَكَوَپٖكٖيَ }} \\* 
+(228) ţumwa akisha kuṯoka  * nao kula wamekwisha  * faṯuma akainuka  * mai akawapekeya  \\* 
+\E{When the Prophet had left   and they had finished eating   Fatima got up  and offered them water.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٢٩) \textcolor{mygreen}{أَكَئِيٗنَ فَتُمَ  * پٹٖ أَكَئِٹِزَمَ  * يَپِسِيٗ يَ نْيُمَ  * يٗتٖ يَكَمْرُدِيَ }} \\* 
+(229) akaiyona faṯuma  * pţe akaiţizama  * yapisiyo ya nyuma  * yoṯe yakamruḏiya  \\* 
+\E{And Fatima saw it --   she caught sight of the ring.  What had happened in the past   all came back to her.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٣٠) \textcolor{mygreen}{عَلِيْ أكَتَمْكَ  * مْبٗنَ أُمٖبَدِلِكَ  * كَمَ أُمٖزٗؤُدِكَ  * يٖؤٗ نِكِكْوَنْڠَلِيَ }} \\* 
+(230) 'alii kaṯamka  * mbona umebaḏilika  * kama umezouḏika  * yeo nikikwangaliya  \\* 
+\E{Ali spoke:  Why has [your mood] changed,  as if you are angry,  now as I look at you?  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٣١) \textcolor{mygreen}{فَتُمَ َكَرَدِدِ  * وٖوٖ هُنٖنْدِ بَعِيْدِ  * نِلٗنَلٗ سِنَ بُدِ  * إِلَّا نَاوٖ كُكْوَمْبِيَ }} \\* 
+(231) faṯuma akaraḏiḏi  * wewe hunenḏi ba'ı̄ḏi  * nilonalo sina buḏi  * illā nāwe kukwambiya  \\* 
+\E{Fatima replied:  Don't leave yet -    I who have [something worrying me], I have no choice   but to tell you.   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٣٢) \textcolor{mygreen}{أَكِسِكِيَ حَسَنِ  * كَتٗكَ كُلٖ نْيُمْبَنِ  * أَكَنٖنْدَ كْوَ أَمِيْنِ  * حر أَكَمْوَمْبِيَ }} \\* 
+(232) akisikiya ḥasani  * kaṯoka kule nyumbani  * akanenḏa kwa amı̄ni  * ḥr akamwambiya  \\* 
+\E{When Hassan heard this  he left the house   and went to the Trustworthy One   and told him the news.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٣٣) \textcolor{mygreen}{حَسَنِ كِشَ كُفِكَ  * كْوَ مْٹُمٖ كَتَمْكَ  * مِمِ أَمٖكَسِرِكَ  * بِبِ يَنْڠُ نَكْوَمْبِيَ }} \\* 
+(233) ḥasani kisha kufika  * kwa mţume kaṯamka  * mimi amekasirika  * bibi yangu nakwambiya  \\* 
+\E{When Hassan got there   he told the Prophet:   she is angry,  my mother - I'm telling you.   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٣٤) \textcolor{mygreen}{أَكَمُؤُزَ أمِيْنِ  * مٖكُسِرِ كِيَ نِنِ  * مْوٖنْيٖوٖ هَكُبَئِنِ  * مٗيٗ سِكُفَهَمِيَ }} \\* 
+(234) akamuuza mı̄ni  * mekusiri kiya nini  * mwenyewe hakubaini  * moyo sikufahamiya  \\* 
+\E{The Trustworthy One asked him:  Why has she got angry?   Myself I don't know --   I don't understand [a thing about it].  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٣٥) \textcolor{mygreen}{كُرُدِ كْوَكٖ نْدِيَنِ  * أَكَمُؤٗنَ حُسَيْنِ  * آٹِ مٖكُيَ مْڠٖنِ  * هُكُ كْوٖٹُ نَسِكِيَ }} \\* 
+(235) kuruḏi kwake nḏiyani  * akamuona ḥusayni  * ţi mekuya mgeni  * huku kweţu nasikiya  \\* 
+\E{As [Hassan] went back along the road   he saw Husain [who said:]  So, a visitor has come   to our house, I hear.   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٣٦) \textcolor{mygreen}{أَكَمْجِبُ حَسَنِ  * مْوٖنْيٖ خَتَرِ هُئِنِ  * َِنَ يٖيٖ تَمْكِنِ  * هٗيٗ أَمٖزٗوَمْبِيَ }} \\* 
+(236) akamjibu ḥasani  * mwenye khaṯari huini  * aina yeye ṯamkini  * hoyo amezowambiya  \\* 
+\E{Hassan answered him:  [there is] a gossip-monger in the town --   likely it is him   who has told [people] this.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٣٧) \textcolor{mygreen}{أَكَپِٹَ مْلَنْڠٗنِ  * أَكَرَدِدِ حُسَيْنِ  * آسَ وَ مْتَكِيَن  * پٖنُ أَلِوَپٗتٖيَ }} \\* 
+(237) akapiţa mlangoni  * akaraḏiḏi ḥusayni  * sa wa mṯakiyan  * penu aliwapoṯeya  \\* 
+\E{He went to the door  and Husain answered:  Why do they want him?   He has usurped your position.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٣٨) \textcolor{mygreen}{أَكَمُؤُزَ بَبَكٖ  * أُ نَنِ هُنٖنَ پْوٖكٖ  * أَكَمْبَ خٖيْرِ بِتٗكٖ  * خَبَرِ زِمٖئٖنٖيَ }} \\* 
+(238) akamuuza babake  * u nani hunena pweke  * akamba khēri biṯoke  * khabari zimeeneya  \\* 
+\E{His father asked him:  What's the matter?  You are speaking amongst yourselves.    Then he said: It is best I got out.   The news has spread.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٣٩) \textcolor{mygreen}{كُمٖپَنَنَ خَبَرِ  * جَمِيْعِ يَ أَنْشَارِ  * أَمٖكُيَ جَعْفَرِ  * وَ مَوْلَانَا عَلِيَ }} \\* 
+(239) kumepanana khabari  * jamī'i ya anshāri  * amekuya ja'fari  * wa mawlānā 'aliya  \\* 
+\E{The news is being passed about  among all the people of Medina.   "Ja'far has arrived,  [the son] of Lord Ali.   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٤٠) \textcolor{mygreen}{هَپٗ عَلِيْ حَيْدَرِ  * نٖنٗ أَلِلٗفَسِرِ  * أُوٖنْڠَ أُنَ خَطَرِ  * مَمْبٗ يَكِتُمِلِيَ }} \\* 
+(240) hapo 'alii ḥayḏari  * neno alilofasiri  * uwenga una khaṭari  * mambo yakiṯumiliya  \\* 
+\E{Then Ali the Lionlike,   the words that he said [were]:  Foolishness is dangerous,   when things get out of hand (?).  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٤١) \textcolor{mygreen}{كْوٖنُ كُئِيٖ مْڠٖنِ  * هِلٗ هُكُؤُذِيَنِ  * تَمُوٖكَ هُكُ نْيُمْبَنِ  * هُئِنَ هَتٗتٖمْبٖيَ }} \\* 
+(241) kwenu kuiye mgeni  * hilo hukuudhiyani  * ṯamuweka huku nyumbani  * huina haṯoṯembeya  \\* 
+\E{A visitor has come to your house --   why does this disturb you?  I will let him stay here in the house   so that he does not have to wander around the town.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٤٢) \textcolor{mygreen}{فَتُمَ أَكَنُطُمُ  * كْوَنِ سِ مْوَنَ حَرَمُ  * مْوَنَ هَنَ تَبَسَمُ  * عَلِيْ كِمْوَنْڠَلِيَ }} \\* 
+(242) faṯuma akanuṭumu  * kwani si mwana ḥaramu  * mwana hana ṯabasamu  * 'alii kimwangaliya  \\* 
+\E{Fatima spoke:  Why is he not a legitimate chil?    The child appeared sad   when Ali looked at him.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٤٣) \textcolor{mygreen}{عَلِيْ هَپٗ كَسٖمَ  * هٖلَ نْدٗوْ فَطُمَ  * أَكَئِنُكَ كْوَ هِمَ  * مْكٖوٖ كَمُئٖنْدٖيَ }} \\* 
+(243) 'alii hapo kasema  * hela nḏoo faṭuma  * akainuka kwa hima  * mkewe kamuenḏeya  \\* 
+\E{So Ali said:   Come now, Fatima.   He got up carefully   and went to his wife.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٤٤) \textcolor{mygreen}{أَكَمُؤُزَ أُ نَنِ  * مْبٗنَ أُنَ كِسِرَنِ  * فَتُمَ أَكَمْبَ كُنِ  * يَ مَتُنْڠُ هُكْوَمْبِيَ }} \\* 
+(244) akamuuza u nani  * mbona una kisirani  * faṯuma akamba kuni  * ya maṯungu hukwambiya  \\* 
+\E{He asked her: What's the matter?   Why are you frowning?   Fatima responded angrily   and spoke to him bitterly.   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٤٥) \textcolor{mygreen}{أَكَمْجِبُ تَمْكٗ  * هِيٗ سِ طَبِيَ يَكٗ  * مِمِ سِ كِجَنَ چَكٗ  * أَمْبَ هَيٗ هُنَمْبِيَ }} \\* 
+(245) akamjibu ṯamko  * hiyo si ṭabiya yako  * mimi si kijana chako  * amba hayo hunambiya  \\* 
+\E{She answered him with the words:  This is not like you.    I am not your child,    [that you can tell] say this, and I will say it.   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٤٦) \textcolor{mygreen}{فَتُمَ أَكَبَئِنِ  * سِ إِلٖ پٖٹٖ چَنْدَنِ  * يَلٗنْڠِيَ كِسِمَنِ  * آٹِ زِيَپٗ هُٹِيَ }} \\* 
+(246) faṯuma akabaini  * si ile peţe chanḏani  * yalongiya kisimani  * ţi ziyapo huţiya  \\* 
+\E{Fatima spoke:  Is that not the ring on his finger    which "fell into the well",  as you swore?   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٤٧) \textcolor{mygreen}{عَلِيْ أَكَمْبَ هَكِكَ  * نْدِپٗ أُكَكَسِرِكَ  * پَلٖ أُنْڠٖلِؤُدِكَ  * كَمَ كِلٖ نَكْوَمْبِيَ }} \\* 
+(247) 'alii akamba hakika  * nḏipo ukakasirika  * pale ungeliuḏika  * kama kile nakwambiya  \\* 
+\E{Ali said: Indeed,    so that's why you are angry --  you would have got angry at that time [as well],  I tell you truly.   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٤٨) \textcolor{mygreen}{نَ سَسَ نِنْڠٖكُؤُذِ  * نْدُڠُ يَنْڠُ وَتَ غَرَضِ  * مٗيٗ وَكٖ أُوٖ رَضِ  * نَ أُتَكَلٗ نَمْبِيَ }} \\* 
+(248) na sasa ningekuudhi  * nḏugu yangu waṯa ḡaraḍi  * moyo wake uwe raḍi  * na uṯakalo nambiya  \\* 
+\E{And now, if I have hurt you,   stop being angry, my dear.    let your heart be forgiving    and tell me what you want.   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٤٩) \textcolor{mygreen}{فَتُمَ كٖٹَ قَوْلِ  * كِٹُ سِ يَ كُلَ دَلِيْلِ  * أُوَپٗ أُمٖكُبَلِ  * رَضِ نِمٖكْوٖلٖيَ }} \\* 
+(249) faṯuma keţa qawli  * kiţu si ya kula ḏalı̄li  * uwapo umekubali  * raḍi nimekweleya  \\* 
+\E{Fatima spoke these words:   the matter is of little importance.     Since you have now agreed [you were wrong],  I forgive you.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٥٠) \textcolor{mygreen}{وَكَكٖتِ كْوَ لِسَنِ  * يٖيٖ نَ مْوَنَ نْيُمْبَنِ  * نَوٖ نٖنْدَپٗ زِٹَنِ  * وَچٖنْدَ وٗتٖ پَمٗيَ }} \\* 
+(250) wakakeṯi kwa lisani  * yeye na mwana nyumbani  * nawe nenḏapo ziţani  * wachenḏa woṯe pamoya  \\* 
+\E{They sat down reconciled,   [Ali] and the boy in the house.    [Ali said:] When I go to battle, you [and I]   we shall go together.   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٥١) \textcolor{mygreen}{جَعْفَرِ نِ مْڠٖنِ  * هَيَزٗوٖيَ زِٹَنِ  * مَهَلَ پَ مَيْتِنِ  * عَلِيْ أَكِمْوٖنْدٖلٖيَ }} \\* 
+(251) ja'fari ni mgeni  * hayazoweya ziţani  * mahala pa mayṯini  * 'alii akimwenḏeleya  \\* 
+\E{Ja'far was a stranger [to war]   he was not accustomed to battle --  where there were 200 [opponents]   Ali would go to him [to help].  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٥٢) \textcolor{mygreen}{هَتَ أَكِتِمُ مْوَكَ  * زِٹَنِ أَمٖصِفِكَ  * سَبَا مِيَ هَكِكَ  * هُتِنْدَ أَسِپٗيُوَ }} \\* 
+(252) haṯa akiṯimu mwaka  * ziţani ameṣifika  * sabā miya hakika  * huṯinḏa asipoyuwa  \\* 
+\E{Until at the end of one year   he was renowned in battle.  Indeed, 700 [opponents]   he would cut down with no effort.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٥٣) \textcolor{mygreen}{هَتَ مْوَكَ أُكِزِدِ  * هَپٗ أَكٖنْدَ جِهَدِ  * لَكِ مٗيَ مَيَهُدِ  * هَكُنَ هَتَ مْمٗيَ }} \\* 
+(253) haṯa mwaka ukiziḏi  * hapo akenḏa jihaḏi  * laki moya mayahuḏi  * hakuna haṯa mmoya  \\* 
+\E{Until, as the year went by,   he went on a crusade,   and of 10,000 unbelievers   there was not one [left alive].   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٥٤) \textcolor{mygreen}{أَلِپٗكُيَ مُئِنِ  * عَلِيْ أَكَبَئِنِ  * أَكَمْوَمْبِيَ أَمِنِ  * نِنَ يَمْبٗ يَكْوَمْبِيَ }} \\* 
+(254) alipokuya muini  * 'alii akabaini  * akamwambiya amini  * nina yambo yakwambiya  \\* 
+\E{When he came back to the town  Ali spoke  and told the Trustworthy One:  I have something to say to you.   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٥٥) \textcolor{mygreen}{نَپٖنْدَ سَسَ بَشِرِ  * َٖنْدٖ پْوٖكٖ جَعْفَرِ  * أَكَپِجٖ مَكُفَرِ  * هُتٗشَ كِمْوَنْڠَلِيَ }} \\* 
+(255) napenḏa sasa bashiri  * aenḏe pweke ja'fari  * akapije makufari  * huṯosha kimwangaliya  \\* 
+\E{I would now like, Bringer of Good Tidings,   for Ja'far to go on his own   to fight the unbelievers.  He is fully able, in my opinion.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٥٦) \textcolor{mygreen}{أَكَشُكَ جِبْرِيْلِ  * أَكمْوَمْبِيَ رَسُوْلِ  * هَوٖكَ سِمْبَ وَوِلِ  * أَكُسَلِمُ نَبِيَ }} \\* 
+(256) akashuka jibrı̄li  * akmwambiya rasūli  * haweka simba wawili  * akusalimu nabiya  \\* 
+\E{Gabriel descended  and told the Prophet:  [God] cannot have two Lions,   and he greets you, Prophet.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٥٧) \textcolor{mygreen}{أَكَتَمْكَ أَمِيْنِ  * عَلِيْ ٹْوٖنْدٖ نْيُمْبَنِ  * مْوَنٗ هُيٗ يَقِيْنِ  * هُئِفَرِكِ دُنِيَ }} \\* 
+(257) akaṯamka amı̄ni  * 'alii ţwenḏe nyumbani  * mwano huyo yaqı̄ni  * huifariki ḏuniya  \\* 
+\E{The Trustworthy One spoke:  Ali, let us go to your house --   this son of yours, it seems,   is departing this world.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٥٨) \textcolor{mygreen}{چَمْبِوَ هِيٗ قَوْلِ  * هَپٗ أَسِيَمُهَلِ  * كَئِنُكَ نَ رَسُوْلِ  * هَپٗ وَكَنْدَمَ نْدِيَ }} \\* 
+(258) chambiwa hiyo qawli  * hapo asiyamuhali  * kainuka na rasūli  * hapo wakanḏama nḏiya  \\* 
+\E{When he was told these words   [Ali] did not linger there --  he got up with the Prophet   and then they set out on the road.   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٥٩) \textcolor{mygreen}{أَكِپَٹَ مْلَنْڠٗنِ  * فَتُمَ أَكَبَئِنِ  * أَلِهُتٗكَ حَسَنِ  * أُيَاءٗ كُكْوَنْدَمِيَ }} \\* 
+(259) akipaţa mlangoni  * faṯuma akabaini  * alihuṯoka ḥasani  * uyao kukwanḏamiya  \\* 
+\E{When he got to the door  Fatima spoke:  Ali, Hassan has [just] left   to go and bring you here.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٦٠) \textcolor{mygreen}{مْوَنٗ أَلِپٗ كِٹِنِ  * نَ حَسَنِ نَ حُسَيْنِ  * غَفُلَ أَكَبَئِنِ  * بَبَنْڠُ نَمْكُلِيَ }} \\* 
+(260) mwano alipo kiţini  * na ḥasani na ḥusayni  * ḡafula akabaini  * babangu namkuliya  \\* 
+\E{Your son was sitting there   with Hassan and Husain    and all of a sudden he said:  I need to call my father.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٦١) \textcolor{mygreen}{أَمٖئِنُكَ كِٹِنِ  * أَمٖپَنْدَ فِرَشَنِ  * نَاءٖ مْوَنْڠَلِيِنِ  * يَمْبٗ لَلٗمْزِدِيَ }} \\* 
+(261) ameinuka kiţini  * amepanḏa firashani  * nae mwangaliyini  * yambo lalomziḏiya  \\* 
+\E{He got up from the chair  and climbed onto the bed,  and now look at him,   the misfortune that has overcome him.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٦٢) \textcolor{mygreen}{هَپٗ أَكٖنْدَ بَشِيْرِ  * نَ عَلِىْ حَىْدَرِ  * كِمْوٗنَ جَعْفَرِ  * هَپٗ بَبَكٖ كَلِيَ }} \\* 
+(262) hapo akenḏa bashı̄ri  * na 'alii ḥayḏari  * kimwona ja'fari  * hapo babake kaliya  \\* 
+\E{So the Bringer of Good Tidings went in   with Ali the Lionlike.   and when he saw Ja'far  his father wept.   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٦٣) \textcolor{mygreen}{أَكَلِيَ كِبَنِ  * إٖوٖ مْوَنَنْڠُ أُ نَنِ  * أُپٖٹْوٖ نَ يَمْبٗ ڠَنِ  * كَٹِكَ كْوَنْدَم نْدِيَ }} \\* 
+(263) akaliya kibani  * ewe mwanangu u nani  * upeţwe na yambo gani  * kaţika kwanḏam nḏiya  \\* 
+\E{He wept, saying:  Oh, my son, what's the matter with you?    What misfortune has stricken you    as you went on your way?   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٦٤) \textcolor{mygreen}{أَكِسِكِيَ كَلِمُ  * جَعْفَرِ كَفَهَمَ  * كْوَ ضَرُبُ كَٹِزَمَ  * َمَيٗ أَكَمْوَنْڠَلِيَ }} \\* 
+(264) akisikiya kalimu  * ja'fari kafahama  * kwa ḍarubu kaţizama  * amayo akamwangaliya  \\* 
+\E{When he heard these words  Ja'far regained consciousness  and looked about with difficulty   and focussed his eyes on him.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٦٥) \textcolor{mygreen}{كِمْوَنْڠَلِيَ أَمِيْنِ  * أَكَمْبَ نِپَ يَسِنِ  * أَكِكٗمَ كُبَئِنِ  * أَمٖكْوِشَ كُئِفِيَ }} \\* 
+(265) kimwangaliya amı̄ni  * akamba nipa yasini  * akikoma kubaini  * amekwisha kuifiya  \\* 
+\E{When he saw the Trustworthy One  he said: Give me [the chapter] Ya Sin.   By the time [the Prophet] had finished speaking  [Ja'far] was already dead.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٦٦) \textcolor{mygreen}{هَپٗ عَلِيْ حَيْدَرِ  * يٗتٖ أَسِيَفِكِرِ  * أَكَسِمَمَ بَشِيْرِ  * مَصَحَبَ كَوَمْبِيَ }} \\* 
+(266) hapo 'alii ḥayḏari  * yoṯe asiyafikiri  * akasimama bashı̄ri  * maṣaḥaba kawambiya  \\* 
+\E{Then Ali the Lionlike   became insensible to anything.  The Bringer of Good Tidings stood up  and spoke to the Companions.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٦٧) \textcolor{mygreen}{كَوَمْبِيَ كِپُلِكَ  * نَ جَمِيْعِ وَكَتٗكَ  * هَيَ وَكِشَ كُزِكَ  * عَلِيْ أَسِپٗيُوَ }} \\* 
+(267) kawambiya kipulika  * na jamī'i wakaṯoka  * haya wakisha kuzika  * 'alii asipoyuwa  \\* 
+\E{He spoke to them as they listened,  and they all went out   and they completed the burial ceremony,   Ali still insensible.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٦٨) \textcolor{mygreen}{أَلِپٗكْوِشَ كُزِكَ  * مْٹُمِ أَكَمُوٖكَ  * مَنٖنٗ أَكَتَمْكَ  * عَلِيْ أَكَمْوَمْبِيَ }} \\* 
+(268) alipokwisha kuzika  * mţumi akamuweka  * maneno akaṯamka  * 'alii akamwambiya  \\* 
+\E{When he had completed the burial  the Prophet sat [Ali] down  and spoke these words  and addressed Ali.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٦٩) \textcolor{mygreen}{كَمْوَمْبِيَ كِپُلِكَ  * صُبِرِ كْوَكٖ رَبُك  * مْٹُ هَنْڠَلِكُپٗكَ  * نَوٖ أُكَمْوَمْڠَلِيَ }} \\* 
+(269) kamwambiya kipulika  * ṣubiri kwake rabuk  * mţu hangalikupoka  * nawe ukamwamgaliya  \\* 
+\E{He told him as [Ali] listened:  Have confidence in Him, your Lord --   a person may be seized [by death]  even if you were to stand watch over him.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٧٠) \textcolor{mygreen}{وَ أَمَّا نِ مْٹُ ڠَنِ  * أَدُمُوٗ دُنِيَنِ  * إِسِپٗكُوَ مَنَّانِ  * نِوٖ وَيَفَهَمِيَ }} \\* 
+(270) wa ammā ni mţu gani  * aḏumuwo ḏuniyani  * isipokuwa mannāni  * niwe wayafahamiya  \\* 
+\E{And indeed, what kind of person is it     who remains in existence,  unless it is God alone,  and you know that well.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٧١) \textcolor{mygreen}{عَلِيْ سٖنٖنْدٖ مْنٗ  * مَمْبٗ هُچِجْوَ مْفَنٗ  * كَپٖوَ هَيٗ مَنٖنٗ  * عَقِلِ إِكَمْنْڠِيَ }} \\* 
+(271) 'alii senenḏe mno  * mambo huchijwa mfano  * kapewa hayo maneno  * 'aqili ikamngiya  \\* 
+\E{Ali, don't go on about this too much --    things have turned out like this.   And when he was given this advice   [Ali] regained his senses.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٧٢) \textcolor{mygreen}{هَپٗ أَكِشَ كُتٗوَ  * زُبَيْرِ كَمْوَمْكُوَ  * تَكُپَ زَنْڠُ بَرُوَ  * أُپَٹٖ كُنِپٖكٖيَ }} \\* 
+(272) hapo akisha kuṯowa  * zubayri kamwamkuwa  * ṯakupa zangu baruwa  * upaţe kunipekeya  \\* 
+\E{So when he had calmed down   He summoned Zubeir [and said:]  I will give you my letters   so that you may deliver them for me.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٧٣) \textcolor{mygreen}{هِيْ مٗيَ نْدَ مَمَكٖ  * مٗيَ نْدَ مْوَلِمُ وَكٖ  * نَ أُچٖنْدَ سِتَمْكٖ  * نٖنٗ مٗيَ كُوَمْبِيَ }} \\* 
+(273) hii moya nḏa mamake  * moya nḏa mwalimu wake  * na uchenḏa siṯamke  * neno moya kuwambiya  \\* 
+\E{This one is for his mother    and this one for his teacher,    and when you go there do no say   one word to tell them [what has happened].   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٧٤) \textcolor{mygreen}{زُبَيْرِ أَسِجِلِسِ  * كَپٗكٖيَ كَرَتَسِ  * كَنٖنْدَ نَزٗ أُپٖسِ  * كَمْپٖكٖيَ عَطِيَ }} \\* 
+(274) zubayri asijilisi  * kapokeya karaṯasi  * kanenḏa nazo upesi  * kampekeya 'aṭiya  \\* 
+\E{Zubeir did not delay --  he took the papers  and went quickly with them.   He delivered one to Atiya [Ja'far's mother].  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٧٥) \textcolor{mygreen}{بَرُوَ كُمْپَ كْوَكٖ  * كِشَ زُبٖىْرِ أَتٗكٖ  * إِلٖ يَ مْوَلِمُ وَكٖ  * كٖنٖنْدَ كُمْپٖكٖيَ }} \\* 
+(275) baruwa kumpa kwake  * kisha zubēri aṯoke  * ile ya mwalimu wake  * kenenḏa kumpekeya  \\* 
+\E{When he had given her the letter   then Zubeir left,   and the one for [ja'far's] teacher    he went on and delivered that.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٧٦) \textcolor{mygreen}{زُبَىْرِ كُتٗكَ كْوَكٖ  * يٖيٖ أَسٗمٖ مَمَكٖ  * أَكَتٗكَ پْوٖكٖ يَكٖ  * مْٹُ أَسِپٗزٖنْڠٖيَ }} \\* 
+(276) zubayri kuṯoka kwake  * yeye asome mamake  * akaṯoka pweke yake  * mţu asipozengeya  \\* 
+\E{When Zubeir had left   [ja'far's] mother read [the letter],   and she left home on her own   without telling anyone.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٧٧) \textcolor{mygreen}{نَاءٖ أََكِيَنُظُمُ  * يُوَ لِمٗ هُسَلِمُ  * وَلَ أ َسِپٗفَهَمُ  * أُسِكُ هُمْنْڠِلِيَ }} \\* 
+(277) nae aakiyanuẓumu  * yuwa limo husalimu  * wala  asipofahamu  * usiku humngiliya  \\* 
+\E{And as she repeated [the contents]  the sun was going down,   but she did not realise   that night was drawing on.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٧٨) \textcolor{mygreen}{نَ نُكٗ نْيُمَ زُبٖيْرِ  * أَسِپَٹٖ فَقْصِيْرِ  * كِلَ مْيُمَ كِعَبِرِ  * كِمْزٖنْڠٖيَ عَطِيَ }} \\* 
+(278) na nuko nyuma zubēri  * asipaţe faqṣı̄ri  * kila myuma ki'abiri  * kimzengeya 'aṭiya  \\* 
+\E{And meanwhile Zubeir    was not in any hurry,  calling at every house   while Atiya was looking for him.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٧٩) \textcolor{mygreen}{هَتَ نْدِيَ كِفُوَٹَ  * كِنٖنْدَ كِتٗمْكُٹَ  * نْيُمْبَ يَ كْوَنْدَ كِپَٹَ  * مْلَنْڠٗنِ أَكِنْڠِيَ }} \\* 
+(279) haṯa nḏiya kifuwaţa  * kinenḏa kiṯomkuţa  * nyumba ya kwanḏa kipaţa  * mlangoni akingiya  \\* 
+\E{So as she followed the road   and went on without finding him  when she came to the first house    she went in at the door.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٨٠) \textcolor{mygreen}{حَمْزَة أَكَفَسِرِ  * نَ مَوْلَانَا عُمَرِ  * هِيِ نِ أَلْفَجِرِ  * صَلَ إِمٖسِمَمِيَ }} \\* 
+(280) ḥamzaẗ akafasiri  * na mawlānā 'umari  * hiyi ni alfajiri  * ṣala imesimamiya  \\* 
+\E{Hamza was talking  with Lord Umar [in the house].   It was the time of morning prayers   and prayers were about to begin.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٨١) \textcolor{mygreen}{مْوَنَمْكٖ كَتَمْكَ  * كَنٖنَ نْدِمِ أَتْوِكَ  * چَمْبَ مْتَنِپِلٖكَ  * كْوَ مَوْلَانَا عَلِيَ }} \\* 
+(281) mwanamke kaṯamka  * kanena nḏimi aṯwika  * chamba mṯanipileka  * kwa mawlānā 'aliya  \\* 
+\E{The woman spoke:  and said: I am Atiya.   perhaps you could show me  to Lord Ali's [house]?   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٨٢) \textcolor{mygreen}{نْدِ يَ نِمٖعَبِرِ  * نْيُمْبَ سِكُئِفَسِرِ  * نْدِمِ أُمِ جَعْفَرِ  * كَمَ هَيَ يَوٖلٖيَ }} \\* 
+(282) nḏi ya nime'abiri  * nyumba sikuifasiri  * nḏimi umi ja'fari  * kama haya yaweleya  \\* 
+\E{I have come along the road   and I don't know the house.  I am Ja'far's mother   if that clarifies things for you.   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٨٣) \textcolor{mygreen}{هَپٗ حَمْزَ كَتٗكَ  * كْوَ أُپٖسِ نَ هَرَكَ  * مْلَنْڠٗ أَكَؤُشِكَ  * إِلِ كُمْفُنْڠُلِيَ }} \\* 
+(283) hapo ḥamza kaṯoka  * kwa upesi na haraka  * mlango akaushika  * ili kumfunguliya  \\* 
+\E{Then Hamza went ou   quickly and speedily    and took hold of the door  to open it for her.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٨٤) \textcolor{mygreen}{نْدِ كِتٗكَ كَٹِكَ هٖمَ  * هَپٗ نْدِيَ هَيَنْدَمَ  * كْوَ عَلِيْ أَكِكٗمَ  * مْلَنْڠٗ كِمْبِشِيَ }} \\* 
+(284) nḏi kiṯoka kaţika hema  * hapo nḏiya hayanḏama  * kwa 'alii akikoma  * mlango kimbishiya  \\* 
+\E{Then, leaving the tent,    he set out on the way.   When he finally came to Ali's [house]   he knocked on the door.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٨٥) \textcolor{mygreen}{كِنٖنَ أَكِمَلِزَ  * عَلِيْ نْدِمِ حَمْزَ  * مْڠٖنِ هُكُؤُلِزَ  * هَپٗ كَتٗكَ عَلِيَ }} \\* 
+(285) kinena akimaliza  * 'alii nḏimi ḥamza  * mgeni hukuuliza  * hapo kaṯoka 'aliya  \\* 
+\E{And he said, explaining [things] to him:  Ali, it's me,  Hamza.   A visitor is asking for you.  Then Ali went out.   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٨٦) \textcolor{mygreen}{يٖيٖ يُپٗ مْلَنْڠٗنِ  * هُلِيَ ََكِبَئِنِ  * قَبُرِ نِ نِپٖكَنِ  * نَپٖنْدَ كُيَنْڠَلِيَ }} \\* 
+(286) yeye yupo mlangoni  * huliya aakibaini  * qaburi ni nipekani  * napenḏa kuyangaliya  \\* 
+\E{[Atiya] was at the door,   weeping and saying:  Take me to his grave --    I want to see it.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٨٧) \textcolor{mygreen}{هَپٗ عَلِيْ كَتٗكَ  * مَتٗزِ يَكِمْشُكَ  * هَتَ نْدٖ كَتَمْكَ  * مَنٖنٗ أَكَمْوَمْبِيَ }} \\* 
+(287) hapo 'alii kaṯoka  * maṯozi yakimshuka  * haṯa nḏe kaṯamka  * maneno akamwambiya  \\* 
+\E{Then Ali went out,   his tears flowing,  and he spoke,   telling her these words.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٨٨) \textcolor{mygreen}{كَمْوَمْبِيَ كِنُطُمُ  * سٖنْدٖلٖيْ إِسِلَامُ  * صُبِرِ كْوَكٖ كَرِيْمُ  * أَمْبَيٗ أَكُلٖٹٖيَ }} \\* 
+(288) kamwambiya kinuṭumu  * senḏelee isilāmu  * ṣubiri kwake karı̄mu  * ambayo akuleţeya  \\* 
+\E{He spoke, saying:  don't go on so -- submit to God's will,  trust in Providence   who has brought you here.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٨٩) \textcolor{mygreen}{مِمِ هُىُ نِ مَمَكٖ  * نْدِيٖ مْوٖنْي كِٹِ چَكٖ  * نِؤٗنْيَ قَبُرِ يَكٖ  * نَتَكَ كُيَنْڠَلِيَ }} \\* 
+(289) mimi huyu ni mamake  * nḏiye mwenı̄ kiţi chake  * nionya qaburi yake  * naṯaka kuyangaliya  \\* 
+\E{[Atiya said:] I am his mother --    I bore his birthpangs.    Show me his grave --   I want to see it.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٩٠) \textcolor{mygreen}{يٗوَ مْوٖنْيٖ مَمْلَكَه  * لَكٖ هٗنْدٗوَ كِوٖكَ  * وَلَ مِمِ سِكُتَكَ  * أَئِفَرِكِ دُنِيَ }} \\* 
+(290) yowa mwenye mamlakah  * lake honḏowa kiweka  * wala mimi sikuṯaka  * aifariki ḏuniya  \\* 
+\E{[Ali said:] Know that the Almighty   [his way] is to take people away and bring [them into existence],   and I did not want    [ja'far] to pass away.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٩١) \textcolor{mygreen}{نَوٖ صُبِرِ نْدُيَنْڠُ  * أُسِپٗتٖيْ كّوَ مْنْڠُ  * وَلَ هُتٗكٗسَ فُنْڠُ  * لَ أَجٖرَ نَ دُنِيَ }} \\* 
+(291) nawe ṣubiri nḏuyangu  * usipoṯee kkwa mngu  * wala huṯokosa fungu  * la ajera na ḏuniya  \\* 
+\E{And have trust [in God], my dear,   so that you do not go astray from God's [path].   or you will not receive your share   in the next world and this one.    } \\ 
+\\[8mm] 
+
+\textarabic{(٢٩٢) \textcolor{mygreen}{هُمُؤٗوَ كِپُلِكَ  * مَتٗزِ يَكِمْشُكَ  * هَپٗ كَشُكَ عَطِكَ  * أَكَتَمْكَ عَلِيَ }} \\* 
+(292) humuowa kipulika  * maṯozi yakimshuka  * hapo kashuka 'aṭika  * akaṯamka 'aliya  \\* 
+\E{[Atiya] looked at him, listening,  tears falling.  Then Atiya stopped crying   and Ali spoke.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٩٣) \textcolor{mygreen}{هَپٗ عَلِيْ حَيْدَرِ  * بَسِ نَاءٖ كَفَسِرِ  * مْبٗنَ هَكُيَ زُبٖيْرِ  * أُيِنٖ پْوٖكٖ عَلِيَ }} \\* 
+(293) hapo 'alii ḥayḏari  * basi nae kafasiri  * mbona hakuya zubēri  * uyine pweke 'aliya  \\* 
+\E{Sp Ali the Lionlike   spoke to her then:   Why did Zubeir not come [with you]?   Did you come by yourself, Atiya?   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٩٤) \textcolor{mygreen}{أُنِئٖٹٖيْ بَرُوَ  * كَٹِكَ كُئِفُنْڠُوَ  * أَلِپٗ سِكُمُيُوَ  * وَلَ سِكُمْزٖنْڠٖيَ }} \\* 
+(294) unieţee baruwa  * kaţika kuifunguwa  * alipo sikumuyuwa  * wala sikumzengeya  \\* 
+\E{[Atiya said:] You sent me a letter,  and when I opened it  I took no heed of where he was,  and I did not look for him.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٩٥) \textcolor{mygreen}{بَرُوَ كِئِفَسِرِ  * نْدِيَ نَلِئِعَبِرِ  * هَنْدَ سَسَ كُفِكِرِ  * يَنَبُهِ كُنِنْڠِيَ }} \\* 
+(295) baruwa kiifasiri  * nḏiya nalii'abiri  * hanḏa sasa kufikiri  * yanabuhi kuningiya  \\* 
+\E{When I realised what was in the letter  I set out on the road --   I am beginning now to realise   I put myself in danger.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٩٦) \textcolor{mygreen}{فَطِمَ كَمْكَلِمُ  * أَكَمْپَ مَجِ يَمُ  * دُعَ سَبَا تِمَمُ  * نْدَنِ أَلِيَسٗمٖيَ }} \\* 
+(296) faṭima kamkalimu  * akampa maji yamu  * ḏu'a sabā ṯimamu  * nḏani aliyasomeya  \\* 
+\E{Fatima spoke to her,  and gave her sweet water --   seven whole prayers   she had read into it.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٩٧) \textcolor{mygreen}{أَكَمْجِبُ كَلِمَ  * سِيَوٖزِ يَ فَتُمَ  * مٗيٗ نِنَ هَلِمَمَ  * رُوْحُ يَتَكَ كُلِيَ }} \\* 
+(297) akamjibu kalima  * siyawezi ya faṯuma  * moyo nina halimama  * rūḥu yaṯaka kuliya  \\* 
+\E{[Atiya] answered her with the words:  I cannot [take it], oh Fatima --   my heart is in confusion,   and my soul wants to cry out.   } \\ 
+\\[8mm] 
+
+\textarabic{(٢٩٨) \textcolor{mygreen}{صُبِرِ كْوَ بْوَنَ وٖٹُ  * عَطِكَ مَاءِ سِ كِٹُ  * چِجَ مَٹَمَ مَٹَٹُ  * يَبَكِيٖؤٗ تَٹُوَ }} \\* 
+(298) ṣubiri kwa bwana weţu  * 'aṭika mai si kiţu  * chija maţama maţaţu  * yabakiyeo ṯaţuwa  \\* 
+\E{[Fatima replied:] Trust in our Lord,    Atiya, the water is no small thing --    take three sips,   and whatever is left I will take.  } \\ 
+\\[8mm] 
+
+\textarabic{(٢٩٩) \textcolor{mygreen}{مََءِ أَسِپٗيَتَكَ  * مِيٗمٗنِ كَيَپٖكَ  * أَكَٹُمْوَ نَ عَطِكَ  * فَتُمَ كَمْپٗكٖيَ }} \\* 
+(299) maai asipoyaṯaka  * miyomoni kayapeka  * akaţumwa na 'aṭika  * faṯuma kampokeya  \\* 
+\E{Although [Atiya] did not really want the water,  she took some into her mouth.  [The cup] was given back by Atiya,   and Fatima took it. (?)  } \\ 
+\\[8mm] 
+
+\textarabic{(٣٠٠) \textcolor{mygreen}{هَپٗ كَمْكَلِفِشَ  * وَ عَظِ كُمُؤٗنٖشَ  * مَاءِ أَلِپٗيَشُشَ  * مُنْڠُ أَكَمُؤٗمْبٖيَ }} \\* 
+(300) hapo kamkalifisha  * wa 'aẓi kumuonesha  * mai alipoyashusha  * mungu akamuombeya  \\* 
+\E{So Fatima persuaded her  and showed her [what to do] by exhortation. (?)   When [Atiya] had swallowed the water  [Fatima] prayed to God for her.  } \\ 
+\\[8mm] 
+
+\textarabic{(٣٠١) \textcolor{mygreen}{نَسِ هَپٗ أَمُؤُزٖ  * زَ مْوَنَوٖ جَبَرِزٖ  * نَ عَلِيْ أَمْوٖلٖزٖ  * كِشَ أَكِلِيَ }} \\* 
+(301) nasi hapo amuuze  * za mwanawe jabarize  * na 'alii amweleze  * kisha akiliya  \\* 
+\E{Then [Atiya] asked   for news of her son,   and Ali explained [everything] to her   weeping at the end.  } \\ 
+\\[8mm] 
+
+\textarabic{(٣٠٢) \textcolor{mygreen}{هَتَ كُكِپَمْبَؤُكَ  * فَتُمَ أَكَئِنُكَ  * كَمْپِكِيَ عَطِكَ  * وَكَلَ وٗتٖ پَمٗيَ }} \\* 
+(302) haṯa kukipambauka  * faṯuma akainuka  * kampikiya 'aṭika  * wakala woṯe pamoya  \\* 
+\E{Until, when dawn came,  Fatima got up  and cooked [food] for Atiya  and they all ate together.   } \\ 
+\\[8mm] 
+
+\textarabic{(٣٠٣) \textcolor{mygreen}{عَطِكَ أَكَبَئِنِ  * سَسَ نَمِ كْوَ خٖرِنِ  * مْوَنَنْڠُ أُكٗ مُئِنِ  * مْٹُ سِكُمُوَتِيَ }} \\* 
+(303) 'aṭika akabaini  * sasa nami kwa kherini  * mwanangu uko muini  * mţu sikumuwaṯiya  \\* 
+\E{Atiya spoke:  Now I [bid you] farewell.    My son is at home   and I left no-one with him.  } \\ 
+\\[8mm] 
+
+\textarabic{(٣٠٤) \textcolor{mygreen}{نَ فَتُمَ أَتَمْكَ  * أَمْوَمْبِيٖ مُمٖ وَكٖ  * نَاوٖ نٖنْدَ كَمْپٖكٖ  * أَسٖنْدٖ پْوٖكٖ عَطِيَ }} \\* 
+(304) na faṯuma aṯamka  * amwambiye mume wake  * nāwe nenḏa kampeke  * asenḏe pweke 'aṭiya  \\* 
+\E{And Fatima spoke   and said to her husband:   And you go and accompany her   so that Atiya will not go on her own.   } \\ 
+\\[8mm] 
+
+\textarabic{(٣٠٥) \textcolor{mygreen}{عَلِيْ كَنْڠِيَ نْدَنِ  * كْوَ مْكٗنٗ كَبَئِنِ  * أَكَئِنُكَ كِٹِنِ  * فَتُمَ أَكَمْوٖنْدٖيَ }} \\* 
+(305) 'alii kangiya nḏani  * kwa mkono kabaini  * akainuka kiţini  * faṯuma akamwenḏeya  \\* 
+\E{Ali went into the inner [room]   and signalled [Fatima] with his hand.   She rose from her chair,  Fatima, and went to him.  } \\ 
+\\[8mm] 
+
+\textarabic{(٣٠٦) \textcolor{mygreen}{كَْبَ چٖنْدَ كِمْيٖكَ  * فَتُمَ هُتٗؤُذِكَ  * كْوَمْبَ وَٹُ هُتَمْكَ  * كَمَ هَيٗ كُنَمْبِيَ }} \\* 
+(306) kaba chenḏa kimyeka  * faṯuma huṯoudhika  * kwamba waţu huṯamka  * kama hayo kunambiya  \\* 
+\E{He said: If I go and accompany her,   Fatima, will you not be angry  if people talk [about it]   and gossip about me? (?)   } \\ 
+\\[8mm] 
+
+\textarabic{(٣٠٧) \textcolor{mygreen}{كَنٖنَ شَهِدِ مْنْڠُ  * هَيَمٗ مٗيٗنِ مْوَنڠُ  * سَسَ نِ كَمَ نْدُيَنْڠُ  * نَ قَاسِمُ نِ مَمٗيَ }} \\* 
+(307) kanena shahiḏi mngu  * hayamo moyoni mwangu  * sasa ni kama nḏuyangu  * na qāsimu ni mamoya  \\* 
+\E{She said: I swear to God,   [such things] are not in my heart.   [Atiya] is like a sister to me --     the same as Qasim. (?)    } \\ 
+\\[8mm] 
+
+\textarabic{(٣٠٨) \textcolor{mygreen}{هَپٗ عَلِيْ كَتٗكَ  * كَنْدَمَنَ نَ عَطِكَ  * أَكٖنْدَ أَكَمْپٖكَ  * هَتَ كْوَءٗ أَكَنْڠِيَ }} \\* 
+(308) hapo 'alii kaṯoka  * kanḏamana na 'aṭika  * akenḏa akampeka  * haṯa kwao akangiya  \\* 
+\E{So Ali went out   and went along with Atiya.   He went and accompanied her  until he reached her home.   } \\ 
+\\[8mm] 
+
+\textarabic{(٣٠٩) \textcolor{mygreen}{هَپٗ عَلِيْ حَيْدَرِ  * أَكَصَلِ أَظُهُرِ  * كَنْدَمَنَ نَ زُبٖيْرِ  * مُئِنِ أَكَرٖجٖيَ }} \\* 
+(309) hapo 'alii ḥayḏari  * akaṣali aẓuhuri  * kanḏamana na zubēri  * muini akarejeya  \\* 
+\E{Then Ali the Lionlike   said the midday prayers  and walked along with Zubeir   and returned to the town.  } \\ 
+\\[8mm] 
+
+\textarabic{(٣١٠) \textcolor{mygreen}{نَ هَپٗ أَلِپٗرُدِ  * نْدِپٗ أَلِپٗرَدِدِ  * مَنٖنٗ كِجِتَهِدِ  * مصَحَبَ كِوَمْبِيَ }} \\* 
+(310) na hapo aliporuḏi  * nḏipo aliporaḏiḏi  * maneno kijiṯahiḏi  * mṣaḥaba kiwambiya  \\* 
+\E{And when he returned,   it was then that he repeated [the story],  striving for [exact] words,  telling the Companions.  } \\ 
+\\[8mm] 
+
+\textarabic{(٣١١) \textcolor{mygreen}{هَپَ نِمٖٹِيَ تَمَ  * بَيْتِ زَنْڠُ هُكٗمَ  * نَ أَمْبَؤٗ وَتَسٗمَ  * كْوَ زٗتٖ زِكَوٖلٖيَ }} \\* 
+(311) hapa nimeţiya ṯama  * bayṯi zangu hukoma  * na ambao waṯasoma  * kwa zoṯe zikaweleya  \\* 
+\E{Here I have finished,   my verses have come to an end,   and whoever reads them   will be made aware of everything [that happened].   } \\ 
+\\[8mm] 
+
+\textarabic{(٣١٢) \textcolor{mygreen}{بَيْتِزٖ زِيُوٖنِ  * مْٹُ أَكَزِبَئِنِ  * أَصُبُحِ نَ جِيٗنِ  * مٗيٗ أُسٗپُنْڠُلِيَ }} \\* 
+(312) bayṯize ziyuweni  * mţu akazibaini  * aṣubuḥi na jiyoni  * moyo usopunguliya  \\* 
+\E{Know that [the poem's] verses,  if a person says them  morning and evening.   his heart will not waver. (?)  } \\ 
+\\[8mm] 
+
+\textarabic{(٣١٣) \textcolor{mygreen}{كْوَنْدَ هَتٗذَلِلِكَ  * مْٹُيٖ هَتٗسُمْبُكَ  * نَ أَتَكَلٗتَمْكَ  * مٗلَ هُمُوَفِقِيَ }} \\* 
+(313) kwanḏa haṯodhalilika  * mţuye haṯosumbuka  * na aṯakaloṯamka  * mola humuwafiqiya  \\* 
+\E{At first it will not be obvious (?),  but that person will not be troubled,  and whatever he asks for  the Lord will bring to him.  } \\ 
+\\[8mm] 
+
+\textarabic{(٣١٤) \textcolor{mygreen}{أَؤٗمْبَلٗ كْوَ وَهَابُ  * أَتَجِبُوَ جَوَبُ  * أَوْ مْٹُ نَجَرِبُ  * أَدَلِلِشٖ وَصِيَ }} \\* 
+(314) aombalo kwa wahābu  * aṯajibuwa jawabu  * aw mţu najaribu  * aḏalilishe waṣiya  \\* 
+\E{Whatever he prays for from the Generous One,   he will be vouchsafed an answer,  and let the person try   to make [God's] admonitions obvious. (?)  } \\ 
+\\[8mm] 
+
+\textarabic{(٣١٥) \textcolor{mygreen}{نِمٖپٖنْدَ كُكَرِرِ  * نَنْيِ سٗمَنِ ضَمِيْرِ  * أُتٖنْدِ وَ جَعْفَرِ  * وَ مَوْلَانَا عَلِيَ }} \\* 
+(315) nimepenḏa kukariri  * nanyi somani ḍamı̄ri  * uṯenḏi wa ja'fari  * wa mawlānā 'aliya  \\* 
+\E{I have enjoyed reciting it,  and you, read it inwardly --   the Ballad of Ja'far   and Lord Ali.   } \\ 
+\\[8mm] 
+
+\end{center} 
 
 \renewcommand{\bibname}{References} 
 \begingroup 

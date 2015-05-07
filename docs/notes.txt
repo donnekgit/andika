@@ -15,9 +15,11 @@ php convert/convert.php convert/inputs/jaafari/jaafari.odt+Arabic+Poetry+pdf+vip
 Do the addition of the English translation in chunks of 20 stanzas, to make the pdf generation faster.
 Set the query in SQL Workbench to call only those 20 stanzas from jaafari_words.
 select word_id, stanza, loc, position, edclose, english from jaafari_words where stanza between 80 and 100 order by stanza, loc, position;
+
 To generate the pdf run:
 php db/output_pdf.php jaafari
 But output_pdf.php needs to be edited directly to output only the chunk of 20 stanzas, eg:
+$sql=query("select stanza from $words where stanza between 180 and 200 group by stanza order by stanza;");
 Could add this as another argument to the command?
 
 

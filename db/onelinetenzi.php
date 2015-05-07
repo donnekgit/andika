@@ -37,7 +37,8 @@ $words="{$poem}_words";
 $stanza_contents="";  // set up a holder for the contents of the whole stanza
 // $columns="rrl";  // Set up the columns for the main table which will hold the text.
 $columns="cl"; 
-$colour1="mygreen";  // Colour for the Arabic text if desired..
+$colour1="mygreen";  // Colour for the Arabic text if desired.
+$prev="z";
 
 $first_half=array('a', 'c', 'e', 'g', 'i', 'k', 'm', 'o', 'q', 's', 'u', 'w', 'y');  // vipande which signify the beginning of a line
 
@@ -60,8 +61,9 @@ fwrite($fp, $title);
 fwrite($fp, "\n\n\n");
 
 // Set up the layout.
-fwrite($fp, "\begin{longtable}{{$columns}} \n\n");
+//fwrite($fp, "\begin{longtable}{{$columns}} \n\n");
 // fwrite($fp, "\makebox[8cm][r]{} & & \makebox[8cm][r]{} \\\\ \n\n"); 
+fwrite($fp, "\begin{center} \n\n");
 
 // Collect the content from the table.
 //$sql=query("select stanza from $words where stanza between 200 and 220 group by stanza order by stanza;");  // Collect all the stanza numbers.
@@ -80,6 +82,7 @@ while ($row=pg_fetch_object($sql))
     $sql_loc=query("select distinct loc from $words where stanza=$stanza order by loc;");
     while ($row_loc=pg_fetch_object($sql_loc))
     {
+        $prev=$kipande;
         $kipande=$row_loc->loc;
         
         $sql_w=query("select * from $words where stanza=$stanza and loc='$kipande' order by position;");  // Collect the words of each kipande.
@@ -119,72 +122,35 @@ while ($row=pg_fetch_object($sql))
             $trans_line.=$trans." ";  
             $english_line.=$english." ";
         }
-
-        if (in_array($kipande, $first_half))
+        if ($prev!=$kipande)
         {
-            $first_kip=$kipande;
-            $a_arabic=trim($arabic_line);
-            $a_close=trim($close_line);
-            $a_trans=trim($trans_line);
-            $a_english=trim($english_line);
-            unset($arabic_line, $close_line, $trans_line, $english_line);  // Clear the contents of the first kipande.
-        }
-        else
-        {
-            $close_kip=$kipande."/".$first_kip;
-            $trans_kip=$first_kip."/".$kipande;
-            $b_arabic=trim($arabic_line);
-            $b_close=trim($close_line);
-            $b_trans=trim($trans_line);
-            $b_english=trim($english_line);
-            $double=1;
-        }
-
-        if($double==1)  // We have two kipande on the line, so print them.
-        {
-//             fwrite($fp, "\\textcolor{{$colour1}}{\\textarabic{".$b_arabic."}} & \\textcolor{{$colour1}}{\\textarabic{".$a_arabic."}} & ");
-		fwrite($fp, "\\textcolor{{$colour1}}{\\textarabic{".$a_arabic." * ".$b_arabic."}} & ");
-
-            if (substr($close_kip, 0, 1)=="b") // only put an Arabic number against the first line of the stanza
-            {
-                fwrite($fp, "\\textarabic{".convert_numbers($stanza)."} \\\\* \n");
-            }
-            else
-            {
-                fwrite($fp, " \\\\* \n");  
-            }
-            //fwrite($fp, "\Tr{".$b_close."} & \\Tr{".$a_close."} &  \Tr{".$stanza.$close_kip."} \\\\* \n");
-            //fwrite($fp, "\multicolumn{2}{r}{\Swa{".$a_trans." * ".$b_trans."}} & \Swa{".$stanza.$trans_kip."} \\\\* \n");
-//             fwrite($fp, "\multicolumn{2}{r}{".$a_trans." * ".$b_trans."} & ".$stanza.$trans_kip." \\\\* \n");
-//             fwrite($fp, "\multicolumn{2}{r}{\E{".$a_english." ".$b_english."}} & \\\\[2mm] \n");
-            fwrite($fp, $a_trans." * ".$b_trans." & ".$stanza.$trans_kip." \\\\* \n");
-            fwrite($fp, "\E{".$a_english." ".$b_english."} & \\\\[2mm] \n");
-           
-            echo $stanza.$close_kip.": ".$a_trans." + ".$b_trans."\n";
-            unset($double, $arabic_line, $close_line, $trans_line, $english_line);
-        }
-        elseif ($kipande==$maxkip)  // handle stanzas with an odd number of vipande
-	// if the line doesn't have two vipande ($double), check if its loc is the last loc of the stanza, and if it is, print it anyway
-        {
-	    //fwrite($fp, " & \\textarabic{".$a_arabic."} & ");
-	    fwrite($fp, "\multicolumn{2}{r}{\\textcolor{{$colour1}}{\\textarabic{".$a_arabic."}}} & ");
-	    //fwrite($fp, " & \\textcolor{{$colour1}}{\\textarabic{".$a_arabic."}} & ");
-	    fwrite($fp, " \\\\* \n");
-	   // fwrite($fp, " & \\Tr{".$a_close."} &  \Tr{".$stanza.$kipande."} \\\\* \n");
-           // fwrite($fp, "\multicolumn{2}{r}{\Swa{".$a_trans."}} & \Swa{".$stanza.$kipande."} \\\\* \n");
-            fwrite($fp, "\multicolumn{2}{r}{".$a_trans."} & ".$stanza.$kipande." \\\\* \n");
-            fwrite($fp, "\multicolumn{2}{r}{\E{".$a_english."}} & \\\\ \n");
-            
-	    echo $stanza.$kipande.": ".$a_trans."\n";
-        }  
+	    $arabic_line=$arabic_line." * ";
+	    $close_line=$close_line." * ";
+            $trans_line=$trans_line." * ";  
+            //$english_line=$english_line." * ";
+	}
     }
     
-    fwrite($fp, "\\\\[6mm] \n\n");
+    $arabic_line=substr($arabic_line, 0, -3);
+    $close_line=substr($close_line, 0, -3);
+    $trans_line=substr($trans_line, 0, -3);  
+    //$english_line=substr($english_line, 0, -3); 
+    
+    echo $trans_line;
+    fwrite($fp, "\\textarabic{(".convert_numbers($stanza).") \\textcolor{{$colour1}}{".$arabic_line."}} \\\\* \n");
+//     fwrite($fp, $close_line." & ".$stanza." \\\\* \n");
+    fwrite($fp, "(".$stanza.") ".$trans_line." \\\\* \n");
+    fwrite($fp, "\E{".$english_line."} \\\\ \n");
+    unset($arabic_line, $close_line, $trans_line, $english_line);
+    
+    fwrite($fp, "\\\\[8mm] \n\n");
     echo "\n";
 }
 
 // Close off the layout.
-fwrite($fp, "\\end{longtable} \n\n");
+//fwrite($fp, "\\end{longtable} \n\n");
+fwrite($fp, "\\end{center} \n\n");
+
 
 // ===== Endnotes =====
 // If you need endnotes instead of footnotes, uncomment the following three lines.

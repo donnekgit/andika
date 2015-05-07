@@ -42,6 +42,7 @@ function ar2rom($text)
 	$text=preg_replace("/\x{0626}/u", "", $text);  // yeh+hamza
 	$text=preg_replace("/\x{0649}/u", "y", $text);  // alef maksura
 	$text=preg_replace("/\x{0657}/u", "o", $text);  // inverted damma
+	$text=preg_replace("/\x{065D}/u", "o", $text);  // reversed damma
 	$text=preg_replace("/\x{064F}/u", "u", $text);  // damma
 	$text=preg_replace("/\x{0648}/u", "w", $text);  // waw
 	$text=preg_replace("/\x{0624}/u", "", $text);  // waw+hamza
@@ -92,6 +93,7 @@ function ar2rom($text)
 	$text=preg_replace("/\x{0639}/u", "U+02BE", $text);  // ain - glottal stop diacritic
 	$text=preg_replace("/\x{063A}/u", "gh", $text);  // ghain
 	$text=preg_replace("/\x{06A0}/u", "g", $text);  // ain with three dots - g
+	$text=preg_replace("/\x{06AF}/u", "g", $text);  // gaf - g
 	$text=preg_replace("/\x{075D}/u", "ng", $text);  // ain with two dots - used in ŋ
 
 	$text=preg_replace("/\x{0642}/u", "q", $text);  // qaf
@@ -104,7 +106,8 @@ function ar2rom($text)
 	$text=preg_replace("/\x{0644}/u", "l", $text);  // lam
 	$text=preg_replace("/\x{0645}/u", "m", $text);  // meem
 	$text=preg_replace("/\x{0646}/u", "n", $text);  // noon
-	
+	$text=preg_replace("/\x{0767}/u", "ny", $text);  // noon with two dots below - ny
+
 	$text=preg_replace("/\x{0647}/u", "h", $text);  // heh
 	$text=preg_replace("/\x{0629}/u", "U+0629", $text);  // teh marbuta
 
@@ -221,7 +224,7 @@ function close_trans($text)
 	$text=preg_replace("/uw'([aiu])/", "ū'$1", $text);
 
 	$text=preg_replace("/([ei])y\b/u", "$1$1", $text); // word-final ey, iy > ee, ii
-	$text=preg_replace("/([ou])w\b/u", "$1$1", $text); // word-final oy, uy > oo, uu
+	$text=preg_replace("/([ou])w\b/u", "$1$1", $text); // word-final ow, uw > oo, uu
 	
 	// U below to cover any Unicode sequences as well
 	$text=preg_replace("/ey([bcdfghjklmnpqrstvwyz'U])/", "ē$1", $text);
@@ -245,7 +248,7 @@ function close_trans($text)
 
 	//$text=preg_replace("/v/", "U+0077U+0331", $text);  // v > w+underline (Bajuni)
 	
-	$text=preg_replace("/gh/", "ḡ", $text);  // (Mkunumbi)
+	//$text=preg_replace("/gh/", "ḡ", $text);  // (Mkunumbi)
 	$text=preg_replace("/U\+06CF/", "wU+0331", $text);  // waw+dot > w̱
     //$text=preg_replace("/U\+06CF/", "w", $text);  // waw+dot > w (Bajuni)
 
