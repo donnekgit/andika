@@ -25,14 +25,14 @@ If not, see <http://www.gnu.org/licenses/>.
 
 function ar2rom($text)
 {
-	$text=preg_replace("/\x{067E}\x{0647}/u", "pU+02BF", $text); // peh+aspiration
-	$text=preg_replace("/\x{062A}\x{0647}/u", "tU+02BF", $text); // teh+aspiration
-	$text=preg_replace("/\x{0643}\x{0647}/u", "kU+02BF", $text); // kaf+aspiration
+	$text=preg_replace("/\x{067E}\x{0647}/u", "pU+02B0", $text); // peh+aspiration
+	$text=preg_replace("/\x{062A}\x{0647}/u", "tU+02B0", $text); // teh+aspiration
+	$text=preg_replace("/\x{0643}\x{0647}/u", "kU+02B0", $text); // kaf+aspiration
 	$text=preg_replace("/\x{064A}\x{0654}/u", "", $text); // yeh+hamza - if this combination is used instead of 0678
 	//$text=preg_replace("/\x{06A0}\x{062D}/u", "gh", $text); // g+h > gh  // possibility for typing correction
 
 	$text=preg_replace("/\x{0627}/u", "L", $text);  // alef
-	$text=preg_replace("/\x{0622}/u", "", $text);  // alef+madda
+	$text=preg_replace("/\x{0622}/u", "ã", $text);  // alef+madda
 	$text=preg_replace("/\x{0623}/u", "", $text);  // alef+hamza above
 	$text=preg_replace("/\x{0625}/u", "", $text);  // alef+hamza below
 	$text=preg_replace("/\x{064E}/u", "a", $text);  // fatha
@@ -90,7 +90,7 @@ function ar2rom($text)
 	$text=preg_replace("/\x{0637}/u", "U+0637", $text);  // tah - t
 	$text=preg_replace("/\x{0638}/u", "U+0638", $text);  // zah - dh
 	
-	$text=preg_replace("/\x{0639}/u", "U+02BE", $text);  // ain - glottal stop diacritic
+	$text=preg_replace("/\x{0639}/u", "U+02BF", $text);  // ain - glottal stop diacritic
 	$text=preg_replace("/\x{063A}/u", "gh", $text);  // ghain
 	$text=preg_replace("/\x{06A0}/u", "g", $text);  // ain with three dots - g
 	$text=preg_replace("/\x{06AF}/u", "g", $text);  // gaf - g
@@ -135,6 +135,8 @@ function ar2rom($text)
 
 function standardise($text)
 {
+	$text=preg_replace("/ã/", "a", $text);  // alef+madda
+	
 	$text=preg_replace("/L([aeiou])/", "$1$2", $text);  // Ustadh Mau initial vowels use alif as carrier, without hamza
 	
 // 	$text=preg_replace("/U\+207F/", "", $text);  // {fatha|damma|kasra}tan > nothing
@@ -146,7 +148,7 @@ function standardise($text)
 	$text=preg_replace("/U\+0636U\+0651/", "dh", $text);  // ḍad + shadda > CC
     	$text=preg_replace("/U\+0637U\+0651/", "t", $text);  // ṭah + shadda > CC
     	$text=preg_replace("/U\+0638U\+0651/", "dh", $text);  // ẓah + shadda > CC
-    	
+
 	// Arabic prepositions
 	$text=preg_replace("/biLl([bcdfghjklmnpqrstvwyz])[bcdfghjklmnpqrstvwyz]?/", "bi-$1", $text);  // repetition to deal with shadda
 	$text=preg_replace("/waLl([bcdfghjklmnpqrstvwyz])[bcdfghjklmnpqrstvwyz]?/", "wa-$1", $text);  // repetition to deal with shadda
@@ -173,11 +175,11 @@ function standardise($text)
 	
 	$text=preg_replace("/U\+0308/", "a", $text);  // superscript alef
 
-	$text=preg_replace("/pU\+02BF/", "p", $text);  // p+aspiration > p
-	$text=preg_replace("/tU\+02BF/", "t", $text);  // t+aspiration > t
-	$text=preg_replace("/kU\+02BF/", "k", $text);  // k+aspiration > k
+	$text=preg_replace("/pU\+02B0/", "p", $text);  // p+aspiration > p
+	$text=preg_replace("/tU\+02B0/", "t", $text);  // t+aspiration > t
+	$text=preg_replace("/kU\+02B0/", "k", $text);  // k+aspiration > k
 	
-	$text=preg_replace("/U\+02BE/", "'", $text);  // ain > '
+	$text=preg_replace("/U\+02BF/", "'", $text);  // ain > '
 
 	$text=preg_replace("/U\+0679/", "t", $text);  // alveolar t > t
 	$text=preg_replace("/U\+0688/", "d", $text);  // alveolar d > d
@@ -206,7 +208,7 @@ function standardise($text)
 function close_trans($text)
 {
 	$text=preg_replace("/L([aeiou])/", "$1$2", $text);  // Ustadh Mau initial vowels use alif as carrier, without hamza
-    
+
 	$text=preg_replace("/(Ll)?([bcdfghjklmnpqrstvwyz])U\+0651/", "$2$2", $text);  // shadda > CC
 	
 	// deal with shadda in Arabic text
@@ -214,6 +216,7 @@ function close_trans($text)
     	$text=preg_replace("/U\+0636U\+0651/", "U+0636U+0636", $text);  // ḍad + shadda > CC
     	$text=preg_replace("/U\+0637U\+0651/", "U+0637U+0637", $text);  // ṭah + shadda > CC
     	$text=preg_replace("/U\+0638U\+0651/", "U+0638U+0638", $text);  // ẓah + shadda > CC
+    	$text=preg_replace("/nyaU\+0651/", "nyya", $text);  // ẓah + shadda > CC
 
 	// Arabic prepositions
 	$text=preg_replace("/biLl([bcdfghjklmnpqrstvwyz])[bcdfghjklmnpqrstvwyz]?/", "bi-$1$1", $text);  // repetition to deal with shadda
@@ -223,6 +226,7 @@ function close_trans($text)
 	$text=preg_replace("/iy'([aiu])/", "ī'$1", $text); // dirī'i
 	$text=preg_replace("/uw'([aiu])/", "ū'$1", $text);
 
+	// Temporarily commented out to handle R.
 	$text=preg_replace("/([ei])y\b/u", "$1$1", $text); // word-final ey, iy > ee, ii
 	$text=preg_replace("/([ou])w\b/u", "$1$1", $text); // word-final ow, uw > oo, uu
 	
@@ -290,11 +294,11 @@ function prep_rom($text)
 	$text=preg_replace("/hariri/", "ḥariri", $text);
 
 	// VC[C][C]V# - mark penultimate syllable as long
-	$text=preg_replace("/a([bcdfghjklmnpqrstvwyz](b|dr?|gw?|hw?|k|n|rc?|v|w|y)?[aeiou]\b)/", "aL$1", $text); // a > aL
-	$text=preg_replace("/e([bcdfghjklmnpqrstvwyz](b|dr?|gw?|hw?|k|n|rc?|v|w|y)?[aeiou]\b)/", "ey$1", $text); // e > ey
-	$text=preg_replace("/i([bcdfghjklmnpqrstvwyz](b|dr?|gw?|hw?|k|n|rc?|v|w|y)?[aeiou]\b)/", "iy$1", $text);  // i > iy
-	$text=preg_replace("/o([bcdfghjklmnpqrstvwyz](b|dr?|gw?|hw?|k|n|rc?|v|w|y)?[aeiou]\b)/", "ow$1", $text);  // o > ow
-	$text=preg_replace("/u([bcdfghjklmnpqrstvwyz](b|dr?|gw?|hw?|k|n|rc?|v|w|y)?[aeiou]\b)/", "uw$1", $text);  // u > uw
+	$text=preg_replace("/a([bcdfghjklmnpqrstvwyz](b|dr?|gw?|hw?|jw?|k|n|rc?|v|w|y|z)?[aeiou]\b)/", "aL$1", $text); // a > aL
+	$text=preg_replace("/e([bcdfghjklmnpqrstvwyz](b|dr?|gw?|hw?|jw?|k|n|rc?|v|w|y|z)?[aeiou]\b)/", "ey$1", $text); // e > ey
+	$text=preg_replace("/i([bcdfghjklmnpqrstvwyz](b|dr?|gw?|hw?|jw?|k|n|rc?|v|w|y|z)?[aeiou]\b)/", "iy$1", $text);  // i > iy
+	$text=preg_replace("/o([bcdfghjklmnpqrstvwyz](b|dr?|gw?|hw?|jw?|k|n|rc?|v|w|y|z)?[aeiou]\b)/", "ow$1", $text);  // o > ow
+	$text=preg_replace("/u([bcdfghjklmnpqrstvwyz](b|dr?|gw?|hw?|jw?|k|n|rc?|v|w|y|z)?[aeiou]\b)/", "uw$1", $text);  // u > uw
 
 	// Get rid of redundant longs
 	$text=preg_replace("/ww/", "w", $text);  // kuwa

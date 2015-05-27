@@ -61,7 +61,7 @@ elseif ($output="db")
     {
         $roman=pg_escape_string($roman);
     }
-    $sql=query("insert into ".$poem." (stanza, loc, arabic, standard, close) values ($stanza_no, '$key', '$arabic', '$roman', '$close')");
+    $sql=query("insert into ".$poem." (msno, stanza, loc, arabic, standard, close) values ($msno, $stanza_no, '$key', '$arabic', '$roman', '$close')");
 }
 
 echo $stanza_no.$key.": ".$roman."\n";

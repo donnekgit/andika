@@ -62,7 +62,7 @@ while ($row=pg_fetch_object($sql))
 	{
 		echo $arabic_value."\n";
 		$arabic_value=trim($arabic_value);
-		$sql_a=query("insert into $words (stanza, loc, position, arabic) values ('$row->stanza', '$row->loc', '$i', '$arabic_value');");
+		$sql_a=query("insert into $words (msno, stanza, loc, position, arabic) values ($row->msno, $row->stanza, '$row->loc', '$i', '$arabic_value');");
         $i=++$i; 
 	}
 	
@@ -71,7 +71,7 @@ while ($row=pg_fetch_object($sql))
 	foreach ($close_bits as $close_value)
 	{
 		echo $close_value."\n";
-		$sql_c=query("update $words set close='$close_value', edclose='$close_value' where stanza=$row->stanza and loc='$row->loc' and position=$j;");
+		$sql_c=query("update $words set close='$close_value' where stanza=$row->stanza and loc='$row->loc' and position=$j;");
 		$j=++$j; 
 	}
 	
@@ -89,7 +89,8 @@ echo "\nRe-integrating previous edits.\n\n";
 
 // ===== Fresh import =====
 // Comment out the following line to do a completely fresh import:
-$sql_n=query("update $words w set (standard, edclose, variant, note, root, english) = (b.standard, b.edclose, b.variant, b.note, b.root, b.english) from $backup b where w.stanza=b.stanza and w.loc=b.loc and w.position=b.position;");
+$sql_n=query("update $words w set (edclose, edstan, emend, variant, note, root, english) = (b.edclose, b.edstan, b.emend, b.variant, b.note, b.root, b.english) from $backup b where w.stanza=b.stanza and w.loc=b.loc and w.position=b.position;");
+
 // ======================
 
 // To insert new stanzas (eg from a new MS) into the middle of existing stanzas, edit them as a separate document first, setting the stanza number to suit, eg 5 stanzas which run from 116 to 120, and import as a table.  Then move the numbering of existing stanzas forward (update stanza set stanza=stanza+5 where stanza>115), and copy the new stanzas into the poem table (insert into existing_stanzas select * from new_stanzas).

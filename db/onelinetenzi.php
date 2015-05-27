@@ -34,13 +34,8 @@ if (empty($argv[1]))
 }
 
 $words="{$poem}_words";
-$stanza_contents="";  // set up a holder for the contents of the whole stanza
-// $columns="rrl";  // Set up the columns for the main table which will hold the text.
-$columns="cl"; 
 $colour1="mygreen";  // Colour for the Arabic text if desired.
 $prev="z";
-
-$first_half=array('a', 'c', 'e', 'g', 'i', 'k', 'm', 'o', 'q', 's', 'u', 'w', 'y');  // vipande which signify the beginning of a line
 
 exec("mkdir -p db/outputs/".$poem);
 
@@ -61,23 +56,15 @@ fwrite($fp, $title);
 fwrite($fp, "\n\n\n");
 
 // Set up the layout.
-//fwrite($fp, "\begin{longtable}{{$columns}} \n\n");
-// fwrite($fp, "\makebox[8cm][r]{} & & \makebox[8cm][r]{} \\\\ \n\n"); 
 fwrite($fp, "\begin{center} \n\n");
 
 // Collect the content from the table.
-//$sql=query("select stanza from $words where stanza between 200 and 220 group by stanza order by stanza;");  // Collect all the stanza numbers.
-$sql=query("select stanza from $words group by stanza order by stanza;");  // Collect all the stanza numbers.
+//$sql=query("select stanza from $words where stanza between 200 and 220 group by stanza order by stanza;");
+$sql=query("select msno, stanza from $words group by stanza, msno order by stanza;");  // Collect all the stanza numbers.
 while ($row=pg_fetch_object($sql))
 {
-    $stanza=$row->stanza;
-    
-    // Set up check for stanzas with odd numbers of lines - get the letter matching the maximum kipande.
-    $sql_nk=query("select max(loc) from $words where stanza=$stanza;");
-    while ($row_nk=pg_fetch_object($sql_nk))
-    {
-	$maxkip=$row_nk->max;
-    }
+    $stanza=$row->stanza;  // Stanza number assigned by the import - always correct.
+    $msno=$row->msno;  // Stanza number written on the MS - can be incorrect.
     
     $sql_loc=query("select distinct loc from $words where stanza=$stanza order by loc;");
     while ($row_loc=pg_fetch_object($sql_loc))
@@ -89,66 +76,78 @@ while ($row=pg_fetch_object($sql))
         while ($row_w=pg_fetch_object($sql_w))
         {
             $arabic=$row_w->arabic;
+            $standard=$row_w->standard;
+            $edstan=$row_w->edstan;
             $close=$row_w->close;
-            $standard=preg_replace("/~/", "", $row_w->standard);
-            $edclose=preg_replace("/~/", "", $row_w->edclose);
+            $edclose=$row_w->edclose;
+            $emend=$row_w->emend;
             $variant=$row_w->variant;
             $note=$row_w->note;
             $root=$row_w->root;
             $english=$row_w->english;
             
-            // Use either edclose or standard as the main transliteration, depending on initial user input. 
-            if ($argv[2]=="standard")
+            if ($edclose!='')  // If the automatic close transliteration has been edited, bring that in instead.  Replace deleted words (~) with a blank.
             {
-                $trans="$standard";
+		$close=preg_replace("/~/", "", $edclose);
             }
-            else
+            
+            if ($edstan!='')  // If the automatic close transliteration has been edited, bring that in instead.  Replace deleted words (~) with a blank.
             {
-                $trans="$edclose";
+		$standard=preg_replace("/~/", "", $edstan);
+            }
+            
+            if ($emend!='')  // Mark emended readings.  If the standard reading has been emended, mark that by entering any character (eg *) in the emend column, and the emended word will then be marked with a dotted underline.  This allows you to distinguish emendations from typographical editing of the reading (eg capitalising proper names).
+            {
+                //$edclose="\\Em{".$edclose."}";  // This and the next line are retained for reference purposes.
+                //$edclose=$edclose."\\footnote{Emend to \\Swa{".$emend."}.}";  // This will use the \Swa{} font (green Biolinum) - change it to another font if desired.
+                $standard="\\dotuline{".$standard."}";
             }
             
             if ($variant!='')  // Add variant readings.
             {
-                $trans=$trans."\\footnote{".$variant."} ";  // Final space in case there are other footnotes.
+                $close=$close."\\footnote{".$variant."}";
             }
             
             if ($note!='')  // Add notes.
             {
-                $trans=$trans."\\footnote{".$note."} ";  // Final space in case there are other footnotes.
+                $standard=$standard."\\footnote{".$note."}";
             }
             
             $arabic_line.=$arabic." ";
-            $close_line.=$close." ";
-            $trans_line.=$trans." ";  
+            //$edclose_line=$edclose." ".$edclose_line;  // This leaves the words of the close transliteration going right to left, following the Arabic script.  Also change the lines below to: $edclose_line=" * ".$edclose_line; and $edclose_line= substr($edclose_line, 3); This approach was shelved in favour of the reverse line below, which allows all the lines to remain the same.
+	    $standard_line.=$standard." ";  
+            $close_line.=$close." ";  
             $english_line.=$english." ";
         }
-        if ($prev!=$kipande)
+        if ($prev!=$kipande)  // Add an asterisk when the kipande is complete.
         {
 	    $arabic_line=$arabic_line." * ";
-	    $close_line=$close_line." * ";
-            $trans_line=$trans_line." * ";  
-            //$english_line=$english_line." * ";
+            $standard_line=$standard_line." * ";  
+            $close_line=$close_line." * ";
 	}
     }
     
+    // Remove the trailing asterisk from the 4-vipande line.
     $arabic_line=substr($arabic_line, 0, -3);
     $close_line=substr($close_line, 0, -3);
-    $trans_line=substr($trans_line, 0, -3);  
-    //$english_line=substr($english_line, 0, -3); 
+    // Reverse the words of the close transliteration so that it goes right-to-left, following the Arabic script (http://docstore.mik.ua/orelly/webprog/pcook/ch01_05.htm).  If you want left-to-right, comment out this line.
+    $close_line=join(' ',array_reverse(explode(' ',$close_line)));  
+    $standard_line=substr($standard_line, 0, -3);  
     
-    echo $trans_line;
+    echo $standard_line;
     fwrite($fp, "\\textarabic{(".convert_numbers($stanza).") \\textcolor{{$colour1}}{".$arabic_line."}} \\\\* \n");
-//     fwrite($fp, $close_line." & ".$stanza." \\\\* \n");
-    fwrite($fp, "(".$stanza.") ".$trans_line." \\\\* \n");
+    //fwrite($fp, "\\SPSB{".$msno."}{".$msno."} (".$stanza.") ".$trans_line." \\\\* \n");
+   // To get an Arabic-script text only, comment out the following 3 lines, and delete the \\\\* from the \textarabic line above.  You also need to adjust the poem_title.tex file if there is one.
+    fwrite($fp, " \\OLTcl{".$close_line."} \\\\* \n");
+    fwrite($fp, "\\SB{".$msno."} (\\textbf{".$stanza."}) \\OLTst{".$standard_line."} \\\\* \n");    
     fwrite($fp, "\E{".$english_line."} \\\\ \n");
-    unset($arabic_line, $close_line, $trans_line, $english_line);
-    
+    unset($arabic_line, $close_line, $edclose_line, $standard_line, $edstan_line, $english_line);
+        
     fwrite($fp, "\\\\[8mm] \n\n");
     echo "\n";
 }
 
 // Close off the layout.
-//fwrite($fp, "\\end{longtable} \n\n");
 fwrite($fp, "\\end{center} \n\n");
 
 

@@ -5,6 +5,15 @@ To remove page numbers from the page, insert in the preamble:
 \pagestyle{empty}
 http://www.wujiewen.com/faq/content/1/47/en/how-to-remove-page-numbers-in-the-latex-documents.html
 
+To put footnotes in two columns:
+\usepackage{dblfnote}
+\DFNruleboth
+This is not perfect, but not too bad.  To put footnotes in a block:
+\usepackage[para]{footmisc}
+This gives somewhat uneven results if there is a mixture of short and long footnotes, ie it works best if the footnotes are uniformly short.
+Force footnotes to the bottom on short pages:
+\usepackage[bottom]{footmisc}
+
 
 Jaafari
 --------
@@ -21,6 +30,10 @@ php db/output_pdf.php jaafari
 But output_pdf.php needs to be edited directly to output only the chunk of 20 stanzas, eg:
 $sql=query("select stanza from $words where stanza between 180 and 200 group by stanza order by stanza;");
 Could add this as another argument to the command?
+
+Refer to other footnotes:
+In the source footnote, put \label{note1}, eg This is some text.\footnote{\label{note1}With a footnote.}
+In the target footnote, put \ref{note1}, eg This is some more text.\footnote{See footnote \ref{note1}.}
 
 
 combining

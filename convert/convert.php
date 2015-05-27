@@ -154,7 +154,11 @@ foreach ($poemlines as $key=>$poemline)
    //echo $poemline;
    if (strlen(trim($poemline)) > 0) // there's text on the line ...  ("empty" lines in a txt file contain a \n character, so we have to trim that off)
     {
-	if (!preg_match("/#/", $poemline))  // This will skip all lines containing #.  This allows you to mark where you are in long poems by putting #nnn before the stanza lines.  See 7.3.3 of the manual and the sample input document andika/convert/inputs/jaafari/jnum.odt.
+	if (preg_match("/#/", $poemline))
+	{
+	    $msno=substr(trim($poemline), 1);
+	}
+	else 
 	{
 	    $stanza_contents[]=$poemline;  // ... so put it into an array
 	}

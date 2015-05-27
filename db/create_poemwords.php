@@ -36,13 +36,16 @@ drop_existing_table($words);
 $sql_table = "
 CREATE TABLE $words (
     word_id serial NOT NULL,
+    msno integer,
     stanza integer,
     loc character varying(5),
     position integer,
     arabic character varying(50),
     close character varying(50),
-    standard character varying(50),	
+    standard character varying(50),
     edclose character varying(50) default '' not null,
+    edstan character varying(50) default '' not null,
+    emend character varying(250) default '' not null,
     variant character varying(250) default '' not null,
     note text default '' not null,
     root character varying(50) default '' not null,

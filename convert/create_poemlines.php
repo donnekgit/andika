@@ -33,6 +33,7 @@ drop_existing_table($poem);
 $sql_table = "
 CREATE TABLE $poem (
     poemline_id serial NOT NULL,
+    msno integer,
     stanza integer,
     loc character varying(5),
     arabic text,

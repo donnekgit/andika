@@ -1,9 +1,17 @@
-\documentclass[a4paper, 12pt]{report}
+\documentclass[a4paper, 10pt]{report}
 
 \usepackage{titlesec}  % Allow the chapter/section heading settings to be fine-tuned.  Needs to come before bidi, in polyglossia.
 \usepackage{polyglossia}  % multilingual support
 \usepackage{longtable}  % tables that carry across multiple pages
 \usepackage[x11names]{xcolor}  % can't use color with polyglossia
+% The following lines set up commands for superscript (SP) and subscript (SB), which can also be stacked (SPSB).
+% These can be used to give the stanza number as appearing in the MS (which, because of human error, can be misnumbered).
+% http://tex.stackexchange.com/questions/8255/superscript-and-subscript-together and http://tex.stackexchange.com/questions/146098/llap-or-rlap-at-the-begining-of-an-indented-paragraph
+\def\SP#1{\textsuperscript{\E{#1}}}
+\def\SB#1{\textsubscript{\E{#1}}}
+\def\SPSB#1#2{\indent\rlap{\textsuperscript{\E{#1}}}\SB{#2}}
+
+\usepackage{ulem}  % Allow dotted underlines.
 
 \usepackage{pdfpages}
 
@@ -13,6 +21,11 @@
 \renewcommand*{\marginfont}{\color{red}\sffamily}
 
 \usepackage{csquotes}
+\newcommand{\q}[1]{\enquote{#1}}  % Mark quotes by using \q{text to be quoted}.
+% \newcommand{\q}[1]{``#1''}  % Alternative when not using csquotes.
+
+\usepackage[multiple]{footmisc}  % Adds commas between multiple footnotemarkers.
+
 % \usepackage{natbib}
 \usepackage[backend=biber, style=authoryear]{biblatex}
 \addbibresource{bib/andika.bib}

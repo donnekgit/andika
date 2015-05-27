@@ -3,9 +3,11 @@
 %--------------------------------
 
 % Note that these definitions malfunction if used in \chapter{}.
-\defaultfontfeatures{Mapping=tex-text}
-\setmainfont{Charis SIL}  % Set the default font for the document. = \setdefaultfont
+% \defaultfontfeatures{Mapping=tex-text}
+\setmainfont[Ligatures=TeX]{Charis SIL}  % Set the default font for the document. = \setdefaultfont
 % Footnotes will by default also use this font -- http://tex.stackexchange.com/questions/4779/how-to-change-font-family-in-footnote).
+% Ligatures=TeX is equivalent to Mapping=tex-text, but is more compatible with LuaTeX. In addition to ligatures, this will emulate TeX's behaviour for ASCII input of curly quotes and punctuation (eg dashes): http://tex.stackexchange.com/questions/7735/how-to-get-straight-quotation-marks#comment113447_11376
+% Use Ligatures=Common if you do NOT want this additional emulation (ie straight quotes).
 \defaultfontfeatures{Scale=MatchLowercase}  % needs to be below main font declaration
 
 \setsansfont{Liberation Sans}
@@ -45,6 +47,12 @@
 \newcommand\Eit[1]{{\fontspec{Liberation Serif Italic}#1}}  % English italics.
 
 \newcommand\FN[1]{{\fontspec[Color=00BB33]{Liberation Serif Italic}#1}} % Standout type in footnotes -- coloured green, normal size.
+
+\newcommand\Em[1]{{\fontspec[Color=999999]{Charis SIL Italic}#1}} % Emendations -- coloured light grey, italics.
+
+\newcommand\OLTst[1]{{\fontspec[Color=333333, Scale=1]{Linux Biolinum O}#1}}  % Standard spelling -- normal size.
+
+\newcommand\OLTcl[1]{{\fontspec[Color=00BB33, Scale=0.9]{Charis SIL}#1}}  % Close spelling -- coloured green, slightly less than normal size.
 
 % Older versions:
 % \newfontfamily{\Tr}[Scale=0.9, Color=00BB33]{Linux Biolinum O}
