@@ -45,6 +45,24 @@ twice by mistake, the insertions will be OK, but the running order will have bee
 update binkie set runord=runord-3 where runord>6;
 replacing 6 with the last correct item in the running order.
 
+php ms/combine_ms.php K1-6 insert Y6
+php ms/combine_ms.php K7-8 insert R4
+Columns can be lower-case only, but combine_ms.php allows to use upper-case if you're more comfortable with that.
+
+php ms/fill_runord.php jaafari init Y
+php ms/ffill_runord.php jaafari topup R 1-15 
+php ms/fill_runord.php jaafari topup R 16-20
+php ms/fill_runord.php jaafari topup C 1-20
+php ms/combine_ms.php jaafari R2-9 align Y1 
+php ms/combine_ms.php jaafari R1 prefix Y1
+php ms/combine_ms.php jaafari R11 align Y9
+php ms/combine_ms.php jaafari R10 align Y10 
+php ms/combine_ms.php jaafari R12-44 align Y11
+php ms/combine_ms.php jaafari R45-93 insert Y43
+
+
+select * into table mytable from orig_table;
+create table mytable as select * from orig_table;
 
 sidebar
 ---------

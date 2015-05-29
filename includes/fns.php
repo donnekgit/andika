@@ -179,7 +179,8 @@ function standardise($text)
 	$text=preg_replace("/tU\+02B0/", "t", $text);  // t+aspiration > t
 	$text=preg_replace("/kU\+02B0/", "k", $text);  // k+aspiration > k
 	
-	$text=preg_replace("/U\+02BF/", "'", $text);  // ain > '
+	//$text=preg_replace("/U\+02BF/", "'", $text);  // ain > '
+	$text=preg_replace("/U\+02BF/", "", $text);  // ain > nothing
 
 	$text=preg_replace("/U\+0679/", "t", $text);  // alveolar t > t
 	$text=preg_replace("/U\+0688/", "d", $text);  // alveolar d > d
@@ -545,7 +546,7 @@ function drop_existing_table($table)
 // Drop the specified table so that it can be recreated.
 // or: SELECT * FROM pg_tables WHERE tablename = 'mytable' AND schemaname = 'myschema';
 // use true instead of * if preferred
-// and clause does not work in PPA
+// the AND clause seems not to work in PPA
 {
 	global $db_handle;
 	$sql_exists="select count(*) as count from pg_class where relname = '".$table."'";
@@ -553,7 +554,7 @@ function drop_existing_table($table)
 	$row_exists=pg_fetch_object($result_exists);
 	if ($row_exists->count > 0)
 	{
-		$sql_del="drop table $table";
+		$sql_del="drop table $table;";
 		$result_del=pg_query($db_handle, $sql_del);
 		//echo "Table ".$table." already exists";
 	}
@@ -563,9 +564,23 @@ function drop_existing_table($table)
 	}
 }
 
+function add_column_if_not_exists($table, $column)
+// This function adds $column to $table is it is not already there.
+{
+	global $db_handle;
+	$sql_exists="select count(column_name) from information_schema.columns where table_name='$table' and column_name='$column'";
+	$result_exists=pg_query($db_handle, $sql_exists);
+	$row_exists=pg_fetch_object($result_exists);
+	if ($row_exists->count < 1)
+	{
+	    $sql_addcol = "alter table $table add column $column integer;";
+	    $result_addcol=pg_query($db_handle, $sql_addcol);
+	}
+}
+
 function copy_records_if_table_not_exists($table, $sql_copy_command) // defunct
 // Use SELECT AS to copy records into a table that is only created if it does not already exist. (The command "CREATE TABLE IF EXISTS mytable AS SELECT ..." does not exist.
-// In cases where the table already exists, no copying will be done -ie the assumption is that the existing table is already up-to-date and should not be amended.
+// In cases where the table already exists, no copying will be done -- ie the assumption is that the existing table is already up-to-date and should not be amended.
 // This fits into a workflow where copying is done via a separate process, and this function is used as a safety feature to copy records where the user may have forgotten to do so, and is now about to destroy the table holding the records.
 // IMPORTANT: the function must be preceded by a line giving the table-name:
 // $table="mytable";

@@ -2,7 +2,7 @@
 
 /* 
 *********************************************************************
-Copyright Kevin Donnelly 2012.
+Copyright Kevin Donnelly 2015.
 kevindonnelly.org.uk
 This file is part of Andika!, a set of tools for writing Swhili in Arbic script..
 
@@ -23,47 +23,16 @@ If not, see <http://www.gnu.org/licenses/>.
 *********************************************************************
 */
 
-include("./andika/config.php");
-include("./includes/fns.php");
-
-$poem=$argv[1];  // Take the name of the poem from the command-line argument.
-if (empty($argv[1]))
-{
-    echo "\nYou need to specify the name of the poem.\nAdd it to the end of the line.\n\n";
-    exit;
-}
-
-$words="{$poem}_words";
-$colour="mygreen";  // Colour for the Arabic text.
-$prev="z";
-
-exec("mkdir -p db/outputs/".$poem);
-
-// Open the tex file.
-$fp = fopen("db/outputs/$poem/{$poem}.tex", "w") or die("Can't create the file");
-
-// Write in the header.
-$header=file_get_contents("db/tex/tex_header.tex");
-fwrite($fp, $header);
-fwrite($fp, "\n");
-
-// Insert a title file specific to this poem if it exists.
-if (file_exists("convert/inputs/$poem/{$poem}_title.tex"))
-{
-    $title=file_get_contents("convert/inputs/$poem/{$poem}_title.tex");
-}
-fwrite($fp, $title);
-fwrite($fp, "\n\n\n");
-
-// Set up the layout.
-fwrite($fp, "\begin{center} \n\n");
+/*
+This script is called from stacktenzi.php, and generates a layout for each stanza of an utenzi.
+*/
 
 // Collect the content from the table.
 //$sql=query("select stanza from $words where stanza between 200 and 220 group by stanza order by stanza;");
-$sql=query("select msno, stanza from $words group by stanza, msno order by stanza;");  // Collect all the stanza numbers.
+$sql=query("select msno, stanza from $words where stanza=$stanza group by stanza, msno order by stanza;");  // Collect all the stanza numbers.
 while ($row=pg_fetch_object($sql))
 {
-    $stanza=$row->stanza;  // Stanza number assigned by the import - always correct.
+//     $stanza=$row->stanza;  // Stanza number assigned by the import - always correct.
     $msno=$row->msno;  // Stanza number written on the MS - can be incorrect.
     
     $sql_loc=query("select distinct loc from $words where stanza=$stanza order by loc;");
@@ -135,47 +104,16 @@ while ($row=pg_fetch_object($sql))
     $standard_line=substr($standard_line, 0, -3);  
     
     echo $standard_line;
-    fwrite($fp, "\\textarabic{(".convert_numbers($stanza).") \\textcolor{{$colour}}{".$arabic_line."}} \\\\* \n");
+    fwrite($fp, "\\textarabic{".$arconsol." \\textcolor{{$colour}}{".$arabic_line."}} ".$bar." \\\\* \n");
     //fwrite($fp, "\\SPSB{".$msno."}{".$msno."} (".$stanza.") ".$trans_line." \\\\* \n");
    // To get an Arabic-script text only, comment out the following 3 lines, and delete the \\\\* from the \textarabic line above.  You also need to adjust the poem_title.tex file if there is one.
-    fwrite($fp, " \\OLTcl{".$close_line."} \\\\* \n");
-    fwrite($fp, "\\SB{".$msno."} (\\textbf{".$stanza."}) \\OLTst{".$standard_line."} \\\\ \n");    
+    fwrite($fp, " \\textcolor{{$colour}}{\\OLTcl{".$close_line."}} \\\\* \n");
+    fwrite($fp, "\\MS{".$msv." ".$msno."} ".$consol." \\OLTst{".$standard_line."} \\\\* \n");    
     fwrite($fp, "\E{".$english_line."} \\\\ \n");
     unset($arabic_line, $close_line, $edclose_line, $standard_line, $edstan_line, $english_line);
         
-    fwrite($fp, "\\\\[8mm] \n\n");
+    fwrite($fp, "\\\\[6mm] \n\n");
     echo "\n";
-}
-
-// Close off the layout.
-fwrite($fp, "\\end{center} \n\n");
-
-
-// ===== Endnotes =====
-// If you need endnotes instead of footnotes, uncomment the following three lines.
-// Remember to uncomment the two lines in andika/db/tex/tex_header.tex as well.
-// $endnotes=file_get_contents("db/tex/endnotes.tex");
-// fwrite($fp, $endnotes);
-// fwrite($fp, "\n");
-// ==================
-
-// Print any references.
-fwrite($fp, "\\renewcommand{\bibname}{References} \n");
-fwrite($fp, "\\begingroup \n");
-fwrite($fp, "\\printbibliography \n");
-fwrite($fp, "\\endgroup \n\n");
-
-// Close off the document.
-fwrite($fp, "\\end{document}\n");
-fclose($fp);
-
-// Compile the tex file into a pdf.  In contrast to convert, we need to do a couple of passes because of biblatex.
-echo "Doing initial layout...\n";
-exec("xelatex -interaction=nonstopmode -output-directory=db/outputs/$poem db/outputs/$poem/{$poem}.tex 2>&1");
-// echo "Integrating citations...\n";
-// exec("biber db/outputs/$poem/$poem 2>&1");
-// echo "Doing final layout...\n";
-// exec("xelatex -interaction=nonstopmode -output-directory=db/outputs/$poem db/outputs/$poem/{$poem}.tex 2>&1");
-echo "The document should be ready now.\n";
+}    
 
 ?>
