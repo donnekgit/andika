@@ -62,7 +62,7 @@ while ($row=pg_fetch_object($sql))
 		echo $arabic_value."\n";
 		$arabic_value=trim($arabic_value);
 		$sql_a=query("insert into $words (msno, stanza, loc, position, arabic) values ($row->msno, $row->stanza, '$row->loc', '$i', '$arabic_value');");
-        $i=++$i; 
+		$i=++$i; 
 	}
 	
 	$j=1;
