@@ -3,7 +3,7 @@
 /*
 This script combines MSs, inserting or deleting stanzas to give a "running order" of the best stanzas from multiple MSs, resulting in a "combined" MS.  The combined MS will be printed with the provenance of the different stanzas noted by means of font, fontsize, or colour.  For ballads (tenzi), for instance, you can use db/stacktenzi.php.
 The command is of the form:
-php ms/runord.php poem Yn[-n] action Xn
+php ms/runord.php poem yn[-n] action xn
 Yn[-n] insert Xn -- the stanza(s) will always be inserted AFTER the reference point Xn.
 Yn[-n] prefix Xn -- there is no insert before (always after), so this action allows space to be created at the head of the table, eg to allow stanzas to be added which precede the current running order.
 Yn[-n] align Xn -- this pastes the stanzas in beside existing stanzas in another MS.

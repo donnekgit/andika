@@ -12,8 +12,25 @@ For centuries, Swahili was written in Arabic script, and hundreds of manuscripts
 All the tools are available under the Free Software Foundation's <a href="http://www.fsf.org/licenses/gpl.html">General Public License</a> and <a href="http://www.fsf.org/licenses/agpl.html">Affero General Public License</a>, which means they can be adapted and extended as required by the user, subject to the same license being used for any new version thus created.
 </p>
 
-<p>The code for the <strong>Andika! </strong> tools (including these webpages) is available from the <a href="http://thinkopen.co.uk/git/">Git repositories at ThinkOpen</a>.  If you have <a href="http://git-scm.com/">Git</a> installed, you can download the files by running: <strong><em>git clone http://thinkopen.co.uk/git/enabled/andika</em></strong><span>.
-If not, you can download the files by going to <a href="http://thinkopen.co.uk/git/andika">http://thinkopen.co.uk/git/andika</a>, and then clicking on either ZIP or TAR.
+<p>
+The code for the <strong>Andika! </strong> tools (including these webpages) is available from the <a href="https://github.com/donnekgit/andika">GitHub repository</a>.  If you have <a href="http://git-scm.com/">Git</a> installed, you can download the files by running:<br />
+<strong>git clone https://github.com/donnekgit/andika.git</strong><br />
+If not, you can download the files as a <a href="https://github.com/donnekgit/andika/archive/master.zip">compressed zip file</a>. 
+</p>
+
+<p>
+Further examples of <strong>Andika!</strong> output, along with detailed information about how to install and use the offline tools to handle manuscripts, are in the detailed <a href="manual_draft.pdf">manual</a>.
+</p>
+
+<p>
+ I am always happy to receive comments or suggestions about the further development of the <strong>Andika! </strong> tools.
+</p>
+
+<p>
+<strong>Andika!</strong> is dedicated to the memory of Sheikh Yahya Ali Omar (1924–2008).
+<br />
+<span class="sm_swahili">مْزٖئٖ أَكِيفَ، مَكتَابَ هُتٖكٖتٖئَ</span>
+</p>
 
 <hr />
 
