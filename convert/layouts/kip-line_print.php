@@ -64,6 +64,6 @@ elseif ($output="db")
     $sql=query("insert into ".$poem." (msno, stanza, loc, arabic, standard, close) values ($msno, $stanza_no, '$key', '$arabic', '$roman', '$close')");
 }
 
-echo $stanza_no.$key.": ".$roman."\n";
+echo "[".$msno."] ".$stanza_no.$key.": ".$roman."\n";
 
 ?>

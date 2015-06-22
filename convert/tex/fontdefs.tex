@@ -28,6 +28,9 @@
 
 %You can either, as above, define a new \fontfamily, and then use it in a \newcommand, or you can, as below, include the font in the \newcommand by calling \fontspec directly.
 
+\newcommand\Abig[1]{{\fontspec[Script=Arabic, Scale=10]{Scheherazade}\RLE{#1}}}  % Really big font for titles.
+
+
 \newcommand\Atitle[1]{{\fontspec[Script=Arabic, Scale=2]{GranadaKD}\RLE{#1}}}  % Arabic transcription for titles - uses a version of Granada which has been extended to include glyphs for Swahili.
 
 \newcommand\Am[1]{{\fontspec[Script=Arabic]{Amiri}\RLE{#1}}} % Examples using Amiri --  if using Scheherazade's default scale, set Scale=0.8 here.

@@ -137,9 +137,9 @@ while ($row=pg_fetch_object($sql))
     echo $standard_line;
     fwrite($fp, "\\textarabic{(".convert_numbers($stanza).") \\textcolor{{$colour}}{".$arabic_line."}} \\\\* \n");
     //fwrite($fp, "\\SPSB{".$msno."}{".$msno."} (".$stanza.") ".$trans_line." \\\\* \n");
-   // To get an Arabic-script text only, comment out the following 3 lines, and delete the \\\\* from the \textarabic line above.  You also need to adjust the poem_title.tex file if there is one.
-    fwrite($fp, " \\OLTcl{".$close_line."} \\\\* \n");
-    fwrite($fp, "\\SB{".$msno."} (\\textbf{".$stanza."}) \\OLTst{".$standard_line."} \\\\ \n");    
+   // To get an Arabic-script text only, comment out the following 3 lines, delete the \\\\* from the \textarabic line above, and adjust 8mm below to 5mm.  You also need to adjust the poem_title.tex file if there is one.
+    fwrite($fp, "\\textcolor{{$colour}}{\\OLTcl{".$close_line."}} \\\\* \n");
+    fwrite($fp, "\\MS{[".$msno."]} (\\textbf{".$stanza."}) \\OLTst{".$standard_line."} \\\\ \n");    
     fwrite($fp, "\E{".$english_line."} \\\\ \n");
     unset($arabic_line, $close_line, $edclose_line, $standard_line, $edstan_line, $english_line);
         

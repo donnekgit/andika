@@ -52,7 +52,7 @@
 \titleformat{\chapter}[display]{\normalfont\large}{\bfseries\chaptertitlename\ \thechapter}{10pt}{\large\itshape}[\vspace{2ex}\titlerule\vspace{2ex}]  % 10pt is the space between chapter and chapter name.  [display] sets the chapter and chapter name on separate lines.  The square brackets at the end draw a line under each chapter name, with 2ex gap from the name.
 \titlespacing{\chapter}{0pt}{0pt}{10pt}  % First is indent from the side, second is length down from the top, third is gap between heading and text.
 
-% \pagenumbering{gobble}  % Suppress page numbering.
+% \pagenumbering{gobble}  % Suppress page numbering.  This is best if you want to include the pdf in another LaTeX document -- otherwise you will get two sets of page numbering.
 
 % ===== Endnotes =====
 % Uncomment the following two lines to get endnotes instead of footnotes.
