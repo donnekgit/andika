@@ -33,6 +33,8 @@ if (empty($argv[1]))
     exit;
 }
 
+$arabiconly=$argv[2];  // If a second command-line argument is given, print Arabic script only.
+
 $words="{$poem}_words";
 $colour="mygreen";  // Colour for the Arabic text.
 $prev="z";
@@ -59,8 +61,8 @@ fwrite($fp, "\n\n\n");
 fwrite($fp, "\begin{center} \n\n");
 
 // Collect the content from the table.
-//$sql=query("select stanza from $words where stanza between 200 and 220 group by stanza order by stanza;");
-$sql=query("select msno, stanza from $words group by stanza, msno order by stanza;");  // Collect all the stanza numbers.
+$sql=query("select stanza from $words where stanza between 200 and 210 group by stanza order by stanza;");
+//$sql=query("select msno, stanza from $words group by stanza, msno order by stanza;");  // Collect all the stanza numbers.
 while ($row=pg_fetch_object($sql))
 {
     $stanza=$row->stanza;  // Stanza number assigned by the import - always correct.
@@ -91,7 +93,7 @@ while ($row=pg_fetch_object($sql))
 		$close=preg_replace("/~/", "", $edclose);
             }
             
-            if ($edstan!='')  // If the automatic close transliteration has been edited, bring that in instead.  Replace deleted words (~) with a blank.
+            if ($edstan!='')  // If the automatic standard transliteration has been edited, bring that in instead.  Replace deleted words (~) with a blank.
             {
 		$standard=preg_replace("/~/", "", $edstan);
             }
@@ -135,15 +137,25 @@ while ($row=pg_fetch_object($sql))
     $standard_line=substr($standard_line, 0, -3);  
     
     echo $standard_line;
-    fwrite($fp, "\\textarabic{(".convert_numbers($stanza).") \\textcolor{{$colour}}{".$arabic_line."}} \\\\* \n");
-    //fwrite($fp, "\\SPSB{".$msno."}{".$msno."} (".$stanza.") ".$trans_line." \\\\* \n");
-   // To get an Arabic-script text only, comment out the following 3 lines, delete the \\\\* from the \textarabic line above, and adjust 8mm below to 5mm.  You also need to adjust the poem_title.tex file if there is one.
-    fwrite($fp, "\\textcolor{{$colour}}{\\OLTcl{".$close_line."}} \\\\* \n");
-    fwrite($fp, "\\MS{[".$msno."]} (\\textbf{".$stanza."}) \\OLTst{".$standard_line."} \\\\ \n");    
-    fwrite($fp, "\E{".$english_line."} \\\\ \n");
-    unset($arabic_line, $close_line, $edclose_line, $standard_line, $edstan_line, $english_line);
-        
-    fwrite($fp, "\\\\[8mm] \n\n");
+    
+    if (isset($arabiconly))
+    {
+	//To get Arabic-script text only, give a second command-line argument (anything!).  You also need to adjust the poem_title.tex file if there is one.
+	fwrite($fp, "\\textarabic{(".convert_numbers($stanza).") \\textcolor{{$colour}}{".$arabic_line."}} \n");
+	//fwrite($fp, "(\\textbf{".$stanza."}) \\OLTst{".$standard_line."} \\\\ \n");  // Optional standard line - add \\\\ to the end of the previous line.
+	unset($arabic_line, $close_line, $edclose_line, $standard_line, $edstan_line, $english_line);
+	fwrite($fp, "[5mm] \n\n");
+    }
+    else
+    {
+	fwrite($fp, "\\textarabic{(".convert_numbers($stanza).") \\textcolor{{$colour}}{".$arabic_line."}} \\\\* \n");
+	//fwrite($fp, "\\SPSB{".$msno."}{".$msno."} (".$stanza.") ".$trans_line." \\\\* \n");
+	fwrite($fp, "\\textcolor{{$colour}}{\\OLTcl{".$close_line."}} \\\\* \n");
+	fwrite($fp, "\\MS{[".$msno."]} (\\textbf{".$stanza."}) \\OLTst{".$standard_line."} \\\\ \n");    
+	fwrite($fp, "\E{".$english_line."} \\\\ \n");
+	unset($arabic_line, $close_line, $edclose_line, $standard_line, $edstan_line, $english_line);
+	fwrite($fp, "[8mm] \n\n");
+    }
     echo "\n";
 }
 

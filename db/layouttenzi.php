@@ -60,7 +60,7 @@ while ($row=pg_fetch_object($sql))
 		$close=preg_replace("/~/", "", $edclose);
             }
             
-            if ($edstan!='')  // If the automatic close transliteration has been edited, bring that in instead.  Replace deleted words (~) with a blank.
+            if ($edstan!='')  // If the automatic standard transliteration has been edited, bring that in instead.  Replace deleted words (~) with a blank.
             {
 		$standard=preg_replace("/~/", "", $edstan);
             }

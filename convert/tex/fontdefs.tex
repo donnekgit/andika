@@ -16,6 +16,10 @@
 \setmainlanguage{english}
 \setotherlanguage{arabic}
 
+% 
+% \newfontfamily{\transcript}{Liberation Sans}
+% \newcommand\chat[1]{{\transcript #1}}
+
 \newfontfamily\arabicfont[Script=Arabic, Scale=2]{Scheherazade} % Arabic transcription -- coloured black, double size.
 % One font needs to be called \arabicfont in order for XeTeX to load Arabic-related hyphenation and other stuff.
 %  The default \textarabic will use this \arabicfont.  Use the \begin{Arabic} ..... \end{Arabic} environment for longer stretches (eg paras).
@@ -29,7 +33,6 @@
 %You can either, as above, define a new \fontfamily, and then use it in a \newcommand, or you can, as below, include the font in the \newcommand by calling \fontspec directly.
 
 \newcommand\Abig[1]{{\fontspec[Script=Arabic, Scale=10]{Scheherazade}\RLE{#1}}}  % Really big font for titles.
-
 
 \newcommand\Atitle[1]{{\fontspec[Script=Arabic, Scale=2]{GranadaKD}\RLE{#1}}}  % Arabic transcription for titles - uses a version of Granada which has been extended to include glyphs for Swahili.
 
@@ -70,6 +73,7 @@
 %%% End of font definitions %%%
 %----------------------------------------
 
+
 %--------------------------------
 %%% Colour definitions %%%
 %--------------------------------
@@ -78,8 +82,7 @@
 \definecolor{myblue}{RGB}{0, 0, 154}
 % \definecolor{myblue}{RGB}{77, 198, 221}  % light blue
 
-
 %----------------------------------------
-%%% End of font definitions %%%
+%%% End of colour definitions %%%
 %----------------------------------------
 

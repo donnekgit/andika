@@ -23,6 +23,12 @@ If not, see <http://www.gnu.org/licenses/>.
 *********************************************************************
 */
 
+/*
+This script generates a concordance of words.
+First, create a concordance table by combining all the entries from the word table for each MS:
+create table jaafari_concordance as select 'Y' as source, * from jaafari_words union all select 'R' as source, * from jaafari_r_words;
+*/
+
 include("./andika/config.php");
 include("./includes/fns.php");
 
@@ -33,7 +39,7 @@ if (empty($argv[1]))
     exit;
 }
 
-$words="{$poem}_words";
+$words="{$poem}_concordance";
 $colour1="mygreen";  // Colour for the Arabic text if desired.
 $prev="z";
 
@@ -49,59 +55,67 @@ fwrite($fp, "\n");
 
 fwrite($fp, "\\begin{Large}Concordance of words in \\textcolor{{$colour1}}{\\AS{أُتٖنْزِ وَ جَعْفَر}}, \\Tr{uṯēnzi wa ja'far}, \\E{The Ballad of Ja'far}\\end{Large} \\\\[10mm] \n\n");
 
-// Collect the content from the table.
-$sql=query("select edclose, arabic from $words group by edclose, arabic order by edclose;");  // Collect all the stanza numbers.
+// Collect all the words in standard spelling from the table.  "arabic" is required to allow for different Arabic-script spelling of the standard word,
+$sql=query("select standard, close, arabic from $words where standard!='~' group by standard, close, arabic order by standard, close;");
 while ($row=pg_fetch_object($sql))
 {
-    $edclose=pg_escape_string($row->edclose);
     $arabic=$row->arabic;
+    $standard=$row->standard;
+    $close=$row->close;
+    //echo $close." - ".$arabic."\n";
     
     fwrite($fp, "\\noindent\\textcolor[RGB]{220,220,220}{\\rule{\\textwidth}{0.2pt}} \\\\[2mm]\n");
-    fwrite($fp, $edclose." \\dots\\ \\textarabic{\\textcolor{{$colour1}}{".$arabic."}} \n\n");
+    fwrite($fp, $standard." \\dots\\ \\textarabic{\\textcolor{{$colour1}}{".$arabic."}} \\dots\\ ".$close."\n\n");
 
-    $sql_e=query("select stanza, loc from $words where edclose='$edclose' and arabic='$arabic';");
+    // Get a list of all the locations for each standard+arabic word combination.
+    $sql_e=query("select source, stanza, loc from $words where standard='$standard' and arabic='$arabic' order by stanza, loc, source;");
     while ($row_e=pg_fetch_object($sql_e))
     {
+	$source=$row_e->source;
 	$stanza=$row_e->stanza;
 	$loc=$row_e->loc;
+	//echo $source.$stanza.$loc." - ".$standard."\n";
 
-        $sql_w=query("select * from $words where stanza=$stanza and loc='$loc' order by position;");  // Collect the words of each kipande.
+	// Get all the words in each line and arrange them in order.
+        $sql_w=query("select * from $words where source='$source' and stanza=$stanza and loc='$loc' order by position;");  
         while ($row_w=pg_fetch_object($sql_w))
         {
 	    $arabic=$row_w->arabic;
-	    $close=$row_w->close;
 	    $standard=preg_replace("/~/", "", $row_w->standard);
-	    $edclose=preg_replace("/~/", "", $row_w->edclose);
+	    $close=preg_replace("/~/", "", $row_w->close);
 	    $emend=$row_w->emend;
 	    $variant=$row_w->variant;
 	    $note=$row_w->note;
 	    $root=$row_w->root;
 	    $english=$row_w->english;
+	    
+	   //echo $standard."\n";
     	
 	    // Use either edclose or standard as the main transliteration, depending on initial user input. 
-	    if ($argv[2]=="standard")
+	    if ($argv[2]=="close")
 	    {
-		$trans="$standard";
+		$trans="$close";
 	    }
 	    else
 	    {
-		$trans="$edclose";
+		$trans="$standard";
 	    }
     	
 	    if ($emend!='')  // Add emended readings.
 	    {
 		$trans="\\Em{".$trans."}";
-		$emend_this="Emend to \\Swa{".$emend."}.";  // Add final space in case there are other footnotes, in the event you are not using the footmisc package.  This will use the \Swa{} font (green Biolinum) - change it to another font if desired.
+		//$emend_this="Emend to \\Swa{".$emend."}.";
 	    }
     	
 	    $arabic_line.=$arabic." ";
 	    $close_line.=$close." ";
 	    $trans_line.=$trans." ";  
-	    //$english_line.=$english." ";
+	    $english_line.=$english." ";
         }
         
         echo $trans_line;
-        fwrite($fp, $stanza.$loc.": ".$trans_line." \\dots\\ \\textarabic{\\textcolor{{$colour1}}{".$arabic_line."}} \\hspace*{\\fill} ".$emend_this." \n\n");
+//         fwrite($fp, $source.$stanza.$loc.": ".$trans_line." \\dots\\ \\textarabic{\\textcolor{{$colour1}}{".$arabic_line."}} [".$close_line."] \\hspace*{\\fill} ".$emend_this." \n\n");
+	fwrite($fp, $source.$stanza.$loc.": ".$trans_line." \\dots\\ \\textarabic{\\textcolor{{$colour1}}{".$arabic_line."}} \\dots\\ ".$close_line."\n\n");
         unset($arabic_line, $close_line, $trans_line, $english_line, $emend_this);
 
         echo "\n";
