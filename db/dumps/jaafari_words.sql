@@ -245,7 +245,6 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 1599	147	149	a	2	نِؤٗمْبٖيَ	niombeya	niombeya		niombea				-omb-		verb		ba	imp	
 3133	295	297	b	2	يَ	ya	ya						y-a		excl		ar		
 1022	94	96	d	2	نَيُوَ	nayuwa	nayuwa		nayua				-ju-		verb		ba	a	
-1637	151	153	a	2	أَللّٰهُ	alllähu	alllahu		Allahu				l-a-h		noun		ar		
 830	77	79	c	1	كَمْپَ	kampa	kampa						-p-	and gave him his news --	verb		ba	ka	
 895	83	85	b	1	أُكَمُؤُلِزٖ	ukamuulize	ukamuulize						-uz-	and ask your mother.	verb		ba	ka	
 925	86	88	a	2	سِوٖ	siwe	siwe						-w-		focus		ba		
@@ -277,17 +276,17 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 2051	190	192	c	2	إِنَ	ina	ina						-ina		noun		ba		
 1336	122	124	d	1	أِنَ	ina	ina						-ina	name for us to hear it.	noun		ba		
 2006	186	188	b	1	إِنَ	ina	ina						-ina	What is his name?	noun		ba		
-1514	139	141	b	2	نِسِيَٹٖكَ	nisiyaţeka	nisiyateka						-chek-		verb	final	ba	sija	y
-1453	133	135	c	2	سِكِفُنِكٖ	sikifunike	sikifunike					-funik-	-funik-		verb	final	ba	imp	y
+1453	133	135	c	2	سِكِفُنِكٖ	sikifunike	sikifunike						-fun-		verb	final	ba	imp	y
 1006	93	95	b	1	أَكِؤُلِزْوَ	akiulizwa	akiulizwa						-uz-	he did not answer when spoken to.	verb		ba	ki	
 762	71	73	c	3	إِكِفِكَ	ikifika	ikifika					i.e. around 7.00pm.	-fik-		verb	final	ba	ki	
+1637	151	153	a	2	أَللّٰهُ	alllähu	alllahu		Allahu				l-a-h		godn		ar		
+1514	139	141	b	2	نِسِيَٹٖكَ	nisiyaţeka	nisiyateka						-tek-		verb	final	ba	sija	y
 1353	124	126	b	2	إِنَ	ina	ina						-ina		noun		ba		
 672	63	65	c	1	إِنَ	ina	ina						-ina	As for the name you are to be called,	noun		ba		
 715	67	69	d	1	إِنَ	ina	ina						-ina	in order to tell [Ali] his name.	noun		ba		
 2200	204	206	b	2	نْدِيَ	ndiya	ndiya		ndia				-jia		noun		ba		
 2183	202	204	d	2	نْيُمَ	nyuma	nyuma						nyuma		adv		ba		
 2160	200	202	d	1	نْيُمَ	nyuma	nyuma						nyuma	instead of going back.	adv		ba		
-770	72	74	b	4	مْبَلِ	mbali	mbali		mbili	*			-bali		num	final	ba		
 1489	136	138	c	2	وَمٖنِوَتَ	wameniwata	wameniwata						-ach-		verb	final	ba	me	
 2529	237	239	c	1	أَمٖكُيَ	amekuya	amekuya						-j-	Ja'far has arrived,	verb		ba	me	
 2762	259	261	b	1	أَمٖپَنْدَ	amepanda	amepanda						-pand-	and climbed onto the bed.	verb		ba	me	
@@ -329,12 +328,12 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 1471	135	137	a	2	كُكِپَمْبَؤُكَ	kukipambauka	kukipambauka						-pambauk-		verb	final	ba	ki	
 1782	164	166	a	1	أَكِتٗكَ	akitoka	akitoka						-to-	As Ja'far was setting off	verb		ba	ki	
 1889	174	176	c	3	إِكِكٗمَ	ikikoma	ikikoma						-kom-		verb	final	ba	ki	
+770	72	74	b	4	مْبَلِ	mbali	mbali		mbili	*			-wili		num	final	ba		
 3107	292	294	c	1	أَلِپٗ	alipo	alipo						-li	I took no heed of where he was,	verb		ba	li	
 295	26	28	c	1	أَلِئِنُكَ	aliinuka	aliinuka						-inu-	He got up and left,	verb		ba	li	
 306	27	29	c	1	أَلِكهَاٹَ	alikʰāţa	alikata						-kat-	[Ali] interrupted him,	verb		ba	li	
 694	65	67	d	1	أُلِؤٗنَ	uliona	uliona						-on-	and you thought I would run away.	verb		ba	li	
 1886	174	176	b	2	كُتٗسِمَمَ	kutosimama	kutosimama						-simam-		verb	final	ba	ku	
-1501	137	139	d	3	كُوَٹٖكٖيَ	kuwaţekeya	kuwatekeya					i.e. there is no point in the goats running ahead of Ja'far and reaching the well before him, because once they are there they will have to stand and wait for him to get the water for them.	-chek-		verb	final	ba	ku	
 349	32	34	a	1	كَمُؤُلِزَ	kamuuliza	kamuuliza						-uz-	The Hashimite asked her:	verb		ba	ka	
 1984	183	185	d	1	كَتٗكَ	katoka	katoka						-to-	[Fatima] went out to see him.	verb		ba	ka	
 2072	192	194	c	1	كَئِنُكَ	kainuka	kainuka						-inu-	Ja'far got up	verb		ba	ka	
@@ -382,6 +381,7 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 2208	205	207	a	1	كِمَلِزَ	kimaliza	kimaliza						-maliz-	When he had finished listening	verb		ba	ki	
 1610	148	150	a	1	أَكِسِكِيَ	akisikiya	akisikiya		akisikia				-siki-	When she heard these words	verb		ba	ki	
 2090	194	196	b	1	نِتٗكَكٗ	nitokako	nitokako						-to-	Everything is well where I come from,	verb		ba	a	
+1501	137	139	d	3	كُوَٹٖكٖيَ	kuwaţekeya	kuwatekeya					i.e. there is no point in the goats running ahead of Ja'far and reaching the well before him, because once they are there they will have to stand and wait for him to get the water for them.	-tek-		verb	final	ba	ku	
 2227	206	208	d	2	هُمْزٖنْڠٖيَ	humzengeya	humzengeya					He could have been attacked by robbers, lions, etc.	-zeng-		verb	final	ba	hu	
 1608	147	149	d	1	تَكُيَ	takuya	takuya					i.e. he will return to his town for periodic visits.	-j-	I will come and visit them.	verb		ba	ta	
 1363	125	127	b	1	وٖنْدَءٗ	wendao	wendao						-end-	Where are you going, stranger?	verb		ba	a	
@@ -500,7 +500,6 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 973	90	92	a	2	جَعْفَرِ	jaʿfari	jafari		Jaafari				j-3-f-r		persn	final	ar		
 1357	124	126	c	3	جَعْفَرِ	jaʿfari	jafari		Jaafari				j-3-f-r		persn	final	ar		
 557	52	54	d	1	مْبَلِ	mbali	mbali						-bali	and threw it far away.	adv		ba		
-1230	113	115	a	4	سِ	si	si						si		exist		ba		
 967	89	91	d	1	يُوَ	yuwa	yuwa						-ua	the sun is fierce on the way.	noun		ba		
 1229	113	115	a	3	يُوَ	yuwa	yuwa		yua				-ua		noun		ba		
 1470	135	137	a	1	يُوَ	yuwa	yuwa		yua				-ua	When the sun rose [next day]	noun		ba		
@@ -550,6 +549,7 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 1086	101	103	a	1	جَعْفَرِ	jaʿfari	jafari		Jaafari				j-3-f-r	Jaafar said:	persn		ar		
 1447	133	135	a	1	جَعْفَرِ	jaʿfari	jafari		Jaafari				j-3-f-r	Ja'far said:	persn		ar		
 407	37	39	d	2	أُكِيَسِكِيَ	ukiyasikiya	ukiyasikiya						-siki-		verb	final	ba	ki	
+1230	113	115	a	4	سِ	si	si						si		exist		ba		y
 1936	179	181	c	1	جَعْفَرِ	jaʿfari	jafari		Jaafari				j-3-f-r	Ja'far answered him:	persn		ar		
 2793	262	264	b	1	جَعْفَرِ	jaʿfari	jafari		Jaafari				j-3-f-r	Ja'far regained consciousness	persn		ar		
 486	45	47	c	2	جَعْفَرِ	jaʿfari	jafari		Jaafari			We might surmise that he was named Ja'far after Ali's brother Ja'far, who died at the battle of Mu'tah in 629 CE.	j-3-f-r		persn	final	ar		
@@ -565,7 +565,6 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 526	49	51	c	2	أَلِكِفُنِكَ	alikifunika	alikifunika					Because in such a climate water is very valuable.	-fun-		verb	final	ba	li	
 458	42	44	d	2	كُوَمْبِيَ	kuwambiya	kuwambiya						-amb-		verb	final	ba	ku	
 509	47	49	d	2	كُمْوَمْبِيَ	kumwambiya	kumwambiya						-amb-		verb	final	ba	ku	
-593	56	58	a	3	كُٹٖكَ	kuţeka	kuteka						-chek-		verb	final	ba	ku	
 556	52	54	c	3	كَسُكُمَ	kasukuma	kasukuma						-sukum-		verb	final	ba	ka	
 262	23	25	a	1	كَمْجِبُ	kamjibu	kamjibu						j-a-b	She replied eloquently:	verb		ar	ka	
 1281	118	120	a	1	كَوَجِبِشَ	kawajibisha	kawajibisha						j-a-b	I answered them with the words:	verb		ar	ka	
@@ -602,6 +601,7 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 737	69	71	c	1	ٹْوٖنٖنْدٖ	ţwenende	twenende						-end-	so that we may go on towards the town,	verb		ba	subj	
 3063	288	290	b	3	كِوٖكَ	kiweka	kiweka					God has the power to do whatever he likes -- he sustains people or brings their life to an end, and we are not in a position to understand his motives.	-wek-		verb	final	ba	ki	
 3221	303	305	c	2	كِٹِنِ	kiţini	kitini						-ti		noun	final	ba		
+593	56	58	a	3	كُٹٖكَ	kuţeka	kuteka						-tek-		verb	final	ba	ku	
 524	49	51	b	2	أَسِپٗيَتَكَ	asipoyataka	asipoyataka						-tak-		verb	final	ba	ki	y
 528	49	51	d	2	أَكِچٖنْدٖيَ	akichendeya	akichendeya						-end-		verb	final	ba	ki	
 689	65	67	b	1	هُمُؤُزِ	humuuzi	humuuzi						-uz-	you do not even ask his name.	verb		ba	a	y
@@ -659,7 +659,6 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 26	3	3	b	2	نَ	na	na						na		conj		ba		
 4	1	1	b	1	پَمْوٖ	pamwe	pamwe						-mwe	along with \\q{the Compassionate}	adv		ba		
 39	4	4	c	1	نَلِنَ	nalina	nalina						-na	I had a ring on my finger,	have		ba		
-2557	240	242	b	2	سِ	si	si						si		exist		ba		
 114	11	11	d	1	بَبَكٗ	babako	babako						baba	"I am summoning your father."	noun		ba		
 143	14	14	d	1	نَايٗ	nāyo	nayo						na	and that is not like her.	conj		ba		
 123	12	12	d	1	مْبٖلٖ	mbele	mbele						-bele	in front of the Messenger, the Prophet.	adv		ba		
@@ -670,6 +669,7 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 92	9	9	c	3	پٖٹٖ	peţe	pete						-pet-		noun		ba		
 3121	294	296	a	2	كَمْكَلِمُ	kamkalimu	kamkalimu						k-l-m		verb	final	ar	ka	
 144	14	14	d	2	سِيٗ	siyo	siyo						-li		focus		ba		
+2557	240	242	b	2	سِ	si	si						si		exist		ba		y
 141	14	14	c	2	كْوَ	kwa	kwa						-a		ref		ba		
 117	12	12	a	2	كْوَ	kwa	kwa						-a		ref		ba		
 103	10	10	c	2	كْوَ	kwa	kwa						-a		ref		ba		
@@ -678,7 +678,6 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 1242	114	116	a	2	كَلِمَ	kalima	kalima						k-l-m		noun	final	ar		
 3280	309	311	a	2	نِمٖٹِيَ	nimeţiya	nimetiya		nimetia				-ti-		verb		ba	me	
 2059	191	193	a	3	كَلِمَ	kalima	kalima						k-l-m		noun	final	ar		
-164	16	16	d	1	أُلِلٗنَلٗ	ulilonalo	ulilonalo		ulilo nalo				-li	tell me what's wrong with you.	verb		ba	li	
 12	2	2	a	1	پُلِكَنِ	pulikani	pulikani						-pulik-	Listen, my brothers,	verb		ba	imp	
 839	78	80	c	1	كَمبَ	kamba	kamba						-amb-	and said: You are  making me worried	verb		ba	ka	
 2352	220	222	a	1	كَمْبَ	kamba	kamba						-amb-	[Ali] said: Wait, Bringer of Good Tidings,	verb		ba	ka	
@@ -736,6 +735,7 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 119	12	12	b	1	أَسِسِكِيٖ	asisikiye	asisikiye		asisikie				-siki-	so that the Bearer of Good Tidings does not hear.	verb		ba	subj	y
 131	13	13	c	1	أَكِسِكِيَ	akisikiya	akisikiya		akisikia				-siki-	When the Trustworthy One heard this	verb		ba	ki	
 1216	112	114	a	2	مْوٖنْدَپِ	mwendapi	mwendapi		mwenda-pi				-end-		verb		ba	a	
+164	16	16	d	1	أُلِلٗنَلٗ	ulilonalo	ulilonalo		ulilo nalo				-li	tell me what's wrong with you.	verb		ba	li	
 314	28	30	c	1	زِيَپٗ	ziyapo	ziyapo		ziapo			\\Swa{-apa}, \\E{curse}, but \\Swa{-tia kiapo}, \\E{swear an oath}, such as \\Swa{nife nili kaffir}, \\E{may I die an unbeliever}.  Ali has sworn a few oaths to Fatima out of necessity, but he is not bound by them because he swore them in order to preserve marital harmony.	-ap-	white lies,	noun		ba		
 267	23	25	c	1	پٖٹٖ	peţe	pete						-pet-	Who have you given the ring to?	noun		ba		
 276	24	26	c	1	يَلِنْڠِيَ	yalingiya	yalingiya						-ingi-	It fell into a well --	verb		ba	li	
@@ -759,7 +759,6 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 552	52	54	b	1	جَعْفَرِ	jaʿfari	jafari		Jaafari				j-3-f-r	Ja'far approached,	persn		ar		
 563	53	55	b	1	جَعْفَرِ	jaʿfari	jafari		Jaafari				j-3-f-r	and Jaafar was there behind them.	persn		ar		
 599	56	58	d	1	جَعْفَرِ	jaʿfari	jafari		Jaafari				j-3-f-r	Jaafari said to him:	persn		ar		
-1686	155	157	a	3	مُحَمَدِ	muḥamadi	muhamadi						m-hh-m-d		persn	final	ar		
 1964	182	184	a	2	حُسَيْنِ	ḥusayni	husayni		Huseni				hh-s-y-n		persn	final	ar		
 631	59	61	d	1	جَعْفَرِ	jaʿfari	jafari		Jaafari				j-3-f-r	Ja'far, and addressed him.	persn		ar		
 684	64	66	d	1	جَعْفَرِ	jaʿfari	jafari		Jaafari				j-3-f-r	Jaafar spoke to him:	persn		ar		
@@ -793,6 +792,7 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 2918	274	276	c	1	أَكَتٗكَ	akatoka	akatoka						-to-	and she left home on her own	verb		ba	ka	
 110	11	11	b	1	أَسِئِوٖزٖ	asiiweze	asiiweze		asiyiweze			\\Swa{hakuweza kustahimili}.	-wez-	she could not restrain herself.	verb		ba	past	y
 756	71	73	a	2	كُكِپَمْبَؤُكَ	kukipambauka	kukipambauka						-pambauk-		verb	final	ba	ki	
+1686	155	157	a	3	مُحَمَدِ	muḥamadi	muhamadi		Muhamadi				m-hh-m-d		persn	final	ar		
 2118	197	199	a	1	أَكَمْجِبُ	akamjibu	akamjibu						j-a-b	[ja'far] answered him with the words:	verb		ar	ka	
 3130	295	297	a	1	أَكَمْجِبُ	akamjibu	akamjibu						j-a-b	[Atika] answered her with the words:	verb		ar	ka	
 2477	232	234	a	1	أَكَمُؤُزَ	akamuuza	akamuuza						-uz-	The Trustworthy One asked him:	verb		ba	ka	
@@ -1012,7 +1012,6 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 1219	112	114	b	2	نِ	ni	ni						ni		exist		ba		
 1181	108	110	d	1	نِ	ni	ni						ni	[and I thought] I'd better come back.	exist		ba		
 1167	107	109	c	3	نِ	ni	ni						ni		exist		ba		
-1237	113	115	c	3	سِ	si	si						si		exist		ba		
 1193	109	111	d	1	وَٹَٹُ	waţaţu	watatu						-tatu	three of them, coming along the road.	num		ba		
 1151	106	108	b	3	نْدِيٗ	ndiyo	ndiyo						ni		focus		ba		
 1191	109	111	c	2	وَٹُ	waţu	watu						-tu		noun		ba		
@@ -1059,6 +1058,7 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 1037	96	98	b	1	وَتَكَ	wataka	wataka						-tak-	What news do you want?	verb		ba	a	
 1082	100	102	c	1	وٖنْدٖلٖپِ	wendelepi	wendelepi		wendele-pi				-end-	where did you go among people,	verb		ba	past	
 1052	97	99	c	2	نَؤٗنَ	naona	naona						-on-		verb		ba	a	
+1237	113	115	c	3	سِ	si	si						si		exist		ba		y
 1140	105	107	b	3	جَڠِنَ	jagina	jagina					See 117c.	jagina		noun		ba		
 823	77	79	a	1	مُئِنِ	muini	muini						-ji	When [Ja'far] entered his village	noun		ba		
 1912	177	179	a	1	مْكٗنٗ	mkono	mkono						-kono	Zubayr saw the wave	noun		ba		
@@ -1249,12 +1249,12 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 1241	114	116	a	1	وَكِسِكِيَ	wakisikiya	wakisikiya		wakisikia				-siki-	When they heard my words,	verb		ba	ki	
 546	51	53	c	3	تهَمْشِكَ	tʰamshika	tamshika						-shik-		verb	final	ba	ta	
 570	53	55	d	2	هُمْوَنْڠَلِيَ	humwangaliya	humwangaliya						-anga-		verb	final	ba	hu	
-261	22	24	d	2	أَلٗنِزُلِيَ	alonizuliya	alonizuliya						-zu-		verb	final	ba	li	
 206	20	20	b	3	نَئِتَكَ	naitaka	naitaka						-tak-		verb	final	ba	a	
 165	16	16	d	2	نَمْبِيَ	nambiya	nambiya						-amb-		verb	final	ba	imp	
 285	25	27	b	2	أُئِوٖسٖپٗ	uiwesepo	uiwesepo						-let-		verb	final	ba	past	
 172	17	17	b	4	حُمَ	ḥuma	huma						hh-m-m		noun	final	ar		
 579	54	56	d	2	أَكِيَ	akiya	akiya						-j-		verb	final	ba	ki	
+261	22	24	d	2	أَلٗنِزُلِيَ	alonizuliya	alonizuliya						-zui-		verb	final	ba	li	
 2356	220	222	b	2	جَعْفَرِ	jaʿfari	jafari		Jaafari			i.e. \\Swa{tule naye}, \\E{so that we may share a meal with him}.  Sharing a meal with someone shows respect.	j-3-f-r		persn	final	ar		
 883	81	83	d	3	كِكْوٖٹٖيَ	kikweţeya	kikweteya						-let-		verb	final	ba	ki	
 1391	127	129	d	2	مْوَيُوَ	mwayuwa	mwayuwa		mwayua				-ju-		verb		ba	a	
@@ -1286,7 +1286,6 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 959	88	90	d	2	وَمٖپٗتٖيَ	wamepoteya	wamepoteya						-pote-		verb	final	ba	me	
 1056	97	99	d	3	كُكْوَمْبِيَ	kukwambiya	kukwambiya						-amb-		verb	final	ba	ku	
 106	10	10	d	2	تهَمْزِنْڠَتِيَ	tʰamzingatiya	tamzingatiya						-zingat-		verb	final	ba	ta	
-855	79	81	d	2	كُكُزِوِيَ	kukuziwiya	kukuziwiya						-zu-		verb	final	ba	ku	
 869	80	82	d	3	كُٹَنْڠُلِيَ	kuţanguliya	kutanguliya						-tanguli-		verb	final	ba	ku	
 1350	124	126	a	1	كَوَمْبِيَ	kawambiya	kawambiya		kawambia				-amb-	And I told them: I have decided	verb		ba	ka	
 906	84	86	b	3	كَيَنْدَمَ	kayandama	kayandama						-andam-		verb	final	ba	ka	
@@ -1313,6 +1312,7 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 1192	109	111	c	3	وٖنْڠِنٖ	wengine	wengine					Or we could emend to \\Swa{wageni}, \\E{strangers}.	-ingine		qual	final	ba		
 912	84	86	d	3	أَكِنْڠِيَ	akingiya	akingiya						-ingi-		verb	final	ba	ki	
 891	82	84	d	2	سِيَسِكِلِيَ	siyasikiliya	siyasikiliya					Amu \\Swa{-sika} = \\Swa{fika}.  Compare \\Swa{-sita / fita}.	-siki-		verb	final	ba	me	y
+855	79	81	d	2	كُكُزِوِيَ	kukuziwiya	kukuziwiya						-zui-		verb	final	ba	ku	
 900	83	85	d	2	تَكَلٗكْوَمْبِيَ	takalokwambiya	takalokwambiya						-amb-		verb	final	ba	ta	
 1265	116	118	c	1	أُئٖٹَيٗ	ueţayo	uetayo						-let-	The words you have spoken,	verb		ba	a	
 1217	112	114	a	3	مَتِتِ	matiti	matiti					\\Swa{kama Wazungu}, \\E{like Europeans}!	-titi		noun	final	ba		
@@ -1537,13 +1537,13 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 51	5	5	c	1	أَكٖنْدَ	akenda	akenda						-end-	when he went to his wife [Fatima],	verb		ba	ki	
 67	7	7	a	1	أَكٖنٖنْدَءٖ	akenendae	akenendae		akenendaye				-end-	The person who went was an old woman,	verb		ba	ki	
 171	17	17	b	3	نِ	ni	ni		na	*			ni		exist		ba		
-228	22	22	b	3	سِ	si	si						si		exist		ba		
 184	18	18	c	1	نَ	na	na						na	And if there's anything you want,	conj		ba		
 179	18	18	a	2	هَپَ	hapa	hapa						h-		dem		ba		
 234	21	23	a	1	هُنُ	hunu	hunu						h-	"This is the second month [that you have not worn it] --	dem		ba		
 901	84	86	a	1	َكِشَ	akisha	akisha						-ish-	Once [the teacher] had finished these words,	verb		ba	ki	
 63	6	6	c	2	مْوٖنْيٖ	mwenye	mwenye						-enye		qual		ba		
-315	28	30	c	2	زِسِزٗ	zisizo	zisizo						-li		exist		ba		y
+228	22	22	b	3	سِ	si	si						si		exist		ba		y
+315	28	30	c	2	زِسِزٗ	zisizo	zisizo						-li		v		ba	pres	y
 260	22	24	d	1	هُيٗ	huyo	huyo						h-	who has told you this lie about me?"	dem		ba		
 242	21	23	c	2	نَ	na	na						na		conj		ba		
 303	27	29	b	2	نَ	na	na						na		conj		ba		
@@ -1565,8 +1565,6 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 413	38	40	c	1	كِشَ	kisha	kisha						-ish-	then she spoke [these] words,	conj		ba		
 433	40	42	b	1	سَسَ	sasa	sasa						sasa	now I have realised	adv		ba		
 402	37	39	c	1	نِ	ni	ni						ni	this is my advice --	exist		ba		
-472	44	46	b	1	سِ	si	si						si	not of increasing [her] love for me,	exist		ba		
-427	39	41	d	1	سِ	si	si						si	and I am not pleased [to have done it].	exist		ba		
 977	90	92	c	2	جٖؤُرِ	jeuri	jeuri						-euri		noun	final	ba		
 729	68	70	d	4	وَ	wa	wa						-a		ref		ba		
 323	29	31	b	2	نِمٖٹٖنْدَ	nimeţenda	nimetenda						-tend-		verb		ba	me	
@@ -1616,6 +1614,7 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 656	62	64	a	1	پٖٹٖ	peţe	pete						-pet-	Once he saw the ring	noun		ba		
 347	31	33	d	1	إٖنٖنْدٖيْ	enendee	enendee		endee	*			-end-	[that] he had just come to look in on her.	verb		ba	past	
 399	37	39	b	1	أُتَكَپٗ	utakapo	utakapo						-tak-	if you want my blessing,	verb		ba	a	
+472	44	46	b	1	سِ	si	si						si	not of increasing [her] love for me,	exist		ba		y
 464	43	45	c	1	پٖٹٖ	peţe	pete						-pet-	my distinctive ring --	noun		ba		
 3268	307	309	d	1	مُئِنِ	muini	muini						-ji	and returned to the town.	noun		ba		
 1555	143	145	b	4	نْيُمْبَ	nyumba	nyumba						-umb-		noun		ba		
@@ -1718,7 +1717,6 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 1062	98	100	c	1	تَنْڠُ	tangu	tangu						tangu	"When I was still pregnant with you	adv		ba		
 1161	107	109	b	1	هِكِ	hiki	hiki					\\Swa{hiki} implies that the mother knows what drought he is referring to, i.e. she has experienced it too.	h-	This drought was severe,	dem		ba		
 1273	117	119	b	1	نِ	ni	ni						ni	or [a spirit] who makes people lose their way?	exist		ba		
-1262	116	118	b	2	سِ	si	si						si		exist		ba		
 1247	114	116	d	1	مْمٗيَ	mmoya	mmoya						-moja	and one came up to me.	num		ba		
 1301	119	121	c	3	نَ	na	na						na		conj		ba		
 1209	111	113	b	2	نَاءٗ	nao	nao						na		conj		ba		
@@ -1740,6 +1738,7 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 985	91	93	c	1	إِوَپٗ	iwapo	iwapo						-w-	If I were you, Nasir, 	verb		ba	a	
 1098	102	104	b	2	سِيٗ	siyo	siyo						-li		focus		ba		
 1118	103	105	d	3	سِيٗ	siyo	siyo						-li		focus		ba		
+1262	116	118	b	2	سِ	si	si						si		exist		ba		y
 1647	151	153	d	2	نِٹِلِيَ	niţiliya	nitiliya					In other words, she is giving Ja'far her \\Swa{radhi} -- see 133c.  In order to leave, Ja'far must have this.  Hence the verse: \\Swa{mwate asumbuke / hana radhi ya mamake}, \\E{let him remain troubled / he does not have the blessing of his mother}.  Likewise, an unsuccessful person may be referred to as someone \\Swa{asiyekupata radhi ya babake}, \\E{sho did not get his father's blessing}.  However, \\Swa{watoto wa jeuri}, \\E{cheeky children}, will say things like \\Swa{radhi yako kaiweke mbuyuni}, \\E{stick your blessing in a baobab tree}. 	-ti-		verb	final	ba	imp	
 2577	242	244	a	2	أُنَنِ	unani	unani		una-ni			= \\Swa{una nini?}.  See 305b, 330b.	-na		have	final	ba		
 733	69	71	a	3	مْوِٹُنِ	mwiţuni	mwituni					Ali suggests going back with him to Mecca, but Ja'far wishes to take leave of his family first.  He must also ask permission of his teacher (122b), since he cannot leave the \\Swa{chuo}, \\E{school}, without being allowed.  See also the note to 129b.	-itu		noun	final	ba		
@@ -1790,7 +1789,6 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 2748	257	259	d	2	كُكْوَنْدَمِيَ	kukwandamiya	kukwandamiya						-andam-		verb	final	ba	ku	
 43	4	4	d	2	كُمْڤَلِيَ	kumvaliya	kumvaliya						-va-		verb	final	ba	ku	
 2951	277	279	c	4	كِپَٹَ	kipaţa	kipata						-pat-		verb	final	ba	ki	
-394	36	38	c	2	كِلِيٗ	kiliyo	kiliyo						-li-		noun	final	ba		
 338	30	32	d	3	نْدِيَ	ndiya	ndiya						-jia		noun	final	ba		
 374	34	36	b	4	ڠَنِ	gani	gani						nini		qual	final	ba		
 392	36	38	b	3	مُمٖئٗ	mumeo	mumeo						-ume		noun	final	ba		
@@ -1840,6 +1838,7 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 1071	99	101	b	2	مَنْڠِنٖ	mangine	mangine						-ingine		qual	final	ba		
 1089	101	103	b	2	مْوِٹُنِ	mwiţuni	mwituni						-itu		noun	final	ba		
 1186	109	111	a	3	مٗيٗنِ	moyoni	moyoni						-oyo		noun	final	ba		
+394	36	38	c	2	كِلِيٗ	kiliyo	kilio						-li-		noun	final	ba		
 1231	113	115	a	5	زُرِ	zuri	zuri					Even though he is only a child, Ja'far gives advice to the men.	-zuri		adj	final	ba		
 1113	103	105	b	4	كِتْوَنِ	kitwani	kitwani						-chwa		noun	final	ba		
 1115	103	105	c	2	أُپَآنِ	upaãni	upaani					lit. \\q{does not grow on the bald patch [that he has]}.  \\Swa{ana upaa [mkubwa]}, \\E{he's bald}.	-paa		noun	final	ba		
@@ -2028,7 +2027,6 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 1894	175	177	a	2	أَلِپٗجِلِسِ	alipojilisi	alipojilisi					\\Swa{-jilisi} = \\Swa{-keti}.	j-l-s		verb	final	ar	li	
 2404	224	226	c	4	كِكٗمْبٖنِ	kikombeni	kikombeni						-komb-		noun	final	ba		
 1238	113	115	c	4	أَخِرِ	akhiri	ahiri					lit. \\q{end}.	kh-kh-r		adj	final	ar		
-1290	118	120	c	4	جَهِلِ	jahili	jahili					\\Swa{jahili}, \\E{someone ignorant of the truth}, in this case of Islam.	j-h-l		adj	final	ar		
 1594	146	148	c	3	جَبَارِ	jabāri	jabari		Jabari				j-b-r		godn	final	ar		
 2219	206	208	a	3	هَشِمَ	hashima	hashima		Hashima				h-sh-m		title	final	ar		
 2332	217	219	d	3	جَلِيَ	jaliya	jaliya		Jaliya				j-l-l		godn	final	ar		
@@ -2081,6 +2079,7 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 2892	272	274	a	2	أَسِجِلِسِ	asijilisi	asijilisi					i.e. Zubayr did not sit and wait.	j-l-s		verb	final	ar	past	y
 2167	201	203	b	3	سِئِيٗنِ	siiyoni	siiyoni		siioni				-on-		verb	final	ba	a	y
 2005	186	188	a	3	سِمُؤٗنِ	simuoni	simuoni						-on-		verb	final	ba	a	y
+1290	118	120	c	4	جَهِلِ	jahili	jahili					\\Swa{jahili}, \\E{someone ignorant of the truth}, in this case of Islam.	j-h-l		noun	final	ar		
 89	9	9	b	3	تَمْكِنِ	tamkini	tamkini					\\Swa{tamkini = hakika, kweli}	m-k-n		adv	final	ar		
 231	22	22	c	2	تَمْكِنِ	tamkini	tamkini						m-k-n		adv	final	ar		
 275	24	26	b	2	تَمْكِنِ	tamkini	tamkini						m-k-n		adv	final	ar		
@@ -2267,7 +2266,6 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 3176	299	301	b	3	خَبَرِزٖ	khabarize	habarize						kh-b-r		noun	final	ar		
 1445	132	134	d	1	وَءٗ	wao	wao						-ao	looking at me.	poss		ba		
 1326	122	124	a	2	نِ	ni	ni						ni		exist		ba		
-1397	128	130	b	3	سِ	si	si						si		exist		ba		
 1358	124	126	d	1	وَ	wa	wa						-a	[son] of Lord Ali.	ref		ba		
 1322	121	123	d	1	كْوَ	kwa	kwa						-a	as they all stared at me.	ref		ba		
 1323	121	123	d	2	وٗتٖ	wote	wote						-ote		qual		ba		
@@ -2321,6 +2319,7 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 2763	259	261	b	2	فِرَشَنِ	firashani	firashani						f-r-sh		noun	final	ar		
 2851	268	270	b	2	دُنِيَنِ	duniyani	duniyani						d-n-y		noun	final	ar		
 3181	299	301	d	2	أَكِلِيَ	akiliya	akiliya						-li-		verb	final	ba	ki	
+1397	128	130	b	3	سِ	si	si						si		exist		ba		y
 2961	278	280	c	3	أَلْفَجِرِ	alfajiri	alfajiri		alifajiri			\\Swa{alfajiri}, \\E{dawn}.  In other words, it was time for morning prayers.	f-j-r		noun	final	ar		
 1499	137	139	d	1	نْدِمِ	ndimi	ndimi						ni	when I'm the only one who can draw water for you?	focus		ba		
 1547	142	144	d	2	نَ	na	na						na		conj		ba		
@@ -2356,7 +2355,6 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 1546	142	144	d	1	پِيَ	piya	piya		pia				pia	giving me example after example.	adv		ba		
 1612	148	150	b	1	مَمَكٖ	mamake	mamake						mama	his mother could not bear it.	noun		ba		
 1500	137	139	d	2	وَ	wa	wa						-a		ref		ba		
-3147	296	298	b	3	سِ	si	si						si		exist		ba		
 1544	142	144	c	1	أَكَنِپَ	akanipa	akanipa						-p-	He told me things he could not have known [unless he was my father]	verb		ba	ka	
 1465	134	136	c	2	نٖنْدَ	nenda	nenda						-end-		verb		ba	a	
 415	38	40	c	3	كَلِمَ	kalima	kalima						k-l-m		noun	final	ar		
@@ -2386,6 +2384,7 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 880	81	83	c	4	لَكِ	laki	laki						l-k-k		noun	final	ar		
 1180	108	110	c	3	مَهَلِ	mahali	mahali						m-hh-l		noun	final	ar		
 1417	130	132	a	1	أُوَپٗ	uwapo	uwapo						-w-	If you want to risk it,	verb		ba	a	
+3147	296	298	b	3	سِ	si	si						si		exist		ba		y
 1588	146	148	a	3	خٖيْرِ	khēri	heri						kh-y-r		noun	final	ar		
 1650	152	154	a	3	مَضَرَ	maḍara	madhara						m-dh-r		noun	final	ar		
 1653	152	154	b	3	مَرَ	mara	mara						m-r-r		noun	final	ar		
@@ -2446,7 +2445,7 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 122	12	12	c	2	أَكَفَسِرِ	akafasiri	akafasiri					\\Swa{-fasiri} lit. means \\q{explain}.	f-s-r		verb	final	ar	ka	
 1539	141	143	d	2	يَكَمْرُدِيَ	yakamrudiya	yakamrudiya						r-d-d		verb	final	ar	ka	
 1657	152	154	c	4	فِكِرَ	fikira	fikira					In other words, \\Swa{siwe kama ng'ombe}, \\E{don't act stupidly}.	f-k-r		verb	final	ar	imp	
-1569	144	146	c	3	زِسِزٗ	zisizo	zisizo						-li		exist		ba		y
+1569	144	146	c	3	زِسِزٗ	zisizo	zisizo						-li		v		ba	pres	y
 1016	94	96	b	2	هُتَأَدَبُ	hutaadabu	hutaadabu						a-d-b		verb	final	ar	hu	
 1295	119	121	a	2	هُفَسِرِ	hufasiri	hufasiri						f-s-r		verb	final	ar	hu	
 1335	122	124	c	3	هُفَسِرِ	hufasiri	hufasiri					\\Swa{mbona husemi?}, \\E{why aren't you speaking?}	f-s-r		verb	final	ar	hu	
@@ -2672,7 +2671,6 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 654	61	63	d	1	عَلِى	ʿalii	alii		Aliyi				3-l-y	Ali looked at it.	persn		ar		
 44	5	5	a	1	عَلِى	ʿalii	alii		Aliyi				3-l-y	When Ali left [Atika]	persn		ar		
 724	68	70	c	2	عَلِيْ	ʿalii	alii		Aliyi				3-l-y		persn		ar		
-2105	195	197	c	1	وَعَلَيْكَ	waʿalayka	waalayka		wa-aleka				a-l-k	Peace be with you, 	pron		ar		
 1638	151	153	a	3	مٗلَ	mola	mola		Mola				a-a-l	my Lord,	godn		ar		
 3306	305	313	d	1	مٗلَ	mola	mola		Mola				a-a-l	the Lord will bring to him.	godn		ar		
 169	17	17	b	1	أَمَ	ama	ama						a-m-m	or have you a temperature?	conj		ar		
@@ -2882,8 +2880,6 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 2520	236	238	c	2	خٖيْرِ	khēri	heri						kh-y-r		noun		ar		
 1074	99	101	d	1	خٖيْرِ	khēri	heri						kh-y-r	and it's better to keep quiet about it.	noun		ar		
 445	41	43	c	1	مْلَنِوَ	mlaniwa	mlaniwa						l-3-n	a cursed one, a damned one,	noun		ar		
-2	1	1	a	2	اللّٰهِ	llähi	llahi		~				l-a-h		noun		ar		
-249	22	24	a	2	وَاللّٰهِ	wallähi	wallahi						l-a-h		noun		ar		
 2686	251	253	c	1	لَكِ	laki	laki					\\Swa{laki} < \\AS{لَكٌّ}, \\E{100,000}.	l-k-k	of 100,000 unbelievers	noun		ar		
 2206	204	206	d	1	مَعَانَ	maʿāna	maana						m-3-n	I have told you the reason.	noun		ar		
 1477	135	137	d	1	مُدَ	muda	muda						m-d-d	when the sun was burning hot.	noun		ar		
@@ -2939,7 +2935,6 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 2023	187	189	d	2	صُوْرَ	ṣūra	sura						sw-w-r		noun		ar		
 1550	143	145	a	2	صُوْرَ	ṣūra	sura						sw-w-r		noun		ar		
 2275	211	213	d	2	أُثَقِلِ	uthaqili	uthaqili						th-q-l		noun		ar		
-2591	243	245	b	3	طَبِيَ	ṭabiya	tabiya						tw-b-3		noun		ar		
 3165	298	300	b	1	وَعَظِ	waʿaẓi	waadhi						w-3-zw	and showed her [what to do] by exhortation.	noun		ar		
 1938	179	181	d	1	وَجْهِ	wajhi	wajhi		wajihi				w-j-h	His face is that of the Prophet.	noun		ar		
 1312	120	122	d	1	وَجْهِ	wajhi	wajhi		wajihi			\\Swa{wajhi} = \\Swa{uso}.	w-j-h	his face [resembles] the Prophet's.	noun		ar		
@@ -2982,6 +2977,7 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 3277	308	310	d	1	مَصَحَبَ	maṣaḥaba	masahaba		Masahaba				sw-hh-b	telling the Companions.	title		ar		
 2816	264	266	d	1	مَصَحَبَ	maṣaḥaba	masahaba		Masahaba				sw-hh-b	and spoke to the Companions.	title		ar		
 3327	307	315	d	2	مَوْلَانَا	mawlānā	maulana		Maulana				a-a-l		title		ar		
+2591	243	245	b	3	طَبِيَ	ṭabiya	tabiya		tabia				tw-b-3		noun		ar		
 2095	194	196	c	3	هٗكٗ	hoko	hoko		huko	*			h-		dem		ba		
 2055	190	192	d	2	هِلٗ	hilo	hilo						h-		dem		ba		
 2069	192	194	b	1	هَپٗ	hapo	hapo						h-	Ali the Lion-like,	dem		ba		
@@ -3032,8 +3028,6 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 2246	208	210	d	1	نَ	na	na						na	and beckoned [Ali] into the inner [room].	conj		ba		
 2278	212	214	a	1	نَ	na	na						na	And the time he took [to get here],	conj		ba		
 2340	218	220	d	1	مْبٗنَ	mbona	mbona						-on-	Surely you are not leaving, Prophet?	conj		ba		
-2220	206	208	b	1	سِ	si	si						si	It is no small thing to arrive safely --	exist		ba		
-2236	207	209	d	3	سِ	si	si						si		exist		ba		
 2313	216	218	a	1	كْوَ	kwa	kwa						-a	With politeness (?)	ref		ba		
 2235	207	209	d	2	وَنْڠِ	wangi	wangi						-ingi		qual		ba		
 2320	216	218	d	1	وٗتٖ	wote	wote						-ote	and all returned his greeting.	qual		ba		
@@ -3053,7 +3047,7 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 2401	224	226	c	1	نَ	na	na						na	in a cup to drink,	conj		ba		
 2405	224	226	d	1	نَاءٖ	nae	nae		naye				na	and rinsed his mouth.	conj		ba		
 2191	203	205	c	1	پٖنْيٖ	penye	penye						-enye	At the place with the date-tree I stopped --	qual		ba		
-2594	243	245	c	2	سِ	si	si						si		exist		ba		
+2220	206	208	b	1	سِ	si	si						si	It is no small thing to arrive safely --	exist		ba		y
 2387	223	225	a	2	ٹَاٹُ	ţāţu	tatu						-tatu		num		ba		
 2369	221	223	c	1	تَمَشَ	tamasha	tamasha					\\Swa{vitu vizuri vizuri}.	-tamasha	and placed delicacies [before them]	noun		ba		
 2380	222	224	c	2	وَٹُ	waţu	watu						-tu		noun		ba		
@@ -3066,7 +3060,6 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 2286	212	214	d	1	مَنٖنٗيٖ	manenoye	manenoye						-nen-	as he tells us his story.	noun		ba		
 2481	232	234	c	1	مْوٖنْيٖوٖ	mwenyewe	mwenyewe						-enye	[Hasan said:] Myself I don't know -- 	noun		ba		
 2561	240	242	c	2	هَنَ	hana	hana						-na		have		ba		
-2450	229	231	c	1	نِلٗنَلٗ	nilonalo	nilonalo						-na	[the thing] I have [in my heart], I have no choice	have		ba		
 2430	227	229	b	1	پٹٖ	pţe	pte		pete	*			-pet-	she caught sight of the ring.	noun		ba		
 2451	229	231	c	2	سِنَ	sina	sina						-na		have		ba		
 2516	236	238	b	1	أُنَنِ	unani	unani		una-ni			= \\Swa{una nini?}.  See 244a, 263b.	-na	What's the matter?  You are speaking amongst yourselves.	have		ba		
@@ -3096,8 +3089,6 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 2472	231	233	c	1	مِمِ	mimi	mimi		mama	*			mimi	she is angry,	pron		ba		
 2619	245	247	d	2	كِلٖ	kile	kile		kweli	*			-le		dem		ba		
 2556	240	242	b	1	كْوَنِ	kwani	kwani						nini	For he is not an illegitimate child.	conj		ba		
-2590	243	245	b	2	سِ	si	si						si		exist		ba		
-2602	244	246	b	1	سِ	si	si						si	That ring on his finger, is it not [the one]	exist		ba		
 2629	246	248	c	2	وَكٖ	wake	wake						-ake		poss		ba		
 2572	241	243	c	2	كْوَ	kwa	kwa						-a		ref		ba		
 2534	238	240	a	1	هَپٗ	hapo	hapo						h-	Then Ali the Lionlike,	dem		ba		
@@ -3122,6 +3113,9 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 2230	207	209	b	1	أَسِؤٗوْنٖ	asiōne	asione						-on-	so that he met no unbelievers,	verb		ba	past	y
 2498	234	236	b	1	مْوٖنْيٖ	mwenye	mwenye						-enye	the gossip-monger in the town,	qual		ba		
 2448	229	231	b	2	هُنٖنْدِ	hunendi	hunendi						-end-		verb		ba	a	y
+2450	229	231	c	1	نِلٗنَلٗ	nilonalo	nilonalo						-li	[the thing] I have [in my heart], I have no choice	verb		ba		
+2594	243	245	c	2	سِ	si	si						si		exist		ba		y
+2590	243	245	b	2	سِ	si	si						si		exist		ba		y
 2614	245	247	b	1	نْدِپٗ	ndipo	ndipo					\\E{that is why}.	ni	so that's why you are angry --	focus		ba		
 2568	241	243	b	1	هٖلَ	hela	hela					= \\Swa{hebu}.	hela	Come now, Fatima.	conj		ba		
 2632	246	248	d	1	نَ	na	na						na	and tell me what you want.	conj		ba		
@@ -3133,7 +3127,6 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 2650	248	250	b	1	يٖيٖ	yeye	yeye						yeye	[Ali] and the boy, in the house.	pron		ba		
 2689	251	253	d	1	هَكُنَ	hakuna	hakuna						-na	there was not one [left alive].	have		ba		
 2698	252	254	d	1	نِنَ	nina	nina						-na	I have something to tell you.	have		ba		
-2639	247	249	b	2	سِ	si	si						si		exist		ba		
 2545	239	241	a	2	كُئِيٖ	kuiye	kuiye						-j-		verb		ba	past	
 2461	230	232	c	1	أَكَنٖنْدَ	akanenda	akanenda						-end-	and went to the Trustworthy One	verb		ba	ka	
 2458	230	232	b	1	كَتٗكَ	katoka	katoka						-to-	he left the house	verb		ba	ka	
@@ -3190,6 +3183,7 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 2750	258	260	a	2	أَلِپٗ	alipo	alipo						-li		verb		ba	li	
 2893	272	274	b	1	كَپٗكٖيَ	kapokeya	kapokeya		kapokea				-pok-	he took the papers	verb		ba	ka	
 2711	254	256	a	1	أَكَشُكَ	akashuka	akashuka						-shuk-	Gabriel descended	verb		ba	ka	
+2639	247	249	b	2	سِ	si	si						si		exist		ba		y
 2707	253	255	c	1	أَكَپِجٖ	akapije	akapije						-pig-	to fight the unbelievers.	verb		ba	ka	
 2779	261	263	a	1	أَكَلِيَ	akaliya	akaliya		akalia				-li-	He wept, saying:	verb		ba	ka	
 2647	248	250	a	1	وَكَكٖتِ	wakaketi	wakaketi						-ka-	They lived happily,	verb		ba	ka	
@@ -3377,6 +3371,7 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 96	10	10	a	1	سِجُوِ	sijuwi	sijuwi		sijui			It makes more sense to follow R here, and place this stanza before the one beginning \\q{Mwana binti Amini...}.	-ju-	I don't know, said [Fatima], if that is true.	verb		ba	a	y
 1817	167	169	c	3	سِمُؤٗنِ	simuoni	simuoni						-on-		verb	final	ba	a	y
 1833	169	171	b	2	نِسِيَتٗكَ	nisiyatoka	nisiyatoka						-to-		verb	final	ba	sija	y
+2422	226	228	b	2	كُلَ	kula	kula						k-l-l		pron		ar		
 982	91	93	a	3	أَسِكِرِ	asikiri	asikiri						q-r-r		verb	final	ar	past	y
 2936	276	278	b	1	أَسِپَٹٖ	asipaţe	asipate		asifanye	*			-pat-	was doing his best [to find the teacher's house],	verb		ba	past	y
 2813	264	266	b	2	أَسِيَفِكِرِ	asiyafikiri	asiyafikiri					\\Swa{hajui mambo}.  Usually only women are in this state after someone has died -- the men try to concentrate on making the funeral arrangements.  In this case, the Prophet steps in to organise the funeral.	f-k-r		verb	final	ar	past	y
@@ -3411,7 +3406,6 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 2479	232	234	b	1	مٖكَسِرِكِيَ	mekasirikiya	mekasirikiya						hh-s-r	Why has she got angry?	verb		ar	me	
 683	64	66	c	2	كَتَكَلَمُ	katakalamu	katakalamu						k-l-m		verb	final	ar	ka	
 1995	185	187	a	2	كَتَكَلَمُ	katakalamu	katakalamu						k-l-m		verb	final	ar	ka	
-2422	226	228	b	2	كُلَ	kula	kula						k-l-l		verb		ar	ku	
 2097	194	196	d	1	سِپَٹِ	sipaţi	sipati						-pat-	I have nothing to tell you [since my departure].	verb		ba	a	
 946	87	89	d	1	هَتَكِ	hataki	hataki						-tak-	he doesn't want to look at us.	verb		ba	a	y
 2643	247	249	c	1	أُوَپٗ	uwapo	uwapo					= \\Swa{ukiwa}.	-w-	Since you have now agreed [you were wrong],	verb		ba	a	
@@ -3427,6 +3421,12 @@ COPY jaafari_words (word_id, msno, stanza, loc, "position", arabic, close, stand
 2327	217	219	c	1	سِيُوِ	siyuwi	siyuwi		siyui				-ju-	I do not know about where I am going --	verb		ba	a	y
 2675	250	252	c	1	سَبَا	sabā	saba		sabaa				s-b-3	Indeed, 700 [opponents]	num		ar		
 3126	294	296	c	2	سَبَا	sabā	saba		sabaa				s-b-3		num		ar		
+2	1	1	a	2	اللّٰهِ	llähi	llahi		~				l-a-h		godn		ar		
+249	22	24	a	2	وَاللّٰهِ	wallähi	wallahi						l-a-h		godn		ar		
+427	39	41	d	1	سِ	si	si						si	and I am not pleased [to have done it].	exist		ba		y
+2236	207	209	d	3	سِ	si	si						si		exist		ba		y
+2602	244	246	b	1	سِ	si	si						si	That ring on his finger, is it not [the one]	exist		ba		y
+2105	195	197	c	1	وَعَلَيْكَ	waʿalayka	waalayka		wa-aleka				a-l-k	Peace be with you, 	prep		ar		
 \.
 
 

@@ -137,6 +137,9 @@ function standardise($text)
 {
 	$text=preg_replace("/ã/", "a", $text);  // alef+madda
 	
+	// Handle Jaafari R's marking of long vowels with an alef where they occur at the end of a word.
+	$text=preg_replace("/([iu])L\b/", "$1", $text);  // ia > i, ua > u
+	
 	$text=preg_replace("/L([aeiou])/", "$1$2", $text);  // Ustadh Mau initial vowels use alif as carrier, without hamza
 	
 // 	$text=preg_replace("/U\+207F/", "", $text);  // {fatha|damma|kasra}tan > nothing
@@ -208,6 +211,10 @@ function standardise($text)
 
 function close_trans($text)
 {
+	// Handle Jaafari R's marking of long vowels with an alef where they occur at the end of a word.
+	$text=preg_replace("/iL\b/", "U+012B", $text);  // ia > ī
+	$text=preg_replace("/uL\b/", "U+016B", $text);  // ua > ū
+	
 	$text=preg_replace("/L([aeiou])/", "$1$2", $text);  // Ustadh Mau initial vowels use alif as carrier, without hamza
 
 	$text=preg_replace("/(Ll)?([bcdfghjklmnpqrstvwyz])U\+0651/", "$2$2", $text);  // shadda > CC

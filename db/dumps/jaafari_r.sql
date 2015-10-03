@@ -81,7 +81,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 13	4	4	a	نَلِ نِرَاؤُ دِيَنِ	nali nirau diyani	nali nirau diyani	
 14	4	4	b	كَأُنَ مْتُ نْيُمْبانِ	kauna mtu nyumbāni	kauna mtu nyumbani	
 15	4	4	c	مُيُوِ اُكَتَمَنِ	muyuwi ukatamani	muyuwi ukatamani	
-16	4	4	d	كْوَا حَلَلِا كَرِضِيَا	kwā ḥalaliā kariḍiyā	kwa halalia karidhiya	
+16	4	4	d	كْوَا حَلَلِا كَرِضِيَا	kwā ḥalalī kariḍiyā	kwa halali karidhiya	
 17	5	5	a	نَمَهَرِيِ يُوَانِ	namahariyi yuwāni	namahariyi yuwani	
 18	5	5	b	نَلُمْپَ زَيْدَانِ	nalumpa zaydāni	nalumpa zaydani	
 19	5	5	c	نَلِنَ پِتِ ػَنْدَانِ	nalina piti kʲandāni	nalina piti chandani	
@@ -115,7 +115,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 47	12	12	c	حَسَنِ اَكَمْتُمَ	ḥasani akamtuma	hasani akamtuma	
 48	12	12	d	بَبَكُ نَمْكُلِيَا	babaku namkuliyā	babaku namkuliya	
 49	13	13	a	نَمْكُلِيَ كْوَا سِرِ	namkuliya kwā siri	namkuliya kwa siri	
-50	13	13	b	اَسِكُيُوِا بَشِيْرِا	asikuyuwiā bashı̄riā	asikuyuwia bashiria	
+50	13	13	b	اَسِكُيُوِا بَشِيْرِا	asikuyūī bashı̄rī	asikuyuwi bashiri	
 51	13	13	c	اَػِنْرَا اَكَفَصِيْرِ	akʲinrā akafaṣı̄ri	achinra akafasiri	
 52	13	13	d	مْبِيْ زَ تُمْوَا نَبِيَا	mbii za tumwā nabiyā	mbii za tumwa nabiya	
 53	14	14	a	كَفَصِيْرِ مُعَيَنِ	kafaṣı̄ri muʿayani	kafasiri muayani	
@@ -129,7 +129,6 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 61	16	16	a	عَلِيْ اَكَيْنُكَ	ʿalii akaynuka	alii akaynuka	
 62	16	16	b	اَكِنِرَا كْوَ حَرَاكَ	akinirā kwa ḥarāka	akinira kwa haraka	
 63	16	16	c	حَتَى نْيُمْبَانِ كِفِكَ	ḥatay nyumbāni kifika	hatay nyumbani kifika	
-127	32	32	c	كُمْوَامْبِيَ سِحِمِلِ	kumwāmbiya siḥimili	kumwambiya sihimili	
 64	16	16	d	مْوَانَ فَطِيْمَ حُلِيَا	mwāna faṭı̄ma ḥuliyā	mwana fatima huliya	
 65	17	17	a	عَلِيْ كَشَوِشِكَ	ʿalii kashawishika	alii kashawishika	
 66	17	17	b	كْوَا رُحُمَ كَمْشِيْكَ	kwā ruḥuma kamshı̄ka	kwa ruhuma kamshika	
@@ -152,7 +151,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 83	21	21	c	عَلِيْ اَكَشُتُكَ	ʿalii akashutuka	alii akashutuka	
 84	21	21	d	هُوَزَا نِكُوْمْوَبِيَا	huwazā nikūmwabiyā	huwaza nikumwabiya	
 85	22	22	a	كِسَ عَلِيْ حَيْدَارِ	kisa ʿalii ḥaydāri	kisa alii haydari	
-86	22	22	b	نِنُ اُلِلُا فَصِيْرِا	ninu uliluā faṣı̄riā	ninu ulilua fasiria	
+86	22	22	b	نِنُ اُلِلُا فَصِيْرِا	ninu ulilū faṣı̄rī	ninu ulilu fasiri	
 87	22	22	c	اُنَيُ اَبُوْ بَكَرِ	unayu abuu bakari	unayu abuu bakari	
 88	22	22	d	تَكْوِنْرَ كُكُتْوَلِيَا	takwinra kukutwaliyā	takwinra kukutwaliya	
 89	23	23	a	پِتِ يَكُ يَػَنْدَانِ	piti yaku yakʲandāni	piti yaku yachandani	
@@ -193,10 +192,11 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 124	31	31	d	زِنْڠِ نِمِمْتِلِيَا	zingi nimimtiliyā	zingi nimimtiliya	
 125	32	32	a	يَكْوِلِيَوِ رَسُوْلِ	yakwiliyawi rasūli	yakwiliyawi rasuli	
 126	32	32	b	نَمِ نَلِفَنْيَ كْوِلِ	nami nalifanya kwili	nami nalifanya kwili	
+127	32	32	c	كُمْوَامْبِيَ سِحِمِلِ	kumwāmbiya siḥimili	kumwambiya sihimili	
 128	32	32	d	خُفُ زِمِزُنِغِيَا	khufu zimizunighiyā	hufu zimizunighiya	
 129	33	33	a	اِنِرَا وِوِ سَيّدِ	inirā wiwi sayı̄di	inira wiwi sayidi	
 130	33	33	b	كَمُوُنْيِّ اَبُرُدِ	kamuwunı̄yi aburudi	kamuwuniyi aburudi	
-131	33	33	c	كَيْنُكَا مُحَمَّدِا	kaynukā muḥammadiā	kaynuka muhammadia	
+131	33	33	c	كَيْنُكَا مُحَمَّدِا	kaynukā muḥammadī	kaynuka muhammadi	
 132	33	33	d	حَپُ كَأَنْدَامَ نْدِيَا	ḥapu kaandāma ndiyā	hapu kaandama ndiya	
 133	34	34	a	اَتِرَا حَيَ جِلِسِ	atirā ḥaya jilisi	atira haya jilisi	
 134	34	34	b	اُسُ اُكَلِى نَكَسِ	usu ukalii nakasi	usu ukalii nakasi	
@@ -207,7 +207,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 139	35	35	c	حَسَانِ اُيْيِ حِمَ	ḥasāni uyyi ḥima	hasani uyyi hima	
 140	35	35	d	عَلِى كُمْوَادَمِيَا	ʿalii kumwādamiyā	alii kumwadamiya	
 141	36	36	a	فَطِيْمَ حَكُكَصِيْرِ	faṭı̄ma ḥakukaṣı̄ri	fatima hakukasiri	
-142	36	36	b	اَكَمْوَامْبِيَ بَشِيْرِا	akamwāmbiya bashı̄riā	akamwambiya bashiria	
+142	36	36	b	اَكَمْوَامْبِيَ بَشِيْرِا	akamwāmbiya bashı̄rī	akamwambiya bashiri	
 143	36	36	c	عَلِي زَاكِى خَبَارِ	ʿalii zākii khabāri	alii zakii habari	
 144	36	36	d	يِوُ نِمِزِسِكِيَا	yiwu nimizisikiyā	yiwu nimizisikiya	
 145	37	37	a	كَمُوُلِزَا اَمِيْنِ	kamuwulizā amı̄ni	kamuwuliza amini	
@@ -235,7 +235,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 167	42	42	c	نَيُوَا مَؤُڤُ يَنْڠُ	nayuwā mauvu yangu	nayuwa mauvu yangu	
 168	42	42	d	سِمْوِنْيِ كُپِنْدِلِيَا	simwinyi kupindiliyā	simwinyi kupindiliya	
 169	43	43	a	نِمْتُ وَلِنِغُرِ	nimtu walinighuri	nimtu walinighuri	
-170	43	43	b	سَسَا نِمِمْفِكِرِا	sasā nimimfikiriā	sasa nimimfikiria	
+170	43	43	b	سَسَا نِمِمْفِكِرِا	sasā nimimfikirī	sasa nimimfikiri	
 171	43	43	c	هَتُپِنْدِلِيِ خِيْرِ	hatupindiliyi khı̄ri	hatupindiliyi hiri	
 172	43	43	d	حَوِزِ كُتْوَاغَلِيْيَ	ḥawizi kutwāghalı̄ya	hawizi kutwaghaliya	
 173	44	44	a	تِنَ هُظُمُ مُيُنِ	tina huẓumu muyuni	tina hudhumu muyuni	
@@ -315,7 +315,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 247	62	62	c	نَيِوْ نِنَ صِبَبُ	nayiw nina ṣibabu	nayiu nina sibabu	
 248	62	62	d	جُمَ يَكُتُئِلِيْيَا	juma yakutuilı̄yā	juma yakutuiliya	
 249	63	63	a	عَلِيْ اَكَفَصِْرِ	ʿalii akafaṣiri	alii akafasiri	
-250	63	63	b	يَكْوِلِيَوِ بَشِيْرِا	yakwiliyawi bashı̄riā	yakwiliyawi bashiria	
+250	63	63	b	يَكْوِلِيَوِ بَشِيْرِا	yakwiliyawi bashı̄rī	yakwiliyawi bashiri	
 251	63	63	c	وَيُوَا سِنَا جَوُرِ	wayuwā sinā jawuri	wayuwa sina jawuri	
 252	63	63	d	زَا كُمُوُنْيَّ جَلِيَا 	zā kumuwunı̄ya jaliyā	za kumuwuniya jaliya	
 253	64	64	a	تِنَا يِوُ نِنَا مَتِ	tinā yiwu ninā mati	tina yiwu nina mati	
@@ -343,7 +343,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 275	69	69	c	نَيِ اَتَنِكُمْبُكَ	nayi atanikumbuka	nayi atanikumbuka	
 276	69	69	d	سِكُزُتِ اَكِلِيَا	sikuzuti akiliyā	sikuzuti akiliya	
 277	70	70	a	عَلِيْ اَكَصُبِرِ	ʿalii akaṣubiri	alii akasubiri	
-278	70	70	b	حَتَ جُمَعْ لِكَجِرِا	ḥata jumaʿ likajiriā	hata juma likajiria	
+278	70	70	b	حَتَ جُمَعْ لِكَجِرِا	ḥata jumaʿ likajirī	hata juma likajiri	
 279	70	70	c	كِنِرَّا مْوِنْيِ كُمُوْغُرِ	kinirrā mwinyi kumūghuri	kinirra mwinyi kumughuri	
 280	70	70	d	هُمْلِرَّا كُمْوَمْبِيَا	humlirrā kumwambiyā	humlirra kumwambiya	
 281	72	71	a	عَلِيْ كَيْرَا تِيْتِ	ʿalii kayrā tı̄ti	alii kayra titi	
@@ -395,7 +395,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 327	84	82	c	اَكَنِيْنَ شَيْطَانِ	akanı̄na shayṭāni	akanina shaytani	
 328	84	82	d	اُمِشُهُدِ نَبِيَا	umishuhudi nabiyā	umishuhudi nabiya	
 329	85	83	a	اُمِشُهُدِ مْكْوِوُ	umishuhudi mkwiwu	umishuhudi mkwiwu	
-330	85	83	b	تَعَدِ اَنِتِدِئوُا	taʿadi anitidiwuā	taadi anitidiwua	
+330	85	83	b	تَعَدِ اَنِتِدِئوُا	taʿadi anitidiwū	taadi anitidiwu	
 331	85	83	c	اُمِيَوُنَ يَئِوُ	umiyawuna yaiwu	umiyawuna yaiwu	
 332	85	83	d	يَلِنْدِنِ نَمَپِيَا	yalindini namapiyā	yalindini namapiya	
 333	86	84	a	اُسِيْوُنِ رِيُ بَاسِ	usı̄wuni riyu bāsi	usiwuni riyu basi	
@@ -447,7 +447,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 379	97	95	c	پِتِ يَنْڠُ يَمَئِيْنَ	piti yangu yamaı̄na	piti yangu yamaina	
 380	97	95	d	حُجَ نَلُوْ اِوَاتِيَا	ḥuja naluu iwātiyā	huja naluu iwatiya	
 381	98	96	a	نَلِئِوَاتَ كَسِدِ	naliiwāta kasidi	naliiwata kasidi	
-382	98	96	b	سِمَحَبَ كُنِزِدِا	simaḥaba kunizidiā	simahaba kunizidia	
+382	98	96	b	سِمَحَبَ كُنِزِدِا	simaḥaba kunizidī	simahaba kunizidi	
 383	98	96	c	مَرَا حُوْزَاوَ وَآلدِ	marā ḥūzāwa waãldi	mara huzawa waaldi	
 384	98	96	d	اَكَصِيْرِ كُپُتِيْيَا	akaṣı̄ri kuputı̄yā	akasiri kuputiya	
 385	99	97	a	عَلِيْ اَلُفِكِيْرِ	ʿalii alufikı̄ri	alii alufikiri	
@@ -459,7 +459,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 391	100	98	c	كُلَ اَلٗكِمُوُنَ	kula alokimuwuna	kula alokimuwuna	
 392	100	98	d	سُوْرَ زَلِكِمْوِلِيَ	sūra zalikimwiliya	sura zalikimwiliya	
 393	101	99	a	وَتُ وَلِكِيْذُكُرِ	watu walikı̄dhukuri	watu walikidhukuri	
-394	101	99	b	عَلِيْ حَنَا خَبَرِا	ʿalii ḥanā khabariā	alii hana habaria	
+394	101	99	b	عَلِيْ حَنَا خَبَرِا	ʿalii ḥanā khabarī	alii hana habari	
 395	101	99	c	حَتَ مْمُيَ كْوَا سِرِ	ḥata mmuya kwā siri	hata mmuya kwa siri	
 396	101	99	d	هَكُنَ اَلُمْوَمْبِيَا	hakuna alumwambiyā	hakuna alumwambiya	
 397	102	100	a	اَلِپُ پِنْدَا مَنَانِ	alipu pindā manāni	alipu pinda manani	
@@ -471,8 +471,8 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 403	103	101	c	نَيِ اَكَكِفِنِكَ	nayi akakifinika	nayi akakifinika	
 404	103	101	d	نِوَازِ اَكِتِيْرِيَ	niwāzi akitı̄riya	niwazi akitiriya	
 405	104	102	a	حَپُ عَلِيْ حَيْدَرِ	ḥapu ʿalii ḥaydari	hapu alii haydari	
-406	104	102	b	كِوَزَا نَكُفِيْكِرِا	kiwazā nakufı̄kiriā	kiwaza nakufikiria	
-407	104	102	c	وَمِكُيَ مَكُفَرِا	wamikuya makufariā	wamikuya makufaria	
+406	104	102	b	كِوَزَا نَكُفِيْكِرِا	kiwazā nakufı̄kirī	kiwaza nakufikiri	
+407	104	102	c	وَمِكُيَ مَكُفَرِا	wamikuya makufarī	wamikuya makufari	
 408	104	102	d	يِوُ كينِفُنُلِيَا	yiwu kı̄nifunuliyā	yiwu kinifunuliya	
 409	105	103	a	اَكِسَا اَكَتَمْكَ	akisā akatamka	akisa akatamka	
 410	105	103	b	نَيِوُ تَكِفِنِكَ	nayiwu takifinika	nayiwu takifinika	
@@ -491,7 +491,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 423	108	106	c	كْوَانْدَا يِوُ اَكِرُدِ	kwāndā yiwu akirudi	kwanda yiwu akirudi	
 424	108	106	d	حَلِدِرِكى اَكِيَا	ḥalidirikı̄ akiyā	halidiriki akiya	
 425	109	107	a	كَمَ حُفَنْيَ نِبِرِ	kama ḥufanya nibiri	kama hufanya nibiri	
-426	109	107	b	اَيَپُ اَتَنِكِيْرِا	ayapu atanikı̄riā	ayapu atanikiria	
+426	109	107	b	اَيَپُ اَتَنِكِيْرِا	ayapu atanikı̄rī	ayapu atanikiri	
 427	109	107	c	حِلِ هُپَتَ بَدَرِ	ḥili hupata badari	hili hupata badari	
 428	109	107	d	غُوْ اُتَغِنِيْكِيَا	ghuu utaghinı̄kiyā	ghuu utaghinikiya	
 429	110	108	a	مَئِ كَتِكَ كَتِكَ	mai katika katika	mai katika katika	
@@ -503,8 +503,8 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 435	112	109	c	حَتَ اُكِوَا نَجِنِ	ḥata ukiwā najini	hata ukiwa najini	
 436	112	109	d	نَيُوَا كُكُسُمِيَا	nayuwā kukusumiyā	nayuwa kukusumiya	
 437	113	110	a	حَيَا نِمِزُفَصِيْرِ	ḥayā nimizufaṣı̄ri	haya nimizufasiri	
-438	113	110	b	سِكُيَنِنَ كْوَا سِرِا	sikuyanina kwā siriā	sikuyanina kwa siria	
-439	113	110	c	اُكِتَكَا اِظْهَرِا	ukitakā iẓhariā	ukitaka idhharia	
+438	113	110	b	سِكُيَنِنَ كْوَا سِرِا	sikuyanina kwā sirī	sikuyanina kwa siri	
+439	113	110	c	اُكِتَكَا اِظْهَرِا	ukitakā iẓharī	ukitaka idhhari	
 440	113	110	d	نَزَءِدِ تَكْوَامْبِيَا	nazaidi takwāmbiyā	nazaidi takwambiya	
 441	114	111	a	كَمْڤُتِيَ كْوَمْبَلِ	kamvutiya kwambali	kamvutiya kwambali	
 442	114	111	b	وَكَوَنَ وُ وَوِيْلِ	wakawana wu wawı̄li	wakawana wu wawili	
@@ -571,15 +571,15 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 503	130	126	c	نَمِ هُوْكُ اَقْرَابَ	nami hūku aqrāba	nami huku aqraba	
 504	130	126	d	نَتُمْوَا نِسَلِمِيَا	natumwā nisalimiyā	natumwa nisalimiya	
 505	132	127	a	سَلَمُ اَبُوْ بَكَرِ	salamu abuu bakari	salamu abuu bakari	
-506	132	127	b	اَزْوَاجِ نَا زُبِيْرِا	azwāji nā zubı̄riā	azwaji na zubiria	
+506	132	127	b	اَزْوَاجِ نَا زُبِيْرِا	azwāji nā zubı̄rī	azwaji na zubiri	
 507	132	127	c	سُرَا زَوُ اِظْهَرِ	surā zawu iẓhari	sura zawu idhhari	
 508	132	127	d	هَوُ نَوَافَهَمِيْيَا	hawu nawāfahamı̄yā	hawu nawafahamiya	
 509	133	128	a	بَاسِ هَپُ جَعْفَارِ	bāsi hapu jaʿfāri	basi hapu jafari	
-510	133	128	b	اَكَمْوَامْبِيَ كْوَا حِيْرِا	akamwāmbiya kwā ḥı̄riā	akamwambiya kwa hiria	
+510	133	128	b	اَكَمْوَامْبِيَ كْوَا حِيْرِا	akamwāmbiya kwā ḥı̄rī	akamwambiya kwa hiri	
 511	133	128	c	نَعَلِيْ هَيْدَارِ	naʿalii haydāri	naalii haydari	
 512	133	128	d	مْغُ اَكَمُوُمبِيَا	mghu akamuwumbiyā	mghu akamuwumbiya	
 513	134	129	a	مُوْيِنِ كَنْڠِيَا كْوَكِ	mūyini kangiyā kwaki	muyini kangiya kwaki	
-514	134	129	b	كِيْرَا كْوَا مُعْلِمُ وَكِا	kı̄rā kwā muʿlimu wakiā	kira kwa mulimu wakia	
+514	134	129	b	كِيْرَا كْوَا مُعْلِمُ وَكِا	kı̄rā kwā muʿlimu wakī	kira kwa mulimu waki	
 515	134	129	c	كَمْپَ خَبَرِ زَاكِيْ	kampa khabari zākii	kampa habari zakii	
 516	134	129	d	كْوَاوُ هُيَسِكِلِيَا	kwāwu huyasikiliyā	kwawu huyasikiliya	
 517	135	130	a	اَكِسَ كُيَنُظُمُ	akisa kuyanuẓumu	akisa kuyanudhumu	
@@ -617,7 +617,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 549	143	138	a	كَمَ سِوِوِ جَعْفَارِ	kama siwiwi jaʿfāri	kama siwiwi jafari	
 550	143	138	b	وَاُتِشُوْ نَجَوُرِ	wautishuu najawuri	wautishuu najawuri	
 551	143	138	c	هُغِيَ كَمَ كْوَا سِرِ	hughiya kama kwā siri	hughiya kama kwa siri	
-552	143	138	d	مْتُا اَمِزُكِمْبِيَا	mtuā amizukimbiyā	mtua amizukimbiya	
+552	143	138	d	مْتُا اَمِزُكِمْبِيَا	mtū amizukimbiyā	mtu amizukimbiya	
 553	144	139	a	نَصِيْرِ اَتَمْكِيْ	naṣı̄ri atamkii	nasiri atamkii	
 554	144	139	b	نِيْرُيِ كِنُنَ ػَكِ	nı̄ruyi kinuna kʲaki	niruyi kinuna chaki	
 555	144	139	c	عَيْنِ يَمَتُ يَكِ	ʿayni yamatu yaki	ayni yamatu yaki	
@@ -631,7 +631,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 563	146	141	c	كِسَ اَتُوْكَ مْوِتُنِ	kisa atūka mwituni	kisa atuka mwituni	
 564	146	141	d	يُوَا نِكَلِ لَنْدِيَا	yuwā nikali landiyā	yuwa nikali landiya	
 565	147	142	a	اَكَيْنُكَ جَعْفَارِ	akaynuka jaʿfāri	akaynuka jafari	
-566	147	142	b	اَكَمْپِجَ نَصِيْرِا	akampija naṣı̄riā	akampija nasiria	
+566	147	142	b	اَكَمْپِجَ نَصِيْرِا	akampija naṣı̄rī	akampija nasiri	
 567	147	142	c	زِتَكُتُكَ جَوُرِ	zitakutuka jawuri	zitakutuka jawuri	
 568	147	142	d	يِوُ نِكِكْوَاغَلِيَا	yiwu nikikwāghaliyā	yiwu nikikwaghaliya	
 569	148	143	a	حَپُ مَمَ اسِكِيْرِ	ḥapu mama āsikı̄ri	hapu mama asikiri	
@@ -639,8 +639,8 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 571	148	143	c	اِكِوَا نِمْبَصِيْرِ	ikiwā nimbaṣı̄ri	ikiwa nimbasiri	
 572	148	143	d	هَيُ حَڠَلِيْكْوَمْبِيَا	hayu ḥagalı̄kwambiyā	hayu hagalikwambiya	
 573	149	144	a	نَصِيْرِ نِرُيَكُ	naṣı̄ri niruyaku	nasiri niruyaku	
-574	149	144	b	مْوَانَغُ مْتُتُ وَاكُا	mwānaghu mtutu wākuā	mwanaghu mtutu wakua	
-575	149	144	c	كِسَ نِعَوْنِ يَكُا	kisa niʿawni yakuā	kisa niauni yakua	
+574	149	144	b	مْوَانَغُ مْتُتُ وَاكُا	mwānaghu mtutu wākū	mwanaghu mtutu waku	
+575	149	144	c	كِسَ نِعَوْنِ يَكُا	kisa niʿawni yakū	kisa niauni yaku	
 576	149	144	d	وَتَ كُمْتُكُلِيْيَا	wata kumtukulı̄yā	wata kumtukuliya	
 577	150	145	a	اَلِئِنَمِيَا تِيْنِ	aliinamiyā tı̄ni	aliinamiya tini	
 578	150	145	b	اَكِوُلِزْوَا هَنِيْنِ	akiwulizwā hanı̄ni	akiwulizwa hanini	
@@ -679,7 +679,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 611	158	153	c	صِفَا زَاكِ مُعَيَاَنِ	ṣifā zāki muʿayaani	sifa zaki muayaani	
 612	158	153	d	اُكِتَكَ تَكْوَمْبِيَا	ukitaka takwambiyā	ukitaka takwambiya	
 613	159	154	a	نِسِكِزَا نَرَادِيْدِ	nisikizā narādı̄di	nisikiza naradidi	
-614	159	154	b	كِوَ سِيُ اُنِرُوْدِا	kiwa siyu unirūdiā	kiwa siyu unirudia	
+614	159	154	b	كِوَ سِيُ اُنِرُوْدِا	kiwa siyu unirūdī	kiwa siyu unirudi	
 615	159	154	c	كِيْمُ ػَكِ هَكِزِيْدِ	kı̄mu kʲaki hakizı̄di	kimu chaki hakizidi	
 616	159	154	d	كَمَ ػَنْغُ اَغَلِيَا	kama kʲanghu aghaliyā	kama changhu aghaliya	
 617	160	155	a	نَلَپِلِ مْبَيَنِ	nalapili mbayani	nalapili mbayani	
@@ -759,15 +759,15 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 691	178	173	c	مَمَ وَمِتَعَجَبُ	mama wamitaʿajabu	mama wamitaajabu	
 692	178	173	d	كْوَا وُتِ هُنَغَلِيَا	kwā wuti hunaghaliyā	kwa wuti hunaghaliya	
 693	179	174	a	هُيُ نِاَبُوْ بَكَرِ	huyu niabuu bakari	huyu niabuu bakari	
-694	179	174	b	نَحُيُ حِتْوَا زُبِيْرِا	naḥuyu ḥitwā zubı̄riā	nahuyu hitwa zubiria	
+694	179	174	b	نَحُيُ حِتْوَا زُبِيْرِا	naḥuyu ḥitwā zubı̄rī	nahuyu hitwa zubiri	
 695	179	174	c	نَوِ لَكُ هُفَصِيْرِ	nawi laku hufaṣı̄ri	nawi laku hufasiri	
 696	179	174	d	اِنَ نِكَلِسِكِيْيَا	ina nikalisikı̄yā	ina nikalisikiya	
 697	180	175	a	اَكَتَمْكَ زَوْجِ	akatamka zawji	akatamka zauji	
 698	180	175	b	مِمِ حِتْوَا اَزْوَاجِ	mimi ḥitwā azwāji	mimi hitwa azwaji	
 699	180	175	c	نَمِ سَسَا نَتَرَاجِ	nami sasā natarāji	nami sasa nataraji	
 700	180	175	d	نَاءِنَ لَكُ نَمْبِيَ	naina laku nambiya	naina laku nambiya	
-701	181	176	a	كَوَمْبِيَ نِمِكِيْرِا	kawambiya nimikı̄riā	kawambiya nimikiria	
-702	181	176	b	نَمِ اِنَ كَفَصِيْرِا	nami ina kafaṣı̄riā	nami ina kafasiria	
+701	181	176	a	كَوَمْبِيَ نِمِكِيْرِا	kawambiya nimikı̄rī	kawambiya nimikiri	
+702	181	176	b	نَمِ اِنَ كَفَصِيْرِا	nami ina kafaṣı̄rī	nami ina kafasiri	
 703	181	176	c	مِمِ حِتْوَا جَعْفَارِ	mimi ḥitwā jaʿfāri	mimi hitwa jafari	
 704	181	176	d	وَ مَوْلَنَا عَلِيْيَا	wa mawlanā ʿalı̄yā	wa maulana aliya	
 705	182	177	a	وَنِوُزَا تَرَاتِيْبُ	waniwuzā tarātı̄bu	waniwuza taratibu	
@@ -788,10 +788,10 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 720	185	180	d	رُوْحُ نْيِغِ هُپُتِيَا	rūḥu nyighi huputiyā	ruhu nyighi huputiya	
 721	186	181	a	حَيُ مَيِ نِمَتَمُ	ḥayu mayi nimatamu	hayu mayi nimatamu	
 722	186	181	b	مْفَنُ وَ زَمْزَامُ	mfanu wa zamzāmu	mfanu wa zamzamu	
-723	186	181	c	لَكِنِ سِسِا فَهَمُ	lakini sisiā fahamu	lakini sisia fahamu	
+723	186	181	c	لَكِنِ سِسِا فَهَمُ	lakini sisī fahamu	lakini sisi fahamu	
 724	186	181	d	هُػَ كُكِكُرُبِيَا	hukʲa kukikurubiyā	hucha kukikurubiya	
 725	187	182	a	اِكِوَا اُمِخِتَارِ	ikiwā umikhitāri	ikiwa umihitari	
-726	187	182	b	كُكُپِكَ تُطَيَرِا	kukupika tuṭayariā	kukupika tutayaria	
+726	187	182	b	كُكُپِكَ تُطَيَرِا	kukupika tuṭayarī	kukupika tutayari	
 727	187	182	c	وَلَا اُسِتُفَصِيْرِ	walā usitufaṣı̄ri	wala usitufasiri	
 728	187	182	d	نِسِسِ تْوَلُكْوَامْبِيَا	nisisi twalukwāmbiyā	nisisi twalukwambiya	
 729	188	183	a	وَاكَنِوُنْيَ اُسِيْةَ	wākaniwunya usı̄ẗa	wakaniwunya usita	
@@ -890,19 +890,19 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 822	212	206	b	كْوَا رُزَكُ نَوِنْدَانِ	kwā ruzaku nawindāni	kwa ruzaku nawindani	
 823	212	206	c	فُوَاتَ تُمْوَا امِيْنِ	fuwāta tumwā āmı̄ni	fuwata tumwa amini	
 824	212	206	d	وَدَامِ يَكِيْ طَبِيَا	wadāmi yakii ṭabiyā	wadami yakii tabiya	
-825	213	207	a	نَمْتُمِ مُحَمَّدِا	namtumi muḥammadiā	namtumi muhammadia	
-826	213	207	b	حَنَا بُدِ كُكُزِيْدِا	ḥanā budi kukuzı̄diā	hana budi kukuzidia	
+825	213	207	a	نَمْتُمِ مُحَمَّدِا	namtumi muḥammadī	namtumi muhammadi	
+826	213	207	b	حَنَا بُدِ كُكُزِيْدِا	ḥanā budi kukuzı̄dī	hana budi kukuzidi	
 827	213	207	c	هَا اللّٰه هَا اللّٰه جِتِهَدِ	hā lläh hā lläh jitihadi	ha llah ha llah jitihadi	
 828	213	207	d	ڠَاءَ اُپَتِ وَاصِيْيَا	gaa upati wāṣı̄yā	gaa upati wasiya	
 829	214	208	a	مْوَانَ بِنْتِ حَبِبُ	mwāna binti ḥabibu	mwana binti habibu	
 830	214	208	b	كِتِيْ نَيِ كْوَا ثَوَبُ	kitii nayi kwā thawabu	kitii nayi kwa thawabu	
-831	214	208	c	كْوَاكِا اُوِ نَعَدَابُ	kwākiā uwi naʿadābu	kwakia uwi naadabu	
+831	214	208	c	كْوَاكِا اُوِ نَعَدَابُ	kwākī uwi naʿadābu	kwaki uwi naadabu	
 832	214	208	d	اُطِيْعِ نَكْوَڠُكِيَا	uṭı̄ʿi nakwagukiyā	utii nakwagukiya	
 833	215	209	a	كِسَا مَمَ كَفَصِيْرِ	kisā mama kafaṣı̄ri	kisa mama kafasiri	
 834	215	209	b	اَكَمْوَمْبِيَا جَعْفَارِ	akamwambiyā jaʿfāri	akamwambiya jafari	
-835	215	209	c	اِنْرَا كَوَاڠِا سَفَارِ	inrā kawāgiā safāri	inra kawagia safari	
+835	215	209	c	اِنْرَا كَوَاڠِا سَفَارِ	inrā kawāgī safāri	inra kawagi safari	
 836	215	209	d	اُسِكُ اُسِيَڠِيْيَا	usiku usiyagı̄yā	usiku usiyagiya	
-837	216	210	a	كَمُوَاڠِا تِيْتِ يَكُ	kamuwāgiā tı̄ti yaku	kamuwagia titi yaku	
+837	216	210	a	كَمُوَاڠِا تِيْتِ يَكُ	kamuwāgī tı̄ti yaku	kamuwagi titi yaku	
 838	216	210	b	نَمْكِ وَ مْوَلِمُ وَاكُ	namki wa mwalimu wāku	namki wa mwalimu waku	
 839	216	210	c	نَجَمِيْعِ يَوِزَاكُ	najamı̄ʿi yawizāku	najamii yawizaku	
 840	216	210	d	كْوَا حِرِ اُكِوَامْبِيَا	kwā ḥiri ukiwāmbiyā	kwa hiri ukiwambiya	
@@ -942,9 +942,9 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 874	225	219	b	كُكُوُ وَ كْوَانْدَ كُوِكَا	kukuwu wa kwānda kuwikā	kukuwu wa kwanda kuwika	
 875	225	219	c	مَمَكِ اَكَيْنُوْكَ	mamaki akaynūka	mamaki akaynuka	
 876	225	219	d	ػَكُلَ كَمْپِكِيْيَا	kʲakula kampikı̄yā	chakula kampikiya	
-877	226	220	a	وَپِيْلِ اَكَفَصِيْرِا	wapı̄li akafaṣı̄riā	wapili akafasiria	
+877	226	220	a	وَپِيْلِ اَكَفَصِيْرِا	wapı̄li akafaṣı̄rī	wapili akafasiri	
 878	226	220	b	كَمْوَامْشَا جَعْفَارِ	kamwāmshā jaʿfāri	kamwamsha jafari	
-879	226	220	c	هَيَا نِا ءَلْفَجِيْرِ	hayā niā alfajı̄ri	haya nia alfajiri	
+879	226	220	c	هَيَا نِا ءَلْفَجِيْرِ	hayā nī alfajı̄ri	haya ni alfajiri	
 880	226	220	d	صَلَا اِمِسِمَمِيَا	ṣalā imisimamiyā	sala imisimamiya	
 881	227	221	a	جَعْفَارِ كَنُظُمُ	jaʿfāri kanuẓumu	jafari kanudhumu	
 882	227	221	b	يِوُ سِكُيفَهَمُ	yiwu sikuyfahamu	yiwu sikuyfahamu	
@@ -955,11 +955,11 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 887	228	222	c	نِنْرَاوُ مْسِكِتِنِ	ninrāwu msikitini	ninrawu msikitini	
 888	228	222	d	ناصِرِ نِيَمْشِيَا	nāṣiri niyamshiyā	nasiri niyamshiya	
 889	229	223	a	اَكَتُكَ جَعْفَرِ	akatuka jaʿfari	akatuka jafari	
-890	229	223	b	اَكِنِرَا كَذِكِرِا	akinirā kadhikiriā	akinira kadhikiria	
+890	229	223	b	اَكِنِرَا كَذِكِرِا	akinirā kadhikirī	akinira kadhikiri	
 891	229	223	c	صَلَا يَا الْفَجيْرِ	ṣalā yā ālfajı̄ri	sala ya alfajiri	
 892	229	223	d	كْرَ اَكَيْصَلِيَا	kra akayṣaliyā	kra akaysaliya	
 893	230	224	a	اَكَرُدِ جَعْفَرِ	akarudi jaʿfari	akarudi jafari	
-894	230	224	b	نَػَكُلَ كِطَيَرِا	nakʲakula kiṭayariā	nachakula kitayaria	
+894	230	224	b	نَػَكُلَ كِطَيَرِا	nakʲakula kiṭayarī	nachakula kitayari	
 895	230	224	c	كُلَ نَنْرُيِ نَصِيْرِ	kula nanruyi naṣı̄ri	kula nanruyi nasiri	
 896	230	224	d	نَمْوَلِمُ كَتُكِيْيَا	namwalimu katukı̄yā	namwalimu katukiya	
 897	231	225	a	وَكَتَغَنْيَ مِكُنُ	wakataghanya mikunu	wakataghanya mikunu	
@@ -967,7 +967,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 899	231	225	c	اَكَنِيْنَ نَمَنِيْنُ	akanı̄na namanı̄nu	akanina namaninu	
 900	231	225	d	رُيَكِ اَكِمْوَمْبِيَا	ruyaki akimwambiyā	ruyaki akimwambiya	
 901	232	226	a	اَكَمْوَمْبِيَا نَصِيْرِ	akamwambiyā naṣı̄ri	akamwambiya nasiri	
-902	232	226	b	يِوُ رُيَغُ كْوَا حِرِا	yiwu ruyaghu kwā ḥiriā	yiwu ruyaghu kwa hiria	
+902	232	226	b	يِوُ رُيَغُ كْوَا حِرِا	yiwu ruyaghu kwā ḥirī	yiwu ruyaghu kwa hiri	
 903	232	226	c	تَكَپُ رُدِ سَفَرِ	takapu rudi safari	takapu rudi safari	
 904	232	226	d	تَمَشَا تَكُوِتِيْيَا	tamashā takuwitı̄yā	tamasha takuwitiya	
 905	233	227	a	اَكَمْجِبُ اُپِسِ	akamjibu upisi	akamjibu upisi	
@@ -987,7 +987,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 919	236	230	c	مْفُزِْشِ نَعِلِمُ	mfuzishi naʿilimu	mfuzishi nailimu	
 920	236	230	d	عَدَ يَكِ تَكْوِتِيَ	ʿada yaki takwitiya	ada yaki takwitiya	
 921	237	231	a	اَكَتُكَ جَعْفَارِ	akatuka jaʿfāri	akatuka jafari	
-922	237	231	b	هَپُ كَلِيَ نَصِيْرِا	hapu kaliya naṣı̄riā	hapu kaliya nasiria	
+922	237	231	b	هَپُ كَلِيَ نَصِيْرِا	hapu kaliya naṣı̄rī	hapu kaliya nasiri	
 923	237	231	c	مَمَكِ اَكَفَصِيْرِ	mamaki akafaṣı̄ri	mamaki akafasiri	
 924	237	231	d	اُسِكُ اَتَرِجِيَا	usiku atarijiyā	usiku atarijiya	
 925	238	232	a	نَصِيْرِ اَكَتَمْكَ	naṣı̄ri akatamka	nasiri akatamka	
@@ -996,7 +996,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 928	238	232	d	اَسِپُ أِيُوْنَ نْدِيَا	asipu iyūna ndiyā	asipu iyuna ndiya	
 929	239	233	a	اَوْ يَانَ سِكُوِكُ	aw yāna sikuwiku	au yana sikuwiku	
 930	239	233	b	اُكَمْوَمْبِيَ تَمْكُ	ukamwambiya tamku	ukamwambiya tamku	
-931	239	233	c	كَوَاڠِا وِنْدَانِ وَاكُ	kawāgiā windāni wāku	kawagia windani waku	
+931	239	233	c	كَوَاڠِا وِنْدَانِ وَاكُ	kawāgī windāni wāku	kawagi windani waku	
 932	239	233	d	يُتِ نَلِيَسِكِيَا	yuti naliyasikiyā	yuti naliyasikiya	
 933	240	234	a	اَوْ وِنْرَا مَتُڠَانِ	aw winrā matugāni	au winra matugani	
 934	240	234	b	غُوْ هُتُكُلِيَنِ	ghuu hutukuliyani	ghuu hutukuliyani	
@@ -1027,11 +1027,11 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 959	246	240	c	سَعَ كُمِ اِكِكُمَ	saʿa kumi ikikuma	saa kumi ikikuma	
 960	246	240	d	نَايِ مَكَ اَمِڠِيْيَا	nāyi maka amigı̄yā	nayi maka amigiya	
 961	247	241	a	مَكَ اَلِپُ جِلِيْسِ	maka alipu jilı̄si	maka alipu jilisi	
-962	247	241	b	كْوَا بَبَكِ هَكُئِسِا	kwā babaki hakuisiā	kwa babaki hakuisia	
+962	247	241	b	كْوَا بَبَكِ هَكُئِسِا	kwā babaki hakuisī	kwa babaki hakuisi	
 963	247	241	c	كَمْبَ نْدِيَا سِكُكِسِ	kamba ndiyā sikukisi	kamba ndiya sikukisi	
 964	247	241	d	كْوَانْدَ تَيْكِتِلِيَا	kwānda taykitiliyā	kwanda taykitiliya	
 965	248	242	a	اَكَكِتِ جَعْفَارِ	akakiti jaʿfāri	akakiti jafari	
-966	248	242	b	اَكَمووْنَ زُبِيْرِا	akamūwna zubı̄riā	akamuna zubiria	
+966	248	242	b	اَكَمووْنَ زُبِيْرِا	akamūwna zubı̄rī	akamuna zubiri	
 967	248	242	c	اِنْدِمِيْنِ نَا بَشِيْرِ	indimı̄ni nā bashı̄ri	indimini na bashiri	
 968	248	242	d	مْكٗنٗ اَكَوَيْنُلِيَ	mkono akawaynuliya	mkono akawaynuliya	
 969	249	243	a	مْكٗنٗ كَوَتَزَامَ	mkono kawatazāma	mkono kawatazama	
@@ -1057,7 +1057,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 989	254	248	a	كَمُوُلِيْزَا حُسِيْنِ	kamuwulı̄zā ḥusı̄ni	kamuwuliza husini	
 990	254	248	b	اَمْكُوَوُ نِنْيَنِ	amkuwawu ninyani	amkuwawu ninyani	
 991	254	248	c	كِجَانَ اَكَبَيِنِ	kijāna akabayini	kijana akabayini	
-992	254	248	d	نِا جَدِ يَنْغُ سِكِيَا	niā jadi yanghu sikiyā	nia jadi yanghu sikiya	
+992	254	248	d	نِا جَدِ يَنْغُ سِكِيَا	nī jadi yanghu sikiyā	ni jadi yanghu sikiya	
 993	255	249	a	نِجَدِ يَنْغُ رَسُوْلِ	nijadi yanghu rasūli	nijadi yanghu rasuli	
 994	255	249	b	يِيِ نَمْتُ وَپِيْلِ	yiyi namtu wapı̄li	yiyi namtu wapili	
 995	255	249	c	اَكِسِكِيْيَ قَوْلِيْ	akisikı̄ya qawlii	akisikiya qaulii	
@@ -1075,7 +1075,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 1007	258	252	c	مْتُمِ اَكَبَيِنِ	mtumi akabayini	mtumi akabayini	
 1008	258	252	d	فَطِيْمَ اَكَمْوَمْبِيْيَ	faṭı̄ma akamwambı̄ya	fatima akamwambiya	
 1009	259	253	a	اَكَمْوَامْبِيَ بَشِيْرِ	akamwāmbiya bashı̄ri	akamwambiya bashiri	
-1010	259	253	b	هُيُ نْرِيِ جَعْفَرِا	huyu nriyi jaʿfariā	huyu nriyi jafaria	
+1010	259	253	b	هُيُ نْرِيِ جَعْفَرِا	huyu nriyi jaʿfarī	huyu nriyi jafari	
 1011	259	253	c	وَ عَلِيْ حَيْدَارِ	wa ʿalii ḥaydāri	wa alii haydari	
 1012	259	253	d	حِزُ سُوْرَ هُكْوَمْبِيَا	ḥizu sūra hukwambiyā	hizu sura hukwambiya	
 1013	260	254	a	حَپُ سَيِدِ اَمِيْنِ	ḥapu sayidi amı̄ni	hapu sayidi amini	
@@ -1087,7 +1087,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 1019	261	255	c	بَبَا مِكُيَ مْغِيْنِ	babā mikuya mghı̄ni	baba mikuya mghini	
 1020	261	255	d	هُكْوَامْكُوَا نَبِيَا	hukwāmkuwā nabiyā	hukwamkuwa nabiya	
 1021	262	256	a	كُوْنَ كِجَانَ مْزُرِ	kūna kijāna mzuri	kuna kijana mzuri	
-1022	262	256	b	ػِنْدِمِيْنِ نَا بَشِيْرِا	kʲindimı̄ni nā bashı̄riā	chindimini na bashiria	
+1022	262	256	b	ػِنْدِمِيْنِ نَا بَشِيْرِا	kʲindimı̄ni nā bashı̄rī	chindimini na bashiri	
 1023	262	256	c	نَا اِنَ نِجَعْفَرِ	nā ina nijaʿfari	na ina nijafari	
 1024	262	256	d	نِهِلُ نِمِكْوَمْبِيَا	nihilu nimikwambiyā	nihilu nimikwambiya	
 1025	263	257	a	ػَمْبِوَا حِيُ كَلِيْمَ	kʲambiwā ḥiyu kalı̄ma	chambiwa hiyu kalima	
@@ -1207,8 +1207,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 1139	291	285	c	سَعَ تِسِيَا حَقِيْكَ	saʿa tisiyā ḥaqı̄ka	saa tisiya haqika	
 1140	291	285	d	نْيُبَنِ سِيَرِجِيَا	nyubani siyarijiyā	nyubani siyarijiya	
 1141	292	286	a	كَبَ سُبِرِ بَشِيْرِ	kaba subiri bashı̄ri	kaba subiri bashiri	
-1206	308	302	b	اَكَرَادِدِ حُسِيْنِ	akarādidi ḥusı̄ni	akaradidi husini	
-1142	292	286	b	ػَكُلَ كِيْكُ طَيَرِا	kʲakula kı̄ku ṭayariā	chakula kiku tayaria	
+1142	292	286	b	ػَكُلَ كِيْكُ طَيَرِا	kʲakula kı̄ku ṭayarī	chakula kiku tayari	
 1143	292	286	c	تُمْلِشِ جَعْفَرِ	tumlishi jaʿfari	tumlishi jafari	
 1144	292	286	d	حَپُ كَكِتِ نَبِيَا	ḥapu kakiti nabiyā	hapu kakiti nabiya	
 1145	293	287	a	فَطِيْمَ اَكَيْنُكَ	faṭı̄ma akaynuka	fatima akaynuka	
@@ -1216,7 +1215,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 1147	293	287	c	ػَكُلَ اَكَكِيْوِكَ	kʲakula akakı̄wika	chakula akakiwika	
 1148	293	287	d	نَمَيِ كَوَاپِكِيَا	namayi kawāpikiyā	namayi kawapikiya	
 1149	294	288	a	اَكَيْنُكَ بَشِيْرِ	akaynuka bashı̄ri	akaynuka bashiri	
-1150	294	288	b	پَمُيَا نَجَعْفَرِا	pamuyā najaʿfariā	pamuya najafaria	
+1150	294	288	b	پَمُيَا نَجَعْفَرِا	pamuyā najaʿfarī	pamuya najafari	
 1151	294	288	c	نَعَلِيْ هَيْدَارِ	naʿalii haydāri	naalii haydari	
 1152	294	288	d	وُتِيْ وَكَهُظُرِيَا	wutii wakahuẓuriyā	wutii wakahudhuriya	
 1153	295	289	a	وَكَكِتِ كْوَ مْفُنُ	wakakiti kwa mfunu	wakakiti kwa mfunu	
@@ -1272,6 +1271,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 1203	307	301	c	اُنِپِ يَتَمْكِيْنِ	unipi yatamkı̄ni	unipi yatamkini	
 1204	307	301	d	هِيُ اَمِزُوَمْبِيَا	hiyu amizuwambiyā	hiyu amizuwambiya	
 1205	308	302	a	اَكَپِتَ مْلَغُوْنِ	akapita mlaghūni	akapita mlaghuni	
+1206	308	302	b	اَكَرَادِدِ حُسِيْنِ	akarādidi ḥusı̄ni	akaradidi husini	
 1207	308	302	c	اَسَ مْوَمْتَكِيَنِ	asa mwamtakiyani	asa mwamtakiyani	
 1208	308	302	d	مْبْوِنُ اَلِوَاپُتِيَا	mbwinu aliwāputiyā	mbwinu aliwaputiya	
 1209	309	303	a	كَمُوُلِيْزَ بَبَكِ	kamuwulı̄za babaki	kamuwuliza babaki	
@@ -1279,11 +1279,11 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 1211	309	303	c	اَكَبَ سِخِيْرِ نِتُكِيْ	akaba sikhı̄ri nitukii	akaba sihiri nitukii	
 1212	309	303	d	خَبَرِ مِئِنِيْيَا	khabari miinı̄yā	habari miiniya	
 1213	310	304	a	كُمِپَنَنَ خَبَرِ	kumipanana khabari	kumipanana habari	
-1214	310	304	b	جَمِعِ يَا اَنْصَارِا	jamiʿi yā anṣāriā	jamii ya ansaria	
+1214	310	304	b	جَمِعِ يَا اَنْصَارِا	jamiʿi yā anṣārī	jamii ya ansari	
 1215	310	304	c	اُمِكُيَ جَعْفَارِ	umikuya jaʿfāri	umikuya jafari	
 1216	310	304	d	وَ مَوُلَنَا عَلِيْيَا	wa mawulanā ʿalı̄yā	wa mawulana aliya	
 1217	311	305	a	حَپُ عَلِيْ حَِْدَارِ	ḥapu ʿalii ḥaidāri	hapu alii haidari	
-1218	311	305	b	نِنُ اَلِلُوْ فَصِيْرِا	ninu aliluu faṣı̄riā	ninu aliluu fasiria	
+1218	311	305	b	نِنُ اَلِلُوْ فَصِيْرِا	ninu aliluu faṣı̄rī	ninu aliluu fasiri	
 1219	311	305	c	اُوِنْڠَ اُنَ خَطَرِ	uwinga una khaṭari	uwinga una hatari	
 1220	311	305	d	مَمْبُوْ يَكُتُمْوِلِيَا	mambuu yakutumwiliyā	mambuu yakutumwiliya	
 1221	312	306	a	كْوِنُ ككُيَ مْڠِيْنِ	kwinu kkuya mgı̄ni	kwinu kkuya mgini	
@@ -1315,7 +1315,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 1247	318	312	c	هُيِسِ وَغَلِوُظِكَ	huyisi waghaliwuẓika	huyisi waghaliwudhika	
 1248	318	312	d	كَمَ كْوِلِ كِكْوَمْبِيَا	kama kwili kikwambiyā	kama kwili kikwambiya	
 1249	319	313	a	نَسَسَا نِڠَكُوُظِ	nasasā nigakuwuẓi	nasasa nigakuwudhi	
-1250	319	313	b	نْزُّيَغُ وَتَ غَيْضِا	nzzuyaghu wata ghayḍiā	nzzuyaghu wata ghaydhia	
+1250	319	313	b	نْزُّيَغُ وَتَ غَيْضِا	nzzuyaghu wata ghayḍī	nzzuyaghu wata ghaydhi	
 1251	319	313	c	مُيُ وَنْغُ اُوِ رَاضِ	muyu wanghu uwi rāḍi	muyu wanghu uwi radhi	
 1252	319	313	d	نَوُتَكَلُ نَمْبِيَا	nawutakalu nambiyā	nawutakalu nambiya	
 1253	320	314	a	فَطِيْمَ كِتَ قَوُلِ	faṭı̄ma kita qawuli	fatima kita qawuli	
@@ -1343,8 +1343,8 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 1275	325	319	c	اَكَمْوَامْبِيَ اَمِينِ	akamwāmbiya amı̄ni	akamwambiya amini	
 1276	325	319	d	نِنَ يَمْبُ تَكْوَمْبِيَا	nina yambu takwambiyā	nina yambu takwambiya	
 1277	326	320	a	نَپِنْدَ سَسَا بَشِيْرِ	napinda sasā bashı̄ri	napinda sasa bashiri	
-1278	326	320	b	اِنِرِ پْوِكِ جَعْفَرِا	iniri pwiki jaʿfariā	iniri pwiki jafaria	
-1279	326	320	c	اَكَپِجِ مَكُفَرِا	akapiji makufariā	akapiji makufaria	
+1278	326	320	b	اِنِرِ پْوِكِ جَعْفَرِا	iniri pwiki jaʿfarī	iniri pwiki jafari	
+1279	326	320	c	اَكَپِجِ مَكُفَرِا	akapiji makufarī	akapiji makufari	
 1280	326	320	d	هُتُشَا كِمْواغَلِيَا	hutushā kimwāghaliyā	hutusha kimwaghaliya	
 1281	327	321	a	اَكَشُكَا جِبْرِيْلِ	akashukā jibrı̄li	akashuka jibrili	
 1282	327	321	b	اَكَمْوَمْبِيَا رَسُوْلِ	akamwambiyā rasūli	akamwambiya rasuli	
@@ -1387,7 +1387,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 1319	336	330	c	اَكِيْكُمَ كُبَيِيْنِ	akı̄kuma kubayı̄ni	akikuma kubayini	
 1320	336	330	d	اَمِكْوِسَ كُئفِيَا	amikwisa kufiyā	amikwisa kufiya	
 1321	337	331	a	حَپُ عَلِيْ حَيْدَارِ	ḥapu ʿalii ḥaydāri	hapu alii haydari	
-1322	337	331	b	يُتِ اَسِيَفِكِيْرِا	yuti asiyafikı̄riā	yuti asiyafikiria	
+1322	337	331	b	يُتِ اَسِيَفِكِيْرِا	yuti asiyafikı̄rī	yuti asiyafikiri	
 1323	337	331	c	اَكَسِمَامَ بَاشِيْرِ	akasimāma bāshı̄ri	akasimama bashiri	
 1324	337	331	d	مَصَحَبَ كَوَمْبِيَا	maṣaḥaba kawambiyā	masahaba kawambiya	
 1325	338	332	a	كَوَامبِيَا كِپُلِيْكَ	kawāmbiyā kipulı̄ka	kawambiya kipulika	
@@ -1435,7 +1435,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 1367	348	342	c	وَلَا اَسِپُ فَهَمُ	walā asipu fahamu	wala asipu fahamu	
 1368	348	342	d	اُسِيْكُ كُمْڠِلِيَا	usı̄ku kumgiliyā	usiku kumgiliya	
 1369	349	343	a	نَهُكُ نْيُمَ زُبِيْرِ	nahuku nyuma zubı̄ri	nahuku nyuma zubiri	
-1370	349	343	b	اَسِوَاتِ تَغَكُرِا	asiwāti taghakuriā	asiwati taghakuria	
+1370	349	343	b	اَسِوَاتِ تَغَكُرِا	asiwāti taghakurī	asiwati taghakuri	
 1371	349	343	c	كُلَّ نْيُبَا هُوَابِيْرِ	kulla nyubā huwābı̄ri	kulla nyuba huwabiri	
 1372	349	343	d	هُمآْزِڠِيَا عَطِيَا	humãzigiyā ʿaṭiyā	humazigiya atiya	
 1373	350	344	a	هَپُ نْدِيَا كَفُوَاتَ	hapu ndiyā kafuwāta	hapu ndiya kafuwata	
@@ -1443,15 +1443,15 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 1375	350	344	c	نْيُبا يَكْوَنْدَ كُپَتَ	nyubā yakwanda kupata	nyuba yakwanda kupata	
 1376	350	344	d	مْلَغُوْنِ اَكَغِيْيَا	mlaghūni akaghı̄yā	mlaghuni akaghiya	
 1377	351	345	a	حَمْزَةِ كَفَصِيْرِ	ḥamzaẗi kafaṣı̄ri	hamzati kafasiri	
-1378	351	345	b	نَمَوْلَنَا عُمَرِا	namawlanā ʿumariā	namaulana umaria	
-1379	351	345	c	هِنِ نِا اَلْفَجِيْرِ	hini niā alfajı̄ri	hini nia alfajiri	
+1378	351	345	b	نَمَوْلَنَا عُمَرِا	namawlanā ʿumarī	namaulana umari	
+1379	351	345	c	هِنِ نِا اَلْفَجِيْرِ	hini nī alfajı̄ri	hini ni alfajiri	
 1380	351	345	d	صَلَا اِمِسِمَمِيَا	ṣalā imisimamiyā	sala imisimamiya	
 1381	352	346	a	مْوَانَمْكِ كَتَمْكَ	mwānamki katamka	mwanamki katamka	
 1382	352	346	b	كَنِنَ مِمِ عَطِيْكَ	kanina mimi ʿaṭı̄ka	kanina mimi atika	
 1383	352	346	c	كَمْبَ مُتَنِپِيْلِكَ	kamba mutanipı̄lika	kamba mutanipilika	
 1384	352	346	d	كْوَ مَوُلَنَا عَلِيْ يَا	kwa mawulanā ʿalii yā	kwa mawulana alii ya	
 1385	353	347	a	نْدِيَ نِمِيَبِيْرِ	ndiya nimiyabı̄ri	ndiya nimiyabiri	
-1386	353	347	b	نْيُبَ سِكُئفَصِيْرِا	nyuba sikufaṣı̄riā	nyuba sikufasiria	
+1386	353	347	b	نْيُبَ سِكُئفَصِيْرِا	nyuba sikufaṣı̄rī	nyuba sikufasiri	
 1387	353	347	c	نِمِمِ اُمِيْ جَعْفَارِ	nimimi umii jaʿfāri	nimimi umii jafari	
 1388	353	347	d	كَمَ هَيَكُوِلِيْيَا	kama hayakuwilı̄yā	kama hayakuwiliya	
 1389	354	348	a	هَپُ حَمْزَا كَتُكَ	hapu ḥamzā katuka	hapu hamza katuka	
@@ -1463,7 +1463,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 1395	355	349	c	كْوَا عَلِيْ اَكِيْكُمَ	kwā ʿalii akı̄kuma	kwa alii akikuma	
 1396	355	349	d	مْلَڠُوْ كَمْبِشِيَا	mlaguu kambishiyā	mlaguu kambishiya	
 1397	356	350	a	عَلِيْ كَمُوُلِيْزَ	ʿalii kamuwulı̄za	alii kamuwuliza	
-1398	356	350	b	كَمْبَ نِا مِمِ حَمْزَا	kamba niā mimi ḥamzā	kamba nia mimi hamza	
+1398	356	350	b	كَمْبَ نِا مِمِ حَمْزَا	kamba nī mimi ḥamzā	kamba ni mimi hamza	
 1399	356	350	c	نِمْغِنِ هُكُوِيْزَا	nimghini hukūı̄zā	nimghini hukuwiza	
 1400	356	350	d	هَپُكَتُكَ عَلِيَا	hapukatuka ʿaliyā	hapukatuka aliya	
 1401	357	351	a	يِيِ اُپُ مْلَغُوْنِ	yiyi upu mlaghūni	yiyi upu mlaghuni	
@@ -1494,16 +1494,16 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 1426	363	357	b	مَتُزِ يَكِمْتُكَ	matuzi yakimtuka	matuzi yakimtuka	
 1427	363	357	c	حَپُ كَتُوَا عَطيْكَ	ḥapu katuwā ʿaṭı̄ka	hapu katuwa atika	
 1428	363	357	d	اَكَنْيَمَاءَ كُلِيْيَا	akanyamaa kulı̄yā	akanyamaa kuliya	
-1429	364	358	a	حَپُا عَلِيْ حَِْدَارِ	ḥapuā ʿalii ḥaidāri	hapua alii haidari	
-1430	364	358	b	َكِسَ اَكَفَصِيْرِا	akisa akafaṣı̄riā	akisa akafasiria	
-1431	364	358	c	بُنَ هَكُيَ زُبِيْرِا	buna hakuya zubı̄riā	buna hakuya zubiria	
+1429	364	358	a	حَپُا عَلِيْ حَِْدَارِ	ḥapū ʿalii ḥaidāri	hapu alii haidari	
+1430	364	358	b	َكِسَ اَكَفَصِيْرِا	akisa akafaṣı̄rī	akisa akafasiri	
+1431	364	358	c	بُنَ هَكُيَ زُبِيْرِا	buna hakuya zubı̄rī	buna hakuya zubiri	
 1432	364	358	d	نِوِ پْوِكِيْ عَطِيْيَا	niwi pwikii ʿaṭı̄yā	niwi pwikii atiya	
 1433	365	359	a	اُنِيِتِيْ بَرُوَا	uniyitii baruwā	uniyitii baruwa	
 1434	365	359	b	كَتُكَ كِيْفُنُوَا	katuka kı̄funuwā	katuka kifunuwa	
 1435	365	359	c	اَلِپُ سِيْكُمُيُوَا	alipu sı̄kumuyuwā	alipu sikumuyuwa	
 1436	365	359	d	وَلَا سِكُمْزِڠِيْيَا	walā sikumzigı̄yā	wala sikumzigiya	
 1437	366	360	a	بَرُوَ كِئِفَصِيْرِ	baruwa kiifaṣı̄ri	baruwa kiifasiri	
-1438	366	360	b	نْدِيَ نَلِئِيَبِرِا	ndiya naliiyabiriā	ndiya naliiyabiria	
+1438	366	360	b	نْدِيَ نَلِئِيَبِرِا	ndiya naliiyabirī	ndiya naliiyabiri	
 1439	366	360	c	حَنْدَ سَسَ كُفِكِرِ	ḥanda sasa kufikiri	handa sasa kufikiri	
 1440	366	360	d	تَنَبُحِ كُنِيْغِيَا	tanabuḥi kunı̄ghiyā	tanabuhi kunighiya	
 1441	367	361	a	فَطِيْمَ اَكَمْكَلِيْمُ	faṭı̄ma akamkalı̄mu	fatima akamkalimu	
@@ -1513,7 +1513,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 1445	368	362	a	اَكَمْجِبُ كَلِيْمَ	akamjibu kalı̄ma	akamjibu kalima	
 1446	368	362	b	سِيَيَوِزَا فَطِيْمَ	siyayawizā faṭı̄ma	siyayawiza fatima	
 1447	368	362	c	مُيُ اُنَ حَلِمَامَ	muyu una ḥalimāma	muyu una halimama	
-1448	368	362	d	رُوْحُا حُنَمْبِيَا	rūḥuā ḥunambiyā	ruhua hunambiya	
+1448	368	362	d	رُوْحُا حُنَمْبِيَا	rūḥū ḥunambiyā	ruhu hunambiya	
 1449	369	363	a	صُبِرِ كْوَا بْوَانَ وِتُ	ṣubiri kwā bwāna witu	subiri kwa bwana witu	
 1450	369	363	b	عَطِيْكَ مَيِ سِكِتُ	ʿaṭı̄ka mayi sikitu	atika mayi sikitu	
 1451	369	363	c	پِجَ مَتَمَ مَتَتُ	pija matama matatu	pija matama matatu	
@@ -1527,7 +1527,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 1459	371	365	c	مَيِ اَلِپُ يَشُشَا	mayi alipu yashushā	mayi alipu yashusha	
 1460	371	365	d	مْڠُ كَمْشُهُدِيَ	mgu kamshuhudiya	mgu kamshuhudiya	
 1461	372	366	a	اَكِسَ اَمُوِلِيْزِ	akisa amuwilı̄zi	akisa amuwilizi	
-1462	372	366	b	زَا مْوَانَوِ خَبَرِزِا	zā mwānawi khabariziā	za mwanawi habarizia	
+1462	372	366	b	زَا مْوَانَوِ خَبَرِزِا	zā mwānawi khabarizī	za mwanawi habarizi	
 1463	372	366	c	نَعَلِيْ اَمْوِلِيْزِ	naʿalii amwilı̄zi	naalii amwilizi	
 1464	372	366	d	اَكِسَ كَيْلَلِيَا	akisa kaylaliyā	akisa kaylaliya	
 1465	373	367	a	حَتَ كُكِپَبَوُكَ	ḥata kukipabawuka	hata kukipabawuka	
@@ -1559,7 +1559,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 1491	379	373	c	اَكِنْرَا اَكَمْپِيْكَ	akinrā akampı̄ka	akinra akampika	
 1492	379	373	d	حَتَ كْوَوُ اَكَغِيَا	ḥata kwawu akaghiyā	hata kwawu akaghiya	
 1493	370	374	a	كِسَ عَلِيْ حَيْدَارِ	kisa ʿalii ḥaydāri	kisa alii haydari	
-1494	370	374	b	اَكَصَلِ اَظُهُرِا	akaṣali aẓuhuriā	akasali adhuhuria	
+1494	370	374	b	اَكَصَلِ اَظُهُرِا	akaṣali aẓuhurī	akasali adhuhuri	
 1495	370	374	c	كَنَدَامَنَ نَزُبِيْرِ	kanadāmana nazubı̄ri	kanadamana nazubiri	
 1496	370	374	d	مُيِنِ اَكِرِجِيْيَا	muyini akirijı̄yā	muyini akirijiya	
 1497	371	375	a	حَپُ اَلِپُ رُدِيْ	ḥapu alipu rudii	hapu alipu rudii	
@@ -1595,7 +1595,7 @@ COPY jaafari_r (poemline_id, msno, stanza, loc, arabic, close, standard, english
 1527	378	382	c	اُرُادِ وَكِ بَشِيْرِ	uruādi waki bashı̄ri	uruadi waki bashiri	
 1528	378	382	d	مْوِسُ اَصِزُتِلِوَى	mwisu aṣizutiliway	mwisu asizutiliway	
 1529	379	383	a	نِمِكْوَانْدَ كِكَرِرِ	nimikwānda kikariri	nimikwanda kikariri	
-1530	379	383	b	نَوِ سُمَ اِظْهَرِا	nawi suma iẓhariā	nawi suma idhharia	
+1530	379	383	b	نَوِ سُمَ اِظْهَرِا	nawi suma iẓharī	nawi suma idhhari	
 1531	379	383	c	اُتِنْدِ وَجَعْفَرِ	utindi wajaʿfari	utindi wajafari	
 1532	379	383	d	نَمَوُلَنَا عَلِيْايَا	namawulanā ʿaliyāyā	namawulana aliyaya	
 1533	380	384	a	تمت وايا الخير	tmt wāyā ālkhı̄r	tmt waya alhir	
