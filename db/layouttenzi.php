@@ -60,7 +60,7 @@ while ($row=pg_fetch_object($sql))
 		$close=preg_replace("/~/", "", $edclose);
             }
             
-            if ($edstan!='')  // If the automatic close transliteration has been edited, bring that in instead.  Replace deleted words (~) with a blank.
+            if ($edstan!='')  // If the automatic standard transliteration has been edited, bring that in instead.  Replace deleted words (~) with a blank.
             {
 		$standard=preg_replace("/~/", "", $edstan);
             }
@@ -107,8 +107,8 @@ while ($row=pg_fetch_object($sql))
     fwrite($fp, "\\textarabic{".$arconsol." \\textcolor{{$colour}}{".$arabic_line."}} ".$bar." \\\\* \n");
     //fwrite($fp, "\\SPSB{".$msno."}{".$msno."} (".$stanza.") ".$trans_line." \\\\* \n");
    // To get an Arabic-script text only, comment out the following 3 lines, and delete the \\\\* from the \textarabic line above.  You also need to adjust the poem_title.tex file if there is one.
-    fwrite($fp, " \\textcolor{{$colour}}{\\OLTcl{".$close_line."}} \\\\* \n");
-    fwrite($fp, "\\MS{".$msv." ".$msno."} ".$consol." \\OLTst{".$standard_line."} \\\\* \n");    
+    fwrite($fp, "\\textcolor{{$colour}}{\\OLTcl{".$close_line."}} \\\\* \n");
+    fwrite($fp, "\\MS{".$msv." ".$stanza." [".$msno."]} ".$consol." \\OLTst{".$standard_line."} \\\\* \n");    
     fwrite($fp, "\E{".$english_line."} \\\\ \n");
     unset($arabic_line, $close_line, $edclose_line, $standard_line, $edstan_line, $english_line);
         

@@ -146,6 +146,7 @@ elseif ($output=="odt")
 // Import and choose layout
 // --------------------------------
 $vipande=array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');  // letters to signify location of the kipande in the stanza
+// or: $vipande=range('a', 'z');
 $first_half=array('a', 'c', 'e', 'g', 'i', 'k', 'm', 'o', 'q', 's', 'u', 'w', 'y');  // vipande which signify the beginning of a line
 $second_half=array('b', 'd', 'f', 'h', 'j', 'l', 'n', 'p', 'r', 't', 'v', 'x', 'z');  // vipande which signify the beginning of a line
 

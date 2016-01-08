@@ -49,7 +49,12 @@ CREATE TABLE $words (
     variant character varying(250) default '' not null,
     note text default '' not null,
     root character varying(50) default '' not null,
-    english character varying(250) default '' not null
+    english character varying(250) default '' not null,
+    pos varchar(25) default '' not null,
+    slot varchar(25) default '' not null,
+    lg varchar(25) default '' not null,
+    tense varchar(20) default '' not null,
+    neg varchar(10) default '' not null
 );
 ";
 $result_table=pg_query($db_handle, $sql_table);

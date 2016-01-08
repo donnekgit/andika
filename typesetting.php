@@ -51,7 +51,6 @@ foreach ($lines as $line)
 <li><a href="#input">Input</a></li>
 <li><a href="#output">Output</a></li>
 <li><a href="#analysis">Analysis</a></li>
-
 </ul>
 
 <?php

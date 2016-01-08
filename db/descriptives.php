@@ -21,35 +21,41 @@ You should have received a copy of the GNU General Public License
 and the GNU Affero General Public License along with this program.
 If not, see <http://www.gnu.org/licenses/>.
 *********************************************************************
-*/ 
+*/
 
-mb_internal_encoding("UTF-8");
+// This script picks out words following -a, many of which will be descriptives (ie adjectival).
+
+include("./andika/config.php");
 include("./includes/fns.php");
 
-$input=trim($_POST['ar_rom_in']);
-//echo $mystring."<br />";
+$poem=$argv[1];  // Take the name of the poem from the command-line argument.
+if (empty($argv[1]))
+{
+    echo "\nYou need to specify the name of the poem.\nAdd it to the end of the line.\n\n";
+    exit;
+}
 
-// Truncate the text to 900 characters, and strip HTML/PHP tags.
-$input=strip_tags(substr($input, 0, 900));
+$words="{$poem}_words";
 
-// Retain line-breaks.
-$input=nl2br($input);
-
-// Give a one-to-one transliteration of the Arabic glyphs into Roman letters.
-$translit=ar2rom($input);
-echo "ar2rom:<br /> ".$translit."<br />";
-
-// Now smooth the transliteration to give a standard transcription.
-// The most obvious smoother is for the standard Swahili orthography.
-// But others are possible, eg for close transcription.
-$standard=standardise($translit);
-$close=close_trans($translit);
-
-//echo "Standard: ".$standard."<br />";
-
-echo "<p class=\"\">";
-echo "close:<br />".$close."<br /><br />";
-echo "Standard:<br />".$standard."<br />";
-echo "</p>";
+$sql=query("select stanza, loc, position, standard from $words where root='-a' order by standard, stanza, loc, position;");
+while ($row=pg_fetch_object($sql))
+{
+    $stanza=$row->stanza;
+    $loc=$row->loc;
+    $position=$row->position;
+    $standard=$row->standard;
+    
+    $following=$position+1;
+    
+    echo $stanza." ".$loc." ".$standard." ";
+    
+    $sql2=query("select standard from $words where stanza=$stanza and loc='$loc' and position='$following';");
+    while ($row2=pg_fetch_object($sql2))
+    {
+	$follword=$row2->standard;
+	
+	echo $follword."\n";
+    }
+}
 
 ?>

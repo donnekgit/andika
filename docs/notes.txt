@@ -1,5 +1,8 @@
 webtrans : Need to add note about giving it wider permissions, or the webserver can't write the converted webpages there.
 
+LaTeX
+--------
+
 To remove page numbers from the page, insert in the preamble:
 \thispagestyle{empty}
 \pagestyle{empty}
