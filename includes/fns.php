@@ -546,7 +546,7 @@ function query($sql)
 // use this as: $result=query("select * from table");
 {
     global $db_handle;
-    return pg_query($db_handle,$sql);
+    return pg_query($db_handle, $sql);
 }
 
 function drop_existing_table($table)
@@ -607,6 +607,5 @@ function copy_records_if_table_not_exists($table, $sql_copy_command) // defunct
 		$result_cp=pg_query($db_handle, $sql_cp);
 	}
 }
-
 
 ?>

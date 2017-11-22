@@ -33,11 +33,32 @@ if (empty($argv[1]))
     exit;
 }
 
+$collection=explode("+", $argv[2]);  // Take a list of options from the second command-line argument (if any) - these should be separated by a +.
+// The options are as follows:
+// justify: the default layout of the poem text is to centre it, but this option will right-justify it.
+// nocolour: the default colour for the Arabic script is green (though this can be changed by editing this script), but this option will print the Arabic script in black.
+// close-lr: the default is to print a transcription into standard Swahili, but this option will add a line giving a close transcription  reading from left to right.
+//print_r($collection);
+
 $words="{$poem}_words";
-$stanza_contents="";  // set up a holder for the contents of the whole stanza
-// $columns="rrl";  // Set up the columns for the main table which will hold the text.
-$columns="cl"; 
-$colour1="mygreen";  // Colour for the Arabic text if desired..
+$stanza_contents="";  // Set up a holder for the contents of the whole stanza.
+if (in_array("justify", $collection))  // If this option is passed in ...
+{
+    $columns="rl";  // ... the poem text will be right-justified in the text area.
+}
+else
+{
+    $columns="cl";  // Otherwise, the default is to centre the poem text in the text area.
+}
+
+if (in_array("nocolour", $collection))  // If this option is passed in ...
+{
+    $colour1="black";  // ... colour for the Arabic script will be removed.
+}
+else
+{
+    $colour1="mygreen";  // Otherwise, the default is to use green for the Arabic script.
+}
 
 $first_half=array('a', 'c', 'e', 'g', 'i', 'k', 'm', 'o', 'q', 's', 'u', 'w', 'y');  // vipande which signify the beginning of a line
 
@@ -64,11 +85,11 @@ fwrite($fp, "\begin{longtable}{{$columns}} \n\n");
 // fwrite($fp, "\makebox[8cm][r]{} & & \makebox[8cm][r]{} \\\\ \n\n"); 
 
 // Collect the content from the table.
-//$sql=query("select stanza from $words where stanza between 200 and 220 group by stanza order by stanza;");  // Collect all the stanza numbers.
+//$sql=query("select stanza from $words where stanza between 200 and 220 group by stanza order by stanza;");  // Print selected stanzas.
 $sql=query("select stanza from $words group by stanza order by stanza;");  // Collect all the stanza numbers.
 while ($row=pg_fetch_object($sql))
 {
-    $stanza=$row->stanza;
+    $stanza=$row->stanza;  // Stanza number assigned by the import - always correct.
     
     // Set up check for stanzas with odd numbers of lines - get the letter matching the maximum kipande.
     $sql_nk=query("select max(loc) from $words where stanza=$stanza;");
@@ -86,66 +107,72 @@ while ($row=pg_fetch_object($sql))
         while ($row_w=pg_fetch_object($sql_w))
         {
             $arabic=$row_w->arabic;
+            $standard=$row_w->standard;
+            $edstan=$row_w->edstan;
             $close=$row_w->close;
-            $standard=preg_replace("/~/", "", $row_w->standard);
-            $edclose=preg_replace("/~/", "", $row_w->edclose);
+            $edclose=$row_w->edclose;
+            $emend=$row_w->emend;
             $variant=$row_w->variant;
             $note=$row_w->note;
-            $root=$row_w->root;
             $english=$row_w->english;
             
-            // Use either edclose or standard as the main transliteration, depending on initial user input. 
-            if ($argv[2]=="standard")
+             if ($edclose!='')  // If the automatic close transliteration has been edited, bring that in instead.  Replace deleted words (~) with a blank.
             {
-                $trans="$standard";
+		$close=preg_replace("/~/", "", $edclose);
             }
-            else
+            
+            if ($edstan!='')  // If the automatic standard transliteration has been edited, bring that in instead.  Replace deleted words (~) with a blank.
             {
-                $trans="$edclose";
+		$standard=preg_replace("/~/", "", $edstan);
+            }
+            
+            if ($emend!='')  // Mark emended readings.  If the standard reading needs to be emended, write the emendation in the emend column, and that, together with a dotted underline, will be read in instead.  This allows you to distinguish emendations from typographical editing of the reading (eg capitalising proper names).
+            {
+                $standard="\\dotuline{".$emend."}";
             }
             
             if ($variant!='')  // Add variant readings.
             {
-                $trans=$trans."\\footnote{".$variant."} ";  // Final space in case there are other footnotes.
+                $close=$close."\\footnote{".$variant."} ";  // Final space in case there are other variants.
             }
             
             if ($note!='')  // Add notes.
             {
-                $trans=$trans."\\footnote{".$note."} ";  // Final space in case there are other footnotes.
+                $standard=$standard."\\footnote{".$note."} ";  // Final space in case there are other footnotes.
             }
             
+            // Concatenate the words in that kipande.
             $arabic_line.=$arabic." ";
+            $standard_line.=$standard." "; 
             $close_line.=$close." ";
-            $trans_line.=$trans." ";  
             $english_line.=$english." ";
         }
 
-        if (in_array($kipande, $first_half))
+        if (in_array($kipande, $first_half))  // If the kipande is the first in the line, set it up as "a".
         {
             $first_kip=$kipande;
             $a_arabic=trim($arabic_line);
+            $a_standard=trim($standard_line);
             $a_close=trim($close_line);
-            $a_trans=trim($trans_line);
             $a_english=trim($english_line);
-            unset($arabic_line, $close_line, $trans_line, $english_line);  // Clear the contents of the first kipande.
+            unset($arabic_line, $standard_line, $close_line, $english_line);  // Clear the contents of the first kipande.
         }
-        else
+        else  // If the kipande is the second in the line, set it up as "b".  Also include the numbering here (since we're reading left to right, the numbering has to come after the second kipande.
         {
+            $standard_kip=$first_kip."/".$kipande;
             $close_kip=$kipande."/".$first_kip;
-            $trans_kip=$first_kip."/".$kipande;
             $b_arabic=trim($arabic_line);
+            $b_standard=trim($standard_line);
             $b_close=trim($close_line);
-            $b_trans=trim($trans_line);
             $b_english=trim($english_line);
             $double=1;
         }
 
-        if($double==1)  // We have two kipande on the line, so print them.
+        if ($double==1)  // We have two kipande on the line, so print them.
         {
-//             fwrite($fp, "\\textcolor{{$colour1}}{\\textarabic{".$b_arabic."}} & \\textcolor{{$colour1}}{\\textarabic{".$a_arabic."}} & ");
-		fwrite($fp, "\\textcolor{{$colour1}}{\\textarabic{".$a_arabic." * ".$b_arabic."}} & ");
+	    fwrite($fp, "\\textcolor{{$colour1}}{\\textarabic{".$a_arabic." * ".$b_arabic."}} & ");
 
-            if (substr($close_kip, 0, 1)=="b") // only put an Arabic number against the first line of the stanza
+            if (substr($close_kip, 0, 1)=="b") // Only put an Arabic number against the first line of the stanza (with two kipande to each line, the first line of the stanza ends with kipande b).
             {
                 fwrite($fp, "\\textarabic{".convert_numbers($stanza)."} \\\\* \n");
             }
@@ -153,19 +180,37 @@ while ($row=pg_fetch_object($sql))
             {
                 fwrite($fp, " \\\\* \n");  
             }
-            //fwrite($fp, "\Tr{".$b_close."} & \\Tr{".$a_close."} &  \Tr{".$stanza.$close_kip."} \\\\* \n");
-            //fwrite($fp, "\multicolumn{2}{r}{\Swa{".$a_trans." * ".$b_trans."}} & \Swa{".$stanza.$trans_kip."} \\\\* \n");
-//             fwrite($fp, "\multicolumn{2}{r}{".$a_trans." * ".$b_trans."} & ".$stanza.$trans_kip." \\\\* \n");
-//             fwrite($fp, "\multicolumn{2}{r}{\E{".$a_english." ".$b_english."}} & \\\\[2mm] \n");
-            fwrite($fp, $a_trans." * ".$b_trans." & ".$stanza.$trans_kip." \\\\* \n");
-            fwrite($fp, "\E{".$a_english." ".$b_english."} & \\\\[2mm] \n");
+            
+            if (in_array("close-lr", $collection))  // If this option is passed in, a close transcription reading left to right will be included.
+	    {
+		fwrite($fp, "\\textcolor{{$colour1}}{\OLTcl{".$a_close." * ".$b_close."}} & \\\\* \n");
+	    }
+	    
+	    if (in_array("close-rl", $collection))  // If this option is passed in, a close transcription reading right to left (ie following th Arabic script) will be included.
+	    {
+		$a_close=join(' ', array_reverse (explode (' ', $a_close)));  // Reverse the order of words in the first kipande.
+		$b_close=join(' ', array_reverse (explode (' ', $b_close)));  // Reverse the order of words in the second kipande.
+		fwrite($fp, "\\textcolor{{$colour1}}{\OLTcl{".$b_close." * ".$a_close."}} & \\\\* \n");
+	    }
+	    
+            if (!in_array("nostandard", $collection))  // Print the standard transcription by default, unless this option is passed in.
+            // Note that if this option is used, no variants or notes will be printed, because they are linked to the standard transcription.
+	    {
+		fwrite($fp, $a_standard." * ".$b_standard." & ".$stanza.$standard_kip." \\\\* \n");
+	    }
+            
+	    if (!in_array("noenglish", $collection))  // Print any English translation by default, unless this option is passed in.
+	    {
+		fwrite($fp, "\E{".$a_english." ".$b_english."} & \\\\[2mm] \n");
+	    }
            
-            echo $stanza.$close_kip.": ".$a_trans." + ".$b_trans."\n";
-            unset($double, $arabic_line, $close_line, $trans_line, $english_line);
+            echo $stanza.$close_kip.": ".$a_standard." + ".$b_standard."\n";
+            unset($double, $arabic_line, $standard_line, $close_line, $english_line);
         }
         elseif ($kipande==$maxkip)  // handle stanzas with an odd number of vipande
 	// if the line doesn't have two vipande ($double), check if its loc is the last loc of the stanza, and if it is, print it anyway
         {
+	    // FIXME: needs rewriting.
 	    //fwrite($fp, " & \\textarabic{".$a_arabic."} & ");
 	    fwrite($fp, "\multicolumn{2}{r}{\\textcolor{{$colour1}}{\\textarabic{".$a_arabic."}}} & ");
 	    //fwrite($fp, " & \\textcolor{{$colour1}}{\\textarabic{".$a_arabic."}} & ");
@@ -211,6 +256,6 @@ exec("xelatex -interaction=nonstopmode -output-directory=db/outputs/$poem db/out
 // exec("biber db/outputs/$poem/$poem 2>&1");
 // echo "Doing final layout...\n";
 // exec("xelatex -interaction=nonstopmode -output-directory=db/outputs/$poem db/outputs/$poem/{$poem}.tex 2>&1");
-echo "The document should be ready now.\n";
+echo "Typesetting complete.\n";
 
 ?>

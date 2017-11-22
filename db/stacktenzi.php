@@ -4,7 +4,7 @@
 *********************************************************************
 Copyright Kevin Donnelly 2015.
 kevindonnelly.org.uk
-This file is part of Andika!, a set of tools for writing Swhili in Arbic script..
+This file is part of Andika!, a set of tools for writing Swahili in Arabic script..
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License or the GNU
@@ -83,11 +83,11 @@ while ($row_ro=pg_fetch_object($sql_ro))
 	{
 	     if ($firstcol!=1)  // ... and $firstcol is not already set, then add the numbers furniture.
 	    {
-		$consol="(\\textbf{".$runord."})";
-		$arconsol="(".convert_numbers($runord).")";
+		$consol="(\\textbf{".$runord."})";  // consolidated Roman number in brackets
+		$arconsol="(".convert_numbers($runord).")";  // consolidated Arabic number in brackets
 	    }
-	    $msv=strtoupper($ms);
-	    $stanza=$roms;
+	    $msv=strtoupper($ms);  // Uppercased MS version (eg Y, R).
+	    $stanza=$roms;  // Stanza number of that MS version.
 	    
 	    $sql_lc=query("update {$poem}_mslist set msid=lower(msid);");   // Lowercase the MS identifiers in case the user has entered them in uppercase by mistake.
 	    $sql_d=query("select * from {$poem}_mslist where msid='$ms';");  // IMPORTANT: the _mslist table must contain entries for each MS represented in the _runord table, or the script will halt here.

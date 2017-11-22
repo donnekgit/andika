@@ -25,6 +25,8 @@ If not, see <http://www.gnu.org/licenses/>.
 
 // This script assembles each line in standard transcription, and also assembles an equivalent part-of-speech line and a derivation line, along with giving the wordcount in each line.
 
+// Note that for analysis, this table was enriched with other data about syntax.
+
 include("./andika/config.php");
 include("./includes/fns.php");
 

@@ -4,7 +4,7 @@
 *********************************************************************
 Copyright Kevin Donnelly 2015.
 kevindonnelly.org.uk
-This file is part of Andika!, a set of tools for writing Swhili in Arbic script..
+This file is part of Andika!, a set of tools for writing Swahili in Arabic script.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License or the GNU
@@ -28,11 +28,11 @@ This script is called from stacktenzi.php, and generates a layout for each stanz
 */
 
 // Collect the content from the table.
-//$sql=query("select stanza from $words where stanza between 200 and 220 group by stanza order by stanza;");
+//$sql=query("select stanza from $words where stanza between 200 and 220 group by stanza order by stanza;");  // Print selected stanzas.
 $sql=query("select msno, stanza from $words where stanza=$stanza group by stanza, msno order by stanza;");  // Collect all the stanza numbers.
 while ($row=pg_fetch_object($sql))
 {
-//     $stanza=$row->stanza;  // Stanza number assigned by the import - always correct.
+    //$stanza=$row->stanza;  // Stanza number assigned by the import - always correct.
     $msno=$row->msno;  // Stanza number written on the MS - can be incorrect.
     
     $sql_loc=query("select distinct loc from $words where stanza=$stanza order by loc;");
@@ -55,7 +55,7 @@ while ($row=pg_fetch_object($sql))
             $root=$row_w->root;
             $english=$row_w->english;
             
-            if ($edclose!='')  // If the automatic close transliteration has been edited, bring that in instead.  Replace deleted words (~) with a blank.
+             if ($edclose!='')  // If the automatic close transliteration has been edited, bring that in instead.  Replace deleted words (~) with a blank.
             {
 		$close=preg_replace("/~/", "", $edclose);
             }
@@ -66,6 +66,7 @@ while ($row=pg_fetch_object($sql))
             }
             
             if ($emend!='')  // Mark emended readings.  If the standard reading has been emended, mark that by entering any character (eg *) in the emend column, and the emended word will then be marked with a dotted underline.  This allows you to distinguish emendations from typographical editing of the reading (eg capitalising proper names).
+            // //FIXME: Write the entire emendation in the emend column, and read that in instead (as in output_pdf.php).
             {
                 //$edclose="\\Em{".$edclose."}";  // This and the next line are retained for reference purposes.
                 //$edclose=$edclose."\\footnote{Emend to \\Swa{".$emend."}.}";  // This will use the \Swa{} font (green Biolinum) - change it to another font if desired.
@@ -74,12 +75,12 @@ while ($row=pg_fetch_object($sql))
             
             if ($variant!='')  // Add variant readings.
             {
-                $close=$close."\\footnote{".$variant."}";
+                $close=$close."\\footnote{".$variant."} ";  // Final space in case there are other variants.
             }
             
             if ($note!='')  // Add notes.
             {
-                $standard=$standard."\\footnote{".$note."}";
+                $standard=$standard."\\footnote{".$note."} ";  // Final space in case there are other footnotes.
             }
             
             $arabic_line.=$arabic." ";

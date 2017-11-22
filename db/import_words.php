@@ -40,14 +40,18 @@ if (empty($argv[1]))
 }
 $words="{$poem}_words";
 $backup="{$poem}_backup";
+$sql_w=query("create table if not exists $words (id integer);");  // Prevent warning message when create_poemwords.php is run (since the table doesn't exist, dropping it gives a warning).
+$sql_w=query("create table if not exists $backup (id integer);");
+
+// Re-create the backup table - this needs to be fully populated with fields to prevent a warning message when the data is being reintegrated from an empty table on the very first run..
+include("db/create_poembackup.php");
 
 // Do a backup of the words table - edits will be reapplied from here.
-drop_existing_table($backup);  // First, drop the existing backup table, so that a new one can be created.
-
 // ===== Fresh import =====
 // Comment out the following line to do a completely fresh import:
-$sql_b=query("create table $backup as select * from $words");
+$sql_b=query("insert into $backup select * from $words");
 // ======================
+// FIXME - this needs more work to prevent possible data loss.  Perhaps rename the existing backup to today's date-time before making the new one.
 
 // Re-create the poemwords table.
 include("db/create_poemwords.php");
@@ -84,12 +88,14 @@ while ($row=pg_fetch_object($sql))
 }
 
 // Put back any edits.
-echo "\nRe-integrating previous edits.\n\n";
+echo "\nRe-integrating previous edits...\n";
 
 // ===== Fresh import =====
 // Comment out the following line to do a completely fresh import:
 $sql_n=query("update $words w set (edclose, edstan, emend, variant, note, root, english, pos, slot, lg, tense, neg) = (b.edclose, b.edstan, b.emend, b.variant, b.note, b.root, b.english, b.pos, b.slot, b.lg, b.tense, b.neg) from $backup b where w.stanza=b.stanza and w.loc=b.loc and w.position=b.position;");
 // ======================
+
+echo "\nDone.\n\n";
 
 // To insert new stanzas (eg from a new MS) into the middle of existing stanzas, edit them as a separate document first, setting the stanza number to suit, eg 5 stanzas which run from 116 to 120, and import as a table.  Then move the numbering of existing stanzas forward (update stanza set stanza=stanza+5 where stanza>115), and copy the new stanzas into the poem table (insert into existing_stanzas select * from new_stanzas).
 

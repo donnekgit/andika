@@ -3,7 +3,7 @@
 /*
 This script populates the running order table with the primary MS's stanza numbers.
 The primary MS would usually be the longest, but it may be the most important, the most poetic, or whatever.
-Run as: php ms/fill_runord.php poem MS-identifier, eg php ms/fill_runord.php jaafari Y
+Run as: php ms/init_runord.php poem MS-identifier, eg php ms/init_runord.php jaafari Y
 MS identifiers can be in either uppercase or lowercase.
 */
 

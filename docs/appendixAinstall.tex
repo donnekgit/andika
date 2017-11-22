@@ -52,6 +52,17 @@ Unless otherwise indicated, it is assumed that all commands are run from the sug
 
 As noted above, this option is less versatile than a proper install of Ubuntu, so the following notes do not attempt to cover every issue.\footnote{In particular, running Ubuntu as a guest on an Apple Mac OS X host throws up some keyboard problems -- it is unclear how you access the | (pipe) and \textbackslash (backslash) keys on an Apple keyboard when you need to use them in Ubuntu.  In an Apple UK keyboard they are accessed respectively by \textbf{Shift+Alt+L} and \textbf{Shift+Alt+/}, but these keystrokes do not work in virtual machines.}
 
+% right alt Q = @
+% right alt ß = \
+% right alt ^ = |
+% right alt E = €
+% ctrl left alt Q = @
+% ctrl left alt ß = \
+% ctrl left alt ^ = |
+% ctrl left alt E = €
+% https://forums.virtualbox.org/viewtopic.php?p=44133
+% eszet=hash/tilde?
+
 Install the version of Oracle's VirtualBox software\footnote{\url{virtualbox.org}} appropriate for your operating system.  Once installed, open VirtualBox Manager and click the icon for \textbf{New}.  Fill in \textbf{Andika} against \textit{Name}, \textbf{Linux} against \textit{Type} and \textbf{Ubuntu (64 bit)} against \textit{Version}. Click \textbf{Next}.  As the memory amount, set \textbf{2000Mb} if you have at least 3Gb memory in your machine -- raise the level if you have more memory (if you have less memory you will need to accept that VirtualBox may not run very well.  Click \textbf{Next}.  Tick \textbf{Create a virtual harddrive now}.  Click \textbf{Next}.  Tick \textbf{VDI}.  Click \textbf{Next}.  Tick \textbf{Dynamically allocated}.  Click \textbf{Next}.  Set \textbf{40Gb} as the virtual hard drive size if you have a hard drive of at least 300Mb.  Click \textbf{Create}.
 
 You have now set up a virtual machine, and the next step is to install Ubuntu on it.  Click the new \textit{Andika} entry in the left-hand pane so that it is highlighted.  Click the icon for \textbf{Start}.  You will be asked to select a startup disk.  Click the folder icon to the right of the textbox to navigate to wherever you stored your download of Ubuntu 14.04.  Click \textbf{OK}. Click \textbf{Start}.  The Ubuntu boot process will start, and after a couple of minutes you should see an screen with two large icons on it.  Click \textbf{Install Ubuntu}.  Click through the screens, accepting the defaults.  It is important to make a note of your username and password.  After about 20 minutes, you should have a new Ubuntu install using the Unity desktop.

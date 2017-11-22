@@ -26,6 +26,8 @@ If not, see <http://www.gnu.org/licenses/>.
 /*
 This script converts Swahili poems in Arabic script into Roman script, and vice versa, adding an automatically
 generated transcription.  There are many options available, so see the manual for full details.
+This script sets things up for the scripts in the layouts dir: depending on the script of the source text (arabic, roman), the orthography is converted, and then the _print script is called to do the layout.
+Note that /layout/kip_line_*.php is the one that related to database entry - the others relate only to txt/odt/pdf output.
 */
 
 
@@ -148,7 +150,7 @@ elseif ($output=="odt")
 $vipande=array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');  // letters to signify location of the kipande in the stanza
 // or: $vipande=range('a', 'z');
 $first_half=array('a', 'c', 'e', 'g', 'i', 'k', 'm', 'o', 'q', 's', 'u', 'w', 'y');  // vipande which signify the beginning of a line
-$second_half=array('b', 'd', 'f', 'h', 'j', 'l', 'n', 'p', 'r', 't', 'v', 'x', 'z');  // vipande which signify the beginning of a line
+$second_half=array('b', 'd', 'f', 'h', 'j', 'l', 'n', 'p', 'r', 't', 'v', 'x', 'z');  // vipande which signify the end of a line
 
 foreach ($poemlines as $key=>$poemline)
 {
@@ -157,7 +159,7 @@ foreach ($poemlines as $key=>$poemline)
     {
 	if (preg_match("/#/", $poemline))
 	{
-	    $msno=substr(trim($poemline), 1);
+	    $msno=substr(trim($poemline), 1);  // That is, the stanza number as written in the MS by the scribe.  This may be incorrect.
 	}
 	else 
 	{
@@ -168,6 +170,15 @@ foreach ($poemlines as $key=>$poemline)
     {
 	$stanza_no++;  // increment the stanza number
 	echo "\n";  // add a blank line in the feedback
+	
+	if (empty($msno)) // If the input text did not include stanza numbers copied from the MS ...
+	{
+	    $msno=0;  // ... set $msno to 0 ...
+	}
+	else
+	{
+	    $msno=$msno;  // ... otherwise use the MS stanza number.
+	}
 	
         if ($genre=="poetry")
         {

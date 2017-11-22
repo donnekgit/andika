@@ -61,9 +61,14 @@ while ($row=pg_fetch_object($sql))
     $root=$row->root;
     $pos=$row->pos;
     echo $root." (".$pos.")\n";
-	
+    
+    $sql_n=query("select count(*) from jaafari_root_concordance where root='$root' and pos='$pos';");
+    while ($row_n=pg_fetch_object($sql_n))
+    {
+	$total=$row_n->count;
+    }
     fwrite($fp, "\\noindent\\textcolor[RGB]{220,220,220}{\\rule{\\textwidth}{0.2pt}} \\\\[2mm]\n");
-    fwrite($fp, $root." (".$pos.")\n\n");
+    fwrite($fp, "\\textbf{".$root."} (".$pos.") [".$total."]\n\n");
     
     // Get a list of all the locations for each root+pos combination.
     $sql_e=query("select * from jaafari_root_concordance where root='$root' and pos='$pos' order by target, trans, stanza, loc, ms;");
