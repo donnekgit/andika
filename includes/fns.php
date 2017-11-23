@@ -585,6 +585,37 @@ function add_column_if_not_exists($table, $column)
 	}
 }
 
+function buildseq($text)
+// This function takes a sequence of numbers or letters and builds it into a string that can be included in an SQL query.
+{
+    $mystanzas=explode(",", $text);
+
+    foreach ($mystanzas as $stanza)
+    {
+	if (preg_match("/-/", $stanza))
+	{
+	    list($beg, $end)=explode("-", $stanza);
+	    foreach (range($beg, $end) as $num)
+	    {
+		$stanzalist[]=$num;
+	    }
+	}
+	else
+	{
+	    $stanzalist[]=$stanza;
+	}
+    }
+
+    foreach ($stanzalist as $in)
+    {
+	$inlist.="'".$in."',";  // Use quotes so that we can handle letters as well as numbers.
+    }
+    
+    $inlist=substr($inlist, 0, -1);
+    
+    return $inlist;
+}
+
 function copy_records_if_table_not_exists($table, $sql_copy_command) // defunct
 // Use SELECT AS to copy records into a table that is only created if it does not already exist. (The command "CREATE TABLE IF EXISTS mytable AS SELECT ..." does not exist.
 // In cases where the table already exists, no copying will be done -- ie the assumption is that the existing table is already up-to-date and should not be amended.

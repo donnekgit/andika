@@ -32,6 +32,8 @@ Note that this script restores all fields except msno, stanza, loc, position, ar
 include("./includes/fns.php");
 include("./andika/config.php");
 
+$backupdate=date("Y_m_d_H_i_s");
+
 $poem=$argv[1];  // Take the name of the poem from the command-line argument.
 if (empty($argv[1]))
 {
@@ -41,7 +43,10 @@ if (empty($argv[1]))
 $words="{$poem}_words";
 $backup="{$poem}_backup";
 $sql_w=query("create table if not exists $words (id integer);");  // Prevent warning message when create_poemwords.php is run (since the table doesn't exist, dropping it gives a warning).
-$sql_w=query("create table if not exists $backup (id integer);");
+$sql_b=query("create table if not exists $backup (id integer);");  // Prevent warning message when create_poembackup.php is run (since the table doesn't exist, dropping it gives a warning).
+
+// There is a possibility of data loss if the user reimports the poem into _words, something goes wrong, and they reimport again.  The first import will save the annotations in _backup, but the error will prevent the annotations being applied to the recreated _words table, and then the second import will delete the good _backup table and create a new one based on the faulty _words table, losing the annotations.  To prevent this, each time an import is done, we copy the existing _backup to a new _backup_datetime table - that means that if anything goes wrong with the import the annotations can be retrieved from one of these backups.  The drawback is a proliferation of backup files, but these can easily be deleted manually if they are no longer required.
+$sql_bb=query("create table {$backup}_{$backupdate} as select * from $backup;");
 
 // Re-create the backup table - this needs to be fully populated with fields to prevent a warning message when the data is being reintegrated from an empty table on the very first run..
 include("db/create_poembackup.php");
@@ -51,7 +56,6 @@ include("db/create_poembackup.php");
 // Comment out the following line to do a completely fresh import:
 $sql_b=query("insert into $backup select * from $words");
 // ======================
-// FIXME - this needs more work to prevent possible data loss.  Perhaps rename the existing backup to today's date-time before making the new one.
 
 // Re-create the poemwords table.
 include("db/create_poemwords.php");
@@ -92,7 +96,7 @@ echo "\nRe-integrating previous edits...\n";
 
 // ===== Fresh import =====
 // Comment out the following line to do a completely fresh import:
-$sql_n=query("update $words w set (edclose, edstan, emend, variant, note, root, english, pos, slot, lg, tense, neg) = (b.edclose, b.edstan, b.emend, b.variant, b.note, b.root, b.english, b.pos, b.slot, b.lg, b.tense, b.neg) from $backup b where w.stanza=b.stanza and w.loc=b.loc and w.position=b.position;");
+$sql_n=query("update $words w set (edclose, edstan, emend, variant, note, root, english, pos, slot, lg, tense, neg, noshow) = (b.edclose, b.edstan, b.emend, b.variant, b.note, b.root, b.english, b.pos, b.slot, b.lg, b.tense, b.neg, b.noshow) from $backup b where w.stanza=b.stanza and w.loc=b.loc and w.position=b.position;");
 // ======================
 
 echo "\nDone.\n\n";

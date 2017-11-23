@@ -54,7 +54,8 @@ CREATE TABLE $words (
     slot varchar(25) default '' not null,
     lg varchar(25) default '' not null,
     tense varchar(20) default '' not null,
-    neg varchar(10) default '' not null
+    neg varchar(10) default '' not null,
+    noshow varchar(10) default '' not null
 );
 ";
 $result_table=pg_query($db_handle, $sql_table);

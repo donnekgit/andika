@@ -2,9 +2,9 @@
 
 /* 
 *********************************************************************
-Copyright Kevin Donnelly 2010, 2011.
+Copyright Kevin Donnelly 2012-2017.
 kevindonnelly.org.uk
-This file is part of the Bangor Autoglosser.
+This file is part of Andika!, a set of tools for writing Swahili in Arabic script.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License or the GNU

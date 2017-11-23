@@ -25,7 +25,7 @@ If not, see <http://www.gnu.org/licenses/>.
 
 // This script reads across word annotations from one MS table to another.
 // Run as: php db/read-across.php table-you-want-to-be-populated table-you-want-to-take-the-entries-from
-// Needs more work, eg to ensure that readings for emended words are not carried over.
+// FIXME: Needs more work, eg to ensure that readings for emended words are not carried over.
 
 include("./andika/config.php");
 include("./includes/fns.php");

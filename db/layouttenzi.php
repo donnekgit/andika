@@ -25,6 +25,7 @@ If not, see <http://www.gnu.org/licenses/>.
 
 /*
 This script is called from stacktenzi.php, and generates a layout for each stanza of an utenzi.
+FIXME: port across some of the options in output_pdf.php.
 */
 
 // Collect the content from the table.
@@ -84,7 +85,7 @@ while ($row=pg_fetch_object($sql))
             }
             
             $arabic_line.=$arabic." ";
-            //$edclose_line=$edclose." ".$edclose_line;  // This leaves the words of the close transliteration going right to left, following the Arabic script.  Also change the lines below to: $edclose_line=" * ".$edclose_line; and $edclose_line= substr($edclose_line, 3); This approach was shelved in favour of the reverse line below, which allows all the lines to remain the same.
+            //$edclose_line=$edclose." ".$edclose_line;  // This leaves the words of the close transliteration going right to left, following the Arabic script.  Also change the lines below to: $close_line=" * ".$close_line; and $close_line= substr($close_line, 3); This approach was shelved in favour of the reverse line below, which allows all the lines to remain the same.
 	    $standard_line.=$standard." ";  
             $close_line.=$close." ";  
             $english_line.=$english." ";
