@@ -4,7 +4,7 @@
 *********************************************************************
 Copyright Kevin Donnelly 2012.
 kevindonnelly.org.uk
-This file is part of Andika!, a set of tools for writing Swhili in Arbic script..
+This file is part of Andika!, a set of tools for writing Swahili in Arbic script.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License or the GNU
@@ -36,45 +36,45 @@ if (empty($argv[1]))
 }
 
 $words="{$poem}_words";
-$fin_nonfin="{$poem}_fin_nonfin";
+$fin_nonfin_pos="{$poem}_fin_nonfin_pos";
 
-$sql=query("select standard, root, lg from $words where root!='???' group by standard, root, lg order by standard, lg, root;");
+$sql=query("select pos, root, lg from $words where root!='???' group by pos, root, lg order by pos, lg, root;");
 while ($row=pg_fetch_object($sql))
 {
-    $standard=$row->standard;
+    $pos=$row->pos;
     $root=$row->root;
     $lg=$row->lg;
 
     // nonfinal roots, abc lines
-    $sql2=query("select count(standard) from $words where standard='$standard' and root='$root' and slot!='final' and loc!='d';");
+    $sql2=query("select count(pos) from $words where pos='$pos' and root='$root' and slot!='final' and loc!='d';");
     while ($row2=pg_fetch_object($sql2))
     {
 	$nonfinal=$row2->count;
     }
 
     // final roots, abc lines 
-    $sql3=query("select count(standard) from $words where standard='$standard' and root='$root' and slot='final' and loc!='d';");
+    $sql3=query("select count(pos) from $words where pos='$pos' and root='$root' and slot='final' and loc!='d';");
     while ($row3=pg_fetch_object($sql3))
     {
 	$final=$row3->count;
     }
     
     // nonfinal roots, d line
-    $sql4=query("select count(standard) from $words where standard='$standard' and root='$root' and slot!='final' and loc='d';");
+    $sql4=query("select count(pos) from $words where pos='$pos' and root='$root' and slot!='final' and loc='d';");
     while ($row4=pg_fetch_object($sql4))
     {
 	$snonfinal=$row4->count;
     }
     
     // final roots, d line
-    $sql5=query("select count(standard) from $words where standard='$standard' and root='$root' and slot='final' and loc='d';");
+    $sql5=query("select count(pos) from $words where pos='$pos' and root='$root' and slot='final' and loc='d';");
     while ($row5=pg_fetch_object($sql5))
     {
 	$sfinal=$row5->count;
     }
     
-    echo $standard." ".$root." ".$nonfinal." ".$final." ".$snonfinal." ".$sfinal."\n";
-    $sql_i=query("insert into $fin_nonfin (standard, root, lg, nonfinal, final, snonfinal, sfinal) values ('$standard', '$root', '$lg', $nonfinal, $final, $snonfinal, $sfinal);");
+    echo $pos." ".$root." ".$nonfinal." ".$final." ".$snonfinal." ".$sfinal."\n";
+    $sql_i=query("insert into $fin_nonfin_pos (pos, root, lg, nonfinal, final, snonfinal, sfinal) values ('$pos', '$root', '$lg', $nonfinal, $final, $snonfinal, $sfinal);");
     
     unset($nonfinal, $final, $snonfinal, $sfinal);  
 }

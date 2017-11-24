@@ -4,7 +4,7 @@
 *********************************************************************
 Copyright Kevin Donnelly 2012.
 kevindonnelly.org.uk
-This file is part of Andika!, a set of tools for writing Swhili in Arbic script..
+This file is part of Andika!, a set of tools for writing Swahili in Arbic script.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License or the GNU
@@ -23,7 +23,7 @@ If not, see <http://www.gnu.org/licenses/>.
 *********************************************************************
 */
 
-// This script collects counts for how often particular words occur finally and non-finally.
+// This script converts the words of each line to POS equivalents.
 
 include("./andika/config.php");
 include("./includes/fns.php");
@@ -36,33 +36,35 @@ if (empty($argv[1]))
 }
 
 $words="{$poem}_words";
-$fin_nonfin="{$poem}_fin_nonfin";
-$root_position="{$poem}_root_position";
+$postable="{$poem}_poslist";
 
-$sql=query("select root from $fin_nonfin group by root order by root;");
+$sql=query("select stanza, loc from $words group by stanza, loc order by stanza, loc;");
 while ($row=pg_fetch_object($sql))
 {
-    $root=$row->root;
-
-    // nonfinal roots, abc lines
-    $sql2=query("select * from $fin_nonfin where root='$root' order by standard;");
-    while ($row2=pg_fetch_object($sql2))
-    {
-	$nonfinal+=$row2->nonfinal;
-	$final+=$row2->final;
-	$snonfinal+=$row2->snonfinal;
-	$sfinal+=$row2->sfinal;
-	
-	$words.=$row2->standard.", ";
-	$lg=$row2->lg;
-    }
-
-    $total=$nonfinal+$final+$snonfinal+$sfinal;
-    $words=substr($words, 0, -2);
-    echo $root." ".$nonfinal." ".$final." ".$snonfinal." ".$sfinal." ".$words."\n";
-    $sql_i=query("insert into $root_position (root, nonfinal, final, snonfinal, sfinal, words, lg, total) values ('$root', $nonfinal, $final, $snonfinal, $sfinal, '$words', '$lg', $total);");
+    $stanza=$row->stanza;
+    $loc=$row->loc;
     
-    unset($nonfinal, $final, $snonfinal, $sfinal, $words);  
+    $sql_w=query("select * from $words where stanza=$stanza and loc='$loc' order by position;");  
+    while ($row_w=pg_fetch_object($sql_w))
+    {
+	$standard=preg_replace("/~/", "", $row_w->standard);
+	$position=$row_w->position;
+	$root=$row_w->root;
+	$pos=$row_w->pos;
+	
+	$standard_line.=$standard." ";
+	$root_line.=$root." ";
+	$pos_line.=$pos." ";
+    }
+    
+    $standard_line=trim($standard_line);
+    $root_line=trim($root_line);
+    $pos_line=trim($pos_line);
+    echo $stanza.$loc.": ".$pos_line."\n";
+    
+    $sql_i=query("insert into $postable (stanza, loc, posline, standard, root) values ($stanza, '$loc', '$pos_line', '$standard_line', '$root_line');");
+    
+    unset($standard_line, $root_line, $pos_line);  
 }
 
 ?>

@@ -4,7 +4,7 @@
 *********************************************************************
 Copyright Kevin Donnelly 2012.
 kevindonnelly.org.uk
-This file is part of Andika!, a set of tools for writing Swhili in Arbic script..
+This file is part of Andika!, a set of tools for writing Swahili in Arbic script.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License or the GNU
@@ -23,7 +23,7 @@ If not, see <http://www.gnu.org/licenses/>.
 *********************************************************************
 */
 
-// This script picks out words following -a, many of which will be descriptives (ie adjectival).
+// This script extends <poem>_ar_ba_line by noting instances of marked syntax, which are transferred from the marked_syntax table (after having been noted manually).  This needs fixing: the marked_syntax table does not include loc (line info), so a 1-to1 transfer is not possible, and a text-based transfer is not possible because the marked_syntax table uses the edited standard, whereas ar_ba_line uses unedited.  So we transfer all we can first, and then run some queries to transfer the rest.
 
 include("./andika/config.php");
 include("./includes/fns.php");
@@ -35,27 +35,21 @@ if (empty($argv[1]))
     exit;
 }
 
-$words="{$poem}_words";
+$marked_syntax="{$poem}_marked_syntax";
+$ar_ba_line="{$poem}_ar_ba_line";
 
-$sql=query("select stanza, loc, position, standard from $words where root='-a' order by standard, stanza, loc, position;");
+$sql=query("select * from $marked_syntax;");
 while ($row=pg_fetch_object($sql))
 {
-    $stanza=$row->stanza;
-    $loc=$row->loc;
-    $position=$row->position;
-    $standard=$row->standard;
+    $syntax=$row->syntype;
+    $notes=pg_escape_string($row->notes);
+    $obj=$row->objinf;
+    $standard=$row->swahili;
+    $stanza=$row->stanz;
+
+   $sql_i= query("update $ar_ba_line set syntax='$syntax', notes='$notes', obj='$obj' where standard='$standard';");
     
-    $following=$position+1;
-    
-    echo $stanza." ".$loc." ".$standard." ";
-    
-    $sql2=query("select standard from $words where stanza=$stanza and loc='$loc' and position='$following';");
-    while ($row2=pg_fetch_object($sql2))
-    {
-	$follword=$row2->standard;
-	
-	echo $follword."\n";
-    }
+    echo $standard."\n";
 }
 
 ?>

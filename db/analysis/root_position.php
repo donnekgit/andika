@@ -4,7 +4,7 @@
 *********************************************************************
 Copyright Kevin Donnelly 2012.
 kevindonnelly.org.uk
-This file is part of Andika!, a set of tools for writing Swhili in Arbic script..
+This file is part of Andika!, a set of tools for writing Swahili in Arbic script.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License or the GNU
@@ -23,7 +23,7 @@ If not, see <http://www.gnu.org/licenses/>.
 *********************************************************************
 */
 
-// This script picks out the rhyming (final words in each stanza, and tags them according to derivation (Bantu or Arabic).
+// This script collects counts for how often particular words occur finally and non-finally.
 
 include("./andika/config.php");
 include("./includes/fns.php");
@@ -36,32 +36,33 @@ if (empty($argv[1]))
 }
 
 $words="{$poem}_words";
-$arcolloc="{$poem}_arcolloc";
+$fin_nonfin="{$poem}_fin_nonfin";
+$root_position="{$poem}_root_position";
 
-$sql=query("select stanza from $words group by stanza order by stanza;");
+$sql=query("select root from $fin_nonfin group by root order by root;");
 while ($row=pg_fetch_object($sql))
 {
-    $stanza=$row->stanza;
-   
-    $sql2=query("select loc, lg, standard from $words where stanza=$stanza and slot='final' order by loc;");
+    $root=$row->root;
+
+    // nonfinal roots, abc lines
+    $sql2=query("select * from $fin_nonfin where root='$root' order by standard;");
     while ($row2=pg_fetch_object($sql2))
     {
-	$loc=$row2->loc;
-	$lg=$row2->lg;
-	$standard=$row2->standard;
+	$nonfinal+=$row2->nonfinal;
+	$final+=$row2->final;
+	$snonfinal+=$row2->snonfinal;
+	$sfinal+=$row2->sfinal;
 	
-	$lg=($lg=='ar' ? 'ar' : 'ba');
-	$lg_line.=$lg." ";
-	$standard_line.=$standard." ";
+	$words.=$row2->standard.", ";
+	$lg=$row2->lg;
     }
+
+    $total=$nonfinal+$final+$snonfinal+$sfinal;
+    $words=substr($words, 0, -2);
+    echo $root." ".$nonfinal." ".$final." ".$snonfinal." ".$sfinal." ".$words."\n";
+    $sql_i=query("insert into $root_position (root, nonfinal, final, snonfinal, sfinal, words, lg, total) values ('$root', $nonfinal, $final, $snonfinal, $sfinal, '$words', '$lg', $total);");
     
-    $standard_line=trim($standard_line);
-    $lg_line=trim($lg_line);
-    
-    echo $stanza." ".$lg_line." ".$standard_line."\n";
-    $sql_i=query("insert into $arcolloc (stanza, lgline, standard) values ($stanza, '$lg_line', '$standard_line');");
-    
-    unset($standard_line, $lg_line);  
+    unset($nonfinal, $final, $snonfinal, $sfinal, $words);  
 }
 
 ?>

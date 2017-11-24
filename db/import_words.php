@@ -4,7 +4,7 @@
 *********************************************************************
 Copyright Kevin Donnelly 2012.
 kevindonnelly.org.uk
-This file is part of Andika!, a set of tools for writing Swhili in Arbic script..
+This file is part of Andika!, a set of tools for writing Swahili in Arbic script.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License or the GNU

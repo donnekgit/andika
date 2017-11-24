@@ -4,7 +4,7 @@
 *********************************************************************
 Copyright Kevin Donnelly 2012.
 kevindonnelly.org.uk
-This file is part of Andika!, a set of tools for writing Swhili in Arbic script..
+This file is part of Andika!, a set of tools for writing Swahili in Arbic script.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License or the GNU
@@ -23,7 +23,7 @@ If not, see <http://www.gnu.org/licenses/>.
 *********************************************************************
 */
 
-// This script converts the words of each line to POS equivalents.
+// This script picks out words following -a, many of which will be descriptives (ie adjectival).
 
 include("./andika/config.php");
 include("./includes/fns.php");
@@ -36,35 +36,26 @@ if (empty($argv[1]))
 }
 
 $words="{$poem}_words";
-$postable="{$poem}_poslist";
 
-$sql=query("select stanza, loc from $words group by stanza, loc order by stanza, loc;");
+$sql=query("select stanza, loc, position, standard from $words where root='-a' order by standard, stanza, loc, position;");
 while ($row=pg_fetch_object($sql))
 {
     $stanza=$row->stanza;
     $loc=$row->loc;
+    $position=$row->position;
+    $standard=$row->standard;
     
-    $sql_w=query("select * from $words where stanza=$stanza and loc='$loc' order by position;");  
-    while ($row_w=pg_fetch_object($sql_w))
+    $following=$position+1;
+    
+    echo $stanza." ".$loc." ".$standard." ";
+    
+    $sql2=query("select standard from $words where stanza=$stanza and loc='$loc' and position='$following';");
+    while ($row2=pg_fetch_object($sql2))
     {
-	$standard=preg_replace("/~/", "", $row_w->standard);
-	$position=$row_w->position;
-	$root=$row_w->root;
-	$pos=$row_w->pos;
+	$follword=$row2->standard;
 	
-	$standard_line.=$standard." ";
-	$root_line.=$root." ";
-	$pos_line.=$pos." ";
+	echo $follword."\n";
     }
-    
-    $standard_line=trim($standard_line);
-    $root_line=trim($root_line);
-    $pos_line=trim($pos_line);
-    echo $stanza.$loc.": ".$pos_line."\n";
-    
-    $sql_i=query("insert into $postable (stanza, loc, posline, standard, root) values ($stanza, '$loc', '$pos_line', '$standard_line', '$root_line');");
-    
-    unset($standard_line, $root_line, $pos_line);  
 }
 
 ?>
