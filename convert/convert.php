@@ -27,7 +27,7 @@ If not, see <http://www.gnu.org/licenses/>.
 This script converts Swahili poems in Arabic script into Roman script, and vice versa, adding an automatically
 generated transcription.  There are many options available, so see the manual for full details.
 This script sets things up for the scripts in the layouts dir: depending on the script of the source text (arabic, roman), the orthography is converted, and then the _print script is called to do the layout.
-Note that /layout/kip_line_*.php is the one that related to database entry - the others relate only to txt/odt/pdf output.
+Note that /layout/kip_line_*.php is the one that deals with database entry - the others relate only to txt/odt/pdf output.
 */
 
 

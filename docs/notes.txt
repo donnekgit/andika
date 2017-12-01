@@ -14,7 +14,6 @@ php db/fill_root_concordance.php jaafari_r
 php db/generate_root_concordance.php jaafari
 
 
-
 LaTeX
 --------
 
@@ -38,53 +37,6 @@ Jaafari
 
 Convert the odt file into a pdf:
 php convert/convert.php convert/inputs/jaafari/jaafari.odt+Arabic+Poetry+pdf+vip-space+TRUE
-
-Do the addition of the English translation in chunks of 20 stanzas, to make the pdf generation faster.
-Set the query in SQL Workbench to call only those 20 stanzas from jaafari_words.
-select word_id, stanza, loc, position, edclose, english from jaafari_words where stanza between 80 and 100 order by stanza, loc, position;
-
-To generate the pdf run:
-php db/output_pdf.php jaafari
-But output_pdf.php needs to be edited directly to output only the chunk of 20 stanzas, eg:
-$sql=query("select stanza from $words where stanza between 180 and 200 group by stanza order by stanza;");
-Could add this as another argument to the command?
-
-Refer to other footnotes:
-In the source footnote, put \label{note1}, eg This is some text.\footnote{\label{note1}With a footnote.}
-In the target footnote, put \ref{note1}, eg This is some more text.\footnote{See footnote \ref{note1}.}
-
-
-MS alignment
-----------------
-
-First, run:
-php ms/create_mslist.php <name of poem>, which sets up a table to hold key information about the MSs: the name of the table holding the database version of that MS, the code (id) for that MS, and the colour you want the MS text printed in. Once the table is set up, add this information manually (eg using SQL Workbench).  MS identifiers can be entered in either uppercase or lowercase, but they will be changed to all lowercase by init_runord.php (because having single capitals as table names causes problems in PostgreSQL).
-
-Then create a table to hold the running order for all the MSs, and fill it with one of the MS's stanza numbers.
-php ms/init_runord.php <name of poem> <MS code>
-It doesn't particularly matter which MS you choose to input as the reference MS here, but it's probably best to input whatever one you consider "primary", since it will be the one against which data from the other MSs is entered.  The primary MS might be the longest, or the most important, the most "poetic", or whatever.
-
-For each MS other than the primary one, manually align its stanza numbers to those of the primary MS:
-php ms/runord.php <name of poem> Yn[-n] action Xn
-This assumes that you have inspected the different MSs, and know which stanzas in each you want to select or align. Using the options passed in to the script, stanzas numbers will be inserted or deleted to give a "running order" of the "best bit" stanzas from all the MSs (sequential), or giving analogue stanzas from each MS (parallel).  The combined MS will be printed with the provenance of the different stanzas noted by means of font, fontsize, or colour.  For ballads (tenzi), for instance, you can use db/stacktenzi.php.
-
-X will usually be the reference MS, and Y is the MS you want to align with it.  The MS ids can be given as either lowercase or uppercase - the latter is easier to read, but the MS ids will be changed to lowercase anyway.
-
-n is a number or range of numbers (n-n) specifying (for Y, the new MS) the stanza or stanza span to be inserted (the splice), or (for X, the reference MS) the insertion point (the target).
-
-Yn[-n] insert Xn -- insert stanza n or stanzas n-n from Y AFTER the insertion point Xn.  This generates a gap in stanza numbers for X that occur after the insertion point.
-Yn[-n] prefix Xn -- insert stanza n or stanzas n-n from Y BEFORE the insertion point Xn.  This generates a gap in stanza numbers for X that occur before the insertion point.It is recommended to use "insert" preferentially, and keep "prefix"  for situations where space needs to be created at the head of the table, eg to allow stanzas to be added which precede the reference MS's running order.
-Yn[-n] align Xn -- paste stanza n or stanzas n-n from Y alongside existing stanzas in X, starting at the insertion point Xn.
-
-After each action, a unified running order is produced, which represents the consolidated order of all stanzas in all the MSs.  This can be used in two ways:
-(a) Aligned (stacked): Step through the running order, and for each stanza number print out aligned stanzas from each MS.  This provides output where all the MSs can be compared in detail.
-(a) Sequential: Step through the running order, and for each stanza number print out the equivalent reference MS stanza.  Where one does not exist, print out the equivalent stanza from one of the other MSs.  This provides output where the story content can be more fully appreciated.
-
-Although X will usually be the reference MS, it can be any of the MSs - for instance, if MS A starts at stanza number 1, which is equivalent to stanza 5 in MS B, you would run (see below):
-php ms/runord.php <name of poem> B1-4 prefix A1
-to insert the first 4 stanzas from B in front of the existing A stanzas.  If you then had another MS C where stanza 3 was equivalent to stanza 1 of B, you could then run:
-php ms/runord.php <name of poem> C1-2 prefix B1
-to insert the first 2 stanzas from C in front of the existing B stanzas.
 
 
 combining
@@ -124,7 +76,6 @@ http://stackoverflow.com/questions/4018493/vertical-line-with-every-quotation
 \begin{tabular}{|p{10cm}}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id hendrerit nunc. Sed scelerisque lacus vitae erat eleifend eleifend. Donec eros mi, placerat in porta eleifend, placerat a urna. Pellentesque venenatis neque non turpis convallis vehicula. Aliquam aliquet ultricies tincidunt.\\
 \end{tabular}
-
 
 
 Manual

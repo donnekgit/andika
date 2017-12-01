@@ -28,73 +28,51 @@ include("./includes/fns.php");
 
 // ===== Accept the arguments from the command-line. =====
 $poem=$argv[1];  // Take the name of the poem from the command-line argument.
-if (empty($argv[1]))
-{
-    echo "\nYou need to specify the name of the poem.\nAdd it to the end of the line.\n\n";
-    exit;
-}
 $words=$poem."_words";  // Name of the words table: poem_words.
 $action=$argv[2];  // Action to be taken: clear, fill.
-$filler=$argv[3];  // Tag to be inserted in the noshow field.
+$stanzas=$argv[3];  // Stanzas to be targetted: all, or a stanza list - a comma-separated list of numbers with NO spaces, which can also include ranges separated by a hyphen.
+$locs=$argv[4];  // Locations in the stanzas.  Optional, unless you are specifying a tag other than "ar".  A comma-separated list of lower-case letters with NO spaces, which can also include ranges separated by a hyphen.
+$tag=$argv[5];  // Tag to be inserted in the noshow field.  Optional, in which case "ar" will be used as the tag.
 
-$stanzas=$argv[4];  // Stanzas to be targetted.
-$locs=$argv[5];  // Locations in the stanzas. 
-// $poss=$argv[6];  //Positions in the locations (this allows individual words to be marked as noshow.  Probably not usedful - it would be easier to do single words manually, since you have to get the location data for them anyway.
-
-if (preg_match("/all/", $stanzas))
+if (!isset($tag) and $action=="fill")  // If the tag is empty and the action is fill, use "ar".
 {
-    $stanzaphrase="";
+    $tag="ar";
 }
-else
+elseif ($action=="clear")  // If the action is clear, empty the tag.  Not strictly necessary, but here to fix cases where the command may be rerun with a tag still on the end of the line.
 {
-    $stanzasin=buildseq($stanzas);
-    $stanzaphrase="where stanza in ($stanzasin)";
+    $tag="";
 }
 
-if (isset($locs))
-{
-    $locsin=buildseq($locs);
-    $locphrase="and loc in ($locsin)";
-}
-else
-{
-    $locphrase="";
-}
+$line="update $words set noshow='$tag'";  // Start the SQL query.
 
-// if (isset($poss))
-// {
-//     $possin=buildseq($poss);
-//     $posphrase="and pos in ($possin)";
-// }
-// else
-// {
-//     $posphrase="";
-// }
-    
-//===== Clear existing noshow marks. =====
-if (preg_match("/clear/", $action))
+if (preg_match("/all/", $stanzas))  // If the target is all ...
 {
-    if (preg_match("/all/", $stanzas))
+    if (isset($locs))  // ... and locations are given ...
     {
-	$sql_f=query("update $words set noshow='';");
-    }
-   else
-    {
-	$sql_f=query("update $words set noshow='' $stanzaphrase $locphrase;");
-    }
-}
-
-//===== Fill existing noshow marks. =====
-if (preg_match("/fill/", $action))
-{
-    if (preg_match("/all/", $stanzas))
-    {
-	$sql_f=query("update $words set noshow='$filler';");
+	$locseq=buildseq($locs);  // ... expand the locations list ...
+	$line=$line." where loc in ($locseq);";  // ... and insert it into a where clause.
     }
     else
     {
-	$sql_f=query("update $words set noshow='$filler' $stanzaphrase $locphrase;");
+	$line=$line.";";  // Otherwise, end the query.
     }
 }
+else
+{
+    $stanzaseq=buildseq($stanzas);  // If the target is a list of stanzas, expand it ...
+    
+    if (isset($locs))  // ... and if locations are given ...
+    {
+	$locseq=buildseq($locs);  // ... expand the locations list ...
+	$line=$line." where stanza in ($stanzaseq) and loc in ($locseq);";  // ... and insert both stanzas and locations into a where clause.
+    }
+    else
+    {
+	$line=$line." where stanza in ($stanzaseq);";  // Otherwise, insert just the stanzas into a where clause.
+    }
+}
+
+// echo $line."\n";
+$sql=query("$line");  // Run the final SQL query to apply the changes.
 
 ?>

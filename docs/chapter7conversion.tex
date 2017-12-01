@@ -142,7 +142,7 @@ The documents to be converted can be in either \textit{txt} or \textit{odt} form
 
 Poems in traditional metres should be laid out one \textit{kipande} to the line, with a blank line between stanzas and one (\textit{odt}) or two (\textit{txt}) blank lines at the end.
 
-An alternative format for longer poems (for example, \textbf{tenzi}) is available, which may be useful in helping to pinpoint your location in the transcription.  After the blank stanza-separation line, each stanza can be preceded by a line containing other data (eg a number for the stanza being transcribed from the manuscript, a reference to a key aspect of the stanza, etc).  The crucial part is that this line must contain a hash symbol (\#) somewhere within it.  An example of this format is available in the file \url{andika/convert/inputs/jaafari/jnum.odt}.  The hash symbol and Roman numerals are accessible from the Swahili keyboard by holding down \textit{AltGr} and pressing the hash and numeral keys.   Note that any stanza numbers added in this hash line will be ignored by the conversion in favour of its own stanza numbering (the scribe or the copyist may misnumber stanzas, so it is better to let the computer do it).  
+An alternative format for longer poems (for example, \textbf{tenzi}) is available, which may be useful in helping to pinpoint your location in the transcription.  After the blank stanza-separation line, each stanza can be preceded by a line giving the number of the stanza as written in the manuscript.  The format for this is hash (\#) followed directly (i.e. with no intervening space) by the manuscript number -- an example of this format is available in the file \url{andika/convert/inputs/jaafari/jnum.odt}.  The hash symbol and Roman numerals are accessible from the Swahili keyboard by holding down \textit{AltGr} and pressing the hash and numeral keys.   Note that any stanza numbers added in this hash line will be ignored by the conversion to pdf, odt or txt in favour of its own stanza numbering (the scribe or the copyist may misnumber stanzas, so it is better to let the computer do it).  However, when converting to a database table, these numbers will be imported into the table (in the \textit{msno} field) alongside the stanza number calculated by the computer (in the \textit{stanza} field) -- see \Cref{s:import} for more information.
 
 Prose will be converted by paragraph.  Again, the document should end with one (\textit{odt}) or two (\textit{txt}) blank lines, but there should be no blank line between paragraphs.  Where a manuscript has been transcribed line by line, each line in the trascribed document will therefore equate to a paragraph, and be transliterated separately to give an interlinear transliteration.
 
@@ -170,7 +170,7 @@ Once the text file has been tidied, it can then be converted as explained above.
 \subsection{Adjusting the import's stanza numbering}
 \label{ss:stanzano}
 
-By default, the conversion process numbers stanzas from 1 onwards.  However, if you are handling an excerpt and want the numbering to reflect the actual stanza numbers of the excerpt, it is easy to do this.  Open the file in a text editor (\textbf{not} in a word-processor):\\
+By default, the conversion process numbers stanzas from 1 onwards.  However, if you are handling an excerpt and want the numbering to reflect the actual stanza numbers of the excerpt, it is easy to do this.\footnote{If you are importing into a database, you can instead import the excerpt without editing \textit{convert/convert.php} and adjust the stanza numbering directly in the poem table - see \Cref{ss:addstanzas}.}  Open the file in a text editor (\textbf{not} in a word-processor):\\
 \verb|kate convert/convert.php|\\
 and locate the line:\\
 \verb|$stanza_no=0;|
@@ -178,6 +178,8 @@ and locate the line:\\
 Edit the number so that it is set to one below the lowest stanza number of the excerpt -- for instance, for an excerpt beginning at stanza 138 you would edit the line to read:\\
 \verb|$stanza_no=137;|\\
 Save the file and run the conversion.
+
+Remember to reset the line to 0 when you have finished.
 
 \subsection{Warning when using the convert tools}
 

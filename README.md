@@ -1,4 +1,4 @@
-##Andika!##
+## Andika!
 
 For centuries, Swahili was written in Arabic script, and hundreds of manuscripts in collections around the world testify to its long tradition of written literature.  Over the last century, however, Swahili in Roman script has become the norm.
 

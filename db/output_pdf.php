@@ -35,22 +35,32 @@ if (empty($argv[1]))
 
 $collection=explode("+", $argv[2]);  // Take a list of options from the second command-line argument (if any) - these should be separated by a +.
 // The options are as follows:
-// justify: the default layout of the poem text is to centre it, but this option will right-justify it.
+// 12pt: the default font size is 10pt, but this option will increase it slightly.
+// MtoN: the default is to print out all stanzas, but if this option is given (eg 2to3, 9to12), only stanzas numbered M to N will be printed out.
+// endnotes: by default, annotations are output as footnotes at the bottom of each page, but this option will switch the annotation format to endnotes output in their own section at the end of the poem.
+// alignright: the default layout of the poem text is to centre it, but this option will right-justify it.
+// alignleft: the default layout of the poem text is to centre it, but this option will left-justify it.
 // nocolour: the default colour for the Arabic script is green (though this can be changed by editing this script), but this option will print the Arabic script in black.
 // close-lr: the default is to print a transcription into standard Swahili, but this option will add a line giving a close transcription reading from left to right.
-// close-rl: the default is to print a transcription into standard Swahili, but this option will add a line giving a close transcription reading from right to left (ie following the Arabic script).  IMPORTANT! Because of the way the reversing of the line is done, this option should not be used if words are marked "noshow" and also have notes attached.  The notes text will also be reversed, leading to mistakes in the typesetting.
-// nostandard: the default is to print a transcription into standard Swahili, but this option will suppress that.  Note that if this option is used, no variants or notes will be printed, because they are linked to the standard transcription.
+// close-rl: the default is to print a transcription into standard Swahili, but this option will add a line giving a close transcription reading from right to left (ie following the Arabic script). 
+// noarabic:  the default is to print the Arabic script, but this option will suppress that.
+// nostandard: the default is to print a transcription into standard Swahili, but this option will suppress that.  Note that if this option is used, any variants or notes attached to the standard transcription will be re-attached to the Arabic script.
 // noenglish: the default is to print an English translation if the database table contains one, but this option will suppress that.
 // firstcolour: the default colour for the Arabic script is green, but this option will print the first line of the stanza in blue (both colours can be changed by editing the script).
-// swapclose: the default when all the words in both kipandes are marked as "noshow" is for no transcription to be printed out, but this option will print out the close transcription.  Note that swapclose will have no effect if the words are not actually marked as "noshow" - in that case, the standard transcription will be printed out as usual.
+// swapclose: the default when all the words in both kipandes have an entry in the "noshow" field is for no transcription to be printed out, but this option will print out the close transcription.  Note that swapclose will have no effect if there is no entry in the "noshow" field - in that case, the standard transcription will be printed out as normal.
 //print_r($collection);
 
 $words="{$poem}_words";
 $stanza_contents="";  // Set up a holder for the contents of the whole stanza.
-if (in_array("justify", $collection))  // If this option is passed in ...
+if (in_array("alignright", $collection))  // If this option is passed in ...
 {
     $columns="rl";  // ... the poem text will be right-justified in the text area.
 }
+elseif (in_array("alignleft", $collection))
+{
+    $columns="ll";  // Otherwise, the default is to centre the poem text in the text area.
+}
+
 else
 {
     $columns="cl";  // Otherwise, the default is to centre the poem text in the text area.
@@ -77,6 +87,14 @@ else
     $firstcolour=$colour1;  // Otherwise, the Arabic script for the whole stanza will be coloured green.
 }
 
+if (preg_grep("/\dto\d/", $collection))  // Check whether an MtoN option has been passed in.  If so, extract it and create a where clause to be inserted in the stanza collection query below.
+{
+    $batch=preg_grep("/\dto\d/", $collection);
+    $span=$batch[0];
+    list($beg, $end)=explode("to", $span);
+    $thisbatch="where stanza between $beg and $end";
+}
+
 $first_half=array('a', 'c', 'e', 'g', 'i', 'k', 'm', 'o', 'q', 's', 'u', 'w', 'y');  // vipande which signify the beginning of a line
 
 exec("mkdir -p db/outputs/".$poem);
@@ -86,6 +104,15 @@ $fp = fopen("db/outputs/$poem/{$poem}.tex", "w") or die("Can't create the file")
 
 // Write in the header.
 $header=file_get_contents("db/tex/tex_header.tex");
+if (in_array("12pt", $collection))
+{
+    $header=preg_replace("/10pt/", "12pt", $header);
+}
+
+if (in_array("endnotes", $collection))
+{
+    $header=preg_replace("/\\\\begin{document}/", "\\usepackage{endnotes}\n\\let\\footnote=\\endnote\n\n\\begin{document}", $header);
+}
 fwrite($fp, $header);
 fwrite($fp, "\n");
 
@@ -103,7 +130,7 @@ fwrite($fp, "\begin{longtable}{{$columns}} \n\n");
 
 // Collect the content from the table.
 //$sql=query("select stanza from $words where stanza between 200 and 220 group by stanza order by stanza;");  // Print selected stanzas.
-$sql=query("select stanza from $words group by stanza order by stanza;");  // Collect all the stanza numbers.
+$sql=query("select stanza from $words $thisbatch group by stanza order by stanza;");  // Collect all the stanza numbers.  If the option MtoN has been passed in, only collect stanzas M to N.
 while ($row=pg_fetch_object($sql))
 {
     $stanza=$row->stanza;  // Stanza number assigned by the import - always correct.
@@ -175,13 +202,22 @@ while ($row=pg_fetch_object($sql))
             
             if ($noshow!='')  // If there is a flag in the noshow field ...
             {
-		if ($noshow=='ar')  // ... if it's "ar", empty the standard field ...
+		if ($noshow=='ar')  // ... if it's "ar", empty the standard field, and also the English ...
+		{
+		    $standard="";  // Currently just empty, but a routine could be called here that does something special for Arabic.
+		    $english="";  // Also suppress the English transcription.
+		}
+		if ($noshow=='areng')  // ... if it's "areng", empty the standard field, but keep the English.
 		{
 		    $standard="";
 		}
 		elseif ($noshow=='omit')  // ... if it's "omit", replace the standard entry with a marker.
 		{
 		    $standard="\\textcolor{lightgray}{XXX}";
+		}
+		else  //  If there's any other flag, just empty the standard field.
+		{
+		    $standard="";
 		}
 	    }
             
@@ -214,17 +250,20 @@ while ($row=pg_fetch_object($sql))
 
         if ($double==1)  // We have two kipande on the line, so print them.
         {
-            if (substr($close_kip, 0, 1)=="b") // Only put an Arabic number against the first line of the stanza (with two kipande to each line, the first line of the stanza ends with kipande b).
+            if (!in_array("noarabic", $collection))
             {
-                fwrite($fp, "\\textcolor{{$firstcolour}}{\\textarabic{".$a_arabic." * ".$b_arabic."}} & ");  // Repeating the printout of the Arabic script here and in the else clause allows for the first line of a stanza to be coloured differently, relevant for the Burda and Hamziyya, where the first line of a stanza is in Arabic ...
-                fwrite($fp, "\\textarabic{".convert_numbers($stanza)."} \\\\* \n");
-                $mycolour=$firstcolour;  // Carry across the colour of the Arabic script into the close transcription.
-            }
-            else
-            {
-                fwrite($fp, "\\textcolor{{$colour1}}{\\textarabic{".$a_arabic." * ".$b_arabic."}} & "); // ... and subsequent lines are in Swahili.
-                fwrite($fp, " \\\\* \n");
-                $mycolour=$colour1;  // Carry across the colour of the Arabic script into the close transcription.
+		if (substr($close_kip, 0, 1)=="b") // Only put an Arabic number against the first line of the stanza (with two kipande to each line, the first line of the stanza ends with kipande b).
+		{
+		    fwrite($fp, "\\textcolor{{$firstcolour}}{\\textarabic{".$a_arabic." * ".$b_arabic."}} & ");  // Repeating the printout of the Arabic script here and in the else clause allows for the first line of a stanza to be coloured differently, relevant for the Burda and Hamziyya, where the first line of a stanza is in Arabic ...
+		    fwrite($fp, "\\textarabic{".convert_numbers($stanza)."} \\\\* \n");
+		    $mycolour=$firstcolour;  // Carry across the colour of the Arabic script into the close transcription.
+		}
+		else
+		{
+		    fwrite($fp, "\\textcolor{{$colour1}}{\\textarabic{".$a_arabic." * ".$b_arabic."}} & "); // ... and subsequent lines are in Swahili.
+		    fwrite($fp, " \\\\* \n");
+		    $mycolour=$colour1;  // Carry across the colour of the Arabic script into the close transcription.
+		}
             }
             
             if (in_array("close-lr", $collection))  // If this option is passed in, a close transcription reading left to right will be included.
@@ -243,6 +282,7 @@ while ($row=pg_fetch_object($sql))
             // Note that if this option is used, no emendations or notes will be printed, because they are linked to the standard transcription.
 	    {
 		if ($a_standard!='' and $b_standard!='')  // If the vipande are not empty because their words have been marked as noshow, print the standard transcription with numbers. If the vipande are indeed empty because their words have been marked as noshow, nothing will be printed, since the code above has either emptied the standard entry, or replaced it by a blank.
+		// NOTE: The above line means that if the words for one kipande are marked noshow, the transcription for both it AND its companion in the line will be suppressed.  This is probably best for display purposes, but if you want to suppress only one kipande and not its companion as well, change "and" above to "or".  
 		{
 		    fwrite($fp, $a_standard." * ".$b_standard." & ".$stanza.$standard_kip." \\\\* \n");
 		}
@@ -257,7 +297,7 @@ while ($row=pg_fetch_object($sql))
 		fwrite($fp, "\E{".$a_english." ".$b_english."} & \\\\[2mm] \n");
 	    }
            
-            echo $stanza.$close_kip.": ".$a_standard." + ".$b_standard."\n";
+            echo $stanza.$standard_kip.": ".$a_standard." + ".$b_standard."\n";
             unset($double, $arabic_line, $standard_line, $close_line, $english_line);
         }
         elseif ($kipande==$maxkip)  // handle stanzas with an odd number of vipande
@@ -284,13 +324,19 @@ while ($row=pg_fetch_object($sql))
 // Close off the layout.
 fwrite($fp, "\\end{longtable} \n\n");
 
-// ===== Endnotes =====
+// ===== Endnotes ===== now handled by the following option
 // If you need endnotes instead of footnotes, uncomment the following three lines.
 // Remember to uncomment the two lines in andika/db/tex/tex_header.tex as well.
 // $endnotes=file_get_contents("db/tex/endnotes.tex");
 // fwrite($fp, $endnotes);
 // fwrite($fp, "\n");
 // ==================
+if (in_array("endnotes", $collection))
+{
+    $endnotes=file_get_contents("db/tex/endnotes.tex");
+    fwrite($fp, $endnotes);
+    fwrite($fp, "\n");
+}
 
 // Print any references.
 fwrite($fp, "\\renewcommand{\bibname}{References} \n");
