@@ -9,7 +9,7 @@
 
 The simplest option is to use the cut-and-paste converters on the website.\footnote{\url{kevindonnelly.org.uk/swahili/rom_ar.php} and \url{kevindonnelly.org.uk/swahili/ar_rom.php}.}  If you have followed the instructions in \Cref{s:localaccess} these will also be available on your own machine.\footnote{\url{andika/rom_ar.php} and \url{andika/ar_rom.php}.}
 
-To use these converters, type or paste text into the input box.  Input is truncated to 900 characters, but if your text is longer than this you can convert it in chunks.  the truncation limit can be changed by editing or commenting out the line: \\
+To use these converters, type or paste text into the input box.  Input is truncated to 900 characters, but if your text is longer than this you can convert it in chunks.  The truncation limit can be changed by editing or commenting out the line: \\
 \verb|$mystring=strip_tags(substr($mystring, 0, 900));| \\
 in \textit{convert_rom_ar.php} and: \\
 \verb|$input=strip_tags(substr($input, 0, 900));| \\

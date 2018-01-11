@@ -294,7 +294,15 @@ while ($row=pg_fetch_object($sql))
             
 	    if (!in_array("noenglish", $collection))  // Print any English translation by default, unless this option is passed in.
 	    {
-		fwrite($fp, "\E{".$a_english." ".$b_english."} & \\\\[2mm] \n");
+		if (in_array("longlines", $collection))
+		{
+		    fwrite($fp, "\E{".$a_english."}\\\\ \E{".$b_english."} & \\\\[2mm] \n");
+		}
+		else
+		{
+		    fwrite($fp, "\E{".$a_english." ".$b_english."} & \\\\[2mm] \n");
+		}
+
 	    }
            
             echo $stanza.$standard_kip.": ".$a_standard." + ".$b_standard."\n";
