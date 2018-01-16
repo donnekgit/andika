@@ -305,11 +305,6 @@ while ($row=pg_fetch_object($sql))
 		    fwrite($fp, "\\textcolor{{$mycolour}}{\OLTcl{".$a_close." * ".$b_close."}} & ".$stanza.$standard_kip." \\\\* \n");
 		}
 	    }
-	    
-	    if (in_array("swapclose", $collection))  // If this option is passed in, the close transcription will be printed instead of the standard transcription.
-                {
-                    fwrite($fp, "\\textcolor{{$mycolour}}{\OLTcl{".$a_close." * ".$b_close."}} & ".$stanza.$standard_kip." \\\\* \n");
-                }
             
 	    if (!in_array("noenglish", $collection))  // Print any English translation by default, unless this option is passed in.
 	    {
