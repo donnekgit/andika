@@ -227,7 +227,7 @@ while ($row=pg_fetch_object($sql))
             $close_line.=$close." ";
             $english_line.=$english." ";
         }
-
+        
         if (in_array($kipande, $first_half))  // If the kipande is the first in the line, set it up as "a".
         {
             $first_kip=$kipande;
@@ -268,14 +268,28 @@ while ($row=pg_fetch_object($sql))
             
             if (in_array("close-lr", $collection))  // If this option is passed in, a close transcription reading left to right will be included.
 	    {
-		fwrite($fp, "\\textcolor{{$mycolour}}{\OLTcl{".$a_close." * ".$b_close."}} & \\\\* \n");
+		if (in_array("closeblack", $collection))  // If this option is included, 
+		{
+                    fwrite($fp, $a_close." * ".$b_close." & \\\\* \n");
+		}
+		else
+		{
+                    fwrite($fp, "\\textcolor{{$mycolour}}{\OLTcl{".$a_close." * ".$b_close."}} & \\\\* \n");
+		}
 	    }
 	    
 	    if (in_array("close-rl", $collection))  // If this option is passed in, a close transcription reading right to left (ie following th Arabic script) will be included.
 	    {
 		$a_close=join(' ', array_reverse (explode (' ', $a_close)));  // Reverse the order of words in the first kipande.
 		$b_close=join(' ', array_reverse (explode (' ', $b_close)));  // Reverse the order of words in the second kipande.
-		fwrite($fp, "\\textcolor{{$mycolour}}{\OLTcl{".$b_close." * ".$a_close."}} & \\\\* \n");
+		if (in_array("closeblack", $collection))  // If this option is included, 
+                {
+                    fwrite($fp, $b_close." * ".$a_close." & \\\\* \n");
+                }
+                else
+                {
+                    fwrite($fp, "\\textcolor{{$mycolour}}{\OLTcl{".$b_close." * ".$a_close."}} & \\\\* \n");
+                }
 	    }
 	    
 	    if (!in_array("nostandard", $collection))  // Print the standard transcription by default, unless this option is passed in.
@@ -291,6 +305,11 @@ while ($row=pg_fetch_object($sql))
 		    fwrite($fp, "\\textcolor{{$mycolour}}{\OLTcl{".$a_close." * ".$b_close."}} & ".$stanza.$standard_kip." \\\\* \n");
 		}
 	    }
+	    
+	    if (in_array("swapclose", $collection))  // If this option is passed in, the close transcription will be printed instead of the standard transcription.
+                {
+                    fwrite($fp, "\\textcolor{{$mycolour}}{\OLTcl{".$a_close." * ".$b_close."}} & ".$stanza.$standard_kip." \\\\* \n");
+                }
             
 	    if (!in_array("noenglish", $collection))  // Print any English translation by default, unless this option is passed in.
 	    {

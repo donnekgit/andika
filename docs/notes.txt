@@ -1,5 +1,14 @@
 webtrans : Need to add note about giving it wider permissions, or the webserver can't write the converted webpages there.
 
+Add longlines option to Chapter 8.
+
+Add closeblack option to Chapter 8.
+
+To run the output.tex file from Kile, edit
+input{convert/tex/fontdefs.tex}  % Bring in the font definitions.
+to 
+../../../input{convert/tex/fontdefs.tex}  % Bring in the font definitions.
+
 
 Analysis
 -----------
