@@ -42,10 +42,12 @@ $collection=explode("+", $argv[2]);  // Take a list of options from the second c
 // alignleft: the default layout of the poem text is to centre it, but this option will left-justify it.
 // nocolour: the default colour for the Arabic script is green (though this can be changed by editing this script), but this option will print the Arabic script in black.
 // close-lr: the default is to print a transcription into standard Swahili, but this option will add a line giving a close transcription reading from left to right.
-// close-rl: the default is to print a transcription into standard Swahili, but this option will add a line giving a close transcription reading from right to left (ie following the Arabic script). 
+// close-rl: the default is to print a transcription into standard Swahili, but this option will add a line giving a close transcription reading from right to left (ie following the Arabic script).
+// closeblack: the default is to print the close transcription in the same colour as the Arabic script, and in a slightly smaller font, but this option will print it in black in a normal-sized font.
 // noarabic:  the default is to print the Arabic script, but this option will suppress that.
 // nostandard: the default is to print a transcription into standard Swahili, but this option will suppress that.  Note that if this option is used, any variants or notes attached to the standard transcription will be re-attached to the Arabic script.
 // noenglish: the default is to print an English translation if the database table contains one, but this option will suppress that.
+// longlines: the default is to print the English translation for both vipande on the same line, but this option will print each kipande's translation on a separate line.
 // firstcolour: the default colour for the Arabic script is green, but this option will print the first line of the stanza in blue (both colours can be changed by editing the script).
 // swapclose: the default when all the words in both kipandes have an entry in the "noshow" field is for no transcription to be printed out, but this option will print out the close transcription.  Note that swapclose will have no effect if there is no entry in the "noshow" field - in that case, the standard transcription will be printed out as normal.
 //print_r($collection);
@@ -268,13 +270,13 @@ while ($row=pg_fetch_object($sql))
             
             if (in_array("close-lr", $collection))  // If this option is passed in, a close transcription reading left to right will be included.
 	    {
-		if (in_array("closeblack", $collection))  // If this option is included, 
+		if (in_array("closeblack", $collection))  // If this option is included ...
 		{
-                    fwrite($fp, $a_close." * ".$b_close." & \\\\* \n");
+                    fwrite($fp, $a_close." * ".$b_close." & \\\\* \n");  // ... the transcription will be printed in black in a normal-sized font ...
 		}
 		else
 		{
-                    fwrite($fp, "\\textcolor{{$mycolour}}{\OLTcl{".$a_close." * ".$b_close."}} & \\\\* \n");
+                    fwrite($fp, "\\textcolor{{$mycolour}}{\OLTcl{".$a_close." * ".$b_close."}} & \\\\* \n");  // otherwise, it will be printed in the same colour as the Arabic script, and in a slightly smaller font.
 		}
 	    }
 	    
@@ -282,13 +284,13 @@ while ($row=pg_fetch_object($sql))
 	    {
 		$a_close=join(' ', array_reverse (explode (' ', $a_close)));  // Reverse the order of words in the first kipande.
 		$b_close=join(' ', array_reverse (explode (' ', $b_close)));  // Reverse the order of words in the second kipande.
-		if (in_array("closeblack", $collection))  // If this option is included, 
+		if (in_array("closeblack", $collection))  // If this option is included ...
                 {
-                    fwrite($fp, $b_close." * ".$a_close." & \\\\* \n");
+                    fwrite($fp, $b_close." * ".$a_close." & \\\\* \n");  // ... the transcription will be printed in black in a normal-sized font ...
                 }
                 else
                 {
-                    fwrite($fp, "\\textcolor{{$mycolour}}{\OLTcl{".$b_close." * ".$a_close."}} & \\\\* \n");
+                    fwrite($fp, "\\textcolor{{$mycolour}}{\OLTcl{".$b_close." * ".$a_close."}} & \\\\* \n");  // otherwise, it will be printed in the same colour as the Arabic script, and in a slightly smaller font.
                 }
 	    }
 	    
@@ -300,7 +302,7 @@ while ($row=pg_fetch_object($sql))
 		{
 		    fwrite($fp, $a_standard." * ".$b_standard." & ".$stanza.$standard_kip." \\\\* \n");
 		}
-		elseif (in_array("swapclose", $collection))  // If this option is passed in, the close transcription will be printed instead of the standard transcription.
+		elseif (in_array("swapclose", $collection))  // If this option is passed in, the close transcription will be printed instead of the standard transcription for words that are marked as noshow.
 		{
 		    fwrite($fp, "\\textcolor{{$mycolour}}{\OLTcl{".$a_close." * ".$b_close."}} & ".$stanza.$standard_kip." \\\\* \n");
 		}
@@ -308,13 +310,13 @@ while ($row=pg_fetch_object($sql))
             
 	    if (!in_array("noenglish", $collection))  // Print any English translation by default, unless this option is passed in.
 	    {
-		if (in_array("longlines", $collection))
+		if (in_array("longlines", $collection))  // If this option is used ...
 		{
-		    fwrite($fp, "\E{".$a_english."}\\\\ \E{".$b_english."} & \\\\[2mm] \n");
+		    fwrite($fp, "\E{".$a_english."}\\\\ \E{".$b_english."} & \\\\[2mm] \n");  // ... print the English translation for each of the two vipande on a separate line ...
 		}
 		else
 		{
-		    fwrite($fp, "\E{".$a_english." ".$b_english."} & \\\\[2mm] \n");
+		    fwrite($fp, "\E{".$a_english." ".$b_english."} & \\\\[2mm] \n");  // ... otherwise, print them on the same line.
 		}
 
 	    }

@@ -27,7 +27,7 @@ If not, see <http://www.gnu.org/licenses/>.
 This script converts Swahili poems in Arabic script into Roman script, and vice versa, adding an automatically
 generated transcription.  There are many options available, so see the manual for full details.
 This script sets things up for the scripts in the layouts dir: depending on the script of the source text (arabic, roman), the orthography is converted, and then the _print script is called to do the layout.
-Note that /layout/kip_line_*.php is the one that deals with database entry - the others relate only to txt/odt/pdf output.
+Note that /layouts/kip_line_*.php is the one that deals with database entry - the others relate only to txt/odt/pdf output.
 */
 
 
@@ -157,70 +157,72 @@ foreach ($poemlines as $key=>$poemline)
    //echo $poemline;
    if (strlen(trim($poemline)) > 0) // there's text on the line ...  ("empty" lines in a txt file contain a \n character, so we have to trim that off)
     {
-	if (preg_match("/#/", $poemline))
-	{
-	    $msno=substr(trim($poemline), 1);  // That is, the stanza number as written in the MS by the scribe.  This may be incorrect.
-	}
-	else 
-	{
-	    $stanza_contents[]=$poemline;  // ... so put it into an array
-	}
+        if (preg_match("/#/", $poemline))
+        {
+            $msno=substr(trim($poemline), 1);  // That is, the stanza number as written in the MS by the scribe.  This may be incorrect.
+        }
+        else 
+        {
+            $stanza_contents[]=$poemline;  // ... so put it into an array
+        }
     }
     else  // the line is blank, so print out what we have (the previous stanza for poetry, the whole text for prose)
     {
-	$stanza_no++;  // increment the stanza number
-	echo "\n";  // add a blank line in the feedback
-	
-	if (empty($msno)) // If the input text did not include stanza numbers copied from the MS ...
-	{
-	    $msno=0;  // ... set $msno to 0 ...
-	}
-	else
-	{
-	    $msno=$msno;  // ... otherwise use the MS stanza number.
-	}
+        $stanza_no++;  // increment the stanza number
+        echo "\n";  // add a blank line in the feedback
+        
+        if (empty($msno)) // If the input text did not include stanza numbers copied from the MS ...
+        {
+            $msno=0;  // ... set $msno to 0 ...
+        }
+        else
+        {
+            $msno=$msno;  // ... otherwise use the MS stanza number.
+        }
 	
         if ($genre=="poetry")
         {
-	    //print_r($stanza_contents);
-	    //echo count($stanza_contents)."\n";
-	    // truncate $vipande to the length of $stanza_contents
-	    array_splice($vipande, count($stanza_contents));
-	    //print_r($vipande);
-	    // set values of $vipande as keys of $stanza_contents - keys are then letters instead of numbers
-	    $stanza_contents=array_combine($vipande, $stanza_contents);
-	    
-	    // Set up check for stanzas with odd numbers of lines.
-	    end($stanza_contents);  // move the internal pointer to the end of the array
-	    $lastkey = key($stanza_contents);  // fetch the key of the last item in the array
-	    reset($stanza_contents);  // move the pointer back to the first item of the array
-	}
+            $svipande=$vipande;  # We need to re-source $vipande for each stanza, so we need an alias.  Otherwise, $vipande gets truncated, and remains at that length for all stanzas.  This means that if your first stanza is 4 vipande, errors will be thrown for any subsequent stanza that is more than 4 vipande.  Re-sourcing via the alias allows any stanza of any length to be printed (provided it has an even number of vipande.)
+            //print_r($svipande);
+            //print_r($stanza_contents);
+            //echo count($stanza_contents)."\n";
+            // truncate $vipande to the length of $stanza_contents
+            array_splice($svipande, count($stanza_contents));
+            //print_r($vipande);
+            // set values of $vipande as keys of $stanza_contents - keys are then letters instead of numbers
+            $stanza_contents=array_combine($svipande, $stanza_contents);
+            
+            // Set up check for stanzas with odd numbers of lines.
+            end($stanza_contents);  // move the internal pointer to the end of the array
+            $lastkey = key($stanza_contents);  // fetch the key of the last item in the array
+            reset($stanza_contents);  // move the pointer back to the first item of the array
+        }
 
         foreach ($stanza_contents as $key=>$stanza_line)
         {
-	    if ($genre=="prose")
+            if ($genre=="prose")
             {
                 unset($stanza_no);
                 $key=$key+1;
                                 
-		include("layouts/kip-line_{$script}.php");
+                include("layouts/kip-line_{$script}.php");
             }
             elseif ($genre=="poetry")
             {
-		if ($layout=="vip-space")
-		{
-		    include("layouts/vip-space_{$script}.php");
-		}
-		elseif ($layout=="vip-star")
-		{
-		    include("layouts/vip-star_{$script}.php");
-		} 
-		elseif ($layout=="kip-line")
-		{
-		    include("layouts/kip-line_{$script}.php");
-		}
-	    }
-	}
+                if ($layout=="vip-space")
+                {
+                    include("layouts/vip-space_{$script}.php");
+                }
+                elseif ($layout=="vip-star")
+                {
+                    include("layouts/vip-star_{$script}.php");
+                } 
+                elseif ($layout=="kip-line")
+                {
+                    include("layouts/kip-line_{$script}.php");
+                }
+            }
+        }
 	    
 	// Insert a spacer between stanzas, depending on extension.
 	if ($output=="pdf")
