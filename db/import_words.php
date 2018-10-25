@@ -89,7 +89,7 @@ while ($row=pg_fetch_object($sql))
 // Put back any edits.
 echo "\nRe-integrating previous edits...\n";
 
-$sql_n=query("update $words w set (edclose, edstan, emend, variant, note, root, english, pos, slot, lg, tense, neg, noshow) = (b.edclose, b.edstan, b.emend, b.variant, b.note, b.root, b.english, b.pos, b.slot, b.lg, b.tense, b.neg, b.noshow) from $backup b where w.stanza=b.stanza and w.loc=b.loc and w.position=b.position;");
+$sql_n=query("update $words w set (edclose, edstan, emend, variant, note, root, english, pos, slot, lg, tense, neg, noshow, attrib) = (b.edclose, b.edstan, b.emend, b.variant, b.note, b.root, b.english, b.pos, b.slot, b.lg, b.tense, b.neg, b.noshow, b.attrib) from $backup b where w.stanza=b.stanza and w.loc=b.loc and w.position=b.position;");
 
 echo "\nDone.\n\n";
 

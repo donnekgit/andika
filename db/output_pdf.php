@@ -86,7 +86,7 @@ else
 
 if (in_array("firstcolour", $collection))  // If this option is passed in ...
 {
-    $firstcolour=$colour2;  // ... the Arabic script in the first line of the stanza will be coloured blue.
+    $firstcolour=$colour2;  // ... the Arabic script in the first line of the stanza will be coloured blue.               
 }
 else
 {
@@ -166,6 +166,7 @@ while ($row=pg_fetch_object($sql))
             $note=$row_w->note;
             $english=$row_w->english;
             $noshow=$row_w->noshow;
+            $attrib=$row_w->attrib;
             
             if ($edclose!='')  // If the automatic close transliteration has been edited, bring that in instead.  Replace deleted words (~) with a blank.
             {
@@ -232,6 +233,7 @@ while ($row=pg_fetch_object($sql))
             $standard_line.=$standard." "; 
             $close_line.=$close." ";
             $english_line.=$english." ";
+            $attrib_line.=$attrib." ";
         }
         
         if (in_array($kipande, $first_half))  // If the kipande is the first in the line, set it up as "a".
@@ -241,7 +243,9 @@ while ($row=pg_fetch_object($sql))
             $a_standard=trim($standard_line);
             $a_close=trim($close_line);
             $a_english=trim($english_line);
-            unset($arabic_line, $standard_line, $close_line, $english_line);  // Clear the contents of the first kipande.
+            $a_slot=trim($slot_line);
+            $a_attrib=trim($attrib_line);
+            unset($arabic_line, $standard_line, $close_line, $english_line, $slot_line, $attrib_line);  // Clear the contents of the first kipande.
         }
         else  // If the kipande is the second in the line, set it up as "b".  Also include the numbering here (since we're reading left to right, the numbering has to come after the second kipande.
         {
@@ -253,11 +257,16 @@ while ($row=pg_fetch_object($sql))
             $b_english=trim($english_line);
             $double=1;
         }
-
+        
+        // ######################
+        // Lines with two vipande
+        // ######################
         if ($double==1)  // We have two kipande on the line, so print them.
         {
             if (!in_array("noarabic", $collection))
             {
+                $firstcolour=($a_attrib=='xclr' ? $colour1 : $colour2);
+                
                 if (substr($close_kip, 0, 1)=="b") // Only put an Arabic number against the first line of the stanza (with two kipande to each line, the first line of the stanza ends with kipande b).
                 {
                     fwrite($fp, "\\textcolor{{$firstcolour}}{\\textarabic{".$a_arabic." * ".$b_arabic."}} & ");  // Repeating the printout of the Arabic script here and in the else clause allows for the first line of a stanza to be coloured differently, relevant for the Burda and Hamziyya, where the first line of a stanza is in Arabic ...
@@ -334,6 +343,9 @@ while ($row=pg_fetch_object($sql))
             echo $stanza.$standard_kip.": ".$a_standard." + ".$b_standard."\n";
             unset($double, $arabic_line, $standard_line, $close_line, $english_line);
         }
+        // ######################
+        // Lines with a single kipande
+        // ######################
         elseif ($kipande==$maxkip)  // handle stanzas with an odd number of vipande (links to $double==1 above)
         // if the line doesn't have two vipande ($double), check if its loc is the last loc of the stanza, and if it is, print it anyway
         {
@@ -341,6 +353,8 @@ while ($row=pg_fetch_object($sql))
             {
                 if ($first_kip=="a") // Only put an Arabic number against the first line of the stanza (with two kipande to each line, the first line of the stanza ends with kipande b).
                 {
+                    $firstcolour=($a_attrib=='xclr' ? $colour1 : $colour2);
+                    
                     fwrite($fp, "\\textcolor{{$firstcolour}}{\\textarabic{".$a_arabic."}} & ");  // Repeating the printout of the Arabic script here and in the else clause allows for the first line of a stanza to be coloured differently, relevant for the Burda and Hamziyya, where the first line of a stanza is in Arabic ...
                     fwrite($fp, "\\textarabic{".convert_numbers($stanza)."} \\\\* \n");
                     $mycolour=$firstcolour;  // Carry across the colour of the Arabic script into the close transcription.
