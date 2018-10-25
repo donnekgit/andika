@@ -16,17 +16,17 @@ if ($output=="pdf")
         
         if (isset($options["t"]) or isset($options["transliteration"]) or $transtxt=="TRUE")
         {
-        fwrite($fp, "\Tr{".$roman."} & \Tr{".$stanza_no.$key."} \\\\ \n");
+            fwrite($fp, "\Tr{".$roman."} & \Tr{".$stanza_no.$key."} \\\\ \n");
         }
     }
     elseif ($genre=="prose")
     {
-//         fwrite($fp, "{\\scriptsize\\marginnote{".$stanza_no.$key."}[2mm]}\\textarabic{".$arabic."} \\\\ \n\n \\vspace{10mm} \n\n");
-	fwrite($fp, "{\\textarabic{".$arabic."} \\\\ \n\n \\vspace{10mm} \n\n");
+        //fwrite($fp, "{\\scriptsize\\marginnote{".$stanza_no.$key."}[2mm]}\\textarabic{".$arabic."} \\\\ \n\n \\vspace{10mm} \n\n");
+        fwrite($fp, "{\\textarabic{".$arabic."} \\\\ \n\n \\vspace{10mm} \n\n");
 
         if (isset($options["t"]) or isset($options["transliteration"]) or $transtxt=="TRUE")
         {
-        fwrite($fp, "\Tr{".$roman."} \\\\ \n\n \\vspace{10mm} \n\n");
+            fwrite($fp, "\Tr{".$roman."} \\\\ \n\n \\vspace{10mm} \n\n");
         }
     }
 }

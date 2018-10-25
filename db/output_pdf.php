@@ -23,6 +23,11 @@ If not, see <http://www.gnu.org/licenses/>.
 *********************************************************************
 */
 
+// This script takes data from the _words table and lays it out in a .tex file which is then compiled to a pdf.
+// Various options are available to govern layout, applied using if... else... clauses.  These get complicated, but are easy enough to follow.
+// If adding new options, global ones should be placed in the upper part of the script, and those applying to individual lines in the lower part: those applying to two vipande in the line after 'if ($double==1)', and those applying to one kipande in the line after 'elseif ($kipande==$maxkip)' - remember that for proper functioning line-based options need to be replicated in both places.
+// There may be a less repetitious way of doing this, but I can't think of it at the minute, given the way LaTeX markup works.
+
 include("./andika/config.php");
 include("./includes/fns.php");
 
@@ -58,11 +63,10 @@ if (in_array("alignright", $collection))  // If this option is passed in ...
 {
     $columns="rl";  // ... the poem text will be right-justified in the text area.
 }
-elseif (in_array("alignleft", $collection))
+elseif (in_array("alignleft", $collection))  // If this option is passed in ...
 {
-    $columns="ll";  // Otherwise, the default is to centre the poem text in the text area.
+    $columns="ll";  // ... the poem text will be left-justified in the text area.
 }
-
 else
 {
     $columns="cl";  // Otherwise, the default is to centre the poem text in the text area.
@@ -141,7 +145,7 @@ while ($row=pg_fetch_object($sql))
     $sql_nk=query("select max(loc) from $words where stanza=$stanza;");
     while ($row_nk=pg_fetch_object($sql_nk))
     {
-	$maxkip=$row_nk->max;
+        $maxkip=$row_nk->max;
     }
     
     $sql_loc=query("select distinct loc from $words where stanza=$stanza order by loc;");
@@ -163,65 +167,65 @@ while ($row=pg_fetch_object($sql))
             $english=$row_w->english;
             $noshow=$row_w->noshow;
             
-             if ($edclose!='')  // If the automatic close transliteration has been edited, bring that in instead.  Replace deleted words (~) with a blank.
+            if ($edclose!='')  // If the automatic close transliteration has been edited, bring that in instead.  Replace deleted words (~) with a blank.
             {
-		$close=preg_replace("/~/", "", $edclose);
+                $close=preg_replace("/~/", "", $edclose);
             }
             
             if ($edstan!='')  // If the automatic standard transliteration has been edited, bring that in instead.  Replace deleted words (~) with a blank.
             {
-		$standard=preg_replace("/~/", "", $edstan);
+                $standard=preg_replace("/~/", "", $edstan);
             }
             
             if ($emend!='')  // Mark emended readings.  If the standard reading needs to be emended, write the emendation in the emend column, and that, together with a dotted underline, will be read in instead.  This allows you to distinguish emendations from typographical editing of the reading (eg capitalising proper names).
             {
-		$standard="\\dotuline{".$emend."}";
+                $standard="\\dotuline{".$emend."}";
             }
             
             if ($variant!='')  // Add variant readings.
             {
                 if ($noshow!='' or in_array("nostandard", $collection))  // If there is a flag in the noshow field, attach any notes for that word to the arabic field (we need to use LTR to get the correct direction) ...
-		{
-		    $arabic=$arabic."\\LTRfootnote{".$variant."} "; // Final space in case there are other variants.
-		}
-		else  // ... otherwise, attach them to the close field.
-		{
-		    $close=$close."\\footnote{".$variant."} ";  // Final space in case there are other variants.
-		}
+                {
+                    $arabic=$arabic."\\LTRfootnote{".$variant."} "; // Final space in case there are other variants.
+                }
+                else  // ... otherwise, attach them to the close field.
+                {
+                    $close=$close."\\footnote{".$variant."} ";  // Final space in case there are other variants.
+                }
             }
             
             if ($note!='')  // Add notes.
             {
                 if ($noshow!='' or in_array("nostandard", $collection))  // If there is a flag in the noshow field, attach any notes for that word to the arabic field (we need to use LTR to get the correct direction)  ...
-		{
-		    $arabic=$arabic."\\LTRfootnote{".$note."} ";  // Final space in case there are other footnotes.
-		}
-		else  // ... otherwise, attach them to the standard field.
-		{
-		    $standard=$standard."\\footnote{".$note."} ";  // Final space in case there are other footnotes.
-		}
+                {
+                    $arabic=$arabic."\\LTRfootnote{".$note."} ";  // Final space in case there are other footnotes.
+                }
+                else  // ... otherwise, attach them to the standard field.
+                {
+                    $standard=$standard."\\footnote{".$note."} ";  // Final space in case there are other footnotes.
+                }
             }
             
             if ($noshow!='')  // If there is a flag in the noshow field ...
             {
-		if ($noshow=='ar')  // ... if it's "ar", empty the standard field, and also the English ...
-		{
-		    $standard="";  // Currently just empty, but a routine could be called here that does something special for Arabic.
-		    $english="";  // Also suppress the English transcription.
-		}
-		if ($noshow=='areng')  // ... if it's "areng", empty the standard field, but keep the English.
-		{
-		    $standard="";
-		}
-		elseif ($noshow=='omit')  // ... if it's "omit", replace the standard entry with a marker.
-		{
-		    $standard="\\textcolor{lightgray}{XXX}";
-		}
-		else  //  If there's any other flag, just empty the standard field.
-		{
-		    $standard="";
-		}
-	    }
+                if ($noshow=='ar')  // ... if it's "ar", empty the standard field, and also the English ...
+                {
+                    $standard="";  // Currently just empty, but a routine could be called here that does something special for Arabic.
+                    $english="";  // Also suppress the English transcription.
+                }
+                elseif ($noshow=='areng')  // ... if it's "areng", empty the standard field, but keep the English.
+                {
+                    $standard="";
+                }
+                elseif ($noshow=='omit')  // ... if it's "omit", replace the standard entry with a marker.
+                {
+                    $standard="\\textcolor{lightgray}{XXX}";
+                }
+                else  //  If there's any other flag, just empty the standard field.
+                {
+                    $standard="";
+                }
+            }
             
             // Concatenate the words in that kipande.
             $arabic_line.=$arabic." ";
@@ -247,44 +251,44 @@ while ($row=pg_fetch_object($sql))
             $b_standard=trim($standard_line);
             $b_close=trim($close_line);
             $b_english=trim($english_line);
-	    $double=1;
+            $double=1;
         }
 
         if ($double==1)  // We have two kipande on the line, so print them.
         {
             if (!in_array("noarabic", $collection))
             {
-		if (substr($close_kip, 0, 1)=="b") // Only put an Arabic number against the first line of the stanza (with two kipande to each line, the first line of the stanza ends with kipande b).
-		{
-		    fwrite($fp, "\\textcolor{{$firstcolour}}{\\textarabic{".$a_arabic." * ".$b_arabic."}} & ");  // Repeating the printout of the Arabic script here and in the else clause allows for the first line of a stanza to be coloured differently, relevant for the Burda and Hamziyya, where the first line of a stanza is in Arabic ...
-		    fwrite($fp, "\\textarabic{".convert_numbers($stanza)."} \\\\* \n");
-		    $mycolour=$firstcolour;  // Carry across the colour of the Arabic script into the close transcription.
-		}
-		else
-		{
-		    fwrite($fp, "\\textcolor{{$colour1}}{\\textarabic{".$a_arabic." * ".$b_arabic."}} & "); // ... and subsequent lines are in Swahili.
-		    fwrite($fp, " \\\\* \n");
-		    $mycolour=$colour1;  // Carry across the colour of the Arabic script into the close transcription.
-		}
+                if (substr($close_kip, 0, 1)=="b") // Only put an Arabic number against the first line of the stanza (with two kipande to each line, the first line of the stanza ends with kipande b).
+                {
+                    fwrite($fp, "\\textcolor{{$firstcolour}}{\\textarabic{".$a_arabic." * ".$b_arabic."}} & ");  // Repeating the printout of the Arabic script here and in the else clause allows for the first line of a stanza to be coloured differently, relevant for the Burda and Hamziyya, where the first line of a stanza is in Arabic ...
+                    fwrite($fp, "\\textarabic{".convert_numbers($stanza)."} \\\\* \n");
+                    $mycolour=$firstcolour;  // Carry across the colour of the Arabic script into the close transcription.
+                }
+                else
+                {
+                    fwrite($fp, "\\textcolor{{$colour1}}{\\textarabic{".$a_arabic." * ".$b_arabic."}} & "); // ... and subsequent lines are in Swahili.
+                    fwrite($fp, " \\\\* \n");
+                    $mycolour=$colour1;  // Carry across the colour of the Arabic script into the close transcription.
+                }
             }
             
             if (in_array("close-lr", $collection))  // If this option is passed in, a close transcription reading left to right will be included.
-	    {
-		if (in_array("closeblack", $collection))  // If this option is included ...
-		{
+            {
+                if (in_array("closeblack", $collection))  // If this option is included ...
+                {
                     fwrite($fp, $a_close." * ".$b_close." & \\\\* \n");  // ... the transcription will be printed in black in a normal-sized font ...
-		}
-		else
-		{
+                }
+                else
+                {
                     fwrite($fp, "\\textcolor{{$mycolour}}{\OLTcl{".$a_close." * ".$b_close."}} & \\\\* \n");  // otherwise, it will be printed in the same colour as the Arabic script, and in a slightly smaller font.
-		}
-	    }
-	    
-	    if (in_array("close-rl", $collection))  // If this option is passed in, a close transcription reading right to left (ie following th Arabic script) will be included.
-	    {
-		$a_close=join(' ', array_reverse (explode (' ', $a_close)));  // Reverse the order of words in the first kipande.
-		$b_close=join(' ', array_reverse (explode (' ', $b_close)));  // Reverse the order of words in the second kipande.
-		if (in_array("closeblack", $collection))  // If this option is included ...
+                }
+            }
+        
+            if (in_array("close-rl", $collection))  // If this option is passed in, a close transcription reading right to left (ie following the Arabic script) will be included.
+            {
+                $a_close=join(' ', array_reverse (explode (' ', $a_close)));  // Reverse the order of words in the first kipande.
+                $b_close=join(' ', array_reverse (explode (' ', $b_close)));  // Reverse the order of words in the second kipande.
+                if (in_array("closeblack", $collection))  // If this option is included ...
                 {
                     fwrite($fp, $b_close." * ".$a_close." & \\\\* \n");  // ... the transcription will be printed in black in a normal-sized font ...
                 }
@@ -292,53 +296,116 @@ while ($row=pg_fetch_object($sql))
                 {
                     fwrite($fp, "\\textcolor{{$mycolour}}{\OLTcl{".$b_close." * ".$a_close."}} & \\\\* \n");  // otherwise, it will be printed in the same colour as the Arabic script, and in a slightly smaller font.
                 }
-	    }
-	    
-	    if (!in_array("nostandard", $collection))  // Print the standard transcription by default, unless this option is passed in.
+            }
+        
+            if (!in_array("nostandard", $collection))  // Print the standard transcription by default, unless this option is passed in.
             // Note that if this option is used, no emendations or notes will be printed, because they are linked to the standard transcription.
-	    {
-		if ($a_standard!='' and $b_standard!='')  // If the vipande are not empty because their words have been marked as noshow, print the standard transcription with numbers. If the vipande are indeed empty because their words have been marked as noshow, nothing will be printed, since the code above has either emptied the standard entry, or replaced it by a blank.
-		// NOTE: The above line means that if the words for one kipande are marked noshow, the transcription for both it AND its companion in the line will be suppressed.  This is probably best for display purposes, but if you want to suppress only one kipande and not its companion as well, change "and" above to "or".  
-		{
-		    fwrite($fp, $a_standard." * ".$b_standard." & ".$stanza.$standard_kip." \\\\* \n");
-		}
-		elseif (in_array("swapclose", $collection))  // If this option is passed in, the close transcription will be printed instead of the standard transcription for words that are marked as noshow.
-		{
-		    fwrite($fp, "\\textcolor{{$mycolour}}{\OLTcl{".$a_close." * ".$b_close."}} & ".$stanza.$standard_kip." \\\\* \n");
-		}
-	    }
+            {
+                if ($a_standard!='' and $b_standard!='')  // If the vipande have been marked as noshow but they are not empty, print the standard transcription with numbers. If the vipande have been marked as noshow and they are indeed empty, nothing will be printed, since the code above has either emptied the standard entry, or replaced it by a blank.
+                // NOTE: The above line means that if the words for one kipande are marked noshow, the transcription for both it AND its companion in the line will be suppressed.  This is probably best for display purposes, but if you want to suppress only one kipande and not its companion as well, change "and" above to "or".  
+                {
+                   fwrite($fp, $a_standard." * ".$b_standard." & ".$stanza.$standard_kip." \\\\* \n");
+                }
+                elseif (in_array("swapclose", $collection))  // If this option is passed in, the close transcription will be printed instead of the standard transcription for words that are marked as noshow.
+                {
+                    fwrite($fp, "\\textcolor{{$mycolour}}{\OLTcl{".$a_close." * ".$b_close."}} & ".$stanza.$standard_kip." \\\\* \n");
+                }
+            }
             
-	    if (!in_array("noenglish", $collection))  // Print any English translation by default, unless this option is passed in.
-	    {
-		if (in_array("longlines", $collection))  // If this option is used ...
-		{
-		    fwrite($fp, "\E{".$a_english."}\\\\ \E{".$b_english."} & \\\\[2mm] \n");  // ... print the English translation for each of the two vipande on a separate line ...
-		}
-		else
-		{
-		    fwrite($fp, "\E{".$a_english." ".$b_english."} & \\\\[2mm] \n");  // ... otherwise, print them on the same line.
-		}
-
-	    }
+            if (!in_array("noenglish", $collection))  // Print any English translation by default, unless this option is passed in.
+            {
+                if  ($a_english!='' and $b_english!='')  // Where there is an English translation, lay it out ...
+                {
+                    if (in_array("longlines", $collection))  // If this option is used ...
+                    {
+                        fwrite($fp, "\E{".$a_english."}\\\\ \E{".$b_english."} & \\\\[2mm] \n");  // ... print the English translation for each of the two vipande on a separate line ...
+                    }
+                    else
+                    {
+                        fwrite($fp, "\E{".$a_english." ".$b_english."} & \\\\[2mm] \n");  // ... otherwise, print them on the same line.
+                    }
+                }
+                else  // ... but where there is none at all, close up the space.
+                {
+                    fwrite($fp, "\\\\[-2mm] \n");
+                }
+            }
            
             echo $stanza.$standard_kip.": ".$a_standard." + ".$b_standard."\n";
             unset($double, $arabic_line, $standard_line, $close_line, $english_line);
         }
-        elseif ($kipande==$maxkip)  // handle stanzas with an odd number of vipande
-	// if the line doesn't have two vipande ($double), check if its loc is the last loc of the stanza, and if it is, print it anyway
+        elseif ($kipande==$maxkip)  // handle stanzas with an odd number of vipande (links to $double==1 above)
+        // if the line doesn't have two vipande ($double), check if its loc is the last loc of the stanza, and if it is, print it anyway
         {
-	    // FIXME: needs rewriting.
-	    //fwrite($fp, " & \\textarabic{".$a_arabic."} & ");
-	    fwrite($fp, "\multicolumn{2}{r}{\\textcolor{{$colour1}}{\\textarabic{".$a_arabic."}}} & ");
-	    //fwrite($fp, " & \\textcolor{{$colour1}}{\\textarabic{".$a_arabic."}} & ");
-	    fwrite($fp, " \\\\* \n");
-	   // fwrite($fp, " & \\Tr{".$a_close."} &  \Tr{".$stanza.$kipande."} \\\\* \n");
-           // fwrite($fp, "\multicolumn{2}{r}{\Swa{".$a_trans."}} & \Swa{".$stanza.$kipande."} \\\\* \n");
-            fwrite($fp, "\multicolumn{2}{r}{".$a_trans."} & ".$stanza.$kipande." \\\\* \n");
-            fwrite($fp, "\multicolumn{2}{r}{\E{".$a_english."}} & \\\\ \n");
+            if (!in_array("noarabic", $collection))
+            {
+                if ($first_kip=="a") // Only put an Arabic number against the first line of the stanza (with two kipande to each line, the first line of the stanza ends with kipande b).
+                {
+                    fwrite($fp, "\\textcolor{{$firstcolour}}{\\textarabic{".$a_arabic."}} & ");  // Repeating the printout of the Arabic script here and in the else clause allows for the first line of a stanza to be coloured differently, relevant for the Burda and Hamziyya, where the first line of a stanza is in Arabic ...
+                    fwrite($fp, "\\textarabic{".convert_numbers($stanza)."} \\\\* \n");
+                    $mycolour=$firstcolour;  // Carry across the colour of the Arabic script into the close transcription.
+                }
+                else
+                {
+                    fwrite($fp, "\\textcolor{{$colour1}}{\\textarabic{".$a_arabic."}} & "); // ... and subsequent lines are in Swahili.
+                    fwrite($fp, " \\\\* \n");
+                    $mycolour=$colour1;  // Carry across the colour of the Arabic script into the close transcription.
+                }
+            }
             
-	    echo $stanza.$kipande.": ".$a_trans."\n";
-        }  
+            if (in_array("close-lr", $collection))  // If this option is passed in, a close transcription reading left to right will be included.
+            {
+                if (in_array("closeblack", $collection))  // If this option is included ...
+                {
+                    fwrite($fp, $a_close." & \\\\* \n");  // ... the transcription will be printed in black in a normal-sized font ...
+                }
+                else
+                {
+                    fwrite($fp, "\\textcolor{{$mycolour}}{\OLTcl{".$a_close."}} & \\\\* \n");  // otherwise, it will be printed in the same colour as the Arabic script, and in a slightly smaller font.
+                }
+            }
+        
+            if (in_array("close-rl", $collection))  // If this option is passed in, a close transcription reading right to left (ie following the Arabic script) will be included.
+            {
+                $a_close=join(' ', array_reverse (explode (' ', $a_close)));  // Reverse the order of words in the first kipande.
+                if (in_array("closeblack", $collection))  // If this option is included ...
+                {
+                    fwrite($fp, $a_close." & \\\\* \n");  // ... the transcription will be printed in black in a normal-sized font ...
+                }
+                else
+                {
+                    fwrite($fp, "\\textcolor{{$mycolour}}{\OLTcl{".$a_close."}} & \\\\* \n");  // otherwise, it will be printed in the same colour as the Arabic script, and in a slightly smaller font.
+                }
+            }
+      
+            if (!in_array("nostandard", $collection))  // Print the standard transcription by default, unless this option is passed in.
+            // Note that if this option is used, no emendations or notes will be printed, because they are linked to the standard transcription.
+            {
+                if ($a_standard!='')  // If the vipande have been marked as noshow but they are not empty, print the standard transcription with numbers. If the vipande have been marked as noshow and they are indeed empty, nothing will be printed, since the code above has either emptied the standard entry, or replaced it by a blank.
+                {
+                   fwrite($fp, $a_standard." & ".$stanza.$first_kip." \\\\* \n");
+                }
+                elseif (in_array("swapclose", $collection))  // If this option is passed in, the close transcription will be printed instead of the standard transcription for words that are marked as noshow.
+                {
+                    fwrite($fp, "\\textcolor{{$mycolour}}{\OLTcl{".$a_close."}} & ".$stanza.$first_kip." \\\\* \n");
+                }
+            }
+            
+            if (!in_array("noenglish", $collection))  // Print any English translation by default, unless this option is passed in.  We shouldn't need to allow the longlines option to apply here.
+            {
+                if  ($a_english!='')  // Where there is an English translation, lay it out ...
+                {
+                    fwrite($fp, "\E{".$a_english."} & \\\\[2mm] \n");
+                }
+                else  // ... but where there is none at all, close up the space.
+                {
+                    fwrite($fp, "\\\\[-2mm] \n");
+                }
+            }
+            
+            echo $stanza.$first_kip.": ".$a_standard."\n";      
+            unset($double, $arabic_line, $standard_line, $close_line, $english_line);     
+        }
     }
     
     fwrite($fp, "\\\\[6mm] \n\n");
